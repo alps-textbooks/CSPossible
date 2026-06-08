@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit2" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Building Solutions using Selection and Iteration</title>
+
+  <introduction>
+    <p>
+      This unit introduces students to selection for decision-making and iteration for 
+      repetition in code. 
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>AP Exam Weighting: </p>
+        </li>
+
+        <li>
+          <p>Class Periods: </p>
+        </li>
+
+        <li>
+          <p>
+            Time Estimate: 45 minutes per lesson
+          </p>
+        </li>
+
+        <li>
+          <p>
+            AP Classroom Progress Check Unit 2
+          </p>
+        </li>
+
+        <li>
+          <p>
+            AP Classroom Unit 2 Labs:
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+ <!--
+
+  <xi:include href="./topic2-1-design.ptx" />
+  <xi:include href="./topic2-2-boolean-expressions.ptx" />
+  <xi:include href="./topic2-3-selection.ptx" />
+  <xi:include href="./topic2-4-iteration.ptx" />
+  <xi:include href="./topic2-5-algorithm-development.ptx" />
+  <xi:include href="./topic2-6-errors.ptx" />
+  -->
+  
+  </chapter>

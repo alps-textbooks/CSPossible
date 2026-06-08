@@ -1,0 +1,27 @@
+# Ignore unique build info
+build_info
+build
+logs
+output
+.env
+.github
+.error_schema.log
+pretext/generated
+codechat_config.yaml
+published/
+cli.log
+.devcontainer.json
+node_modules
+.cache
+package.json
+package-lock.json
+
+
+# Compiled Python files
+*.pyc
+
+# Machine specific files
+.DS_Store
+pavement.py
+sphinx_settings.json
+.vscode/settings.json

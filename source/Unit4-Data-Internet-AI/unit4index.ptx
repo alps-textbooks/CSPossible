@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit4" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Making Data-Driven Decisions using the Internet and AI</title>
+ 
+
+  <introduction>
+    <p>
+      This unit introduces students to the Internet, Data Processing, and AI.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>AP Exam Weighting: </p>
+        </li>
+
+        <li>
+          <p>Class Periods: </p>
+        </li>
+
+        <li>
+          <p>
+            Time Estimate: 45 minutes per lesson
+          </p>
+        </li>
+
+        <li>
+          <p>
+            AP Classroom Progress Check Unit 4 
+          </p>
+        </li>
+
+        <li>
+          <p>
+            AP Classroom Unit 4 Labs:
+          </p>
+        </li>
+      </ul>
+    </p>
+   </introduction>
+ <!--
+  <xi:include href="./topic4-1-internet.ptx" />
+  <xi:include href="./topic4-2-effects.ptx" />
+  <xi:include href="./topic4-3-privacy-security.ptx" />
+  <xi:include href="./topic4-4-data-analysis.ptx" />
+  <xi:include href="./topic4-5-ai-algorithm-development.ptx" />
+  <xi:include href="./topic4-6-ai-ethics.ptx" />
+  <xi:include href="./topic4-7-machine-learning.ptx" />
+  -->
+  
+  </chapter>

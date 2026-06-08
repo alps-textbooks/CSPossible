@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit1" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Creating Purposeful Apps and Programs</title>
+
+   <introduction>
+    <p>
+      This unit introduces students to the process of creating purposeful apps and programs using
+      Python and AI.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>AP Exam Weighting: </p>
+        </li>
+
+        <li>
+          <p>Class Periods: </p>
+        </li>
+
+        <li>
+          <p>
+            Time Estimate: 45 minutes per lesson
+          </p>
+        </li>
+
+        <li>
+          <p>
+            AP Classroom Progress Check Unit 1 
+          </p>
+        </li>
+
+        <li>
+          <p>
+            AP Classroom Unit 1 Labs:
+          </p>
+        </li>
+      </ul>
+    </p>
+    </introduction>
+  <xi:include href="./topic-1-1-purpose.ptx" />
+  <xi:include href="./topic-1-2-collaboration.ptx" />
+  <xi:include href="./topic-1-3-responsible-ai.ptx" />
+  <xi:include href="./topic-1-4-binary.ptx" />
+  <xi:include href="./topic-1-5-sequencing.ptx" />
+  <xi:include href="./topic-1-6-variables.ptx" />
+  <xi:include href="./topic-1-7-expressions.ptx" />
+  
+  </chapter>
