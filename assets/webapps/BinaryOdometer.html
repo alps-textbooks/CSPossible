@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Binary Odometer</title>
+    
+    <link rel="stylesheet" type="text/css" href="widget.css">
+    <script src="converters.js"></script>
+    <script>
+      // 5-digit Binary Odometer
+
+      var value = 0;
+      var odometer = "00000";
+      var base = 2;
+
+      // Advance the odometer
+      function advance() {
+        value += 1;
+        if (value > 31)
+          value = 0;
+        odometer =    pad(decToBinary(value),5);
+        //   alert(value + " = " + pad(decToBinary(value)));
+        document.getElementById("odometer").innerHTML = odometer;
+        document.getElementById("decimal").innerHTML = value;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="center">
+      <table class="container">
+	<tbody><tr>
+	  <td style="text-align:center">
+	    <label style="font-size:1.6em">Binary Odometer</label>
+      <br>
+ 	    <label style="font-size:1em">Click <b><i>Next Number</i></b> to advance the binary odometer.</label>
+	  </td>
+	</tr>
+      </tbody></table>
+      <table class="widget">
+	<tbody><tr>
+	  <td>
+      <br>
+	    <label style="font-size:0.75em; padding-left:20px">decimal</label>
+	    <label style="font-size:1.5em; padding-right:20px" id="decimal">5</label>
+	    <label style="font-size:1.5em; padding-left:20px" id="odometer">00101</label>
+	    <label style="font-size:0.75em; padding-right:20px">binary</label>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <br>
+	    <input class="button" type="button" value="Next Number" onclick="advance()">
+      <p></p>
+	  </td>
+	</tr>
+      </tbody></table>
+
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://citelms.net/mobile-csp/webapps/numbers/binaryConverter.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Binary Converter</title>
+			    
+			    	  <meta name="viewport" content="initial-scale=1.0">
+				  <style>
+        td, th, button { padding:10px;font-size:12pt; text-align:center; }
+        
+        </style>
+        <script>
+        var total = 0;
+        function addBinary(value) {
+            var digitButton = document.getElementById("v" + value);
+            if (digitButton.innerHTML == "0") {
+                total += value;
+                digitButton.innerHTML = "1";
+            } else {
+                total -= value;
+                digitButton.innerHTML = "0";
+            }
+            document.getElementById("totalDec").innerHTML = "?";
+        }
+        function showAnswer()
+        {
+            document.getElementById("totalDec").innerHTML = total;
+        }
+        function reset()
+        {
+            total = 0;
+            document.getElementById("totalDec").innerHTML = total;
+            for(var i=1; i <= 128; i*=2) {
+                document.getElementById("v" + i).innerHTML = "0";
+            }
+        }
+    </script>
+    </head>
+
+    <body>
+        
+<table width="500" align="center" border="1" frame="box" rules="none" style="border:3px solid #8AC007;">
+<tbody><tr>
+<td>
+ <h3>Binary Converter</h3> 
+Click on some of the 0's below to flip them to 1's to make a binary number. Can you figure out what it is in base 10? Click on ? to check. 
+</td>
+</tr>
+<tr>
+<td colspan="2">
+         
+<table align="center">
+
+      <tbody><tr><td><button id="v128" onclick="addBinary(128)">0</button></td><td><button id="v64" onclick="addBinary(64)">0</button></td><td><button id="v32" onclick="addBinary(32)">0</button></td><td><button id="v16" onclick="addBinary(16)">0</button></td><td><button id="v8" onclick="addBinary(8)">0</button></td><td><button id="v4" onclick="addBinary(4)">0</button></td><td><button id="v2" onclick="addBinary(2)">0</button></td><td><button id="v1" onclick="addBinary(1)">0</button></td>
+    </tr>
+    <tr><td>2<sup>7</sup></td><td>2<sup>6</sup></td><td>2<sup>5</sup></td><td>2<sup>4</sup></td><td>2<sup>3</sup></td><td>2<sup>2</sup></td><td>2<sup>1</sup></td><td>2<sup>0</sup></td> 
+    </tr>        
+    <tr><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td> 
+    </tr>
+</tbody></table>
+        <br>
+Click here to see the equivalent decimal number: <button id="totalDec" onclick="showAnswer()">?</button> 
+        <button onclick="reset()">reset</button>
+    </td></tr></tbody></table>
+    
+
+</body></html>

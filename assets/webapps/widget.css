@@ -1,0 +1,93 @@
+element {
+  --android-green: #a4c639;
+}
+
+.center {
+  width:405px;
+  margin: auto;
+  border:3px solid #8AC007;
+  padding: 10px;
+}
+
+.alignleft { 
+  float:left;
+  width:200px;
+}
+
+.alignright { 
+  float:right;
+  width:200px;
+}
+
+table.container {
+  background-color:#aaaaaa";
+  width:400px;
+  font:black;
+  font-family: Arial;
+  border:1;
+}
+
+table.container td {
+  width:400px;
+  background-color:white;
+  border: 1px;
+  text-align:left;
+  padding:0;
+}
+
+table.widget {
+  font-family: Arial;
+  width:400px;
+  border: 1px solid var(--android-green);
+  border-collapse:collapse;
+}
+
+table.widget th, td {
+  border: 2px solid #a4c369;
+  width:200px;
+  background-color:silver;
+  text-align:center;
+  padding:10px;
+}
+
+table.ramcell {
+  font-family: Arial;
+  border: 0px;
+}
+
+table.ramcell th, td {
+  border: 0px;
+  padding: 0;
+}
+
+.button {
+  height: 30px;
+  width: 150px;
+  background: darkgrey;
+  border: 2px solid black;
+  border-radius: 50px;
+  font-size: 1.1em;
+  color: black;
+}
+
+.button:hover {
+  background:lightgrey;
+}
+
+.button2 {
+  height: 20px;
+  width: 65px;
+  background: lightgrey;
+  border: 2px solid black;
+  border-radius: 50px;
+  font-size: 0.8em;
+  color: black;
+}
+.button2:hover {
+  background:LightSteelBlue;
+}
+
+.button2:disabled {
+  background:grey;
+}
+
