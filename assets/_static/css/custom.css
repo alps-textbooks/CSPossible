@@ -1,0 +1,138 @@
+:root {
+  --emphasisColor: #007d9f;
+  --codeColor: #641227;
+}
+
+:root.dark-mode {
+  --emphasisColor: #00b3e3;
+  --codeColor: #ffaaaa;
+}
+
+/* The wide style seems to add huge font size so put it down */
+.ptx-content .para {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Default spacing between paragraphs is too much. */
+section>.para+.para {
+  margin-top: 0.6em;
+}
+
+.ptx-content section>.heading,
+.ptx-content section section>.heading,
+.ptx-content section section section>.heading {
+  font-size: 1.4rem;
+  color: var(--emphasisColor);
+  border-bottom: 2px solid #70d549;
+  padding-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.ptx-content .heading h4 {
+  font-size: 1.4rem;
+  color: var(--emphasisColor);
+}
+
+.ptx-content .terminology {
+  color: var(--emphasisColor);
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.ptx-content .code-inline {
+  color: var(--codeColor);
+  white-space: collapse nowrap;
+  padding: 0;
+  border: none;
+  background: none;
+  font-weight: 600;
+}
+
+.ptx-content .code-display {
+  color: var(--codeColor);
+  overflow-x: auto;
+  margin-left: 2em;
+}
+
+/* I'm not sure why the .code-block:before rule exists in PtX but it just adds extra gorp. */
+.ptx-content .code-block:before {
+  content: none;
+}
+
+/* Code listings with <pre> in text washed out in Chrome */
+.ptx-content pre.program {
+  font-weight: bolder;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.ptx-content .summary-links {
+  font-size: 1rem;
+}
+
+/* For displaying exercise ids */
+.ptx-content .runestone_caption,
+.runestone_caption {
+  display: block;
+}
+
+/* A potentialy gross hack to hide the footnotes PreTeXt loves to put on every link. */
+.ptx-content details.ptx-footnote,
+.ptx-content .ptx-runestone-container details.ptx-footnote {
+  display: none;
+}
+
+.ptx-content .para a {
+  text-decoration: underline !important;
+}
+
+.ptx-content blockquote {
+  font-size: inherit;
+}
+
+.ptx-content #summary ul.simple li {
+  padding-top: 1em;
+}
+
+/*
+ * Give paragraphs immediately after certain elements a bit of breathing room.
+ * This could also be achieved by giving some margin-bottom to those preceding
+ * elements but this seems simpler for now.
+ */
+.ptx-content div.highlight-python+p,
+.ptx-content div.highlight-text+p {
+  margin-top: 10px;
+}
+
+div.time {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25em;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #999;
+
+  svg {
+    fill: #999;
+    background: #0000;
+  }
+}
+
+.ptx-content section.section:has(div.time) {
+  padding-top: 1.5em;
+}
+
+/* Hide the numbering of <note> and <remark> elements for LOs and EKs */
+.ptx-content .note .codenumber,
+.ptx-content .note .period,
+.ptx-content .remark .codenumber,
+.ptx-content .remark .period {
+  display: none;
+}
+
+.ptx-content .note .heading,
+.ptx-content .remark .heading {
+  font-size: 1rem;
+}
