@@ -3,6 +3,7 @@ build_info
 build
 logs
 output
+generated-assets
 .env
 .github
 .error_schema.log
