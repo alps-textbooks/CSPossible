@@ -3,22 +3,27 @@
 <section xml:id="topic-1-4-binary">
   <time minutes="90" />
   <title>Binary Representation</title>
+  <idx>binary</idx>
+  <idx>bit</idx>
+  <idx>bits</idx>
+
+
   <introduction>
     <p> Think about all the types of files and data that you store in your computer or phone.
       Whether you look at a photo or listen to a song or write a paper or play a game, all of that
       data is stored as bits, which are just 0's and 1's. It's all bits! In this topic, you'll learn
-      how computers use bits to represent and process data. 
+      how computers use bits to represent and process data.
     </p>
-        <image source="_static/Unit1images/bits.png" width="20%" />
-        
+    <image source="_static/Unit1images/bits.png" width="20%" />
+
   </introduction>
   <subsection>
     <title>Learning Objectives</title>
 
     <remark>
       <title>1.4.A</title>
-      <p>Explain how computers store and process data as <term>bits</term>, and how
-        those bits are represented as meaningful digital information for users. </p>
+      <p>Explain how computers store and process data as <term>bits</term>, and how those bits are
+        represented as meaningful digital information for users. </p>
     </remark>
 
     <remark>
@@ -36,8 +41,7 @@
     <note>
       <title>1.4.A.1</title>
       <p>Computing devices represent data digitally. The fundamental unit of digital data is the <term>
-        bit</term> (short for binary digit), which is commonly represented as a value of 0 or 1. 
-      </p>
+        bit</term> (short for binary digit), which is commonly represented as a value of 0 or 1. </p>
     </note>
 
     <note>
@@ -53,8 +57,8 @@
 
     <p>Watch the following <url href="https://www.youtube.com/watch?v=USCBCmwMCDA">video</url> to
       learn more about how computers use bits to represent data.</p>
-    
-      <video youtube="USCBCmwMCDA" label="video-binary" />
+
+    <video youtube="USCBCmwMCDA" label="video-binary" />
 
   </subsection>
 
@@ -70,8 +74,8 @@
     <p>Watch this video from the Computer Science Unplugged, which illustrates how the binary number
       system works.
     </p>
-  
-      <video youtube="b6vHZ95XDwU" label="video-binary-unplugged" />
+
+    <video youtube="b6vHZ95XDwU" label="video-binary-unplugged" />
 
     <p>As you saw in the video, the students were simulating a binary odometer (like a car odometer
       counting miles) to count in binary. You and your friends can act out the video above by
@@ -304,6 +308,8 @@
   <subsection>
     <title>Abstraction</title>
 
+      <idx>abstraction</idx>
+  
     <note>
       <title>1.4.A.2</title>
       <p>
@@ -319,8 +325,8 @@
         href="https://docs.google.com/a/css.edu/presentation/d/1nOMpxZpdkCcS6Wc-eU8eeBi-z55LyKSJRBCVolJDM78">
       slides</url>). </p>
 
-  
-      <video youtube="XpJdZrviSuw" label="video-abstraction" />
+
+    <video youtube="XpJdZrviSuw" label="video-abstraction" />
 
     <p>We use symbols like + and - in math or on a calculator to indicate arithmetic operations.
       This is another form of abstraction. For example, go to <url
@@ -545,12 +551,14 @@
 
   <subsection>
     <title>Encoding in Bits</title>
+   <idx>encoding</idx>    
 
     <note>
       <title>1.4.A.3</title>
       <p>
         When a user interacts with a computing device, inputs are encoded as bits so a program can
-        process them. The program then produces outputs by translating bits back into forms that users can
+        process them. The program then produces outputs by translating bits back into forms that
+        users can
         see or hear.
       </p>
     </note>
@@ -558,18 +566,17 @@
     <note>
       <title>1.4.A.4</title>
       <p> The same sequence of bits can represent different kinds of data depending on the context.
-        An <term>encoding</term> is a set of rules for mapping bits to meaning. Encodings are a layer of
-        abstraction; they let programs interpret and present bits in a user-friendly form. File
-        types and formats signal which encoding rules to use, such as interpreting bits as letters
-        in a text file or colors in an image file. </p>
+        An <term>encoding</term> is a set of rules for mapping bits to meaning. Encodings are a
+        layer of abstraction; they let programs interpret and present bits in a user-friendly form.
+        File types and formats signal which encoding rules to use, such as interpreting bits as
+        letters in a text file or colors in an image file. </p>
     </note>
 
 
-      <p>For example, the binary code <c>01000001</c> can represent the decimal number 65 or the
-        letter "A" in the <url href="https://www.ascii-code.com/">ASCII encoding</url>, or it could
-        represent a pixel color in an image file, or a sound sample in an audio file, etc. The
-        context of whether it is in a text file, image file, or audio file will determine what it
-        means.</p>
+    <p>For example, the binary code <c>01000001</c> can represent the decimal number 65 or the
+      letter "A" in the <url href="https://www.ascii-code.com/">ASCII encoding</url>, or it could
+      represent a pixel color in an image file, or a sound sample in an audio file, etc. The context
+      of whether it is in a text file, image file, or audio file will determine what it means.</p>
 
 
     <activity label="binary-representations">
@@ -643,6 +650,10 @@
 
   <subsection>
     <title>Limitations of Binary Representation</title>
+    
+    <idx>roundoff error</idx>
+    <idx>overflow error</idx>
+
     <note>
       <title>1.4.B.1</title>
       <p>
@@ -653,18 +664,18 @@
         that cannot be represented exactly.
       </p>
     </note>
-   
+
 
     <note>
       <title>1.4.B.2</title>
-   
-    <p> A <term>roundoff error</term> can occur when a computer represents a real number with a
-      fixed number of bits. Because some real numbers cannot be represented exactly, they may be
-      stored as approximations. Calculations that use these approximations can produce results that
-      differ from the mathematically exact value. Over many calculations, small differences can
-      accumulate into a noticeable error, such as totals being off by a few cents or a location
-      estimate being slightly shifted. </p>
-</note>
+
+      <p> A <term>roundoff error</term> can occur when a computer represents a real number with a
+        fixed number of bits. Because some real numbers cannot be represented exactly, they may be
+        stored as approximations. Calculations that use these approximations can produce results
+        that differ from the mathematically exact value. Over many calculations, small differences
+        can accumulate into a noticeable error, such as totals being off by a few cents or a
+        location estimate being slightly shifted. </p>
+    </note>
 
     <p>For example, the fraction 1/3 is a repeating decimal number 0.3333333333333333333333 with
       infinite 3's after the decimal point.
@@ -680,23 +691,23 @@
       This illustrates how roundoff errors can lead to results that are close but not exactly
       correct.</p>
 
-<note>
+    <note>
       <title>1.4.B.3</title>
-    <p>An <term>overflow error</term> occurs when a calculation produces a value outside the range
-      that can be represented with the available bits. This can produce an incorrect result, such as
-      a counter that unexpectedly resets or becomes negative. For example, if a program uses 8 bits
-      to represent a number, it can only represent values from 0 to 255. If the program tries to
-      represent a number outside this range, it may produce an overflow error. </p>
+      <p>An <term>overflow error</term> occurs when a calculation produces a value outside the range
+        that can be represented with the available bits. This can produce an incorrect result, such
+        as a counter that unexpectedly resets or becomes negative. For example, if a program uses 8
+        bits to represent a number, it can only represent values from 0 to 255. If the program tries
+        to represent a number outside this range, it may produce an overflow error. </p>
     </note>
-    
+
     <note>
       <title>1.4.B.4</title>
       <p>
-      Some programming languages support an abstraction in which integers can grow to any size
-      limited only by available memory, which can prevent errors caused by overflow.
+        Some programming languages support an abstraction in which integers can grow to any size
+        limited only by available memory, which can prevent errors caused by overflow.
       </p>
     </note>
-  
+
 
     <activity label="binary-overflow">
       <statement>
