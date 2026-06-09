@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-1-1-purpose">
+  <time minutes="45" />
+  <title>Purpose and Behavior</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>1.1.A</title>
+      <p>
+        Determine the purpose and behavior of an app by interacting with it.
+      </p>
+    </remark>
+
+    <remark>
+      <title>1.1.B</title>
+      <p>
+        Identify inputs and outputs of an app while using it.
+      </p>
+    </remark>
+
+  </subsection>
+
+  <subsection>
+    <title>Purpose and Behavior of Apps</title>
+
+    <note>
+      <title>1.1.A.1</title>
+      <p>Applications (apps) are programs that run on many kinds of computing devices.
+        Apps can run on smartphones, tablets, laptops, desktops, game consoles, and web browsers,
+        and they are designed to help users accomplish tasks or goals.
+      </p>
+    </note>
+
+    <note>
+      <title>1.1.A.2</title>
+      <p>
+        People use apps to help solve real problems and accomplish everyday tasks,
+        such as communicating, learning, navigating, creating and sharing media, staying organized,
+        and being entertained.
+      </p>
+    </note>
+
+    <note>
+      <title>1.1.A.3</title>
+      <p>An app is successful when it uses information to produce an output that helps a user
+        achieve
+        a goal. An app’s value to the user depends on how well the results meet their needs.
+      </p>
+    </note>
+    <note>
+      <title>1.1.A.4</title>
+      <p>Because people rely on apps for everyday tasks, app behavior matters.
+        When an app is confusing, unreliable, or does not work as expected, users can become
+        frustrated because it interrupts what they are trying to do.
+      </p>
+    </note>
+    <note>
+      <title>1.1.A.5</title>
+
+      <p>An app’s behavior is what it does while it is running, including how it responds to user
+        interactions.
+        The behavior of an app is determined by its program code.</p>
+    </note>
+    <note>
+      <title>1.1.A.6</title>
+      <p>An app should behave as intended across a range of conditions,
+        including different ways people may interact with it.</p>
+    </note>
+    <note>
+      <title>1.1.A.7</title>
+      <p>Users can understand an app’s purpose and behavior by using it and observing how it
+        responds to their actions.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Inputs and Outputs</title>
+
+    <note>
+      <title>1.1.B.1</title>
+      <p>Apps are designed to take in information from a variety of sources, process that
+        information, and respond in useful ways.</p>
+    </note>
+
+    <note>
+      <title>1.1.B.2</title>
+      <p>When users interact with apps, they often tap or click buttons, type letters or numbers,
+        speak, or move the device.
+        Each of these actions provides input: data sent to a computer for a program to process.</p>
+    </note>
+
+    <note>
+      <title>1.1.B.3</title>
+      <p>Apps should provide clear feedback when they receive input, such as highlighting a button,
+        showing a loading icon, playing a sound, vibrating, or displaying an error message.
+        This feedback is a form of output that helps users know the app received the input, is
+        working, and what step to take next.</p>
+    </note>
+
+    <note>
+      <title>1.1.B.4</title>
+      <p>Input often comes from a user’s direct actions, but it can also be captured automatically
+        from sources such as sensors (like an accelerometer), location, time, or network signals.
+        Apps may also receive audio or images from microphones and cameras, often through user
+        actions (like a voice command or face scan).
+        These inputs allow apps to provide features like maps, step counting, face filters, or
+        recommendations.</p>
+    </note>
+
+    <note>
+      <title>1.1.B.5</title>
+      <p>In many apps, the program responds to events, such as button clicks, key presses, or sensor
+        updates, by running specific code.
+        Events are one way input is delivered to a program. An event signals that something
+        happened, and an event handler processes the input and determines what happens next.</p>
+    </note>
+
+    <note>
+      <title>1.1.B.6</title>
+      <p>Outputs are what an app produces. Outputs may include text, images, sounds, or something
+        the user feels, like a vibration.
+        Some outputs are directly perceived by the user, while others are not, such as data written
+        to a file or sent over a network.
+      </p>
+    </note>
+
+    <note>
+      <title>1.1.B.7</title>
+      <p>Users can identify inputs and outputs by trying different actions in an app and observing
+        what the app displays or does in response.
+      </p>
+    </note>
+  </subsection>
+</section>

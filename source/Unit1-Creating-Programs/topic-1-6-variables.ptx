@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-1-6-variables">
+  <time minutes="90" />
+  <title>Variables</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>1.6.A</title>
+      <p>Identify the use of variables in an app while interacting with it.</p>
+    </remark>
+
+    <remark>
+      <title>1.6.B</title>
+      <p>Develop code for assignment statements using variables, and determine the values that are
+        stored in the variables as a result.</p>
+    </remark>
+
+    <remark>
+      <title>1.6.C</title>
+      <p>Develop code to store and modify strings, and determine the output produced.</p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Identifying Variables in Apps</title>
+
+    <note>
+      <title>1.6.A.1</title>
+      <p>A variable is a named storage location used to hold a value that can change while the
+        program is running. It is an abstraction that lets programmers use a name to represent a
+        value.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.2</title>
+      <p>Apps use variables to keep track of changing information by updating their values as the
+        user interacts with the app. Programs can then use a variable’s current value to decide what
+        to do next and what feedback to provide, such as updating the screen, playing a sound, or
+        triggering a vibration.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.3</title>
+      <p>Every value in a program has a data type, such as a number, Boolean, or string. Some
+        programming languages require programmers to specify the type, while others determine it
+        automatically by how the data is used.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.4</title>
+      <p>The choice of data type depends on what a value represents. Values used to count or measure
+        are best represented as numbers, values that record a true or false condition are best
+        represented as Booleans, and values that store text are best represented as strings. The
+        data type affects what operations can be performed on the variable and how accurately the
+        output is represented in an app.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.5</title>
+      <p>Variables are often used to store information about the user or a program’s state, such as
+        a username, a selected theme, a score, progress toward a goal, a shopping cart total, or
+        whether notifications are on. The program can use the stored value to adjust its behavior or
+        display the value to the user.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.6</title>
+      <p>Program state is the set of values and information a program is storing at a specific
+        moment, including variable values and any inputs it is using. As the program runs, the state
+        changes when inputs are received and variables are updated.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.7</title>
+      <p>Users can infer the use of variables in an app by observing information that changes over
+        time, such as counters, totals, settings, progress, or status, and reasoning about what
+        values the app must store and update to produce those changes.</p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Variables and Assignment</title>
+    <note>
+      <title>1.6.B.1</title>
+      <p>The assignment operator allows a program to initialize or change the value stored in a
+        variable. When the following code runs, <c>expression</c> is evaluated, and the resulting
+        value is stored in the variable <c>a</c>. <c>a = expression</c></p>
+    </note>
+
+    <note>
+      <title>1.6.B.2</title>
+      <p>Variables are initialized by assigning an initial value before they are used. After
+        initialization, later statements can use the variable’s value and update it as the program
+        runs.</p>
+    </note>
+
+    <note>
+      <title>1.6.B.3</title>
+      <p>Using meaningful variable names improves readability and helps programmers understand what
+        the stored values represent.</p>
+    </note>
+
+    <note>
+      <title>1.6.B.4</title>
+      <p>A variable stores its most recently assigned value.</p>
+    </note>
+
+    <note>
+      <title>1.6.B.5</title>
+      <p>The value stored in a variable after a sequence of assignment statements can be determined
+        by tracing statements in order and updating the variable’s value after each assignment.</p>
+    </note>
+
+    <note>
+      <title>1.6.B.6</title>
+      <p>Assignment statements are often used to update information an app remembers about the user
+        or the program’s state, such as a score or setting, so the app responds appropriately as the
+        user interacts with it.</p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Strings</title>
+    <note>
+      <title>1.6.C.1</title>
+      <p>A string is an ordered sequence of characters used to represent text in a program.</p>
+    </note>
+
+    <note>
+      <title>1.6.C.2</title>
+      <p>Apps often use strings to store and display user-facing information, such as names,
+        messages, labels, or search terms.</p>
+    </note>
+
+    <note>
+      <title>1.6.C.3</title>
+      <p>To initialize a string variable, programmers assign it an initial text value or an empty
+        string before it is used so the program starts with a known value. An empty string has zero
+        characters (<c>""</c>). It is not the same as a string that contains spaces (<c>" "</c>).</p>
+    </note>
+
+    <note>
+      <title>1.6.C.4</title>
+      <p>String concatenation joins two or more strings to create a new string, such as combining a
+        greeting with a user’s name.</p>
+    </note>
+
+    <note>
+      <title>1.6.C.5</title>
+      <p>A substring is part of an existing string. Programs can create substrings to extract or use
+        part of a text value, such as extracting the month from a date, reading a portion of a
+        message, or checking for a word within a string.</p>
+    </note>
+
+    <note>
+      <title>1.6.C.6</title>
+      <p>The output of code that uses string operations can be determined by tracing statements in
+        order and keeping track of how string values change and what text is displayed.</p>
+    </note>
+
+    <note>
+      <title>1.6.C.7</title>
+      <p>To communicate clearly with users, programmers use strings to store and generate text that
+        apps display, such as prompts, feedback messages, and personalized responses.</p>
+    </note>
+  </subsection>
+</section>

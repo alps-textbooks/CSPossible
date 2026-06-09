@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-1-5-sequencing">
+  <time minutes="45" />
+  <title>Sequencing</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>1.5.A</title>
+      <p>Represent an algorithm that uses sequencing using written steps or a flowchart.</p>
+    </remark>
+
+    <remark>
+      <title>1.5.B</title>
+      <p>Develop code that runs sequentially and determine the result of sequential statements.</p>
+    </remark>
+  </subsection>
+
+
+  <subsection>
+    <title>Sequencing in Written Steps and Flowcharts</title>
+    <note>
+      <title>1.5.A.1</title>
+      <p>Many tasks can be completed by following step-by-step instructions. An algorithm describes
+        these steps in an order that can be followed to solve a problem.</p>
+    </note>
+
+    <note>
+      <title>1.5.A.2</title>
+      <p>Algorithms can be represented in ways people can read and follow, such as written steps or
+        flowcharts.</p>
+    </note>
+
+    <note>
+      <title>1.5.A.3</title>
+      <p>When representing an algorithm in written steps or a flowchart, each step should be clear
+        and specific so the process can be followed correctly.</p>
+    </note>
+
+    <note>
+      <title>1.5.A.4</title>
+      <p>Sequencing means the steps of an algorithm are carried out in a specific order, one step at
+        a time. Changing the order of the steps can change what happens or whether the task is
+        completed correctly.</p>
+    </note>
+
+  </subsection>
+
+
+  <subsection>
+    <title>Sequencing in Code</title>
+    <note>
+      <title>1.5.B.1</title>
+      <p>When an app runs, a computer executes algorithms that are expressed as program code.</p>
+    </note>
+
+    <note>
+      <title>1.5.B.2</title>
+      <p>Programmers write code using tools such as text editors or integrated development
+        environments (IDEs) that help them write and run programs. Some tools include AI features
+        that can generate or autocomplete code, which programmers can adapt and test as they develop
+        programs.</p>
+    </note>
+
+    <note>
+      <title>1.5.B.3</title>
+      <p>Clarity and readability are important when expressing an algorithm in a programming
+        language so others can understand and modify the code.</p>
+    </note>
+
+    <note>
+      <title>1.5.B.4</title>
+      <p>Sequential statements execute in the order they appear in the program, and changing the
+        order of statements can change the program’s behavior or what the user sees.</p>
+    </note>
+
+  </subsection>
+  <subsection>
+    <title>Tracing Sequential Code</title>
+    <note>
+      <title>1.5.B.5</title>
+      <p>Tracing program execution means following which statements are executed and what values are
+        produced and stored as the program runs.</p>
+    </note>
+
+    <note>
+      <title>1.5.B.6</title>
+      <p>Programmers can trace execution by using debuggers or print statements to display values at
+        different points in a program. When the following code runs, the program displays the value
+        of expression followed by a new line. <c>print(expression)</c></p>
+    </note>
+
+    <note>
+      <title>1.5.B.7</title>
+      <p>The result of sequential statements can be determined by tracing code in order and keeping
+        track of the values and output.</p>
+    </note>
+
+    <note>
+      <title>1.5.B.8</title>
+      <p>Programmers trace sequential code to confirm an app works as intended and the information
+        it displays is correct and understandable.</p>
+    </note>
+
+  </subsection>
+
+
+</section>

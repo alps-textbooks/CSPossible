@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-1-2-collaboration">
+  <time minutes="45" />
+  <title>Benefits of Collaboration</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>1.2.A</title>
+      <p>
+        Explain how apps and programs are improved through collaboration and user testing.
+      </p>
+    </remark>
+
+    <remark>
+      <title>1.2.B</title>
+      <p>
+        Explain how collaboration can reduce bias in apps.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Collaboration and User Testing</title>
+
+    <note>
+      <title>1.2.A.1</title>
+      <p>
+        User testing with a variety of users helps programmers design an app with a clear purpose
+        that is intuitive for its intended users and minimizes confusion.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.A.2</title>
+      <p>
+        Programmers can conduct user testing to understand how people use an app,
+        including where users are confused or have unmet needs.
+        Observing participants during development provides evidence programmers can use to
+        refine the app’s purpose and design.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.A.3</title>
+      <p>
+        Working collaboratively on an app brings together a variety of talents and perspectives
+        that can improve the final product.
+        Teams can divide tasks, share ideas, and review and document decisions as they develop
+        the app.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.A.4</title>
+      <p>
+        Working collaboratively gives programmers opportunities to share roles throughout development.
+        Pair programming is one collaboration practice in which two programmers work together
+        at one computer: one writes the code, while the other reviews the code as it is written,
+        checks for errors, and keeps the bigger picture in mind.
+        Partners switch roles frequently so both contribute to writing code and problem-solving.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.A.5</title>
+      <p>
+        Apps and programs are improved through an iterative process.
+        Teams use feedback from user testing and collaboration to make changes and test again
+        to verify an app more accurately meets user needs.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Reducing Bias through Collaboration</title>
+
+    <note>
+      <title>1.2.B.1</title>
+      <p>
+        Bias occurs when an app consistently favors certain people, values, or outcomes over others.
+        Bias can be harmful because it can make results less accurate for some users and
+        can contribute to unfair treatment or unequal access.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.B.2</title>
+      <p>
+        Apps can reflect human bias when programmers’ assumptions, rules, or interface choices
+        favor some users over others.
+        Apps can also reflect data bias when the data used to train or inform the app is incomplete
+        or unrepresentative of the people and situations the app is intended to work well for.
+        Human bias and data bias often interact.
+        Choices about what data to collect and how to label it can shape how an app behaves for different users.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.B.3</title>
+      <p>
+        Collaboration can help reduce bias by bringing multiple perspectives into design and testing.
+        Teams can review design decisions and data together, look for missing perspectives,
+        and gather feedback from a variety of users.
+      </p>
+    </note>
+
+    <note>
+      <title>1.2.B.4</title>
+      <p>
+        When potential bias is identified, teams can revise the rules, data, or design and then
+        test again to check whether outcomes are more accurate and fair across different users and situations.
+      </p>
+    </note>
+  </subsection>
+</section>

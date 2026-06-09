@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-1-7-expressions">
+  <time minutes="90" />
+  <title>Mathematical Expressions</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>1.7.A</title>
+      <p>Develop code using mathematical expressions, and determine the result of these expressions.</p>
+    </remark>
+
+    <remark>
+      <title>1.7.B</title>
+      <p>Develop code to generate random numbers, and determine the possible values that could be
+        produced as a result.</p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Mathematical Expressions</title>
+    <note>
+      <title>1.7.A.1</title>
+      <p>Apps use mathematical expressions to calculate values that help users make decisions, such
+        as prices, time estimates, or progress toward a goal.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.2</title>
+      <p>Mathematical expressions can be used to update the state of a program by changing values
+        stored in variables, such as scores, timers, levels, and resource usage.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.3</title>
+      <p>An integer is a numeric data type that represents positive and negative whole numbers,
+        including zero. Integers are often used for counts or scores in a program.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.4</title>
+      <p>Arithmetic operators appear in most programming languages, but the notation used for those
+        operations is determined by the language. Common arithmetic operators include addition <c>+</c>,
+        subtraction <c>-</c>, multiplication <c>*</c>, division <c>/</c> and modulo <c>%</c>.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.5</title>
+      <p>The modulo operation <c>%</c> evaluates to the remainder when one integer is divided by
+        another: <c>a % b</c> is the remainder when <c>a</c> is divided by <c>b</c>. Modulo can be
+        used to identify patterns in numbers, such as whether a number is even or odd, and to help
+        format values in user-friendly ways, such as converting total minutes into hours and
+        minutes.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.6</title>
+      <p>Expressions enclosed in parentheses are evaluated first. Then, multiplication <c>*</c>,
+        division <c>/</c>, and modulo <c>%</c> operations are evaluated from left to right. Then,
+        addition <c>+</c> and subtraction <c>-</c> operations are evaluated from left to right.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.7</title>
+      <p>The result of a mathematical expression can be determined by evaluating it step by step
+        using the order of operations and operators.</p>
+    </note>
+
+    <note>
+      <title>1.7.A.8</title>
+      <p>Mathematical expressions can include variables. To determine the result, substitute the
+        current values of variables and then evaluate the expression using the order of operations.</p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Random Numbers</title>
+    <note>
+      <title>1.7.B.1</title>
+      <p>Apps use random number generation to create variety and unpredictability, such as in games,
+        simulations, or randomly generated prompts.</p>
+    </note>
+
+    <note>
+      <title>1.7.B.2</title>
+      <p>Random values can support variation in app behavior, such as shuffling a playlist,
+        selecting a random item, or assigning outcomes like rolling a die.</p>
+    </note>
+
+    <note>
+      <title>1.7.B.3</title>
+      <p>Programmers can determine the set of possible values produced by a random command by
+        identifying the endpoints and whether they are included. When the following code runs, a
+        random integer from <c>a</c> to <c>b</c>, including <c>a</c> and <c>b</c>, is generated and
+        returned. Each result is equally likely to occur. The possible results of <c>random(a, b)</c>
+        are all integers from <c>a</c> through <c>b</c>. <c>random(a, b)</c></p>
+    </note>
+
+    <note>
+      <title>1.7.B.4</title>
+      <p>When a program uses random number generation, the same code can produce different results
+        each time it runs.</p>
+    </note>
+  </subsection>
+</section>

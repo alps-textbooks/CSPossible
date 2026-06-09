@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-1-3-responsible-ai">
+  <time minutes="45" />
+  <title>Responsible AI and Human Decision-Making</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>1.3.A</title>
+      <p>
+        Explain how human decisions shape the development, deployment, and maintenance of AI tools.
+      </p>
+    </remark>
+
+    <remark>
+      <title>1.3.B</title>
+      <p>
+        Evaluate the appropriate level of automation or augmentation for a task.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Human Decisions in AI</title>
+
+    <note>
+      <title>1.3.A.1</title>
+      <p>
+        AI tools can affect everyday choices such as what people watch, buy, and learn.
+        Understanding the human decisions behind AI helps users evaluate outputs critically and
+        helps developers design and maintain tools that are safer, more accurate, and more fair.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.2</title>
+      <p>
+        Artificial intelligence (AI) refers to computer systems that use data and patterns to
+        perform tasks that are often associated with human intelligence, producing outputs such
+        as predictions, recommendations, decisions, or generated content.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.3</title>
+      <p>
+        In AI systems, a model is the part of the system used to produce outputs from inputs.
+        Models may follow rules created by people or learn patterns from data.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.4</title>
+      <p>
+        Many modern AI models are created by training on examples.
+        The quality and representativeness of the training data can affect how accurate or fair the
+        model’s outputs are.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.5</title>
+      <p>
+        Generative AI is a type of AI that creates new content, such as text, images, music, or code,
+        based on patterns it has learned from examples.
+        Some generative AI tools are powered by large language models (LLMs), which generate text by
+        predicting likely sequences of words based on patterns learned from large collections of text.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.6</title>
+      <p>
+        Humans decide what happens with an AI tool’s output, including when to trust it,
+        what actions to take based on it, and when a human should review or make the final decision.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.7</title>
+      <p>
+        When AI tools are used to create or transform content, humans must consider what content
+        may be used and how outputs may be shared, including following licenses and giving attribution
+        when required.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.8</title>
+      <p>
+        AI tools can generate realistic images, audio, or video that may be mistaken for authentic
+        media (deepfakes).
+        Humans must make decisions about safeguards, such as disclosure, verification, and responsible
+        sharing, to reduce misinformation and harm.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.9</title>
+      <p>
+        Model drift occurs when a model’s performance changes over time because the real-world data
+        or conditions it encounters shift, potentially making the model less accurate.
+        AI systems should be monitored by humans to detect model drift. When drift is detected,
+        humans can update data, adjust the model, or retrain the system to reduce inaccurate or
+        harmful outcomes.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.A.10</title>
+      <p>
+        Developers can increase transparency by clearly describing an AI tool’s purpose, how it
+        was developed, trained, and evaluated, and its limitations and appropriate uses.
+        This allows users to make informed choices.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Automation and Augmentation</title>
+
+    <note>
+      <title>1.3.B.1</title>
+      <p>
+        Decisions about automation and augmentation affect everyday experiences, such as recommendations,
+        autocorrect suggestions, and navigation directions.
+        Understanding whether a system is acting automatically or supporting human decision-making
+        helps users decide how much to rely on its output and when they should verify it, especially
+        when errors, bias, or other limitations could affect the result.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.B.2</title>
+      <p>
+        Automation allows computers to carry out tasks with limited human involvement, often making
+        work faster, more consistent, and more efficient.
+        Automated systems can handle routine tasks and, in some cases, more complex ones.
+        They may still produce inaccurate results when inputs are ambiguous, conditions change, or
+        unusual cases are not handled well.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.B.3</title>
+      <p>
+        Accuracy is the degree to which an output or code solution matches defined criteria for
+        correctness, such as a program’s requirements or known correct outputs.
+        Accuracy can be evaluated by testing with defined inputs and comparing actual results to
+        expected results.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.B.4</title>
+      <p>
+        Augmentation uses tools or systems to support human work while humans remain responsible for
+        decisions and outcomes.
+        In some cases, augmentation involves AI, such as in human-in-the-loop systems where AI outputs
+        are reviewed by humans to improve accuracy and accountability.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.B.5</title>
+      <p>
+        The appropriateness of automation or augmentation depends on the context and the consequences
+        of error.
+        Although automation can be faster, more consistent, or easier to scale, it may be less appropriate
+        in situations that are high-stakes, ambiguous, or require human judgment, empathy, or discretion.
+        In those situations, augmentation may be preferred so that humans remain responsible for the final decision.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.B.6</title>
+      <p>
+        Evaluating the appropriate level of automation or augmentation requires weighing benefits such
+        as speed or efficiency against risks such as bias, inaccuracy, privacy, or overreliance,
+        including how thresholds affect outcomes.
+        It also means considering social, environmental, and economic trade-offs such as impacts on people,
+        resource and energy use, costs, labor, and access.
+      </p>
+    </note>
+
+    <note>
+      <title>1.3.B.7</title>
+      <p>
+        Evaluating automation or augmentation should consider how the choice affects user experience,
+        including trust, transparency, and whether users can reasonably decline or reduce automation,
+        such as choosing manual controls or requesting human review when needed.
+      </p>
+    </note>
+  </subsection>
+</section>
