@@ -15,6 +15,8 @@
       <p>Identify the use of variables in an app while interacting with it.</p>
     </remark>
 
+    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2" />
+
     <remark>
       <title>1.6.B</title>
       <p>Develop code for assignment statements using variables, and determine the values that are
