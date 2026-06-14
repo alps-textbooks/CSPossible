@@ -14,10 +14,10 @@
       data is stored as bits, which are just 0's and 1's. It's all bits! In this topic, you'll learn
       how computers use bits to represent and process data.
     </p>
-    <image source="_static/Unit1images/bits.png" width="20%" />
+    <image source="_static/Unit1images/allbits.png" width="60%" />
 
   </introduction>
-  <subsection>
+  <subsection xml:id="LOs-1-4">
     <title>Learning Objectives</title>
 
     <remark>
@@ -35,7 +35,7 @@
 
   </subsection>
 
-  <subsection>
+  <subsection xml:id="data-bits">
     <title>Data and Bits</title>
 
     <note>
@@ -62,7 +62,7 @@
 
   </subsection>
 
-  <subsection>
+  <subsection xml:id="binary">
     <title>Binary Numbers</title>
     <p>
       Binary is a base-2 number system that uses only two digits, 0 and 1, to represent all numbers.
@@ -305,11 +305,11 @@
   </subsection>
 
 
-  <subsection>
+  <subsection xml:id="abstraction">
     <title>Abstraction</title>
 
-      <idx>abstraction</idx>
-  
+    <idx>abstraction</idx>
+
     <note>
       <title>1.4.A.2</title>
       <p>
@@ -319,9 +319,10 @@
         needing to understand how the bits are stored or processed. </p>
     </note>
 
-    <p>Watch the following <url href="https://www.youtube.com/watch?v=XpJdZrviSuw">video about
-      abstraction</url> (<url href="http://www.teachertube.com/video/abstraction-347740">TeacherTube
-      version</url>, <url
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=XpJdZrviSuw">video by Dr.
+        Ralph Morelli about abstraction</url> (<url
+        href="http://www.teachertube.com/video/abstraction-347740">TeacherTube
+        version</url>, <url
         href="https://docs.google.com/a/css.edu/presentation/d/1nOMpxZpdkCcS6Wc-eU8eeBi-z55LyKSJRBCVolJDM78">
       slides</url>). </p>
 
@@ -549,9 +550,9 @@
 
   </subsection>
 
-  <subsection>
+  <subsection xml:id="encoding">
     <title>Encoding in Bits</title>
-   <idx>encoding</idx>    
+    <idx>encoding</idx>
 
     <note>
       <title>1.4.A.3</title>
@@ -648,9 +649,9 @@
 
   </subsection>
 
-  <subsection>
+  <subsection xml:id="binary-limits">
     <title>Limitations of Binary Representation</title>
-    
+
     <idx>roundoff error</idx>
     <idx>overflow error</idx>
 
@@ -801,7 +802,7 @@
 
   </subsection>
 
-  <subsection>
+  <subsection xml:id="vocab-1-4">
     <title>Vocabulary Review</title>
 
     <activity label="binary-vocab">
