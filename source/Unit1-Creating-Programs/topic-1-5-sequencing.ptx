@@ -511,7 +511,7 @@
     <statement>
       <p>What shape will the program below draw when run?
       </p>
-      <p><var/></p>
+      <p> <fillin answer="square" mode="string" /></p>
       <pre>
 import turtle    
 zari = turtle.Turtle()    
@@ -525,20 +525,23 @@ zari.left(90)
 zari.forward(100)       
 </pre>
     </statement>
-    <setup>
-      <var>
-        <condition string="^\s*square|Square|SQUARE\s*$">
-          <feedback>
-            <p>Correct!</p>
-          </feedback>
-        </condition>
-        <condition string="^\s*.*\s*$">
-          <feedback>
-            <p>Try again. Choose between an A, C, L, circle, triangle, square, pentagon.</p>
-          </feedback>
-        </condition>
-      </var>
-    </setup>
+     <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>
+              Correct!
+            </feedback>
+          </test>
+
+          <test>
+            <!-- else -->
+            <feedback>
+              <p>Try again. Choose between an A, C, L, circle, triangle, square, or pentagon.</p> 
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation> 
   </activity>
 
 
@@ -605,7 +608,7 @@ zari.forward(100)
     <statement>
       <p>What x-coordinate will be printed out by this code?
       </p>
-      <p><var/></p>
+      <p><fillin answer="50" mode="string" /></p>
       <pre>
 import turtle    
 teeny = turtle.Turtle()       
@@ -615,20 +618,23 @@ teeny.left(30)
 print( teeny.xcor() )     
 </pre>
     </statement>
-    <setup>
-      <var>
-        <condition string="50">
-          <feedback>
-            <p>Correct!</p>
-          </feedback>
-        </condition>
-        <condition string="^\s*.*\s*$">
-          <feedback>
+     <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>
+              Correct! 
+            </feedback>
+          </test>
+
+          <test>
+            <!-- else -->
+            <feedback>
             <p>Try again. Turning does not change the x-coordinate.</p>
-          </feedback>
-        </condition>
-      </var>
-    </setup>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
   </activity>
 
     <note>
