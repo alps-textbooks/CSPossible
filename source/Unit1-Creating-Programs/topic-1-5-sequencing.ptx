@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="topic-1-5-sequencing">
-  <time minutes="45" />
+  <time minutes="90" />
   <title>Sequencing</title>
+
   <introduction>
-    <p>
+    <p>In this lesson, we will talk about algorithms using sequential steps and start coding in Python with 
+      <c>print</c> statements and Turtle code to draw shapes.
     </p>
   </introduction>
-  <subsection>
+  <subsection xml:id="LOs-1-5">
     <title>Learning Objectives</title>
     <remark>
       <title>1.5.A</title>
@@ -21,38 +23,203 @@
   </subsection>
 
 
-  <subsection>
+  <subsection xml:id="sequencing">
     <title>Sequencing in Written Steps and Flowcharts</title>
+
+    <idx>algorithm</idx>
+    <idx>sequencing</idx>
+    <idx>flowchart</idx>
+
     <note>
       <title>1.5.A.1</title>
-      <p>Many tasks can be completed by following step-by-step instructions. An algorithm describes
-        these steps in an order that can be followed to solve a problem.</p>
+      <p>Many tasks can be completed by following step-by-step instructions. An <term>algorithm</term>
+    describes these steps in an order that can be followed to solve a problem.</p>
     </note>
+
+    <p><term>
+    Algorithms</term> are step by step instructions for solving a problem or completing a task.
+    Before writing code, programmers often design algorithms to plan out the steps needed to solve a
+    problem. Algorithms are used in many areas of life, not just in computer science. For example, a
+    recipe is an algorithm for cooking a meal. A set of directions to a friend’s house is an
+    algorithm for getting there. </p>
+
+    <p>Watch the following video about algorithms by Dr. Ralph
+    Morelli, one of the founders of Mobile CSP (<url
+        href="https://docs.google.com/presentation/d/1XfwXHnhzIxQQppKgxS6PAhc9f61LHeLcILd6feAHc8E/edit?usp=sharing">
+    slides</url>, <url href="https://www.teachertube.com/videos/359066">TeacherTube version</url> ). </p>
+
+    <video
+      youtube="60CzIn2FIcM" label="video-algorithms" />
+
+
+    <activity label="pbj-algorithm">
+      <statement>
+        <p>Write an algorithm in the form of written steps for how to make a peanut butter and jelly
+    sandwich.
+          Have a friend attempt to follow it.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+    <p>Watch the following video of how instructions to make a peanut
+    butter and jelly sandwich
+      can go horribly wrong if the instructions are not precise enough!</p>
+    <video
+      youtube="A9LDjdB5Uko" label="video-pbj" />
 
     <note>
       <title>1.5.A.2</title>
-      <p>Algorithms can be represented in ways people can read and follow, such as written steps or
-        flowcharts.</p>
+      <p>Algorithms can be represented in ways people can read and follow, such as written steps or <term>
+    flowcharts</term>.</p>
     </note>
 
     <note>
       <title>1.5.A.3</title>
       <p>When representing an algorithm in written steps or a flowchart, each step should be clear
-        and specific so the process can be followed correctly.</p>
+    and specific so the process can be followed correctly.</p>
     </note>
+
+   <p>Algorithms can be written as text in any language or in <term>pseudocode</term> which is a way to describe 
+    precise coding steps using a language like English or using <term>flowcharts</term>. 
+    Here's an example of a flowchart for choosing a pet:</p> 
+    
+    <image source="_static/Unit1images/pet-flowchart.png"  width="80%" alt="Choosing a pet flowchart"/>
+
+    <activity label="flowchart-clothes">
+      <statement>
+        <p>Create a flowchart to help someone decide what clothes to wear based on the weather.
+          Be sure to include yes/no questions and different paths for at least 4 different outcomes.
+        </p>
+      </statement>
+      <response />
+    </activity>
 
     <note>
       <title>1.5.A.4</title>
-      <p>Sequencing means the steps of an algorithm are carried out in a specific order, one step at
-        a time. Changing the order of the steps can change what happens or whether the task is
-        completed correctly.</p>
+      <p><term>Sequencing</term> means the steps of an algorithm are carried out in a specific
+    order, one step at a time. Changing the order of the steps can change what happens or whether
+    the task is completed correctly.</p>
     </note>
+
+    <p>The activity below demonstrated that the steps
+    of an algorithm need to be in order.
+      Put the steps for sending a text message in order. Try them out of order and it will not work!</p>
+  <activity
+      label="algorithm-text-message" adaptive="yes">
+      <statement>
+        <p>
+          Put the following pseudocode algorithm steps for sending a text message
+          in order. Click on Check Me to see if you are right.
+        </p>
+      </statement>
+
+      <blocks>
+        <block>
+          <cline>Unlock your phone.</cline>
+        </block>
+        <block>
+          <cline>Open the messaging app.</cline>
+        </block>
+        <block>
+          <cline>Choose a contact.</cline>
+        </block>
+        <block>
+          <cline>Type your message.</cline>
+        </block>
+        <block>
+          <cline>Press Send.</cline>
+        </block>
+      </blocks>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="print">
+    <title>Python Output with <c>print()</c></title>
+      <idx>print</idx>
+      <idx>output</idx>
+
+    <p>The <c>print()</c> function is used to display output to the screen in Python. Inside the
+      parenthesis of the function, you can put in any message in quotes to be printed out, for
+      example:</p>
+    <program language="python">
+      <code>
+        print("Hello World!")
+      </code>
+    </program>
+
+    <p>
+      Try running this code in the exercise below. Notice that every Python command to the computer
+      must be on a separate line.
+    </p>
+
+    <activity label="print1">
+      <statement>
+        <p>Run the following code. Then, change "World" to your name and run the code again.
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          print("Hello World!")
+          print("Good bye!")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("Hello",self.getOutput(),"Says hello")
+              self.assertNotIn("World",self.getOutput(),"Change World to your name")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+
+    <activity label="printMixedUp" adaptive="yes">
+      <statement>
+        <p>
+          Drag or click on the blocks you need to move them from the top section
+          into the yellow area to create a print statement that will print “Hi!”.
+          There are extra blocks that you don’t need.
+        </p>
+      </statement>
+      <blocks layout="horizontal">
+        <block>
+          <c>print</c>
+        </block>
+        <block>
+          <c>(</c>
+        </block>
+        <block>
+          <c>"Hi!"</c>
+        </block>
+        <block>
+          <c>)</c>
+        </block>
+        <block correct="no">
+          <c>;</c>
+        </block>
+        <block correct="no">
+          <c>Print</c>
+        </block>
+      </blocks>
+    </activity>
+
 
   </subsection>
 
 
-  <subsection>
+  <subsection xml:id="sequencing-print">
     <title>Sequencing in Code</title>
+      <idx>IDE</idx>
+
+    <p>In this e-book, you can write Python code right in the Active Code exercises. When you click
+      on run, the code is <term>executed</term> or run by the computer, which means the computer
+      follows the algorithm instructions in the code. </p>
+
     <note>
       <title>1.5.B.1</title>
       <p>When an app runs, a computer executes algorithms that are expressed as program code.</p>
@@ -60,11 +227,16 @@
 
     <note>
       <title>1.5.B.2</title>
-      <p>Programmers write code using tools such as text editors or integrated development
-        environments (IDEs) that help them write and run programs. Some tools include AI features
-        that can generate or autocomplete code, which programmers can adapt and test as they develop
-        programs.</p>
+      <p>Programmers write code using tools such as <term>text editors</term> or <term>integrated
+        development environments (IDEs)</term> that help them write and run programs. Some tools
+        include AI features that can generate or autocomplete code, which programmers can adapt and
+        test as they develop programs.</p>
     </note>
+
+    <p>The <term>IDE</term> in this e-book is in the Active Code exercise windows, but you could
+      copy the code into a <term>text editor</term> or <term>IDE</term> like VSCode that can be
+      downloaded to your computer and run. </p>
+
 
     <note>
       <title>1.5.B.3</title>
@@ -78,14 +250,297 @@
         order of statements can change the program’s behavior or what the user sees.</p>
     </note>
 
+    <p>To demonstrate that statements need to be in order, put the following Knock Knock joke in
+      order:</p>
+    <activity label="parsons-knock-knock" numbered="yes" adaptive="yes" indentation="show"
+      language="python">
+      <statement>
+        <p>
+          Put the lines of this knock-knock joke in the correct order.
+          Remember that Python executes statements sequentially in order from top to bottom.
+        </p>
+      </statement>
+
+      <blocks>
+        <block>
+          <cline>print("Knock knock!")</cline>
+        </block>
+
+        <block>
+          <cline>print("Who's there?")</cline>
+        </block>
+
+        <block>
+          <cline>print("Lettuce.")</cline>
+        </block>
+
+        <block>
+          <cline>print("Lettuce who?")</cline>
+        </block>
+
+        <block>
+          <cline>print("Let us in, it's cold out here!")</cline>
+        </block>
+      </blocks>
+    </activity>
+
+    <p>Now let's try it in Python code. Python executes each line of code in order, so if the lines
+      are out of order, the joke will not make sense when it is printed out. Put them in order by
+      moving the lines of code, and then run it again to see the joke printed out correctly!
+    </p>
+    <activity label="activecode-knock-knock">
+      <statement>
+        <p> The lines of this knock-knock joke are out of order. Run to see what it prints out! Highlight and drag
+          or cut and paste with (ctrl-x and ctrl-v) the <c>print</c> statements to put them in order, so the joke makes sense, and
+          then run again. </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+          print("Lettuce who?")
+          print("Knock knock!")
+          print("Let us in, it's cold out here!")
+          print("Who's there?")
+          print("Lettuce.")
+        </code>
+
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+
+            def test1(self):
+              output = self.getOutput()
+
+              expected = "Knock knock!\nWho's there?\nLettuce.\nLettuce who?\nLet us in, it's cold out here!\n"
+              
+              self.assertEqual(output,expected,"The joke lines are in the correct order.")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
   </subsection>
-  <subsection>
+
+  <subsection xml:id="debugging">
+    <title>Debugging</title>
+      <idx>debugging</idx>
+      <idx>syntax error</idx>
+    <p>
+      <term>Syntax errors</term> are bugs or mistakes in the way the code is written. For example,
+      the following code has a syntax error because the quotes and parenthesis are not closed. Try
+      running the code and see what happens. Try fixing the errors to <term>debug</term> the code. </p>
+    <activity label="debug1">
+      <statement>
+        <p>Run the following code. Fix the errors and run again.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          print("Hello World!
+        </code>
+        <tests>
+            from unittest.gui import TestCaseGui
+            class myTests(TestCaseGui):
+              def test1(self):
+                self.assertIn("Hello World!",self.getOutput(),"output")
+            myTests().main()
+        </tests>
+      </program>
+    </activity>
+  </subsection>
+
+  <subsection xml:id="turtles">
+    <title>Python Turtles</title>
+          <idx>turtle</idx>
+
+     <p>Python has a Turtle library where turtle objects can move around on the screen and draw
+      pictures. We can import the library and set up the drawing space and the turtle with the
+      following code where # indicates a comment that is not executed but explains the code.
+    </p>
+      <program language="python">
+        <code>
+          import turtle               # use the turtle library
+          yertle = turtle.Turtle()    # create a turtle named yertle
+          yertle.shape("turtle")      # make yertle look like a turtle (default is an arrow)
+        </code>
+      </program>
+    <p>We can set up a Turtle object like yertle that can be used to call functions to move the turtle around the screen. 
+      For example, the following code will move the turtle forward 100 pixels, turn it left 90 degrees, 
+      and move it forward 100 pixels again. The amount of movement or turning is put in parentheses 
+      after the function name. </p>
+      <program language="python">
+        <code>
+          yertle.forward(100)         # move forward 100 pixels
+          yertle.left(90)             # turn left 90 degrees
+          yertle.forward(100)         # move forward 100 pixels
+        </code>
+      </program>
+  <p> 
+    Try running the code to see how the turtle moves. You can change the numbers in the parentheses to move 
+    or turn different amounts. You can also use other functions like <c>right()</c> to turn right, 
+    <c>backward()</c> to move backward. Note that the turtle always starts facing to the right and moves forward
+    whichever way it is facing. 
+</p>
+ <activity label="turtle1">
+      <statement>
+        <p>Run the code below. Then, add one more statement at the end to move yertle forward 100 pixels. Run again.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          import turtle               # use the turtle library
+          yertle = turtle.Turtle()    # create a turtle named yertle
+          yertle.shape("turtle")      # make yertle look like a turtle
+
+          yertle.forward(100)         
+          yertle.left(90)             
+          yertle.forward(100)         
+          # Can you add code below to make yertle move forward again?
+
+        </code>
+       <tests>
+            from unittest.gui import TestCaseGui
+            class myTests(TestCaseGui):
+              def test1(self):
+                  input_count = self.getEditorText().count(".forward")
+                  self.assertGreaterEqual(input_count, 3, "at least 3 forward statements")
+            myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    <activity label="turtle-capital-L" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>The following program uses a turtle to draw a capital L as shown below, but the lines are mixed up. 
+        The turtle should turn to face south, draw a line that is 150 pixels long, 
+        then turn to face east, and draw a line that is 75 pixels long. We have added a compass to 
+        the picture to indicate the directions north, south, west, and east. 
+        Drag the needed blocks of statements from the left column to the right column and put them in the 
+        right order. There may be additional blocks that are not needed in a correct solution. 
+        Then click on Check to see if you are right. 
+        You will be told if any of the lines are in the wrong order or are the wrong blocks.</p>
+  
+    <image source="_static/Unit1images/TurtleL4.png" width="30%" alt="Line-drawn capital L with compass"/>
+  
+    </statement>
+    <blocks numbered="left">
+       <block order="7">
+        <cline>import turtle</cline>
+      </block>
+      <block order="7">
+        <cline>ella = turtle.Turtle()</cline>
+      </block>
+      <block order="4">
+        <choice correct="yes">
+          <cline>ella.right(90)</cline>
+        </choice>
+        <choice>
+          <cline>ella.turn(90)</cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>ella.forward(150)</cline>
+      </block>
+      <block order="6">
+        <cline>ella.left(90)</cline>
+      </block>
+      <block order="1">
+        <choice correct="yes">
+          <cline>ella.forward(75)</cline>
+        </choice>
+        <choice>
+          <cline>ella.go(75)</cline>
+        </choice>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity label="turtle-square">
+      <statement>
+        <p>Run the following code. Can you make the turtle complete the square? Can you change its pen color 
+          for each side of the square?
+     </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          import turtle               
+          tina = turtle.Turtle() 
+          tina.shape("turtle") 
+          tina.color("green")       # set pen color to green  
+          tina.fillcolor("green")   # set turtle body and fill color to green
+
+          tina.forward(100)         
+          tina.right(90)          
+          tina.forward(100)
+          # add code to complete the square 
+
+
+        </code>
+       <tests>
+            from unittest.gui import TestCaseGui
+            class myTests(TestCaseGui):
+              def test1(self):
+                  input_count = self.getEditorText().count(".forward")
+                  self.assertGreaterEqual(input_count, 4, "at least 4 forward statements")
+                  input_count = self.getEditorText().count(".right")
+                  self.assertGreaterEqual(input_count, 4, "at least 4 right turns")
+                  input_count = self.getEditorText().count(".color")
+                  self.assertGreaterEqual(input_count, 2, "at least 2 colors")
+                  
+            myTests().main()
+        </tests>
+      </program>
+    </activity>
+  </subsection>
+
+  <subsection xml:id="tracing">
     <title>Tracing Sequential Code</title>
+      <idx>tracing</idx>
+      <idx>trace table</idx>
+   
     <note>
       <title>1.5.B.5</title>
       <p>Tracing program execution means following which statements are executed and what values are
         produced and stored as the program runs.</p>
     </note>
+
+    <p>Pretend that you are the computer and trace through the code below line by line to figure out 
+      what the turtle will draw.</p>
+     
+    <activity label="turtle-trace">
+    <statement>
+      <p>What shape will the program below draw when run?
+      </p>
+      <p><var/></p>
+      <pre>
+import turtle    
+zari = turtle.Turtle()    
+zari.left(90)      
+zari.forward(100) 
+zari.left(90)                
+zari.forward(100)       
+zari.left(90)          
+zari.forward(100)      
+zari.left(90)          
+zari.forward(100)       
+</pre>
+    </statement>
+    <setup>
+      <var>
+        <condition string="^\s*square|Square|SQUARE\s*$">
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*.*\s*$">
+          <feedback>
+            <p>Try again. Choose between an A, C, L, circle, triangle, square, pentagon.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+  </activity>
+
 
     <note>
       <title>1.5.B.6</title>
@@ -94,11 +549,87 @@
         of expression followed by a new line. <c>print(expression)</c></p>
     </note>
 
+    <p>The <c>xcor()</c> turtle command will print out the current x-coordinate of the turtle on the screen. 
+    Try running the following program that uses <c>print</c> statements to trace the current location of the turtle.
+    </p>
+    
+      <activity label="turtle-xcor">
+      <statement>
+        <p>Run the following code. Add another print statement to print out tina's current x-coordinate at the end. </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          import turtle               
+          tina = turtle.Turtle() 
+          tina.shape("turtle") 
+          tina.color("purple")   
+          tina.fillcolor("purple")    
+
+          print( tina.xcor() )
+          tina.forward(50) 
+          print( tina.xcor() )                 
+          tina.forward(50)
+          # add another print statement 
+
+
+        </code>
+       <tests>
+            from unittest.gui import TestCaseGui
+            class myTests(TestCaseGui):
+              def test1(self):
+                  input_count = self.getEditorText().count(".xcor")
+                  self.assertGreaterEqual(input_count, 3, "at least 3 xcor")
+                  self.assertIn("100",self.getOutput(),"50+50")
+            myTests().main()
+        </tests>
+      </program>
+    </activity>
+    
     <note>
       <title>1.5.B.7</title>
       <p>The result of sequential statements can be determined by tracing code in order and keeping
         track of the values and output.</p>
     </note>
+
+     <p>
+      Trace tables can be used to track the values as they change
+      throughout a program. To trace through code, write down a variable in each
+      column or row in a table and keep track of its value throughout the
+      program. Some trace tables also keep track of the output like below.
+    </p>
+
+      <image source="_static/Unit1images/traceTable.png" width="30%" alt="Trace table" />
+    
+
+       <activity label="turtle-trace2">
+    <statement>
+      <p>What x-coordinate will be printed out by this code?
+      </p>
+      <p><var/></p>
+      <pre>
+import turtle    
+teeny = turtle.Turtle()       
+teeny.forward(20)                 
+teeny.forward(30) 
+teeny.left(30)      
+print( teeny.xcor() )     
+</pre>
+    </statement>
+    <setup>
+      <var>
+        <condition string="50">
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*.*\s*$">
+          <feedback>
+            <p>Try again. Turning does not change the x-coordinate.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+  </activity>
 
     <note>
       <title>1.5.B.8</title>
@@ -108,5 +639,99 @@
 
   </subsection>
 
+  <subsection xml:id="vocab-1-5">
+    <title>Vocabulary Review</title>
+    <activity label="sequencing-vocab">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
 
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">algorithm</premise>
+          <response>Step by step instructions for solving a problem</response>
+        </match>
+        <match>
+        <premise order="8">sequencing</premise>
+        <response>The default order of code that is run line-by-line from the top down</response>
+        </match>
+        <match>
+          <premise order="2">flowchart</premise>
+          <response>Visual representation of an algorithm that uses shapes and arrows to show the steps</response>
+        </match>
+
+        <match>
+          <premise order="3">IDE</premise>
+          <response>Software that provides tools for programmers to write, test, and debug code</response>
+        </match>
+        <match>
+          <premise order="5">syntax error</premise>
+          <response>A mistake in the way code is written that prevents it from running correctly</response>
+        </match>
+        <match>
+          <premise order="6">debugging</premise>
+          <response>The process of finding and fixing errors in code</response>
+        </match>  
+      </cardsort>
+    </activity>
+
+    </subsection>
+
+    <subsection xml:id="turtle-project">
+      <title>Turtle Project</title>
+
+      <activity label="turtle-project">
+      <statement>
+        <p>Draw something interesting with the turtle. The code below also shows how to change colors, 
+          fill in colors, lift up the pen, and draw dots. 
+          You could draw a flower, a house for the turtle, a smiley face, or anything you want.
+        </p>
+   </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          import turtle               
+          tina = turtle.Turtle() 
+          tina.shape("turtle") 
+          
+          tina.color("blue")       # set pen color to blue    
+          tina.fillcolor("green")  # set fill color to green     
+          tina.begin_fill()        # start filling in the shape 
+          # draw a closed shape
+          tina.forward(100)         
+          tina.right(90)
+          tina.forward(100)
+          tina.right(90)
+          tina.forward(100)
+          tina.right(90)
+          tina.forward(100)
+          tina.end_fill()         # end filling in the shape 
+
+          tina.penup()            # put pen up so it doesn't draw
+          tina.forward(150)       # move without drawing
+          tina.pendown()          # put pen down so it draws
+
+          tina.dot(50, "red")   # draw a red dot of size 20
+          
+
+        </code>
+       <tests>
+            from unittest.gui import TestCaseGui
+            class myTests(TestCaseGui):
+              def test1(self):
+                  input_count = self.getEditorText().count(".forward")
+                  self.assertGreaterEqual(input_count, 8, "at least 8 forward statements")
+            myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    </subsection>
 </section>

@@ -44,6 +44,9 @@
   <numbering>
    <!-- This starts chapter numbering at 0 -->
     <divisions chapter-start="0"/>
+     <!-- This may be needed in future PreTeXt versions which changes numbering 
+    <projects distinct="yes"/>  -->
+
     <!-- the divisions element describes the numbering of divisions.  -->
     <!-- @part-structure should be "decorative" or "structural",      -->
     <!-- were the latter would restart numbering chapters within each -->
@@ -68,6 +71,7 @@
   <html>
    <!--The platform host can be "web" or "runestone"-->
    <platform host="web"/>
+   <baseurl  href="http://localhost:8128/output/web/"/>
     <!-- knowled checkpoints interfere with ActiveCode problems -->
     <knowl exercise-inline="no" example="no" listing="no"/>
     <!-- for scratch code language -->
