@@ -124,11 +124,16 @@ div.time {
   padding-top: 1.5em;
 }
 
-/* Hide the numbering of <note> and <remark> elements for LOs and EKs */
+/* Hide the numbering of <note> and <remark> elements for LOs and EKs 
+   Then, because the figures and tables have the same numbering track, hide them too. */
 .ptx-content .note .codenumber,
 .ptx-content .note .period,
 .ptx-content .remark .codenumber,
-.ptx-content .remark .period {
+.ptx-content .remark .period
+.ptx-content .table .codenumber,
+.ptx-content .table .period,
+.ptx-content .figure .codenumber,
+.ptx-content .figure .period {
   display: none;
 }
 
