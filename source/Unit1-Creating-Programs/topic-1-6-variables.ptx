@@ -37,6 +37,12 @@
       <title>1.6.C</title>
       <p>Develop code to store and modify strings, and determine the output produced.</p>
     </remark>
+
+     <remark>
+      <title>Additional</title>
+      <p>Write code using Python input and print statements. </p>
+    </remark>
+
   </subsection>
 
   <subsection xml:id="vars-in-apps">
@@ -124,6 +130,9 @@
       </choices>
     </activity>
 
+    <idx>program state</idx>
+    <idx>state</idx>
+
     <note>
       <title>1.6.A.5</title>
       <p>Variables are often used to store information about the user or a program’s state, such as
@@ -144,7 +153,7 @@
       For example, the player with the name or initials "AKI" had a score of 12,000 at a certain point.
     </p>
     
-    <image source="_static/Unit1images/highScores.png" width="25%" alt="high scores list in a video game"/>
+    <image source="_static/Unit1images/highScores.png" width="30%" alt="high scores list in a video game"/>
 
     <note>
       <title>1.6.A.7</title>
@@ -291,6 +300,9 @@ Your score is?
 
   <subsection xml:id="data-types">
     <title>Data Types</title>
+    <idx>data types</idx>
+    <idx>type</idx>
+
 
     <p>The pizza app above stores lots of different types of data: the user's name, their age, their
       favorite color, and whether they like pizza. The user's name is text (which is called a <term>string</term>
@@ -374,6 +386,8 @@ Your score is?
 
   <subsection xml:id="naming-vars">
     <title>Naming variables</title>
+        <idx>names</idx>
+
     <p>Although you can name a variable almost anything you want,
       there are some rules and conventions to follow. In Python, variable names must follow these
       rules:
@@ -514,7 +528,8 @@ Your score is?
 
   <subsection xml:id="assignment">
     <title>Variables and Assignment</title>
-    
+        <idx>assignment</idx>
+
     <note>
       <title>1.6.B.1</title>
       <p>The assignment operator <c>=</c> allows a program to initialize or change the value stored
@@ -631,6 +646,11 @@ print("Final score:", gameScore)
 
   <subsection xml:id="strings">
     <title>Strings</title>
+    <idx>string</idx>
+    <idx>strings</idx>
+    <idx>concatenation</idx>
+    <idx>substring</idx>
+    <idx>empty string</idx>
 
     <p>In coding, a <term>string</term> is a sequence of characters surrounded by quotes (""). 
       Imagine strings with lined up letter beads like below. </p>
@@ -769,6 +789,8 @@ print(name + " is " + age + " years old")
       </code>
     </program>
 
+        <idx>slicing</idx>
+
         <activity label="slicing0">
        <statement>
         <p>Run the following code to see examples of slicing. Add to the code to 
@@ -854,6 +876,8 @@ print(name + " is " + age + " years old")
   
   <subsection xml:id="input">
     <title>Input</title>
+        <idx>input</idx>
+
     <p>Python has an <term>input</term> function that can be used to get input from the typed in by
       user. This input must be saved into a variable. This is another way to initialize or assign to a variable.
       The syntax for an input statement is: </p>
