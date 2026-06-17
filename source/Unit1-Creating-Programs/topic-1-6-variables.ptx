@@ -3,19 +3,29 @@
 <section xml:id="topic-1-6-variables">
   <time minutes="90" />
   <title>Variables</title>
+  <idx>variable</idx>
   <introduction>
     <p>
-    </p>
+      <term>Variables</term> are named memory locations that store values used by a program. 
+      These values can change or vary as the program runs. A variable is like a box with a label 
+      where different values can be put into the box.
+      For example, when you interact with an app or game, there may be variables that 
+      store your name or your score, and these variables can be used by the app to customize how
+      it behaves or the information it displays. 
+      In this section, you will learn how to identify variables in apps and how to use them in
+      Python code.  </p>
+
+      <image source="_static/Unit1images/variable-box.png" width="25%" alt="variable is like a box"/>
+
+
   </introduction>
 
-  <subsection>
+  <subsection xml:id="LOs-1-6">
     <title>Learning Objectives</title>
     <remark>
       <title>1.6.A</title>
       <p>Identify the use of variables in an app while interacting with it.</p>
     </remark>
-
-    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2" />
 
     <remark>
       <title>1.6.B</title>
@@ -29,14 +39,14 @@
     </remark>
   </subsection>
 
-  <subsection>
+  <subsection xml:id="vars-in-apps">
     <title>Identifying Variables in Apps</title>
 
     <note>
       <title>1.6.A.1</title>
-      <p>A variable is a named storage location used to hold a value that can change while the
-        program is running. It is an abstraction that lets programmers use a name to represent a
-        value.</p>
+      <p>A <term>variable</term> is a named storage location used to hold a value that can change
+        while the program is running. It is an abstraction that lets programmers use a name to
+        represent a value.</p>
     </note>
 
     <note>
@@ -47,9 +57,248 @@
         triggering a vibration.</p>
     </note>
 
+    
+    <p>Try the following pizza web app by typing in your name and choosing different options. 
+      Think about the inputs and outputs to the app. When you type in
+      your name and other inputs, your information gets saved in <term>variables</term> in the
+      program. These values can then be used in the outputs of the app. </p>
+
+    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2" />
+
+    <activity label="pizzaAppVars">
+      <statement>
+        <p>Interact with the pizza app above.
+          Which of the following are variables that the app above might use to store information
+          about the user.</p>
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>name</p>
+          </statement>
+          <feedback>
+            <p>The app needs to store the user's name to display it in the output.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>favoriteColor</p>
+          </statement>
+          <feedback>
+            <p>The app needs the favorite color to change the background to that color.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>address</statement>
+          <feedback>
+            <p>The app does not need the user's address to function, so it would not use a variable
+              to store this information.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>age</p>
+          </statement>
+          <feedback>
+            <p>The app needs to store the user's age to display it in the output.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>temperature</p>
+          </statement>
+          <feedback>
+            <p>The app does not need to know the temperature to function, so it would not use a
+              variable to store this information.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>likesPizza</p>
+          </statement>
+          <feedback>
+            <p>The app needs to store whether the user likes pizza to display it and pizza images in
+              the output.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <note>
+      <title>1.6.A.5</title>
+      <p>Variables are often used to store information about the user or a program’s state, such as
+        a username, a selected theme, a score, progress toward a goal, a shopping cart total, or
+        whether notifications are on. The program can use the stored value to adjust its behavior or
+        display the value to the user.</p>
+    </note>
+
+    <note>
+      <title>1.6.A.6</title>
+      <p><term>Program state</term> is the set of values and information a program is storing at a specific
+        moment, including variable values and any inputs it is using. As the program runs, the state
+        changes when inputs are received and variables are updated.</p>
+    </note>
+
+    <p>Some video games keep a list of players with the highest scores in the game.
+      Each entry in the list a snapshot of the <term>program state</term> at a certain time. 
+      For example, the player with the name or initials "AKI" had a score of 12,000 at a certain point.
+    </p>
+    
+    <image source="_static/Unit1images/highScores.png" width="25%" alt="high scores list in a video game"/>
+
+    <note>
+      <title>1.6.A.7</title>
+      <p>Users can infer the use of variables in an app by observing information that changes over
+        time, such as counters, totals, settings, progress, or status, and reasoning about what
+        values the app must store and update to produce those changes.</p>
+    </note>
+
+  <activity label="program-state-score">
+  <statement>
+    <p>
+      Assume that you are playing a game that starts with the score at 0. As you play, you earn or lose the 
+      following points from your score. Each event below is a program state. What is your score in the last program state?
+    </p>
+    <pre>
+Player earns 10 points.
+Player earns 5 points.
+Player loses 3 points.
+Your score is?
+</pre>
+
+    <p><fillin answer="12" mode="string" /></p>
+  </statement>
+
+  <evaluation>
+    <evaluate>
+      <test>
+        <strcmp use-answer="yes" />
+        <feedback>
+          Correct! The score changes each time the variable is updated. The final score is 12.
+        </feedback>
+      </test>
+
+      <test>
+        <!-- else -->
+        <feedback>
+          <p>
+            Try tracing the value of <c>score</c> after each line:
+          </p>
+          <ul>
+            <li>Start: 0</li>
+            <li>After adding 10: 10</li>
+            <li>After adding 5: 15</li>
+            <li>After subtracting 3 from 15: ?</li>
+          </ul>
+        </feedback>
+      </test>
+    </evaluate>
+  </evaluation>
+</activity>
+
+  </subsection>
+
+
+  <subsection xml:id="python-vars">
+    <title>Variables in Python</title>
+    <p>
+      <term>Variables</term> are names for memory locations that store values used in a program. 
+      In Python, a variable is created when a value is assigned to it. For example, the following code creates 
+      a variable named <c>name</c> and assigns it the value "Dani", and a variable named <c>age</c> and assigns it 
+      the value 16. Note that text values which are called <term>strings</term> are placed in quotes ("").
+    </p>
+    <program language="python">
+        <code>
+          # variable = value
+          name = "Dani"
+          age = 16
+        </code>
+      </program>
+
+      <p>In Python, multiple values can be printed out separated by commas.
+      The variables, name and age, are never put inside quotes because we do not want to literally
+      print the variable names; we want to print the values stored in the variables. </p>
+     <program language="python">
+        <code>
+          print(name, " is ", age, " years old.")
+        </code>
+      </program>
+
+    <activity label="printVars">
+      <statement>
+        <p>Run the following code. Change the variable values and run again.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          name = "Dani"
+          age = 16
+          print(name, " is ", age, " years old.")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("years old",self.getOutput(),"output")
+              self.assertNotIn("Dani",self.getOutput(),"Change Dani to a different name")
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    <activity label="mixedUpPrintVars" adaptive="yes">
+      <statement>
+        <p> Drag or click on the blocks you need to move them from the top section into the yellow
+          area to create a print statement with the variable <c>name</c>. For example, if <c>name
+          = "Alex"</c>, it will print "Hello Alex!". There are extra blocks that you don't need. </p>
+      </statement>
+      <blocks layout="horizontal">
+        <block>
+          <c>print</c>
+        </block>
+        <block>
+          <c>(</c>
+        </block>
+        <block>
+          <c>"Hello "</c>
+        </block>
+        <block>
+          <c>,</c>
+        </block>
+        <block>
+          <c>name</c>
+        </block>
+        <block>
+          <c>,</c>
+        </block>
+        <block>
+          <c>"!"</c>
+        </block>
+        <block>
+          <c>)</c>
+        </block>
+        <block correct="no">
+          <c>"Hello name!"</c>
+        </block>
+        <block correct="no">
+          <c>"name"</c>
+        </block>
+      </blocks>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="data-types">
+    <title>Data Types</title>
+
+    <p>The pizza app above stores lots of different types of data: the user's name, their age, their
+      favorite color, and whether they like pizza. The user's name is text, but their age is a
+      number. Whether they like pizza or not could be stored as a <b>Boolean</b> value of true or
+      false.</p>
+
     <note>
       <title>1.6.A.3</title>
-      <p>Every value in a program has a data type, such as a number, Boolean, or string. Some
+      <p>Every value in a program has a <term>data type</term>, such as a number, Boolean, or string. Some
         programming languages require programmers to specify the type, while others determine it
         automatically by how the data is used.</p>
     </note>
@@ -63,36 +312,212 @@
         output is represented in an app.</p>
     </note>
 
-    <note>
-      <title>1.6.A.5</title>
-      <p>Variables are often used to store information about the user or a program’s state, such as
-        a username, a selected theme, a score, progress toward a goal, a shopping cart total, or
-        whether notifications are on. The program can use the stored value to adjust its behavior or
-        display the value to the user.</p>
-    </note>
+    <p>In some languages, you have to declare the data type of a variable, but in Python, the data type is assigned 
+      automatically depending on its value during run time. 
+      Python has several built-in data types, including:</p>
+    <ul>
+      <li><term>int</term> - for integers (whole numbers)</li>
+      <li><term>float</term> - for floating-point numbers (decimals)</li>
+      <li><term>str</term> - for strings (text)</li>
+      <li><term>bool</term> - for boolean values (True or False)</li>
+    </ul>
 
-    <note>
-      <title>1.6.A.6</title>
-      <p>Program state is the set of values and information a program is storing at a specific
-        moment, including variable values and any inputs it is using. As the program runs, the state
-        changes when inputs are received and variables are updated.</p>
-    </note>
+    For example, the following two variables have different data types because of the value assigned to them.
+    Text in quotes are strings, where as numbers with no quotes are int or float data types.
+      <program language="python">
+      <code>
+        name = "Dani"   # type string
+        age = 16        # type int 
+      </code>
+    </program>
 
-    <note>
-      <title>1.6.A.7</title>
-      <p>Users can infer the use of variables in an app by observing information that changes over
-        time, such as counters, totals, settings, progress, or status, and reasoning about what
-        values the app must store and update to produce those changes.</p>
-    </note>
+    <p>You can check the data type of a variable using the <c>type()</c> function. For
+      example:</p>
+    <program language="python">
+      <code>
+        print(type(age)) # This will print int for an integer whole number
+        print(type(ageString)) # This will print str
+      </code>
+    </program>
+
+     <activity label="dataTypes">
+      <statement>
+        <p>Run the following code to see the data types of the variables. Add another print to 
+          see the type of the last variable.
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          name = "Dani"
+          age = 16
+          print("The variable name has the value", name, "and the type", type(name))
+          print("The variable age has the value", age, "and the type", type(age))
+          ageStr = "16"
+          # print out the type of ageStr
+
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+               self.assertIn("type(ageStr)", self.getEditorText(), "print(type(ageStr))" )
+    
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
   </subsection>
 
-  <subsection>
+  <subsection xml:id="naming-vars">
+    <title>Naming variables</title>
+    <p>Although you can name a variable almost anything you want,
+      there are some rules and conventions to follow. In Python, variable names must follow these
+      rules:
+</p>
+    <p>
+      <ul>
+        <li>
+          <p>It must start with a letter or an underscore <c>_</c>.</p>
+        </li>
+        <li>
+          <p>It can contain digits, like <c>1</c> or <c>9</c>, but not as the first character.</p>
+        </li>
+        <li>
+          <p>It cannot have spaces, or special symbols other than <c>_</c></p>
+        </li>
+        <li> It cannot be a Python <term>keyword</term>. Keywords are words that have special meaning
+          in the language(see below for examples). </li>
+        <li>
+          <p>Case matters. A variable named <c>result</c> is not the same as one named <c>Result</c>.</p>
+        </li>
+        <li><p>Use meaningful variable names that describe what the variable holds, not letters like x,y,z.</p></li>
+      </ul>
+    </p>
+
+    <note>
+      <title>1.6.B.3</title>
+      <p>Using meaningful variable names improves readability and helps programmers understand what
+        the stored values represent.</p>
+    </note>
+
+    <p>Python has a few dozen keywords that you can’t use as variable names. Here is a list of the
+      most common ones. If you ever have an error based on one of your variable names and do not know why,
+      compare your name to this list to make sure you are not using a keyword as your name.</p>
+    <table xml:id="python-keywords">
+      <title>Python keywords</title>
+      <tabular>
+        <row>
+          <cell> and </cell>
+          <cell> as </cell>
+          <cell> assert </cell>
+          <cell> break </cell>
+          <cell> class </cell>
+          <cell> continue </cell>
+        </row>
+        <row>
+          <cell> def </cell>
+          <cell> del </cell>
+          <cell> elif </cell>
+          <cell> else </cell>
+          <cell> except </cell>
+          <cell> exec </cell>
+        </row>
+        <row>
+          <cell> finally </cell>
+          <cell> for </cell>
+          <cell> from </cell>
+          <cell> global </cell>
+          <cell> if </cell>
+          <cell> import </cell>
+        </row>
+        <row>
+          <cell> in </cell>
+          <cell> is </cell>
+          <cell> lambda </cell>
+          <cell> nonlocal </cell>
+          <cell> not </cell>
+          <cell> or </cell>
+        </row>
+        <row>
+          <cell> pass </cell>
+          <cell> raise </cell>
+          <cell> return </cell>
+          <cell> try </cell>
+          <cell> while </cell>
+          <cell> with </cell>
+        </row>
+        <row>
+          <cell> yield </cell>
+          <cell> True </cell>
+          <cell> False </cell>
+          <cell> None </cell>
+          <cell> </cell>
+          <cell> </cell>
+        </row>
+      </tabular>
+    </table>
+
+    <activity label="legalVarNames">
+      <statement>
+        <p>Which of the following is <em>not</em> a legal variable name in Python?</p>
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>my name</p>
+          </statement>
+          <feedback>
+            <p>Right, you can't have a space in a variable name.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>my_name</p>
+          </statement>
+          <feedback>
+            <p>You can use an underscore between words in a variable name.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>_a1</p>
+          </statement>
+          <feedback>
+            <p>Although it is not very common, you can use an underscore as the first character in a
+              variable name</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>amountOfStuff</p>
+          </statement>
+          <feedback>
+            <p>You can use both uppercase and lowercase letters in a variable name.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>1A</p>
+          </statement>
+          <feedback>
+            <p>Correct, you can't use a digit as the first letter in a variable name.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="assignment">
     <title>Variables and Assignment</title>
+    
     <note>
       <title>1.6.B.1</title>
-      <p>The assignment operator allows a program to initialize or change the value stored in a
-        variable. When the following code runs, <c>expression</c> is evaluated, and the resulting
-        value is stored in the variable <c>a</c>. <c>a = expression</c></p>
+      <p>The assignment operator <c>=</c> allows a program to initialize or change the value stored
+        in a variable. When the following code runs, <c>expression</c> is evaluated, and the
+        resulting value is stored in the variable <c>a</c>. <c>a = expression</c></p>
     </note>
 
     <note>
@@ -101,12 +526,46 @@
         initialization, later statements can use the variable’s value and update it as the program
         runs.</p>
     </note>
+    <p>An <term>assignment statement</term> assigns a value to a variable using the <term>assignment</term>
+    operator <c>=</c>. The first assignment to a variable <term>initializes</term> the variable to its first value. 
+    It can then be changed with other assignment statements. For example, the variable <c>score</c> is initialized to 0
+    and then changes to 50 below. Note that the variable name must match exactly with the same capitalization and
+    spelling to have it refer to the same variable.</p> 
 
-    <note>
-      <title>1.6.B.3</title>
-      <p>Using meaningful variable names improves readability and helps programmers understand what
-        the stored values represent.</p>
-    </note>
+    <program language="python">
+      <code>
+        score = 0
+        score = 50
+      </code>
+    </program>
+
+    <activity label="varCaseSensitive">
+      <statement>
+        <p>
+          Python variables are case sensitive so <c>gameScore</c> and <c>gamescore</c> are
+          not the same. Run and fix the code below to use the right variable
+          name.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+gameScore = 0
+print("Initial score:", gamescore)
+game_score = 100
+print("Final score:", gameScore)
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("Initial score: 0\nFinal score: 100", self.getOutput(), "Initial score: 0 Final score: 100")
+
+          myTests().main()
+          </tests>
+       </program>
+    </activity>
 
     <note>
       <title>1.6.B.4</title>
@@ -119,6 +578,47 @@
         by tracing statements in order and updating the variable’s value after each assignment.</p>
     </note>
 
+     <activity label="trace-score">
+  <statement>
+    <p>
+      Trace the code below keeping track of the variables and their values. 
+      What is the value in the variable <c>score</c> after the code executes?  
+    </p>
+    <program language="python">
+      <code>
+        score = 0
+        name = "user"
+        score = 50
+        Name = "user1"
+        Score = 100
+      </code>
+    </program>
+
+    <p><fillin answer="50" mode="string" /></p>
+  </statement>
+
+  <evaluation>
+    <evaluate>
+      <test>
+        <strcmp use-answer="yes" />
+        <feedback>
+          Correct! The variable <c>score</c> changes from 0 to 50. The last line of the code changes a different
+          variable <c>Score</c> to 100.
+        </feedback>
+      </test>
+
+      <test>
+        <!-- else -->
+        <feedback>
+          <p>
+            Remember that variable names have to match exactly including capitalization to refer to the same memory location.
+          </p>
+        </feedback>
+      </test>
+    </evaluate>
+  </evaluation>
+</activity>
+
     <note>
       <title>1.6.B.6</title>
       <p>Assignment statements are often used to update information an app remembers about the user
@@ -127,38 +627,173 @@
     </note>
   </subsection>
 
-  <subsection>
+  <subsection xml:id="strings">
     <title>Strings</title>
+
+    <p>In coding, a <term>string</term> is a sequence of characters surrounded by quotes (""). 
+      Imagine strings with lined up letter beads like below. </p>
+
+    <image source="_static/Unit1images/strings.png" width="40%" alt="strings with letter beads"/>
+
     <note>
       <title>1.6.C.1</title>
-      <p>A string is an ordered sequence of characters used to represent text in a program.</p>
+      <p>A <term>string</term> is an ordered sequence of characters used to represent text in a
+        program.</p>
     </note>
+
+    <p>In the web app above, we saw that the variable <c>name</c> was assigned a value in quotes that was a string.</p>
 
     <note>
       <title>1.6.C.2</title>
       <p>Apps often use strings to store and display user-facing information, such as names,
         messages, labels, or search terms.</p>
     </note>
-
+    
     <note>
       <title>1.6.C.3</title>
-      <p>To initialize a string variable, programmers assign it an initial text value or an empty
-        string before it is used so the program starts with a known value. An empty string has zero
+      <p>To initialize a string variable, programmers assign it an initial text value or an <term>empty
+        string</term> before it is used so the program starts with a known value. An empty string has zero
         characters (<c>""</c>). It is not the same as a string that contains spaces (<c>" "</c>).</p>
     </note>
 
-    <note>
-      <title>1.6.C.4</title>
-      <p>String concatenation joins two or more strings to create a new string, such as combining a
-        greeting with a user’s name.</p>
-    </note>
+   <p>Variables can be assigned values or an <term>empty string</term> """" that will be filled in later.
+  Python allows double quotes "" or single quotes '' for string values. </p>
+    <program language="python">
+      <code>
+        name = "Sam"                 # double quotes
+        email = 'sam@gmail.com'      # single quotes
+        message = ""                 # empty string
+      </code>
+    </program>
 
     <note>
-      <title>1.6.C.5</title>
-      <p>A substring is part of an existing string. Programs can create substrings to extract or use
-        part of a text value, such as extracting the month from a date, reading a portion of a
-        message, or checking for a word within a string.</p>
+      <title>1.6.C.4</title>
+      <p>String <term>concatenation</term> joins two or more strings to create a new string, such as
+        combining a greeting with a user’s name.</p>
     </note>
+
+    <p>We can <term>concatenate</term> or <term>append</term> or add strings in Python using the operator <c>+</c>,
+      which can be used to add numbers or strings.
+    Blank spaces are not automatically added when you use <c>+</c> (unlike <c>,</c>), 
+    so if you want a blank space, you  need to type it inside the quotes or add in a string 
+    with just a space in it <c>" "</c> as shown below.
+    </p>
+
+    <program language="python">
+      <code>
+        name = "Sam"
+        message = "Hello " + name     # note the space after Hello
+        print(message)
+      </code>
+    </program>
+
+    <activity label="concat">
+       <statement>
+        <p>Run the following code to see the smushed output. Fix the error by putting in an extra space and
+          concatenate an <c>!</c> at the end.
+          </p>
+          </statement>
+      <program interactive="activecode" language="python">
+            <code>
+first = 'Sam'
+last = "Smith"
+fullName = first + " " + last
+print("Hello" + fullName)        # fix smushed output and add "!"
+        </code>
+      <tests>
+
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def testOne(self):
+              self.assertEqual(self.getOutput().strip(), "Hello Sam Smith!", "Add a space after Hello and add a ! at the end")
+          myTests().main()
+        </tests>   
+
+        </program>
+    </activity>
+        
+<p>Since the operator <c>+</c> is used to add numbers or concatenate strings in Python,  the interpreter
+will get confused and show an error if you use it to concatenate a string with a number. 
+To concatenate the number with a string we need to convert the number into a string first. 
+The <c>str(num)</c> function will convert a number into a string. Another option is to use the <c>,</c> instead
+of <c>+</c> in print statements because that will print different data types with no problem, but it can
+only be used in print statements. </p>
+
+    <activity label="concat-num-str">
+       <statement>
+        <p>Run the following code to see the error.  Fix the error by using <c>str</c> to convert
+          the number.
+          </p>
+          </statement>
+      <program interactive="activecode" language="python">
+            <code>
+name = "Sam"
+age = 16
+print(name + " is " + age + " years old")
+
+        </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def testOne(self):
+              self.assertEqual(self.getOutput().strip(), "Sam is 16 years old", "Use str(age)")
+          myTests().main()
+        </tests>   
+        </program>
+    </activity>
+        
+    <note>
+      <title>1.6.C.5</title>
+      <p>A <term>substring</term> is part of an existing string. Programs can create substrings to
+        extract or use part of a text value, such as extracting the month from a date, reading a
+        portion of a message, or checking for a word within a string.</p>
+    </note>
+
+    <p>In Python, every character in a string is associated with an index starting with 0. Square brackets
+      and an index can pull out any character from a string.
+    </p>
+    <image source="_static/Unit1images/stringIndex.png" width="50%" alt="string hello with the indices 0-5 above it"/>
+
+    <p>Python has a special <term>slicing</term> operator to pull out a <term>substring</term>
+      from a start index up to a end index (but not including the end index), <c>[start:end]</c>. </p>
+
+    <program language="python">
+      <code>
+        message = "Python is fun!"
+        letter = message[0]          # pull out 0th letter P
+        substring = message[0:6]     # substring "Python" from index 0 up to index 6
+      </code>
+    </program>
+
+        <activity label="slicing0">
+       <statement>
+        <p>Run the following code to examples of slicing. Add to the code to 
+          print another substring of <c>message</c> that uses slicing to pull out the word "fun".
+          </p>
+          </statement>
+      <program interactive="activecode" language="python">
+            <code>
+        message = "Python is fun!"
+        letter = message[0]
+        print("The 0th letter is", letter) 
+        print("Substring: ", message[0:6]  )   # substring "Python" from index 0 up to index 6
+        # print another substring of message that uses slicing to pull out the word fun.
+
+
+        </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def testOne(self):
+              self.assertIn("message[10:", self.getEditorText(), "Start from index 10 to pull out fun from message.")
+
+          myTests().main()
+        </tests>   
+        </program>
+    </activity>
 
     <note>
       <title>1.6.C.6</title>
@@ -166,10 +801,289 @@
         order and keeping track of how string values change and what text is displayed.</p>
     </note>
 
+  <activity label="trace-slicing">
+  <statement>
+    <p>
+      Trace the code below keeping track of the variables and their values. 
+      What is the value in the variable <c>score</c> after the code executes?  
+    </p>
+    <program language="python">
+      <code>
+         message1 = "Python is fun!"
+         message2 = "Coding"
+         message3 = message2 + message1[6:13]
+         print(message3)
+      </code>
+    </program>
+
+    <p><fillin answer="Coding is fun" mode="string" /></p>
+  </statement>
+
+  <evaluation>
+    <evaluate>
+      <test>
+        <strcmp use-answer="yes" />
+        <feedback>
+          Correct! 
+        </feedback>
+      </test>
+
+      <test>
+        <!-- else -->
+        <feedback>
+          <p>
+            The answer is 3 words separated by spaces. Remember that slicing is up to but not including the end index.
+            Capitalization matters. You can try the code in an active coding area.
+          </p>
+        </feedback>
+      </test>
+    </evaluate>
+  </evaluation>
+</activity>
+
     <note>
       <title>1.6.C.7</title>
       <p>To communicate clearly with users, programmers use strings to store and generate text that
         apps display, such as prompts, feedback messages, and personalized responses.</p>
     </note>
+
+  </subsection>
+
+  
+  <subsection xml:id="input">
+    <title>Input</title>
+    <p>Python has an <term>input</term> function that can be used to get input from the typed in by
+      user. This input must be saved into a variable. This is another way to initialize or assign to a variable.
+      The syntax for an input statement is: </p>
+
+    <program language="python">
+      <code>
+        variable_name = input("Input prompt or question? ")
+      </code>
+    </program>
+
+    <p>The following code will ask the user for their name and then print out a greeting.
+      Try it out by clicking the "Run" button.</p>
+
+    <activity label="input1">
+      <statement>
+        <p>Run the following code. Enter your name in the pop up input box and then scroll down to
+          see the output.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          name = input("What is your name? ")
+          print("Hello", name)
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("Hello",self.getOutput(),"output")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    <activity label="mixedUpInput" adaptive="yes">
+      <statement>
+        <p>
+          Drag or click on the blocks you need to move them from the top section
+          into the yellow area to create an input statement that will ask for the user's age.
+          There are extra blocks that you don't need.
+        </p>
+      </statement>
+      <blocks layout="horizontal">
+        <block>
+          <c>age</c>
+        </block>
+        <block>
+          <c>=</c>
+        </block>
+        <block>
+          <c>input</c>
+        </block>
+        <block>
+          <c>(</c>
+        </block>
+        <block>
+          <c>"What is your age?"</c>
+        </block>
+        <block>
+          <c>)</c>
+        </block>
+      </blocks>
+    </activity>
+ 
+
+    <p> The <c>input()</c> function in Python always returns a string, even if the user enters a number. 
+      For example, if the user enters "25", the variable will be a string containing "25", not the
+      integer number 25. But sometimes, you need it to be a number and not a string so that you can do math
+      with it.</p>
+
+    <p>To convert a string to an integer whole number or a floating point decimal number, you can use the 
+      <c>int()</c> or <c> float()</c> functions. We will need this in the next lesson to do math with or compare
+      these variables. For example:</p>
+    <program language="python">
+      <code>
+        ageStr = input("Enter your age: ")
+        age = int(ageStr) # Convert the string to an integer
+      </code>
+    </program>
+
+    <p>To convert a number back into a string, you can use the <c>str()</c> function. For example:</p>
+    <program language="python">
+      <code>
+        ageString = str(age) # Convert the integer back to a string
+      </code>
+    </program>
+
+    <activity label="dataTypesDebug">
+      <statement>
+        <p>Run the following code to see that there are some errors caused by the data types. Try
+          using int or str functions to convert the variables to the correct data type.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          score = input("Input the initial score: ")
+          print("Type of score after input:", type(score))
+          score = int(score)
+          print("Type of score after type conversion:", type(score))
+
+          bonus = input("Enter the bonus points (5-10): ")
+          print("Type of bonus after input:", type(bonus))
+          
+          # This will cause an error because bonus needs to be an int to be added to an int
+          score += bonus
+
+          # This will cause an error because score needs to be an string to be added to a string
+          print("Total score: " + score)
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("Total score",self.getOutput(),"output"))
+              self.assertIn("int(", self.getEditorText(), "Used int(" )
+              self.assertIn("str(", self.getEditorText(), "Used str(" )
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+  </subsection>
+  
+  <subsection xml:id="madlibs-project">
+  <title>Story Project</title>
+    <p> Let's make a poem or a story using input and variables in Python.
+      Ask the user to input different nouns and verbs, and weave together a story.</p>
+
+    <activity label="madlibs">
+      <title>Story</title>
+      <statement>
+        <p>Finish the input statements below to ask the user for 2 colors and a food item.
+          Run to see the silly poem. Then, ask the user for more input words and create your own
+          poem or story using the variables in print statements.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          # Get user input
+          pluralnoun1 = input("Enter a plural noun: ")
+          pluralnoun2 = input("Enter another plural noun: ")
+          # Complete 3 input statements below
+          color1 = input( )
+          color2 =
+          food =
+          # create 2 more variables and input statements
+
+          # Run to see the silly poem
+          print("Here's my silly poem!")
+          print("Roses are " + color1)
+          print(pluralnoun1 + " are " + color2)
+          print("I like " + food)
+          print("Do " + pluralnoun2 + " like them too?")
+          # Add at least 2 more lines to the poem
+          # using print and your last 2 variables
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("I like",self.getOutput(),"output")
+              input_count = self.getEditorText().count("input(")
+              self.assertGreaterEqual(input_count, 7, "at least 7 input statements")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="vocab-1-6">
+     <title>Vocabulary Review</title>
+
+    <activity label="vars-vocab">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>variable</premise>
+        <response>a named storage location used to hold a value that can change
+        while the program is running</response>
+        </match>
+        <match>
+          <premise>program state</premise>
+          <response>the set of values and information a program is storing at a specific
+        moment</response>
+        </match>
+        <match>
+          <premise>data types</premise>
+          <response>variables can be numbers, strings, or booleans</response>
+        </match>
+          <match>
+          <premise>=</premise>
+          <response>assignment operator</response>
+        </match>
+        <match>
+          <premise>string</premise>
+          <response>an ordered sequence of characters used to represent text in a
+        program</response>
+        </match>
+        <match>
+          <premise>keyword</premise>
+          <response>words that have special meaning in the programming language</response>
+        </match>
+         <match>
+          <premise>concatenation</premise>
+          <response>joins two or more strings to create a new string</response>
+        </match>
+         <match>
+          <premise>substring</premise>
+          <response>part of an existing string</response>
+        </match>
+          <match>
+          <premise>+</premise>
+          <response>addition or concatenation operator</response>
+        </match>
+
+  </cardsort>
+  </activity>
+
   </subsection>
 </section>
