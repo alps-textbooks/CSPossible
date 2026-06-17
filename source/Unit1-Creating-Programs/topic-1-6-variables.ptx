@@ -204,8 +204,9 @@ Your score is?
     <p>
       <term>Variables</term> are names for memory locations that store values used in a program. 
       In Python, a variable is created when a value is assigned to it. For example, the following code creates 
-      a variable named <c>name</c> and assigns it the value "Dani", and a variable named <c>age</c> and assigns it 
-      the value 16. Note that text values which are called <term>strings</term> are placed in quotes ("").
+      a variable named <c>name</c> and assigns the value "Dani" to it and a variable named <c>age</c> with 
+      the value 16. Note that text values like "Dani" are placed in quotes (""), but
+      numbers like 16 are not.
     </p>
     <program language="python">
         <code>
@@ -220,7 +221,7 @@ Your score is?
       print the variable names; we want to print the values stored in the variables. </p>
      <program language="python">
         <code>
-          print(name, " is ", age, " years old.")
+          print("Hello", name, "you are", age, "years old")
         </code>
       </program>
 
@@ -232,7 +233,7 @@ Your score is?
         <code>
           name = "Dani"
           age = 16
-          print(name, " is ", age, " years old.")
+          print("Hello", name, "you are", age, "years old")
         </code>
         <tests>
           from unittest.gui import TestCaseGui
@@ -292,9 +293,9 @@ Your score is?
     <title>Data Types</title>
 
     <p>The pizza app above stores lots of different types of data: the user's name, their age, their
-      favorite color, and whether they like pizza. The user's name is text, but their age is a
-      number. Whether they like pizza or not could be stored as a <b>Boolean</b> value of true or
-      false.</p>
+      favorite color, and whether they like pizza. The user's name is text (which is called a <term>string</term>
+      in coding, but the age is a number. Whether they like pizza or not could be stored as a <b>Boolean</b> value of true or
+      false. These are all different <term>data types</term>.</p>
 
     <note>
       <title>1.6.A.3</title>
@@ -335,15 +336,16 @@ Your score is?
       example:</p>
     <program language="python">
       <code>
+        print(type(name)) # This will print str, for a string or text data type
         print(type(age)) # This will print int for an integer whole number
-        print(type(ageString)) # This will print str
       </code>
     </program>
 
      <activity label="dataTypes">
       <statement>
         <p>Run the following code to see the data types of the variables. Add another print to 
-          see the type of the last variable.
+          see the type of the last variable which is a number inside quotes. You'll see that anything 
+          in quotes is a string, even if it is a number inside. 
         </p>
       </statement>
       <program interactive="activecode" language="python">
@@ -360,11 +362,11 @@ Your score is?
           from unittest.gui import TestCaseGui
 
           class myTests(TestCaseGui):
-            def test1(self):
-               self.assertIn("type(ageStr)", self.getEditorText(), "print(type(ageStr))" )
-    
+            def testOne(self):
+              self.assertIn("type(ageStr)", self.getEditorText(), "Print the type of ageStr")
+
           myTests().main()
-        </tests>
+        </tests> 
       </program>
     </activity>
 
@@ -404,7 +406,7 @@ Your score is?
 
     <p>Python has a few dozen keywords that you can’t use as variable names. Here is a list of the
       most common ones. If you ever have an error based on one of your variable names and do not know why,
-      compare your name to this list to make sure you are not using a keyword as your name.</p>
+      compare your name to this list to make sure you are not using a keyword as your variable name.</p>
     <table xml:id="python-keywords">
       <title>Python keywords</title>
       <tabular>
@@ -633,7 +635,7 @@ print("Final score:", gameScore)
     <p>In coding, a <term>string</term> is a sequence of characters surrounded by quotes (""). 
       Imagine strings with lined up letter beads like below. </p>
 
-    <image source="_static/Unit1images/strings.png" width="40%" alt="strings with letter beads"/>
+    <image source="_static/Unit1images/strings.png" width="50%" alt="strings with letter beads"/>
 
     <note>
       <title>1.6.C.1</title>
@@ -641,7 +643,7 @@ print("Final score:", gameScore)
         program.</p>
     </note>
 
-    <p>In the web app above, we saw that the variable <c>name</c> was assigned a value in quotes that was a string.</p>
+    <p>In the web app above, the text that the use types in like name was probably saved as strings. </p>
 
     <note>
       <title>1.6.C.2</title>
@@ -656,8 +658,8 @@ print("Final score:", gameScore)
         characters (<c>""</c>). It is not the same as a string that contains spaces (<c>" "</c>).</p>
     </note>
 
-   <p>Variables can be assigned values or an <term>empty string</term> """" that will be filled in later.
-  Python allows double quotes "" or single quotes '' for string values. </p>
+   <p>Variables can be assigned values or an <term>empty string</term> "" that will be filled in later.
+  Python allows double quotes "" or single quotes ' for string values. </p>
     <program language="python">
       <code>
         name = "Sam"                 # double quotes
@@ -754,10 +756,10 @@ print(name + " is " + age + " years old")
     <p>In Python, every character in a string is associated with an index starting with 0. Square brackets
       and an index can pull out any character from a string.
     </p>
-    <image source="_static/Unit1images/stringIndex.png" width="50%" alt="string hello with the indices 0-5 above it"/>
+    <image source="_static/Unit1images/stringIndex.png" width="60%" alt="string hello with the indices 0-5 above it"/>
 
     <p>Python has a special <term>slicing</term> operator to pull out a <term>substring</term>
-      from a start index up to a end index (but not including the end index), <c>[start:end]</c>. </p>
+      from a start index up to a end index (but not including the end index), <c>message[start:end]</c>. </p>
 
     <program language="python">
       <code>
@@ -769,7 +771,7 @@ print(name + " is " + age + " years old")
 
         <activity label="slicing0">
        <statement>
-        <p>Run the following code to examples of slicing. Add to the code to 
+        <p>Run the following code to see examples of slicing. Add to the code to 
           print another substring of <c>message</c> that uses slicing to pull out the word "fun".
           </p>
           </statement>
@@ -966,9 +968,8 @@ print(name + " is " + age + " years old")
 
           class myTests(TestCaseGui):
             def test1(self):
-              self.assertIn("Total score",self.getOutput(),"output"))
-              self.assertIn("int(", self.getEditorText(), "Used int(" )
-              self.assertIn("str(", self.getEditorText(), "Used str(" )
+              self.assertIn("Total score",self.getOutput(),"output")
+              self.assertIn("int(bonus)", self.getEditorText(), "Used int(bonus)"" )
 
           myTests().main()
         </tests>
@@ -1054,20 +1055,12 @@ print(name + " is " + age + " years old")
         </match>
         <match>
           <premise>data types</premise>
-          <response>variables can be numbers, strings, or booleans</response>
-        </match>
-          <match>
-          <premise>=</premise>
-          <response>assignment operator</response>
+          <response>numbers, strings, or booleans</response>
         </match>
         <match>
           <premise>string</premise>
           <response>an ordered sequence of characters used to represent text in a
         program</response>
-        </match>
-        <match>
-          <premise>keyword</premise>
-          <response>words that have special meaning in the programming language</response>
         </match>
          <match>
           <premise>concatenation</premise>
@@ -1077,11 +1070,6 @@ print(name + " is " + age + " years old")
           <premise>substring</premise>
           <response>part of an existing string</response>
         </match>
-          <match>
-          <premise>+</premise>
-          <response>addition or concatenation operator</response>
-        </match>
-
   </cardsort>
   </activity>
 
