@@ -6,7 +6,7 @@
 <docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <!-- A unique name for the book in a catalog; for example, see https://pretextbook.org/catalog.html and https://runestone.academy/ns/books/index. It contains a simple lowercase string with no dashes or other special characters. See https://pretextbook.org/doc/guide/html/sec-publishing-to-runestone-academy.html for more information. -->
-  <document-id>csphenomenal</document-id>
+  <document-id>cspossible</document-id>
 
   <!-- Rename Checkpoint for exercise to Activity -->
   <rename element="inlineexercise">Activity</rename>
@@ -16,7 +16,7 @@
 
   <!-- <brandlogo url="./index.html" source="_static/CSAwesomeLogo.png" alt="CSAwesome" /> -->
   <blurb shelf="AP Computer Science">
-    CSPhenomenal is the newest AP CSP Python curriculum approved to meet the 2027-2028 College Board standards and an introductory college-level computer programming course in Python.
+    CSPossible is the newest AP CSP Python curriculum approved to meet the 2027-2028 College Board standards and an introductory college-level computer programming course in Python.
   </blurb>
 
 <!-- this is the default, but supresses a warning -->
@@ -39,5 +39,3 @@
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
-
-

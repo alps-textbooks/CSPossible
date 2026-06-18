@@ -4,21 +4,21 @@
   <!-- we first include a file which contains the bookinfo element: -->
   <xi:include href="./bookinfo.ptx" />
 
-  <book xml:id="csphenomenal">
-    <title>CS-Phenomenal</title>
+  <book xml:id="cspossible">
+    <title>CSPossible 🐾</title>
      <subtitle>AP CSP 2027+ in Python</subtitle>
  
   <introduction>
       <p>
-        Welcome to CS-Phenomenal! This free course follows the College
+        Welcome to CSPossible! This free course follows the College
         Board 2027-2028 revisions for AP CSP, an introductory college-level
         computer programming course in Python.  To make sure the site saves your answers on questions, please click on
         the person icon at the top to register or login to your Runestone
         course. If you are a teacher using this
         curriculum, please join the <url
-        href="https://groups.google.com/forum/#!forum/teaching-csphenomenal"
+        href="https://groups.google.com/forum/#!forum/teaching-cspossible"
         >teaching
-        CSPhenomenal group</url> which will give you access to teacher resources.
+        CSPossible group</url> which will give you access to teacher resources.
       </p>
 
     </introduction>
