@@ -9,7 +9,7 @@
       start coding in Python with <c>print</c> statements and Turtle code to draw shapes like below.
     </p>
 
-    <image source="_static/Unit1images/turtlePath.png"  width="80%" alt="Turtle drawing a path"/>
+    <image source="_static/Unit1images/turtlePath.png"  width="20%" alt="Turtle drawing a path"/>
 
   </introduction>
 
