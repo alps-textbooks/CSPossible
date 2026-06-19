@@ -17,23 +17,6 @@
     <image source="_static/Unit1images/allbits.png" width="60%" />
 
   </introduction>
-  <subsection xml:id="LOs-1-4">
-    <title>Learning Objectives</title>
-
-    <remark>
-      <title>1.4.A</title>
-      <p>Explain how computers store and process data as <term>bits</term>, and how those bits are
-        represented as meaningful digital information for users. </p>
-    </remark>
-
-    <remark>
-      <title>1.4.B</title>
-      <p>Explain why representing numbers with limited bits can produce inaccurate
-        results.
-      </p>
-    </remark>
-
-  </subsection>
 
   <subsection xml:id="data-bits">
     <title>Data and Bits</title>
@@ -78,8 +61,11 @@
     <video youtube="b6vHZ95XDwU" label="video-binary-unplugged" />
 
     <p>As you saw in the video, the students were simulating a binary odometer (like a car odometer
-      counting miles) to count in binary. You and your friends can act out the video above by
-      printing and using the following <url
+      counting miles) to count in binary. </p>
+      
+      <p><term>Unplugged Activity:</term> You and your friends can act out the video above by
+      printing and using the following 
+      <url
         href="https://docs.google.com/document/d/1okQhwTYVLcXN13QioAH71VUhw5e88vxYZ4sVXvSPANY/edit?usp=sharing">Binary
       Dot Cards</url>. Five students can hold the 5 binary dot cards and see if they can count up
       from 0 to 11111. Or you can flip the cards randomly and see if the class can figure out the
@@ -801,6 +787,24 @@
     </activity>
 
   </subsection>
+
+
+  <subsection xml:id="LOs-1-5">
+    <title>Review Learning Objectives</title>
+  <p>After this lesson, you should be able to:</p> 
+    <remark>
+      <title>1.4.A</title>
+      <p>Explain how computers store and process data as <term>bits</term>, and how those bits are
+        represented as meaningful digital information for users. </p>
+    </remark>
+
+    <remark>
+      <title>1.4.B</title>
+      <p>Explain why representing numbers with limited bits can produce inaccurate
+        results.
+      </p>
+    </remark>
+    </subsection>
 
   <subsection xml:id="vocab-1-4">
     <title>Vocabulary Review</title>

@@ -13,37 +13,11 @@
       store your name or your score, and these variables can be used by the app to customize how
       it behaves or the information it displays. 
       In this section, you will learn how to identify variables in apps and how to use them in
-      Python code.  </p>
+      Python <c>print</c> and <c>input</c> statements.  </p>
 
       <image source="_static/Unit1images/variable-box.png" width="25%" alt="variable is like a box"/>
 
-
   </introduction>
-
-  <subsection xml:id="LOs-1-6">
-    <title>Learning Objectives</title>
-    <remark>
-      <title>1.6.A</title>
-      <p>Identify the use of variables in an app while interacting with it.</p>
-    </remark>
-
-    <remark>
-      <title>1.6.B</title>
-      <p>Develop code for assignment statements using variables, and determine the values that are
-        stored in the variables as a result.</p>
-    </remark>
-
-    <remark>
-      <title>1.6.C</title>
-      <p>Develop code to store and modify strings, and determine the output produced.</p>
-    </remark>
-
-     <remark>
-      <title>Additional</title>
-      <p>Write code using Python input and print statements. </p>
-    </remark>
-
-  </subsection>
 
   <subsection xml:id="vars-in-apps">
     <title>Identifying Variables in Apps</title>
@@ -1050,6 +1024,33 @@ print(name + " is " + age + " years old")
 
   </subsection>
 
+    <subsection xml:id="LOs-1-6">
+    <title>Review Learning Objectives</title>
+    
+    <p>After this lesson, you should be able to:</p>
+    <remark>
+      <title>1.6.A</title>
+      <p>Identify the use of variables in an app while interacting with it.</p>
+    </remark>
+
+    <remark>
+      <title>1.6.B</title>
+      <p>Develop code for assignment statements using variables, and determine the values that are
+        stored in the variables as a result.</p>
+    </remark>
+
+    <remark>
+      <title>1.6.C</title>
+      <p>Develop code to store and modify strings, and determine the output produced.</p>
+    </remark>
+
+     <remark>
+      <title>Additional</title>
+      <p>Write code using Python input and print statements. </p>
+    </remark>
+
+  </subsection>
+  
   <subsection xml:id="vocab-1-6">
      <title>Vocabulary Review</title>
 

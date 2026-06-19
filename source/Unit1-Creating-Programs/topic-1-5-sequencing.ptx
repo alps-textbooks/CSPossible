@@ -5,23 +5,13 @@
   <title>Sequencing</title>
 
   <introduction>
-    <p>In this lesson, we will talk about algorithms using sequential steps and start coding in Python with 
-      <c>print</c> statements and Turtle code to draw shapes.
+    <p>In this lesson, we will talk about algorithms using sequential steps or flowcharts and 
+      start coding in Python with <c>print</c> statements and Turtle code to draw shapes like below.
     </p>
+
+    <image source="_static/Unit1images/turtlePath.png"  width="80%" alt="Turtle drawing a path"/>
+
   </introduction>
-  <subsection xml:id="LOs-1-5">
-    <title>Learning Objectives</title>
-    <remark>
-      <title>1.5.A</title>
-      <p>Represent an algorithm that uses sequencing using written steps or a flowchart.</p>
-    </remark>
-
-    <remark>
-      <title>1.5.B</title>
-      <p>Develop code that runs sequentially and determine the result of sequential statements.</p>
-    </remark>
-  </subsection>
-
 
   <subsection xml:id="sequencing">
     <title>Sequencing in Written Steps and Flowcharts</title>
@@ -645,52 +635,6 @@ print( teeny.xcor() )
 
   </subsection>
 
-  <subsection xml:id="vocab-1-5">
-    <title>Vocabulary Review</title>
-    <activity label="sequencing-vocab">
-      <statement>
-        <p>
-          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
-          on its correct definition on the right.
-          Click the "Check Me" button to see if you are correct.
-        </p>
-      </statement>
-
-      <feedback>
-        <p>Find the words in the lesson above and try again.</p>
-      </feedback>
-
-      <cardsort>
-        <match>
-          <premise order="1">algorithm</premise>
-          <response>Step by step instructions for solving a problem</response>
-        </match>
-        <match>
-        <premise order="8">sequencing</premise>
-        <response>The default order of code that is run line-by-line from the top down</response>
-        </match>
-        <match>
-          <premise order="2">flowchart</premise>
-          <response>Visual representation of an algorithm that uses shapes and arrows to show the steps</response>
-        </match>
-
-        <match>
-          <premise order="3">IDE</premise>
-          <response>Software that provides tools for programmers to write, test, and debug code</response>
-        </match>
-        <match>
-          <premise order="5">syntax error</premise>
-          <response>A mistake in the way code is written that prevents it from running correctly</response>
-        </match>
-        <match>
-          <premise order="6">debugging</premise>
-          <response>The process of finding and fixing errors in code</response>
-        </match>  
-      </cardsort>
-    </activity>
-
-    </subsection>
-
     <subsection xml:id="turtle-project">
       <title>Turtle Project</title>
 
@@ -740,4 +684,67 @@ print( teeny.xcor() )
     </activity>
 
     </subsection>
+
+  <subsection xml:id="LOs-1-5">
+    <title>Review Learning Objectives</title>
+
+    <p>After this lesson, you should be able to:</p>
+    <remark>
+      <title>1.5.A</title>
+      <p>Represent an algorithm that uses sequencing using written steps or a flowchart.</p>
+    </remark>
+
+    <remark>
+      <title>1.5.B</title>
+      <p>Develop code that runs sequentially and determine the result of sequential statements.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-1-5">
+    <title>Vocabulary Review</title>
+    <activity label="sequencing-vocab">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">algorithm</premise>
+          <response>Step by step instructions for solving a problem</response>
+        </match>
+        <match>
+        <premise order="8">sequencing</premise>
+        <response>The default order of code that is run line-by-line from the top down</response>
+        </match>
+        <match>
+          <premise order="2">flowchart</premise>
+          <response>Visual representation of an algorithm that uses shapes and arrows to show the steps</response>
+        </match>
+
+        <match>
+          <premise order="3">IDE</premise>
+          <response>Software that provides tools for programmers to write, test, and debug code</response>
+        </match>
+        <match>
+          <premise order="5">syntax error</premise>
+          <response>A mistake in the way code is written that prevents it from running correctly</response>
+        </match>
+        <match>
+          <premise order="6">debugging</premise>
+          <response>The process of finding and fixing errors in code</response>
+        </match>  
+      </cardsort>
+    </activity>
+
+    </subsection>
+
+  
 </section>
