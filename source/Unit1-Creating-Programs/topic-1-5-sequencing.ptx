@@ -683,6 +683,15 @@ print( teeny.xcor() )
       </program>
     </activity>
 
+     <activity label="turtle-project-reflection">
+      <title>Project Reflection</title>
+      <statement>
+        <p>Describe the purpose of your program above in 1-2 sentences.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
     </subsection>
 
   <subsection xml:id="LOs-1-5">

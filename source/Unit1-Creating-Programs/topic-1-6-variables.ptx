@@ -981,7 +981,7 @@ print(name + " is " + age + " years old")
     <p> Let's make a poem or a story using input and variables in Python.
       Ask the user to input different nouns and verbs, and weave together a story.</p>
 
-    <activity label="madlibs">
+    <project label="madlibs">
       <title>Story</title>
       <statement>
         <p>Finish the input statements below to ask the user for 2 colors and a food item.
@@ -1020,6 +1020,69 @@ print(name + " is " + age + " years old")
           myTests().main()
         </tests>
       </program>
+    </project>
+
+    <activity label="varIO">
+      <statement><p>Is the variable <c>color1</c> in the code above used for input or output?</p>
+     <p><fillin answer="input" mode="string" /></p>
+     </statement>
+  <evaluation>
+    <evaluate>
+      <test>
+        <strcmp use-answer="yes" />
+        <feedback>
+          Correct! All of the variables above are used for user input.
+        </feedback>
+      </test>
+
+      <test>
+        <!-- else -->
+        <feedback>
+          <p>
+           Incorrect, try again. Please type in input or output in lowercase letters.
+          </p>
+        </feedback>
+      </test>
+    </evaluate>
+  </evaluation>
+</activity>
+    
+<activity label="var-data-type">
+ <statement><p>What is the data type of the variable <c>color1</c> in the code above?</p></statement>
+ <choices>
+  <choice><statement><p>int</p></statement>
+    <feedback>
+            <p>Sorry, it is not an integer number.</p>
+    </feedback>
+  </choice>
+    <choice><statement><p>float</p></statement>
+    <feedback>
+            <p>Sorry, it is not a floating point decimal number.</p>
+    </feedback>
+  </choice>
+        <choice correct="yes">
+          <statement>
+            <p>string</p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+  <choice><statement><p>Boolean</p></statement>
+    <feedback>
+            <p>Sorry, it is not a true or false value.</p>
+    </feedback>
+  </choice>
+ </choices>
+</activity>
+    
+    <activity label="madlibs-reflection">
+      <title>Project Reflection</title>
+      <statement>
+        <p>Identify an input and an output for your program above.
+        </p>
+      </statement>
+      <response />
     </activity>
 
   </subsection>
@@ -1050,7 +1113,7 @@ print(name + " is " + age + " years old")
     </remark>
 
   </subsection>
-  
+
   <subsection xml:id="vocab-1-6">
      <title>Vocabulary Review</title>
 
