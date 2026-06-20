@@ -339,7 +339,8 @@
                     <p>2</p>
                 </statement>
                 <feedback>
-                    <p>6 goes into 2 zero times with 2 left over.</p>
+                    <p>6 goes into 2 zero times with 2 left over. If you have a smaller number divided by a larger number the remainder is always the smaller
+                        number.</p>
                 </feedback>
             </choice>
 
@@ -567,6 +568,43 @@ print("Next year you will be", age + 1, "years old.")
           myTests().main()
          </tests>
     </program>
+    </activity>
+
+
+    <activity label="calculate-hours">
+      <statement>
+        <p>Write a program that asks the user for the number of minutes they have spent in class and then calculate 
+          the number of hours, remaining minutes, and seconds. Fill in the formulas for 1,2, and 3 below.</p>
+      </statement>
+      <program language="python" interactive="activecode">
+        <code>
+        # 1. Ask the user for the number of minutes they have spent in class
+        minutesStr = input("How many minutes have you spent in class? ")
+        # convert the input to an int
+        minutes = int(minutesStr)
+
+        # 1. calculate the hours in minutes by using integer division // (there are 60 minutes in an hour)
+        hours = 
+        # 2. calculate the remaining minutes in minutes using the mod % operator and 60
+        remainingMinutes = 
+        # 3. calculate the number of seconds in minutes with multiplication (there are 60 seconds in a minute)
+        seconds = 
+        
+        # print the results
+        print("You have spent", hours, "hour(s) and", remainingMinutes, "minute(s), and a total of", seconds, "second(s) in class.")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("minutes//60",self.getEditorText().replace(" ", ""),"Use minutes//60 to calculate hours")
+              self.assertIn("minutes%60",self.getEditorText().replace(" ", ""),"Use minutes%60 to calculate remaining minutes")
+              self.assertIn("minutes*60",self.getEditorText().replace(" ", ""),"Use minutes*60 to calculate seconds")
+
+          myTests().main()
+         </tests>
+        </program>
     </activity>
     </subsection>
 
