@@ -140,8 +140,8 @@
     </program>
 
     <p>
-      Try running this code in the exercise below. Notice that every Python command to the computer
-      must be on a separate line.
+      Try running this code in the exercise below. In Python, every command must be placed on its own line 
+      and start lined up at the same position (with no extra spaces on the left).
     </p>
 
     <activity label="print1">
@@ -346,7 +346,7 @@
 
      <p>Python has a Turtle library where turtle objects can move around on the screen and draw
       pictures. We can import the library and set up the drawing space and the turtle with the
-      following code where # indicates a comment that is not executed but explains the code.
+      following code where # indicates a <term>comment</term> that is not executed but explains the code.
     </p>
       <program language="python">
         <code>
@@ -456,8 +456,7 @@
           import turtle               
           tina = turtle.Turtle() 
           tina.shape("turtle") 
-          tina.color("green")       # set pen color to green  
-          tina.fillcolor("green")   # set turtle body and fill color to green
+          tina.color("green")       # set color to green  
 
           tina.forward(100)         
           tina.right(90)          
@@ -518,7 +517,7 @@ zari.forward(100)
      <evaluation>
         <evaluate>
           <test>
-            <strcmp use-answer="yes" />
+            <strcmp use-answer="yes" case="insensitive" />
             <feedback>
               Correct!
             </feedback>
@@ -542,7 +541,9 @@ zari.forward(100)
         of expression followed by a new line. <c>print(expression)</c></p>
     </note>
 
-    <p>The <c>xcor()</c> turtle command will print out the current x-coordinate of the turtle on the screen. 
+    <p>The <c>xcor()</c> turtle command will print out the current x-coordinate of the turtle on the screen. The Python turtle
+      starts at the default coordinates <c>(0,0)</c> at the center of the screen. The x-coordinate increases as the turtle moves 
+      forward to the right and decreases as it moves to the left.
     Try running the following program that uses <c>print</c> statements to trace the current location of the turtle.
     </p>
     
@@ -556,7 +557,6 @@ zari.forward(100)
           tina = turtle.Turtle() 
           tina.shape("turtle") 
           tina.color("purple")   
-          tina.fillcolor("purple")    
 
           print( tina.xcor() )
           tina.forward(50) 
@@ -640,19 +640,23 @@ print( teeny.xcor() )
 
       <activity label="turtle-project">
       <statement>
-        <p>Draw something interesting with the turtle. The code below also shows how to change colors, 
-          fill in colors, lift up the pen, and draw dots. 
+        <p>Draw something interesting with the turtle.  
           You could draw a flower, a house for the turtle, a smiley face, or anything you want.
+          The code below also shows how to change colors, 
+          fill in colors, lift up the pen, and draw dots. 
+          Check out all the <a href="https://cs111.wellesley.edu/reference/colors">Turtle Colors</a> that you can use. 
         </p>
    </statement>
       <program interactive="activecode" language="python">
         <code>
-          import turtle               
+          import turtle
+          
+          screen = turtle.Screen()
+          screen.bgcolor("lightyellow") # set the background color of the screen
           tina = turtle.Turtle() 
           tina.shape("turtle") 
           
-          tina.color("blue")       # set pen color to blue    
-          tina.fillcolor("green")  # set fill color to green     
+          tina.color("blue")       # set drawing color to blue    
           tina.begin_fill()        # start filling in the shape 
           # draw a closed shape
           tina.forward(100)         

@@ -1029,7 +1029,7 @@ print(name + " is " + age + " years old")
   <evaluation>
     <evaluate>
       <test>
-        <strcmp use-answer="yes" />
+        <strcmp use-answer="yes" case="insensitive"/>
         <feedback>
           Correct! All of the variables above are used for user input.
         </feedback>
