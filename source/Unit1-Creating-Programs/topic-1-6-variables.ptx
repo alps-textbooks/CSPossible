@@ -918,14 +918,13 @@ print(name + " is " + age + " years old")
     </activity>
  
 
-    <p> The <c>input()</c> function in Python always returns a string, even if the user enters a number. 
-      For example, if the user enters "25", the variable will be a string containing "25", not the
-      integer number 25. But sometimes, you need it to be a number and not a string so that you can do math
-      with it.</p>
+    <p>The <c>input()</c> function in Python always returns a string, even if the user enters a number. 
+      For example, if the user enters "25", the variable will store the string "25", not the
+      integer number 25. However, to do math with a number, as we will see in the next lesson, we need to store the value as a number rather than a string. </p>
 
-    <p>To convert a string to an integer whole number or a floating point decimal number, you can use the 
-      <c>int()</c> or <c> float()</c> functions. We will need this in the next lesson to do math with or compare
-      these variables. For example:</p>
+    <p>To convert a string to an integer whole number or a floating point decimal number, use the 
+      <c>int()</c> or <c> float()</c> functions. We will use these functions in the next lesson when performing calculations and making comparisons with user input. For example:</p>
+
     <program language="python">
       <code>
         ageStr = input("Enter your age: ")
@@ -976,12 +975,12 @@ print(name + " is " + age + " years old")
 
   </subsection>
   
-  <subsection xml:id="madlibs-project">
-  <title>Story Project</title>
+  <subsection xml:id="coding-challenge-madlibs-project">
+  <title>Coding Challenge: Story Project</title>
     <p> Let's make a poem or a story using input and variables in Python.
       Ask the user to input different nouns and verbs, and weave together a story.</p>
 
-    <project label="madlibs">
+    <project label="coding-challenge-story">
       <title>Story</title>
       <statement>
         <p>Finish the input statements below to ask the user for 2 colors and a food item.
@@ -1088,7 +1087,7 @@ print(name + " is " + age + " years old")
   </subsection>
 
     <subsection xml:id="LOs-1-6">
-    <title>Review Learning Objectives</title>
+    <title>Learning Objectives Review</title>
     
     <p>After this lesson, you should be able to:</p>
     <remark>

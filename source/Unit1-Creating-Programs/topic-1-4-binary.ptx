@@ -143,7 +143,7 @@
           </test>
 
           <test>
-            <feedback>Try it in the binary odometer above. You will use 3 bits. </feedback>
+            <feedback>Try it in the binary odometer above. It needs 3 bits. </feedback>
           </test>
         </evaluate>
       </evaluation>
@@ -790,7 +790,7 @@
 
 
   <subsection xml:id="LOs-1-4">
-    <title>Review Learning Objectives</title>
+    <title>Learning Objectives Review</title>
   <p>After this lesson, you should be able to:</p> 
     <remark>
       <title>1.4.A</title>

@@ -574,7 +574,7 @@ print("Next year you will be", age + 1, "years old.")
     <activity label="calculate-hours">
       <statement>
         <p>Write a program that asks the user for the number of minutes they have spent in class and then calculate 
-          the number of hours, remaining minutes, and seconds. Fill in the formulas for 1,2, and 3 below.</p>
+          the number of hours, remaining minutes, and seconds. Fill in the formulas for 1, 2, and 3 below.</p>
       </statement>
       <program language="python" interactive="activecode">
         <code>
@@ -696,8 +696,8 @@ print(r)
 
   </subsection>
 
-  <subsection xml:id="random-turtle-project">
-    <title>Random Turtle Project</title>
+  <subsection xml:id="coding-challenge-random-turtle-project">
+    <title>Coding Challenge: Random Turtle Project</title>
 
     <p>
       Let's practice with turtles drawing with random colors and random movements. 
@@ -792,7 +792,7 @@ print(r)
      </choices>
     </activity>
 
-     <project label="random-turtle">
+     <project label="coding-challenge-random-turtle">
       <statement>
         <p>
           Try the code below to see how to use random numbers to set random colors and random movements for a turtle. 
@@ -865,7 +865,7 @@ turt.goto(0, 0)
   </subsection>
 
    <subsection xml:id="LOs-1-7">
-    <title>Review Learning Objectives</title>
+    <title>Learning Objectives Review</title>
     <p>After this lesson, you should be able to:</p>
     <remark>
       <title>1.7.A</title>
