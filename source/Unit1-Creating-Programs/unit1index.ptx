@@ -46,5 +46,10 @@
   <xi:include href="./topic-1-5-sequencing.ptx" />
   <xi:include href="./topic-1-6-variables.ptx" />
   <xi:include href="./topic-1-7-expressions.ptx" />
+  <xi:include href="./unit1-summary.ptx" />
+  <xi:include href="./unit1-mcq-exercises.ptx" />
+  <xi:include href="./unit1-mixed-up-code-practice.ptx" />
+  <xi:include href="./unit1-coding-practice.ptx" />
+  <xi:include href="./unit1-appinventor.ptx" />
   
   </chapter>

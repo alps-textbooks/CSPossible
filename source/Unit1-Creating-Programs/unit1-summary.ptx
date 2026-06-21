@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit1-summary">
+  <title>Unit 1 Summary</title>
+
+  <p>In Unit 1, we covered the following Learning Objectives:</p>
+   <ul>
+    <li><p>1.1 Purpose and Behavior
+    <ul>
+      <li>1.1.A Determine the purpose and behavior of an app by interacting with it.</li>
+      <li>1.1.B Identify inputs and outputs of an app while using it.</li>
+    </ul>
+    </p>
+    </li>
+    <li><p>1.2 Benefits of Collaboration
+    <ul>
+      <li>1.2.A Explain how apps and programs are improved through collaboration and user testing.</li>
+      <li>1.2.B Explain how collaboration can reduce bias in apps.</li>
+    </ul></p>
+    </li>
+    <li><p>1.3 Responsible AI and Human Decision-Making
+    <ul>
+      <li>1.3.A Explain how human decisions shape the development, deployment, and maintenance of AI tools.</li>
+      <li>1.3.B Evaluate the appropriate level of automation or augmentation for a task.</li>
+    </ul></p>
+    </li>
+    <li><p>1.4 Binary Representation
+    <ul>
+      <li>1.4.A Explain how computers store and process data as bits, and how those bits are represented as meaningful digital information for users.</li>
+      <li>1.4.B Explain why representing numbers with limited bits can produce inaccurate results.</li>
+    </ul></p>
+    </li>
+    <li><p>1.5 Sequencing
+    <ul>
+      <li>1.5.A Represent an algorithm that uses sequencing using written steps or a flowchart.</li>
+      <li>1.5.B Develop code that runs sequentially, and determine the result of sequential statements.</li>
+    </ul></p>
+    </li>
+    <li><p>1.6 Variables
+    <ul>
+      <li>1.6.A Identify the use of variables in an app while interacting with it.</li>
+      <li>1.6.B Develop code for assignment statements using variables, and determine the values that are stored in the variables as a result.</li>
+      <li>1.6.C Develop code to store and modify strings, and determine the output produced.</li>
+    </ul></p>
+    </li>
+    <li><p>1.7 Mathematical Expressions
+    <ul>
+      <li>1.7.A Develop code using mathematical expressions, and determine the result of these expressions.</li>
+      <li>1.7.B Develop code to generate random numbers, and determine the possible values that could be produced as a result.</li>
+   </ul></p>
+   </li>
+ </ul>
+
+  <p>Review the following Unit 1 vocabulary:</p>
+
+    <activity label="binary-vocab-review">
+      <statement>
+        <p>
+          1-4 Binary Vocabulary. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in 1-4 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">bit</premise>
+          <response>A binary digit, either 0 or 1.</response>
+        </match>
+
+        <match>
+          <premise order="2">abstraction</premise>
+          <response>The process of removing detail to focus on the essential characteristics of
+            something.</response>
+        </match>
+
+        <match>
+          <premise order="3">encoding</premise>
+          <response>Converting information into a specific format for storage or transmission.</response>
+        </match>
+
+        <match>
+          <premise order="4">roundoff error</premise>
+          <response>The error that occurs when a number is approximated to fit in a fixed number of
+            bits.</response>
+        </match>
+
+        <match>
+          <premise order="5">overflow error</premise>
+          <response>The error that occurs when a number is too large to be represented within the
+            given number of bits.</response>
+        </match>
+      </cardsort>
+    </activity>
+
+      <activity label="sequencing-vocab-review">
+      <statement>
+        <p>
+          Review the vocabulary in 1-5 Sequencing. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in 1-5 above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">algorithm</premise>
+          <response>Step by step instructions for solving a problem</response>
+        </match>
+        <match>
+        <premise order="8">sequencing</premise>
+        <response>The default order of code that is run line-by-line from the top down</response>
+        </match>
+        <match>
+          <premise order="2">flowchart</premise>
+          <response>Visual representation of an algorithm that uses shapes and arrows to show the steps</response>
+        </match>
+
+        <match>
+          <premise order="3">IDE</premise>
+          <response>Software that provides tools for programmers to write, test, and debug code</response>
+        </match>
+        <match>
+          <premise order="5">syntax error</premise>
+          <response>A mistake in the way code is written that prevents it from running correctly</response>
+        </match>
+        <match>
+          <premise order="6">debugging</premise>
+          <response>The process of finding and fixing errors in code</response>
+        </match>  
+      </cardsort>
+    </activity>
+
+        <activity label="vars-vocab-review">
+      <statement>
+        <p>
+          Review the vocabulary in 1-6 Variables. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in 1-6 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>variable</premise>
+        <response>a named storage location used to hold a value that can change
+        while the program is running</response>
+        </match>
+        <match>
+          <premise>program state</premise>
+          <response>the set of values and information a program is storing at a specific
+        moment</response>
+        </match>
+        <match>
+          <premise>data types</premise>
+          <response>numbers, strings, or booleans</response>
+        </match>
+        <match>
+          <premise>string</premise>
+          <response>an ordered sequence of characters used to represent text in a
+        program</response>
+        </match>
+         <match>
+          <premise>concatenation</premise>
+          <response>joins two or more strings to create a new string</response>
+        </match>
+         <match>
+          <premise>substring</premise>
+          <response>part of an existing string</response>
+        </match>
+  </cardsort>
+  </activity>
+    <activity label="vocab-exprs-review">
+      <statement>
+        <p>
+          Review the vocabulary in 1-7 Expressions. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in 1-7 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>expression</premise>
+          <response>combination of numbers, variables, and operators that 
+      represents a value</response>
+        </match>
+        <match>
+          <premise>increment</premise>
+          <response>to increase a variable's value, often by adding 1 to it</response>
+        </match>
+        <match>
+          <premise>integer</premise>
+          <response>
+            a numeric data type that represents positive and negative whole numbers, including zero.
+          </response>
+        </match>
+        <match>
+          <premise>modulo (%)</premise>
+          <response>operator that returns the remainder of a division operation</response>
+        </match>
+        <match>
+          <premise>random.randint</premise>
+          <response>Python function that generates a random integer between two specified values (inclusive)</response>
+        </match>
+      </cardsort>
+    </activity>
+
+  <p>The next lessons in this unit are for practicing Python coding. There are also some optional App Inventor coding projects.</p>
+
+  </section>
