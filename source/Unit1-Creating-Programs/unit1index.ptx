@@ -50,7 +50,7 @@
   <xi:include href="./unit1-mcq-exercises.ptx" />
   <xi:include href="./unit1-mixed-up-code-practice.ptx" />
   <xi:include href="./unit1-coding-practice.ptx" />
-<!-- <xi:include href="./unit1-appinventor-setup.ptx" />
-  <xi:include href="./unit1-appinventor-paint.ptx" /> -->
+  <xi:include href="./unit1-appinventor-setup.ptx" />
+  <xi:include href="./unit1-appinventor-paint.ptx" /> 
   
   </chapter>

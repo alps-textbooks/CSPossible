@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit1-appinventor-paint">
+    <title>App Inventor Paint Pot Tutorial (Optional)</title>
+  <time minutes="90" />
+
+  <introduction>
+
+    <p>Paint Pot is a "finger painting" app that simulates dipping your finger in a pot of paint 
+        then drawing with it on a canvas. 
+		The app uses buttons to change the paint colors and MIT App Inventor’s <em>touch</em> and <em>drag</em> 
+        event handlers to draw circles and lines on the canvas. Watch the intro <url href="https://www.youtube.com/watch?v=PWKGUzdiP44" >video</url> 
+        below (<url href="http://www.teachertube.com/video/paintpot2preview-347830">TeacherTube</url>)
+    </p>
+      <video youtube="PWKGUzdiP44" label="video-paint-intro"/>
+      
+      <p>In this tutorial, you will learn to:
+          <ul>
+          <li>follow a tutorial to create the <em>PaintPot</em> app</li>
+          <li>deepen your understanding of event-driven programming</li>
+          <li>learn how to use a <term>variable</term> to make a program more general</li>
+          </ul>
+		<p>Language Objectives: you will be able to:
+       <ul>
+		  <li>explain the result of programming statements that include <term>'variable'>variables</term> and 
+            <term>assignments</term></li>
+		  <li>describe how a global <term>variable</term> is an abstraction</li>
+          <li>use target vocabulary, such as <term>variable</term>, <term>assignment</term>, 
+            <term>expression</term>, <term>operator</term>, and <term>pseudocode</term> while describing app features 
+            and User Interface with the support of concept definitions and 
+            <url href="https://docs.google.com/presentation/d/1Pfrv_g1AGKNFPmgir1uGApfHtkhB783Te5kzVz5FZ8c/copy">
+                vocabulary notes</url> from this lesson</li>
+        </ul>
+       </p>
+    </p>
+
+  </introduction>
+
+ <subsection xml:id="paint-part1">
+    <title>Paint Pot Tutorial Part 1</title>
+    <p>To get started, 
+        <url href="http://ai2.appinventor.mit.edu/?repo=templates.appinventor.mit.edu/trincoll/csp/unit3/templates/PaintPotMediaOnly/PaintPotMediaOnly.asc" target="_blank">
+            open MIT App Inventor with the Paint Pot Template</url> and follow along with the following 
+            <url href="https://www.youtube.com/watch?v=OoA8Q5v2sWg">video</url> 
+            (<url href="https://teachertube.com/video/paint-pot-1-tutorial-476369">TeacherTube</url>)
+            or your teacher or the 
+    <url href="https://docs.google.com/document/d/164sPOhgX0uaTCyrWL-zxxKv_DdAA-IgVvOlU5vpYPPc/view">long handout</url>
+	or <url href="https://docs.google.com/document/d/18thDoU6Ru3v9TTxhGfELuvwagm3bTNFYh-iXchDntGw/view">short handout section part 1</url>.	
+    </p>
+    <video youtube="OoA8Q5v2sWg" label="video-paint-pot1"/>
+    
+ </subsection>
+
+ <subsection xml:id="paint-part2">
+    <title>Paint Pot Tutorial Part 2</title>
+    
+    <p>Watch the <url href="https://www.youtube.com/watch?v=ETLkyDKIinc">video</url> tutorial below 
+        (<url href="https://upload.teachertube.com/video/paintpot2-varying-the-dotsize-478432">TeacherTube version</url>)
+     or the  
+        <url href="https://docs.google.com/document/d/164sPOhgX0uaTCyrWL-zxxKv_DdAA-IgVvOlU5vpYPPc/view">
+            the text version</url> of the tutorial or 
+            the <url href="https://docs.google.com/document/d/18thDoU6Ru3v9TTxhGfELuvwagm3bTNFYh-iXchDntGw/view">
+                short handout section part 2</url>.	
+    </p>
+          <video youtube="ETLkyDKIinc" label="video-paint-pot2"/>
+
+ </subsection>
+ <subsection xml:id="paint-enhancements">
+    <title>Paint Pot Enhancements</title>
+
+    <p>Now that you have a working version of the Paint Pot app, you can try out some enhancements to make it 
+        your own!  Here are some ideas to get you started but feel free to come up with your own enhancements as well. 
+    </p>
+        <ol>
+    <li>Add a button to support a 4th color option for the app.
+      </li>
+    <li>Add an image of your choice to draw on instead of the cat image. Scroll down to the bottom
+        of the properties window of the Designer View to find the Media section wher you can click on 
+        Upload File. Use the image as the Canvas background image.  
+      </li>
+    <li>The app currently has a ButtonPlus and ButtonMinus. But, we only completed the code for ButtonPlus. Now that
+        you understand how to increment variables by 1, implement an algorithm for ButtonMinus that will subtract 1 from
+        dotsize. Make sure you test your code! We will learn how to do "if blocks" in the next unit and can add 
+        tests to make sure the dot size doesn't go below 0 or above a maximum value.</li>
+        
+    <li style="margin-bottom: 5px;">Currently, if a user wants to use a larger dot and then use a smaller dot (or vice versus), they have to
+        continually press the ButtonMinus (or ButtonPlus). If the current value of dotsize is 25, getting to a size of 4
+        would be pain. For easier use, add a button that resets the size of the dot (circle) back to its original value.
+        (HINT: You’ll need a second variable here to remember the original value of the dotsize.) </li>
+    <li><b>Optional:</b> Instead of using an existing image, take a photo with the camera and use that as the Canvas 
+        background image! (Hint: For this you’ll need to use a new Button, the Camera component from the Media drawer, and the Camera’s TakePicture command and the
+        AfterPicture event handler where you can set the image returned by the camera as Canvas' background image.)  
+      </li>
+    <li>Optional: Add a <a href="http://ai2.appinventor.mit.edu/reference/components/social.html#Sharing" target="_blank">
+        Social/Sharing component</a> and a share button to email what is drawn on the canvas using the Sharing.
+        ShareFile block with the <a href="http://ai2.appinventor.mit.edu/reference/components/animation.html#Canvas"
+         target="_blank">Canvas.Save block</a>. You will have to set up an email account on your tablet to use 
+         the share component.  (This may not work yet on iOS devices). </li>
+    <li>Share your app with the class or a friend!</li>
+    </ol>
+ </subsection>
+
+ <subsection xml:id="paint-reflection">
+    <title>Paint Pot Reflection</title>
+    <p>After you have completed the Paint Pot tutorial and enhancements, reflect on your experience by answering the following questions:
+    </p>
+
+     <activity label="paint-reflection1">
+      <title>Project Reflection 1</title>
+      <statement>
+        <p>Describe the purpose of your app and the input and output of the app. 
+            What were the variables used in your app?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="paint-reflection2">
+      <title>Project Reflection 2</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the app, and how you fixed your code to remove the bug. How did you test the app to make sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+        
+    </subsection>
+</section>

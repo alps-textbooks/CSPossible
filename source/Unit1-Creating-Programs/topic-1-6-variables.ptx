@@ -863,7 +863,10 @@ print(name + " is " + age + " years old")
     </program>
 
     <p>The following code will ask the user for their name and then print out a greeting.
-      Try it out by clicking the "Run" button.</p>
+      Try it out by clicking the "Run" button. Run it twice and put in different names! Does it work?
+      Yes, that is the power of <term>abstraction</term>! Our code is now more general or abstract and can work 
+      for any name! The input variable is an abstraction that can hold any name.
+    </p>
 
     <activity label="input1">
       <statement>
@@ -1161,4 +1164,14 @@ print(name + " is " + age + " years old")
   </activity>
 
   </subsection>
+
+      <subsection xml:id="appinventor-activity1">
+      <title>App Inventor Project</title>
+
+
+    <p>If your class wants to create mobile apps using MIT's App Inventor. 
+   do <url href="unit1-appinventor-paint.html">Paint Pot Tutorial Part 1</url>.
+        </p>
+      
+    </subsection>
 </section>
