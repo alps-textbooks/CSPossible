@@ -280,8 +280,9 @@ Your score is?
 
     <p>The pizza app above stores lots of different types of data: the user's name, their age, their
       favorite color, and whether they like pizza. The user's name is text (which is called a <term>string</term>
-      in coding, but the age is a number. Whether they like pizza or not could be stored as a <b>Boolean</b> value of true or
-      false. These are all different <term>data types</term>.</p>
+      in coding, but the age is a number. Whether they like pizza or not could be stored as a <b>Boolean</b> value 
+      of true or false (the type Boolean is named after the mathematician George Boole who invented symbolic logic). 
+      These are all different <term>data types</term>.</p>
 
     <note>
       <title>1.6.A.3</title>
@@ -338,8 +339,11 @@ Your score is?
         <code>
           name = "Dani"
           age = 16
+          likesPizza = True
           print("The variable name has the value", name, "and the type", type(name))
           print("The variable age has the value", age, "and the type", type(age))
+          print("The variable likesPizza has the value", likesPizza, "and the type", type(likesPizza))
+
           ageStr = "16"
           # print out the type of ageStr
 
