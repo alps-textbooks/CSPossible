@@ -6,8 +6,8 @@
 
   <introduction>
 
-    <p>Paint Pot is a "finger painting" app that simulates dipping your finger in a pot of paint 
-        then drawing with it on a canvas. 
+    <p>The first mobile app that you will create is called <em>Paint Pot</em> which is a "finger painting" app that 
+        simulates dipping your finger in a pot of paint then drawing with it on a canvas. 
 		The app uses buttons to change the paint colors and MIT App Inventor’s <em>touch</em> and <em>drag</em> 
         event handlers to draw circles and lines on the canvas. Watch the intro <url href="https://www.youtube.com/watch?v=PWKGUzdiP44" >video</url> 
         below (<url href="http://www.teachertube.com/video/paintpot2preview-347830">TeacherTube</url>)
@@ -22,7 +22,7 @@
           </ul>
 		<p>Language Objectives: you will be able to:
        <ul>
-		  <li>explain the result of programming statements that include <term>'variable'>variables</term> and 
+		  <li>explain the result of programming statements that include <term>variables</term> and 
             <term>assignments</term></li>
 		  <li>describe how a global <term>variable</term> is an abstraction</li>
           <li>use target vocabulary, such as <term>variable</term>, <term>assignment</term>, 
