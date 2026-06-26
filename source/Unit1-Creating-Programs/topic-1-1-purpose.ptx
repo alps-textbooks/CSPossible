@@ -80,9 +80,9 @@
     </note>
  <p>Some apps are easy to use with clear purposes and behaviors, but sometimes apps and other designs can
       fail to meet user needs or expectations. Watch the following 
-      <url href="https://www.youtube.com/watch?v=ZV5IuEqMwsM">video</url> about bad design choices.</p>
+      <url href="https://www.youtube.com/watch?v=qtCEoGyfsxk">video</url> about bad design choices.</p>
 
-     <video youtube="ZV5IuEqMwsM" label="video-bad-door-design" />
+     <video youtube="qtCEoGyfsxk" label="video-bad-door-design" />
 
    <p>Take a look at this <url
         href="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html">app with bad design</url> below
@@ -138,18 +138,43 @@
   <subsection>
     <title>Inputs and Outputs</title>
 
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=mCq8-xTH7jA">video</url> about what 
+      makes a computer a computer.</p>
+    
+      <video youtube="mCq8-xTH7jA" label="video-computer" />
+
     <note>
       <title>1.1.B.1</title>
       <p>Apps are designed to take in information from a variety of sources, process that
         information, and respond in useful ways.</p>
     </note>
 
+      <p>As seen in the video, all computing devices and the apps that run on them are created to receive <term>input</term> 
+        from users, store it as data, process the data, and produce <term>output</term> to communicate with users.</p>
+
     <note>
       <title>1.1.B.2</title>
       <p>When users interact with apps, they often tap or click buttons, type letters or numbers,
         speak, or move the device.
-        Each of these actions provides input: data sent to a computer for a program to process.</p>
-    </note>
+        Each of these actions provides <term>input</term>: data sent to a computer for a program to process.</p>
+    </note>  
+    
+    <image source="images/phoneIO.png" alt="Inputs and Outputs" width="100%" />
+
+    <p><term>Input</term> is data sent to a computer for processing by a program, and <term>output</term> is the 
+      data sent back from the program to the device. 
+      Input and output can come in many forms, such as tactile (for example touching a button or the device 
+      vibrating), audible (a sound), visual (an image), or text. </p>
+
+     <activity label="input-output">
+      <statement>
+        <p>What are some examples of input and output in the <url
+        href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url>? 
+        Can you think of any apps that use the tilting of a device or vibration as input or output?
+        </p>
+      </statement>
+      <response /> 
+      </activity>
 
     <note>
       <title>1.1.B.3</title>
@@ -158,6 +183,10 @@
         This feedback is a form of output that helps users know the app received the input, is
         working, and what step to take next.</p>
     </note>
+
+    <p>The door design video above mentioned feedback in human-centered design, where feedback tells the user that
+      something happened after their input. 
+    </p>
 
     <note>
       <title>1.1.B.4</title>
@@ -169,17 +198,32 @@
         recommendations.</p>
     </note>
 
-    <note>
-      <title>1.1.B.5</title>
-      <p>In many apps, the program responds to events, such as button clicks, key presses, or sensor
-        updates, by running specific code.
-        Events are one way input is delivered to a program. An event signals that something
-        happened, and an event handler processes the input and determines what happens next.</p>
-    </note>
+     <activity label="automatic-input">
+      <statement>
+        <p>Describe a device or app that uses input from a sensor or camera. If you cannot think of one,
+        search online for examples. 
+        </p>
+      </statement>
+      <response /> 
+      </activity>
 
     <note>
+      <title>1.1.B.5</title>
+      <p>In many apps, the program responds to <term>events</term>, such as button clicks, key presses, or sensor
+        updates, by running specific code.
+        Events are one way input is delivered to a program. An event signals that something
+        happened, and an <term>event handler</term> processes the input and determines what happens next.</p>
+    </note>
+
+    <p>Most apps these days use <term>event-driven programming</term>, which means they display the 
+      <term>user interface (UI)</term> and wait for <term>user events</term> to trigger actions, 
+      for example for the user to touch a button. 
+In event-driven programming, the code is attached to input such as button click and only run when triggered. 
+The app's behavior is determined by the code that runs in response to the input.
+</p>
+    <note>
       <title>1.1.B.6</title>
-      <p>Outputs are what an app produces. Outputs may include text, images, sounds, or something
+      <p><term>Outputs</term> are what an app produces. Outputs may include text, images, sounds, or something
         the user feels, like a vibration.
         Some outputs are directly perceived by the user, while others are not, such as data written
         to a file or sent over a network.
@@ -192,11 +236,74 @@
         what the app displays or does in response.
       </p>
     </note>
+
+ <p>Try the following pizza web app by typing in your name and choosing different options. 
+      Think about the inputs and outputs to the app. </p>
+
+    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2" />
+
+    <activity label="pizzaAppIO">
+      <statement>
+        <p>Interact with the pizza app above. What are the inputs and outputs for this app?</p>
+      </statement>
+      <response />
+    </activity>
+
+    
+    <activity label="pizzaAppOutputTypes">
+      <statement>
+        <p>Which of the following output types does the pizza app above use? Check all that apply.</p>  
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>text</p>
+          </statement>
+          <feedback>
+            <p>The app prints out text output when the button is clicked.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>vibration</statement>
+          <feedback>
+            <p>This app cannot vibrate.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>image</p>
+          </statement>
+          <feedback>
+            <p>Pizza images are displayed as output if the user likes pizza.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>sound</p>
+          </statement>
+          <feedback>
+            <p>There is no sound with this app.</p>
+          </feedback>
+        </choice> 
+          <choice correct="yes">
+          <statement>
+            <p>color</p>
+          </statement>
+          <feedback>
+            <p>Yes, the background color changes as a result of user interactions.</p>
+          </feedback>
+        </choice> 
+      </choices>
+    </activity>
+
   </subsection>
 
 
     <subsection xml:id="LOs-1-1">
     <title>Learning Objectives Review</title>
+
+    <p>After this lesson, you should be able to:</p>
+
     <remark>
       <title>1.1.A</title>
       <p>
@@ -212,6 +319,56 @@
     </remark>
 
   </subsection>
+ <subsection xml:id="vocab-1-1">
+     <title>Vocabulary Review</title>
 
+    <activity label="vocab-IO">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
 
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>app</premise>
+          <response>a program that runs on a computer or any computing device</response>
+        </match>
+        <match>
+          <premise>purpose</premise>
+          <response>why an app exists or its goal</response>
+        </match>
+        <match>
+          <premise>behavior</premise>
+          <response>what an app does when used</response>
+        </match>
+        <match>
+          <premise>input</premise>
+          <response>data sent to a computer for a program to process.</response>
+        </match>
+        <match>
+          <premise>output</premise>
+          <response>data sent back from a program to the device or user</response>
+        </match>
+        <match>
+          <premise>user interface (UI)</premise>
+          <response>the part of an app (for example buttons) that users directly interact with</response>
+        </match>
+        <match>
+          <premise>event</premise>
+          <response>a signal that something happened, such as a button click or key press</response>
+        </match>
+        <match>
+          <premise>event handler</premise>
+          <response>code that runs in response to an event</response>
+        </match>
+      </cardsort>
+    </activity>
+  </subsection>
 </section>

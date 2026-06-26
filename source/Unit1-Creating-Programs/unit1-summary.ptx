@@ -53,6 +53,55 @@
 
   <p>Review the following Unit 1 vocabulary:</p>
 
+   <activity label="vocab-IO-review">
+      <statement>
+        <p>
+          1-1 Purpose and Behavior Vocabulary. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 1.1and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>app</premise>
+          <response>a program that runs on a computer or any computing device</response>
+        </match>
+        <match>
+          <premise>purpose</premise>
+          <response>why an app exists or its goal</response>
+        </match>
+        <match>
+          <premise>behavior</premise>
+          <response>what an app does when used</response>
+        </match>
+        <match>
+          <premise>input</premise>
+          <response>data sent to a computer for a program to process.</response>
+        </match>
+        <match>
+          <premise>output</premise>
+          <response>data sent back from a program to the device or user</response>
+        </match>
+        <match>
+          <premise>user interface (UI)</premise>
+          <response>the part of an app (for example buttons) that users directly interact with</response>
+        </match>
+        <match>
+          <premise>event</premise>
+          <response>a signal that something happened, such as a button click or key press</response>
+        </match>
+        <match>
+          <premise>event handler</premise>
+          <response>code that runs in response to an event</response>
+        </match>
+      </cardsort>
+    </activity>
+
     <activity label="binary-vocab-review">
       <statement>
         <p>
