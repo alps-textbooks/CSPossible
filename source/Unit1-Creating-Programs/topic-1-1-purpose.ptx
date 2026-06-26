@@ -4,38 +4,32 @@
   <time minutes="45" />
   <title>Purpose and Behavior</title>
   <introduction>
-    <p>
+    <p>Computer Science is an exciting field that is transforming the way we live and work. 
+      Watch the <url
+      href="https://www.youtube.com/watch?v=QvyTEx1wyOY">video</url> below to learn more about how
+      computers and software are changing the world.
+    </p>
+    <video youtube="QvyTEx1wyOY" label="video-cs-everywhere" />
+    <p>      
+      In this lessons, we will explore the purpose and behavior of apps by interacting with them and 
+      observing their input and output. 
     </p>
   </introduction>
 
   <subsection>
-    <title>Learning Objectives</title>
-    <remark>
-      <title>1.1.A</title>
-      <p>
-        Determine the purpose and behavior of an app by interacting with it.
-      </p>
-    </remark>
-
-    <remark>
-      <title>1.1.B</title>
-      <p>
-        Identify inputs and outputs of an app while using it.
-      </p>
-    </remark>
-
-  </subsection>
-
-  <subsection>
     <title>Purpose and Behavior of Apps</title>
 
-    <note>
+    <p>Think about your favorite apps on your phone and their purpose. <term>App</term> is short for <term>application</term>, 
+      which is a program that runs on a computer or any computing device including your phone.</p>
+  
+      <note>
       <title>1.1.A.1</title>
-      <p>Applications (apps) are programs that run on many kinds of computing devices.
+      <p><term>Applications (apps)</term> are programs that run on many kinds of computing devices.
         Apps can run on smartphones, tablets, laptops, desktops, game consoles, and web browsers,
         and they are designed to help users accomplish tasks or goals.
       </p>
     </note>
+
 
     <note>
       <title>1.1.A.2</title>
@@ -46,11 +40,35 @@
       </p>
     </note>
 
+    <p>An app's <term>purpose</term> is why it was created, its ultimate goal or the problem it solves. 
+      For example, the purpose of a texting app on a phone is to help us to communicate with each other.</p>
+
+    <p>Take a look at the <url
+        href="https://www.google.com/search?q=stopwatch">Google Stopwatch</url> or 
+        <url
+        href="https://dwyl.github.io/stopwatch/">Github Stopwatch app</url> below. 
+        Why would someone use this app? What is its purpose? 
+        What happens when you click the Start button? What happens when you click the Pause or Reset buttons?
+        Try it out below.
+      </p>
+        <interactive iframe="https://dwyl.github.io/stopwatch/" width="100%" aspect="2.5:1"/>
+
+      <activity label="app-purpose">
+      <title>App Purpose</title>
+      <statement>
+        <p>What is the purpose of the <url
+        href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url> and how does it behave when 
+        you interact with it?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+   
     <note>
       <title>1.1.A.3</title>
       <p>An app is successful when it uses information to produce an output that helps a user
-        achieve
-        a goal. An app’s value to the user depends on how well the results meet their needs.
+        achieve a goal. An app’s value to the user depends on how well the results meet their needs.
       </p>
     </note>
     <note>
@@ -60,10 +78,34 @@
         frustrated because it interrupts what they are trying to do.
       </p>
     </note>
+ <p>Some apps are easy to use with clear purposes and behaviors, but sometimes apps and other designs can
+      fail to meet user needs or expectations. Watch the following 
+      <url href="https://www.youtube.com/watch?v=ZV5IuEqMwsM">video</url> about bad design choices.</p>
+
+     <video youtube="ZV5IuEqMwsM" label="video-bad-door-design" />
+
+   <p>Take a look at this <url
+        href="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html">app with bad design</url> below
+        or the <url href="https://userinyerface.com/">userinyerface.com</url> funny website. 
+        The purpose of the app is to accept your date of birth, but the app is not a successful design. Try to put in
+        your birthdate. Is it frustrating to use? 
+      </p>
+        <interactive iframe="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html" width="100%" aspect="2:1"/>
+
+      <activity label="bad-design">
+      <statement>
+        <p>What are the issues with the <url
+        href="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html">Bad Date app</url> 
+        and how does it behave when you interact with it? How could it be improved to better meet user needs and expectations?
+        </p>
+      </statement>
+      <response />
+    </activity>
+    
     <note>
       <title>1.1.A.5</title>
 
-      <p>An app’s behavior is what it does while it is running, including how it responds to user
+      <p>An app’s <term>behavior</term> is what it does while it is running, including how it responds to user
         interactions.
         The behavior of an app is determined by its program code.</p>
     </note>
@@ -78,6 +120,19 @@
         responds to their actions.
       </p>
     </note>
+
+    <activity label="google-maps">
+      <statement>
+        <p>Take a look at <url
+        href="https://maps.google.com">Google Maps</url>. What is the purpose of Google Maps?
+       People may interact with Google Maps in different ways. 
+       Describe the behavior of Google Maps including how you interact with it and how it responds
+       to do two different tasks.
+      </p>
+      </statement>
+      <response />
+    </activity>
+
   </subsection>
 
   <subsection>
@@ -138,4 +193,25 @@
       </p>
     </note>
   </subsection>
+
+
+    <subsection xml:id="LOs-1-1">
+    <title>Learning Objectives Review</title>
+    <remark>
+      <title>1.1.A</title>
+      <p>
+        Determine the purpose and behavior of an app by interacting with it.
+      </p>
+    </remark>
+
+    <remark>
+      <title>1.1.B</title>
+      <p>
+        Identify inputs and outputs of an app while using it.
+      </p>
+    </remark>
+
+  </subsection>
+
+
 </section>
