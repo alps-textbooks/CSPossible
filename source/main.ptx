@@ -5,7 +5,7 @@
   <xi:include href="./bookinfo.ptx" />
 
   <book xml:id="cspossible">
-    <title>CSPossible 🐾</title>
+    <title>CSPossible</title>
      <subtitle>AP CSP 2027+ in Python</subtitle>
  
   <introduction>
