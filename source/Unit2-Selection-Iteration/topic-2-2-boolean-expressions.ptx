@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-2-2-boolean-expressions">
+  <time minutes="45" />
+  <title>Boolean Expressions</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.2.A</title>
+      <p>
+        Identify the use of Boolean expressions to control an app's behavior as you interact with the app.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.2.B</title>
+      <p>
+        Develop code using relational operators, and determine the result of relational expressions.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.2.C</title>
+      <p>
+        Develop code using logical operators, and determine the result of logical expressions.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Boolean Expressions and Decision Making</title>
+
+    <note>
+      <title>2.2.A.1</title>
+      <p>
+        Apps often check conditions that have only two outcomes, such as whether a user is logged in, whether a checkbox is selected, or whether a password is correct.
+      </p>
+    </note>
+
+    <note>
+      <title>2.2.A.2</title>
+      <p>
+        Programs make decisions by evaluating conditions that result in a Boolean value. A Boolean value has two possible values: true or false.
+      </p>
+    </note>
+
+    <note>
+      <title>2.2.A.3</title>
+      <p>
+        Apps can use Boolean expressions to decide what happens next, such as showing a message, allowing access, or changing what a user sees. A Boolean expression is an expression that evaluates to either true or false.
+      </p>
+    </note>
+
+    <note>
+      <title>2.2.A.4</title>
+      <p>
+        Many Boolean expressions use comparisons, such as checking whether a score is high enough or whether an input meets a requirement like password length.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Relational Operators</title>
+
+    <note>
+      <title>2.2.B.1</title>
+      <p>
+        Apps and programs often compare values to enforce rules, personalize experiences, and prevent mistakes. Relational operators allow programs to evaluate questions such as whether a value is too low or whether one value matches another.
+      </p>
+    </note>
+
+    <note>
+      <title>2.2.B.2</title>
+      <p>
+        Relational operators compare two values and produce a Boolean result.
+      </p>
+      <ul>
+        <li>The expression <c>a == b</c> evaluates to true when the values of a and b are equal, and evaluates to false otherwise.</li>
+        <li>The expression <c>a > b</c> evaluates to true when the value of a is greater than the value of b, and evaluates to false otherwise.</li>
+        <li>The expression <c>a &lt; b</c> evaluates to true when the value of a is less than the value of b, and evaluates to false otherwise.</li>
+        <li>The expression <c>a >= b</c> evaluates to true when the value of a is greater than or equal to the value of b, and evaluates to false otherwise.</li>
+        <li>The expression <c>a &lt;= b</c> evaluates to true when the value of a is less than or equal to the value of b, and evaluates to false otherwise.</li>
+      </ul>
+    </note>
+
+    <note>
+      <title>2.2.B.3</title>
+      <p>
+        The result of a relational expression can be determined by substituting the current values, including variable values, and evaluating whether the comparison is true or false.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Logical Operators</title>
+
+    <note>
+      <title>2.2.C.1</title>
+      <p>
+        Apps and programs often combine multiple conditions to make decisions that feel predictable and personalized. Logical operators allow programs to answer questions such as whether all conditions are true, whether at least one condition is true, or whether a condition is not true. Logical operators can also support user-centered rules, such as allowing an action only when multiple conditions are met, like when all required fields are complete and the user agrees to terms.
+      </p>
+    </note>
+
+    <note>
+      <title>2.2.C.2</title>
+      <p>
+        Logical operators combine or modify Boolean values and produce a Boolean result.
+      </p>
+      <ul>
+        <li>The expression <c>condition1 and condition2</c> evaluates to true when both conditions are true, and evaluates to false otherwise.</li>
+        <li>The expression <c>condition1 or condition2</c> evaluates to true when at least one condition is true, and evaluates to false when both conditions are false.</li>
+        <li>The expression <c>not condition</c> evaluates to true when the condition is false, and evaluates to false when the condition is true.</li>
+      </ul>
+    </note>
+
+    <note>
+      <title>2.2.C.3</title>
+      <p>
+        The result of a logical expression can be determined by evaluating each condition and then applying not, and, and or to determine whether the overall expression is true or false. Logical expressions can include multiple conditions. Parentheses can be used to group conditions and make the intended order of evaluation clear when combining not, and, and or.
+      </p>
+    </note>
+  </subsection>
+</section>

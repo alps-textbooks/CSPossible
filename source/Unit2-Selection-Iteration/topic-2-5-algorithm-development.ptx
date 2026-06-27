@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-2-5-algorithm-development">
+  <time minutes="45" />
+  <title>Algorithm Development</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.5.A</title>
+      <p>
+        Develop algorithms by building new solutions or by reusing and combining existing solutions.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.5.B</title>
+      <p>
+        Compare multiple algorithms to determine if they produce the same side effect or output.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Developing Algorithms</title>
+
+    <note>
+      <title>2.5.A.1</title>
+      <p>
+        Algorithms use sequencing, selection, and iteration to organize steps, choose actions based on conditions, and repeat actions.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.A.2</title>
+      <p>
+        Programmers can develop an algorithm from scratch, or they can reuse, combine, or adapt existing algorithms to solve a problem.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.A.3</title>
+      <p>
+        Programmers often build new algorithms by reusing parts of known algorithms and adjusting them to fit a new problem, such as handling different inputs or producing a different output. They test the updated algorithm to confirm it meets its requirements.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.A.4</title>
+      <p>
+        Knowing common algorithms and patterns can make problem solving more efficient. Many algorithms reuse common patterns, such as:
+      </p>
+      <ul>
+        <li>finding the maximum or minimum value in a group of numbers</li>
+        <li>computing the sum or average of values</li>
+        <li>checking whether one integer is evenly divisible by another</li>
+      </ul>
+    </note>
+
+    <note>
+      <title>2.5.A.5</title>
+      <p>
+        Using well-understood algorithms as building blocks can reduce development time and support testing, debugging, and maintenance.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.A.6</title>
+      <p>
+        Programmers select, combine, and adapt algorithms to solve problems and meet user goals, especially as feedback or conditions change. For example, an app might combine algorithms to recommend content, plan a driving route, or calculate a total price with discounts and taxes.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Comparing Algorithms</title>
+
+    <note>
+      <title>2.5.B.1</title>
+      <p>
+        There is often more than one way to solve a task. Different algorithms can use different steps, yet still produce the same output for the same inputs. By comparing algorithms, programmers can decide which approach is clearer, easier to maintain, or better suited to the situation.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.B.2</title>
+      <p>
+        When comparing algorithms, programmers consider both the output and any side effects.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.B.3</title>
+      <p>
+        A side effect occurs when an algorithm changes the program's state while it runs. For example, an algorithm may update a variable's value, add or remove an item from stored data, or change what the user sees on the screen.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.B.4</title>
+      <p>
+        Side effects can impact the user experience. An unintended side effect, such as an incorrect variable update, an unexpected screen change, or an inconsistent program state, can confuse or frustrate users.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.B.5</title>
+      <p>
+        Algorithms that look similar may behave differently with certain inputs or may produce different side effects. To determine whether two algorithms are equivalent, programmers compare their outputs and side effects using the same inputs, often by tracing the steps and tracking changes to variables and displayed output.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.B.6</title>
+      <p>
+        Some conditional statements can be rewritten as equivalent Boolean expressions, and some Boolean expressions can be rewritten as equivalent conditional statements, without changing the program's behavior.
+      </p>
+    </note>
+
+    <note>
+      <title>2.5.B.7</title>
+      <p>
+        Loops can often be written in different ways and still be equivalent. A for loop that repeats a fixed number of times can often be rewritten as a while loop that uses a counter variable. When comparing a for and while loop, programmers check that they repeat the same number of times, update variables the same way, and produce the same output.
+      </p>
+    </note>
+  </subsection>
+</section>

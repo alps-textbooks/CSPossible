@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-2-4-iteration">
+  <time minutes="45" />
+  <title>Iteration</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.4.A</title>
+      <p>
+        Represent an algorithm that includes iteration using written steps or a flowchart.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.4.B</title>
+      <p>
+        Develop code using iteration, and determine the result of iteration statements.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Iteration in Algorithms</title>
+
+    <note>
+      <title>2.4.A.1</title>
+      <p>
+        Some tasks require repeating steps multiple times, such as continuing until a goal is reached or repeating for each item in a collection of items. Iteration allows an algorithm to repeat a sequence of steps.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.A.2</title>
+      <p>
+        Algorithms that use iteration can be represented in ways people can read and follow, such as written steps or flowcharts.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.A.3</title>
+      <p>
+        When representing iteration, clearly state the repeated steps and the condition that determines whether repetition continues or ends.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.A.4</title>
+      <p>
+        Iteration allows an algorithm to solve problems, such as counting items or searching until a match is found, by repeating steps. The outcome depends on what happens during each repetition and on the stopping condition.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Loop Statements</title>
+
+    <note>
+      <title>2.4.B.1</title>
+      <p>
+        Iteration allows programs to perform repeated actions without writing the same statements multiple times. Programs can repeat steps until a condition is met, continue updating while something is happening, or repeat actions across many items so the user does not have to do each step manually.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.B.2</title>
+      <p>
+        Programs use loops to perform iteration. Loop statements change the flow of a program by repeating a block of statements. A loop may run zero or more times depending on its condition or count.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.B.3</title>
+      <p>
+        A while loop is used when a program needs to repeat a set of statements as long as a condition remains true. When the following code runs, the statements in block of statements repeat while condition evaluates to true. When condition evaluates to false, the loop stops and the program continues.
+      </p>
+      <pre>
+while (condition)
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+    <note>
+      <title>2.4.B.4</title>
+      <p>
+        In a while loop, the condition is checked before the loop body runs. If the condition evaluates to false initially, the loop body is not executed.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.B.5</title>
+      <p>
+        In a while loop, an infinite loop occurs when the condition never becomes false, so the loop never stops. Infinite loops can be avoided by updating values that affect the condition or adding a stopping condition.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.B.6</title>
+      <p>
+        A for loop is used when a program needs to repeat a set of statements a specific number of times. When the following code runs, the variable j is assigned the value of each integer in the range 0 to n - 1 sequentially. The code in block of statements is executed n times, once for each assignment of j.
+      </p>
+      <pre>
+for j in range(n)
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+    <note>
+      <title>2.4.B.7</title>
+      <p>
+        A for loop is often used when the number of repetitions is known before the loop starts running, such as repeating a block a specific number of times or iterating through a specific range. A while loop is often used when the number of repetitions cannot be determined before the loop starts running and the loop should continue as long as a condition remains true.
+      </p>
+    </note>
+
+    <note>
+      <title>2.4.B.8</title>
+      <p>
+        The result of iteration statements can be determined by tracing the loop step by step, keeping track of how many times the loop runs and how variable values and output change each time.
+      </p>
+    </note>
+  </subsection>
+</section>

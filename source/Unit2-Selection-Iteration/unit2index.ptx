@@ -39,14 +39,14 @@
       </ul>
     </p>
   </introduction>
- <!--
+ 
 
-  <xi:include href="./topic2-1-design.ptx" />
-  <xi:include href="./topic2-2-boolean-expressions.ptx" />
-  <xi:include href="./topic2-3-selection.ptx" />
-  <xi:include href="./topic2-4-iteration.ptx" />
-  <xi:include href="./topic2-5-algorithm-development.ptx" />
-  <xi:include href="./topic2-6-errors.ptx" />
-  -->
+  <xi:include href="./topic-2-1-program-design-development.ptx" />
+  <xi:include href="./topic-2-2-boolean-expressions.ptx" />
+  <xi:include href="./topic-2-3-selection.ptx" />
+  <xi:include href="./topic-2-4-iteration.ptx" />
+  <xi:include href="./topic-2-5-algorithm-development.ptx" />
+  <xi:include href="./topic-2-6-errors.ptx" />
+  
   
   </chapter>

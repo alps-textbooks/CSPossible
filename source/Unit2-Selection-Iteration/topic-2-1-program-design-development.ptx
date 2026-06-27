@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-2-1-program-design-development">
+  <time minutes="45" />
+  <title>Program Design and Development</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.1.A</title>
+      <p>
+        Develop a program using an iterative or incremental process.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.1.B</title>
+      <p>
+        Design an app or program and its user interface based on user research and program requirements.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.1.C</title>
+      <p>
+        Describe the purpose and behavior of a code segment or program by writing documentation.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.1.D</title>
+      <p>
+        Determine when it is appropriate to reuse, cite, and share digital content.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>The Development Process</title>
+
+    <note>
+      <title>2.1.A.1</title>
+      <p>
+        Programmers use a development process to plan and build apps and programs that work well for the people who will use them. A typical process includes understanding the problem and the users, designing a solution, building a first version or prototype, testing it, and then reflecting on what worked and what needs improvement. These phases may occur in different orders and may be repeated.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.2</title>
+      <p>
+        An iterative development process involves revising a program based on feedback, testing, or reflection throughout development. This often requires returning to earlier phases to improve the design or behavior.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.3</title>
+      <p>
+        An incremental development process breaks a problem into smaller features and builds a program in steps. Each part is checked to ensure it works before it is combined into the whole.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.4</title>
+      <p>
+        Development processes often include creating and updating design documentation to help track decisions, guide what to build next, and support testing, debugging, maintenance, and improvement.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.5</title>
+      <p>
+        When developing programs with others, teams can use a defined workflow by assigning roles, sharing work, and keeping track of versions so changes can be reviewed and combined responsibly.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.6</title>
+      <p>
+        Programmers can gather evidence from users during development by observing where users get stuck or confused. This evidence can guide revisions that improve the usability of apps or programs.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.7</title>
+      <p>
+        Many apps and programs go through revisions and updates to stay useful for users. Maintaining a program involves making changes after a working version exists, such as fixing bugs, improving usability, or adapting the program as user needs or conditions change.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Design and User Research</title>
+
+    <note>
+      <title>2.1.B.1</title>
+      <p>
+        Programmers often begin by identifying intended users and their goals rather than starting with a list of features. Focusing on users and goals helps teams prioritize features and design an app or program that meets real needs.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.B.2</title>
+      <p>
+        User research means learning from the people who will use an app or program. Programmers may gather information from intended users to understand what they need, what limits or challenges they have, and what matters most.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.B.3</title>
+      <p>
+        Program requirements describe what a program must do and how it should behave. Requirements may be based on user research and may include user interactions a program must support, information a user interface should display, and feedback the app or program should provide.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.B.4</title>
+      <p>
+        Programmers can use user stories to connect requirements to real tasks and to guide interface design and testing. User stories are hypothetical descriptions of who a user is, what they want to do, and why it is important. Teams may also represent user needs with use cases or storyboards, which show how someone would use the app or program step by step.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.B.5</title>
+      <p>
+        User research can be performed in multiple ways, such as surveys, interviews, direct observation, and user testing.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.B.6</title>
+      <p>
+        The design phase may include activities such as brainstorming and storyboarding, decomposing a problem into subproblems, creating diagrams or sketches of a user interface layout, and developing a testing strategy based on program requirements and user needs.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Documentation</title>
+
+    <note>
+      <title>2.1.C.1</title>
+      <p>
+        Program documentation is a written description of the purpose and behavior of a code segment or program, including how it is intended to be used, how it accomplishes its task, and how it was developed.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.C.2</title>
+      <p>
+        Comments are a form of documentation included in code for humans to read. Comments do not affect how a program runs.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.C.3</title>
+      <p>
+        Not all programming environments support comments within the code. Documentation may also be written in other formats, such as design notes, a test plan, or a change log.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.C.4</title>
+      <p>
+        Documentation helps programmers understand code that has already been written. Clear descriptions of purpose and behavior make it easier for a programmer to understand and update code without having to figure out how it works.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.C.5</title>
+      <p>
+        Useful documentation may describe important details such as a program's overall purpose, key variables and algorithms, expected inputs, and expected outputs. Comments can clarify the purpose or behavior of specific abstractions or sections of code. Clear and concise documentation helps others understand, use, and update a program correctly.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.C.6</title>
+      <p>
+        Programmers should document a program throughout development to improve clarity, support collaboration, and record decisions and resources used, such as code written by others and AI tool use.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Reusing and Citing Digital Content</title>
+
+    <note>
+      <title>2.1.D.1</title>
+      <p>
+        Programmers often reuse or build on existing code, images, sounds, and other digital content because it can save time, improve reliability, and help them meet user needs without reinventing common solutions. Because programmers often build with existing online tools and code, they should acknowledge code that is reused, adapted, or co-developed, including code from other people, online sources, or AI tools.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.2</title>
+      <p>
+        Digital works are considered the intellectual property of their copyright owner, who is often the work's creator but may be another person or organization. This means the copyright owner has legal control over the original work and can decide whether others may use, share, modify, or distribute it. To respect intellectual property, people should follow a work's license or obtain permission before reusing material, and provide attribution when required.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.3</title>
+      <p>
+        Digital content can be copied, edited, and shared quickly, which can make it harder to determine who owns it and what permissions are required. Content is also often shared online without crediting the creator or getting permission.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.4</title>
+      <p>
+        Despite how easy it is to share content online, presenting material created by someone else as your own is plagiarism. Using another person's work without permission or proper credit may have legal consequences.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.5</title>
+      <p>
+        Knowing how to reuse and cite digital content correctly helps programmers build projects more efficiently while avoiding plagiarism and misuse. Following reuse and attribution requirements helps others understand what was reused, where it came from, and what permissions apply, which supports transparency and responsible sharing.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.6</title>
+      <p>
+        Some licenses and tools make reuse easier by clearly stating permissions. Open source and Creative Commons licenses provide standardized terms that tell others how they may use, modify, and redistribute software or creative works.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.7</title>
+      <p>
+        License terms vary in what they allow and require. Some licenses require attribution, while others allow unrestricted reuse. Creative Commons Zero (CC0) allows creators to waive copyright restrictions to the extent possible so others can reuse the work.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.D.8</title>
+      <p>
+        To decide whether reuse or sharing is appropriate, people should identify the source and its license or permissions, follow any requirements, and avoid using material in ways the license does not allow.
+      </p>
+    </note>
+  </subsection>
+</section>

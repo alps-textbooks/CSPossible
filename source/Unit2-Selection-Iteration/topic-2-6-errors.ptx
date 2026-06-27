@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-2-6-errors">
+  <time minutes="45" />
+  <title>Errors</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.6.A</title>
+      <p>
+        Correct errors in programs.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.6.B</title>
+      <p>
+        Develop code for test cases that can be used to check the correctness of an algorithm.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Correcting Errors</title>
+
+    <note>
+      <title>2.6.A.1</title>
+      <p>
+        Errors are a normal part of programming. As programmers develop code, they repeatedly encounter errors, identify their cause, and revise the program to correct them.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.2</title>
+      <p>
+        Programmers often discover errors through user testing or feedback, such as when users receive confusing messages, see inconsistent results, or cannot complete a task. Programmers use observations of what the user did and what the app displayed to clarify what the behavior should be for the user. To fix the error, they try to reproduce it by following the same user actions and inputs, which helps confirm the cause and verify that the correction solves the real user problem.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.3</title>
+      <p>
+        Knowing common types of errors helps programmers diagnose problems more quickly and choose effective strategies to fix them when they occur.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.4</title>
+      <p>
+        A logic error occurs when the program runs but produces incorrect or unexpected behavior because the algorithm or reasoning is incorrect.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.5</title>
+      <p>
+        A syntax error occurs when the code breaks the rules of the programming language, preventing the program from running as written.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.6</title>
+      <p>
+        A runtime error occurs while a program is executing when it encounters a situation it cannot handle, such as dividing by zero. Runtime errors may cause a program to stop running unless the error is handled. Programming languages define the specific runtime errors they produce.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.7</title>
+      <p>
+        Programmers use error messages to identify and correct problems because they describe what went wrong and often point to where it occurred. They may include the type of error, such as syntax or runtime, the line or location in the code, and details about the operation or value that caused the problem. Programmers use error messages to decide what to check first, make a targeted change, and then rerun the program to confirm the error is resolved.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.8</title>
+      <p>
+        Programmers trace a program's execution to determine how variable values change and which statements execute. They may trace manually or use debugging tools that step through code and display current variable values. Tracing helps identify where a program's behavior differs from what was expected and is especially useful for finding logic errors. It can also be used to determine what conditions led to a runtime error.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.9</title>
+      <p>
+        Programmers can add output statements to temporarily display intermediate values or messages while a program runs, such as printing variable values at key points. This helps confirm which parts of the code are executing and whether variables and conditions have the expected values. By comparing the observed output to the expected output, programmers can narrow down where the program's behavior first begins to differ from what was expected and identify the source of an error.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.A.10</title>
+      <p>
+        AI tools can support programmers in interpreting error messages, explaining what a piece of code is doing, and suggesting possible causes and fixes for unexpected behavior. Programmers can describe the expected vs. actual output and share relevant code so the tool can point out likely logic mistakes or recommend ways of making the code easier to trace. AI suggestions should be verified by running the program, checking results against requirements, and using other debugging methods, since AI-generated explanations or fixes may be incomplete or incorrect.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Testing and Test Cases</title>
+
+    <note>
+      <title>2.6.B.1</title>
+      <p>
+        In the development process, testing uses defined inputs to check whether an algorithm or program produces the expected outcomes. Programmers compare actual results to expected results and use what they learn to revise the algorithm or program. A test case consists of a specific input and the expected output or behavior that should result from that input. AI tools can help suggest test cases and predict expected results, but programmers are responsible for validating expected outcomes and using test results to confirm correctness.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.B.2</title>
+      <p>
+        Programmers often derive test cases from user stories and user testing by translating real user tasks into inputs and expected outcomes, including what the user should see at each step. This helps ensure the algorithm is correct in ways that matter to users.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.B.3</title>
+      <p>
+        An effective set of test cases includes inputs that produce different expected outputs or behaviors, including typical, boundary, and invalid cases. Boundary test cases use values at or near important limits, such as the minimum and maximum allowed inputs or decision thresholds in conditional expressions. Invalid test cases may use values just beyond the allowed range to check how the program handles likely user mistakes.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.B.4</title>
+      <p>
+        Some algorithms appear correct for common inputs but fail for other inputs, so programmers test multiple cases that cover different paths through the algorithm, such as different branches of a conditional or different numbers of loop repetitions. AI tools can help identify distinct execution paths and suggest test cases for each, but programmers should confirm that the suggested tests actually reach those paths.
+      </p>
+    </note>
+
+    <note>
+      <title>2.6.B.5</title>
+      <p>
+        Testing reflects real users: people mistype, submit blanks, use unexpected values, click repeatedly, or do steps out of order. Including these inputs as test cases helps ensure the app or program responds clearly and consistently, including giving useful feedback when input is invalid.
+      </p>
+    </note>
+  </subsection>
+</section>

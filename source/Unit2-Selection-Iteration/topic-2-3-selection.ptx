@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-2-3-selection">
+  <time minutes="45" />
+  <title>Selection</title>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.3.A</title>
+      <p>
+        Represent an algorithm that includes selection using written steps or a flowchart.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.3.B</title>
+      <p>
+        Develop code using conditional statements, and determine the result of these statements.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.3.C</title>
+      <p>
+        Develop code using nested conditional statements, and determine the result of these statements.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection>
+    <title>Selection in Algorithms</title>
+
+    <note>
+      <title>2.3.A.1</title>
+      <p>
+        Some tasks require making a choice based on a condition. Selection allows an algorithm to choose different steps depending on whether a condition is true or false.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.A.2</title>
+      <p>
+        Algorithms that use selection can be represented in ways people can read and follow, such as written steps or flowcharts.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.A.3</title>
+      <p>
+        Selection changes the path an algorithm follows. Different conditions can lead to different results because the algorithm may perform different steps based on the choice made.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Conditional Statements</title>
+
+    <note>
+      <title>2.3.B.1</title>
+      <p>
+        Selection allows apps to respond differently depending on the information they receive. As a result, apps can handle user choices and provide helpful output instead of doing the same thing every time.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.B.2</title>
+      <p>
+        Programmers implement selection in code using conditional statements. Programmers use conditional statements to check a condition using a Boolean expression and run different code depending on the result.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.B.3</title>
+      <p>
+        An if-statement is a type of conditional statement used when a program needs to check a condition and take an action only when that condition is true. When the following code runs, the statements in block of statements are executed if condition evaluates to true. Otherwise, block of statements is skipped and the program continues.
+      </p>
+      <pre>
+if (condition)
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+    <note>
+      <title>2.3.B.4</title>
+      <p>
+        An if-else statement is a type of conditional statement used when a program needs to choose between two different actions based on whether a condition is true or false. When the following code runs, the statements in the first block of statements execute if the condition evaluates to true. Otherwise, the statements in the second block of statements execute.
+      </p>
+      <pre>
+if (condition)
+{
+   &lt;first block of statements&gt;
+}
+else
+{
+   &lt;second block of statements&gt;
+}</pre>
+    </note>
+
+    <note>
+      <title>2.3.B.5</title>
+      <p>
+        Choosing between an if and an if-else statement depends on whether the program should act only when a condition is true or should take one of two actions.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.B.6</title>
+      <p>
+        The result of conditional statements can be determined by evaluating the conditions and tracing which statements execute, including any changes to variable values or output.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.B.7</title>
+      <p>
+        When multiple if-statements are written sequentially, each one is evaluated independently, so more than one block may execute if more than one condition is true.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection>
+    <title>Nested Conditional Statements</title>
+
+    <note>
+      <title>2.3.C.1</title>
+      <p>
+        Apps often make layered decisions by checking a basic condition first and then checking a more specific condition. For example, an app might first check whether a user is logged in and then check whether the user has permission to access a feature. Nested conditionals allow programs to handle these multi-step checks.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.C.2</title>
+      <p>
+        A nested conditional is a conditional statement inside the block of another conditional statement. The inner conditional is evaluated only when the outer condition evaluates to true and execution reaches the inner conditional.
+      </p>
+    </note>
+
+    <note>
+      <title>2.3.C.3</title>
+      <p>
+        Nested conditional statements can be traced by evaluating each conditional statement's Boolean expression in order, following the branch of code that runs, and keeping track of any updates to variable values or output that is produced.
+      </p>
+    </note>
+  </subsection>
+</section>
