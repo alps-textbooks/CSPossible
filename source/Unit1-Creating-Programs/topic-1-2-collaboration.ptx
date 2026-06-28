@@ -430,7 +430,7 @@
      <p>Take a look at the following comic strip where a cat who is a user of an app is letting the dog developers know
       that the app doesn't work well for it, but the developers don't listen.</p>
 
-    <image source="_static/Unit1images/bias.png" alt="Bias" width="80%" />
+    <image source="_static/Unit1images/bias.png" alt="Cat says app is biased against it because of dog developers and testing" width="80%" />
 
     <activity label="bias-cat-dog">
       <statement>
