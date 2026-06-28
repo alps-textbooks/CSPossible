@@ -63,7 +63,7 @@
       </statement>
 
       <feedback>
-        <p>Review the vocabulary in 1.1and try again.</p>
+        <p>Review the vocabulary in 1.1 and try again.</p>
       </feedback>
 
       <cardsort>
@@ -102,10 +102,43 @@
       </cardsort>
     </activity>
 
+     <activity label="vocab-1-2-review">
+      <statement>
+        <p>
+          1-2 Collaboration Vocabulary: Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in lesson 1.2 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>pair programming</premise>
+          <response>a collaboration practice in which two programmers work together at one computer</response>
+        </match>
+        <match>
+          <premise>user testing</premise>
+          <response>testing an app with a variety of users</response>
+        </match>
+        <match>
+          <premise>bias</premise>
+          <response>a tendency to favor certain people, values, or outcomes over others</response>
+        </match>
+        <match>
+          <premise>iterative design process</premise>
+          <response>a circular process in which an app is designed, tested, revised, and tested again multiple times</response>
+         </match>
+        </cardsort>
+    </activity>
+
     <activity label="binary-vocab-review">
       <statement>
         <p>
-          1-4 Binary Vocabulary. Drag the vocabulary term from the left and drop it
+          1-4 Binary Vocabulary: Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>

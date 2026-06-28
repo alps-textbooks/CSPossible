@@ -70,7 +70,7 @@
         <term>Pair programming</term> is one collaboration practice in which two programmers work together
         at one computer: one writes the code, while the other reviews the code as it is written,
         checks for errors, and keeps the bigger picture in mind.
-        Partners switch roles frequently so both contribute to writing code and problem-solving.
+        Partners switch roles frequently so both contribute to writing code and   problem-solving.
       </p>
     </note>
 
@@ -259,7 +259,16 @@
   </choices>
 </activity>
 
-  </subsection>
+ <activity label="runestone-user-testing">
+  <statement>
+    <p>Imagine that you are a user-tester for Runestone which the platform that this ebook is on. 
+      What are some things you would test to make sure the platform is easy to use? 
+      Did you find any tasks that were confusing or difficult to complete? 
+    </p>
+  </statement>
+  <response/>
+ </activity>
+ </subsection>
 
 <subsection xml:id="iterative-process">
 <title>Iterative Process</title>
@@ -379,7 +388,7 @@
     <note>
       <title>1.2.B.1</title>
       <p>
-        Bias occurs when an app consistently favors certain people, values, or outcomes over others.
+        <term>Bias</term> occurs when an app consistently favors certain people, values, or outcomes over others.
         Bias can be harmful because it can make results less accurate for some users and
         can contribute to unfair treatment or unequal access.
       </p>
@@ -397,6 +406,10 @@
       </p>
     </note>
 
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=tJQSyzBUAew">video</url> to learn more about bias that can effect
+    AI systems.</p>
+    <video youtube="tJQSyzBUAew" label="video-bias" />
+
     <note>
       <title>1.2.B.3</title>
       <p>
@@ -413,6 +426,20 @@
         test again to check whether outcomes are more accurate and fair across different users and situations.
       </p>
     </note>
+
+     <p>Take a look at the following comic strip where a cat who is a user of an app is letting the dog developers know
+      that the app doesn't work well for it, but the developers don't listen.</p>
+
+    <image source="_static/Unit1images/bias.png" alt="Bias" width="80%" />
+
+    <activity label="bias-cat-dog">
+      <statement>
+        <p>What is the bias in the comic strip above? Why do you think the app works for dogs but not cats? How
+          could the developers have reduced bias in their app?</p>
+      </statement>
+        <response/>
+    </activity>
+
   </subsection>
 
     <subsection xml:id="LOs-1-2">
@@ -430,5 +457,42 @@
         Explain how collaboration can reduce bias in apps.
       </p>
     </remark>
+  </subsection>
+<subsection xml:id="vocab-1-2">
+  <title>Vocabulary Review</title>
+
+  <activity label="vocab-match-1-2">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>pair programming</premise>
+          <response>a collaboration practice in which two programmers work together at one computer</response>
+        </match>
+        <match>
+          <premise>user testing</premise>
+          <response>testing an app with a variety of users</response>
+        </match>
+        <match>
+          <premise>bias</premise>
+          <response>a tendency to favor certain people, values, or outcomes over others</response>
+        </match>
+        <match>
+          <premise>iterative design process</premise>
+          <response>a circular process in which an app is designed, tested, revised, and tested again multiple times</response>
+         </match>
+        </cardsort>
+    </activity>
+
   </subsection>
 </section>
