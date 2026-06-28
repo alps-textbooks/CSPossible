@@ -53,17 +53,46 @@
       </p>
         <interactive iframe="https://dwyl.github.io/stopwatch/" width="100%" aspect="2.5:1"/>
 
-      <activity label="app-purpose">
-      <title>App Purpose</title>
+    <activity label="stopwatchPurpose">
+  <statement>
+    <p>What is the purpose of the <url
+        href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url>?</p>
+  </statement>
+  <choices  randomize="yes">
+    <choice>
       <statement>
-        <p>What is the purpose of the <url
-        href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url> and how does it behave when 
-        you interact with it?
-        </p>
+        <p>To tell time</p>
       </statement>
-      <response />
-    </activity>
-
+      <feedback>
+        <p>That would be a watch or clock app.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+          <p>To time an event by counting down from a set amount of time</p>
+      </statement>
+      <feedback>
+        <p>A timer counts down from a set amount of time. A stopwatch counts up from zero. </p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>To measure how much time has passed starting from zero</p>
+      </statement>
+      <feedback>
+        <p>Correct! A stopwatch keeps track of how much time has passed starting from zero, such as timing a race or an activity.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>To perform calculations</p>
+      </statement>
+      <feedback>
+        <p>Calculations are done with a calculator app, not a stopwatch.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
    
     <note>
       <title>1.1.A.3</title>
@@ -159,22 +188,59 @@
         Each of these actions provides <term>input</term>: data sent to a computer for a program to process.</p>
     </note>  
     
-    <image source="images/phoneIO.png" alt="Inputs and Outputs" width="100%" />
+    <image source="_static/Unit1images/phoneIO.png" alt="Inputs and Outputs" width="50%" />
 
     <p><term>Input</term> is data sent to a computer for processing by a program, and <term>output</term> is the 
       data sent back from the program to the device. 
       Input and output can come in many forms, such as tactile (for example touching a button or the device 
       vibrating), audible (a sound), visual (an image), or text. </p>
 
-     <activity label="input-output">
+   <activity label="stopwatchIO">
+  <statement>
+    <p>Which of the following are examples of input and output in the <url
+        href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url>?</p>
+  </statement>
+  <choices  randomize="yes">
+    <choice correct="yes">
       <statement>
-        <p>What are some examples of input and output in the <url
-        href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url>? 
-        Can you think of any apps that use the tilting of a device or vibration as input or output?
-        </p>
+        <p>Tapping the Start button</p>
       </statement>
-      <response /> 
-      </activity>
+      <feedback>
+        <p>Correct! Tapping a button is user input.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>The system time</p>
+      </statement>
+      <feedback>
+        <p>The system time is used by the stopwatch app to calculate the elapsed time but it is not input or output to the user.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>The elapsed time displayed on the screen</p>
+      </statement>
+      <feedback>
+        <p>Correct! The app displays the elapsed time as output.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>The color of the displayed time</statement>
+      <feedback>
+        <p>The color of the displayed time is set by the app code but it is not input or output to the stopwatch app.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>Pressing the reset button</p>
+      </statement>
+      <feedback>
+        <p>Pressing the reset button is an input to the stopwatch app.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
 
     <note>
       <title>1.1.B.3</title>
@@ -197,6 +263,47 @@
         These inputs allow apps to provide features like maps, step counting, face filters, or
         recommendations.</p>
     </note>
+   
+   <activity label="tiltVibrationExample">
+  <statement>
+    <p>Which app below is most likely to use tilting the device (accelerometer) as an input or vibration as an output?</p>
+  </statement>
+  <choices  randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>A car racing game</p>
+      </statement>
+      <feedback>
+        <p>Yes, a car racing game could use tilting the phone to steer the car and phone vibration as output during a crash. 
+         </p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>A calculator app that adds two numbers</p>
+      </statement>
+      <feedback>
+        <p>A calculator typically uses taps as input and text as output, not tilt or vibration.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>A tic tac toe game</p>
+      </statement>
+      <feedback>
+        <p>Tic tac toe games mainly use touch input and visual output.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>A weather app that displays today's forecast</p>
+      </statement>
+      <feedback>
+        <p>Weather apps primarily display information on the screen rather than using tilt or vibration.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
 
      <activity label="automatic-input">
       <statement>
@@ -254,7 +361,7 @@ The app's behavior is determined by the code that runs in response to the input.
       <statement>
         <p>Which of the following output types does the pizza app above use? Check all that apply.</p>  
       </statement>
-      <choices>
+      <choices  randomize="yes">
         <choice correct="yes">
           <statement>
             <p>text</p>

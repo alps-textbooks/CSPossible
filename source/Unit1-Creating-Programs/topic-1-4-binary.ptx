@@ -14,7 +14,7 @@
       data is stored as bits, which are just 0's and 1's. It's all bits! In this topic, you'll learn
       how computers use bits to represent and process data.
     </p>
-    <image source="_static/Unit1images/allbits.png" width="60%" />
+    <image source="_static/Unit1images/allbits.png" width="60%" alt="All Bits" />
 
   </introduction>
 

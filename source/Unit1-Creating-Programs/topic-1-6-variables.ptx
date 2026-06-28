@@ -51,7 +51,7 @@
           Which of the following are variables that the app above might use to store information
           about the user.</p>
       </statement>
-      <choices>
+      <choices  randomize="yes">
         <choice correct="yes">
           <statement>
             <p>name</p>
@@ -457,7 +457,7 @@ Your score is?
       <statement>
         <p>Which of the following is <em>not</em> a legal variable name in Python?</p>
       </statement>
-      <choices>
+      <choices  randomize="yes">
         <choice correct="yes">
           <statement>
             <p>my name</p>
@@ -1055,7 +1055,7 @@ print(name + " is " + age + " years old")
     
 <activity label="var-data-type">
  <statement><p>What is the data type of the variable <c>color1</c> in the code above?</p></statement>
- <choices>
+ <choices  randomize="yes">
   <choice><statement><p>int</p></statement>
     <feedback>
             <p>Sorry, it is not an integer number.</p>
