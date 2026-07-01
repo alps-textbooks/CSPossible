@@ -1,32 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="topic-1-3-responsible-ai">
-  <time minutes="45" />
+  <time minutes="90" />
   <title>Responsible AI and Human Decision-Making</title>
   <introduction>
     <p>
+      <term>Artificial Intelligence (AI)</term> is becoming a big part of our lives and changing the way we work and learn. 
+      AI is a branch of computer science with the goal of building smarter machines to do tasks that typically require human intelligence. 
+      Watch the following <url href="https://www.youtube.com/watch?v=ng4c1g3COfs">video</url> to learn more about the impacts of AI on society. 
+      In this lesson, we will learn about the importance of responsible AI use and human decision-making.
     </p>
+      <video youtube="ng4c1g3COfs" label="video-impacts-of-ai" />
+
+  
   </introduction>
 
-  <subsection>
-    <title>Learning Objectives</title>
-    <remark>
-      <title>1.3.A</title>
-      <p>
-        Explain how human decisions shape the development, deployment, and maintenance of AI tools.
-      </p>
-    </remark>
+  <subsection xml:id="ai-data">
+    <title>AI and Data</title>
 
-    <remark>
-      <title>1.3.B</title>
+        <note>
+      <title>1.3.A.2</title>
       <p>
-        Evaluate the appropriate level of automation or augmentation for a task.
+        <term>Artificial intelligence (AI)</term> refers to computer systems that use data and patterns to
+        perform tasks that are often associated with human intelligence, producing outputs such
+        as predictions, recommendations, decisions, or generated content.
       </p>
-    </remark>
-  </subsection>
+    </note>
 
-  <subsection>
-    <title>Human Decisions in AI</title>
+    <p>Try <url href="https://quickdraw.withgoogle.com/">Google Quick Draw</url>. The Quick Draw AI is trained on millions 
+      of drawings from people around the world to recognize and predict what you are drawing. Take a look at 
+      <url href="https://quickdraw.withgoogle.com/data">the data</url> it uses. The following 
+      <url href="https://www.youtube.com/watch?v=X8v1GWzZYJ4">video</url> introduces Quick Draw.
+    </p>
+
+    <video youtube="X8v1GWzZYJ4" label="video-quick-draw" />
+    
+    <activity label="quickdraw-ai-example">
+  <statement>
+    <p>Based on how Google Quick Draw works, which best explains why it counts as an example of artificial intelligence?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>It uses a database of pre-made drawings that it displays back to the user.</p>
+      </statement>
+      <feedback>
+        <p>No. Quick Draw does not simply retrieve and display stored drawings. It analyzes the user's sketch and predicts what it represents.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It follows a fixed set of rules written by a programmer for every possible object.</p>
+      </statement>
+      <feedback>
+        <p>No. AI systems like Quick Draw learn patterns from data rather than relying on explicit rules for every possible drawing.</p>
+      </feedback>
+    </choice>
+
+     <choice correct="yes">
+      <statement>
+        <p>It applies patterns learned from millions of drawings to predict what a new, unseen drawing represents.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Quick Draw is trained on a large dataset of drawings and uses the patterns it learned to make predictions about new sketches.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It randomly guesses an object name until the user confirms the correct one.</p>
+      </statement>
+      <feedback>
+        <p>No. Quick Draw makes informed predictions based on patterns learned from its training data, not random guesses.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="quickdraw-training-data">
+  <statement>
+    <p>Suppose the Quick Draw training data contains thousands of <url href="https://quickdraw.withgoogle.com/data/cat">drawings of cats</url> but only a 
+      few drawings of armadillos. Which outcome is most likely?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The AI may recognize armadillos more accurately than cats.</p>
+      </statement>
+      <feedback>
+        <p>No. With far fewer examples of armadillos, the AI is less likely to recognize them accurately.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The AI may recognize cats more accurately because it has learned from more examples.</p>
+      </statement>
+      <feedback>
+        <p>Correct! AI systems generally perform better on categories that have more representative training data because they have learned more patterns from those examples.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI may recognize both equally well.</p>
+      </statement>
+      <feedback>
+        <p>No. The amount and quality of training data can affect how accurately an AI recognizes different categories.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI may not recognize either animal.</p>
+      </statement>
+      <feedback>
+        <p>No. The AI will still make a prediction, although it may be less accurate for objects with fewer training examples.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
 
     <note>
       <title>1.3.A.1</title>
@@ -37,22 +137,148 @@
       </p>
     </note>
 
-    <note>
-      <title>1.3.A.2</title>
-      <p>
-        Artificial intelligence (AI) refers to computer systems that use data and patterns to
-        perform tasks that are often associated with human intelligence, producing outputs such
-        as predictions, recommendations, decisions, or generated content.
-      </p>
-    </note>
+<activity label="ai-common-apps">
+  <statement>
+    <p>Select all of the tools below that use AI.</p>
+  </statement>
 
-    <note>
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>A streaming service that recommends movies or TV shows based on what you have watched before.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Recommendation systems often use AI to predict what users are likely to enjoy.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>An online store that suggests products you might want to buy based on your browsing or purchase history.</p>
+      </statement>
+      <feedback>
+        <p>Correct! AI is commonly used to make personalized shopping recommendations.</p>
+      </feedback>
+    </choice>
+
+      <choice>
+      <statement>
+        <p>A calculator that does mathematical calculations.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. A basic calculator follows predefined mathematical rules and does not use AI to make predictions or recommendations.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A simple photo-sharing app that allows you to post photos to share with friends.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. A simple photo-sharing app doesn't use AI to make predictions or recommendations, but 
+          more complex ones may use AI for features like facial recognition or content suggestions.
+        </p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>A social-media app that shows you posts based on your interests.</statement>
+      <feedback>
+        <p>Correct! Social media platforms use AI to personalize content feeds learning from your preferences and behavior.</p>
+      </feedback>
+    </choice>
+    </choices>  
+    </activity>
+
+
+    <activity label="quickdraw-cultural-influence">
+  <statement>
+    <p>Google Quick Draw is trained on drawings submitted by people from around the world. 
+      Which objects are <em>most likely</em> to be drawn differently depending on a person's culture or where they live?
+      These human factors affect the training data and can influence how well the AI recognizes different objects.
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>A house</p>
+      </statement>
+      <feedback>
+        <p>Correct! Houses can have different shapes, roofs, building materials, and styles in different parts of the world.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A square</p>
+      </statement>
+      <feedback>
+        <p>No, most people draw a square as a simple geometric shape, regardless of their culture or location.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>A school bus</p>
+      </statement>
+      <feedback>
+        <p>Correct! School buses look very different across countries. For example, the familiar yellow school bus is common in the 
+          United States but not in many other places.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>An apple</p>
+      </statement>
+      <feedback>
+        <p>Not quite. Although apples come in different varieties, people around the world generally draw them in similar ways.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>A hat</p>
+      </statement>
+      <feedback>
+        <p>Correct! Hats can vary significantly in style, color, and design across different cultures and regions.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+</subsection>
+
+<subsection xml:id="ai-models">
+    <title>Machine Learning and AI Models</title>
+
+<p><term>Machine Learning (ML)</term> is a type of AI that learns patterns from data. Machine learning 
+  has become so successful that AI has become another term for machine learning, even though AI is a broader field. Watch the following 
+  <url href="https://www.youtube.com/watch?v=KHbwOetbmbs">video</url> to learn more about machine learning.</p>
+
+   <video youtube="KHbwOetbmbs" label="video-machine-learning" />  
+
+  <p>Take a look at the following diagram showing how an AI learns to recognize green apples by looking at many examples
+    of apples that are labeled as green or not green. The set of patterns or rules that an AI learns is called the <term>model</term>. 
+    The model becomes more accurate as it is trained on more examples. Machine learning involves training and testing with data 
+    until the model is accurate enough for the task. Once we have a good model, we can use it to make predictions about new, 
+    unseen apples. The new apple is an input to the model, and the model produces an output that predicts whether the apple is green or not.
+  </p>
+
+      <image source="_static/Unit1images/apple-model.png" alt="Model learning a green apple from data" width="75%" />
+
+
+  <note>
       <title>1.3.A.3</title>
       <p>
-        In AI systems, a model is the part of the system used to produce outputs from inputs.
+        In AI systems, a <term>model</term> is the part of the system used to produce outputs from inputs.
         Models may follow rules created by people or learn patterns from data.
       </p>
     </note>
+
 
     <note>
       <title>1.3.A.4</title>
@@ -63,16 +289,120 @@
       </p>
     </note>
 
+    <p>In the next activity, you will use Google's Teachable Machine which makes it easy to train AI models without writing code. Watch the
+      following <url href="https://www.youtube.com/watch?v=T2qQGqZxkD0">video</url> introducing Teachable Machine. You can train a model 
+      to recognize images, sounds, or poses. The model learns patterns from the examples you provide and can then make predictions about new inputs.
+    </p>
+    <video youtube="T2qQGqZxkD0" label="video-teachable-machine" />
+
+   
+ <project label="teachable-machine">
+  <title>Teachable Machine</title>
+  <statement>
+    <p><ol>
+      <li>Go to <url href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</url> and click on Get Started.</li>
+      <li>If you have a webcam on your computer, try Image Project or Pose Project. You can also try the Image Project if you can
+        download images on your computer, for example you could download this 
+        <url href="https://drive.google.com/drive/folders/1xCj0EW-pfvLG08LU9As6Vy8_cEMV4bcd?usp=drive_link">folder of cat and dog images</url>. 
+        If you do not have a webcam or cannot download images, try the Audio Project which can use your computer's microphone to record sounds.
+      </li>
+      <li><term>Categories:</term> Teachable machine will learn to recognize two different categories of input. Decide
+        which two categories you want to use. For example, you could train a model to recognize cats and dogs, or happy and sad faces, 
+        or pointing up and down or clapping and snapping sounds. Click on the pencil icon next to Class 1 and type in your first category 
+        and do the same for Class 2.</li>
+      <li><term>Data:</term> Watch this short <url href="https://www.youtube.com/watch?v=DFBbSTvtpy4">gather video</url> on how to input your data. 
+        You will use your webcam or microphone or upload images to record at least 20 examples of your two categories. 
+      </li>
+      <li><term>Train:</term> Once you have collected at least 20 examples for each category, click on the "Train" button to train your 
+        model. Watch this <url href="https://www.youtube.com/watch?v=CO67EQ0ZWgA">train video</url> for more information.</li>
+        <li><term>Test:</term> After training, you can test your model in the Preview area. Upload or record a new sample and see
+          what your model predicts! You should use examples that are not in your training data and are difficult to guess. 
+          Under the uploaded sample, the model will tell you the percentage of confidence it has in its prediction of the category. 
+          For example, the model below thinks this image is a cat with 88% confidence. 
+          Did your model get it right? If not upload more training data and train again.
+         <image source="_static/Unit1images/test-cat.png" alt="Image of a cat with prediction cat 88%" width="30%" />
+        </li>
+        <li><term>Reflection:</term> Answer the following questions below. What categories did you choose? After training,
+          how accurate was your model in the preview area and what kind of examples did it have difficulty with?  
+          How did your decisions about the categories and training data affect the model's accuracy and fairness?
+       </li>
+      </ol>
+    </p>
+  </statement>
+   <response/>
+ </project>
+
+ <p>The teachable machine does not require very many examples to learn your categories because it uses a technique called 
+  <term>transfer learning</term>, where it starts with a pre-trained model that is trained on the Imagenet dataset of millions of 
+  images with labels for 1000+ different classes which it then just tweaks to customize for your categories. 
+  However, the quality of data is crucial for a model's accuracy. There is a saying of "Garbage in, garbage out", where you cannot
+  expect good results if you feed the model incomplete or biased data. There is also the danger of machine learning algorithms 
+  learning the wrong or unexpected things from the data, because that is not something we can control.  </p>
+
+<activity label="training-data-quality">
+  <statement>
+    <p>Adding more training data does not always improve an AI model. Which is the <em>best</em> explanation for this?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>AI models stop learning after they have seen a certain number of examples.</p>
+      </statement>
+      <feedback>
+        <p>No. AI models do not have a fixed limit on how many examples they can learn from.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>If the additional data is inaccurate, repetitive, or does not represent the variety of real-world examples, 
+          the model may not improve.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The quality and diversity of the training data are just as important as the quantity.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Adding more data causes the AI to forget what it learned from earlier examples.</p>
+      </statement>
+      <feedback>
+        <p>No. More data does not automatically cause an AI model to forget previous training examples.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>AI models become less accurate whenever they are trained with more than one category of data.</p>
+      </statement>
+      <feedback>
+        <p>No. AI models are often designed to recognize many categories. The issue is whether the training data is representative and of good quality.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+  </subsection>
+  
+  <subsection xml:id="genAI">
+    <title>Generative AI</title>
+
     <note>
       <title>1.3.A.5</title>
       <p>
-        Generative AI is a type of AI that creates new content, such as text, images, music, or code,
+        <term>Generative AI</term> is a type of AI that creates new content, such as text, images, music, or code,
         based on patterns it has learned from examples.
-        Some generative AI tools are powered by large language models (LLMs), which generate text by
+        Some generative AI tools are powered by <term>large language models (LLMs)</term>, which generate text by
         predicting likely sequences of words based on patterns learned from large collections of text.
       </p>
     </note>
 
+    How chatbots and LLMs work: https://www.youtube.com/watch?v=X-AWdfSFCHQ  (7 mins, but good explantion)
+    (shorter but not as good Generative AI video
+    https://www.youtube.com/watch?v=JO9MgO1Zp3E)
     <note>
       <title>1.3.A.6</title>
       <p>
@@ -103,7 +433,7 @@
     <note>
       <title>1.3.A.9</title>
       <p>
-        Model drift occurs when a model’s performance changes over time because the real-world data
+        <term>Model drift</term> occurs when a model’s performance changes over time because the real-world data
         or conditions it encounters shift, potentially making the model less accurate.
         AI systems should be monitored by humans to detect model drift. When drift is detected,
         humans can update data, adjust the model, or retrain the system to reduce inaccurate or
@@ -123,6 +453,24 @@
 
   <subsection>
     <title>Automation and Augmentation</title>
+
+    https://www.youtube.com/shorts/QagTKYVfF_k
+
+    Replacing humans as agents vs Human in the loop  
+    self-driving car
+    
+    AI Automation
+    Role: The AI acts autonomously without human approval (e.g., an automated chatbot resolving a routine billing error 
+    without human escalation).
+    Goal: Maximize speed, scale, and cost reduction.
+    Best Used For: High-volume, predictable, and low-risk tasks where speed takes priority.
+    
+    AI Augmentation
+    Role: The AI surfaces insights, drafts material, or provides recommendations, while the 
+    human retains full accountability and control.
+    Goal: Amplify human skills and prevent costly, automated errors.
+    Best Used For: 
+    High-stakes, complex, or unstructured tasks that require ethics, empathy, and "human-in-the-loop" oversight
 
     <note>
       <title>1.3.B.1</title>
@@ -197,4 +545,23 @@
       </p>
     </note>
   </subsection>
+
+   <subsection>
+    <title>Learning Objectives Review</title>
+    <p>After this lesson, you will be able to:</p>
+    <remark>
+      <title>1.3.A</title>
+      <p>
+        Explain how human decisions shape the development, deployment, and maintenance of AI tools.
+      </p>
+    </remark>
+
+    <remark>
+      <title>1.3.B</title>
+      <p>
+        Evaluate the appropriate level of automation or augmentation for a task.
+      </p>
+    </remark>
+  </subsection>
+
 </section>
