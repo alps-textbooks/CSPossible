@@ -79,7 +79,7 @@
       <statement>
         <p>What is the next binary number after 1011? Try it out with the binary odometer above.</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice>
           <statement>
             <p>1012</p>
@@ -158,7 +158,7 @@
           0011,
           what binary number will be assigned to the next student who enrolls?</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>1001 0100</p>
@@ -213,7 +213,7 @@
         <p>What's the largest number that can be represented in 4 bits? Try it out with the binary
           converter above.</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice>
           <statement>
             <p>5</p>
@@ -369,7 +369,7 @@
         <p>Complete the following definition: An abstraction is a ____________ representation that
           stands for some collection of individual instances.</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>general</p>
@@ -417,7 +417,7 @@
         <p>True or False: One of the main characteristics of an abstraction is that it simplifies a
           complex phenomenon by leaving out the irrelevant aspects.</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>True</p>
@@ -444,7 +444,7 @@
       <statement>
         <p>Examples of abstraction can be found in which of the following? (Choose all that apply.)</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>Languages</p>
@@ -491,7 +491,7 @@
       <statement>
         <p>In Computer Science, the process of abstracting also means: (Choose all that apply.)</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice>
           <statement>
             <p>Complexing</p>
@@ -572,7 +572,7 @@
           of the file or the software interpreting it, which of the following could this sequence
           represent? (Choose all that apply.)</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>A decimal number like 65.</p>
@@ -701,7 +701,7 @@
         <p>An overflow error occurs when there aren't enough bits to represent a given number.
           Which of following would cause an overflow error to occur. (Choose all that apply.)</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice>
           <statement>
             <p>Trying to represent 15 in 4 bits.</p>
@@ -748,7 +748,7 @@
           values and hence limits the range of problems
           that can be solved with that representation.</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>True.</p>
