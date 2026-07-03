@@ -135,6 +135,61 @@
         </cardsort>
     </activity>
 
+     <activity label="vocab-AI-review">
+      <statement>
+        <p>
+          1-3 AI Vocabulary: Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in lesson 1.3 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>Artificial Intelligence (AI)</premise>
+          <response>computer systems that use data and patterns to perform tasks that are often associated with human intelligence</response>
+        </match>
+        <match>
+          <premise>Generative AI (Gen AI)</premise>
+          <response>AI that creates new content, such as text, images, music, or code, based on patterns it has learned from examples</response>
+        </match>
+        <match>
+          <premise>Large Language Model (LLM)</premise>
+          <response>a type of AI model that is trained on large amounts of text data to generate human-like text</response>
+        </match>
+        <match>
+          <premise>Machine Learning (ML)</premise>
+          <response>algorithms that can learn from data</response>
+        </match>
+        <match>
+          <premise>Model</premise>
+          <response>the patterns or rules that an AI learns from data</response>
+        </match>
+        <match>
+          <premise>Model Drift</premise>
+          <response>decreased model performance because the real-world data or conditions it encounters shift</response>
+        </match>
+        <match>
+          <premise>Automation</premise>
+          <response>Computer systems that carry out tasks with limited human involvement
+          </response>
+        </match>
+        <match>
+          <premise>Augmentation</premise>
+          <response>AI tools that support human work while humans remain responsible for decisions and outcomes</response>  
+        </match>
+        <match>
+          <premise>Human-In-the-Loop (HITL) training</premise>
+          <response>AI training augmented with human feedback, where AI outputs are reviewed by humans to improve accuracy and accountability</response>
+        </match>
+
+      </cardsort>
+    </activity>
+
     <activity label="binary-vocab-review">
       <statement>
         <p>
