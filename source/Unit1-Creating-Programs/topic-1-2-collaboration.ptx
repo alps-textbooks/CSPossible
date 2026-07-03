@@ -3,6 +3,8 @@
 <section xml:id="topic-1-2-collaboration">
   <time minutes="45" />
   <title>Benefits of Collaboration</title>
+     <idx>collaboration</idx>
+
   <introduction>
     <p>Almost all software is developed collaboratively in teams. Working with others can help programmers 
       design better apps.  In this topic, you will learn about the benefits of collaboration and user testing 
@@ -63,6 +65,7 @@
         </cardsort>
     </activity>
 
+    <idx>pair programming</idx>
     <note>
       <title>1.2.A.4</title>
       <p>
@@ -187,6 +190,7 @@
 
 <subsection xml:id="user-testing">
   <title>User Testing</title>
+  <idx>user testing</idx>
 
     <note>
       <title>1.2.A.1</title>
@@ -272,6 +276,7 @@
 
 <subsection xml:id="iterative-process">
 <title>Iterative Process</title>
+<idx>iterative process</idx>
 
     <note>
       <title>1.2.A.5</title>
@@ -384,6 +389,7 @@
 
   <subsection xml:id="bias">
     <title>Reducing Bias through Collaboration</title>
+    <idx>bias</idx>
 
     <note>
       <title>1.2.B.1</title>

@@ -18,6 +18,9 @@
 
   <subsection>
     <title>Purpose and Behavior of Apps</title>
+    <idx>purpose</idx>
+    <idx>behavior</idx>
+    <idx>app</idx>
 
     <p>Think about your favorite apps on your phone and their purpose. <term>App</term> is short for <term>application</term>, 
       which is a program that runs on a computer or any computing device including your phone.</p>
@@ -166,6 +169,12 @@
 
   <subsection>
     <title>Inputs and Outputs</title>
+
+       <idx>input</idx>
+       <idx>output</idx>
+       <idx>user interface (UI)</idx>
+       <idx>event</idx>
+       <idx>event handler</idx>
 
     <p>Watch the following <url href="https://www.youtube.com/watch?v=mCq8-xTH7jA">video</url> about what 
       makes a computer a computer.</p>
