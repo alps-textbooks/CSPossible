@@ -390,6 +390,19 @@
   <subsection xml:id="genAI">
     <title>Generative AI</title>
 
+    <p>
+      ChatGPT was publicly released by OpenAI in late 2022 and quickly went viral, attracting 1 million users within five days.
+      Most people were not aware of AI before ChatGPT (GPT stands for Generative Pre-trained Transformer). This was a major
+      turning point for AI technology and adoption. The Generative AI breakthrough was possible due to the massive growth of data available on the Internet for training,
+      new machine learning algorithms, and the increase in processing power to run the algorithms and store the resulting model.
+      ChatGPT, and others that followed like CoPilot, Claude, and Gemini, are examples of <term>Generative AI</term> which is a 
+      type of AI trained on large amounts of data (most of the Internet) to create a <term>large language model (LLM)</term>
+      that can generate content such as text or code in many languages. The same technology can be used to generate images, audio, 
+      and recently even some video content. </p>
+
+      <image source="_static/Unit1images/chatgpt.webp" alt="chatGPT logo" width="50%" />
+
+
     <note>
       <title>1.3.A.5</title>
       <p>
@@ -400,9 +413,38 @@
       </p>
     </note>
 
-    How chatbots and LLMs work: https://www.youtube.com/watch?v=X-AWdfSFCHQ  (7 mins, but good explantion)
-    (shorter but not as good Generative AI video
-    https://www.youtube.com/watch?v=JO9MgO1Zp3E)
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=X-AWdfSFCHQ">video (7 mins)</url> to learn how chatbots 
+      and LLMs work:</p>
+    <video youtube="X-AWdfSFCHQ" label="video-chatbots-llms" />
+
+
+    <p>Go to the <url href="https://howllms.work/">How LLMs work</url> website and scroll down through the tutorial. 
+     LLMs are like the autocomplete feature on your phone texting apps, but much better. They predict the next word
+    or token based on the context and their training with a vast amount of data. For example, how would you 
+  finish the sentence "AI is transforming the ..."? Did you pick the same next word as the LLM below? </p>
+    <image source="_static/Unit1images/llm-predict-next-word.png" alt="LLM predicting the next word" width="80%" />
+   
+  <activity label="llm-next-word-prediction">
+  <statement>
+    <p>Scroll down to the bottom of the <url href="https://howllms.work/">How LLMs work</url> website to the Interactive Playground
+      section. Type in the sentence fragment "Gen AI uses a large language" and click on Visualize. What word is predicted
+      to be the next word with the highest probability? </p>
+      <fillin answer="model" mode="string" />
+      </statement>
+      <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback> Correct! In most cases, the LLM would see data with "large language model" occurring together.</feedback>
+          </test>
+          <test>
+            <feedback>What comes after large language?</feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </activity>
+
+
     <note>
       <title>1.3.A.6</title>
       <p>
@@ -411,24 +453,233 @@
       </p>
     </note>
 
+    <p>It is important to remember that Generative AI is a fairly new technology; it is not perfect and can make mistakes.
+      Common errors include <term>hallucinations</term> where the AI confidently invents fake information or sources often 
+      due to lack of accurate information in its training data. This is more likely to happen with languages or topics that are 
+      less common in the training data. Gen AI can also produce biased information if its training data is biased.  
+      It can also generate repetitive or long-winded text or struggle with arithmetic or complex logic. 
+      Users of Gen AI must critically evaluate the output and not blindly trust it, especially if it is being used for important decisions.
+    </p> 
+    
+    <activity label="human-review-high-stakes">
+  <statement>
+    <p>Which situation most requires a human to carefully review an AI system's output before acting on it?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>Accepting a medical treatment recommended by an AI system.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Decisions involving health can have serious consequences. A human should carefully review AI recommendations before making a final decision.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Using AI to suggest a movie to watch.</p>
+      </statement>
+      <feedback>
+        <p>Movie recommendations are generally low-risk, so they typically require less careful human review.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Using autocomplete while texting a friend.</p>
+      </statement>
+      <feedback>
+        <p>Autocomplete may make small mistakes, but the consequences are usually minor.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Asking AI to generate ideas for a story.</p>
+      </statement>
+      <feedback>
+        <p>Generating creative ideas is generally a low-risk use of AI. Humans still decide which ideas to use.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+<activity label="identify-ai-hallucination">
+  <statement>
+    <p>Which of the following are examples of a hallucinations produced by generative AI tools?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>The AI confidently names several court cases that do not actually exist.</p>
+      </statement>
+      <feedback>
+        <p>Correct! A hallucination occurs when an AI generates false information, such as made-up facts, while presenting them as if they are real.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI writes a story with repetitive sentences.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Repetitive writing is a limitation of some AI systems, but it is not a hallucination.</p>
+      </feedback>
+    </choice>
+
+        <choice correct="yes">
+      <statement>
+        <p>The AI generates a bibliography of books and articles where the dates of publication are incorrect.</p>
+      </statement>
+      <feedback>
+        <p>Yes. Large language models sometimes make errors in generating information especially with specific names and numbers that are not common.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI generates a response more slowly than expected.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. A slow response is a performance issue, not a hallucination.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
     <note>
       <title>1.3.A.7</title>
       <p>
         When AI tools are used to create or transform content, humans must consider what content
-        may be used and how outputs may be shared, including following licenses and giving attribution
+        may be used and how outputs may be shared, including following licenses and giving <term>attribution</term>
         when required.
       </p>
     </note>
+
+    <activity label="licenses-and-attribution">
+  <statement>
+    <p>Can you use AI-generated content without attribution (without mentioning where it is from)?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p>No, because AI-generated content is always copyrighted.</p>
+      </statement>
+      <feedback>
+        <p>Not necessarily. Copyright and licensing rules depend on the terms of use of the AI tool.
+          Currently only human-created content is protected by copyright law, but some AI tools may have licensing 
+          or attribution requirements.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Yes, because AI tools always provide original work.</p>
+      </statement>
+      <feedback>
+        <p>No, AI-generated content is not guaranteed to be completely original because it is based on 
+          existing work by humans and the AI tool you use 
+          may have licensing or attribution requirements.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>No, some content may require permission or credit before it is shared.</p>
+      </statement>
+      <feedback>
+        <p>Correct! When using AI-generated content, people should consider check whether the 
+          AI tool requires a license or attribution, and whether the place where it is being 
+          shared has any rules about using AI-generated content. </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Yes, attribution is only required for printed books.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Attribution requirements can apply to many types of content, not just printed 
+          books.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
 
     <note>
       <title>1.3.A.8</title>
       <p>
         AI tools can generate realistic images, audio, or video that may be mistaken for authentic
-        media (deepfakes).
+        media (<term>deepfakes</term>).
         Humans must make decisions about safeguards, such as disclosure, verification, and responsible
         sharing, to reduce misinformation and harm.
       </p>
     </note>
+
+  <activity label="deepfakes-dogs">
+  <statement>
+    <p>Which of the following images is real and not AI-generated? It's okay to try all the answers on this one!
+      <image source="_static/Unit1images/dogs.png" alt="Which image is real among 4 dogs" width="60%" />
+    </p>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>Dog 1</p>
+        </statement>
+        <feedback>
+             <p>Incorrect. This image was AI-generated.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Dog 2</p>
+        </statement>
+        <feedback>
+            <p>Correct! This image is a real photograph of a dog.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Dog 3</p>
+        </statement>
+        <feedback>
+             <p>Incorrect. This image was AI-generated.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Dog 4</p>
+        </statement>
+        <feedback>
+         <p>Incorrect. This image was AI-generated.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+<activity label="deepfake-quiz">
+  <statement>
+    <p>Visit the <url href="https://whichoneisreal.com/mode/mixed/">Which One Is Real</url> website 
+      and play one round of the Mixed or Images or Videos quiz. Try these together with a partner.</p>
+
+    <p>After you finish, answer the following questions:</p>
+
+    <ol>
+      <li>What was your score?</li>
+      <li>Was it easier or harder than you expected to identify the AI-generated content?</li>
+      <li>Why is it important to verify realistic-looking images or videos before sharing them online?</li>
+      <li>What are some of the dangers with deepfakes? </li>
+    </ol>
+  </statement>
+  <response/>
+</activity>
+
+    
 
     <note>
       <title>1.3.A.9</title>
@@ -441,6 +692,56 @@
       </p>
     </note>
 
+    <activity label="model-drift-response">
+  <statement>
+    <p>An AI model predicts traffic patterns for a city. After several new highways are built, 
+      the model's predictions become much less accurate. What is the best explanation and the 
+      most appropriate action to fix this issue?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>The model has experienced model drift, so humans should update the training data and 
+          retrain the model.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Model drift occurs when changes in real-world conditions reduce a model's accuracy. Humans should monitor AI systems and update or retrain them when drift is detected.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The model has become corrupted, so it can no longer be used.</p>
+      </statement>
+      <feedback>
+        <p>No, the decrease in accuracy is due to changes in real-world conditions, and the 
+          model can be still be fixed.
+        </p>     </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The model can still be used, but the city should publish a disclaimer about the model's limitations.</p>
+      </statement>
+      <feedback>
+        <p>Although this is a good temporary measure, the underlying problems should 
+          still be addressed.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Unfortunately, they would need to start over to train the model with the new information.</p>
+      </statement>
+      <feedback>
+        <p>The model is still useful and could be updated.   
+        </p>
+       </feedback>
+    </choice>
+  </choices>
+</activity>
+
     <note>
       <title>1.3.A.10</title>
       <p>
@@ -449,9 +750,55 @@
         This allows users to make informed choices.
       </p>
     </note>
+
+  <activity label="ai-transparency">
+  <statement>
+    <p>A company publicly explains that its chatbot was trained on customer support conversations, 
+      works best for common questions, and sometimes produces incorrect answers. 
+      Why is this information useful?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>It increases transparency and helps users understand the chatbot's appropriate uses and limitations.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Explaining how an AI system was trained, what it is designed to do, and its limitations helps users make informed decisions about when and how to use it.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It guarantees every answer the chatbot gives is correct.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Even transparent AI systems can make mistakes. Transparency helps users understand the system, but it does not guarantee correct answers.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It prevents model drift.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Providing information about an AI system does not prevent model drift, which occurs when a model's performance changes because real-world data or conditions change over time.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It makes the chatbot respond faster.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Explaining how an AI system works does not affect its response speed.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
   </subsection>
 
-  <subsection>
+  <subsection xml:id="automation-augmentation">
     <title>Automation and Augmentation</title>
 
     https://www.youtube.com/shorts/QagTKYVfF_k
