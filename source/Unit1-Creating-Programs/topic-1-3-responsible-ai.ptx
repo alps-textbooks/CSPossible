@@ -282,7 +282,7 @@
     <p>For example, self-driving cars use AI models to recognize objects on the road and make decisions about how to drive. What objects do you see below that a self-driving car would need to recognize?</p>
 
     <image source="_static/Unit1images/car-vision.webp" alt="Objects recognized byself-driving cars" width="75%" />
-    
+
   <note>
       <title>1.3.A.3</title>
       <p>
@@ -301,7 +301,58 @@
       </p>
     </note>
 
-    <p>In the next activity, you will use Google's Teachable Machine which makes it easy to train AI models without writing code. Watch the
+  <activity label="training-data-quality">
+  <statement>
+    <p>Adding more training data does not always improve an AI model. Which is the <em>best</em> explanation for this?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>AI models stop learning after they have seen a certain number of examples.</p>
+      </statement>
+      <feedback>
+        <p>No. AI models do not have a fixed limit on how many examples they can learn from.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>If the additional data is inaccurate, repetitive, or does not represent the variety of real-world examples, 
+          the model may not improve.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The quality and diversity of the training data are just as important as the quantity.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Adding more data causes the AI to forget what it learned from earlier examples.</p>
+      </statement>
+      <feedback>
+        <p>No. More data does not automatically cause an AI model to forget previous training examples.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>AI models become less accurate whenever they are trained with more than one category of data.</p>
+      </statement>
+      <feedback>
+        <p>No. AI models are often designed to recognize many categories. The issue is whether the training data is representative and of good quality.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+  </subsection>
+
+  <subsection xml:id="teachable-machine">
+    <title>Teachable Machine Project</title>
+
+    <p>In this project, you will use Google's Teachable Machine which makes it easy to train AI models without writing code. Watch the
       following <url href="https://www.youtube.com/watch?v=T2qQGqZxkD0">video</url> introducing Teachable Machine. You can train a model 
       to recognize images, sounds, or poses. The model learns patterns from the examples you provide and can then make predictions about new inputs.
     </p>
@@ -350,54 +401,7 @@
   However, the quality of data is crucial for a model's accuracy. There is a saying of "Garbage in, garbage out", where you cannot
   expect good results if you feed the model incomplete or biased data. There is also the danger of machine learning algorithms 
   learning the wrong or unexpected things from the data, because that is not something we can control.  </p>
-
-<activity label="training-data-quality">
-  <statement>
-    <p>Adding more training data does not always improve an AI model. Which is the <em>best</em> explanation for this?</p>
-  </statement>
-
-  <choices randomize="yes">
-
-    <choice>
-      <statement>
-        <p>AI models stop learning after they have seen a certain number of examples.</p>
-      </statement>
-      <feedback>
-        <p>No. AI models do not have a fixed limit on how many examples they can learn from.</p>
-      </feedback>
-    </choice>
-
-    <choice correct="yes">
-      <statement>
-        <p>If the additional data is inaccurate, repetitive, or does not represent the variety of real-world examples, 
-          the model may not improve.</p>
-      </statement>
-      <feedback>
-        <p>Correct! The quality and diversity of the training data are just as important as the quantity.</p>
-      </feedback>
-    </choice>
-
-    <choice>
-      <statement>
-        <p>Adding more data causes the AI to forget what it learned from earlier examples.</p>
-      </statement>
-      <feedback>
-        <p>No. More data does not automatically cause an AI model to forget previous training examples.</p>
-      </feedback>
-    </choice>
-
-    <choice>
-      <statement>
-        <p>AI models become less accurate whenever they are trained with more than one category of data.</p>
-      </statement>
-      <feedback>
-        <p>No. AI models are often designed to recognize many categories. The issue is whether the training data is representative and of good quality.</p>
-      </feedback>
-    </choice>
-
-  </choices>
-</activity>
-  </subsection>
+</subsection>
   
   <subsection xml:id="genAI">
     <title>Generative AI</title>

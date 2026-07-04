@@ -793,10 +793,13 @@ print(r)
     </activity>
 
      <project label="coding-challenge-random-turtle">
+      <title>Random Turtle Project</title>
       <statement>
         <p>
-          Try the code below to see how to use random numbers to set random colors and random movements for a turtle. 
-          Then, modify the code to make the turtle draw a different pattern.
+          In the code below, you will use random numbers to set the background color, 
+          pen color, and turtle coordinates. Right now it uses default colors.
+          Change the lines of code that say "# Change these to use random.randint". 
+          Run the code a few times to see that it generates different random colors and movements each time it runs. 
         </p>
       </statement>
     <program xml:id="random-turtle" interactive="activecode" language="python">
