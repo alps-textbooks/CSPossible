@@ -3,6 +3,9 @@
 <section xml:id="unit1-summary">
   <title>Unit 1 Summary</title>
 
+  <subsection xml:id="unit1-summary-objectives">
+    <title>Unit 1 Learning Objectives</title>
+
   <p>In Unit 1, we covered the following Learning Objectives:</p>
    <ul>
     <li><p>1.1 Purpose and Behavior
@@ -50,6 +53,9 @@
    </ul></p>
    </li>
  </ul>
+</subsection>
+<subsection xml:id="unit1-summary-vocab">
+    <title>Unit 1 Vocabulary</title>
 
   <p>Review the following Unit 1 vocabulary:</p>
 
@@ -360,5 +366,5 @@
     </activity>
 
   <p>The next lessons in this unit are for practicing Python coding. There are also some optional App Inventor coding projects.</p>
-
+ </subsection>
   </section>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-summary">
+  <title>Unit 2 Summary</title>
+
+   <subsection xml:id="unit2-summary-objectives">
+    <title>Unit 2 Learning Objectives</title>
+
+  <p>In Unit 2, we covered the following Learning Objectives:</p>
+   <ul>
+    <li><p>2.1 Program Design and Development 
+    <ul>
+      <li>2.1.A Develop a program using an iterative or incremental process</li>
+      <li>2.1.B Design an app or program and its user interface based on user research and program requirements</li>
+        <li>2.1.C Describe the purpose and behavior of a code segment or program by writing documentation</li>
+        <li>2.1.D Determine when it is appropriate to reuse, cite, and share digital content</li>
+    </ul>
+    </p>
+    </li>
+    <li><p>2.2 Boolean Expressions
+    <ul>
+        <li>2.2.A Identify the use of Boolean expressions to control an app’s behavior as you interact with the app</li>
+        <li>2.2.B Develop code using relational operators, and determine the result of relational expressions</li>
+        <li>2.2.C Develop code using logical operators, and determine the result of logical expressions</li>
+    </ul>
+    </p>
+    </li>
+    <li><p>2.3 Selection
+    <ul>
+        <li>2.3.A Represent an algorithm that includes selection using written steps or a flowchart</li>
+        <li>2.3.B Develop code using conditional statements, and determine the result of these statements</li>
+        <li>2.3.C Develop code using nested conditional statements, and determine the result of these statements</li>
+    </ul>
+    </p>
+    </li>
+    <li><p>2.4 Iteration
+    <ul>
+        <li>2.4.A Represent an algorithm that includes iteration using written steps or a flowchart</li>
+        <li>2.4.B Develop code using iteration, and determine the result of iteration statements</li>
+    </ul>
+    </p>
+    </li>
+    <li><p>2.5 Algorithm Development
+    <ul>
+        <li>2.5.A Develop algorithms by building new solutions or by reusing and combining existing solutions</li>
+        <li>2.5.B Compare multiple algorithms to determine if they produce the same side effect or output</li>
+    </ul>   
+    </p>
+    </li>
+    <li><p>2.6 Errors
+    <ul>
+        <li>2.6.A Correct errors in programs</li>
+        <li>2.6.B Develop code for test cases that can be used to check the correctness of an algorithm</li>
+    </ul>
+    </p>
+    </li>
+
+  </ul>
+</subsection>
+<subsection xml:id="unit2-summary-vocab">
+    <title>Unit 2 Vocabulary</title>
+
+  <p>Review the following Unit 2 vocabulary:</p>
+
+
+  </subsection>
+</section>

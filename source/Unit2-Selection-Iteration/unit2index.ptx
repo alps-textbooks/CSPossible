@@ -47,6 +47,6 @@
   <xi:include href="./topic-2-4-iteration.ptx" />
   <xi:include href="./topic-2-5-algorithm-development.ptx" />
   <xi:include href="./topic-2-6-errors.ptx" />
-  
+  <xi:include href="./unit2-summary.ptx" />
   
   </chapter>
