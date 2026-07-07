@@ -93,10 +93,10 @@
         background image! (Hint: For this you’ll need to use a new Button, the Camera component from the Media drawer, and the Camera’s TakePicture command and the
         AfterPicture event handler where you can set the image returned by the camera as Canvas' background image.)  
       </li>
-    <li>Optional: Add a <a href="http://ai2.appinventor.mit.edu/reference/components/social.html#Sharing" target="_blank">
-        Social/Sharing component</a> and a share button to email what is drawn on the canvas using the Sharing.
-        ShareFile block with the <a href="http://ai2.appinventor.mit.edu/reference/components/animation.html#Canvas"
-         target="_blank">Canvas.Save block</a>. You will have to set up an email account on your tablet to use 
+    <li>Optional: Add a <url href="http://ai2.appinventor.mit.edu/reference/components/social.html#Sharing" target="_blank">
+        Social/Sharing component</url> and a share button to email what is drawn on the canvas using the Sharing.
+        ShareFile block with the <url href="http://ai2.appinventor.mit.edu/reference/components/animation.html#Canvas"
+         target="_blank">Canvas.Save block</url>. You will have to set up an email account on your tablet to use 
          the share component.  (This may not work yet on iOS devices). </li>
     <li>Share your app with the class or a friend!</li>
     </ol>

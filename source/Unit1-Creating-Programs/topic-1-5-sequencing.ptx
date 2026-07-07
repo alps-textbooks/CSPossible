@@ -644,7 +644,8 @@ print( teeny.xcor() )
           You could draw a flower, a house for the turtle, a smiley face, or anything you want.
           The code below also shows how to change colors, 
           fill in colors, lift up the pen, and draw dots. 
-          Check out all the <a href="https://cs111.wellesley.edu/reference/colors">Turtle Colors</a> that you can use. 
+          Check out all the <url href="https://cs111.wellesley.edu/reference/colors">Turtle
+             Colors</url> that you can use. 
         </p>
    </statement>
       <program interactive="activecode" language="python">

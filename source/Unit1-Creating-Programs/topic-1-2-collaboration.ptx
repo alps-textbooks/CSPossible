@@ -400,21 +400,75 @@
       </p>
     </note>
 
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=tJQSyzBUAew">video</url> to learn more about bias that can effect
+    AI systems.</p>
+    <video youtube="tJQSyzBUAew" label="video-bias" />
+    
     <note>
       <title>1.2.B.2</title>
       <p>
-        Apps can reflect human bias when programmers’ assumptions, rules, or interface choices
+        Apps can reflect <term>human bias</term> when programmers’ assumptions, rules, or interface choices
         favor some users over others.
-        Apps can also reflect data bias when the data used to train or inform the app is incomplete
+        Apps can also reflect <term>data bias</term> when the data used to train or inform the app is incomplete
         or unrepresentative of the people and situations the app is intended to work well for.
         Human bias and data bias often interact.
         Choices about what data to collect and how to label it can shape how an app behaves for different users.
       </p>
     </note>
 
-    <p>Watch the following <url href="https://www.youtube.com/watch?v=tJQSyzBUAew">video</url> to learn more about bias that can effect
-    AI systems.</p>
-    <video youtube="tJQSyzBUAew" label="video-bias" />
+    <activity label="human-data-bias">
+  <statement>
+    <p>A company creates a face recognition app. The developers assume the app will mostly be used 
+      in bright lighting, so they design and test it that way. They also train the app using a 
+      dataset that contains mostly images of adults with lighter skin tones. 
+      Which statement best explains the biases in this app? This is an actual historical example
+      pointed out by Joy Buolamwini from MIT in her <url href="https://www.youtube.com/watch?v=TWWsW1w-BVo">Gender
+         Shades project</url>.
+      </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The app only shows <term>human bias</term> because the programmers made assumptions about lighting.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. The programmers' assumptions are an example of <term>human bias</term>, but the training data is also incomplete and unrepresentative, which is <term>data bias</term>.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The app only shows <term>data bias</term> because the training data is not representative.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. The dataset shows <term>data bias</term>, but the programmers' assumption about lighting is also an example of <term>human bias</term>.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The app shows both <term>human bias</term> and <term>data bias</term> because the programmers' assumptions influenced the design, and the training data is incomplete and unrepresentative.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The design choices reflect <term>human bias</term>, while the unrepresentative training data reflects <term>data bias</term>. These two types of bias often interact to affect how an app behaves for different users.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The app shows no bias because it was trained using real photos.</p>
+      </statement>
+      <feedback>
+        <p>No. Even real-world data can be biased if it does not represent the people and situations the app is intended to work well for.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+    
 
     <note>
       <title>1.2.B.3</title>
