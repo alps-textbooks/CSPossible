@@ -3,6 +3,10 @@
 <section xml:id="topic-2-2-boolean-expressions">
   <time minutes="45" />
   <title>Boolean Expressions</title>
+   <idx>boolean</idx>
+    <idx>boolean expression</idx>
+    
+
   <introduction>
     <p>
     </p>
@@ -38,71 +42,312 @@
     <note>
       <title>2.2.A.1</title>
       <p>
-        Apps often check conditions that have only two outcomes, such as whether a user is logged in, whether a checkbox is selected, or whether a password is correct.
+        Apps often check conditions that have only two outcomes, such as whether a user is logged 
+        in, whether a checkbox is selected, or whether a password is correct.
       </p>
     </note>
 
     <note>
       <title>2.2.A.2</title>
       <p>
-        Programs make decisions by evaluating conditions that result in a Boolean value. A Boolean value has two possible values: true or false.
+        Programs make decisions by evaluating conditions that result in a Boolean value. A <term>Boolean</term> value has two possible values: <term>true</term> or <term>false</term>.
       </p>
     </note>
 
     <note>
       <title>2.2.A.3</title>
       <p>
-        Apps can use Boolean expressions to decide what happens next, such as showing a message, allowing access, or changing what a user sees. A Boolean expression is an expression that evaluates to either true or false.
+        Apps can use Boolean expressions to decide what happens next, such as showing a message, 
+        allowing access, or changing what a user sees. A Boolean expression is an expression that 
+        evaluates to either true or false.
       </p>
     </note>
 
     <note>
       <title>2.2.A.4</title>
       <p>
-        Many Boolean expressions use comparisons, such as checking whether a score is high enough or whether an input meets a requirement like password length.
+        Many Boolean expressions use comparisons, such as checking whether a score is high enough or 
+        whether an input meets a requirement like password length.
       </p>
     </note>
   </subsection>
 
-  <subsection>
+  <subsection xml:id="relational-operators">
     <title>Relational Operators</title>
 
+    <idx>relational operator</idx>
+    <idx>logical operator</idx>
+    <idx>&lt;</idx>
+    <idx>&gt;</idx>
+    <idx>==</idx>
+    <idx>!=</idx>
+
+
+    
     <note>
       <title>2.2.B.1</title>
       <p>
-        Apps and programs often compare values to enforce rules, personalize experiences, and prevent mistakes. Relational operators allow programs to evaluate questions such as whether a value is too low or whether one value matches another.
+        Apps and programs often compare values to enforce rules, personalize experiences, and 
+        prevent mistakes. <term>Relational operators</term> allow programs to evaluate questions such as whether a value is too low or whether one value matches another.
       </p>
     </note>
+
+      <p><term>Relational operators</term> are operators like less than (<c>&lt;</c>), greater than (<c>&gt;</c>), and equal to (<c>==</c>) that compare two values or expressions. They are often used 
+      to compare a variable against a constant value or another variable or an expression.
+      For example, the following <term>Boolean expressions</term> (which evaluate to true or false)
+      can be used to see whether a number is positive or negative by seeing if it is greater than 0 or less than 0:
+    </p>
+
+    <program language="python">
+      <code>
+# Test if a number is positive (greater than 0)
+(number &gt; 0)
+# Test if a number is negative (less than 0)
+(number &lt; 0)
+      </code>
+    </program>
 
     <note>
       <title>2.2.B.2</title>
       <p>
-        Relational operators compare two values and produce a Boolean result.
+        <term>Relational operators</term> compare two values and produce a Boolean result.
       </p>
       <ul>
-        <li>The expression <c>a == b</c> evaluates to true when the values of a and b are equal, and evaluates to false otherwise.</li>
-        <li>The expression <c>a > b</c> evaluates to true when the value of a is greater than the value of b, and evaluates to false otherwise.</li>
-        <li>The expression <c>a &lt; b</c> evaluates to true when the value of a is less than the value of b, and evaluates to false otherwise.</li>
-        <li>The expression <c>a >= b</c> evaluates to true when the value of a is greater than or equal to the value of b, and evaluates to false otherwise.</li>
-        <li>The expression <c>a &lt;= b</c> evaluates to true when the value of a is less than or equal to the value of b, and evaluates to false otherwise.</li>
+        <li><term>Equals:</term>The expression <c>a == b</c> evaluates to true when the values of a and b are equal, and evaluates to false otherwise.</li>
+        <li><term>Greater than:</term>The expression <c>a &gt; b</c> evaluates to true when the value of a is greater than the value of b, and evaluates to false otherwise.</li>
+        <li><term>Less than:</term>The expression <c>a &lt; b</c> evaluates to true when the value of a is less than the value of b, and evaluates to false otherwise.</li>
+        <li><term>Greater than or equal to:</term>The expression <c>a &gt;= b</c> evaluates to true when the value of a is greater than or equal to the value of b, and evaluates to false otherwise.</li>
+        <li><term>Less than or equal to:</term>The expression <c>a &lt;= b</c> evaluates to true when the value of a is less than or equal to the value of b, and evaluates to false otherwise.</li>
       </ul>
     </note>
 
-    <note>
+    <p>
+      The relational operators <c>==</c> and <c>!=</c> (not equal) can be used
+      to compare values for equality. They return True or False boolean values. 
+      In Python, they can be used to compare numbers, strings, and other data types. For string comparisons like <c>"hello" != "Hello"</c>, 
+      Python will check that each character is the same (including its case) in the two strings. 
+      Don't confuse <c>=</c> and <c>==</c>. 
+      One <c>=</c> sign changes the value of a variable. Two <c>==</c> equal
+      signs are used to test if a variable holds a certain value, without
+      changing its value!
+  </p>
+
+    <p>
+      The relational operators <c>&lt;</c> and <c>&gt;</c> can be used to compare values and determine whether one is less than or greater than the other. 
+      If you have trouble telling <c>&lt;</c> and <c>&gt;</c> apart, remember that 
+      less than sign (<c>&lt;</c>) looks more like an L and always starts with the small pointy-end. To remember the correct order of the two characters in <c>&lt;=</c> and
+      <c>&gt;=</c>, just write them in the same order you would say them in
+      English: “less than or equal to” not “equal to or less than”.
+    </p>
+
+    <activity label="BooleanExps">
+      <statement>
+        <p>
+          Drag the boolean expression from the left and drop it on what it is
+          testing on the right. Click the "Check Me" button to see if you are
+          correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the relational operators above.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">x &gt; 0</premise>
+          <response>x is positive</response>
+        </match>
+
+        <match>
+          <premise order="2">x == y</premise>
+          <response>x equals y</response>
+        </match>
+
+        <match>
+          <premise order="3">x &lt; 0</premise>
+          <response>x is negative</response>
+        </match>
+
+        <match>
+          <premise order="4">x != y</premise>
+          <response>x does not equal y</response>
+        </match>
+
+        <match>
+          <premise order="5">x &lt; y</premise>
+          <response>x is less than y</response>
+        </match>
+
+        <match>
+          <premise order="6">x &gt; y</premise>
+          <response>x is greater than y</response>
+        </match>
+
+        <match>
+          <premise order="7">x &gt;= y</premise>
+          <response>x is greater than or equal to y</response>
+        </match>
+      </cardsort>
+    </activity>
+
+
+   <note>
       <title>2.2.B.3</title>
       <p>
-        The result of a relational expression can be determined by substituting the current values, including variable values, and evaluating whether the comparison is true or false.
+        The result of a relational expression can be determined by substituting the current values, 
+        including variable values, and evaluating whether the comparison is true or false.
       </p>
-    </note>
+  </note>
+ 
+
+  <activity label="boolvalues1">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it.
+          Note that 1 equal sign (<c>=</c>) is used for assigning a value and 2
+          equal signs (<c>==</c>) for testing values. Then, add 3 more lines of
+          code that sets cash to 15 and prints out whether cost is equal to cash
+          and whether cost is not equal to cash.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+word1 = "hello"
+word2 = "Hello"
+# Will these print true or false?
+print(word1 == word2)
+
+cost = 15
+cash = 12
+# Will these print true or false?
+print(cost == cash)
+# Will these print true or false?
+print(cost != cash)
+
+# 1. Set cash to 15
+
+# 2. Print whether cost is equal to cash
+
+# 3. Print whether cost is not equal to cash
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("False\nFalse\nTrue\nTrue\nFalse",self.getOutput(),"Output")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+
+  <activity label="boolvalues2">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it.
+          Then, set cash to 15 and print the boolean expression for whether cost
+          is less than or equal to cash.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+cost = 15
+cash = 12
+# Will these print true or false?
+print(cost &lt; cash)
+# Will these print true or false?
+print(cost &gt; cash)
+# 1. Set cash to 15
+
+# 2. Print whether cost is less than or equal to cash
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("False\nTrue\nTrue\n",self.getOutput(),"Output")
+              self.assertIn("&lt;=",self.getEditorText(), "Use &lt;=")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+  
+    <activity label="trace-bool-expr">
+        <statement>
+            <p>What is printed after the following code executes?
+            </p>
+          <program language="python">
+            <code>
+            apples = 5
+            bananas = 2
+            oranges = 3
+            print(apples &gt;= oranges + bananas)
+            </code>
+          </program>
+        </statement>
+        <choices  randomize="yes">
+            <choice>
+                <statement>
+                    <p>False</p>
+                </statement>
+                <feedback>
+                    <p>No, apples is 5 and oranges + bananas is 5, so they are greater than or equal to each other.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>True</p>
+                </statement>
+                <feedback>
+                    <p>Correct! apples is 5 and oranges + bananas is 5, so they are greater than or equal to each other.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>5</p>
+                </statement>
+                <feedback>
+                    <p>No, the expression evaluates to a Boolean value, True or False.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>=</p>
+                </statement>
+                <feedback>
+                    <p>No, the expression evaluates to a Boolean value, True or False.</p>
+                </feedback>
+            </choice>
+        </choices>
+      </activity>
+
   </subsection>
 
-  <subsection>
+  <subsection xml:id="logical-operators">
     <title>Logical Operators</title>
 
     <note>
       <title>2.2.C.1</title>
       <p>
-        Apps and programs often combine multiple conditions to make decisions that feel predictable and personalized. Logical operators allow programs to answer questions such as whether all conditions are true, whether at least one condition is true, or whether a condition is not true. Logical operators can also support user-centered rules, such as allowing an action only when multiple conditions are met, like when all required fields are complete and the user agrees to terms.
+        Apps and programs often combine multiple conditions to make decisions that feel predictable 
+        and personalized. Logical operators allow programs to answer questions such as whether all 
+        conditions are true, whether at least one condition is true, or whether a condition is not 
+        true. Logical operators can also support user-centered rules, such as allowing an action 
+        only when multiple conditions are met, like when all required fields are complete and the 
+        user agrees to terms.
       </p>
     </note>
 
@@ -112,16 +357,22 @@
         Logical operators combine or modify Boolean values and produce a Boolean result.
       </p>
       <ul>
-        <li>The expression <c>condition1 and condition2</c> evaluates to true when both conditions are true, and evaluates to false otherwise.</li>
-        <li>The expression <c>condition1 or condition2</c> evaluates to true when at least one condition is true, and evaluates to false when both conditions are false.</li>
-        <li>The expression <c>not condition</c> evaluates to true when the condition is false, and evaluates to false when the condition is true.</li>
+        <li>The expression <c>condition1 and condition2</c> evaluates to true when both conditions 
+          are true, and evaluates to false otherwise.</li>
+        <li>The expression <c>condition1 or condition2</c> evaluates to true when at least one 
+          condition is true, and evaluates to false when both conditions are false.</li>
+        <li>The expression <c>not condition</c> evaluates to true when the condition is false, and 
+          evaluates to false when the condition is true.</li>
       </ul>
     </note>
 
     <note>
       <title>2.2.C.3</title>
       <p>
-        The result of a logical expression can be determined by evaluating each condition and then applying not, and, and or to determine whether the overall expression is true or false. Logical expressions can include multiple conditions. Parentheses can be used to group conditions and make the intended order of evaluation clear when combining not, and, and or.
+        The result of a logical expression can be determined by evaluating each condition and then 
+        applying not, and, and or to determine whether the overall expression is true or false. 
+        Logical expressions can include multiple conditions. Parentheses can be used to group 
+        conditions and make the intended order of evaluation clear when combining not, and, and or.
       </p>
     </note>
   </subsection>
