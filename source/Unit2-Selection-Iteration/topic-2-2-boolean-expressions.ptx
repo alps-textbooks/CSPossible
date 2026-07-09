@@ -8,35 +8,17 @@
     
 
   <introduction>
-    <p>
+    <p>Apps are a lot more fun if they can respond to different user actions and decisions. For example, if you are playing a game, the app can check whether 
+      you have enough points to move to the next level. A social media app needs to ask you for your password and check that
+      it is correct before allowing you to post a comment. Apps use <term>Boolean expressions</term> to make decisions based on true or false 
+      conditions, like in the flowchart below.
+      In this lesson, you will learn how to use Boolean expressions in your code to change an app's behavior.
     </p>
+    <image source="_static/Unit2Images/password-flowchart.png" width="70%" alt="Is your password correct flowchart"/>
   </introduction>
 
-  <subsection>
-    <title>Learning Objectives</title>
-    <remark>
-      <title>2.2.A</title>
-      <p>
-        Identify the use of Boolean expressions to control an app's behavior as you interact with the app.
-      </p>
-    </remark>
-
-    <remark>
-      <title>2.2.B</title>
-      <p>
-        Develop code using relational operators, and determine the result of relational expressions.
-      </p>
-    </remark>
-
-    <remark>
-      <title>2.2.C</title>
-      <p>
-        Develop code using logical operators, and determine the result of logical expressions.
-      </p>
-    </remark>
-  </subsection>
-
-  <subsection>
+ 
+  <subsection xml:id="decisions">
     <title>Boolean Expressions and Decision Making</title>
 
     <note>
@@ -50,15 +32,45 @@
     <note>
       <title>2.2.A.2</title>
       <p>
-        Programs make decisions by evaluating conditions that result in a Boolean value. A <term>Boolean</term> value has two possible values: <term>true</term> or <term>false</term>.
+        Programs make decisions by evaluating conditions that result in a Boolean value. 
+        A <term>Boolean value</term> has two possible values: <term>true</term> or <term>false</term>.
       </p>
     </note>
+
+    <p>In Python, <term>Boolean values</term> are represented by the keywords <c>True</c> and <c>False</c>.</p>
+
+      <activity label="boolvalues0">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it.
+          Change didHomework to True and run again.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+didHomework = False
+cleanedRoom = True
+print("I did everything?", cleanedRoom and didHomework )
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("True",self.getOutput(),"Change didHomework to True and run again.")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
 
     <note>
       <title>2.2.A.3</title>
       <p>
         Apps can use Boolean expressions to decide what happens next, such as showing a message, 
-        allowing access, or changing what a user sees. A Boolean expression is an expression that 
+        allowing access, or changing what a user sees. A <term>Boolean expression</term> is an expression that 
         evaluates to either true or false.
       </p>
     </note>
@@ -70,13 +82,62 @@
         whether an input meets a requirement like password length.
       </p>
     </note>
+
+ <p>Let's think about the pizza web app again. It lets the user choose different options, and
+    then chooses different outputs based on the user's choices.  </p>
+
+    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2" />
+
+    <activity label="pizzaAppBools">
+      <statement>
+        <p>Interact with the pizza app above.
+          Which of the following are Boolean expressions (True or False) that the app 
+          uses to determine its output? 
+          Select all that apply.
+          </p>
+      </statement>
+      <choices  randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>User likes pizza</p>
+          </statement>
+          <feedback>
+            <p>Yes, the app needs to check whether the user likes pizza to display it and pizza images in
+              the output.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>User's name is 10 characters long</p>
+          </statement>
+          <feedback>
+            <p>The app doesn't care how long the user's name is.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>User's age is not less than 0</statement>
+          <feedback>
+            <p>This app doesn't care what the user types in for their age. 
+            </p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>There is a favorite color</p>
+          </statement>
+          <feedback>
+            <p>Yes, the app uses the favorite color value to change the background to that color.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
   </subsection>
 
   <subsection xml:id="relational-operators">
     <title>Relational Operators</title>
 
     <idx>relational operator</idx>
-    <idx>logical operator</idx>
     <idx>&lt;</idx>
     <idx>&gt;</idx>
     <idx>==</idx>
@@ -101,9 +162,9 @@
     <program language="python">
       <code>
 # Test if a number is positive (greater than 0)
-(number &gt; 0)
+number &gt; 0
 # Test if a number is negative (less than 0)
-(number &lt; 0)
+number &lt; 0
       </code>
     </program>
 
@@ -113,11 +174,11 @@
         <term>Relational operators</term> compare two values and produce a Boolean result.
       </p>
       <ul>
-        <li><term>Equals:</term>The expression <c>a == b</c> evaluates to true when the values of a and b are equal, and evaluates to false otherwise.</li>
-        <li><term>Greater than:</term>The expression <c>a &gt; b</c> evaluates to true when the value of a is greater than the value of b, and evaluates to false otherwise.</li>
-        <li><term>Less than:</term>The expression <c>a &lt; b</c> evaluates to true when the value of a is less than the value of b, and evaluates to false otherwise.</li>
-        <li><term>Greater than or equal to:</term>The expression <c>a &gt;= b</c> evaluates to true when the value of a is greater than or equal to the value of b, and evaluates to false otherwise.</li>
-        <li><term>Less than or equal to:</term>The expression <c>a &lt;= b</c> evaluates to true when the value of a is less than or equal to the value of b, and evaluates to false otherwise.</li>
+        <li><term>Equals (==):</term> The expression <c>a == b</c> evaluates to true when the values of a and b are equal, and evaluates to false otherwise.</li>
+        <li><term>Greater than (&gt;):</term> The expression <c>a &gt; b</c> evaluates to true when the value of a is greater than the value of b, and evaluates to false otherwise.</li>
+        <li><term>Less than (&lt;):</term> The expression <c>a &lt; b</c> evaluates to true when the value of a is less than the value of b, and evaluates to false otherwise.</li>
+        <li><term>Greater than or equal to (&gt;=):</term> The expression <c>a &gt;= b</c> evaluates to true when the value of a is greater than or equal to the value of b, and evaluates to false otherwise.</li>
+        <li><term>Less than or equal to (&lt;=):</term> The expression <c>a &lt;= b</c> evaluates to true when the value of a is less than or equal to the value of b, and evaluates to false otherwise.</li>
       </ul>
     </note>
 
@@ -338,12 +399,27 @@ print(cost &gt; cash)
 
   <subsection xml:id="logical-operators">
     <title>Logical Operators</title>
+     <idx>logical operator</idx>
+     <idx>and</idx>
+     <idx>or</idx>
+     <idx>not</idx>
+     
+    <p><term>Logical operators</term> like <c>and</c>, <c>or</c>, and <c>not</c> are used to combine Boolean expressions.
+      For example, the following <term>Boolean expression</term> (which evaluates to true or false) can be used to see whether a 
+      number is between 1 and 10:
+      </p>
+      <program language="python">
+        <code>
+# Test if a number is between 1 and 10
+number &gt; 1 and number &lt; 10
+        </code>
+      </program>
 
     <note>
       <title>2.2.C.1</title>
       <p>
         Apps and programs often combine multiple conditions to make decisions that feel predictable 
-        and personalized. Logical operators allow programs to answer questions such as whether all 
+        and personalized. <term>Logical operators</term> allow programs to answer questions such as whether all 
         conditions are true, whether at least one condition is true, or whether a condition is not 
         true. Logical operators can also support user-centered rules, such as allowing an action 
         only when multiple conditions are met, like when all required fields are complete and the 
@@ -366,6 +442,104 @@ print(cost &gt; cash)
       </ul>
     </note>
 
+    <p>The operator <c>and</c> is used to combine two things and verify that BOTH are true. The operator <c>or</c> is used to 
+      verify that at least one is true. The operator <c>not</c> is used to see if something is not true. 
+      With numerical values, the <term>and</term> operator is often used to see if a number is
+      in an range, for example to get a B grade, your grade must be between 80 <c>and</c> 90 (not including 90). 
+    </p>
+
+<activity label="logical-operators">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it. Then, 
+          test for one more grade range using a logical operator.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+grade = 80
+# Will these print true or false?
+print("Did you get an A?", grade &gt;= 90 and grade &lt; 100  )
+print("Did you get an B?", grade &gt;= 80 and grade &lt; 90  )
+print("Did you get an A or a B?", grade &gt;= 90 or grade &gt;= 80  )
+print("Did you get a passing grade?", not grade &lt; 60  ) 
+
+# print whether the student got a C using a logical operator
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("&lt; 80",self.getEditorText(), "Use &lt; 80")
+              self.assertIn("&gt;= 70",self.getEditorText(), "Use &gt;= 70")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+  
+    <activity label="trace-logical-expr">
+        <statement>
+        <p>Given the code below, what are the values of x that will cause the code to print <c>True</c>?</p>
+        <program language="python">
+          <code>
+print( x &lt; 0 or x &gt;= 10)
+          </code>
+        </program>
+      </statement>
+      <choices randomize="yes">
+
+        <choice>
+          <statement>
+            <p>0 to 10</p>
+          </statement>
+          <feedback>
+            <p>No, because x has to be either negative or 10 or greater for the expression to be true.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>1 to 10</p>
+          </statement>
+          <feedback>
+            <p>No, because x has to be either negative or 10 or greater for the expression to be true.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>negative values</p>
+          </statement>
+          <feedback>
+            <p>That is partially correct. But what values would be true because they made ``x &gt;=
+              10`` true?</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>negative values or 2+ digits</p>
+          </statement>
+          <feedback>
+            <p>Correct! x has to be either negative or 10 or greater for the expression to be true. Any number 10 or greater has at least 2 digits.</p>
+          </feedback>
+        </choice>
+      </choices>
+      </activity>
+
+      <p>
+        In English, we often use an exclusive-or like in the sentence “do you
+        want to be player 1 <em>or</em> player 2?” where you can’t be both
+        player 1 and player 2. In programming, the or-operator is an
+        inclusive-or which means that the whole expression is true if either one
+        or the other or <em>both</em> conditions are true.
+      </p>
+
     <note>
       <title>2.2.C.3</title>
       <p>
@@ -375,5 +549,118 @@ print(cost &gt; cash)
         conditions and make the intended order of evaluation clear when combining not, and, and or.
       </p>
     </note>
+
+    <p>For complex logical expressions, it helps to first figure out the values of each boolean expression and then
+      put it together with the logical operators. For example, try to figure out the logical expression 
+      <c>((age &gt;= 12) and (age &lt;= 18)) or (occupation == "student")</c> in the code below.</p>
+
+  <activity label="trace-logical-expr2">
+   <statement><p>What is printed when you run this code? Try the CodeLens button to step through the 
+    code. Then, change the value of age to 19, try to guess the result, and run to check. 
+    Change the value of occupation and run again. </p>
+  </statement>       
+    <program language="python" interactive="activecode">
+      <code>
+age = 15
+occupation = "student"
+print("Eligible for discount?", ((age &gt;= 12) and (age &lt;= 18)) or (occupation == "student") )
+# Evaluate this in multiple steps
+# Is age &gt;= 12?
+greater_than_12 = age &gt;= 12
+print("Is age &gt;= 12?", greater_than_12)
+# Is age &lt;= 18?
+less_than_18 = age &lt;= 18
+print("Is age &lt;= 18?", less_than_18)
+# Is age between 12 and 18?
+age_between_12_and_18 = greater_than_12 and less_than_18
+# Is occupation == "student"?
+is_student = occupation == "student"
+# Put it all together
+print("Eligible for discount?", age_between_12_and_18 or is_student)
+      </code>
+    <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("True",self.getOutput(),"Output")
+              self.assertIn("19",self.getEditorText(), "Try changing the value of age to 19")
+
+          myTests().main()
+    </tests>
+    </program>
+  </activity>
+
+
+  </subsection>
+  <subsection xml:id="unplugged-logic-project">
+    <title>Unplugged Logic Project</title>
+
+    <p>Do the following project in a group of 4 people. If you don't have a group, imagine that you are doing this activity
+      with 3 other friends or family members and write down their names and ages. (Thank you
+            to Jill Westerlund of Hoover High School and Art Lopez of Sweetwater
+            High School for this activity suggestion).
+    </p>
+    <project label="unplugged-venn-diagram">
+      <statement>
+        <ol>
+          <li>Draw or print a <url
+            href="https://docs.google.com/document/d/1lpjk0LS_KdAddRurMayJZmaFzeyEg4FyhviZcSTXvtU/edit?usp=sharing">Venn
+            diagram</url> of 4 intersecting circles. </li>
+          <li>Put each of the names of the 4 people in your group in a circle of the Venn Diagram (one name in each circle). </li>
+          <li>Write down the age of each person in your group in the circles. If two or more people are the
+            same age, put the age in the intersecting parts of their circles. </li>
+          <li>
+            Write a Boolean expression that compares the age of each person in
+            the group using <c>==</c>, <c>&lt;</c>, <c>&gt;</c>, 
+            <c>and</c>, for example Ada’s age <c>&gt;</c> Alan’s age
+            <c>and</c> Alan’s age <c>==</c> Grace’s age. </li>
+          <li> Then, ask each
+            person in your group their favorite movie. If two or more people
+            have the same favorite movie, put the movie in the intersecting
+            parts of their circles. </li>
+          <li>Write a Boolean expression that compares the
+            favorite movies in the group using <c>==</c>, <c>!=</c>, and
+            <c>and</c>, for example Ada’s movie <c>==</c> Alan’s movie
+            <c>and</c> Alan’s movie <c>!=</c> Grace’s movie. 
+            </li><li>Think of 1
+            more comparison and write it in the circles and as a Boolean
+            expression. </li>
+            <li>Share the Boolean expressions with the class and type them in below. 
+              </li>
+              </ol>
+          </statement>
+          <response/>
+        </project>
+  </subsection>
+
+   <subsection xml:id="LOs-2-2">
+    <title>Learning Objectives Review</title>
+    <p>After completing this lesson, you should be able to:</p>
+    <remark>
+      <title>2.2.A</title>
+      <p>
+        Identify the use of Boolean expressions to control an app's behavior as you interact with the app.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.2.B</title>
+      <p>
+        Develop code using relational operators, and determine the result of relational expressions.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.2.C</title>
+      <p>
+        Develop code using logical operators, and determine the result of logical expressions.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-2-2">
+    <title>Vocabulary Review</title>
+
   </subsection>
 </section>
