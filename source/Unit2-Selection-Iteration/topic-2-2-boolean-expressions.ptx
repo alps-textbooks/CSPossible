@@ -662,5 +662,39 @@ print("Eligible for discount?", age_between_12_and_18 or is_student)
   <subsection xml:id="vocab-2-2">
     <title>Vocabulary Review</title>
 
+    <activity label="vocab-boolean">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>Boolean</premise>
+        <response>a data type that can only have the values True or False</response>
+        </match>
+        <match>
+          <premise>Boolean expression</premise>
+          <response>an expression that evaluates to either True or False</response>
+        </match>
+        <match>
+          <premise>relational operator</premise>
+          <response>an operator like <c>==</c> or <c>&lt;</c> that compares two values and 
+            returns True or False</response>
+        </match>
+        <match>
+          <premise>logical operator</premise>
+          <response>an operator like <c>and</c>, <c>or</c>, or <c>not</c> that combines Boolean 
+            expressions and returns True or False</response>
+        </match>
+      </cardsort>
+    </activity>
   </subsection>
 </section>
