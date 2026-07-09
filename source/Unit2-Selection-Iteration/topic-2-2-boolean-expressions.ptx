@@ -602,6 +602,7 @@ print("Eligible for discount?", age_between_12_and_18 or is_student)
             High School for this activity suggestion).
     </p>
     <project label="unplugged-venn-diagram">
+
       <statement>
         <ol>
           <li>Draw or print a <url
@@ -615,16 +616,15 @@ print("Eligible for discount?", age_between_12_and_18 or is_student)
             the group using <c>==</c>, <c>&lt;</c>, <c>&gt;</c>, 
             <c>and</c>, for example Ada’s age <c>&gt;</c> Alan’s age
             <c>and</c> Alan’s age <c>==</c> Grace’s age. </li>
-          <li> Then, ask each
-            person in your group their favorite movie. If two or more people
-            have the same favorite movie, put the movie in the intersecting
+          <li> Then, ask each person in your group their favorite food. If two or more people
+            have the same favorite food, put the food in the intersecting
             parts of their circles. </li>
           <li>Write a Boolean expression that compares the
-            favorite movies in the group using <c>==</c>, <c>!=</c>, and
-            <c>and</c>, for example Ada’s movie <c>==</c> Alan’s movie
-            <c>and</c> Alan’s movie <c>!=</c> Grace’s movie. 
-            </li><li>Think of 1
-            more comparison and write it in the circles and as a Boolean
+            favorite foods in the group using <c>==</c>, <c>!=</c>, and
+            <c>and</c>, for example Ada’s favorite food pizza <c>==</c> Alan’s favorite food pizza
+            <c>and</c> Alan’s favorite food <c>!=</c> Grace’s favorite food. 
+            </li>
+            <li>Think of 1 more comparison and write it in the circles and as a Boolean
             expression. </li>
             <li>Share the Boolean expressions with the class and type them in below. 
               </li>
