@@ -426,6 +426,39 @@ number &gt; 1 and number &lt; 10
         user agrees to terms.
       </p>
     </note>
+ 
+    <activity label="mixedup-boolean" adaptive="yes">
+      <statement>
+        <p>
+          Drag or click on the blocks you need to move them from the top section
+          into the yellow area to create a boolean expression that tests for a number between
+          -5 and 5 (including both -5 and 5). There are extra blocks that you don’t need. 
+        </p>
+      </statement>
+      <blocks layout="horizontal">
+        <block>
+          <c>number &gt;=</c>
+        </block>
+         <block correct="no">
+          <c>number &gt;</c>
+        </block>
+        <block>
+          <c>-5 and</c>
+        </block>
+         <block correct="no">
+          <c>-5 or</c>
+        </block>
+        <block>
+          <c>number &lt;=</c>
+        </block>
+        <block correct="no">
+          <c>number &lt;</c>
+        </block>
+        <block>
+          <c>5</c>
+        </block>
+      </blocks>
+    </activity>
 
     <note>
       <title>2.2.C.2</title>
