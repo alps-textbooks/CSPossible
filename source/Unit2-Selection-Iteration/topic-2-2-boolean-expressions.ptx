@@ -268,8 +268,8 @@ number &lt; 0
           Try to guess what the code below will print out before you run it.
           Note that 1 equal sign (<c>=</c>) is used for assigning a value and 2
           equal signs (<c>==</c>) for testing values. Then, add 3 more lines of
-          code that sets cash to 15 and prints out whether cost is equal to cash
-          and whether cost is not equal to cash.
+          code that sets credit to 15 and prints out whether cost is equal to credit
+          and whether cost is not equal to credit.
         </p>
       </statement>
 
@@ -277,7 +277,7 @@ number &lt; 0
         <code>
 word1 = "hello"
 word2 = "Hello"
-# Will these print true or false?
+# Will these print true or false? Capitalization matters!
 print(word1 == word2)
 
 cost = 15
@@ -287,11 +287,11 @@ print(cost == cash)
 # Will these print true or false?
 print(cost != cash)
 
-# 1. Set cash to 15
+# 1. Set credit to 15
 
-# 2. Print whether cost is equal to cash
+# 2. Print whether cost is equal to credit
 
-# 3. Print whether cost is not equal to cash
+# 3. Print whether cost is not equal to credit
 
       </code>
       <tests>
@@ -300,6 +300,7 @@ print(cost != cash)
           class myTests(TestCaseGui):
             def test1(self):
               self.assertIn("False\nFalse\nTrue\nTrue\nFalse",self.getOutput(),"Output")
+              self.assertIn("credit=15",self.getEditorText().replace(" ", ""), "credit = 15")
 
           myTests().main()
       </tests>
@@ -432,9 +433,11 @@ number &gt; 1 and number &lt; 10
         <p>
           Drag or click on the blocks you need to move them from the top section
           into the yellow area to create a boolean expression that tests for a number between
-          -5 and 5 (including both -5 and 5). There are extra blocks that you don’t need. 
+          -5 and 5 (including both). Number should be greater than or equal to -5 and less than or 
+          equal to 5. There are extra blocks that you don’t need. 
         </p>
       </statement>
+      <feedback><p>Number should be greater than or equal to -5 and less than or equal to 5.</p></feedback>
       <blocks layout="horizontal">
         <block>
           <c>number &gt;=</c>
