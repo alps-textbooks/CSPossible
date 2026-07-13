@@ -851,22 +851,37 @@ else:
 
       <statement>
           <p>
-          This is a text adventure game that lets the user move in 4 different
-          directions. Right now, it only lets the user move north. Add in
-          <term>elif</term> statements to go in the directions of "s" for
-          south, "e" for east, "w" for west, and an else statement that says
-          "You can't go in that direction". Change the location of the adventure 
-          and add more nested if statements. Be creative!
+             Create an adventure game with nested if-else statements. 
+             You could work in pairs! First, spend some time planning and designing
+             your adventure locations. You may want to create a flowchart or other
+             design documentation!
+             Fill in the ...'s in the print statements and add more if statements 
+             for different choices in the adventure. Be careful with the
+             nested indentation! Be creative!
         </p>
       </statement>
       <program interactive="activecode" language="python">
         <code>
-print("Welcome to the Adventure Game! You are in a dark forest. Can you find your way out?")
-direction = input("Which direction do you want to go? (n, s, e, w) ")
-if direction == "n":
-    print("You head north but hear growling! You run back to where you started.")
-# Add elif statements for the other directions and an else statement for invalid directions
-    
+    action = input ("You are in ....  What direction do you want go (n,s,e,w)?")
+    if action == "n":
+        action = input ("You go north and see a .... What do you want to do? Type: run or stay.")
+        if action == "run":
+            print("You choose to run.")
+            print("...")
+        else:
+            print("You choose to stay.")
+            print("...")
+    # First level (n,s,e,w) choices
+    elif action == "s":
+        action = input ("You go south and see a .... What do you want to do?")
+        # continue the game with another if/else statement here
+
+    # Add more elif statements for e and w directions here
+
+    # Add a default else for not a valid direction
+        
+
+    print("End of Game. Click on Run to try the adventure again.")  
         </code>
         <tests>
           from unittest.gui import TestCaseGui
@@ -878,9 +893,11 @@ if direction == "n":
                        line for line in self.getEditorText().splitlines()
                       if line.strip() and not line.lstrip().startswith("#")
                       )
+              self.assertNotIn("...",actual,"Replace ... with your own adventure text")
               input_count = actual.count("elif")
               self.assertGreaterEqual(input_count, 3, "at least 3 elif statements")
-              self.assertIn("else", actual, "Use an else statement for invalid directions")
+              input_count = actual.count("else:")
+              self.assertGreaterEqual(input_count, 3, "at least 3 else statements")
 
           myTests().main()
         </tests>
@@ -890,7 +907,8 @@ if direction == "n":
     <activity label="selection-algorithm-reflection">
       <title>Project Reflection</title>
       <statement>
-        <p>Identify the first selection statement in your project. Explain how it works:
+        <p>Identify the first selection statement that you wrote on your own in your project. 
+          Explain how it works:
           <ul>
             <li>What is the condition or Boolean expression being tested?</li>
             <li>When does the condition evaluate to true? </li>
