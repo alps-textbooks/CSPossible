@@ -170,6 +170,18 @@ print("Good bye", name)
      </program>
     </activity>
 
+    <idx>in</idx>
+    
+    <p>Python also has a very useful operator called <term>in</term> that checks if a substring is 
+      inside a string. Try it in the code above instead of using "==" to check if part of your name
+    is in the input string. For example,</p>
+    <program language="python">
+      <code>
+if "B" in name:
+    print("Welcome all names with B!")
+      </code>
+    </program>
+
    <activity label="positive-negative">
     <statement>
       <p>The following code checks if an inputted number is positive. Add another if statement to check if the number is negative.
