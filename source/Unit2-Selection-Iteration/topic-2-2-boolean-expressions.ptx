@@ -14,7 +14,7 @@
       conditions, like in the flowchart below.
       In this lesson, you will learn how to use Boolean expressions in your code to change an app's behavior.
     </p>
-    <image source="_static/Unit2Images/password-flowchart.png" width="70%" alt="Is your password correct flowchart"/>
+    <image source="_static/Unit2images/password-flowchart.png" width="70%" alt="Is your password correct flowchart"/>
   </introduction>
 
  

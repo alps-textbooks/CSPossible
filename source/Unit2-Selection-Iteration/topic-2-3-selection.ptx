@@ -18,7 +18,7 @@
       and respond to different situations.
     </p>
         
-    <image source="_static/Unit2Images/sequence-selection-repetition.png" width="60%" alt="sequence selection repetition"/>
+    <image source="_static/Unit2images/sequence-selection-repetition.png" width="60%" alt="sequence selection repetition"/>
 
   </introduction>
 
@@ -37,7 +37,7 @@
       decision. For example, every time you login, the system checks your password and either grants access or denies it based on whether 
       the password is correct.</p>
 
-      <image source="_static/Unit2Images/password-flowchart.png" width="60%" alt="Is your password correct flowchart"/>
+      <image source="_static/Unit2images/password-flowchart.png" width="60%" alt="Is your password correct flowchart"/>
 
     <note>
       <title>2.3.A.2</title>
@@ -49,7 +49,7 @@
      
     <p>In flowcharts, selection is represented by a diamond shape with a condition inside. 
       The flowchart branches into different paths based on the outcome of the condition. </p>
-    <image source="_static/Unit2Images/if-else-flowchart.png" width="60%" alt="if else flowchart"/>
+    <image source="_static/Unit2images/if-else-flowchart.png" width="60%" alt="if else flowchart"/>
     
     <activity label="parsons-if" numbered="yes" adaptive="yes" indentation="show">
       <statement>
@@ -698,7 +698,7 @@ else:
 
       <p>Here is a flowchart showing the if-elif-else multiple branching.</p>
    
-      <image source="_static/Unit2Images/if-elif-else-flowchart.png" width="40%" alt="if-elif-else flowchart"/>
+      <image source="_static/Unit2images/if-elif-else-flowchart.png" width="40%" alt="if-elif-else flowchart"/>
 
       <activity label="cndtnl-mixed-hi" xml:id="cndtnl-mixed-hi" numbered="yes" adaptive="yes" indentation="hide" language="python">
     <statement>
