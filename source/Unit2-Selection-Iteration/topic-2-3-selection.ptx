@@ -886,7 +886,36 @@ if direction == "n":
         </tests>
       </program>
     </project>
-    </subsection>
+
+    <activity label="selection-algorithm-reflection">
+      <title>Project Reflection</title>
+      <statement>
+        <p>Identify the first selection statement in your project. Explain how it works:
+          <ul>
+            <li>What is the condition or Boolean expression being tested?</li>
+            <li>When does the condition evaluate to true? </li>
+            <li>When does it evaluate to false? </li>
+            <li>What happens when if the condition is true? </li>
+            <li>What happens when if it is false?</li>
+          </ul>
+        </p>
+      </statement>
+      <response />
+       describing a modification another programmer could make to cause a logic error in their program and the program behavior resulting from this change. 
+    </activity>
+
+       <activity label="selection-error-reflection">
+      <title>Project Reflection</title>
+      <statement>
+        <p>Describe a logic error that you made or another programmer could make in your project code above.
+           Describe the program behavior resulting from this error. 
+
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+  </subsection>
 
   <subsection xml:id="LOs-2-3">
     <title>Learning Objectives Review</title>
