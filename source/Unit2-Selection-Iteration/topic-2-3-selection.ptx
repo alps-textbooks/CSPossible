@@ -502,7 +502,7 @@ else:
         </feedback>
       </choice>
 
-      <choice correct="yes">
+      <choice>
         <statement>
           <p>Nothing</p>
         </statement>
@@ -539,12 +539,12 @@ else:
         <code>
 grade = 90   
 if grade &gt;= 90:
-    print("You got an A!")
+    print("A!")
 if grade &gt;= 80 and grade &lt; 90:
-    print("You got a B!")
+    print("B!")
 # Fix this if statement to check for a C grade (70-79)
 if grade &gt;= 70:
-    print("You got a C!")
+    print("C!")
 # Add another if statement to check for a D grade (60- up to 70)
 # Add another if statement to check for an F grade (less than 60)
 
@@ -589,6 +589,148 @@ if grade &gt;= 70:
       </p>
     </note>
 
+    <p>If statements can be nested inside other if statements forming <term>nested conditionals</term>. The inner if statement is 
+      only evaluated if the outer if statement's condition is true. For example, the following code which 
+    could be written with nested if statements or an <c>and</c> logical operator. Notice that in Python,
+    the nested if statement is indented within the block of the outer if statement to indicate that it is inside it.</p>
+      <program language="python">
+        <code>
+# Nested if statements
+if userLoggedIn:
+    if userHasPermission:
+        print("Access granted.")
+
+# Or using an and logical operator
+if userLoggedIn and userHasPermission:
+    print("Access granted.")
+      </code>
+      </program>
+  
+<activity label="nested-ifs">
+      <statement>
+        <p>
+          The following code figures out a ticket price for a movie according to the user's age 
+          and the time at which the movie starts. Add a nested if statement to check for whether
+          the movie is playing before 3 PM for a matinee discount. 
+          The movie theater opens at 1 PM, so don't worry about AM hours.
+          The variables age and hour have been set for testing, but you can comment out those lines
+          to use your input too.     </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+age = int(input("Enter age:"))
+hour = int(input("Enter PM hour (1-9):"))
+
+# For testing
+age = 15
+hour = 6
+
+if age &gt; 12:
+   # Add a nested if statement to test hour
+   # Set price to 12 if hour is less than 3, else set price to 15  
+   
+
+
+else:
+    price = 10
+    
+print("Ticket price:", price, "dollars.")
+      </code>
+       <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              # remove comments
+              actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+              input_count = actual.count("if")
+              self.assertGreaterEqual(input_count, 2, "at least 2 if statements")
+              input_count = actual.count("else")
+              self.assertGreaterEqual(input_count, 2, "at least 2 else statements")
+              self.assertIn("15",self.getOutput(),"Output when age is 15 and hour is 6 should be 15")
+
+          myTests().main()
+       </tests>
+       
+      </program>
+    </activity>
+  
+
+    <p>Nested if statements inside of else blocks can be used to make multi-way selections. A single if-else
+      statement allows us to select between 2 branches of code. But with nested if-else-if statements, we can make
+    multiple branches. Python has a shortcut keyword for this called <term>elif</term> which stands for "else if". Here's 
+    an example of how it is used to chain together many conditions with the pattern if-elif-elif-...-else to branch the code
+    into many directions. This is the same example of grade determination that we saw before, but
+    this pattern of coding is shorter and easier to read. The extra tests for the maximum of each grade
+    range is not needed because the tests are chained together. If the grade is not greater than or equal to 90, 
+  then it must be less than 90 when you reach the second test. </p>
+
+      <program language="python">
+        <code>
+if grade &gt;= 90:
+    print("A")
+elif grade &gt;= 80:
+    print("B")
+elif grade &gt;= 70:
+    print("C")
+elif grade &gt;= 60:
+    print("D")
+else:
+    print("F")
+        </code>
+      </program>
+
+      <p>Here is a flowchart showing the if-elif-else multiple branching.</p>
+   
+      <image source="_static/Unit2Images/if-elif-else-flowchart.png" width="40%" alt="if-elif-else flowchart"/>
+
+      <activity label="cndtnl-mixed-hi" xml:id="cndtnl-mixed-hi" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that sets the variable <c>message</c> to <q>Hello</q> if <c>x</c> is less than 
+        <c>2</c>, <q>Hey</q> if <c>x</c> is greater than <c>2</c>, and <q>Hi</q> otherwise. </p>
+    </statement>
+    <blocks numbered="left">
+      <block order="10">
+        <choice correct="yes">
+          <cline>if x &lt; 2:</cline>
+        </choice>
+        <choice>
+          <cline>if x &lt; 2: </cline>
+        </choice>
+      </block>
+      <block order="7">
+        <cline>    message = "Hello"</cline>
+      </block>
+      <block order="8">
+        <choice correct="yes">
+          <cline>elif x &gt; 2:</cline>
+        </choice>
+        <choice>
+          <cline>else x &gt; 2: </cline>
+        </choice>
+      </block>
+      <block order="6">
+        <cline>    message = "Hey"</cline>
+      </block>
+      <block order="1">
+        <cline>else:</cline>
+      </block>
+      <block order="5">
+        <choice correct="yes">
+          <cline>    message = "Hi"</cline>
+        </choice>
+        <choice>
+          <cline>    message == "Hi" </cline>
+        </choice>
+      </block>
+    </blocks>
+  </activity>
+    
+
     <note>
       <title>2.3.C.3</title>
       <p>
@@ -597,9 +739,143 @@ if grade &gt;= 70:
         variable values or output that is produced.
       </p>
     </note>
-  </subsection>
-
   
+    <p>Click on next to trace the execution of nested conditional statements.</p>
+ <activity label="codelensNestedIfs">
+      <statement>
+        <p>
+          Keep clicking on the Next button at the bottom of the code to see how
+          the values of the variables change as you step through the running
+          program. You can see interactive tracing in any Active Code exercise by clicking the CodeLens button. 
+        </p>
+      </statement>
+
+      <program interactive="codelens" language="python" label="codeLensNestedIfs1" xml:id="codelensNested1">
+        <code>
+grade = 50
+if grade &gt;= 90:
+    print("A")
+elif grade &gt;= 80:
+    print("B")
+elif grade &gt;= 70:
+    print("C")
+elif grade &gt;= 60:
+    print("D")
+else:
+    print("F")
+        </code>
+      </program>
+    </activity>
+  
+   <activity label="trace-nested-ifs">
+      <statement>
+        <p>What does the following code print when x has been set to 5 and y is set to -10?</p>
+        <program language="java">
+          <code>
+if x &gt; 0 and y &gt; 0:
+    print("positive")
+elif x &gt; 0 or y &gt; 0:
+    print("positive1")
+else:
+    print("negative1")
+          </code>
+        </program>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>negative1</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Not correct.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>positive</p>
+          </statement>
+
+          <feedback>
+            <p>This will only print positive if both x <em>and</em> y are positive.</p>
+          </feedback>
+        </choice>
+         <choice>
+          <statement>
+            <p>Nothing</p>
+          </statement>
+
+          <feedback>
+            <p>No, one of the conditions is true, so something will be printed.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>positive1</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Correct. Since x is positive, but y is negative, the <c>or</c> condition is true 
+              since at least 1 of them is positive, so positive1 will be printed.
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+</subsection>
+ 
+ <subsection xml:id="adventure-project">
+    <title>Adventure Coding Challenge</title>
+
+    <p>
+    </p>
+    <project label="adventure-coding-challenge" xml:id="adventure">
+
+      <statement>
+          <p>
+          This is a text adventure game that lets the user move in 4 different
+          directions. Right now, it only lets the user move north. Add in
+          <term>elif</term> statements to go in the directions of "s" for
+          south, "e" for east, "w" for west, and an else statement that says
+          "You can't go in that direction". Change the location of the adventure 
+          and add more nested if statements. Be creative!
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+print("Welcome to the Adventure Game! You are in a dark forest. Can you find your way out?")
+direction = input("Which direction do you want to go? (n, s, e, w) ")
+if direction == "n":
+    print("You head north but hear growling! You run back to where you started.")
+# Add elif statements for the other directions and an else statement for invalid directions
+    
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              # remove comments
+              actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+              input_count = actual.count("elif")
+              self.assertGreaterEqual(input_count, 3, "at least 3 elif statements")
+              self.assertIn("else", actual, "Use an else statement for invalid directions")
+
+          myTests().main()
+        </tests>
+      </program>
+    </project>
+    </subsection>
+
   <subsection xml:id="LOs-2-3">
     <title>Learning Objectives Review</title>
     <remark>
@@ -623,5 +899,41 @@ if grade &gt;= 70:
       </p>
     </remark>
   </subsection>
+  <subsection xml:id="vocab-2-3">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-selection">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>selection</premise>
+        <response>the process of choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+        <premise>conditional statement</premise>
+        <response>a statement that checks a condition and executes different code depending on whether the condition is true or false</response>
+        </match>
+        <match>
+        <premise>else</premise>
+        <response>a keyword used in conditional statements to specify code that should be executed if the condition is false</response>
+        </match>
+        <match>
+        <premise>nested conditionals</premise>
+        <response>conditional statements that are placed inside other conditional statements</response>
+        </match>
+      </cardsort>
+    </activity>
+    </subsection>
 
 </section>
