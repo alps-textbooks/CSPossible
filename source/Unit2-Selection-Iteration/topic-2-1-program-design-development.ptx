@@ -4,42 +4,17 @@
   <time minutes="45" />
   <title>Program Design and Development</title>
   <introduction>
-    <p>
+    <p>In this unit, we will learn how to design and develop programs that meet user needs with  
+      more complex Python control structures for selection and repetition 
+      In this first lesson, we will focus on the development process, user research, documentation, 
+      and reusing and citing digital content. 
     </p>
+        <image source="_static/Unit1images/iterative-design.png" alt="Iterative Process" width="50%" />
+
+
   </introduction>
 
-  <subsection>
-    <title>Learning Objectives</title>
-    <remark>
-      <title>2.1.A</title>
-      <p>
-        Develop a program using an iterative or incremental process.
-      </p>
-    </remark>
-
-    <remark>
-      <title>2.1.B</title>
-      <p>
-        Design an app or program and its user interface based on user research and program requirements.
-      </p>
-    </remark>
-
-    <remark>
-      <title>2.1.C</title>
-      <p>
-        Describe the purpose and behavior of a code segment or program by writing documentation.
-      </p>
-    </remark>
-
-    <remark>
-      <title>2.1.D</title>
-      <p>
-        Determine when it is appropriate to reuse, cite, and share digital content.
-      </p>
-    </remark>
-  </subsection>
-
-  <subsection>
+  <subsection xml:id="development-process">
     <title>The Development Process</title>
 
     <note>
@@ -52,33 +27,38 @@
         orders and may be repeated.
       </p>
     </note>
+  
 
     <note>
       <title>2.1.A.2</title>
       <p>
-        An iterative development process involves revising a program based on feedback, testing, or 
+        An <term>iterative development process</term> involves revising a program based on feedback, testing, or 
         reflection throughout development. This often requires returning to earlier phases to 
         improve the design or behavior.
       </p>
     </note>
 
+     <p>
+      We will use an <term>iterative development process</term> called Design Thinking in the next section 
+      where design, implementation, and testing are repeated until the design meets user needs. 
+      <term>Iterative</term> means that the process is repeated, and each repetition is called an <term>iteration</term>.
+    </p>
+
+     <image source="_static/Unit2images/DesignThinkingimage.png" alt="Design Thinking Process" width="40%" />
+
     <note>
       <title>2.1.A.3</title>
       <p>
-        An incremental development process breaks a problem into smaller features and builds a 
+        An <term>incremental development process</term> breaks a problem into smaller features and builds a 
         program in steps. Each part is checked to ensure it works before it is combined into the 
         whole.
       </p>
     </note>
 
-    <note>
-      <title>2.1.A.4</title>
-      <p>
-        Development processes often include creating and updating design documentation to help track 
-        decisions, guide what to build next, and support testing, debugging, maintenance, and 
-        improvement.
-      </p>
-    </note>
+   <p>App development can be iterative and <term>incremental</term> where incremental means that you work on small, manageable parts 
+    of the app at a time. For example, you could design the user interface first, then add functionality in subsequent iterations. </p>
+
+ 
 
     <note>
       <title>2.1.A.5</title>
@@ -89,41 +69,88 @@
       </p>
     </note>
 
-    <note>
-      <title>2.1.A.6</title>
-      <p>
-        Programmers can gather evidence from users during development by observing where users get 
-        stuck or confused. This evidence can guide revisions that improve the usability of apps or 
-        programs.
-      </p>
-    </note>
+    <p>Many software development teams use <term>version control systems</term> like <term>GitHub</term> which is a platform for 
+      managing code and collaborating on projects. Github allows programmers to upload their code online, track changes, manage different versions of code, and 
+      collaborate with others on the same project. 
+       </p>
+       
+       <image source="_static/Unit2images/github.webp" alt="GitHub diagram" width="50%" />
 
-    <note>
-      <title>2.1.A.7</title>
-      <p>
-        Many apps and programs go through revisions and updates to stay useful for users. 
-        Maintaining a program involves making changes after a working version exists, such as fixing 
-        bugs, improving usability, or adapting the program as user needs or conditions change.
-      </p>
-    </note>
+   
   </subsection>
 
-  <subsection>
-    <title>Design and User Research</title>
+  <subsection xml:id="design-thinking">
+  <title>Design Thinking</title>
 
+  <p><term>Design thinking</term> is a human-centered approach to innovation that involves understanding the user, and iteratively
+    designing creative solutions to meet their needs. Some of the world’s leading brands, such as Apple, Google and Samsung, use the 
+    design thinking approach. Watch the introduction to Design Thinking <url href="https://www.youtube.com/watch?v=a7sEoEvT8l8">video</url> below.
+  </p>
+   <video youtube="a7sEoEvT8l8" label="video-design-thinking" />
+   
     <note>
       <title>2.1.B.1</title>
       <p>
         Programmers often begin by identifying intended users and their goals rather than starting 
-        with a list of features. Focusing on users and goals helps teams prioritize features and 
+        with a list of features. Focusing on <term>users</term> and <term>goals</term> helps teams prioritize features and 
         design an app or program that meets real needs.
       </p>
     </note>
 
+   <p>The Design Thinking process has 5 stages: Empathize, Define, Ideate, Prototype, and Test, which are repeated incrementally and
+    iteratively until the user needs are met. The following diagram shows the Design Thinking process.
+   </p>
+     
+      <image source="_static/Unit2images/Design-Thinking-Stages.png" alt="Design Thinking Stages" width="70%" />
+
+   <p>There are 5 stages in the Design Thinking process, and it all starts with emphathizing with your users.</p>
+   <ol>
+			<li><strong>Empathize: </strong>Investigate and understand your users to identify the program requirements</li>
+			<ul><li>collect data through surveys</li>
+			<li>conduct user testing</li>
+			<li>conduct interviews </li>
+			<li>make direct observations</li></ul>
+			<li><strong>Define:</strong> Analyze the problem and determine the program specifications</li>
+			<li><strong>Ideate:</strong> Brainstorm possible solutions</li>
+			<ul><li>make a list of your ideas</li>
+				<li>draw the interface on paper or online</li>
+      </ul>
+			<li><strong>Prototype:</strong> Creatively build simple solutions</li>
+			<li><strong>Test:</strong> Evaluate the solutions</li>
+		</ol>
+
+    
+      <project label="design-thinking-chair-project" xml:id="design-chair-project">
+        <title>Design Thinking: Chair Project</title>
+        <statement>
+          <p>
+            In this project, you will use the design thinking process to design a chair for one of the Simpsons characters.
+            You will work in groups and choose or be assigned a character and follow the <url 
+            href="https://docs.google.com/document/d/16Y9RPf6IhZ4pZRjtosXdergQPCLRgrmY_TTMr4N9xpU/">Design a Simpsons Chair Instructions</url>. 
+            After completing the project, reflect on the following questions:
+            <ul>
+              <li>Describe the characteristics of your user and how your design addresses their needs.</li>
+              <li>Did you use iterative design where you changed some aspects of your design during implementation? What did you change?</li>
+              <li>Did you use incremental design where you built the chair in steps? What parts did you build in each step? 
+                </li>
+              <li>How could Gen AI be used in the design process? If you have access to a Gen AI tool, try using it to generate
+                ideas for your chair design. How did it help you? What were the limitations?</li>
+            </ul>
+          </p>
+        </statement>
+        <response/>
+      </project>
+          
+</subsection>
+
+  <subsection xml:id="user-research">
+    <title>User Research and Feedback</title>
+
+
     <note>
       <title>2.1.B.2</title>
       <p>
-        User research means learning from the people who will use an app or program. Programmers may 
+        <term>User research</term> means learning from the people who will use an app or program. Programmers may 
         gather information from intended users to understand what they need, what limits or 
         challenges they have, and what matters most.
       </p>
@@ -132,7 +159,7 @@
     <note>
       <title>2.1.B.3</title>
       <p>
-        Program requirements describe what a program must do and how it should behave. Requirements 
+        <term>Program requirements</term> describe what a program must do and how it should behave. Requirements 
         may be based on user research and may include user interactions a program must support, 
         information a user interface should display, and feedback the app or program should provide.
       </p>
@@ -141,17 +168,26 @@
     <note>
       <title>2.1.B.4</title>
       <p>
-        Programmers can use user stories to connect requirements to real tasks and to guide 
-        interface design and testing. User stories are hypothetical descriptions of who a user is, 
-        what they want to do, and why it is important. Teams may also represent user needs with use 
-        cases or storyboards, which show how someone would use the app or program step by step.
+        Programmers can use <term>user stories</term> to connect requirements to real tasks and to guide 
+        interface design and testing. <term>User stories</term>are hypothetical descriptions of who a user is, 
+        what they want to do, and why it is important. Teams may also represent user needs with <term>use 
+        cases</term> or <term>storyboards</term>, which show how someone would use the app or program step by step.
       </p>
     </note>
 
-    <note>
+    <p>The Simpsons chair design project above presented <term>user stories</term> for each Simpsons character that
+    described their needs. <term>Use cases</term> are detailed descriptions of how a user interacts with a system to achieve a 
+    specific goal. For example, a non-standard use-case of a chair for a child might be to tip it over and pretend it is a rocket ship. 
+    Users sometimes use products in ways that the designers did not anticipate! 
+    <term>Storyboards</term> are visual representations of a sequence of events, often used to illustrate how a user interacts with a product or system. 
+  </p>
+
+   <image source="_static/Unit2images/user-story-lisa.png" alt="User story for Lisa Simpson" width="90%" />
+   
+   <note>
       <title>2.1.B.5</title>
       <p>
-        User research can be performed in multiple ways, such as surveys, interviews, direct 
+        <term>User research</term> can be performed in multiple ways, such as surveys, interviews, direct 
         observation, and user testing.
       </p>
     </note>
@@ -164,15 +200,43 @@
         developing a testing strategy based on program requirements and user needs.
       </p>
     </note>
+  
+   <note>
+      <title>2.1.A.6</title>
+      <p>
+        Programmers can gather evidence from users during development by observing where users get 
+        stuck or confused. This evidence can guide revisions that improve the usability of apps or 
+        programs.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.7</title>
+      <p>
+        Many apps and programs go through revisions and updates to stay useful for users. 
+        <term>Maintaining</term> a program involves making changes after a working version exists, such as fixing 
+        bugs, improving usability, or adapting the program as user needs or conditions change.
+      </p>
+    </note>
+  
   </subsection>
 
-  <subsection>
+  <subsection xml:id="documentation">
     <title>Documentation</title>
+
+      <note>
+      <title>2.1.A.4</title>
+      <p>
+        Development processes often include creating and updating design documentation to help track 
+        decisions, guide what to build next, and support testing, debugging, maintenance, and 
+        improvement.
+      </p>
+    </note>
 
     <note>
       <title>2.1.C.1</title>
       <p>
-        Program documentation is a written description of the purpose and behavior of a code segment 
+        <term>Program documentation</term> is a written description of the purpose and behavior of a code segment 
         or program, including how it is intended to be used, how it accomplishes its task, and how 
         it was developed.
       </p>
@@ -181,7 +245,7 @@
     <note>
       <title>2.1.C.2</title>
       <p>
-        Comments are a form of documentation included in code for humans to read. Comments do not 
+        <term>Comments</term> are a form of documentation included in code for humans to read. Comments do not 
         affect how a program runs.
       </p>
     </note>
@@ -302,5 +366,36 @@
         license does not allow.
       </p>
     </note>
+  </subsection>
+
+   <subsection xml:id="LOs-2-1">
+    <title>Learning Objectives Review</title>
+    <remark>
+      <title>2.1.A</title>
+      <p>
+        Develop a program using an iterative or incremental process.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.1.B</title>
+      <p>
+        Design an app or program and its user interface based on user research and program requirements.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.1.C</title>
+      <p>
+        Describe the purpose and behavior of a code segment or program by writing documentation.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.1.D</title>
+      <p>
+        Determine when it is appropriate to reuse, cite, and share digital content.
+      </p>
+    </remark>
   </subsection>
 </section>
