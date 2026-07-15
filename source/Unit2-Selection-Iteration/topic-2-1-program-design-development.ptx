@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="topic-2-1-program-design-development">
-  <time minutes="45" />
+  <time minutes="90" />
   <title>Program Design and Development</title>
+
+  <idx>design</idx>
   <introduction>
     <p>In this unit, we will learn how to design and develop programs that meet user needs with  
-      more complex Python control structures for selection and repetition 
+      more complex Python control structures such as selection and repetition.
       In this first lesson, we will focus on the development process, user research, documentation, 
       and reusing and citing digital content. 
     </p>
@@ -16,7 +18,8 @@
 
   <subsection xml:id="development-process">
     <title>The Development Process</title>
-
+    <idx>iterative development</idx>
+    <idx>incremental development</idx>
     <note>
       <title>2.1.A.1</title>
       <p>
@@ -58,7 +61,101 @@
    <p>App development can be iterative and <term>incremental</term> where incremental means that you work on small, manageable parts 
     of the app at a time. For example, you could design the user interface first, then add functionality in subsequent iterations. </p>
 
- 
+  <activity label="iterative-development-mcq">
+
+  <statement>
+    <p>Which statement best describes an <term>iterative development process</term>?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>Revising a program repeatedly based on testing and feedback.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Iterative development emphasizes improving a program through repeated cycles of testing, feedback, and revision.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Building one feature at a time until the program is complete.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. This describes <term>incremental development</term>, where a program is built in small, manageable pieces.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Writing all documentation before programming.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Documentation is created and updated throughout the development process, not only before programming begins.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Dividing work equally among team members.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Assigning work to team members is part of collaboration, not what defines an iterative development process.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
+
+<activity label="incremental-development-mcq">
+
+  <statement>
+    <p>Which statement best describes an <term>incremental development process</term>?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Revising a program repeatedly based on testing and feedback.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect! This describes <term>iterative development</term>, where a program is improved through repeated cycles of testing, feedback, and revision.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Building one feature at a time until the program is complete.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Incremental development involves building a program in small, manageable pieces.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Writing all documentation before programming.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Documentation is created and updated throughout the development process, not only before programming begins.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Dividing work equally among team members.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Assigning work to team members is part of collaboration, not what defines an incremental development process.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
 
     <note>
       <title>2.1.A.5</title>
@@ -69,6 +166,7 @@
       </p>
     </note>
 
+    <idx>github</idx>
     <p>Many software development teams use <term>version control systems</term> like <term>GitHub</term> which is a platform for 
       managing code and collaborating on projects. Github allows programmers to upload their code online, track changes, manage different versions of code, and 
       collaborate with others on the same project. 
@@ -76,11 +174,77 @@
        
        <image source="_static/Unit2images/github.webp" alt="GitHub diagram" width="50%" />
 
+         <note>
+      <title>2.1.A.6</title>
+      <p>
+        Programmers can gather evidence from users during development by observing where users get 
+        stuck or confused. This evidence can guide revisions that improve the usability of apps or 
+        programs.
+      </p>
+    </note>
+
+    <note>
+      <title>2.1.A.7</title>
+      <p>
+        Many apps and programs go through revisions and updates to stay useful for users. 
+        <term>Maintaining</term> a program involves making changes after a working version exists, such as fixing 
+        bugs, improving usability, or adapting the program as user needs or conditions change.
+      </p>
+    </note>
+    
+    <activity label="program-maintenance-mcq">
+
+  <statement>
+    <p>A programmer releases an app and later fixes bugs and adds support for a new phone model. This is an example of</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>Program maintenance</p>
+      </statement>
+      <feedback>
+        <p>Correct! <term>Program maintenance</term> involves updating a program after it has been released, such as fixing bugs, improving usability, or adapting it to changing user needs or new technology.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Prototyping</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. <term>Prototyping</term> is the process of creating an early version of a program or app to explore ideas and gather feedback before the final product is complete.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>User research</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. <term>User research</term> involves learning about users' needs through methods such as surveys, interviews, observations, or user testing.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>User testing</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. <term>Testing</term> checks whether a program works correctly and meets user needs. While testing may identify bugs, fixing them after release is part of program maintenance.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
    
   </subsection>
 
   <subsection xml:id="design-thinking">
   <title>Design Thinking</title>
+  <idx>design thinking</idx>
 
   <p><term>Design thinking</term> is a human-centered approach to innovation that involves understanding the user, and iteratively
     designing creative solutions to meet their needs. Some of the world’s leading brands, such as Apple, Google and Samsung, use the 
@@ -103,20 +267,23 @@
      
       <image source="_static/Unit2images/Design-Thinking-Stages.png" alt="Design Thinking Stages" width="70%" />
 
-   <p>There are 5 stages in the Design Thinking process, and it all starts with emphathizing with your users.</p>
+   <p>There are 5 stages in the Design Thinking process, and it all starts with connecting with your users with empathy 
+    to understand their needs.</p>
    <ol>
-			<li><strong>Empathize: </strong>Investigate and understand your users to identify the program requirements</li>
+			<li><p><term>Empathize: </term>Investigate and understand your users to identify the program requirements
 			<ul><li>collect data through surveys</li>
 			<li>conduct user testing</li>
 			<li>conduct interviews </li>
 			<li>make direct observations</li></ul>
-			<li><strong>Define:</strong> Analyze the problem and determine the program specifications</li>
-			<li><strong>Ideate:</strong> Brainstorm possible solutions</li>
+      </p></li>
+			<li><p><term>Define:</term> Analyze the problem and determine the program specifications</p></li>
+			<li><p><term>Ideate:</term> Brainstorm possible solutions
 			<ul><li>make a list of your ideas</li>
 				<li>draw the interface on paper or online</li>
-      </ul>
-			<li><strong>Prototype:</strong> Creatively build simple solutions</li>
-			<li><strong>Test:</strong> Evaluate the solutions</li>
+      </ul></p>
+      </li>
+			<li><term>Prototype:</term> Creatively build simple solutions</li>
+			<li><term>Test:</term> Evaluate the solutions and go back to step 2 if needed</li>
 		</ol>
 
     
@@ -145,7 +312,11 @@
 
   <subsection xml:id="user-research">
     <title>User Research and Feedback</title>
-
+    <idx>user research</idx>
+    <idx>storyboard</idx>
+    <idx>use case</idx>
+    <idx>user stories</idx>
+    <idx>program requirements</idx>
 
     <note>
       <title>2.1.B.2</title>
@@ -165,24 +336,78 @@
       </p>
     </note>
 
+    <activity label="program-requirements-mcq">
+
+  <statement>
+    <p>Which of the following is a <term>program requirement</term>?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>The app must remind users about upcoming assignments.</p>
+      </statement>
+      <feedback>
+        <p>Correct! A program requirement describes what a program must do or how it should behave to meet user needs.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Use Python variables to store data.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. This is an implementation decision about how to build the program, not a program requirement.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The app should be written by at least two programmers.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The size of the development team is part of the development process, not a program requirement.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The program should contain at least 100 lines of code.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The number of lines of code does not describe what the program must do for its users.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
+
     <note>
       <title>2.1.B.4</title>
       <p>
         Programmers can use <term>user stories</term> to connect requirements to real tasks and to guide 
-        interface design and testing. <term>User stories</term>are hypothetical descriptions of who a user is, 
+        interface design and testing. <term>User stories</term> are hypothetical descriptions of who a user is, 
         what they want to do, and why it is important. Teams may also represent user needs with <term>use 
         cases</term> or <term>storyboards</term>, which show how someone would use the app or program step by step.
       </p>
     </note>
 
     <p>The Simpsons chair design project above presented <term>user stories</term> for each Simpsons character that
-    described their needs. <term>Use cases</term> are detailed descriptions of how a user interacts with a system to achieve a 
+    described their needs, for example, the one for Lisa Simpson below. <term>Use cases</term> are detailed descriptions of how a user interacts with a system to achieve a 
     specific goal. For example, a non-standard use-case of a chair for a child might be to tip it over and pretend it is a rocket ship. 
-    Users sometimes use products in ways that the designers did not anticipate! 
-    <term>Storyboards</term> are visual representations of a sequence of events, often used to illustrate how a user interacts with a product or system. 
-  </p>
+    Users sometimes use products in ways that the designers did not anticipate! </p>
+   
 
    <image source="_static/Unit2images/user-story-lisa.png" alt="User story for Lisa Simpson" width="90%" />
+
+ <p>
+    <term>Storyboards</term> are visual representations of a sequence of events, often used to illustrate how a 
+    user interacts with a product or system. Here's an example of a story board showing how a user 
+    might interact with an app called "Study Buddy".
+  </p>
+   <image source="_static/Unit2images/storyboard.png" alt="Story Board" width="100%" />
    
    <note>
       <title>2.1.B.5</title>
@@ -192,6 +417,39 @@
       </p>
     </note>
 
+    <activity label="user-research-methods">
+  <statement>
+    <p>
+       Drag each research method from the left
+      and drop it on the situation where it would be most appropriate.
+      Click the "Check Me" button to see if you are correct.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>Review the descriptions of each user research method in the lesson above and try again.</p>
+  </feedback>
+
+  <cardsort>
+    <match>
+      <premise>survey</premise>
+      <response>Collect feedback from hundreds of customers about which new feature they would like to see next</response>
+    </match>
+    <match>
+      <premise>interview</premise>
+      <response>Discuss in detail why a small group of users struggles with using an app</response>
+    </match>
+    <match>
+      <premise>direct observation</premise>
+      <response>Watch different ways employees use a software system during a normal workday</response>
+    </match>
+    <match>
+      <premise>user testing</premise>
+      <response>Have participants complete specific tasks with a prototype to see if there are problems</response>
+    </match>
+  </cardsort>
+</activity>
+
     <note>
       <title>2.1.B.6</title>
       <p>
@@ -200,30 +458,44 @@
         developing a testing strategy based on program requirements and user needs.
       </p>
     </note>
-  
-   <note>
-      <title>2.1.A.6</title>
-      <p>
-        Programmers can gather evidence from users during development by observing where users get 
-        stuck or confused. This evidence can guide revisions that improve the usability of apps or 
-        programs.
-      </p>
-    </note>
 
-    <note>
-      <title>2.1.A.7</title>
-      <p>
-        Many apps and programs go through revisions and updates to stay useful for users. 
-        <term>Maintaining</term> a program involves making changes after a working version exists, such as fixing 
-        bugs, improving usability, or adapting the program as user needs or conditions change.
-      </p>
-    </note>
-  
+    <project label="app-design-project" xml:id="app-design-project">
+        <title>Homework Helper App Design Project</title>
+        <statement>
+          <p>In this activity, you will design a Homework Helper app by learning about your users and 
+            planning what the app should do. This activity is a good group project. </p>
+
+           <p>1. User Research: Interview one or two classmates about how they keep track of homework. 
+            Ask questions like:
+           <ul><li>What is the hardest part about managing homework?</li>
+           <li>What would you want a Homework Helper app to do?</li></ul>
+           Write 2–3 sentences summarizing what you learned. </p>
+
+           <p>2. User Story: Write one user story that describes a user, what they want to do, and why it is important. 
+            Use the following format:  "As a __________, I want to __________, so that __________." For example,
+            "As a student, I want to see all my assignments in one place so that I don't forget homework."</p>
+
+            <p>3. Program Requirements: Based on your research, write 3 program requirements that describe 
+            what your app must do. Example: The app must remind users about upcoming assignments. </p>
+            
+            <p>4. Storyboard: Draw a simple sketch of your app's main screen and one other screen.
+              Label some features that support your program requirements. You can use 
+              <url href="https://wireframe.cc/">Wireframe.cc</url> or this 
+              <url href="https://docs.google.com/drawings/d/1M-DZITeDT9aiPZ7Oz-kXKEGkn0DiFOH1i8idBNlxwCA/edit">printout</url>.
+            </p>
+            <p>5. Reflection: How did your user research help you design your app? 
+                What would you do next to improve your design? Share your design with the class.</p>
+
+        </statement>
+        <response/>
+      </project>
+
   </subsection>
 
   <subsection xml:id="documentation">
     <title>Documentation</title>
-
+      <idx>documentation</idx>
+     
       <note>
       <title>2.1.A.4</title>
       <p>
@@ -242,6 +514,82 @@
       </p>
     </note>
 
+    <activity label="program-documentation-mc">
+
+  <statement>
+    <p>Which of the information below isappropriate to include in program documentation? (Select all that apply.)</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>The program’s purpose and intended use.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Documentation should explain what the program is designed to do and why it exists.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The expected inputs and required data formats.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Documentation should describe what information the program needs in order to run correctly.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The expected outputs and results produced by the program.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Documentation should explain what users can expect the program to produce.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Important algorithms, design decisions, or limitations of the program.</p>
+      </statement>
+      <feedback>
+        <p>Correct! This information helps other programmers understand, maintain, and improve the program.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A list of every variable name used in the program.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. A list of names alone does not help users understand how the program works.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The programmer’s reflection about how they wrote the program.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Program documentation should focus on useful information about the program, not personal reflections.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A record of every time the program has been run by users.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Execution records are logs or analytics, not typical program documentation.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
+
+ <idx>comments</idx>
     <note>
       <title>2.1.C.2</title>
       <p>
@@ -257,6 +605,66 @@
         written in other formats, such as design notes, a test plan, or a change log.
       </p>
     </note>
+
+    <p>In Python, use # to mark a line as a comment. Comments are very useful for collaboration and future reference. 
+      They are ignored by the Python interpreter when the program runs.  
+    </p>
+    
+    <program language="python">
+      <code>
+# This program calculates the area of a rectangle
+width = 5
+height = 10
+area = width * height  # Area is width times height
+print("The area of the rectangle is:", area)
+      </code>
+    </program>
+
+    <activity label="comments-mcq">
+  <statement>
+    <p>Which statement about comments is true?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Comments change how a program executes.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Comments are ignored by the Python interpreter and do not affect how a program runs.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Comments help programmers understand code but do not affect execution.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Comments document a program for people to read, but they are ignored when the program executes.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Comments are required in every Python program.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Although comments are highly recommended, Python programs can run without any comments.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Comments are executed before the program runs.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Comments are never executed—they are ignored by the interpreter.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
 
     <note>
       <title>2.1.C.4</title>
@@ -285,10 +693,22 @@
         AI tool use.
       </p>
     </note>
+
+    <p>AI tools can actually help programmers to write comments and documentation for their code, but 
+      programmers should always review and edit AI-generated content to ensure it is accurate, clear, 
+      and relevant to the program. Programmers should always cite any AI tools used to generate content, 
+      just as they would cite any other source of information or code.
+    </p>
   </subsection>
 
   <subsection>
     <title>Reusing and Citing Digital Content</title>
+
+    <idx>copyright</idx>
+    <idx>intellectual property</idx>
+    <idx>reuse</idx>
+    <idx>digital content</idx>
+    <idx>attribution</idx>
 
     <note>
       <title>2.1.D.1</title>
@@ -301,10 +721,19 @@
       </p>
     </note>
 
+    <p>When borrowing code or images or text, programmers need to first determine the following:
+    </p>
+      <ul>
+        <li>Who owns the content?</li>
+        <li>Do they allow reuse?</li>
+        <li>Is acknowledgment required?</li>
+      </ul>
+
+
     <note>
       <title>2.1.D.2</title>
       <p>
-        Digital works are considered the intellectual property of their copyright owner, who is 
+        Digital works are considered the <term>intellectual property</term> of their <term>copyright owner</term>, who is 
         often the work's creator but may be another person or organization. This means the copyright 
         owner has legal control over the original work and can decide whether others may use, share, 
         modify, or distribute it. To respect intellectual property, people should follow a work's 
@@ -312,7 +741,16 @@
       </p>
     </note>
 
-    <note>
+    <p>Material created on a computer is the <term>intellectual property</term> of the creator or an organization. This means
+      they are the legal owner of their created work and can decide whether others may use, share, modify, or distribute it.
+      <term>Copyright</term> is a legal right that protects the creator's work from being used without permission.
+     Measures should be taken to safeguard intellectual property, for example by citing work that is used but not your own. 
+     The use of material created by someone else without permission and presented as one’s own is plagiarism and may have legal consequences. 
+    </p>
+
+
+    
+<note>
       <title>2.1.D.3</title>
       <p>
         Digital content can be copied, edited, and shared quickly, which can make it harder to 
@@ -325,7 +763,7 @@
       <title>2.1.D.4</title>
       <p>
         Despite how easy it is to share content online, presenting material created by someone else 
-        as your own is plagiarism. Using another person's work without permission or proper credit 
+        as your own is <term>plagiarism</term>. Using another person's work without permission or proper credit 
         may have legal consequences.
       </p>
     </note>
@@ -340,23 +778,149 @@
       </p>
     </note>
 
+    <p>Often when creating an app, the first step is to gather assets like images to use. However, many images online are copyrighted.
+     App creaters will have to get permission and possibly pay to use them, or they can search for free media. For example,
+     the following sites offer free image files that can be used in apps and programs:</p>
+     <ul>
+      <li><url href="https://www.pexels.com/">Pexels</url> (free shared images)</li>
+      <li><url href="https://pixabay.com/">Pixabay</url> (free shared images)</li>
+      <li><url href="https://www.google.com/imghp">Google Image Search</url>: search for an image, 
+        then on the results page, select Tools. Under the Usage Rights drop-down, select Creative Commons Licenses.</li>
+     </ul>
+
+    <p>AI-generated content  typically lacks copyright protection altogether because U.S. and international laws require human authorship 
+      for copyright.
+    However, some AI tools may have terms of service that restrict how their output can be used. Programmers should check the terms of 
+    service for any AI tool they use to generate content and provide attribution if required.
+    </p>
+    
+    <activity label="reuse-digital-content-mcq">
+
+  <statement>
+    <p>A programmer wants to use an image they found online. What should they do first?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>Check who owns it and what license or permissions apply.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Before reusing digital content, programmers should identify the copyright owner and determine whether the license or permissions allow reuse and whether attribution is required.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Assume it is free to use because it is online.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Material found online is often protected by copyright and cannot be reused without following its license or obtaining permission.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Edit the image slightly so it is no longer copyrighted.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Making small changes to copyrighted material does not automatically give you the right to use it.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Use it without attribution if it is for school.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Educational use does not automatically allow copyrighted material to be reused without following the license or giving attribution when required.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
+
+
+
+ <idx>open source software</idx>
+ <idx>Creative Commons license</idx>
+ <idx>Creative Commons Zero (CC0)</idx>
     <note>
       <title>2.1.D.6</title>
       <p>
-        Some licenses and tools make reuse easier by clearly stating permissions. Open source and 
-        Creative Commons licenses provide standardized terms that tell others how they may use, 
+        Some licenses and tools make reuse easier by clearly stating permissions. <term>Open source</term> and 
+        <term>Creative Commons</term> licenses provide standardized terms that tell others how they may use, 
         modify, and redistribute software or creative works.
       </p>
     </note>
+
+    <p><term>Open source software</term> is software that is made freely available and may be redistributed and modified.
+     <term>Creative Commons</term> is a public copyright license that enables the free distribution. 
+     This is used when the content creator wants to give others the right to share, use, and build upon the work they have created.
+   </p>
+
+   <p>Watch the following <url href="https://www.youtube.com/watch?v=2q91vTvc7YE">video</url> which explains Open Source vs Closed Source Software:</p>
+
+   <video youtube="2q91vTvc7YE" label="video-open-source-software" />
 
     <note>
       <title>2.1.D.7</title>
       <p>
         License terms vary in what they allow and require. Some licenses require attribution, while 
-        others allow unrestricted reuse. Creative Commons Zero (CC0) allows creators to waive 
+        others allow unrestricted reuse. <term>Creative Commons Zero (CC0)</term> allows creators to waive 
         copyright restrictions to the extent possible so others can reuse the work.
       </p>
     </note>
+
+  <activity label="creative-commons-zero-mcq">
+
+  <statement>
+    <p>Which license is designed to make reuse as unrestricted as possible?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>Creative Commons Zero (CC0)</p>
+      </statement>
+      <feedback>
+        <p>Correct! <term>Creative Commons Zero (CC0)</term> allows creators to waive copyright restrictions to the extent possible so others can reuse the work with few or no restrictions.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Copyrighted</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Copyright protects a creator's work and does not automatically allow others to reuse it.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Proprietary software license</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Proprietary licenses typically restrict how software or other digital content may be used, modified, or shared.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>AI generated</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. AI-generated content is not copyrighted but may have unique licensing considerations. It is not a standard license type.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</activity>
 
     <note>
       <title>2.1.D.8</title>
@@ -366,6 +930,15 @@
         license does not allow.
       </p>
     </note>
+
+    <activity label="search-for-image">
+      <statement>
+        <p>Search for a copyright-free image to use for your Homework Helper app. 
+          Make sure to check the license. Put in a link to the image below and cite the source of the image you choose.</p>
+      </statement>
+      <response/>
+    </activity>
+
   </subsection>
 
    <subsection xml:id="LOs-2-1">
@@ -398,4 +971,88 @@
       </p>
     </remark>
   </subsection>
+
+  <subsection xml:id="vocab-2-1">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-design">
+      <title>Design Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>iterative development</premise>
+        <response>developing a program through repeated cycles of design, implementation, and testing</response>
+        </match>
+        <match>
+          <premise>incremental development</premise>
+          <response>developing a program by in small steps adding new features or functionality</response>
+        </match>
+        <match>
+          <premise>user research</premise>
+          <response>the process of gathering information about users and their needs</response>
+        </match>
+        <match>
+          <premise>program requirements</premise>
+          <response>the specific needs and constraints that a program must meet to be successful</response>
+        </match>
+        <match>
+          <premise>user stories</premise>
+          <response>short, simple descriptions of a feature from the perspective of the user</response>
+        </match>
+        <match>
+          <premise>storyboard</premise>
+          <response>a visual representation of a sequence of events or scenes</response>
+        </match>
+      </cardsort>
+      </activity>
+
+    <activity label="vocab-copyright">
+      <title>Copyright Vocabulary</title>
+         <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+      <cardsort>
+        <match>
+          <premise>copyright</premise>
+          <response>a legal right that protects the creator's work from being used without permission</response>
+        </match>
+        <match>
+          <premise>intellectual property</premise>
+          <response>ownership for creations of the mind, like inventions, literary and artistic works</response>
+        </match>
+        <match>
+          <premise>Creative Commons license</premise>
+          <response>a type of license that allows creators to share their work with others while retaining some rights</response>
+        </match>
+        <match>
+          <premise>open source software</premise>
+          <response>software whose source code is available for anyone to view, modify, and distribute</response>
+        </match>
+        <match>
+          <premise>Creative Commons Zero (CC0)</premise>
+          <response>a license that waives all copyright and related rights in a work</response>
+        </match>
+      </cardsort>
+    </activity>
+    </subsection>
+   
 </section>
