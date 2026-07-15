@@ -413,7 +413,7 @@
     <image source="_static/Unit1images/TurtleL4.png" width="30%" alt="Line-drawn capital L with compass"/>
   
     </statement>
-    <blocks numbered="left">
+    <blocks>
        <block order="7">
         <cline>import turtle</cline>
       </block>

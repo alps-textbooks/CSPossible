@@ -13,7 +13,7 @@
    <p>Most of these are exercises are written by Dr. Barb Ericson from the AP CSP and Welcome to CS ebooks on Runestone.
   </p>
 
-   <activity label="mixedupturtles1" numbered="yes" adaptive="yes" indentation="show" language="python">
+   <activity label="mixedupturtles1" numbered="yes" adaptive="yes" indentation="hide" language="python">
     <statement>
       <p>The following program segment should draw a red line. The blocks have been mixed up. Drag the blocks from the
         left and put them in the correct order on the right. There will be 2 extra blocks that you will not use. Click the <em>Check Me</em> button to check your solution.</p>
@@ -30,15 +30,15 @@
          <choice correct="yes">
           <cline>ani.color("red")</cline>
         </choice>
-        <choice correct="no">
-           <cline>ani.color(red) </cline>
+        <choice>
+           <cline>ani.color(red)</cline>
         </choice>
       </block>
       <block order="6">
          <choice correct="yes">
             <cline>ani.forward(100)</cline>
         </choice>
-        <choice correct="no">
+        <choice>
              <cline>ani.forward("100") </cline>
         </choice>
       </block>

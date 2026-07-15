@@ -234,9 +234,10 @@
   <activity label="unit1_coding4">
     <statement>
       <p>Complete the code on lines 3 and 5 below to print the cost of a car trip of 500 miles when the car gets 26
-        miles per gallon and gas costs 3.45 a gallon.</p>
-      <p>The answer you get should be 66.34615384615385. But make sure you calculate it, as opposed to hardcoding that
-        value into your program!</p>
+        miles per gallon and gas costs 3.45 a gallon. In line 3, you need to determine the
+      number of gallons the care used if they went 500 miles and the car gets 26 miles per gallon, but
+    make sure you use the variables in your formula. In line 5, compute the cost of the trip using
+    <c>numGallons</c> and <c>pricePerGallon</c>. </p>
 
     </statement>
     <program xml:id="unit1_coding4_editor" interactive="activecode" language="python">
@@ -245,8 +246,8 @@
             milesPerGallon = 26
             numGallons =
             pricePerGallon = 3.45
-            total =
-            print(total)
+            totalCost = 
+            print(totalCost)
           </code>
       <tests>
 

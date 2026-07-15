@@ -570,6 +570,42 @@ print("Next year you will be", age + 1, "years old.")
     </program>
     </activity>
 
+<activity label="mixedUpMath" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>The following program segment should calculate the number of hours and then the remaining 
+          minutes in 150 minutes, but the blocks are mixed up. 
+          For example, if there are 150 minutes, then that is 2 hours
+          and a remainder of 30 minutes.  Remember that <c>//</c> in Python is integer division
+          that returns a whole number, <c>/</c> is float division, and <c>%</c> is the remainder operator. 
+          Drag the blocks from the left and put them in the correct order on the right. 
+          There will be 2 extra blocks that you will not use. 
+          Click the <em>Check Me</em> button to check your solution.</p>
+      </statement>
+      <blocks>
+        <block>
+         <choice correct="yes">
+          <cline>minutes = 150</cline>
+          </choice>
+        </block>
+       
+        <block>
+          <choice correct="yes">
+           <cline>hours = minutes // 60</cline>
+          </choice>
+          <choice>
+           <cline>hours = minutes / 60</cline>
+          </choice>
+        </block>
+        <block>
+          <choice correct="yes">
+           <cline>remainingMinutes = minutes % 60</cline>
+          </choice>
+          <choice>
+           <cline>remainingMinutes = minutes / 60</cline>
+          </choice>
+        </block>
+      </blocks>
+    </activity>
 
     <activity label="calculate-hours">
       <statement>

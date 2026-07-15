@@ -700,12 +700,12 @@ else:
    
       <image source="_static/Unit2images/if-elif-else-flowchart.png" width="40%" alt="if-elif-else flowchart"/>
 
-      <activity label="cndtnl-mixed-hi" xml:id="cndtnl-mixed-hi" numbered="yes" adaptive="yes" indentation="hide" language="python">
+  <activity label="cndtnl-mixed-hi" xml:id="cndtnl-mixed-hi" numbered="yes" adaptive="yes" indentation="hide" language="python">
     <statement>
       <p>Create code that sets the variable <c>message</c> to <q>Hello</q> if <c>x</c> is less than 
         <c>2</c>, <q>Hey</q> if <c>x</c> is greater than <c>2</c>, and <q>Hi</q> otherwise. </p>
     </statement>
-    <blocks numbered="left">
+    <blocks>
       <block order="10">
         <choice correct="yes">
           <cline>if x &lt; 2:</cline>
