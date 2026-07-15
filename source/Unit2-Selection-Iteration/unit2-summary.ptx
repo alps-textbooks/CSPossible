@@ -62,6 +62,154 @@
 
   <p>Review the following Unit 2 vocabulary:</p>
 
+     <activity label="vocab-review-2-1-design">
+      <title>2-1 Design Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-1. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
 
+      <feedback>
+        <p>Review the vocabulary in 2-1 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>iterative development</premise>
+        <response>developing a program through repeated cycles of design, implementation, and testing</response>
+        </match>
+        <match>
+          <premise>incremental development</premise>
+          <response>developing a program by in small steps adding new features or functionality</response>
+        </match>
+        <match>
+          <premise>user research</premise>
+          <response>the process of gathering information about users and their needs</response>
+        </match>
+        <match>
+          <premise>program requirements</premise>
+          <response>the specific needs and constraints that a program must meet to be successful</response>
+        </match>
+        <match>
+          <premise>user stories</premise>
+          <response>short, simple descriptions of a feature from the perspective of the user</response>
+        </match>
+        <match>
+          <premise>storyboard</premise>
+          <response>a visual representation of a sequence of events or scenes</response>
+        </match>
+      </cardsort>
+      </activity>
+
+    <activity label="vocab-review-2-1-copyright">
+      <title>2-1 Copyright Vocabulary</title>
+         <statement>
+        <p>
+          Review the vocabulary in 2-1. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-1 and try again.</p>
+      </feedback>
+      <cardsort>
+        <match>
+          <premise>copyright</premise>
+          <response>a legal right that protects the creator's work from being used without permission</response>
+        </match>
+        <match>
+          <premise>intellectual property</premise>
+          <response>ownership for creations of the mind, like inventions, literary and artistic works</response>
+        </match>
+        <match>
+          <premise>Creative Commons license</premise>
+          <response>a type of license that allows creators to share their work with others while retaining some rights</response>
+        </match>
+        <match>
+          <premise>open source software</premise>
+          <response>software whose source code is available for anyone to view, modify, and distribute</response>
+        </match>
+        <match>
+          <premise>Creative Commons Zero (CC0)</premise>
+          <response>a license that waives all copyright and related rights in a work</response>
+        </match>
+      </cardsort>
+    </activity>
+
+     <activity label="vocab-review-2-2-boolean">
+      <title>2-2 Boolean Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-2. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-2 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>Boolean</premise>
+        <response>a data type that can only have the values True or False</response>
+        </match>
+        <match>
+          <premise>Boolean expression</premise>
+          <response>an expression that evaluates to either True or False</response>
+        </match>
+        <match>
+          <premise>relational operator</premise>
+          <response>an operator like <c>==</c> or <c>&lt;</c> that compares two values and 
+            returns True or False</response>
+        </match>
+        <match>
+          <premise>logical operator</premise>
+          <response>an operator like <c>and</c>, <c>or</c>, or <c>not</c> that combines Boolean 
+            expressions and returns True or False</response>
+        </match>
+      </cardsort>
+    </activity>
+
+     <activity label="vocab-review-2-3-selection">
+      <title>2-3 Selection Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-3. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-3 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>selection</premise>
+        <response>the process of choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+        <premise>conditional statement</premise>
+        <response>a statement that checks a condition and executes different code depending on whether the condition is true or false</response>
+        </match>
+        <match>
+        <premise>else</premise>
+        <response>a keyword used in conditional statements to specify code that should be executed if the condition is false</response>
+        </match>
+        <match>
+        <premise>nested conditionals</premise>
+        <response>conditional statements that are placed inside other conditional statements</response>
+        </match>
+      </cardsort>
+    </activity>
+    
   </subsection>
 </section>
