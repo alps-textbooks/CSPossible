@@ -48,5 +48,9 @@
   <xi:include href="./topic-2-5-algorithm-development.ptx" />
   <xi:include href="./topic-2-6-errors.ptx" />
   <xi:include href="./unit2-summary.ptx" />
+  <xi:include href="./unit2a-selection-mcq-exercises.ptx" />
+  <xi:include href="./unit2a-selection-mixedup-code-practice.ptx" />
+  <xi:include href="./unit2a-selection-coding-practice.ptx" />
+ 
   
   </chapter>

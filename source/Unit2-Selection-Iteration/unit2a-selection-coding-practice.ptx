@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-coding-practice">
+  <time minutes="90" />
+
+  <title>Unit 2 Coding Practice Exercises</title>
+
+  <p>These are exercises mostly written by Dr. Barb Ericson in the AP CSP and Python for Everybody ebooks on Runestone. 
+  </p>
+
+      
+
+    <activity label="if-email">
+    <statement>
+      <p>The following code checks if an input email is valid. Run the code twice to test it once with a valid email 
+        and once with an invalid email.
+        Change the code to check to work for other domains than "gmail.com" by just checking for @ and . in the email.
+        </p>
+    </statement>
+    <program interactive="activecode" language="python">
+        <code>
+email = "student@school.edu"
+# Change this to check if @ is in the email and . is in the email.
+if "@gmail.com" in email:
+    print("Valid email.")
+else:
+    print("Invalid email.")
+        </code>
+       <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def test1(self):
+                self.assertIn('"@" in email',self.getEditorText(), 'Check for "@" in email')
+                self.assertIn('"." in email',self.getEditorText(), 'Check for "." in email')
+                self.assertNotIn("@gmail.com",self.getEditorText(), "Don't use @gmail.com")
+
+        myTests().main()
+      </tests>
+      </program>
+    </activity>
+
+  <activity label="selection-fix-bugs">
+          <statement>
+            <p>Fix the indentation errors in the code, and change it to use only one if/else statement. The code should print
+              <q>The number is 5</q> when the number is 5, and should print <q>The number is NOT 5</q> when it is not.</p>
+          </statement>
+          <program interactive="activecode" language="python" xml:id="cndtnl-wc-fiveq_editor">
+            <code>
+x = 5
+if x == 5:
+print("The number is 5")
+if x != 5:
+print("The number is NOT 5")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+                def test1(self):
+                    self.assertNotIn("if x != 5",self.getEditorText(), "Don't use x != 5")
+                    self.assertIn("else",self.getEditorText(), "Use else")
+
+          myTests().main()
+        </tests>
+          </program>
+
+          </activity>
+
+     <activity label="selection-price">
+    <statement>
+      <p>Fix 3 indentation errors in the code below, and change it to use only one if/else statement. 
+        The code below is supposed to set the price to 1.5 if the weight is less than 2 and
+        otherwise set it to 1.3. It then calculates the total by multiplying the weight by the price.
+     </p>
+       
+
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+          weight = 3
+          if weight &lt; 2:
+          price = 1.50
+          if weight &gt;= 2:
+          price = 1.30
+              total = weight * price
+          print(total)
+        </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+              def testOne(self):
+                  self.assertAlmostEqual(total, 3.9, 2, "Testing the total is 3.9.")
+                  self.assertIn("else:",self.getEditorText(), "Check for else:")
+
+          myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+    <activity label="gradCredits">
+    <statement>
+      <p>To graduate from a particular high school, a student needs 22 or more total credits and at least 3 math
+        credits. 
+      Given the number of <c>totalCredits</c> earned and the number of <c>mathCredits</c>, print out 
+        "Can Graduate" or "Cannot Graduate".  
+      </p>
+
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+        totalCredits = 22
+        mathCredits = 2
+        # Check if the student can graduate if totalCredits is at least 22 and mathCredits is at least 3.
+        # Print "Can Graduate" or "Cannot Graduate"
+
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("totalCredits&gt;=22",,self.getEditorText().replace(" ", ""), 'Check for totalCredits &gt;= 22')
+                self.assertIn("mathCredits&gt;=3",self.getEditorText().replace(" ", ""), 'Check for mathCredits &gt;= 3')
+                self.assertIn('else:',self.getEditorText(), 'Check for else:')
+                self.assertIn("Cannot Graduate", self.getOutput(), "Output has Cannot Graduate (for 22 total and 2 math)")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="is-even">
+    <statement>
+      <p>Write code to check if a number is even or odd. An even number has a 0 remainder when divided by 2. 
+        Remember that you can use the modulo operator <c>%</c> to get the remainder of a division. 
+        <c>number % 2</c> equals 0 if the number is even and 1 if it is odd.
+       </p>
+
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+        number = 9
+        # Check if the number is even using % and print out "even" or "odd"
+
+
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("number%2==0",self.getEditorText().replace(" ", ""), "Check if number % 2 == 0")
+                self.assertIn("else:",self.getEditorText(), "Use else: for odd numbers")
+                self.assertIn("odd", self.getOutput(), "Check that the output is odd for 9")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="calculatePay">
+    <statement>
+      <p>Write code to calculate pay given the number of hours worked and an
+        hourly pay rate. If the hours worked are less than or equal to 40, it should just return 
+        the hours times the hourly pay. 
+        If more than 40 hours were worked, the person should earn normal pay for 40
+        hours and 1.5 times the normal pay for the hours over 40. So if someone worked 50 hours, at
+        $18 per hour they would receive <m>40 \cdot 18 + ((50 - 40) \cdot 18) \cdot 1.5</m></p>
+
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+        hours = 50
+        payRate = 18
+        # If the hours are less than or equal to 40, calculate pay as hours times payRate
+        # But if the hours are more than 40, calculate normal pay for 40 hours 
+        # and 1.5 times the normal pay for the hours over 40.
+
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("hours&lt;=40",self.getEditorText().replace(" ", ""), "Check for hours &lt;= 40")
+                self.assertIn("hours-40",self.getEditorText().replace(" ", ""), "Check for hours - 40")
+                self.assertIn("990", self.getOutput(), "Answer is 990 for 50 hours at $18/hr + overtime")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="getClassFromCredits">
+    <statement>
+      <p>Write code to determine the class level based on the number of credits someone has taken. A
+        Senior has taken 90 or more credits. A Junior hasn’t taken that many credits, but has taken at
+        least 60. A Sophomore has taken at least 30 credits. A First Year is anyone who has taken 30
+        or less.</p>
+      <p>Write code to to figure out the class level based on the number of credits. Your code should use 
+        <c>credits</c> and the above logic to print:
+        <c>"Senior"</c>, <c>"Junior"</c>, <c>"Sophomore"</c>, or <c>"First Year"</c>.</p>
+
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+        credits = 40
+        # Write if statements to determine if the student is a Senior, Junior, Sophomore or First Year
+
+
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("credits&gt;=90",self.getEditorText().replace(" ", ""), "Check for credits &gt;= 90")
+                self.assertIn("credits&gt;=60",self.getEditorText().replace(" ", ""), "Check for credits &gt;= 60")
+                self.assertIn("credits&gt;=30",self.getEditorText().replace(" ", ""), "Check for credits &gt;= 30")
+                self.assertIn("Sophomore", self.getOutput(), "Output has Sophomore (for 40 credits)")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+
+  <activity label="mealCost">
+    <statement>
+      <p>The program below is supposed to calculate the final bill for a meal at a fast-food restaurant in a 
+        state where meals that are taken to go are not taxed, but meals eaten in the restaurant are.</p>
+      <p>Your job is to calculate the total cost given the initial <c>mealPrice</c> and the <c>mealLocation</c>. 
+        If <c>mealLocation</c> has the string <c>"to go"</c> anywhere in it, the total cost should be
+        just the meal price. Otherwise, it should be the price + 8% (1.08 times the meal price).</p>
+      <p>Remember that you can use <c>in</c> to check if one string appears inside another.</p>
+
+    </statement>
+    <program  interactive="activecode" language="python">
+      <code>
+        mealPrice = 10
+        mealLocation = "I want it to dine in please"
+        # if the mealLocation has "to go" in it, then the cost is just the mealPrice
+        # otherwise the cost is the mealPrice times 1.08 (for the tax)
+        
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+              self.assertIn('"to go" in mealLocation:',self.getEditorText(), 'Check for "to go" in mealLocation:')
+              self.assertIn('else',self.getEditorText(), 'Check for else')
+              self.assertIn("10.8", self.getOutput(), "Output has cost 10.8 (with tax)")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="museumTicket">
+    <statement>
+      <p>The program below is supposed to figure out the cost of a ticket for a customer to a museum. Anyone who is at least
+        65 or who is younger than 12 gets in free. Anyone who is 12 through 17 gets in for $8. Everyone else is $15.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+        age = 12
+        # Cost is 0 for 65+ or under 12, $8 for 12-17, of $15 otherwise
+        
+
+  
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+              self.assertIn("age&gt;65",self.getEditorText().replace('\n', ''), 'Check for age &gt;= 65')
+              self.assertIn('if',self.getEditorText(), 'Check for if')
+              self.assertIn("elif",self.getEditorText().replace('\n', ''), 'Check for elif')
+              self.assertIn('else',self.getEditorText(), 'Check for else')
+              self.assertIn("8", self.getOutput(), "Output has cost 8 (for 12-17)")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+
+
+  </section>
