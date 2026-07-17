@@ -7,6 +7,10 @@
    <idx>math</idx>
 
   <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="expressions, updating-state, operators, input-math, random-numbers, 
+      coding-challenge-random-turtle-project, LOs-1-7, vocab-1-7, appinventor-activity2"/>
+    </p>
     <p>
       Computers are very good at math! In this lesson, we'll learn how to do math in Python
       using <term>mathematical expressions</term> which are mathematical formulas that combine numbers, 

@@ -5,6 +5,11 @@
   <title>Sequencing</title>
 
   <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="sequencing,print,sequencing-print, debugging, turtles, tracing, 
+      coding-challenge-turtle-project, LOs-1-5, vocab-1-5, additional-activities"/>
+    </p>
+
     <p>In this lesson, we will explore algorithms using sequential steps and flowcharts, and 
       start coding in Python with <c>print</c> statements and Turtle code to draw shapes like below.
     </p>

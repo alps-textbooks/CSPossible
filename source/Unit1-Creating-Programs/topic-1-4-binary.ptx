@@ -7,15 +7,19 @@
   <idx>bit</idx>
   <idx>bits</idx>
 
-
   <introduction>
+        
+     <p>Quick Links: 
+      <xref text="global" ref="data-bits,binary,abstraction,encoding,binary-limits,LOs-1-4,vocab-1-4"/>
+    </p>
+
     <p> Think about all the types of files and data that you store in your computer or phone.
       Whether you look at a photo or listen to a song or write a paper or play a game, all of that
       data is stored as bits, which are just 0's and 1's. It's all bits! In this topic, you'll learn
       how computers use bits to represent and process data.
     </p>
     <image source="_static/Unit1images/allbits.png" width="60%" alt="All Bits" />
-
+   
   </introduction>
 
   <subsection xml:id="data-bits">

@@ -5,6 +5,10 @@
   <title>Variables</title>
   <idx>variable</idx>
   <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="vars-in-apps, python-vars, data-types, naming-vars, assignment,
+      strings, input, coding-challenge-madlibs-project, LOs-1-6, vocab-1-6, appinventor-activity1"/>
+    </p>
     <p>
       <term>Variables</term> are named memory locations that store values used by a program. 
       These values can change or vary as the program runs. A variable is like a box with a label 

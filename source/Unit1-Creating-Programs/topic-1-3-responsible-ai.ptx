@@ -7,6 +7,9 @@
   <idx>Artificial Intelligence</idx>
 
   <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="ai-data,ai-models,teachable-machine,genAI,automation-augmentation,LOs-1-3,vocab-1-3"/>
+    </p>
     <p>
       <term>Artificial Intelligence (AI)</term> is becoming a big part of our lives and changing the way we work and learn. 
       AI is a branch of computer science with the goal of building smarter machines to do tasks that typically require human intelligence. 
@@ -1208,7 +1211,7 @@
 
   </subsection>
 
-   <subsection>
+   <subsection xml:id="LOs-1-3">
     <title>Learning Objectives Review</title>
     <p>After this lesson, you will be able to:</p>
     <remark>
