@@ -8,31 +8,25 @@
     <idx>repetition</idx>
  
   <introduction>
-    <p>Loops are used to repeat actions. For example, in music or in dance, we often repeat the same notes or steps multiple times. Computers are very good at automating repetitive tasks! 
+    <p>Loops are used to repeat actions. For example, in music or in dance, we often repeat the same notes or steps multiple times. 
       A <term>loop</term> in coding, also called <term>iteration</term> or  <term>repetition</term>, 
-      is a way to repeat a block of code.  Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about how loops can be used in dance choreography. In this lesson, we'll try the unplugged activity in the video as well as learn how to write <term>while</term> and <term>for</term> loops in Python.
+      is a way to repeat a block of code. Computers are very good at automating repetitive tasks! Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about how loops can be used in dance choreography. In this lesson, we'll try the unplugged activity in the video as well as learn how to write <term>while</term> and <term>for</term> loops in Python.
     </p>
 
     <video youtube="JoKTqHCni0M" label="video-loops-dance" />
 
   </introduction>
 
-  <subsection xml:id="iteration-in-algorithms">
-    <title>Iteration in Algorithms</title>
 
-    <note>
-      <title>2.4.A.1</title>
-      <p>
-        Some tasks require repeating steps multiple times, such as continuing until a goal is reached or repeating 
-        for each item in a collection of items. Iteration allows an algorithm to repeat a sequence of steps.
-      </p>
-    </note>
+  <subsection xml:id="unplugged-loops">
+    <title>Unplugged Loops Activity</title>
 
     <idx><h>unplugged</h><h>loops</h></idx>
 
     <project label="unplugged-loops">
+      <title>Unplugged Loops for Dance Steps</title>
       <statement><p>
-        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, <c>wave</c>, <c>stomp</c> in the video above. Then, put them in a loop to repeat 3 times. Try it out! Write your dance algorithm down below. Write down the steps in the following format:
+        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, <c>wave</c>, <c>stomp</c> like in the video above. Then, put them in a loop to repeat 3 times. Try it out! Write your dance algorithm down below. Write down the steps in the following format:
            
         <ul><li><p>Repeat X times:
           <ul><li>Step 1</li>
@@ -43,7 +37,18 @@
       </p></statement>
        <response/>
     </project>
+    </subsection>
 
+    <subsection xml:id="iteration-in-algorithms">
+    <title>Iteration in Algorithms</title>
+
+    <note>
+      <title>2.4.A.1</title>
+      <p>
+        Some tasks require repeating steps multiple times, such as continuing until a goal is reached or repeating 
+        for each item in a collection of items. Iteration allows an algorithm to repeat a sequence of steps.
+      </p>
+    </note>
     <note>
       <title>2.4.A.2</title>
       <p>
