@@ -84,7 +84,30 @@
      <p>This more complex flowchart for choosing a pet. Which path would you choose in this flowchart?</p> 
     
      <image source="_static/Unit1images/pet-flowchart.png"  width="80%" alt="Choosing a pet flowchart"/>
+  </subsection>
+
+  <subsection xml:id="unplugged-ifs">
+    <title>Unplugged Activity: Simon Says Ifs</title>
   
+    <idx><h>unplugged</h><h>ifs</h></idx>
+
+     <activity label="unplugged-ifs-simon-says">
+       <title>Simon Says Ifs</title>
+      <statement><p>
+        In groups or as a class, play a game of Simon Says Ifs. One person will give commands using if statements and 
+        if-else statments. The players will follow the commands only if the condition is true or false for them.
+        You do not have to say or listen for "Simon Says". Here are some examples: 
+        <ul>
+          <li>If you are wearing blue, clap your hands.</li>
+          <li>If your first name starts with a "B", stomp your feet.</li>
+          <li>If you like cats, then meow, else bark.</li>
+        </ul>
+        Come up with your own 3 commands and write them below. Make sure they start with "if". At least one
+        of them should also have an "else" part.
+      </p></statement>
+
+       <response/>
+     </activity>
   
   </subsection>
 
@@ -95,6 +118,11 @@
     <idx>if statement</idx>
     <idx>conditional statement</idx>
     <idx>conditionals</idx>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=fVUL-vzrIcM">video</url> about conditional 
+      statements using the words <em>if</em> and <em>else</em>.</p>
+
+      <video youtube="fVUL-vzrIcM" label="video-if-else" />
 
     <note>
       <title>2.3.B.1</title>
@@ -845,8 +873,8 @@ else:
  <subsection xml:id="adventure-project">
     <title>Adventure Coding Challenge</title>
 
-    <p>
-    </p>
+    <idx><h>coding challenge</h><h>Adventure</h></idx>
+    
     <project label="adventure-coding-challenge" xml:id="adventure">
 
       <statement>
