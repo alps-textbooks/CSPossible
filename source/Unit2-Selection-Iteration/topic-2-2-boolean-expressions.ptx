@@ -137,11 +137,11 @@ print("I did everything?", cleanedRoom and didHomework )
   <subsection xml:id="relational-operators">
     <title>Relational Operators</title>
 
-    <idx>relational operator</idx>
-    <idx>&lt;</idx>
-    <idx>&gt;</idx>
-    <idx>==</idx>
-    <idx>!=</idx>
+    <idx>relational operators</idx>
+    <idx><h>relational operator</h><h>&lt;</h></idx>
+    <idx><h>relational operator</h><h>&gt;</h></idx>
+    <idx><h>relational operator</h><h>==</h></idx>
+    <idx><h>relational operator</h><h>!=</h></idx>
 
 
     
