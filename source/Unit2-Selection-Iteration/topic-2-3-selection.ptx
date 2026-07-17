@@ -10,6 +10,10 @@
    <idx>flowchart</idx>
   
     <introduction>
+      <p>Quick Links: 
+      <xref text="global" ref="selection-in-algorithms, unplugged-ifs, if-statements, if-else, 
+      nested-conditionals, adventure-project, LOs-2-3, vocab-2-3"/>
+    </p>
     <p>Up until now, we have been writing code one line at a time in sequence which then gets executed by the 
       computer in that sequential order by default. However, we can create more complex algorithms that do not 
       follow the default sequential order.   The building blocks of algorithms are <term>sequencing</term>,
@@ -22,7 +26,7 @@
 
   </introduction>
 
-  <subsection>
+  <subsection xml:id="selection-in-algorithms">
     <title>Selection in Algorithms</title>
 
     <note>

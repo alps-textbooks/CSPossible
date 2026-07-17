@@ -8,6 +8,9 @@
     
 
   <introduction>
+     <p>Quick Links: 
+      <xref text="global" ref="decisions, relational-operators, logical-operators, unplugged-logic-project, LOs-2-2, vocab-2-2"/>
+    </p>
     <p>Apps are a lot more fun if they can respond to different user actions and decisions. For example, if you are playing a game, the app can check whether 
       you have enough points to move to the next level. A social media app needs to ask you for your password and check that
       it is correct before allowing you to post a comment. Apps use <term>Boolean expressions</term> to make decisions based on true or false 

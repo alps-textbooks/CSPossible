@@ -6,6 +6,10 @@
 
   <idx>design</idx>
   <introduction>
+     <p>Quick Links: 
+      <xref text="global" ref="development-process, design-thinking, user-research, documentation,
+      reuse-cite-digital-content, LOs-2-1, vocab-2-1"/>
+    </p>
     <p>In this unit, we will learn how to design and develop programs that meet user needs with  
       more complex Python control structures such as selection and repetition.
       In this first lesson, we will focus on the development process, user research, documentation, 
@@ -701,7 +705,7 @@ print("The area of the rectangle is:", area)
     </p>
   </subsection>
 
-  <subsection>
+  <subsection xml:id="reuse-cite-digital-content">
     <title>Reusing and Citing Digital Content</title>
 
     <idx>copyright</idx>
