@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="topic-2-4-iteration">
-  <time minutes="45" />
+  <time minutes="90" />
   <title>Iteration (Loops)</title>
      <idx>loops</idx>
     <idx>iteration</idx>
     <idx>repetition</idx>
  
   <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="unplugged-loops, iteration-in-algorithms, while-loops, for-loops, turtle-loops,
+      common-loop-errors, while-vs-for, tracing-loops, coding-challenge-picture-lab, LOs-2-4, vocab-2-4"/>
+    </p>
+    
     <p>Loops are used to repeat actions. For example, in music or in dance, we often repeat the same notes or steps multiple times. 
       A <term>loop</term> in coding, also called <term>iteration</term> or  <term>repetition</term>, 
       is a way to repeat a block of code. Computers are very good at automating repetitive tasks! Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about how loops can be used in dance choreography. In this lesson, we'll try the unplugged activity in the video as well as learn how to write <term>while</term> and <term>for</term> loops in Python.
@@ -26,7 +31,7 @@
     <project label="unplugged-loops">
       <title>Unplugged Loops for Dance Steps</title>
       <statement><p>
-        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, <c>wave</c>, <c>stomp</c> like in the video above. Then, put them in a loop to repeat 3 times. Try it out! Write your dance algorithm down below. Write down the steps in the following format:
+        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, <c>wave</c>, <c>stomp</c> like in the video above. Then, put them in a loop to repeat 3 times. Some of the steps like <c>clap</c> 3 times can also have small loops nested inside the big loop. Write your dance algorithm down below. Once you construct the dance, have your group try it out together! Write down the steps in the following format:
            
         <ul><li><p>Repeat X times:
           <ul><li>Step 1</li>
@@ -71,11 +76,6 @@
       </p>
     </note>
 
-    <p>Here is an example of a counting loop where a counter is tested against a limit to control how many times the loop runs. The counter is increased by 1 each time the loop runs. 
-      Counter-controlled loops are very common in coding, and they would be what you could use to repeat dance steps a specific number of times indicated by the limit.
-     </p>
-        <image source="_static/Unit2images/flowchart-counter-loop.gif" width="25%" alt="counter-controlled loop flowchart"/>
-
     <note>
       <title>2.4.A.4</title>
       <p>
@@ -85,7 +85,33 @@
       </p>
     </note>
   
-    Parsons Put in order to do Repeat 2 times: (clap clap clap) stomp wave. Notice that the claps can also be put in a loop to repeat 3 times. 
+    <p>Put the following dance algorithm in order using loops that repeat a specific number of times. 
+    </p>
+
+    <activity label="parsons-dance-loops" numbered="yes" adaptive="yes" indentation="show">
+      <statement>
+        <p>
+    Put the following steps of the dance algorithm in order to create a dance that does stomp, wave, and then 3 claps. The whole sequence should repeat 2 times. You can use Repeat loops to represent the repetition of the claps and the whole sequence.
+        </p>
+      </statement>
+      <blocks>
+        <block>
+          <cline>Repeat 2 times:</cline>
+        </block>
+        <block>
+          <cline>   stomp</cline>
+        </block>
+        <block>
+          <cline>   wave</cline>
+        </block>
+        <block>
+          <cline>   Repeat 3 times:</cline>
+        </block>
+        <block>
+          <cline>      clap</cline>
+        </block>
+      </blocks> 
+    </activity>
 
   </subsection>
 
@@ -128,24 +154,124 @@ while (condition)
 }</pre>
     </note>
 
-    <note>
-      <title>2.4.B.4</title>
-      <p>
-        In a while loop, the condition is checked before the loop body runs. If the condition evaluates to false 
-        initially, the loop body is not executed.
-      </p>
-    </note>
+    <p>In Python, a <term>while loop</term> is written as follows, with a colon (:) and indentation marking the loop body instead of curly brackets; the parentheses around the condition are optional in Python and usually left out.</p>
+    <program language="python">
+      <code>
+while condition:
+    block of statements
+</code>
+    </program>
 
-    <note>
-      <title>2.4.B.5</title>
-      <p>
-        In a while loop, an infinite loop occurs when the condition never becomes false, so the loop never stops. 
-        Infinite loops can be avoided by updating values that affect the condition or adding a stopping condition.
-      </p>
-    </note>
+    <p>Notice that this looks just like an if statement, but with a while keyword instead of if! An if statement runs once if its condition is true, but a while loop continues to run as long as its condition remains true. By the way, here's a 
+      <url href="https://www.youtubeeducation.com/watch?v=j2bL0ng3A94">video of a python snake climbing a tree</url> in a looping pattern!
+    </p>
+
+
+    <p>There are 3 steps to writing a loop as seen below in a loop that counts from 1 to 10. The simplest loops are <term>counter-controlled loops</term> like below, where the loop variable is a counter that counts how many times to repeat the loop. There are 3 steps to writing a loop. </p>
+ 
+    <image source="_static/Unit2images/while-loop-3-steps.png" width="75%" alt="while loop 3 steps"/>
+
+
+     <p>Remember these <term>3 steps to writing a loop</term>:</p>
+     <ol>
+      <li>Initialize the loop variable (before the while loop)</li>
+      <li>Test the loop variable (in the loop header)</li>
+      <li>Update the loop variable (in the while loop body at the end)</li>
+     </ol>
+
+     <p>Click on next in the Code Lens activity below to see the loop in action and how the <c>counter</c> changes its value with each iteration through the loop.</p>
+     
+     <activity label="while-loop-codelens">
+      <statement><p>Click on Next to see each step of the loop!</p></statement>
+      <program interactive="codelens" language="python" label="whilecodeLens" xml:id="whilecodelens">
+        <code>
+          # Step 1: Initialize the loop variable
+          count = 1
+
+          # Step 2: Test the loop variable
+          while count &lt;= 5:
+              print(count)
+
+              # Step 3: Update the loop variable
+              count += 1
+        </code> 
+        </program>
+    </activity>
+
+ <p>This flow chart shows how the while loop works. The counter is tested against a limit to control how many times the loop runs, and it is increased by 1 each time the loop runs. 
+     </p>
+        <image source="_static/Unit2images/flowchart-counter-loop.gif" width="25%" alt="counter-controlled loop flowchart"/>
+
+      <activity label="whileloop">
+      <statement>
+        <p>
+          Here is a while loop that counts from 1 to 5 that demonstrates the 3
+          steps of writing a loop. Can you change it to count from 2 to 10? 
+          Click on the Code Lens button and click on Next to see each step of the loop. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+
+          # Step 1: Initialize the loop variable
+          count = 1
+
+          # Step 2: Test the loop variable
+          while count &lt;= 5:
+              print(count)
+
+              # Step 3: Update the loop variable
+              count += 1
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("2",self.getEditorText(), "Initialize the loop variable count to 2")
+              self.assertIn("10",self.getEditorText(), "Test the loop variable count to be less than or equal to 10")
+              self.assertIn("2\n3\n4\n5\n6\n7\n8\n9\n10",self.getOutput(), "Output 2 to 10")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    <activity label="print_evens_while" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following method has the correct code to print out all the even
+          numbers between 1 and 10, but the code is mixed up. Drag the blocks from
+          the left into the correct order on the right and indent them
+          correctly. Use all of the blocks! You will be told if any of the blocks are in the
+          wrong order or not indented correctly when you click the “Check Me”
+          button.
+        </p>
+      </statement>
+
+      <blocks>
+        <block>
+          <cline>count = 1</cline>
+        </block>
+        <block>
+          <cline>while count &lt;= 10:</cline>
+        </block>
+        <block>
+          <cline>    if count % 2 == 0:</cline>
+        </block>
+        <block>
+          <cline>        print(count)</cline>
+        </block>
+        <block>
+          <cline>    count += 1</cline>
+        </block>
+    </blocks>
+    </activity>
+  
   </subsection>
 
-  <subsection xml:id="for-loops">
+   <subsection xml:id="for-loops">
     <title>For Loops</title>
     <note>
       <title>2.4.B.6</title>
@@ -161,6 +287,393 @@ for j in range(n)
 }</pre>
     </note>
 
+    <p>In Python, a for loop is written as follows with indentation marking the loop body instead of curly brackets:</p>
+    <program language="python">
+      <code>
+for j in range(n):
+    block of statements
+      </code>
+    </program>
+
+    <p>The for loop is a more concise way to write a counter-controlled loop because you put all 3 steps of the loop in one line. The function <c>range</c> generates a sequence of numbers from 0 up to the number in the parentheses (but not including that number). 
+      It repeats the exact number of times in the parentheses since it starts at 0. By default, for-loops in Python start at 0 and keep repeating up to a number but not including that number, but you can also indicate a different starting value and a increment number. 
+      All three of the loops below will run 10 times and print the numbers 0 to 9. 
+     </p>
+    <program language="python">
+      <code>
+# default from 0 up to 10 (not including 10)
+for i in range(10):
+    print(i)
+
+# Using range(start, stop)
+for i in range(0, 10):
+    print(i)
+
+# Using range(start, stop, step)
+for i in range(0, 10, 1):
+    print(i)
+      </code>
+    </program>
+
+    <activity label="mixedup-for-header" adaptive="yes">
+      <statement>
+        <p>
+         Put the blocks in order to create the for loop header to set number from 2 to 5 (including 5). There are extra blocks that you don't need.
+        </p>
+      </statement>
+      <blocks layout="horizontal">
+        <block>
+          <c>for</c>
+        </block>
+         <block>
+          <c>number</c>
+        </block>
+        <block>
+          <c>in</c>
+        </block>
+        <block>
+          <c>range</c>
+        </block>
+        <block>
+          <c>(</c>
+        </block>
+        <block>
+          <c>2</c>
+        </block>
+        <block>
+          <c>,</c>
+        </block>
+        <block>
+          <c>6</c>
+        </block>
+        <block>
+          <c>)</c>
+        </block>
+         <block correct="no">
+          <c>5</c>
+        </block>
+        <block correct="no">
+          <c>0</c>
+        </block>
+      </blocks>
+    </activity>
+
+      <activity label="forloop">
+      <statement>
+        <p>
+          Here is a for loop that counts from 0 up to 5 (but not including 5). It runs 5 times.  
+          Can you change it to count from 0 to 10 not including 10? 
+          Click on the Code Lens button and click on Next to see each step of the loop. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+          for count in range(5):
+              print(count)
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("range(10)",self.getEditorText(), "Change to range(10)")
+              self.assertIn("0\n1\n2\n3\n4\n5\n6\n7\n8\n9",self.getOutput(), "Output 0 to 9")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    <activity label="print_evens_for_loop" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following has the correct code blocks to print out all the even
+          numbers between 0 and 10 (including 10) using a for loop, but the code is mixed up and there are 3 extra blocks. 
+          Drag the blocks from the left into the correct order on the right and indent them
+          correctly.  You will be told if any of the blocks are in the
+          wrong order or not indented correctly when you click the “Check Me”
+          button.
+        </p>
+      </statement>
+
+      <blocks>
+        <block correct="no">
+          <cline>count = 0</cline>
+        </block>
+        <block>
+          <choice correct="yes">
+            <cline>for count in range(11):</cline>
+            </choice>
+            <choice correct="no">
+              <cline>for count in range(10):</cline>
+            </choice>
+        </block>
+        <block>
+          <cline>    if count % 2 == 0:</cline>
+        </block>
+        <block>
+          <cline>        print(count)</cline>
+        </block>
+        <block correct="no">
+          <cline>    count += 1</cline>
+        </block>
+    </blocks>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="turtle-loops">
+    <title>Turtle Loops 🐢</title>
+
+    <p>Let's explore how to use loops with the Python turtles 🐢! With loops, we can draw complex shapes without writing the same code over and over again. Let's look at some code to draw a square with a turtle. Click on all of the lines of code that are repeated below.</p>
+       
+  <activity label="click-repeats">
+      <statement>
+        <p>
+          Click on all of the lines of code that are repeated below.
+        </p>
+      </statement>
+       
+      <areas>
+        <cline><area correct="no">import turtle</area></cline>
+        <cline><area correct="no">tina = turtle.Turtle()</area></cline>
+        <cline><area correct="no">tina.shape("turtle")</area></cline>
+        <cline><area correct="no">tina.forward(100)</area></cline>
+        <cline><area correct="no">tina.right(90)</area></cline>
+        <cline><area correct="yes">tina.forward(100)</area></cline>
+        <cline><area correct="yes">tina.right(90)</area></cline>
+        <cline><area correct="yes">tina.forward(100)</area></cline>
+        <cline><area correct="yes">tina.right(90)</area></cline>
+        <cline><area correct="yes">tina.forward(100)</area></cline>
+        </areas>
+    </activity>
+
+    <p>Instead of repeating <c>tina.forward(100)</c> and <c>tina.right(90)</c> four times to draw each
+      side of the square, we can use a loop to repeat just 2 commands.</p>
+
+    <program language="python">
+      <code>
+        for count in range(4):
+            tina.forward(100)
+            tina.right(90)
+       </code>
+     </program>
+
+     <p>Try it below!</p>
+
+     <activity label="turtle-loop">
+      <statement>
+        <p>
+          Run the code below to see the turtle draw a square. Change the code to delete the 
+          repeated lines by using a for loop to draw a side of the square four times.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+          import turtle
+          tina = turtle.Turtle()
+          tina.shape("turtle")
+          tina.color("green")
+          tina.penup()       
+          tina.goto(-150,150) # move turtle up
+          tina.pendown()
+
+          # Change this code to use a for loop to make tina go forward and turn
+          tina.forward(100)
+          tina.right(90)
+          tina.forward(100)
+          tina.right(90)
+          tina.forward(100)
+          tina.right(90)
+          tina.forward(100)
+          </code>
+          <tests>
+            from unittest.gui import TestCaseGui
+
+            class myTests(TestCaseGui):
+              def test1(self):
+                self.assertIn("for ",self.getEditorText(), "Use a for loop to repeat the forward and right commands")
+                self.assertIn("range(4)",self.getEditorText(), "Use range(4) to repeat 4 times")
+                input_count = self.getEditorText().count(".forward")
+                self.assertEqual(input_count, 1, "Use just 1 forward")
+                input_count = self.getEditorText().count(".right")
+                self.assertEqual(input_count, 1, "Use just 1 right turn")
+            myTests().main()
+          </tests>
+          </program>
+          </activity>
+
+     <activity label="turtle-hexagon">
+      <statement>
+        <p>
+          The following code draws a triangle. Change the code to use a for loop to draw a hexagon instead of a triangle. A hexagon has 6 sides, and the turtle needs to turn 60 degrees after drawing each side. Feel free to change the color! For an extra challenge, after drawing the hexagon, draw another shape using a while-loop (this is not graded).
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+          import turtle
+          tina = turtle.Turtle()
+          tina.shape("turtle")
+          tina.color("purple")
+          tina.penup()       
+          tina.goto(-100,150) # move turtle up
+          tina.right(15)
+          tina.pendown()
+          tina.begin_fill()
+
+          # Change this code to draw a hexagon instead of a triangle
+          for count in range(3):
+              tina.forward(100)
+              tina.right(120)
+
+          tina.end_fill()
+          </code>
+          <tests>
+            from unittest.gui import TestCaseGui
+
+            class myTests(TestCaseGui):
+              def test1(self):
+                self.assertIn("range(6)",self.getEditorText(), "Use range(6) to repeat 6 times")
+                input_count = self.getEditorText().count(".forward")
+                self.assertEqual(input_count, 1, "Use just 1 forward")
+                input_count = self.getEditorText().count(".right(60)")
+                self.assertEqual(input_count, 1, "Use just 1 right turn of 60 degrees")
+            myTests().main()
+          </tests>
+          </program>
+          </activity>
+  </subsection>
+
+  <subsection xml:id="common-loop-errors">
+    <title>Common Loop Errors</title>
+   <idx>
+      <h>loop</h><h>error</h>
+    </idx>   
+      <idx>
+      <h>loop</h><h>runs 0 times</h>
+    </idx>   
+    <note>
+      <title>2.4.B.4</title>
+      <p>
+        In a while loop, the condition is checked before the loop body runs. If the condition evaluates to false 
+        initially, the loop body is not executed.
+      </p>
+    </note>
+
+     <activity label="while-loop-no-run">
+      <statement>
+        <p>
+         The following while loop is supposed to print out all the numbers between 1 and 10, but it does not run at all. Can you fix it so that it prints out the numbers from 1 to 10?
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+          # Step 1: Initialize the loop variable
+          count = 10
+
+          # Step 2: Test the loop variable
+          while count &lt; 10:
+              print(count)
+
+              # Step 3: Update the loop variable
+              count += 1
+          
+          print("The End!")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertNotIn("count=10",self.getEditorText().replace(" ",""), 
+              "Initialize the loop variable count to 1, not 10")
+              self.assertIn("&lt;=",self.getEditorText(), "Test the loop variable count to be less than or equal to 10")
+              self.assertIn("1\n2\n3\n4\n5\n6\n7\n8\n9\n10",self.getOutput(), "Output 1 to 10")
+
+          myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+    
+    <idx>infinite loop</idx>
+    <idx>
+      <h>loop</h><h>infinite</h>
+    </idx>
+    <note>
+      <title>2.4.B.5</title>
+      <p>
+        In a while loop, an <term>infinite loop</term> occurs when the condition never becomes false, so the loop never stops. 
+        Infinite loops can be avoided by updating values that affect the condition or adding a stopping condition.
+      </p>
+    </note>
+
+
+    <p>
+      One common error with loops is to accidentally create an <term>infinite
+      loop</term>. An infinite loop is one that never stops because the Boolean
+      condition is always true.
+    </p>
+
+    <p>Sometimes we will write an infinite loop on purpose like this:</p>
+    <program language="python">
+      <code>
+while True:
+    print("This is a loop that never ends!")
+      </code>
+    </program>
+
+    <p>
+      But if we create an infinite loop by accident, our program may seem to get
+      stuck. For example look at the loop below. Does it have all 3 steps of creating a loop? 
+      Try it in the active code below to see an infinite loop in action.
+    </p>
+
+    <program language="python">
+      <code>
+i = 0
+while i &lt; 10:
+    print(i)
+      </code>
+    </program>
+
+ 
+   <activity label="whileloopbugs">
+      <statement>
+        <p>
+          This while loop should print out the numbers 0 to 9, but it has an infinite loop.
+          Try running it to see the infinite loop. The Runestone server will stop it after a while.
+          Can you fix the error? Remember all 3 steps of writing a loop: initialize, test, and update the loop variable. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+i = 0
+while i &lt; 10:
+    print(i)
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("i+=1",self.getEditorText().replace(" ",""), "Update i by doing += 1")
+              self.assertIn("0\n1\n2\n3\n4\n5\n6\n7\n8\n9",self.getOutput(), "Output 0 to 9")
+          </tests>
+      </program>
+    </activity>
+
+    <p>The for-loop does not have this problem with infinite loops. The <c>range</c> function in for-loops makes it impossible to create an infinite loop, because it always has a stopping value determined. For example, <c>for i in range(10)</c> will always stop when it reaches 10. There is no easy way to make the value given to range be an infinite value. </p>
+  </subsection>
+  
+  <subsection xml:id="while-vs-for">
+    <title>Comparing While Loops vs For Loops</title>
+
     <note>
       <title>2.4.B.7</title>
       <p>
@@ -171,8 +684,80 @@ for j in range(n)
       </p>
     </note>
 
+    <p>Here is a comparison of a while loop vs a for loop for a loop that counts from 0 up to 9. Notice that the for loop is
+       much shorter because it combines all 3 steps of the loop into one line. By default, it initializes the loop variable to 0, tests the loop variable to be less than the number in the parentheses, and increments the loop variable by 1 each time.  
+    </p>
+    <image source="_static/Unit2images/while-vs-for-loop.png" width="80%" alt="while loop vs for loop"/>
+
+     <activity label="forloopfromwhile">
+      <statement>
+        <p>
+          Here is a while loop that counts from 0 up to 5. Run it and see what it
+          does. Can you change it to a for-loop? You will get to delete some lines! Run your for-loop. Does it do
+          the same thing?
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+          count = 0
+          while count &lt; 5:
+              print(count)
+              count += 1
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("for",self.getEditorText(), "Change to a for loop")
+              self.assertNotIn("+=",self.getEditorText(), "count += 1 is not needed in a for loop since it increments automatically")
+              self.assertNotIn("0",self.getEditorText(), "count = 0 is not needed in a for loop since it starts at 0 by default")
+              self.assertIn("0\n1\n2\n3\n4",self.getOutput(), "Output 0 to 4")
+
+          myTests().main()
+       </tests>
+      </program>
+    </activity>
+
+    <p>While loops are useful when you don't know how many times you want to repeat a block of code.  It is often used for an <term>input-controlled</term> loop where the user’s input indicates when to stop, like below.</p>
+
+    <activity label="input-controlled-while-loop">
+      <statement><p>The following while loop is an input-controlled loop. The loop variable is used to get input from the user.
+        If the user enters -1, the loop stops. Otherwise, it checks if you entered lucky number 7 then asks for another input. Try it out! </p>
+        <p>Then, change the code so that it asks for names of people in your class. Change it to stop when the user enters q to quit instead of -1. Instead of checking for the lucky number 7, if the user enters your name, print out Hello or something else. You will no longer need to convert the input to an integer with <c>int()</c> since it will be a string. 
+      </p></statement>
+      <program interactive="activecode" language="python">
+        <code>
+# 1. Initialize the loop variable with input!
+value = int(input("Enter a number (-1 to stop): "))
+# 2. Test the loop variable against -1  
+while value != -1:
+    if value == 7:
+        print("7's a lucky number!")
+    else:
+        print("You entered", value)
+
+    # 3. Update the loop variable with new input!
+    value = int(input("Enter a another number (-1 to stop): "))
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("q",self.getEditorText(), 'Change test to "q" instead of -1')
+              self.assertNotIn("int(input",self.getEditorText(), "Remove the int() function since input is now a string")
+
+          myTests().main()
+        </tests>
+        </program>
+    </activity>
 
   </subsection>
+
+
+  
   
   <subsection xml:id="tracing-loops">
     <title>Tracing Loops</title>
@@ -187,6 +772,10 @@ for j in range(n)
 
   </subsection>
 
+  <subsection xml:id="coding-challenge-picture-lab">
+    <title>Coding Challenge Picture Lab</title>
+
+  </subsection>
     <subsection xml:id="LOs-2-4">
     <title>Learning Objectives Review</title>
     <remark>
@@ -203,4 +792,28 @@ for j in range(n)
       </p>
     </remark>
   </subsection>
+   <subsection xml:id="vocab-2-4">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-loops">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>iteration</premise>
+        <response>repetition of a sequence of instructions</response>
+        </match>
+        </cardsort>
+        </activity>
+        </subsection>
 </section>

@@ -162,8 +162,9 @@ if (condition)
 
     <p>Almost all programming languages have a keyword called <term>if</term> which is used to implement selection (also called conditional statements).
        If-statements are followed by a block of statements that are only executed if the condition is true. In languages like C, C++, Java, JavaScript, and the AP Pseudocode above,
-       the block of code is marked by using curly braces {}. But Python, uses colon (:) after the if condition and indentation to mark
-       the block of statements under the if. The syntax for a Python if-statement is below:</p>
+       the block of code is marked by using curly braces {}. But Python uses colon (:) after the if condition and indentation to mark
+       the block of statements under the if; the parentheses around the condition are optional in Python and usually left out.
+       The syntax for a Python if-statement is below:</p>
     <program language="python">
       <code>
 if condition:

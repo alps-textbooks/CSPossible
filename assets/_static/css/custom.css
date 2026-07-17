@@ -68,6 +68,11 @@ section>.para+.para {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* There's no padding in the output of activecode exercises, so add some. */
+.ptx-runestone-container .ac_output pre {
+   padding: 8px;
+}
+
 .ptx-content .summary-links {
   font-size: 1rem;
 }
