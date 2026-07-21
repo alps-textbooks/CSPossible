@@ -935,7 +935,7 @@ for i in range(10)
     Try the <url href="https://rgbcolorpicker.com/">RGB Color Picker</url> to create different colors from RGB values.
   </p>
 
-  <image source="_static/Unit2images/pixels.png" width="25%" alt="pixels in a dog image"/>
+  <image source="_static/Unit2images/pixels.png" width="35%" alt="pixels in a dog image"/>
 
   <p>We can load an image into our code and use a loop to visit and manipulate each pixel in an image.  
   </p>
@@ -957,11 +957,14 @@ for p in img.getPixels():
 </code>
 </program>
 
-  <p>In the project below, you will see an image loaded in of a student in a red t-shirt. The given code
-  changes the background color of the image. Your challenge is
-  to change her hair color and t-shirt color to other colors. You will need to use if-statements inside the loop 
-  to look for specific colors using their rgb values, and then setting them to another color. Here is what the original
-  image looks like.
+  <p>
+    In the project below, you will see an image loaded in of a student in a red t-shirt. The given code
+    changes the background color of the image. Your challenge is to change background color, and then the hair color 
+    and the t-shirt color to other colors. You will need to use if-statements inside the loop
+    to look for specific colors using their rgb values, and then set them to another color. Here is what the original
+    image looks like. You can also try loading in a different image with a full image link like 
+    <url href="https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg">
+    "https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg"</url> instead of the student image file.
   </p>
 
   
@@ -971,20 +974,31 @@ for p in img.getPixels():
 
 
   <project label="picture-lab">
+    <title>Picture Project</title>
     <statement>
-      <p> Work in pairs for this project if possible.
-        Run the following code to see how it changes the white background of the image to purple/violet with high 
-        red and blue values. The original image has a white background like above. Try changing the background color
-        to another color inside the if statement. Look at 
+      <p> 
+        Run the following code to see how it changes the white background to blue. The loop goes through all the pixels in the image and the if statement checks each pixel's RGB values and changes them. In this case, the if statement looks for white which is rgb values close to (255,255,255), so anything &gt; 230.
+        Then, it sets the blue value to 255 and the red and green values to 0 to make the background blue.  
+        Work in pairs for this project if possible to do the following:
+        </p>  
+        <ul>
+          <li>
+            <p>
+              Change the background color to another color inside the if statement. Look at 
         <url href="https://rgbcolorpicker.com/">RGB Color Picker</url> to create different colors and find their RGB values.
-        Then, add another if statement inside the loop to change the color of the student’s hair to another color. 
-        For an additional challenge, try changing the color of the student’s t-shirt to another color with an 
-        if statement that looks for red. You will 
-        need to use an if statement inside the loop to look for the red pixels. The red pixels probably have a high red value (for example greater than 200) and low green and blue values (for example less than 100). 
-        After changing the t-shirt color, try changing the background color or the hair color.  You can also
-        try loading in a different image with a full image link like <url href="https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg">
-        "https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg"</url> instead of "student.jpg".
-      </p>
+            </p>
+          </li>
+          <li>
+            <p>
+              Then, add another loop with an if statement inside the loop to change the color of the student’s hair to another color. Look for pixels close to black, rgb values close to (0,0,0). 
+            </p>
+          </li>
+          <li>
+            <p>
+              Then, add another loop with an if statement to change the color of the student’s t-shirt to another color. The if statement should look for red pixels, which means they probably have a high red value but low green an blue values. Experiment to try to find the right values. 
+             </p>
+             </li>
+          </ul>
     </statement>
 
     <program interactive="activecode" language="python">
@@ -992,7 +1006,7 @@ for p in img.getPixels():
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("student.jpg")
+img = Image("external/_static/Unit2images/student.jpg")
 
 # LOOP THROUGH ALL PIXELS
 for p in img.getPixels():
@@ -1000,12 +1014,11 @@ for p in img.getPixels():
     g = p.getGreen()
     b = p.getBlue()
 
-    # RGB values close to (0,0,0) are black
-    # and close to (255,255,255) are white
+    # if white with rgb values close (255,255,255)  
     if r &gt; 230 and g &gt; 230 and b &gt; 230:
-       # CHANGE THE IMAGE
+       # CHANGE THE IMAGE - Try your own color here!
        p.setBlue(255)
-       p.setRed(255)
+       p.setRed(0)
        p.setGreen(0)
        img.updatePixel(p)
 
