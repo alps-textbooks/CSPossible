@@ -977,7 +977,7 @@ for p in img.getPixels():
     <title>Picture Project</title>
     <statement>
       <p> 
-        Run the following code to see how it changes the white background to blue. The loop goes through all the pixels in the image and the if statement checks each pixel's RGB values and changes them. In this case, the if statement looks for white which is rgb values close to (255,255,255), so anything &gt; 230.
+        Run the following code to see how it changes the white background to blue. The loop goes through all the pixels in the image and the if statement checks each pixel's RGB values and changes them. In this case, the if statement looks for white which is rgb values close to (255,255,255), so anything &gt; 220.
         Then, it sets the blue value to 255 and the red and green values to 0 to make the background blue.  
         Work in pairs for this project if possible to do the following:
         </p>  
@@ -1015,7 +1015,7 @@ for p in img.getPixels():
     b = p.getBlue()
 
     # if white with rgb values close (255,255,255)  
-    if r &gt; 230 and g &gt; 230 and b &gt; 230:
+    if r &gt; 220 and g &gt; 220 and b &gt; 220:
        # CHANGE THE IMAGE - Try your own color here!
        p.setBlue(255)
        p.setRed(0)
