@@ -15,7 +15,8 @@
     
     <p>Loops are used to repeat actions. For example, in music or in dance, we often repeat the same notes or steps multiple times. 
       A <term>loop</term> in coding, also called <term>iteration</term> or  <term>repetition</term>, 
-      is a way to repeat a block of code. Computers are very good at automating repetitive tasks! Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about how loops can be used in dance choreography. In this lesson, we'll try the unplugged activity in the video as well as learn how to write <term>while</term> and <term>for</term> loops in Python.
+      is a way to repeat a block of code. Computers are very good at automating repetitive tasks! Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about how loops can be used in dance choreography. 
+      In this lesson, we'll try the unplugged activity in the video as well as learn how to write <term>while</term> and <term>for</term> loops in Python.
     </p>
 
     <video youtube="JoKTqHCni0M" label="video-loops-dance" />
@@ -389,9 +390,10 @@ for i in range(0, 10, 1):
       <statement>
         <p>
           The following has the correct code blocks to print out all the even
-          numbers between 0 and 10 (including 10) using a for loop, but the code is mixed up and there are 3 extra blocks. 
-          Drag the blocks from the left into the correct order on the right and indent them
-          correctly.  You will be told if any of the blocks are in the
+          numbers between 0 and 10 (including 10) using a for loop, but the code is mixed up and 
+          there are 3 extra blocks that you don't need. 
+          Drag the blocks from the left into the correct order on the right (except the 3 extra blocks)and indent them
+          correctly. You will be told if any of the blocks are in the
           wrong order or not indented correctly when you click the “Check Me”
           button.
         </p>
@@ -480,7 +482,7 @@ for i in range(0, 10, 1):
           tina.goto(-150,150) # move turtle up
           tina.pendown()
 
-          # Change this code to use a for loop to make tina go forward and turn
+          # Change this code to use a for-loop to make tina go forward and turn
           tina.forward(100)
           tina.right(90)
           tina.forward(100)
@@ -614,12 +616,13 @@ for i in range(0, 10, 1):
 
 
     <p>
-      One common error with loops is to accidentally create an <term>infinite
-      loop</term>. An infinite loop is one that never stops because the Boolean
+      One common mistake with loops is to accidentally create an <term>infinite
+      loop</term> which is a loop that never stops because the Boolean
       condition is always true.
     </p>
 
-    <p>Sometimes we will write an infinite loop on purpose like this:</p>
+    <p>We could create an infinite loop on purpose like below where the loop condition is always true 
+      and never changes:</p>
     <program language="python">
       <code>
 while True:
@@ -628,8 +631,9 @@ while True:
     </program>
 
     <p>
-      But if we create an infinite loop by accident, our program may seem to get
-      stuck. For example look at the loop below. Does it have all 3 steps of creating a loop? 
+      Most of the time, infinite loops happens by accident. When this happens, your program may appear 
+      to freeze because it keeps repeating the same instructions forever.
+      For example look at the loop below. Does it have all 3 steps of creating a loop? 
       Try it in the active code below to see an infinite loop in action.
     </p>
 
@@ -720,7 +724,7 @@ while i &lt; 10:
       </program>
     </activity>
 
-    <p>While loops are useful when you don't know how many times you want to repeat a block of code.  It is often used for an <term>input-controlled</term> loop where the user’s input indicates when to stop, like below.</p>
+    <p>While loops are useful when you don't know how many times you want to repeat a block of code.  It is often used for an <term>input-controlled loop</term> where the user’s input indicates when to stop, like below.</p>
 
     <activity label="input-controlled-while-loop">
       <statement><p>The following while loop is an input-controlled loop. The loop variable is used to get input from the user.
@@ -765,15 +769,303 @@ while value != -1:
     <note>
       <title>2.4.B.8</title>
       <p>
-        The result of iteration statements can be determined by tracing the loop step by step, keeping track of how 
+        The result of iteration statements can be determined by <term>tracing</term> the loop step by step, keeping track of how 
         many times the loop runs and how variable values and output change each time.
       </p>
     </note>
 
+    <p><term>Tracing</term> is a technique where you follow the code line by line, keeping track of the variables 
+      and output, as if you were a computer.  This can be used to find bugs in your code, check that your program 
+      works correctly, or understand what a program does. The Code Lens feature in the active code activities 
+      help you to trace code by showing the variables as you run each line of code. But you can also 
+      trace code on paper!</p>
+      
+    <p>A <term>trace table</term> helps you to keep track on paper of what happens as the code runs. 
+      Create a column for each variable, and record its value each time it changes. 
+      Some trace tables also include columns for the current line number and any output the program produces. 
+      By the end of the trace, you can clearly see how the values changed throughout the program.
+    </p>
+
+    <p>Here is a simple algorithm that adds x to the total every time through the loop which is executed 3 times.
+
+    </p>
+    <program>
+      <code>
+x = 2
+total = 0
+for j in range(3)
+{
+   total = total + x
+}
+print(total)
+      </code>
+    </program>
+
+<p>Try tracing through the code and see if your results match the trace table below:</p>
+
+ <table xml:id="tracing-table">
+      <title>Python keywords</title>
+      <tabular>
+        <row header="yes">
+           <cell bottom="minor">  x </cell>
+          <cell bottom="minor">  j </cell>
+           <cell bottom="minor">  total </cell>
+           <cell bottom="minor">  output </cell>
+         </row>
+        <row>  
+         <cell> 2 </cell>
+         <cell>    </cell>
+          <cell>  </cell>
+          <cell>  </cell>
+         </row>
+        <row>
+          <cell>  </cell>
+          <cell> 0 </cell>
+          <cell> 2 </cell>
+          <cell>  </cell>
+         </row>
+        <row>
+          <cell>  </cell>
+          <cell> 1 </cell>
+          <cell> 4 </cell>
+            <cell>  </cell>
+          </row>
+          <row>
+            <cell> </cell>
+            <cell>2</cell>
+          <cell> 6 </cell>
+          </row>
+          <row>
+            <cell>  </cell>
+            <cell>  </cell>
+            <cell>  </cell>
+            <cell>6</cell>
+          </row>
+          </tabular>
+</table>
+
+
+  <activity label="tracing-loops">
+      <statement>
+        <p>
+          Trace the following code and type in a trace table that shows the values of the variables x and total 
+          and the output below. 
+        </p>
+      <program>
+        <code>
+          x = 10
+          total = 100
+          for j in range(4)
+          {
+              total = total - x
+          }
+          print(total)
+        </code>
+      </program>
+       </statement>
+       <response/>
+      </activity>
+
+
+<activity label="countLoopOutput">
+  <statement>
+    <p>How many times will this pseudocode print a <code>*</code>? 
+    Create a trace table to help you figure it out. Work in pairs if possible. 
+    Remember that <c>% 2</c> checks if there is a remainder when dividing by 2 to determine if a number is even or odd.</p>
+    <program language="pseudocode">
+      <code>
+for i in range(10)
+{
+    if (i % 2 == 0)
+    {
+        print("*")
+    }
+}
+      </code>
+    </program>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p>3</p>
+      </statement>
+      <feedback>
+        <p>Not quite. The values 0, 2, 4, 6, and 8 satisfy the condition.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>5</p>
+      </statement>
+      <feedback>
+        <p>Correct! The loop prints a <code>*</code> when <code>i</code> is 0, 2, 4, 6, and 8.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>10</p>
+      </statement>
+      <feedback>
+        <p>The loop runs 10 times, but it only prints a <code>*</code> when the condition is true.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>0</p>
+      </statement>
+      <feedback>
+        <p>The loop runs 10 times, but it only prints a <code>*</code> when the condition is true.</p>
+      </feedback>
+    </choice>
+  </choices>
+
+</activity>
+ 
   </subsection>
 
   <subsection xml:id="coding-challenge-picture-lab">
     <title>Coding Challenge Picture Lab</title>
+
+  <p>A digital image is made up of <term>pixels</term> (short for picture elements) which are small squares of color.
+   Each pixel has a color value that is made up of a combination of red, green, and blue (RGB) values, each ranging from 0 to 255.
+    Try the <url href="https://rgbcolorpicker.com/">RGB Color Picker</url> to create different colors from RGB values.
+  </p>
+
+  <image source="_static/Unit2images/pixels.png" width="25%" alt="pixels in a dog image"/>
+
+  <p>We can load an image into our code and use a loop to visit and manipulate each pixel in an image.  
+  </p>
+  <program language="python">
+    <code>
+# Loop through the pixels of the image img
+for p in img.getPixels():
+
+    # get the rgb values of the pixel p
+    r = p.getRed()
+    g = p.getGreen()
+    b = p.getBlue()
+    print("Pixel RGB values:", r, g, b)
+
+    # change the pixel p by erasing red values
+    p.setRed(0)
+    # update the image
+    img.updatePixel(p)
+</code>
+</program>
+
+  <p>In the project below, you will see an image loaded in of a student in a red t-shirt. The given code
+  changes the background color of the image. Your challenge is
+  to change her hair color and t-shirt color to other colors. You will need to use if-statements inside the loop 
+  to look for specific colors using their rgb values, and then setting them to another color. Here is what the original
+  image looks like.
+  </p>
+
+  
+  <datafile label="student" name="student.jpg">
+      <image source="_static/Unit2images/student.jpg"/>
+  </datafile>
+
+
+  <project label="picture-lab">
+    <statement>
+      <p> Work in pairs for this project if possible.
+        Run the following code to see how it changes the white background of the image to purple/violet with high 
+        red and blue values. The original image has a white background like above. Try changing the background color
+        to another color inside the if statement. Look at 
+        <url href="https://rgbcolorpicker.com/">RGB Color Picker</url> to create different colors and find their RGB values.
+        Then, add another if statement inside the loop to change the color of the student’s hair to another color. 
+        For an additional challenge, try changing the color of the student’s t-shirt to another color with an 
+        if statement that looks for red. You will 
+        need to use an if statement inside the loop to look for the red pixels. The red pixels probably have a high red value (for example greater than 200) and low green and blue values (for example less than 100). 
+        After changing the t-shirt color, try changing the background color or the hair color.  You can also
+        try loading in a different image with a full image link like <url href="https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg">
+        "https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg"</url> instead of "student.jpg".
+      </p>
+    </statement>
+
+    <program interactive="activecode" language="python">
+      <code>
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("student.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for p in img.getPixels():
+    r = p.getRed()
+    g = p.getGreen()
+    b = p.getBlue()
+
+    # RGB values close to (0,0,0) are black
+    # and close to (255,255,255) are white
+    if r &gt; 230 and g &gt; 230 and b &gt; 230:
+       # CHANGE THE IMAGE
+       p.setBlue(255)
+       p.setRed(255)
+       p.setGreen(0)
+       img.updatePixel(p)
+
+# WRITE YOUR OWN LOOPS and IF STATEMENTS BELOW TO CHANGE THE HAIR COLOR 
+# AND T-SHIRT COLOR
+
+
+
+# SHOW THE CHANGED IMAGE
+window = ImageWin(img.getWidth(),img.getHeight())
+img.draw(window)
+</code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+          def test1(self):
+            input_count = self.getEditorText().count("for ")
+            self.assertGreaterEqual(input_count, 3, "At least 3 for loops used")
+            input_count = self.getEditorText().count("if ")
+            self.assertGreaterEqual(input_count, 3, "At least 3 if statements used")
+            self.assertIn("&lt;",self.getEditorText(), "&lt; use to check for low values for black or red checks")
+
+        myTests().main()
+      </tests>
+    </program>
+   </project>
+
+   <activity label="loop-algorithm-reflection">
+      <title>Project Reflection on Algorithm</title>
+      <statement>
+        <p>Identify an iteration statement that you wrote on your own in your project. 
+          Explain how it works:
+          <ol>
+            <li>What is the purpose of the loop?</li>
+            <li>What is the loop variable?</li>
+            <li>How many times does the loop run? When does it stop?</li>
+            <li>If you have a selection statement inside the loop, describe how its condition works and what happens 
+            when the condition is true or false.</li>
+          </ol>
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+    <activity label="loop-error-reflection">
+      <title>Project Reflection on Errors</title>
+      <statement>
+        <p>Describe a logic error (especially in the condition of the if statements) that you made in your project code above.
+        </p>
+           <ul>
+            <li>Describe the program behavior resulting from this error.</li>
+            <li>Describe how you found the error and how you fixed it.</li>
+            <li>If you have access to a genAI system, try asking it about a bug you encountered and describe how it could be used to help find and fix bugs like this.</li>
+           </ul>
+      </statement>
+      <response />
+    </activity>
+
+
 
   </subsection>
     <subsection xml:id="LOs-2-4">
@@ -813,7 +1105,27 @@ while value != -1:
         <premise>iteration</premise>
         <response>repetition of a sequence of instructions</response>
         </match>
+        <match>
+          <premise>while loop</premise>
+          <response>a type of loop that continues as long as a condition is true</response>
+        </match>
+        <match>
+          <premise>for loop</premise>
+          <response>a type of loop that repeats a set of statements a specific number of times</response>
+        </match>
+        <match>
+          <premise>loop variable</premise>
+          <response>a variable that is used to control the number of iterations in a loop</response>
+        </match>
+        <match>
+          <premise>infinite loop</premise>
+          <response>a loop that never ends</response>
+        </match>
+        <match>
+          <premise>tracing</premise>
+          <response>the process of following the line by line keeping track of the variables and output.</response>
+        </match>
         </cardsort>
-        </activity>
-        </subsection>
+       </activity>
+    </subsection>
 </section>

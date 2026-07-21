@@ -181,7 +181,7 @@
       <title>2-3 Selection Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in 2-3. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2-3 Selection. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
@@ -210,6 +210,46 @@
         </match>
       </cardsort>
     </activity>
-    
+       <activity label="vocab-loops-review">
+       <title>2-4 Iteration Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-4 Iteration. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the 2-4 Iteration lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>iteration</premise>
+        <response>repetition of a sequence of instructions</response>
+        </match>
+        <match>
+          <premise>while loop</premise>
+          <response>a type of loop that continues as long as a condition is true</response>
+        </match>
+        <match>
+          <premise>for loop</premise>
+          <response>a type of loop that repeats a set of statements a specific number of times</response>
+        </match>
+        <match>
+          <premise>loop variable</premise>
+          <response>a variable that is used to control the number of iterations in a loop</response>
+        </match>
+        <match>
+          <premise>infinite loop</premise>
+          <response>a loop that never ends</response>
+        </match>
+        <match>
+          <premise>tracing</premise>
+          <response>the process of following the line by line keeping track of the variables and output.</response>
+        </match>
+        </cardsort>
+       </activity>
   </subsection>
 </section>

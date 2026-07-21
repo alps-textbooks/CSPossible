@@ -938,27 +938,27 @@ else:
     </project>
 
     <activity label="selection-algorithm-reflection">
-      <title>Project Reflection</title>
+      <title>Project Reflection on Algorithm</title>
       <statement>
         <p>Identify the first selection statement that you wrote on your own in your project. 
           Explain how it works:
-          <ul>
+          <ol>
             <li>What is the condition or Boolean expression being tested?</li>
             <li>When does the condition evaluate to true? </li>
             <li>When does it evaluate to false? </li>
             <li>What happens when if the condition is true? </li>
             <li>What happens when if it is false?</li>
-          </ul>
+          </ol>
         </p>
       </statement>
       <response />
-       describing a modification another programmer could make to cause a logic error in their program and the program behavior resulting from this change. 
     </activity>
 
        <activity label="selection-error-reflection">
-      <title>Project Reflection</title>
+      <title>Project Reflection on Errors</title>
       <statement>
-        <p>Describe a logic error that you made or another programmer could make in your project code above.
+        <p>Describe a logic error (especially in the condition of the if statements) that you made or 
+           another programmer could make in your project code above.
            Describe the program behavior resulting from this error. 
 
         </p>
@@ -966,6 +966,16 @@ else:
       <response />
     </activity>
 
+    <activity label="selection-testing-reflection">
+      <title>Project Reflection on Testing</title>
+      <statement>
+        <p>Explain how you tested your code with different inputs to make sure it worked correctly.
+        If you have access to a Gen AI system, ask it what test cases it would recommend for your code 
+        and describe your prompt andits response.
+        </p>
+      </statement>
+      <response />
+    </activity>
   </subsection>
 
   <subsection xml:id="LOs-2-3">
