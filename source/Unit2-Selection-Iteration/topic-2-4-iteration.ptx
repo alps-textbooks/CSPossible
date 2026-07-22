@@ -1040,7 +1040,7 @@ img.draw(window)
             self.assertGreaterEqual(input_count, 3, "At least 3 for loops used")
             input_count = self.getEditorText().count("if ")
             self.assertGreaterEqual(input_count, 3, "At least 3 if statements used")
-            self.assertIn("&lt;",self.getEditorText(), "&lt; use to check for low values for black or red checks")
+            self.assertIn("&lt;",self.getEditorText(), "Use &lt; to check for low values for black hair or red shirt")
 
         myTests().main()
       </tests>
