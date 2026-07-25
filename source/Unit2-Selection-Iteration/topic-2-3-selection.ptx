@@ -880,7 +880,7 @@ else:
 
     <idx><h>coding challenge</h><h>Adventure</h></idx>
     
-    <project label="adventure-coding-challenge" xml:id="adventure">
+    <project label="coding-challenge-adventure" xml:id="adventure">
 
       <statement>
           <p>

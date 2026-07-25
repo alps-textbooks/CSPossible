@@ -894,7 +894,7 @@ turt.goto(0, 0)
     </program>
     </project>
 
-     <activity label="turtle-rand-reflection">
+     <activity label="frq-turtle-rand-reflection">
       <title>Project Reflection</title>
       <statement>
         <p>Describe how you used random numbers in your turtle project. 

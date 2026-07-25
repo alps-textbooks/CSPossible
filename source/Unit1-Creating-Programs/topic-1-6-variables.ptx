@@ -1086,7 +1086,7 @@ print(name + " is " + age + " years old")
  </choices>
 </activity>
     
-    <activity label="madlibs-reflection">
+    <activity label="frq-input-output">
       <title>Project Reflection</title>
       <statement>
         <p>Identify an input and an output for your program above.
