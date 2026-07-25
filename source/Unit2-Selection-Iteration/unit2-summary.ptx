@@ -251,5 +251,62 @@
         </match>
         </cardsort>
        </activity>
+
+    <activity label="vocab-review-2-5-algorithms">
+      <statement>
+        <p>
+          Review the vocabulary in 2-5 Algorithms. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the words in the 2-5 lesson and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>sequencing</premise>
+        <response>ordering instructions one after another</response>
+        </match>
+        <match>
+        <premise>iteration</premise>
+        <response>repetition of a sequence of instructions</response>
+        </match>
+        <match>
+          <premise>selection</premise>
+          <response>choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+          <premise>algorithm</premise>
+          <response>a step-by-step procedure for solving a problem</response>
+        </match>
+        <match>
+          <premise>accumulator pattern</premise>
+          <response>a loop with a variable that accumulates a sum or total</response>
+        </match>
+        <match>
+          <premise>average</premise>
+          <response>the sum of a set of numbers divided by the size of the set</response>
+        </match>
+        <match>
+          <premise>minimum</premise>
+          <response>the smallest value in a set of numbers</response>
+        </match>
+        <match>
+          <premise>maximum</premise>
+          <response>the largest value in a set of numbers</response>
+        </match>
+        <match>
+          <premise>side effect</premise>
+          <response>a change other than the output to the program's state or variables when the program runs</response>
+        </match>
+        <match>
+          <premise>divide and conquer pattern</premise>
+          <response>an algorithm that divides the problem into smaller parts and solves each part</response>
+        </match>
+     </cardsort>
+    </activity>
   </subsection>
 </section>
