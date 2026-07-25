@@ -7,8 +7,10 @@
       <p>Quick Links: 
       <xref text="global" ref="developing-algorithms, common-algorithms, comparing-algorithms, coding-challenge-algorithms LOs-2-5, vocab-2-5"/>
     </p>
-    <p>
-    </p>
+    <p>In this lesson, we will practive developing and comparing algorithms using repetition and selection. 
+      We will learn some common algorithms and patterns using loops that can be used to solve problems, for example
+      calculating the sum or average of a group of numbers or finding the maximum or minimum value in a group of numbers.
+      </p>
   </introduction>
 
   <subsection xml:id="developing-algorithms">
