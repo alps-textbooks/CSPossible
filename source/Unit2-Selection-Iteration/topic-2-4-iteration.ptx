@@ -15,8 +15,11 @@
     
     <p>Loops are used to repeat actions. For example, in music or in dance, we often repeat the same notes or steps multiple times. 
       A <term>loop</term> in coding, also called <term>iteration</term> or  <term>repetition</term>, 
-      is a way to repeat a block of code. Computers are very good at automating repetitive tasks! Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about how loops can be used in dance choreography. 
-      In this lesson, we'll try the unplugged activity in the video as well as learn how to write <term>while</term> and <term>for</term> loops in Python.
+      is a way to repeat a block of code. Computers are very good at automating repetitive tasks! 
+      Watch the following <url href="https://www.youtube.com/watch?v=JoKTqHCni0M">video</url> about 
+      how loops can be used in dance choreography. 
+      In this lesson, we'll try the unplugged activity in the video as well as learn how to write 
+      <term>while</term> and <term>for</term> loops in Python.
     </p>
 
     <video youtube="JoKTqHCni0M" label="video-loops-dance" />
@@ -28,11 +31,16 @@
     <title>Unplugged Loops Activity</title>
 
     <idx><h>unplugged</h><h>loops</h></idx>
+    <idx><h>projects</h><h>unplugged loop dance steps</h></idx>
 
     <project label="unplugged-loops">
       <title>Unplugged Loops for Dance Steps</title>
       <statement><p>
-        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, <c>wave</c>, <c>stomp</c> like in the video above. Then, put them in a loop to repeat 3 times. Some of the steps like <c>clap</c> 3 times can also have small loops nested inside the big loop. Write your dance algorithm down below. Once you construct the dance, have your group try it out together! Write down the steps in the following format:
+        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, 
+        <c>wave</c>, <c>stomp</c> like in the video above. Then, put them in a loop to repeat 3 
+        times. Some of the steps like <c>clap</c> 3 times can also have small loops nested inside the 
+        big loop. Write your dance algorithm down below. Once you construct the dance, have your 
+        group try it out together! Write down the steps in the following format:
            
         <ul><li><p>Repeat X times:
           <ul><li>Step 1</li>
@@ -43,6 +51,11 @@
       </p></statement>
        <response/>
     </project>
+
+     <p><term>Unplugged POGIL activity:</term> For more practice in class, try this
+       <url href="https://docs.google.com/document/d/18bUQ3ZgpVFvCPE6hIUaOY9dLPbpb9ey5teH7Q_ReZLo/edit?usp=sharing">POGIL Algorithms Activity</url>. 
+    </p>
+
     </subsection>
 
     <subsection xml:id="iteration-in-algorithms">
@@ -930,7 +943,10 @@ for i in range(10)
   <subsection xml:id="coding-challenge-picture-lab">
     <title>Coding Challenge Picture Lab</title>
 
-  <p>A digital image is made up of <term>pixels</term> (short for picture elements) which are small squares of color.
+  <idx><h>projects</h><h>picture lab</h></idx>
+  <idx><h>coding challenge</h><h>picture lab</h></idx>
+
+    <p>A digital image is made up of <term>pixels</term> (short for picture elements) which are small squares of color.
    Each pixel has a color value that is made up of a combination of red, green, and blue (RGB) values, each ranging from 0 to 255.
     Try the <url href="https://rgbcolorpicker.com/">RGB Color Picker</url> to create different colors from RGB values.
   </p>

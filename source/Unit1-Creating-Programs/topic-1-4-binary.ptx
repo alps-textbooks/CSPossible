@@ -66,7 +66,9 @@
 
     <p>As you saw in the video, the students were simulating a binary odometer (like a car odometer
       counting miles) to count in binary. </p>
-      
+       
+      <idx><h>unplugged</h><h>binary numbers</h></idx>
+
       <p><term>Unplugged Activity:</term> You and your friends can act out the video above by
       printing and using the following 
       <url

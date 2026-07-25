@@ -354,6 +354,7 @@
 
   <subsection xml:id="teachable-machine">
     <title>Teachable Machine Project</title>
+    <idx><h>projects</h><h>teachable machine</h></idx>
 
     <p>In this project, you will use Google's Teachable Machine which makes it easy to train AI models without writing code. Watch the
       following <url href="https://www.youtube.com/watch?v=T2qQGqZxkD0">video</url> introducing Teachable Machine. You can train a model 
@@ -366,7 +367,8 @@
   <title>Teachable Machine</title>
   <statement>
     <p><ol>
-      <li>Go to <url href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</url> and click on Get Started.</li>
+      <li>Go to <url href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</url> 
+        and click on Get Started. Work in pairs if possible.</li>
       <li>If you have a webcam on your computer, try Image Project or Pose Project. You can also try the Image Project if you can
         download images on your computer, for example you could download this 
         <url href="https://drive.google.com/drive/folders/1xCj0EW-pfvLG08LU9As6Vy8_cEMV4bcd?usp=drive_link">folder of cat and dog images</url>. 
@@ -686,10 +688,13 @@
     </choices>
   </activity>
 
+ <idx><h>POGIL group activity</h><h>deepfakes</h></idx>
+ <idx><h>projects</h><h>deepfakes</h></idx>
+
 <project label="deepfake-activity">
   <statement>
     <p>Visit the <url href="https://whichoneisreal.com/mode/mixed/">Which One Is Real</url> website 
-      and play one round of the Mixed or Images or Videos quiz. Try these together with a partner.</p>
+      and play one round of the Mixed or Images or Videos quiz. Try these together with a partner or a group. This could be a good POGIL group activity (<url href="https://pogil.org/what-is-pogil">What is POGIL</url>, <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>).</p>
 
     <p>After you finish, answer the following questions:</p>
 

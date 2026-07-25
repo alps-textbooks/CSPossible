@@ -768,10 +768,6 @@ print( teeny.xcor() )
     <subsection xml:id="additional-activities">
       <title>Additional Activities</title>
 
-    <p><term>Unplugged POGIL activity:</term> For more practice in class, try this
-       <url href="https://docs.google.com/document/d/18bUQ3ZgpVFvCPE6hIUaOY9dLPbpb9ey5teH7Q_ReZLo/edit?usp=sharing">POGIL Algorithms Activity</url>. 
-    </p>
-
     <p><term>App Inventor:</term> Your class may also choose to create mobile apps using MIT's App Inventor. 
     If so, this is a good time to do <url href="unit1-appinventor-setup.html">App Inventor Setup lesson</url> in this unit. 
         </p>

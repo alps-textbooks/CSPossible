@@ -988,6 +988,10 @@ print(name + " is " + age + " years old")
   
   <subsection xml:id="coding-challenge-madlibs-project">
   <title>Coding Challenge: Story Project</title>
+
+  <idx><h>projects</h><h>madlibs story</h></idx>
+  <idx><h>coding challenge</h><h>madlibs story</h></idx>
+  
     <p> Let's make a poem or a story using input and variables in Python.
       Ask the user to input different nouns and verbs, and weave together a story.</p>
 

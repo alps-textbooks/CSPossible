@@ -265,8 +265,8 @@ print("The average is", average)
 
     <subsubsection xml:id="min-max">
       <title>Minimum and Maximum</title>
-<idx>minimum</idx>
-<idx>maximum</idx>
+      <idx>minimum</idx>
+      <idx>maximum</idx>
       <p>
         Another common algorithm is to find the minimum or maximum value in a group of numbers. 
         This is a variation of the accumulator pattern where there is an if-statement inside the loop that tests each value being considered in the loop. To determine the minimum or maximum value, the algorithm uses a variable to store the current minimum or maximum value. The algorithm loops through the sequence of numbers and updates the minimum or maximum value if it finds a number that is lower or higher than the current minimum or maximum. This pattern can also be used to search for a specific value in a group of numbers. 
@@ -362,6 +362,8 @@ myTests().main()
 
     <subsubsection xml:id="divisibility">
       <title>Divisibility</title>
+      <idx>divisibility</idx>
+      
       <p>
         Another common algorithm is to check whether a number is evenly divisible by another. The algorithm uses the 
         mod operator (%) to determine whether the remainder of the division is zero. We've already used this to 
@@ -731,6 +733,9 @@ while count &lt; 3:
 
     <subsection xml:id="coding-challenge-algorithms">
       <title>Coding Challenge: Guessing Game</title>
+
+      <idx><h>projects</h><h>guessing game</h></idx>
+      <idx><h>coding challenge</h><h>guessing game</h></idx>
 
     <p>In the following coding challenge, you will code a guessing game where the computer picks a random number from 0-100  and the user has to guess it. After each guess, the computer will give clues like “Too high” or “Too low”. We encourage you to work in pairs on this challenge. 
     </p>

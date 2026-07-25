@@ -290,15 +290,20 @@
 			<li><term>Test:</term> Evaluate the solutions and go back to step 2 if needed</li>
 		</ol>
 
+    <idx><h>projects</h><h>design thinking</h></idx>
+     <idx><h>POGIL group activity</h><h>design thinking chair project</h></idx>
+    
     
       <project label="design-thinking-chair-project" xml:id="design-chair-project">
         <title>Design Thinking: Chair Project</title>
         <statement>
           <p>
             In this project, you will use the design thinking process to design a chair for one of the Simpsons characters.
-            You will work in groups and choose or be assigned a character and follow the <url 
+            You will work in groups (your class may use POGIL groups: <url href="https://pogil.org/what-is-pogil">What is POGIL</url>, 
+            <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>).
+            You may choose or be assigned a character and follow the <url 
             href="https://docs.google.com/document/d/16Y9RPf6IhZ4pZRjtosXdergQPCLRgrmY_TTMr4N9xpU/">Design a Simpsons Chair Instructions</url>. 
-            After completing the project, reflect on the following questions:
+            After completing the project, reflect on the following questions as a group:
             <ul>
               <li>Describe the characteristics of your user and how your design addresses their needs.</li>
               <li>Did you use iterative design where you changed some aspects of your design during implementation? What did you change?</li>
@@ -463,11 +468,17 @@
       </p>
     </note>
 
+     <idx><h>projects</h><h>app design</h></idx>
+     <idx><h>POGIL group activity</h><h>app design</h></idx>
+
     <project label="app-design-project" xml:id="app-design-project">
         <title>Homework Helper App Design Project</title>
+        <idx><h>projects</h><h>app design</h></idx>
+
         <statement>
           <p>In this activity, you will design a Homework Helper app by learning about your users and 
-            planning what the app should do. This activity is a good group project. </p>
+            planning what the app should do. This activity is a good group project. Your class may use POGIL groups: <url href="https://pogil.org/what-is-pogil">What is POGIL</url>, 
+            <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>. </p>
 
            <p>1. User Research: Interview one or two classmates about how they keep track of homework. 
             Ask questions like:

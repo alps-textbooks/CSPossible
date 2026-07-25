@@ -635,7 +635,8 @@ print("Eligible for discount?", age_between_12_and_18 or is_student)
   <subsection xml:id="unplugged-logic-project">
     <title>Unplugged Boolean Logic Project</title>
 
-     <idx><h>unplugged</h><h>booleans</h></idx>
+     <idx><h>unplugged</h><h>boolean Venn diagrams</h></idx>
+     <idx><h>projects</h><h>boolean Venn diagrams</h></idx>
 
     <p>Do the following project in a group of 4 people. If you don't have a group, imagine that you are doing this activity
       with 3 other friends or family members and write down their names and ages. (Thank you

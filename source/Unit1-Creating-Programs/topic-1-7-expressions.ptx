@@ -738,7 +738,9 @@ print(r)
 
   <subsection xml:id="coding-challenge-random-turtle-project">
     <title>Coding Challenge: Random Turtle Project</title>
-
+    <idx><h>projects</h><h>random turtle</h></idx>
+    <idx><h>coding challenge</h><h>random turtle</h></idx>
+    
     <p>
       Let's practice with turtles drawing with random colors and random movements. 
       Colors on computers and on the web can be set using RGB (red, green, blue) values that range from 0 to 255 (which can be saved in 8 bits). 

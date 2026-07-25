@@ -94,8 +94,9 @@
     <title>Unplugged Activity: Simon Says Ifs</title>
   
     <idx><h>unplugged</h><h>ifs</h></idx>
+    <idx><h>projects</h><h>unplugged simon says ifs</h></idx>
 
-     <activity label="unplugged-ifs-simon-says">
+     <project label="unplugged-ifs-simon-says">
        <title>Simon Says Ifs</title>
       <statement><p>
         In groups or as a class, play a game of Simon Says Ifs. One person will give commands using if statements and 
@@ -111,7 +112,7 @@
       </p></statement>
 
        <response/>
-     </activity>
+     </project>
   
   </subsection>
 
@@ -878,7 +879,8 @@ else:
  <subsection xml:id="adventure-project">
     <title>Adventure Coding Challenge</title>
 
-    <idx><h>coding challenge</h><h>Adventure</h></idx>
+    <idx><h>coding challenge</h><h>adventure game</h></idx>
+    <idx><h>projects</h><h>adventure game</h></idx>
     
     <project label="coding-challenge-adventure" xml:id="adventure">
 
