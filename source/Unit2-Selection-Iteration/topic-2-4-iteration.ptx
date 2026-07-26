@@ -981,6 +981,7 @@ for p in img.getPixels():
     image looks like. You can also try loading in a different image with a full image link like 
     <url href="https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg">
     "https://images.pexels.com/photos/17502401/pexels-photo-17502401.jpeg"</url> instead of the student image file.
+    If you enjoyed this project, there are more image manipulation activities in the Unit 2 Coding Practice lesson.
   </p>
 
   
