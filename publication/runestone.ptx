@@ -45,6 +45,8 @@
   <numbering>
    <!-- This starts chapter numbering at 0 -->
     <divisions chapter-start="0"/>
+    <!-- to have <activity> be on its on numbering counter -->
+    <projects distinct="yes"/>
     <!-- the divisions element describes the numbering of divisions.  -->
     <!-- @part-structure should be "decorative" or "structural",      -->
     <!-- were the latter would restart numbering chapters within each -->
