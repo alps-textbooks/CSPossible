@@ -1037,7 +1037,7 @@ print(name + " is " + age + " years old")
     </project>
 
     <activity label="varIO">
-      <statement><p>Is the variable <c>color1</c> in the code above used for input or output?</p>
+      <statement><p>Is the variable <c>color1</c> in the code above used to store input or output?</p>
      </statement>
   <choices randomize="yes">
         <choice correct="yes">
@@ -1049,7 +1049,7 @@ print(name + " is " + age + " years old")
         <choice>
           <statement><p>output</p></statement>
           <feedback>
-            <p>Incorrect, the variable <c>color1</c> is used to store user input, not output.</p>
+            <p>Although the variable <c>color1</c> is printed out, it is used to store user input, not output.</p>
           </feedback>
         </choice>
       </choices>
