@@ -8,6 +8,13 @@
   --codeColor: #ffaaaa;
 }
 
+/* Add cspossible in title for the course name in course home,
+   but don't diplay that because there's the logo in the banner */
+.ptx-banner .title
+{
+   display: none;
+}
+
 /* The wide style seems to add huge font size so put it down */
 .ptx-content .para {
   font-size: 1rem;

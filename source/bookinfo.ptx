@@ -8,6 +8,9 @@
   <!-- A unique name for the book in a catalog; for example, see https://pretextbook.org/catalog.html and https://runestone.academy/ns/books/index. It contains a simple lowercase string with no dashes or other special characters. See https://pretextbook.org/doc/guide/html/sec-publishing-to-runestone-academy.html for more information. -->
   <document-id>cspossible</document-id>
 
+  <brandlogo url="./index.html" source="_static/CSPossible.png" alt="CSPossible" />
+
+
   <!-- Rename Checkpoint for exercise to Activity -->
   <rename element="inlineexercise">Activity</rename>
   <rename element="chapter">Unit</rename>
