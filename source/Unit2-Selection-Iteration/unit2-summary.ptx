@@ -308,5 +308,38 @@
         </match>
      </cardsort>
     </activity>
+
+      <activity label="vocab-review-2-6-errors">
+      <statement>
+        <p>
+          Review the vocabulary in lesson 2-6 Errors. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson 2-6 Errors and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>syntax error</premise>
+          <response>an error caught by the interpreter because the rules of the programming language were not followed</response>
+        </match>
+        <match>
+          <premise>logic error</premise>
+          <response>an error in the code that causes it to produce incorrect results although it runs</response>
+        </match>
+        <match>
+          <premise>runtime error</premise>
+          <response>an error that occurs while the program is running</response>
+        </match>
+        <match>
+        <premise>test cases</premise>
+        <response>inputs used to check the correctness of an algorithm</response>
+        </match>
+      </cardsort>
+    </activity>
   </subsection>
 </section>
