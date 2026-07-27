@@ -5,27 +5,15 @@
   <title>Errors</title>
   <introduction>
     <p>
+      Debugging is a normal part of coding. It can be frustrating at times, but you will get
+      better at it with practice! Watch the following video to see that all coders get bugs.
     </p>
+
+    <video youtube="auv10y-dN4s" label="video-debugging" />
+    
   </introduction>
 
-  <subsection>
-    <title>Learning Objectives</title>
-    <remark>
-      <title>2.6.A</title>
-      <p>
-        Correct errors in programs.
-      </p>
-    </remark>
-
-    <remark>
-      <title>2.6.B</title>
-      <p>
-        Develop code for test cases that can be used to check the correctness of an algorithm.
-      </p>
-    </remark>
-  </subsection>
-
-  <subsection>
+  <subsection xml:id="correcting-errors">
     <title>Correcting Errors</title>
 
     <note>
@@ -35,6 +23,19 @@
         encounter errors, identify their cause, and revise the program to correct them.
       </p>
     </note>
+
+    <p>One of the first documented computer bugs was discovered by an early
+      computer science pioneer <url
+      href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</url>, and it was a moth that flew into 
+      a panel of a large computer in 1947! Grace Hopper debugged the computer
+     and pasted the actual bug in her logbook.
+    </p>
+
+    <figure align="left">
+      <caption>Grace Hopper’s log showing a real bug, 1947.</caption>
+      <image source="_static/Unit2images/firstbug.jpg" width="54%" />
+    </figure>
+
 
     <note>
       <title>2.6.A.2</title>
@@ -48,6 +49,9 @@
       </p>
     </note>
 
+     <p>Everyone who codes encounters bugs or errors in their programs. Sometimes the user of your program will report
+      the problem and the programmer will have to figure out what went wrong. 
+     </p>
     <note>
       <title>2.6.A.3</title>
       <p>
@@ -56,7 +60,74 @@
       </p>
     </note>
 
-    <note>
+       <idx>syntax error</idx>
+
+     <note>
+      <title>2.6.A.5</title>
+      <p>
+        A <term>syntax error</term> occurs when the code breaks the rules of the programming 
+        language, preventing the program from running as written.
+      </p>
+    </note>
+
+    
+    <p>When you are coding, the most common type of error is a <term>syntax error</term>, which means that you
+      didn't write the Python code correctly. For example, if you forget to close a parenthesis or use the wrong indentation, 
+      you will get a syntax error reported by the Python interpreter.</p>
+
+     <p>
+      The Python interpreter tries to run your code, but if your code has <term>syntax
+      errors</term>, you will see error messages displayed below the code.
+     The error messages will tell the line number of the error and the type of error. 
+     The error messages are not always easy to understand and sometimes the actual error is before the line reported, but
+     that is where the interpreter crashed on your code. Try to debug the code below. Read the error messages underneath to help you. 
+     Here are some common syntax errors to look for:
+    </p>
+     <ul>
+        <li>Check for missing or extra parentheses, brackets, or quotation marks.</li>
+        <li>Check for missing colons at the end of a line that starts a new block of code.</li>
+        <li>Check for incorrect indentation.</li>
+        <li>Check for misspelled keywords or variable names.</li>
+      </ul>
+    
+
+     <note>
+      <title>2.6.A.7</title>
+      <p>
+        Programmers use error messages to identify and correct problems because they describe what 
+        went wrong and often point to where it occurred. They may include the type of error, such as 
+        syntax or runtime, the line or location in the code, and details about the operation or value 
+        that caused the problem. Programmers use error messages to decide what to check first, make a 
+        targeted change, and then rerun the program to confirm the error is resolved.
+      </p>
+    </note>
+
+    <activity label="debug-syntax-error">
+      <statement>
+        <p>
+          Debug the code below. Read the error messages underneath to help you.
+        </p>
+      </statement>
+
+        <program interactive="activecode" language="python">
+      <code>
+ Print("Hello World
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("Hello world",self.getOutput(), "Check output")
+              
+          myTests().main()
+      </tests>
+     </program>
+    </activity>
+
+      <idx>logic error</idx>
+
+      <note>
       <title>2.6.A.4</title>
       <p>
         A <term>logic error</term> occurs when the program runs but produces incorrect or unexpected 
@@ -64,13 +135,46 @@
       </p>
     </note>
 
-    <note>
-      <title>2.6.A.5</title>
-      <p>
-        A <term>syntax error</term> occurs when the code breaks the rules of the programming 
-        language, preventing the program from running as written.
-      </p>
-    </note>
+   <p>
+      Some errors cannot be detected by the interpreter. These are called <term>logic errors</term> 
+      or <term>run-time errors</term>. 
+      Logic errors occur when the program runs, but the output is not what you expected. For example,
+      a programmer might have made a math mistake so the wrong value is
+      calculated. Logic errors can be detected by testing the program with
+      specific data to see if it produces the expected outcome.
+    </p> 
+
+    <activity label="debug-logic-error">
+      <statement>
+        <p>
+         The following code has a logic error. It is supposed to calculate the average of three scores.
+         Try running it and you will see that it does not give the correct answer. 
+         Fix the math operator in the code to correct the logic error and run to test.
+        </p>
+      </statement>
+
+        <program interactive="activecode" language="python">
+      <code>
+score1 = 100
+score2 = 95
+score3 = 90
+average = (score1 + score2 + score3) * 3
+print("The average score is", average)
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("95",self.getOutput(), "The average should be 95")
+              self.assertIn("/",self.getEditorText(), "Use / instead of * to calculate the average")
+              
+          myTests().main()
+      </tests>
+     </program>
+    </activity>
+
+        <idx>runtime error</idx>
 
     <note>
       <title>2.6.A.6</title>
@@ -82,16 +186,39 @@
       </p>
     </note>
 
-    <note>
-      <title>2.6.A.7</title>
-      <p>
-        Programmers use error messages to identify and correct problems because they describe what 
-        went wrong and often point to where it occurred. They may include the type of error, such as 
-        syntax or runtime, the line or location in the code, and details about the operation or value 
-        that caused the problem. Programmers use error messages to decide what to check first, make a 
-        targeted change, and then rerun the program to confirm the error is resolved.
-      </p>
-    </note>
+    <p>
+      <term>Run-time errors</term> occur when the program is running by something unexpected, such as dividing by zero or 
+      trying to read from a file that doesn’t exist.
+    </p>
+   
+    <activity label="debug-runtime-error">
+      <statement>
+        <p>
+         Run the following code to see the run-time error of dividing by zero (which is not allowed). 
+         Fix the code to correct the run-time error and run to test.
+        </p>
+      </statement>
+
+        <program interactive="activecode" language="python">
+      <code>
+score1 = 100
+score2 = 95
+score3 = 90
+average = (score1 + score2 + score3) / 0
+print("The average score is", average)
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("95",self.getOutput(), "The average should be 95")
+              self.assertIn("3",self.getEditorText(), "Divide by 3 instead of 0 to calculate the average")
+              
+          myTests().main()
+      </tests>
+     </program>
+     </activity>
 
     <note>
       <title>2.6.A.8</title>
@@ -103,6 +230,14 @@
         to determine what conditions led to a runtime error.
       </p>
     </note>
+
+      <p>Tracing is a great way to debug code, especially with logic or runtime errors.
+        To trace code, pretend you are the computer and go through each line of code step by step,
+        keeping track of the values of variables as you go. The Code Lens button in the active code exercises
+       can help you to debug your code. It is based on the <url href="https://pythontutor.com/">Python Tutor</url> website.
+       Try using the Code Lens button or the Python Tutor tool to trace the code in the debugging exercises above.
+      </p>
+    
 
     <note>
       <title>2.6.A.9</title>
@@ -116,6 +251,41 @@
       </p>
     </note>
 
+    <p>Another way to keep track of what is happening in your code is to add print statements to display the values of variables 
+      at key points in the program. Try it below. 
+    </p>
+    <activity label="debug-with-print">
+      <statement>
+        <p>
+         The following code has a logic error. The loop is supposed to total the numbers 0 through 5, but it only adds 0 through 4. 
+         Add a print statement inside the loop to display the value of the variable number at each iteration. 
+         Then run the code to see what is happening and fix the logic error.
+        </p>
+      </statement>
+
+        <program interactive="activecode" language="python">
+      <code>
+        total = 0
+        for number in range(5):
+            # Add print number to help you to debug the code
+            total += number
+
+        print("Total:", total)
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("15",self.getOutput(), "The total should be 15")
+              self.assertIn("range(6)",self.getEditorText(), "Change the range to 6 to include 5 in the total")
+              self.assertIn("print(number)",self.getEditorText(), "Add print(number) in the loop")
+
+          myTests().main()
+      </tests>
+      </program>
+    </activity
+    >
     <note>
       <title>2.6.A.10</title>
       <p>
@@ -128,11 +298,21 @@
         incorrect.
       </p>
     </note>
+
+    <p>If you get stuck trying to find the bugs, sometimes another pair of eyes really helps. 
+      Ask a friend if you get stuck or try explaining your code line by line
+      to someone or even a rubber duck. <url
+      href="https://rubberduckdebugging.com/">Rubber duck debugging</url> is a
+      lot of fun! This site also has a virtual rubber duck AI tool that can help you. 
+      You can also use AI tools to help you debug your code, but remember that the AI tool may not always be correct, 
+      so you should always check the suggestions and test your code.
+    </p>
+     <image src="_static/Unit2images/rubberduck.jpg" alt="Rubber duck debugging" />
   </subsection>
 
   <subsection>
     <title>Testing and Test Cases</title>
-
+    <idx>test cases</idx>
     <note>
       <title>2.6.B.1</title>
       <p>
@@ -154,18 +334,38 @@
       </p>
     </note>
 
+    <idx>test plan</idx>
+
+    <p>When testing code, programmers create test cases with specific inputs and expected outputs. They run the code with the test case  inputs and compare the actual output to the expected output.
+      If the actual output does not match the expected output, then there is a bug in the code that needs to be fixed. 
+      A test plan with a table like the one below can be used to record the testing results for a program.
+       <table xml:id="test-cases">
+      <title>Test Cases</title>
+        <tabular>
+             <row header="yes">
+                <cell bottom="minor"> Test Case</cell>
+                <cell bottom="minor"> Input </cell>
+                <cell bottom="minor"> Expected Output </cell>
+                <cell bottom="minor"> Actual Output </cell>
+            </row>  
+            </tabular>
+      </table>
+    </p>
+
     <note>
       <title>2.6.B.3</title>
       <p>
         An effective set of test cases includes inputs that produce different expected outputs or 
-        behaviors, including typical, boundary, and invalid cases. Boundary test cases use values at 
+        behaviors, including typical, boundary, and invalid cases. <term>Boundary test cases</term> use values at 
         or near important limits, such as the minimum and maximum allowed inputs or decision 
-        thresholds in conditional expressions. Invalid test cases may use values just beyond the 
+        thresholds in conditional expressions. <term>Invalid test cases</term> may use values just beyond the 
         allowed range to check how the program handles likely user mistakes.
       </p>
     </note>
 
-    <note>
+    <p>In code with selection statements, it is important to test each branch of the conditional to ensure that the program behaves correctly for all possible inputs. With loops, it is important to use <term>boundary test cases</term> to test the loop's behavior at the limits of its range. Invalid test cases with inputs just beyond the limits of the conditions for selection or loops should also be tested.</p>
+
+        <note>
       <title>2.6.B.4</title>
       <p>
         Some algorithms appear correct for common inputs but fail for other inputs, so programmers 
@@ -185,5 +385,302 @@
         is invalid.
       </p>
     </note>
+  </subsection>
+
+  <subsection xml:id="POGIL-test-plans">
+    <title>POGIL Test Plans</title>
+   
+     <idx><h>POGIL group activity</h><h>test plans</h></idx>
+     <idx><h>projects</h><h>test plans</h></idx>
+     
+    <p>Work in POGIL groups to test the following programs with test plans (<url href="https://pogil.org/what-is-pogil">What is POGIL</url>, 
+            <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>).
+   </p> 
+         
+    <p>Try the code below which has some logic errors. Use the test plan in the table in the activity below to test it. After you have filled in the actual output column, you can fix the code
+          by changing "if" to "elif" after the first "if" to chain all the conditions together.
+          This would be a good exercise to do in pairs or POGIL groups.</p>
+    <program interactive="activecode" language="python">
+        <code>
+score = int(input("Enter a score: "))
+if score &gt;= 90:
+    grade = "A"
+if score &gt;= 80:
+    grade = "B"
+if score &gt;= 70:
+    grade = "C"
+if score &gt;= 60:
+    grade = "D"
+else:
+    grade = "F"
+print(grade)
+        </code>
+      </program>
+
+    <activity label="selection-test-cases">
+      <title>Selection Test Cases</title>
+      <statement>
+        <p>
+          Run the code above following the test plan below. Fill in the actual output column of the table.
+          This code has some logic errors. 
+          <table>
+        <tabular>
+             <row header="yes">
+                <cell bottom="minor">Test Case</cell>
+                <cell bottom="minor">Input </cell>
+                <cell bottom="minor">Expected Output </cell>
+                <cell bottom="minor">Actual Output </cell>
+            </row>  
+            <row>
+                <cell>Grade A</cell>
+                <cell>90</cell>
+                <cell>A</cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
+            </row>
+              <row>
+                <cell>Grade B</cell>
+                <cell>80</cell>
+                <cell>B</cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
+            </row>
+            <row>
+                <cell>Grade C</cell>
+                <cell>70</cell>
+                <cell>C</cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
+            </row>
+            <row>
+                <cell>Grade D</cell>
+                <cell>60</cell>
+                <cell>D</cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
+            </row>
+            <row>
+                <cell>Grade F</cell>
+                <cell>0</cell>
+                <cell>F</cell>
+                <cell> <fillin answer="F" mode="string" /></cell>
+            </row>
+            <row>
+                <cell>Invalid</cell>
+                <cell>2000</cell>
+                <cell>Error</cell>
+                <cell><fillin answer="D" mode="string" /></cell>
+            </row>
+             <row>
+                <cell>Invalid</cell>
+                <cell>-200</cell>
+                <cell>Error</cell>
+                <cell><fillin answer="F" mode="string" /></cell>
+            </row>
+            </tabular>
+      </table>
+        </p>
+      </statement>
+      <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+                <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+                <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+                <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+                <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+                <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+                <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </activity>
+  
+    <p>Run the following code with a loop using the test cases in the activity below:</p>
+
+     <program interactive="activecode" language="python">
+        <code>
+value = int(input("Enter a number (-1 to stop): "))
+while value != -1:
+    if value == 7:
+        print("lucky number!")
+    else:
+        print("You entered", value)
+
+    # 3. Update the loop variable with new input!
+    value = int(input("Enter a another number (-1 to stop): "))
+print("Done!")
+        </code>
+        </program>
+
+   <activity label="loop-test-cases">
+    <title>Loop Test Plan</title>
+      <statement><p>
+          Run the code above following the test plan below. Fill in the actual output column of the table.
+      </p> 
+      <table>
+      <title>Test Cases</title>
+          <tabular>
+             <row header="yes">
+                <cell bottom="minor">Test Case</cell>
+                <cell bottom="minor">Input </cell>
+                <cell bottom="minor">Expected Output </cell>
+                <cell bottom="minor">Actual Output </cell>
+            </row>  
+            <row>
+                <cell>0 repetitions</cell>
+                <cell>-1</cell>
+                <cell>Done!</cell>
+                <cell> <fillin answer="Done!" mode="string" /></cell>
+            </row>
+            <row>
+                <cell>1 repetition 7</cell>
+                <cell>7  -1</cell>
+                <cell>lucky number!</cell>
+                <cell> <fillin answer="lucky number!" mode="string" /></cell>
+            </row>
+                <row>
+                <cell>1 repetition not 7</cell>
+                <cell>5  -1</cell>
+                <cell>You entered 5</cell>
+                <cell> <fillin answer="You entered 5" mode="string" /></cell>
+            </row>
+            </tabular>
+            </table>
+      </statement>
+        <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+          <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+          <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+        </evaluation>
+        </activity>
+
+
+ </subsection>
+
+ <subsection xml:id="LOs-2-6">
+    <title>Learning Objectives</title>
+    <remark>
+      <title>2.6.A</title>
+      <p>
+        Correct errors in programs.
+      </p>
+    </remark>
+
+    <remark>
+      <title>2.6.B</title>
+      <p>
+        Develop code for test cases that can be used to check the correctness of an algorithm.
+      </p>
+    </remark>
+  </subsection>
+
+   <subsection xml:id="vocab-2-6">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-errors">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>syntax error</premise>
+          <response>an error caught by the interpreter because the rules of the programming language were not followed</response>
+        </match>
+        <match>
+          <premise>logic error</premise>
+          <response>an error in the code that causes it to produce incorrect results although it runs</response>
+        </match>
+        <match>
+          <premise>runtime error</premise>
+          <response>an error that occurs while the program is running</response>
+        </match>
+        <match>
+        <premise>test cases</premise>
+        <response>inputs used to check the correctness of an algorithm</response>
+        </match>
+      </cardsort>
+    </activity>
   </subsection>
 </section>

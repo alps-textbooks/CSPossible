@@ -363,7 +363,6 @@ myTests().main()
     <subsubsection xml:id="divisibility">
       <title>Divisibility</title>
       <idx>divisibility</idx>
-      
       <p>
         Another common algorithm is to check whether a number is evenly divisible by another. The algorithm uses the 
         mod operator (%) to determine whether the remainder of the division is zero. We've already used this to 
