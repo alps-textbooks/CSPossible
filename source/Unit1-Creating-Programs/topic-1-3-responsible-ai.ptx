@@ -33,7 +33,8 @@
       </p>
     </note>
 
-    <p>Try <url href="https://quickdraw.withgoogle.com/">Google Quick Draw</url>. The Quick Draw AI is trained on millions 
+    <p><term>Artificial intelligence (AI)</term> systems are trained on large amounts of data to learn patterns and make predictions. 
+      Try <url href="https://quickdraw.withgoogle.com/">Google Quick Draw</url>. The Quick Draw AI is trained on millions 
       of drawings from people around the world to recognize and predict what you are drawing. Take a look at 
       <url href="https://quickdraw.withgoogle.com/data">the data</url> it uses. The following 
       <url href="https://www.youtube.com/watch?v=X8v1GWzZYJ4">video</url> introduces Quick Draw.
@@ -462,7 +463,7 @@
             <feedback> Correct! In most cases, the LLM would see data with "large language model" occurring together.</feedback>
           </test>
           <test>
-            <feedback>What comes after large language?</feedback>
+            <feedback>What comes after large language? Use lower case letters</feedback>
           </test>
         </evaluate>
       </evaluation>
@@ -646,6 +647,11 @@
       </p>
     </note>
 
+    <p>AI tools can generate images and other media that are difficult to distinguish from real content.
+      These are often called <term>deepfakes</term>. Deepfakes can be used for entertainment, but they 
+      can also be used to spread misinformation or create content that is harmful or misleading.
+    </p>
+
   <activity label="deepfakes-dogs">
   <statement>
     <p>Which of the following images is real and not AI-generated? It's okay to try all the answers on this one!
@@ -721,6 +727,11 @@
       </p>
     </note>
 
+    <p><term>Model drift</term> means that the model's performance has degraded over time due to
+       changes in the real-world data. Modern AI systems have to be continuosly retrained on
+       current news and events or have to retrieve that information from the Internet while
+       answering prompts.</p>
+
     <activity label="model-drift-response">
   <statement>
     <p>An AI model predicts traffic patterns for a city. After several new highways are built, 
@@ -774,11 +785,14 @@
     <note>
       <title>1.3.A.10</title>
       <p>
-        Developers can increase transparency by clearly describing an AI tool’s purpose, how it
+        Developers can increase <term>transparency</term> by clearly describing an AI tool’s purpose, how it
         was developed, trained, and evaluated, and its limitations and appropriate uses.
         This allows users to make informed choices.
       </p>
     </note>
+
+    <p><term>Transparency</term> in AI means providing clear and accessible information about how an AI system works, 
+      its capabilities, and its limitations.</p>
 
   <activity label="ai-transparency">
   <statement>
@@ -863,7 +877,7 @@
       </p>
     </note>
 
-    <p>The following table summarizes the key differences between automation and augmentation:</p>
+    <p>The following table summarizes the key differences between <term>automation</term> and <term>augmentation</term>:</p>
     
 <table xml:id="ai-augmentation-vs-automation">
     <title>AI Augmentation vs. AI Automation</title>
@@ -912,9 +926,9 @@
 
   <cardsort>
     <match>
-      <premise>Chatbots</premise>
+      <premise>Email assistant that drafts emails for review</premise>
       <premise>AI coding assistant</premise>
-      <premise>AI that summarizes meeting notes</premise>
+      <premise>AI meeting assistant that summarizes meeting notes</premise>
       <premise>AI that suggests medical diagnoses</premise>
       <response>AI augmentation</response>
     </match>
@@ -923,7 +937,7 @@
       <premise>Self-driving car that makes driving decisions</premise>
       <premise>Warehouse robot that moves inventory to fullfill orders</premise>
       <premise>Customer service agent that answers questions</premise>
-      <premise>Email agent that drafts and sends emails</premise>
+      <premise>Email agent that replies to certain emails</premise>
       <response>AI automation</response>
     </match>
   </cardsort>
@@ -949,6 +963,8 @@
         expected results.
       </p>
     </note>
+
+    <p><term>Accuracy</term> is an important measure of an AI system's performance, but it is difficult to assess.</p>
 
 <activity label="accuracy-chatbot">
   <statement>
@@ -1165,7 +1181,6 @@
       </p>
     </note>
 
-```xml id="h9v2cm"
 <activity label="user-trust-human-review">
   <statement>
     <p>

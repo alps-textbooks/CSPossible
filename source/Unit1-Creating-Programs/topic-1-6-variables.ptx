@@ -1038,27 +1038,21 @@ print(name + " is " + age + " years old")
 
     <activity label="varIO">
       <statement><p>Is the variable <c>color1</c> in the code above used for input or output?</p>
-     <p><fillin answer="input" mode="string" /></p>
      </statement>
-  <evaluation>
-    <evaluate>
-      <test>
-        <strcmp use-answer="yes" case="insensitive"/>
-        <feedback>
-          Correct! All of the variables above are used for user input.
-        </feedback>
-      </test>
-
-      <test>
-        <!-- else -->
-        <feedback>
-          <p>
-           Incorrect, try again. Please type in input or output in lowercase letters.
-          </p>
-        </feedback>
-      </test>
-    </evaluate>
-  </evaluation>
+  <choices randomize="yes">
+        <choice correct="yes">
+          <statement><p>input</p></statement>
+          <feedback>
+            <p>Correct! The variable <c>color1</c> is used to store user input.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p>output</p></statement>
+          <feedback>
+            <p>Incorrect, the variable <c>color1</c> is used to store user input, not output.</p>
+          </feedback>
+        </choice>
+      </choices>
 </activity>
     
 <activity label="var-data-type">
