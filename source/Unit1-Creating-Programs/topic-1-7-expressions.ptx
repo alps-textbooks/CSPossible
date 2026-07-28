@@ -677,7 +677,7 @@ print("Next year you will be", age + 1, "years old.")
         identifying the endpoints and whether they are included. When the following code runs, a
         random integer from <c>a</c> to <c>b</c>, including <c>a</c> and <c>b</c>, is generated and
         returned. Each result is equally likely to occur. The possible results of <c>random(a, b)</c>
-        are all integers from <c>a</c> through <c>b</c>. <c>random(a, b)</c></p>
+        are all integers from <c>a</c> through <c>b</c>. </p>
     </note>
 
     <p>In Python, there is a library called <c>random</c> that can be imported and used to generate 
@@ -744,8 +744,8 @@ print(r)
     <p>
       Let's practice with turtles drawing with random colors and random movements. 
       Colors on computers and on the web can be set using RGB (red, green, blue) values that range from 0 to 255 (which can be saved in 8 bits). 
-      Try the <url href="https://www.google.com/search?q=colorpicker">Google color picker</url> and look at the RGB values for different colors
-      below the selected color.  Any color can be made by mixing different amounts of red, green, and blue light. Mixing light is 
+      Try the <url href="https://www.w3schools.com/colors/colors_picker.asp">Color Picker</url> and look at the RGB values for different colors
+      below the selected color box.  Any color can be made by mixing different amounts of red, green, and blue light. Mixing light is 
       different than mixing paint, so when you mix red, green, and blue light, you get white light.
     </p>
     <image source="_static/Unit1images/RGB.png" width="40%" alt="Mixing red, green, and blue light to make colors"/>
