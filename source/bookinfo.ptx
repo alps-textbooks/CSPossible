@@ -10,16 +10,15 @@
 
   <brandlogo url="./index.html" source="_static/CSPossible.png" alt="CSPossible" />
 
-
   <!-- Rename Checkpoint for exercise to Activity -->
   <rename element="inlineexercise">Activity</rename>
   <rename element="chapter">Unit</rename>
   <rename element="remark">Learning Objective</rename>
   <rename element="note">Essential Knowledge</rename>
 
-  <!-- <brandlogo url="./index.html" source="_static/CSAwesomeLogo.png" alt="CSAwesome" /> -->
   <blurb shelf="AP Computer Science">
-    CSPossible is the newest AP CSP Python curriculum approved to meet the 2027-2028 College Board standards and an introductory college-level computer programming course in Python.
+    CSPossible is a beta AP CSP Python curriculum to meet the 2027-2028 College Board 
+    standards. It is also an introductory college-level computer programming course in Python.
   </blurb>
 
 <!-- this is the default, but supresses a warning -->
