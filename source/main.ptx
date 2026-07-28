@@ -6,7 +6,7 @@
 
   <book xml:id="cspossible">
     <title>CSPossible</title>
-     <subtitle>AP CSP 2027+ in Python</subtitle>
+     <subtitle>AP CSP in Python (beta)</subtitle>
 
     <!-- Include chapters -->
       <xi:include href="./Unit0/unit0index.ptx" />

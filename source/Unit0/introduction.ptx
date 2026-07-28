@@ -15,7 +15,13 @@
 
      <p>To make sure the site saves your answers on questions, please click on
         the person icon at the top to register or login to your Runestone
-        course. If you are a teacher using this
+        course. 
+      </p>
+      </introduction>
+
+      <subsection xml:id="teachers">
+      <title>Teachers</title>
+      <p>If you are a teacher using this
         curriculum, please join the <url
         href="https://groups.google.com/forum/#!forum/teaching-cspossible">teaching
         CSPossible group</url> which will give you access to teacher resources.
@@ -23,10 +29,10 @@
 
       <p>
         If you see errors or bugs, please report them with this <url
-        href="https://forms.gle/4gMBsv4W71vG5mNe8"
-        visual="https://forms.gle/4gMBsv4W71vG5mNe8">errors form</url>.
+        href="https://forms.gle/HaQJYsj9wczKkjZQ7">error reporting form</url>.
       </p>
-      </introduction>
+
+      </subsection>
       <subsection xml:id="sisters">
       <title>Sisters Rise Up</title>
       <p>
