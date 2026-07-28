@@ -307,7 +307,8 @@ print("The average score is", average)
       You can also use AI tools to help you debug your code, but remember that the AI tool may not always be correct, 
       so you should always check the suggestions and test your code.
     </p>
-     <image src="_static/Unit2images/rubberduck.jpg" alt="Rubber duck debugging" />
+     <image source="_static/Unit2images/rubberduck.jpg" alt="Rubber duck debugging" width="30%"/>
+     
   </subsection>
 
   <subsection>
