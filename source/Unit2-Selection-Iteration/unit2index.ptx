@@ -51,8 +51,9 @@
   <xi:include href="./unit2a-selection-mcq-exercises.ptx" />
   <xi:include href="./unit2a-selection-mixedup-code-practice.ptx" />
   <xi:include href="./unit2a-selection-coding-practice.ptx" />
-   <xi:include href="./unit2b-loops-mcq-exercises.ptx" />
+  <xi:include href="./unit2b-loops-mcq-exercises.ptx" />
   <xi:include href="./unit2b-loops-mixedup-code-practice.ptx" />
   <xi:include href="./unit2b-loops-coding-practice.ptx" />
+  <xi:include href="./appinventor-lights-off-app.ptx" /> 
   
   </chapter>

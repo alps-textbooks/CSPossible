@@ -970,11 +970,11 @@ turt.goto(0, 0)
 </subsection>
 
       <subsection xml:id="appinventor-activity2">
-      <title>App Inventor Project Continued</title>
+      <title>App Inventor Project Continued (Optional)</title>
 
-
-    <p>If your class wants to create mobile apps using MIT's App Inventor. 
-   finish the <url href="unit1-appinventor-paint.html">Paint Pot Tutorial</url> part 2 and enhancements.
+    <p>If your class started the Paint Pot app using MIT's App Inventor, you can now 
+   finish the <url href="unit1-appinventor-paint.html#paint-part2">Paint Pot Tutorial</url> part 2, 
+   enhancements, and reflections.
         </p>
       
     </subsection>

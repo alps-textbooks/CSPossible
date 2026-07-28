@@ -7,7 +7,7 @@
   <introduction>
     <p>Quick Links: 
       <xref text="global" ref="sequencing,print,sequencing-print, debugging, turtles, tracing, 
-      coding-challenge-turtle-project, LOs-1-5, vocab-1-5, additional-activities"/>
+      coding-challenge-turtle-project, LOs-1-5, vocab-1-5, appinventor-setup"/>
     </p>
 
     <p>In this lesson, we will explore algorithms using sequential steps and flowcharts, and 
@@ -778,11 +778,11 @@ print( teeny.xcor() )
 
     </subsection>
 
-    <subsection xml:id="additional-activities">
-      <title>Additional Activities</title>
-
-    <p><term>App Inventor:</term> Your class may also choose to create mobile apps using MIT's App Inventor. 
-    If so, this is a good time to do <url href="unit1-appinventor-setup.html">App Inventor Setup lesson</url> in this unit. 
+  
+   <subsection xml:id="appinventor-setup">
+      <title>App Inventor Setup (Optional)</title>
+    <p>Your class may also choose to create mobile apps using MIT's App Inventor. 
+    If so, this is a good time to do <url href="unit1-appinventor-setup.html">App Inventor Setup lesson</url>. 
         </p>
       
     </subsection>

@@ -1172,7 +1172,7 @@ print(name + " is " + age + " years old")
   </subsection>
 
       <subsection xml:id="appinventor-activity1">
-      <title>App Inventor Project</title>
+      <title>App Inventor Project (Optional)</title>
 
 
     <p>If your class wants to create mobile apps using MIT's App Inventor. 

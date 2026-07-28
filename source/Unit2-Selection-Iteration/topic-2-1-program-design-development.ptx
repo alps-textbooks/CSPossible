@@ -8,7 +8,7 @@
   <introduction>
      <p>Quick Links: 
       <xref text="global" ref="development-process, design-thinking, user-research, documentation,
-      reuse-cite-digital-content, LOs-2-1, vocab-2-1"/>
+      reuse-cite-digital-content, LOs-2-1, vocab-2-1, appinventor-design"/>
     </p>
     <p>In this unit, we will learn how to design and develop programs that meet user needs with  
       more complex Python control structures such as selection and repetition.
@@ -1069,5 +1069,15 @@ print("The area of the rectangle is:", area)
       </cardsort>
     </activity>
     </subsection>
-   
+
+  <subsection xml:id="appinventor-design">
+      <title>App Inventor Lights Off and Design Project (Optional)</title>
+
+    <p>If your class wants to create mobile apps using MIT's App Inventor. 
+   visit the <url href="appinventor-lights-off-app.html">Lights Off App Lesson</url> and do 
+   sections 2.14.1 Tutorial and 2.14.2 Design your Own App Iteration 1 using Design Thinking. 
+   The rest of the sections can be completed after the next two lessons.
+        </p>
+      
+      </subsection>
 </section>

@@ -9,7 +9,7 @@
 
   <introduction>
      <p>Quick Links: 
-      <xref text="global" ref="decisions, relational-operators, logical-operators, unplugged-logic-project, LOs-2-2, vocab-2-2"/>
+      <xref text="global" ref="decisions, relational-operators, logical-operators, unplugged-logic-project, LOs-2-2, vocab-2-2, appinventor-lights-off-iteration2"/>
     </p>
     <p>Apps are a lot more fun if they can respond to different user actions and decisions. For example, if you are playing a game, the app can check whether 
       you have enough points to move to the next level. A social media app needs to ask you for your password and check that
@@ -739,4 +739,15 @@ print("Eligible for discount?", age_between_12_and_18 or is_student)
       </cardsort>
     </activity>
   </subsection>
+
+    <subsection xml:id="appinventor-lights-off-iteration2">
+      <title>App Inventor Project Continued (Optional)</title>
+
+    <p>If your class started the Lights Off app in MIT's App Inventor, you
+      can continue to do section 2.14.3 Iteration 2 of your project in the
+   <url href="appinventor-lights-off-app.html#iteration2-appinventor">App InventorLights Off App Lesson</url>.
+   The rest of the sections can be completed after the next lesson.
+        </p>
+      
+      </subsection>
 </section>

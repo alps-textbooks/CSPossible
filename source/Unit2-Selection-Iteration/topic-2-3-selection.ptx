@@ -12,7 +12,7 @@
     <introduction>
       <p>Quick Links: 
       <xref text="global" ref="selection-in-algorithms, unplugged-ifs, if-statements, if-else, 
-      nested-conditionals, adventure-project, LOs-2-3, vocab-2-3"/>
+      nested-conditionals, adventure-project, LOs-2-3, vocab-2-3, appinventor-lights-off-iteration3"/>
     </p>
     <p>Up until now, we have been writing code one line at a time in sequence which then gets executed by the 
       computer in that sequential order by default. However, we can create more complex algorithms that do not 
@@ -1040,4 +1040,13 @@ else:
     </activity>
     </subsection>
 
+        <subsection xml:id="appinventor-lights-off-iteration3">
+      <title>App Inventor Project Continued (Optional)</title>
+
+    <p>If your class started the Lights Off app in MIT's App Inventor, you
+      can finish your app in section 2.14.4 Iteration 3 which uses if blocks and 2.14.5 Reflection in the 
+   <url href="appinventor-lights-off-app.html#iteration3-appinventor">App InventorLights Off App Lesson</url>.
+        </p>
+      
+      </subsection>
 </section>
