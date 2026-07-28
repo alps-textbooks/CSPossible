@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="aboutcsp">
+
+  <title>About AP CSP</title>
+
+  <p>
+  AP Computer Science Principles (CSP) is an introductory college-level computing course 
+  designed to introduce students to the field of computer science and its applications.
+  Rather than focusing only on coding, AP CSP explores the broader ideas of computing,
+  including algorithms, Artificial Intelligence (AI), data, the Internet, cybersecurity, 
+  and the impacts of computing on society. No prior programming experience is required.
+  Find out more about the AP exam at <url href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles">
+  College Board AP CSP site</url>. </p>
+  
+  <p>CSPossible was created to follow the currently being redesigned College Board AP CSP framework 
+    and exam which will go into effect in 2028.
+  </p>
+ 
+ </section>

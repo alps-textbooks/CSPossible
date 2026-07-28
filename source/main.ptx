@@ -7,21 +7,6 @@
   <book xml:id="cspossible">
     <title>CSPossible</title>
      <subtitle>AP CSP 2027+ in Python</subtitle>
- 
-  <introduction>
-      <p>
-        Welcome to CSPossible! This free course follows the College
-        Board 2027-2028 revisions for AP CSP, an introductory college-level
-        computer programming course in Python.  To make sure the site saves your answers on questions, please click on
-        the person icon at the top to register or login to your Runestone
-        course. If you are a teacher using this
-        curriculum, please join the <url
-        href="https://groups.google.com/forum/#!forum/teaching-cspossible"
-        >teaching
-        CSPossible group</url> which will give you access to teacher resources.
-      </p>
-
-    </introduction>
 
     <!-- Include chapters -->
       <xi:include href="./Unit0/unit0index.ptx" />
@@ -38,26 +23,6 @@
         <index-list />
       </index>
     </backmatter>
-
-    <conclusion>
-      <p>
-        If you see errors or bugs, please report them with this <url
-        href="https://forms.gle/4gMBsv4W71vG5mNe8"
-        visual="https://forms.gle/4gMBsv4W71vG5mNe8">errors form</url>.
-      </p>
-      
-      <p>
-       If you are a woman taking Advanced Placement Computer Science (CSP and/or CSA) and 
-       identify as Black, Hispanic/Latina, and/or Native American you are eligible for a free 
-       mentoring program run by Dr. Barbara Ericson at the University of Michigan. Sisters Rise Up offers weekly 
-       one-hour remote help sessions and monthly two hour special sessions.  Students who enroll 
-       in the program and send in their score(s) on the AP exams before the end of August 
-       receive a $100 gift card.  The help sessions are led by experienced undergraduate college 
-       students.  Students can start the enrollment process by providing information for a 
-       parent or guardian at <url href="https://tinyurl.com/55z7tyb9">
-       https://tinyurl.com/55z7tyb9</url>.
-      </p>
-    </conclusion>
 
   </book>
 </pretext>

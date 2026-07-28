@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="introduction-csp">
+
+  <title>Introduction</title>
+  <introduction>
+   <p>
+        Welcome to CSPossible (beta version)! Discover what’s possible when you learn computer science!
+        This free course is designed to follow the College Board’s 2027–2028 AP Computer Science Principles 
+        (AP CSP) revisions. You’ll learn to code using Python, explore app development with optional 
+        App Inventor lessons, and explore Artificial Intelligence (AI), data, cybersecurity,and the Internet.
+        With computer science, you will build skills to solve problems, think creatively, 
+        and bring your own ideas to life!
+     </p>
+
+     <p>To make sure the site saves your answers on questions, please click on
+        the person icon at the top to register or login to your Runestone
+        course. If you are a teacher using this
+        curriculum, please join the <url
+        href="https://groups.google.com/forum/#!forum/teaching-cspossible">teaching
+        CSPossible group</url> which will give you access to teacher resources.
+      </p>
+
+      <p>
+        If you see errors or bugs, please report them with this <url
+        href="https://forms.gle/4gMBsv4W71vG5mNe8"
+        visual="https://forms.gle/4gMBsv4W71vG5mNe8">errors form</url>.
+      </p>
+      </introduction>
+      <subsection xml:id="sisters">
+      <title>Sisters Rise Up</tlte>
+      <p>
+       If you are a woman taking Advanced Placement Computer Science (CSP and/or CSA) and 
+       identify as Black, Hispanic/Latina, and/or Native American you are eligible for a free 
+       mentoring program run by Dr. Barbara Ericson at the University of Michigan. Sisters Rise Up offers weekly 
+       one-hour remote help sessions and monthly two hour special sessions.  Students who enroll 
+       in the program and send in their score(s) on the AP exams before the end of August 
+       receive a $100 gift card.  The help sessions are led by experienced undergraduate college 
+       students.  Students can start the enrollment process by providing information for a 
+       parent or guardian at <url href="https://tinyurl.com/55z7tyb9">
+       https://tinyurl.com/55z7tyb9</url>.
+      </p>
+
+</subsection>
+<subsection xml:id="authors">
+<title>Authors</title>
+      <p>This course was created by Dr. Beryl Hoffman, Professor of Computer Science at Elms College, 
+      MA, to follow the newest College Board AP CSP guidelines with the help of many teachers.
+      Some materials were borrowed and revised from Mobile CSP, CSAwesome, and Dr. Barb Ericson's 
+      AP CSP and Python 4 Everybody courses on Runestone. Special thanks to Leigh Anne Fitz of Virginia Beach Public Schools for 
+      creating the solutions for teachers and for testing and debugging the beta version, Kate McDonnell 
+      from Cherry Creek Schools in Colorado and Jennifer Rosato of Univerity of Minnesoto, and all of the beta
+      version testers!   
+      </p>
+</subsection>
+</section>

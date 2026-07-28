@@ -71,7 +71,8 @@
   <html>
    <!--The platform host can be "web" or "runestone"-->
    <platform host="runestone"/>
-   <baseurl href="https://runestone.academy/ns/books/published/cs-phenomenal/"/>
+   <index-page ref="cspossible"/>
+
     <!-- knowled checkpoints interfere with ActiveCode problems -->
     <knowl exercise-inline="no" example="no" listing="no"/>
     <!-- for scratch code language -->

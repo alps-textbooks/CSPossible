@@ -71,7 +71,8 @@
   <html short-answer-responses="always">
    <!--The platform host can be "web" or "runestone"-->
    <platform host="web"/>
-   <baseurl  href="http://localhost:8128/output/web/"/>
+   <index-page ref="cspossible"/>
+
     <!-- knowled checkpoints interfere with ActiveCode problems -->
     <knowl exercise-inline="no" example="no" listing="no"/>
     <!-- for scratch code language -->
