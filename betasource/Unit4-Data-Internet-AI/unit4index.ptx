@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit4" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>AI, Data, and the Internet</title>
+ 
+
+  <introduction>
+    <p>
+      This unit introduces students to the Internet, Data Processing, and AI.
+    </p>
+
+    <p>
+      <ul>
+      
+        <li>
+          <p>Instructional days: 30 days</p>
+        </li>
+
+        <li>
+          <p>
+            Time Estimate: 90 minutes per lesson
+          </p>
+        </li>
+
+      
+      </ul>
+    </p>
+   </introduction>
+ <!--
+  <xi:include href="./topic4-1-internet.ptx" />
+  <xi:include href="./topic4-2-effects.ptx" />
+  <xi:include href="./topic4-3-privacy-security.ptx" />
+  <xi:include href="./topic4-4-data-analysis.ptx" />
+  <xi:include href="./topic4-5-ai-algorithm-development.ptx" />
+  <xi:include href="./topic4-6-ai-ethics.ptx" />
+  <xi:include href="./topic4-7-machine-learning.ptx" />
+  -->
+  
+  </chapter>

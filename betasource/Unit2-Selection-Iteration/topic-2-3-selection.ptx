@@ -1,0 +1,899 @@
+<section xml:id="topic-2-3-selection">
+  <time minutes="90"/>
+  <title>Selection</title>
+
+   <idx>selection</idx>
+   <idx>conditional</idx>
+   <idx>algorithm</idx>
+   <idx>flowchart</idx>
+  
+    <introduction>
+      <p>Quick Links: 
+      <xref text="global" ref="selection-in-algorithms, unplugged-ifs, if-statements, if-else,        nested-conditionals, adventure-project,  vocab-2-3, appinventor-lights-off-iteration3"/>
+    </p>
+    <p>Up until now, we have been writing code one line at a time in sequence which then gets executed by the 
+      computer in that sequential order by default. However, we can create more complex algorithms that do not 
+      follow the default sequential order.   The building blocks of algorithms are <term>sequencing</term>,
+      <term>selection</term>, and <term>repetition</term>. In this lesson, we will learn to use selection to 
+      branch the code into different paths based on a condition. This allows us to create algorithms that can make decisions 
+      and respond to different situations.
+    </p>
+        
+    <image source="_static/Unit2images/sequence-selection-repetition.png" width="60%" alt="sequence selection repetition"/>
+
+  </introduction>
+
+  <subsection xml:id="selection-in-algorithms">
+    <title>Selection in Algorithms</title>
+
+    <p><term>Selection</term> is making a choice based on a true or false
+      decision. For example, every time you login, the system checks your password and either grants access or denies it based on whether 
+      the password is correct.</p>
+
+      <image source="_static/Unit2images/password-flowchart.png" width="60%" alt="Is your password correct flowchart"/>
+
+    <p>In flowcharts, selection is represented by a diamond shape with a condition inside. 
+      The flowchart branches into different paths based on the outcome of the condition. </p>
+    <image source="_static/Unit2images/if-else-flowchart.png" width="60%" alt="if else flowchart"/>
+    
+    <activity label="parsons-if" numbered="yes" adaptive="yes" indentation="show">
+      <statement>
+        <p>
+    Put the following steps of the algorithm in order. 
+    </p>
+    </statement>
+     <blocks>
+        <block>
+          <cline>If the homework is submitted on time:</cline>
+        </block>
+        <block>
+          <cline>Record it as On Time.</cline>
+        </block>
+        <block>
+          <cline>Else (Otherwise):</cline>
+        </block>
+        <block>
+          <cline>Record it as Late.</cline>
+        </block>
+      </blocks>
+    </activity>
+
+    <p>This more complex flowchart for choosing a pet. Which path would you choose in this flowchart?</p> 
+    
+     <image source="_static/Unit1images/pet-flowchart.png" width="80%" alt="Choosing a pet flowchart"/>
+  </subsection>
+
+  <subsection xml:id="unplugged-ifs">
+    <title>Unplugged Activity: Simon Says Ifs</title>
+  
+    <idx><h>unplugged</h><h>ifs</h></idx>
+    <idx><h>projects</h><h>unplugged simon says ifs</h></idx>
+
+     <project label="unplugged-ifs-simon-says">
+       <title>Simon Says Ifs</title>
+      <statement><p>
+        In groups or as a class, play a game of Simon Says Ifs. One person will give commands using if statements and 
+        if-else statments. The players will follow the commands only if the condition is true or false for them.
+        You do not have to say or listen for "Simon Says". Here are some examples: 
+        <ul>
+          <li>If you are wearing blue, clap your hands.</li>
+          <li>If your first name starts with a "B", stomp your feet.</li>
+          <li>If you like cats, then meow, else bark.</li>
+        </ul>
+        Come up with your own 3 commands and write them below. Make sure they start with "if". At least one
+        of them should also have an "else" part.
+      </p></statement>
+
+       <response/>
+     </project>
+  
+  </subsection>
+
+  <subsection xml:id="if-statements">
+    <title>Conditional Statements (If Statements)</title>
+
+    <idx>if</idx>
+    <idx>if statement</idx>
+    <idx>conditional statement</idx>
+    <idx>conditionals</idx>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=fVUL-vzrIcM">video</url> about conditional 
+      statements using the words <em>if</em> and <em>else</em>.</p>
+
+      <video youtube="fVUL-vzrIcM" label="video-if-else"/>
+
+    <p>Almost all programming languages have a keyword called <term>if</term> which is used to implement selection (also called conditional statements).
+       If-statements are followed by a block of statements that are only executed if the condition is true. In languages like C, C++, Java, JavaScript, and the AP Pseudocode above,
+       the block of code is marked by using curly braces {}. But Python uses colon (:) after the if condition and indentation to mark
+       the block of statements under the if; the parentheses around the condition are optional in Python and usually left out.
+       The syntax for a Python if-statement is below:</p>
+    <program language="python">
+      <code>
+if condition:
+   block of statements
+      </code>
+   </program>
+
+   <p>The <term>condition</term> in an if-statement is any <term>Boolean</term> expression (like we learned in the last lesson) that evaluates to either true or false,
+      for example <em>number &gt; 0</em>. If you forget to indent the statements under the if statement, you will get an indentation error. Try it 
+    in the code below.</p>
+   
+    <activity label="if-name">
+    <statement>
+      <p>The following code asks for your name and then prints out a greeting. Run the code twice and enter "Bart" the first time, 
+        and your name another time. The code prints different things depending on the input!
+        Change the code to check against your name instead of "Bart" and run again.
+      </p>
+    </statement>
+    <program interactive="activecode" language="python">
+        <code>
+name = input("Enter your name: ")
+if name == "Bart":
+    print("Welcome", name)
+
+print("Good bye", name)
+        </code>
+     <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def test1(self):
+                self.assertNotIn("Bart",self.getEditorText(), "Change Bart to your name and run again!")
+
+        myTests().main()
+     </tests>
+     </program>
+    </activity>
+
+    <idx>in</idx>
+    
+    <p>Python also has a very useful operator called <term>in</term> that checks if a substring is 
+      inside a string. Try it in the code above instead of using "==" to check if part of your name
+    is in the input string. For example,</p>
+    <program language="python">
+      <code>
+if "B" in name:
+    print("Welcome all names with B!")
+      </code>
+    </program>
+
+   <activity label="positive-negative">
+    <statement>
+      <p>The following code checks if an inputted number is positive. Add another if statement to check if the number is negative.
+        Run the code twice to test it once with a positive number and once with a negative number.
+      </p>
+    </statement>
+    <program interactive="activecode" language="python">
+        <code>
+number = int(input("Enter a number: "))
+if number &gt; 0:
+   print("The number is positive.")
+
+# Add another if statement here to check if the number is negative
+# Make sure you to indent the print statement under the if statement
+
+        </code>
+     <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def test1(self):
+                self.assertIn("&lt; 0",self.getEditorText(), "Use &lt; 0")
+
+        myTests().main()
+     </tests>
+     </program>
+    </activity>
+
+    <activity label="trace-if1">
+    <statement>
+
+      <p>Given the code below, what will be printed?</p>
+      <program language="python">
+        <code>
+x = 10
+if x &gt;= 10:
+    print("A")
+print("B")
+</code>
+      </program>
+
+    </statement>
+    <choices randomize="yes">
+
+      <choice>
+        <statement>
+          <p>A</p>
+        </statement>
+        <feedback>
+          <p>Since 10 is greater than or equal to 10, A will be printed, but then the program continues running after the if statement,
+            so more will be printed.
+          </p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>B</p>
+        </statement>
+        <feedback>
+          <p>10 is greater than or <em>equal</em> to 10</p>
+        </feedback>
+      </choice>
+
+      <choice correct="yes">
+        <statement>
+          <p>A and B</p>
+        </statement>
+        <feedback>
+          <p>Correct. Since 10 is greater than or equal to 10, A will be printed, but then the program continues running after the if statement,
+            so B will also be printed.</p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>Nothing</p>
+        </statement>
+        <feedback>
+          <p>x which is 10 is greater than or equal to 10. </p>
+        </feedback>
+      </choice>
+    </choices>
+
+  </activity>
+
+    <activity label="trace-if2">
+    <statement>
+
+      <p>Given the code below, what will be printed?</p>
+      <program language="python">
+        <code>
+x = 10
+if x &gt; 10:
+    print("A")
+</code>
+      </program>
+
+    </statement>
+    <choices randomize="yes">
+
+      <choice>
+        <statement>
+          <p>A</p>
+        </statement>
+        <feedback>
+          <p>10 is not greater than 10</p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>B</p>
+        </statement>
+        <feedback>
+          <p>There is no print B statement in this code.</p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>10</p>
+        </statement>
+        <feedback>
+          <p>No, x is not printed.</p>
+        </feedback>
+      </choice>
+
+      <choice correct="yes">
+        <statement>
+          <p>Nothing</p>
+        </statement>
+        <feedback>
+          <p>Since 10 is not greater than 10, nothing will be printed.</p>
+        </feedback>
+      </choice>
+    </choices>
+
+  </activity>
+   
+  </subsection>
+
+  <subsection xml:id="if-else">
+    <title>If-Else Statements</title>
+<idx>if-else statements</idx>
+<idx>else</idx>
+
+    <p>If you want to choose between two actions, use an <term>if-else statement</term>. 
+      Although curly braces are used in some programming languages, in Python, the syntax for an if-else statement 
+      uses a : and indentation like below:</p>
+    <program language="python">
+      <code>
+if condition:
+   first block of statements
+else:
+   second block of statements
+      </code>
+   </program>
+
+   <p>If the condition in an if-else statement is true, the first block of statements executes. If the condition is false, 
+    the second block of statements executes. In the activecode activity above, we wrote two if statements to check for positive and 
+    negative numbers, but we could have used an if-else statement to make the code more efficient.</p>
+    <program language="python">
+        <code>
+          if number &gt; 0:
+             print("The number is positive.")
+          else:
+             print("The number is negative or 0.")
+             </code>
+     </program>
+
+     <activity label="mixedup-if-else" numbered="yes" indentation="yes" language="python">
+    <statement>
+      <p>The following program segment should ask whether the user wants to terminate the program and print out the
+        appropriate statement based on the user’s response. The blocks have been mixed up and include extra blocks
+        that aren’t needed in the solution. Drag the needed blocks from the left and put them in the correct order
+        on the right. Make sure it is indented correctly!</p>
+    </statement>
+    <blocks>
+      <block order="6">
+        <cline>response = input("Terminate the program (Y/N)?")</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>if response == "Y":</cline>
+        </choice>
+        <choice>
+          <cline>if response = "Y": </cline>
+        </choice>
+      </block>
+      <block order="7">
+        <cline> print("The program is now ending.")</cline>
+      </block>
+      <block order="1">
+          <cline>else:</cline>
+      </block>
+      <block order="4">
+        <cline> print("The program will continue to run.")</cline>
+      </block>
+    </blocks>
+  </activity>
+     <p>
+        Remember to use <c>==</c>, not <c>=</c>, in the Boolean condition of an if
+        statement to test a variable. One <c>=</c> assigns, two <c>==</c>
+        tests!
+            </p>
+
+<activity label="if-else-activity">
+      <statement>
+        <p>
+        Change the following code so that the if condition checks against your favorite color (for example, "blue").
+        Add an else statement that prints out "That's not my favorite color. My favorite color is ..." if the user enters a different color.
+        Add another if/else statement to check if their favorite ice cream flavor is your favorite flavor (for example, "chocolate"). 
+        If it is, print out "That's my favorite flavor too!", else print out "That's not my favorite flavor. My favorite flavor is ..."
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+favoriteColor = input("What is your favorite color? ")
+# change this to your favorite color and then add an else statement
+if favoriteColor == "blue":
+   print("That's my favorite color too!")
+# add an else
+
+favoriteFlavor = input("What is your favorite ice cream flavor? ")
+# Add an if/else statement to check if their favorite flavor is your favorite flavor
+
+    </code>
+    <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              # remove comments
+              actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+              input_count = actual.count("else")
+              self.assertGreaterEqual(input_count, 2, "at least 2 else statements")
+
+          myTests().main()
+    </tests>
+      </program>
+</activity> 
+
+<idx>%</idx>
+<idx>mod</idx>
+<idx>even</idx>
+<idx>odd</idx>
+
+    <activity label="trace-if-else-even">
+    <statement>
+
+      <p>Given the code below, what will be printed if <c>x = 9</c>? In this code, mod (<c>%</c>) is used
+      to check if a number is even or odd with the expression <c>x % 2 == 0</c>, because when even numbers are divided by 2, 
+      there is no remainder, but odd numbers always have a remainder when divided by 2. </p>
+      <program language="python">
+        <code>
+x = 9
+if x % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+</code>
+      </program>
+
+    </statement>
+    <choices randomize="yes">
+
+      <choice>
+        <statement>
+          <p>Even</p>
+        </statement>
+        <feedback>
+          <p>9 divided by 2 has a remainder of 1, not 0. </p>
+        </feedback>
+      </choice>
+
+      <choice correct="yes">
+        <statement>
+          <p>Odd</p>
+        </statement>
+        <feedback>
+          <p>9 divided by 2 has a remainder so it is odd. </p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>Even Odd</p>
+        </statement>
+        <feedback>
+          <p>One or the other will be printed, not both.</p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>Nothing</p>
+        </statement>
+        <feedback>
+          <p>No, it will print Odd or Even. </p>
+        </feedback>
+      </choice>
+    </choices>
+
+  </activity>
+
+    <activity label="grades-separate-ifs">
+      <statement>
+        <p>
+          The following code checks a student's grade and prints out the letter grade. 
+          Run it to see that it prints both A and C for a grade of 90! This is because the second if statement is not quite right 
+          because 90 is &gt;= 90 and 90 is &gt;= 70.  Fix the if statement for the C grade so that it only prints C 
+          if the grade is &gt;= 70 and &lt; 80. 
+          Then add another if statement to check for a D grade (60- up to 70) and another if statement to check for an F grade (0- up to 60).
+          Test your code by changing the grade and running it multiple times to test every if statement.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+grade = 90   
+if grade &gt;= 90:
+    print("A!")
+if grade &gt;= 80 and grade &lt; 90:
+    print("B!")
+# Fix this if statement to check for a C grade (70-79)
+if grade &gt;= 70:
+    print("C!")
+# Add another if statement to check for a D grade (60- up to 70)
+# Add another if statement to check for an F grade (less than 60)
+
+
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("&lt; 70",self.getEditorText(), "Use &lt; 70")
+              self.assertIn("&gt;= 60",self.getEditorText(), "Use &gt;= 60")
+              self.assertIn("&lt; 60",self.getEditorText(), "Use &lt; 60")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+  </subsection>
+
+  <subsection xml:id="nested-conditionals">
+    <title>Nested Conditional Statements</title>
+
+    <p>If statements can be nested inside other if statements forming <term>nested conditionals</term>. The inner if statement is 
+      only evaluated if the outer if statement's condition is true. For example, the following code which 
+    could be written with nested if statements or an <c>and</c> logical operator. Notice that in Python,
+    the nested if statement is indented within the block of the outer if statement to indicate that it is inside it.</p>
+      <program language="python">
+        <code>
+# Nested if statements
+if userLoggedIn:
+    if userHasPermission:
+        print("Access granted.")
+
+# Or using an and logical operator
+if userLoggedIn and userHasPermission:
+    print("Access granted.")
+      </code>
+      </program>
+  
+<activity label="nested-ifs">
+      <statement>
+        <p>
+          The following code figures out a ticket price for a movie according to the user's age 
+          and the time at which the movie starts. Add a nested if statement to check for whether
+          the movie is playing before 3 PM for a matinee discount. 
+          The movie theater opens at 1 PM, so don't worry about AM hours.
+          The variables age and hour have been set for testing, but you can comment out those lines
+          to use your input too.     </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+age = int(input("Enter age:"))
+hour = int(input("Enter PM hour (1-9):"))
+
+# For testing
+age = 15
+hour = 6
+
+if age &gt; 12:
+   # Add a nested if statement to test hour
+   # Set price to 12 if hour is less than 3, else set price to 15  
+   
+
+
+else:
+    price = 10
+    
+print("Ticket price:", price, "dollars.")
+      </code>
+       <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              # remove comments
+              actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+              input_count = actual.count("if")
+              self.assertGreaterEqual(input_count, 2, "at least 2 if statements")
+              input_count = actual.count("else")
+              self.assertGreaterEqual(input_count, 2, "at least 2 else statements")
+              self.assertIn("15",self.getOutput(),"Output when age is 15 and hour is 6 should be 15")
+
+          myTests().main()
+       </tests>
+       
+      </program>
+    </activity>
+  
+
+    <p>Nested if statements inside of else blocks can be used to make multi-way selections. A single if-else
+      statement allows us to select between 2 branches of code. But with nested if-else-if statements, we can make
+    multiple branches. Python has a shortcut keyword for this called <term>elif</term> which stands for "else if". Here's 
+    an example of how it is used to chain together many conditions with the pattern if-elif-elif-...-else to branch the code
+    into many directions. This is the same example of grade determination that we saw before, but
+    this pattern of coding is shorter and easier to read. The extra tests for the maximum of each grade
+    range is not needed because the tests are chained together. If the grade is not greater than or equal to 90, 
+  then it must be less than 90 when you reach the second test. </p>
+
+      <program language="python">
+        <code>
+if grade &gt;= 90:
+    print("A")
+elif grade &gt;= 80:
+    print("B")
+elif grade &gt;= 70:
+    print("C")
+elif grade &gt;= 60:
+    print("D")
+else:
+    print("F")
+        </code>
+      </program>
+
+      <p>Here is a flowchart showing the if-elif-else multiple branching.</p>
+   
+      <image source="_static/Unit2images/if-elif-else-flowchart.png" width="40%" alt="if-elif-else flowchart"/>
+
+  <activity label="cndtnl-mixed-hi" xml:id="cndtnl-mixed-hi" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that sets the variable <c>message</c> to <q>Hello</q> if <c>x</c> is less than 
+        <c>2</c>, <q>Hey</q> if <c>x</c> is greater than <c>2</c>, and <q>Hi</q> otherwise. </p>
+    </statement>
+    <blocks>
+      <block order="10">
+        <choice correct="yes">
+          <cline>if x &lt; 2:</cline>
+        </choice>
+        <choice>
+          <cline>if x &lt; 2: </cline>
+        </choice>
+      </block>
+      <block order="7">
+        <cline>    message = "Hello"</cline>
+      </block>
+      <block order="8">
+        <choice correct="yes">
+          <cline>elif x &gt; 2:</cline>
+        </choice>
+        <choice>
+          <cline>else x &gt; 2: </cline>
+        </choice>
+      </block>
+      <block order="6">
+        <cline>    message = "Hey"</cline>
+      </block>
+      <block order="1">
+        <cline>else:</cline>
+      </block>
+      <block order="5">
+        <choice correct="yes">
+          <cline>    message = "Hi"</cline>
+        </choice>
+        <choice>
+          <cline>    message == "Hi" </cline>
+        </choice>
+      </block>
+    </blocks>
+  </activity>
+    
+
+    <p>Click on next to trace the execution of nested conditional statements.</p>
+ <activity label="codelensNestedIfs">
+      <statement>
+        <p>
+          Keep clicking on the Next button at the bottom of the code to see how
+          the values of the variables change as you step through the running
+          program. You can see interactive tracing in any Active Code exercise by clicking the CodeLens button. 
+        </p>
+      </statement>
+
+      <program interactive="codelens" language="python" label="codeLensNestedIfs1" xml:id="codelensNested1">
+        <code>
+grade = 50
+if grade &gt;= 90:
+    print("A")
+elif grade &gt;= 80:
+    print("B")
+elif grade &gt;= 70:
+    print("C")
+elif grade &gt;= 60:
+    print("D")
+else:
+    print("F")
+        </code>
+      </program>
+    </activity>
+  
+   <activity label="trace-nested-ifs">
+      <statement>
+        <p>What does the following code print when x has been set to 5 and y is set to -10?</p>
+        <program language="java">
+          <code>
+if x &gt; 0 and y &gt; 0:
+    print("positive")
+elif x &gt; 0 or y &gt; 0:
+    print("positive1")
+else:
+    print("negative1")
+          </code>
+        </program>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>negative1</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Not correct.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>positive</p>
+          </statement>
+
+          <feedback>
+            <p>This will only print positive if both x <em>and</em> y are positive.</p>
+          </feedback>
+        </choice>
+         <choice>
+          <statement>
+            <p>Nothing</p>
+          </statement>
+
+          <feedback>
+            <p>No, one of the conditions is true, so something will be printed.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>positive1</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Correct. Since x is positive, but y is negative, the <c>or</c> condition is true 
+              since at least 1 of them is positive, so positive1 will be printed.
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+</subsection>
+ 
+ <subsection xml:id="adventure-project">
+    <title>Adventure Coding Challenge</title>
+
+    <idx><h>coding challenge</h><h>adventure game</h></idx>
+    <idx><h>projects</h><h>adventure game</h></idx>
+    
+    <project label="coding-challenge-adventure" xml:id="adventure">
+
+      <statement>
+          <p>
+             Create an adventure game with nested if-else statements. 
+             You could work in pairs! First, spend some time planning and designing
+             your adventure locations. You may want to create a flowchart or other
+             design documentation!
+             Fill in the ...'s in the print statements and add more if statements 
+             for different choices in the adventure. Be careful with the
+             nested indentation! Be creative!
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+    action = input ("You are in ....  What direction do you want go (n,s,e,w)?")
+    if action == "n":
+        action = input ("You go north and see a .... What do you want to do? Type: run or stay.")
+        if action == "run":
+            print("You choose to run.")
+            print("...")
+        else:
+            print("You choose to stay.")
+            print("...")
+    # First level (n,s,e,w) choices
+    elif action == "s":
+        action = input ("You go south and see a .... What do you want to do?")
+        # continue the game with another if/else statement here
+
+    # Add more elif statements for e and w directions here
+
+    # Add a default else for not a valid direction
+        
+
+    print("End of Game. Click on Run to try the adventure again.")  
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              # remove comments
+              actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+              self.assertNotIn("...",actual,"Replace ... with your own adventure text")
+              input_count = actual.count("elif")
+              self.assertGreaterEqual(input_count, 3, "at least 3 elif statements")
+              input_count = actual.count("else:")
+              self.assertGreaterEqual(input_count, 3, "at least 3 else statements")
+
+          myTests().main()
+        </tests>
+      </program>
+    </project>
+
+    <activity label="selection-algorithm-reflection">
+      <title>Project Reflection on Algorithm</title>
+      <statement>
+        <p>Identify the first selection statement that you wrote on your own in your project. 
+          Explain how it works:
+          <ol>
+            <li>What is the condition or Boolean expression being tested?</li>
+            <li>When does the condition evaluate to true? </li>
+            <li>When does it evaluate to false? </li>
+            <li>What happens when if the condition is true? </li>
+            <li>What happens when if it is false?</li>
+          </ol>
+        </p>
+      </statement>
+      <response/>
+    </activity>
+
+       <activity label="selection-error-reflection">
+      <title>Project Reflection on Errors</title>
+      <statement>
+        <p>Describe a logic error (especially in the condition of the if statements) that you made or 
+           another programmer could make in your project code above.
+           Describe the program behavior resulting from this error. 
+
+        </p>
+      </statement>
+      <response/>
+    </activity>
+
+    <activity label="selection-testing-reflection">
+      <title>Project Reflection on Testing</title>
+      <statement>
+        <p>Explain how you tested your code with different inputs to make sure it worked correctly.
+        If you have access to a Gen AI system, ask it what test cases it would recommend for your code 
+        and describe your prompt andits response.
+        </p>
+      </statement>
+      <response/>
+    </activity>
+  </subsection>
+
+  <subsection xml:id="vocab-2-3">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-selection">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>selection</premise>
+        <response>the process of choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+        <premise>conditional statement</premise>
+        <response>a statement that checks a condition and executes different code depending on whether the condition is true or false</response>
+        </match>
+        <match>
+        <premise>else</premise>
+        <response>a keyword used in conditional statements to specify code that should be executed if the condition is false</response>
+        </match>
+        <match>
+        <premise>nested conditionals</premise>
+        <response>conditional statements that are placed inside other conditional statements</response>
+        </match>
+      </cardsort>
+    </activity>
+    </subsection>
+
+        <subsection xml:id="appinventor-lights-off-iteration3">
+      <title>App Inventor Project Continued (Optional)</title>
+
+    <p>If your class started the Lights Off app in MIT's App Inventor, you
+      can finish your app in section 2.14.4 Iteration 3 which uses if blocks and 2.14.5 Reflection in the 
+   <url href="appinventor-lights-off-app.html#iteration3-appinventor">App InventorLights Off App Lesson</url>.
+        </p>
+      
+      </subsection>
+</section>

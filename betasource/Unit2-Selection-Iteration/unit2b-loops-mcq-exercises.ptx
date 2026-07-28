@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-loops-mcq-exercises">
+  <title>Unit 2 Loops Multiple-Choice Exercises</title>
+
+  <p>These are exercises mostly written by Dr. Barb Ericson in the Python for Everybody Interactive ebook on Runestone.</p>
+
+    <activity label="e5mc1">
+    <statement>
+      <p> What is the result of executing the following code?</p>
+       <program language="python">
+        <code>number = 5
+while number &lt;= 5:
+    if number &lt; 5:
+        number = number + 1
+    print(number)</code></program>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>The program will loop indefinitely</p>
+        </statement>
+        <feedback>
+          <p>Correct! This code loops while number is less than or equal to 5. number only increments if it is less than 5, and it's originally set to 5, so 'number' never changes.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The value of number will be printed exactly 1 time</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be true if line 3 said "if number &lt;= 5:". Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The while loop will never get executed</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be true if number was initialized as a number larger than 5 to start. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The value of number will be printed exactly 5 times</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be true if number was initialized as 0. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="e5mc2">
+    <statement>
+      <p> What will the following code print?</p>
+       <program language="python">
+        <code>counter = 1
+sum = 0
+while counter &lt;= 6:
+    sum = sum + counter
+    counter = counter + 2
+print(sum)</code></program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>12</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be true if counter was initialized as 0. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>9</p>
+        </statement>
+        <feedback>
+          <p>Correct! This loop executes 3 times.  After the first loop sum = 1 and counter = 3, after the second loop sum = 4 and counter = 5, and after the third loop sum = 9 and counter = 7.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>7</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This is the value of counter, but this code prints the value of sum. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>8</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be the value of counter after the loop if counter was initialized as 0. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+    <activity label="e5mc4">
+    <statement>
+      <p> What is the last thing printed when the following code is run?</p>
+       <program language="python">
+        <code>number = 0
+while number &lt;= 10:
+    print("Number: ", number)
+    number = number + 1</code></program>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>Number: 10</p>
+        </statement>
+        <feedback>
+          <p>Correct! Since this while loop continues while number is less than or equal to 10, the last iteration of the loop will print "Number: 10".</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Number: number</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Because number is an variable, the print statement will print its value, not its name. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Number: 0</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Although number is initialized as 0, it increments each iteration. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Number: 11</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be true if number was incremented before each print statement instead of after. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="e5mc5">
+    <statement>
+      <p> What does the following code print?</p>
+       <program language="python">
+        <code>output = ""
+x = -5
+while x &lt; 0:
+    x = x + 1
+    output = output + str(x) + " "
+print(output)</code></program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>5 4 3 2 1</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! x is initialized as -5, not 5. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>-4 -3 -2 -1 0</p>
+        </statement>
+        <feedback>
+          <p>Correct! The value of x is incremented before it is printed, so the first value printed is -4.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>-5 -4 -3 -2 -1</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! x is incremented before it is printed. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>This is an infinite loop, so nothing will be printed</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! x increases each loop and will eventually be positive. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="e5mc6">
+    <statement>
+      <p> What are the values of var1 and var2 that are printed when the following code executes?</p>
+       <program language="python">
+        <code>output = ""
+var1 = -2
+var2 = 0
+while var1 != 0:
+    var1 = var1 + 1
+    var2 = var2 - 1
+print("var1: " + str(var1) + " var2 " + str(var2))</code></program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>var1 = -2, var2 = 0</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! These are the initial values, but they change during the loop. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>var1 = 0, var2 = -2</p>
+        </statement>
+        <feedback>
+          <p>Correct! This loop will execute two times, so var1 will be 0 and var2 will be -2 when the loop is exited.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>var1 = 0, var2 = -1</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The body of the loop will finish executing before the value of var1 is re-tested. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>This is an infinite loop, so nothing will be printed</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! var1 will eventually equal 0, so this loop isn't infinite. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="e5mc8">
+    <statement>
+      <p> The following code contains an infinite loop.  Which is the best explanation for why the loop does not terminate?</p>
+      <program language="python">
+        <code>
+n = 10
+answer = 1
+while n &gt; 0:
+    answer = answer + n
+    n = n + 1
+print(answer)
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>n starts at 10 and is incremented by 1 each time through the loop, so it will always be positive.</p>
+        </statement>
+        <feedback>
+          <p>Correct! The loop will run as long as n is positive.  In this case, we can see that n will never become non-positive, so it will run infinitely.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>answer starts at 1 and is incremented by n each time, so it will always be positive.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! While it is true that answer will always be positive, answer is not considered in the loop condition. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>You cannot compare n to 0 in the while loop. You must compare it to another variable.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! It is perfectly valid to compare n to 0. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>In the while loop body, we must set n to False, and this code does not do that.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The loop condition must become False for the loop to terminate, but n by itself is not the condition in this case. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="e5mc9">
+    <statement>
+      <p> Which type of loop can be used to perform the following iteration: You choose a positive integer at random and then print the numbers from 1 up to and including the selected integer.</p>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>a for-loop or a while-loop</p>
+        </statement>
+        <feedback>
+          <p>Correct! Although you do not know how many iterations you loop will run before the program starts running, once you have chosen your random integer, Python knows exactly how many iterations the loop will run, so either a for-loop or a while-loop will work.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>only a for-loop</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! As you learned in section 7.2, a while-loop can always be used for anything a for-loop can be used for. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>only a while-loop</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Although you do not know how many iterations you loop will run before the program starts running, once you have chosen your random integer, Python knows exactly how many iterations the loop will run, so this is an example of definite iteration. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+    <activity label="e5mc12">
+    <statement>
+      <p> Which of the following will add up the numbers from 1 to 4?</p>
+    
+        <ol>
+          <li>
+      <program language="python">
+        <code>
+for i in range(1,4):
+    sum = 0
+    sum = sum + i
+</code>
+      </program>
+      
+            </li>
+      <li>
+      <program language="python">
+        <code>
+sum = 0
+for i in range(1,4):
+    sum = sum + i
+</code>
+      </program>
+     
+            </li>
+        <li>
+      <program language="python">
+        <code>
+for i in range(1,5):
+    sum = 0
+    sum = sum + i
+</code>
+      </program>
+      
+            </li>
+        <li>
+      <program language="python">
+        <code>
+sum = 0
+for i in range(1,5):
+    sum = sum + sum
+</code>
+      </program>
+   
+            </li>
+        <li>
+      <program language="python">
+        <code>
+sum = 0
+for i in range(1,5):
+    sum = sum + i
+</code>
+      </program>
+    </li>
+    </ol>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>1.</p>
+        </statement>
+        <feedback>
+          <p>This will loop from 1 to 3 and reset sum to 0 at the start of each iteration.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>2.</p>
+        </statement>
+        <feedback>
+          <p>This will loop from 1 to 3.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3.</p>
+        </statement>
+        <feedback>
+          <p>This will loop from 1 to 4, but will reset the sum to 0 at the start of each iteration.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>4.</p>
+        </statement>
+        <feedback>
+          <p>This will loop from 1 to 4, but adds sum to itself.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>5.</p>
+        </statement>
+        <feedback>
+          <p>This will loop from 1 to 4 and calculate the sum of those values.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="ctp-iterations-07_whileloops_7">
+    <statement>
+      <p> What does the following code print?</p>
+       <program language="python">
+        <code>x = 6
+while(x &gt; 4)
+ print(x, end=' ')
+ x = x - 1</code></program>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>6 5</p>
+        </statement>
+        <feedback>
+          <p>Correct! Each time the loop runs, value of x decrements by 1. So, when its value gets down to 4, the loop condition is no longer satisfied.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>6 5 4</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Each time the loop runs, value of x decrements by 1. So, when its value gets down to 4, the loop condition is no longer satisfied.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>6 5 4 3</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Each time the loop runs, value of x decrements by 1. So, when its value gets down to 4, the loop condition is no longer satisfied.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>5 4 3</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Each time the loop runs, value of x decrements by 1. So, when its value gets down to 4, the loop condition is no longer satisfied.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="ctp-iterations-07_whileloops_8">
+    <statement>
+      <p> What does the following code print?</p>
+       <program language="python">
+        <code>i=0
+
+while(i &lt; 3)
+     print(i, end=' ')</code></program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>0 0 0</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The value of i never changes from 0. So, the loop condition is always true and it will keep printing i=0.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>0 1 2</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The value of i never changes from 0. So, the loop condition is always true and it will keep printing i=0.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 . . . .</p>
+        </statement>
+        <feedback>
+          <p>Correct! The value of i never changes from 0. So, the loop condition is always true and it will keep printing i=0.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . . . .</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The value of i never changes from 0. So, the loop condition is always true and it will keep printing i=0.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="ctp-iterations-05_whileloops_9">
+    <statement>
+      <p> Which of the following correctly translates the for loop below to a while loop?</p>
+      <dl>
+        <li>
+          <title>for i in range(n):</title>
+          <p>&lt;body&gt;</p>
+        </li>
+      </dl>
+    </statement>
+    <choices>
+      <choice>
+        <statement id="ctp-iterations-05_whileloops_9_opt_a">
+           <program language="python">
+        <code>i = 0
+while(i &lt; n)
+   &lt;body&gt;</code></program>
+        </statement>
+        <feedback id="ctp-iterations-05_whileloops_9_opt_a">
+          <p>Incorrect! This will be an infinite loop as the value of i never changes.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement id="ctp-iterations-05_whileloops_9_opt_b">
+           <program language="python">
+        <code>i = 0
+while(i &lt; n)
+   &lt;body&gt;
+   i = i + 1</code></program>
+        </statement>
+        <feedback id="ctp-iterations-05_whileloops_9_opt_b">
+          <p>Correct! The value of i increments by 1 in each iteration till it becomes equal to n at which point the loop condition won't be satisfied.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement id="ctp-iterations-05_whileloops_9_opt_c">
+           <program language="python">
+        <code>i = 0
+while(i &lt; n)
+   &lt;body&gt;
+   n = n + 1</code></program>
+        </statement>
+        <feedback id="ctp-iterations-05_whileloops_9_opt_c">
+          <p>Incorrect! This is not the right implementation of the given for loop as the value of i remains the same and the value of n keeps increasing with each iteration.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement id="ctp-iterations-05_whileloops_9_opt_d">
+           <program language="python">
+        <code>i = 1
+while(i &lt; n)
+   &lt;body&gt;
+   i = i + 1</code></program>
+        </statement>
+        <feedback id="ctp-iterations-05_whileloops_9_opt_d">
+          <p>Incorrect! This is not the right implementation of the given for loop as the value of i remains the same and the value of n keeps increasing with each iteration.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+</section>
+ 

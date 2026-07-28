@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit1-mcq-exercises">
+  <title>Unit 1 Multiple-Choice Exercises</title>
+
+  <p>These are exercises written by Dr. Barb Ericson in the Python for Everybody Interactive ebook on Runestone.</p>
+
+   <activity label="unit1mcq1">
+    <statement>
+      <p>What order do these statements need to appear in to run without any errors?</p>
+      <program language="python">
+        <code>
+Statement 1 : alex = turtle.Turtle()
+Statement 2 : import turtle
+Statement 3 : alex.forward(50)
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>1-2-3</p>
+        </statement>
+        <feedback>
+          <p>You must first import the turtle module.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>2-3-1</p>
+        </statement>
+        <feedback>
+          <p>You must create a turtle object before you ask it to do things using dot notation.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3-1-2</p>
+        </statement>
+        <feedback>
+          <p>You must first import the turtle module.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>2-3-1</p>
+        </statement>
+        <feedback>
+          <p>Correct! The turtle module needs to be imported and then a screen needs to be created before creating a turtle object.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+  <activity label="unit1mcq2">
+    <statement>
+      <p>What letter will this Turtle code draw? Remember that the turtle starts facing right at the coordinates (0,0).</p>
+      <program language="python">
+        <code>
+import turtle
+alex = turtle.Turtle()
+alex.forward(75)
+alex.goto(0, 0)
+alex.right(90)
+alex.forward(100)
+alex.left(90)
+alex.forward(75)
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>L</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Follow every step and try to recreate the shape. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>A</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Follow every step and try to recreate the shape. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>C</p>
+        </statement>
+        <feedback>
+          <p>Correct! The code would create an C shape.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>H</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Follow every step and try to recreate the shape. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+  <activity label="unit1mcq3">
+    <statement>
+      <p>Which way does the turtle face after this code run? Remember that the turtle initially faces right (east) when placed on the screen.</p>
+      <program language="python">
+        <code>
+import turtle
+alex = turtle.Turtle()
+alex.right(90)
+alex.forward(100)
+alex.left(90)
+alex.forward(150)
+alex.left(90)
+alex.forward(100)
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>East</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Remember where the turtle initially faces when it is created. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>South</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Remember where the turtle initially faces when it is created. Try again</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>West</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Remember where the turtle initially faces when it is created. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>North</p>
+        </statement>
+        <feedback>
+          <p>Correct! The turtle always start from facing east by default.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="unit1-mcq4">
+    <statement>
+      <p>What would the following code print?</p>
+        <program language="python">
+        <code>
+Mali = 5
+print("Mali","is",Mali)</code></program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>Mali is Mali</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! There are no quotes around the last Mali, so str() will use the value of the variable Mali. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Mali is 5</p>
+        </statement>
+        <feedback>
+          <p>Correct! The first Mali is in quotes, so it will print the string "Mali". The second Mali is not in quotes, so it will print the value of the variable Mali.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>5 is Mali</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The first Mali is in quotes and the second is not. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>5 is 5</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The first Mali is in quotes, so it is a string, not a variable. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+  <activity label="unit1-mcq5">
+    <statement>
+      <p>1What is printed by the following statements?</p>
+      <program language="python">
+        <code>
+s = "python rocks"
+print(s[3])
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>t</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Indices start at 0, not 1. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>h</p>
+        </statement>
+        <feedback>
+          <p>Correct! Indices start with 0.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>c</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! s[-3] would count from right to left and return c. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Error, you cannot use the [ ] operator with a string.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! [ ] is the index operator and works with strings. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="unit1mcq6">
+    <statement>
+      <p>What is printed by the following statements?</p>
+      <program language="python">
+        <code>
+s = "python rocks"
+print(s[7:11], s[7:11], s[7:11])
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>rockrockrock</p>
+        </statement>
+        <feedback>
+          <p>Correct! s[7:11] = "rock" (from the 7th character up to the 11th but not including 11th), 
+            which is then repeated 3 times.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>rock rock rock</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! s[7:11] is "rock", not " rock". Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>rocksrocksrocks</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Slicing will not include the character at index 11, just the characters up to it. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>rocks</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! It is repeated 3 times. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="var-ex-mc-division">
+    <statement>
+      <p> What is the value of <c>15 / 12</c>?</p>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>1</p>
+        </statement>
+        <feedback>
+          <p>Try again, this is the answer for 15 // 12.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>1.25</p>
+        </statement>
+        <feedback>
+          <p>15 / 12 will result in 1.25.  The / operator returns a floating point result.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>1.5</p>
+        </statement>
+        <feedback>
+          <p>Try running this in your python interpreter.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3</p>
+        </statement>
+        <feedback>
+          <p>Try again, this is the answer for 15 % 12.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-mc-floored">
+    <statement>
+      <p> What is the value of <c>15 // 12</c>?</p>
+    </statement>
+    <choices  randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>1</p>
+        </statement>
+        <feedback>
+          <p>The // operator returns an integer result (the floor).</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>1.25</p>
+        </statement>
+        <feedback>
+          <p>Try again, this is the answer for 15 / 12.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>1.5</p>
+        </statement>
+        <feedback>
+          <p>Try running this in your python interpreter.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3</p>
+        </statement>
+        <feedback>
+          <p>Try again, this is the answer for 15 % 12.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-mc-mod">
+    <statement>
+      <p> What is the value of <c>15 % 12</c>?</p>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>1</p>
+        </statement>
+        <feedback>
+          <p>Try again, this is the answer for 15 // 12.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>1.25</p>
+        </statement>
+        <feedback>
+          <p>Try again, this is the answer for 15 / 12.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>1.5</p>
+        </statement>
+        <feedback>
+          <p>Try running this in your python interpreter.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>3</p>
+        </statement>
+        <feedback>
+          <p>The % (modulo) operator returns the remainder and 12 goes into 15 one time with a remainder of 3.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-mc-type">
+    <statement>
+      <p> What is the data type of <c>'this is what kind of data'</c>?</p>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>Character</p>
+        </statement>
+        <feedback>
+          <p>It is not a single character.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Integer</p>
+        </statement>
+        <feedback>
+          <p>The data is not numeric.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Float</p>
+        </statement>
+        <feedback>
+          <p>The value is not numeric with a decimal point.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>String</p>
+        </statement>
+        <feedback>
+          <p>Strings can be enclosed in single quotes.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+    <activity label="var-ex-mc-input">
+    <statement>
+      <p> What is printed when the following statements execute?</p>
+      <program language="python">
+        <code>
+n = input("Please enter your age: ")
+# user types in 18
+print ( type(n) )
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>&lt;class 'str'&gt;</p>
+        </statement>
+        <feedback>
+          <p>All input from users is read in as a string.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>&lt;class 'int'&gt;</p>
+        </statement>
+        <feedback>
+          <p>Even though the user typed in an integer, it does not come into the program as an integer.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>&lt;class 18&gt;</p>
+        </statement>
+        <feedback>
+          <p>18 is the value of what the user typed, not the type of the data.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>18</p>
+        </statement>
+        <feedback>
+          <p>18 is the value of what the user typed, not the type of the data.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-mc-order">
+    <statement>
+      <p> What is the value of the following expression:</p>
+      <program language="python">
+        <code>
+16 - 2 * 5 // 3 + 1
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>14</p>
+        </statement>
+        <feedback>
+          <p>Using parentheses, the expression is evaluated as (2*5) first, then (10 // 3), then (16-3), and then (13+1).</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>24</p>
+        </statement>
+        <feedback>
+          <p>Remember that * has precedence over -.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3</p>
+        </statement>
+        <feedback>
+          <p>Remember that // has precedence over -.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>13.667</p>
+        </statement>
+        <feedback>
+          <p>Remember that // does integer division.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-mc-reassign">
+    <statement>
+      <p> After the following statements, what are the values of x and y?</p>
+      <program language="python">
+        <code>
+x = 15
+y = x
+x = 22
+</code>
+      </program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>x is 15 and y is 15</p>
+        </statement>
+        <feedback>
+          <p>Look at the last assignment statement which gives x a different value.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>x is 22 and y is 22</p>
+        </statement>
+        <feedback>
+          <p>No, x and y are two separate variables.  Just because x changes in the last assignment statement, it does not change the value that was copied into y in the second statement.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>x is 15 and y is 22</p>
+        </statement>
+        <feedback>
+          <p>Look at the last assignment statement, which reassigns x, and not y.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>x is 22 and y is 15</p>
+        </statement>
+        <feedback>
+          <p>Yes, x has the value 22 and y the value 15.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-mc-print">
+    <statement>
+      <p> Given the following code segment, what will be printed?</p>
+        <program language="python">
+        <code>
+street = "125 Main Street"
+print("The address is " + "street")</code></program>
+    </statement>
+    <choices  randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>The address is street</p>
+        </statement>
+        <feedback>
+          <p>Since street is in double quotes it will print the string street rather than the value of the variable street.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The address is 125 Main Street</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it was print("The address is " + street)</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>It won't execute</p>
+        </statement>
+        <feedback>
+          <p>While this isn't printing what we probably want it to, it will print something.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-ex-dnd-types">
+    <statement>
+      <p>Assume that width = 17 and height = 12.0. For each of the following expressions, match them up with the value of
+the expression and the type (of the value of the expression).</p>
+    </statement>
+    <feedback>
+      <p>Try running these commands in your terminal window.</p>
+    </feedback>
+    <cardsort>
+      <match>
+        <premise>(width//2)</premise>
+        <response>8, integer</response>
+      </match>
+      <match>
+        <premise>(width/2.0)</premise>
+        <response>8.5, float</response>
+      </match>
+      <match>
+        <premise>(height/3)</premise>
+        <response>4.0, float</response>
+      </match>
+      <match>
+        <premise>(1 + 2 * 5)</premise>
+        <response>11, integer</response>
+      </match>
+    </cardsort>
+  </activity>
+  <activity label="var-string-var-print-in-quotes">
+    <statement>
+      <p> Given the following code segment, what will be printed?</p>
+        <program language="python">
+        <code>
+friends = 4
+name = "Derrik"
+print("name" + " has " + str(friends) + " friends")</code></program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>Derrick has 4 friends</p>
+        </statement>
+        <feedback>
+          <p>Since name is in quotes it will print those characters rather than the value of name.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>name has 4 friends</p>
+        </statement>
+        <feedback>
+          <p>Since name is in quotes it will print those characters rather than the value of name, but it will print the value of friends after it converts it to a string.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>name has friends friends</p>
+        </statement>
+        <feedback>
+          <p>This would be true if both name and friends were in quotes.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>There will be an error</p>
+        </statement>
+        <feedback>
+          <p>This would be true if the friends can not been converted to a string</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="var-string-print-no-convert-int">
+    <statement>
+      <p> Given the following code segment, what will be printed?</p>
+        <program language="python">
+        <code>
+pets = 2
+name = "Mariah"
+print(name + " has " + pets + " pets")</code></program>
+    </statement>
+    <choices  randomize="yes">
+      <choice>
+        <statement>
+          <p>Mariah has 2 pets</p>
+        </statement>
+        <feedback>
+          <p>This would be true if there wasn't an error</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>name has 2 pets</p>
+        </statement>
+        <feedback>
+          <p>This would be true if name was in quotes</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Mariah has pets pets</p>
+        </statement>
+        <feedback>
+          <p>This would be true if pets was in quotes</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>There will be an error</p>
+        </statement>
+        <feedback>
+          <p>You can't concatenate an integer with a string.  You need to convert it to a string first.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+</section>

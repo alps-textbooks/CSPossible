@@ -1,0 +1,454 @@
+<section xml:id="topic-1-2-collaboration">
+  <time minutes="45"/>
+  <title>Collaboration</title>
+     <idx>collaboration</idx>
+
+  <introduction>
+    <p>Almost all software is developed collaboratively in teams. Working with others can help programmers 
+      design better apps.  In this topic, you will learn about the benefits of collaboration and user testing 
+      and how it can reduce bias in app development.
+    </p>
+    <image source="_static/Unit1images/twocoders.jpg" alt="Two Coders" width="50%"/>
+  </introduction>
+
+  <subsection xml:id="collaboration">
+    <title>Collaboration</title>
+
+    <p>The following chart shows various roles on a software development team. 
+      There are many roles that don't require coding even on a software development team.
+    </p>
+    <image source="_static/Unit1images/devteam.jpg" alt="Software Development Team" width="75%"/>
+
+
+ <activity label="dev-team-roles">
+      <statement>
+        <p>
+          Match the software development team roles to their responsibilities.  
+          Which roles seem the most interesting to you? Do internet research 
+          to find out more about the roles that interest you.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Do internet research to find out more about the roles and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>Designer</premise>
+          <response>creates the visual design and user experience of the app</response>
+        </match>
+        <match>
+          <premise>Software Developer</premise>
+          <response>writes the code for the app</response>
+        </match>
+        <match>
+          <premise>Software Tester</premise>
+          <response>tests the app to find bugs and usability issues</response>
+        </match>
+        <match>
+          <premise>Project Manager</premise>
+          <response>coordinates the team and keeps the project on track</response>
+        </match>
+        </cardsort>
+    </activity>
+
+    <idx>pair programming</idx>
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=q7d_JtyCq1A">video</url> 
+      about Pair Programming. Try it out with your friends the next time you code!</p>
+    <video youtube="q7d_JtyCq1A" label="video-pair-programming"/>
+
+    <activity label="collaboration-benefit">
+  <statement>
+    <p>What is one advantage of working collaboratively on an app?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Only one person needs to understand the project.</p>
+      </statement>
+      <feedback>
+        <p>No, effective teams share knowledge so multiple people understand the project.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Collaboration eliminates the need for testing.</p>
+      </statement>
+      <feedback>
+        <p>Testing is still an important part of software development, even when working as a team.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Different team members contribute different skills and perspectives.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Collaboration allows team members to combine their talents and ideas, often leading to a better final product.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Working alone is always faster than working with others.</p>
+      </statement>
+      <feedback>
+        <p>Not necessarily. While teamwork requires communication, it often improves quality and allows tasks to be divided among team members.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="pair-programming-catch-errors">
+  <statement>
+    <p>During pair programming, the driver accidentally forgets an important step. 
+      The navigator notices the mistake immediately. What does this example demonstrate 
+      about pair programming?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>It eliminates all programming errors.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. Pair programming can help find mistakes earlier, but it cannot guarantee 
+          that every error will be caught.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>It helps catch mistakes earlier through collaboration.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The navigator reviews the code as it is written, making it more likely that 
+          mistakes will be noticed and corrected before they become larger problems.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It means the partners should switch roles.</p>
+      </statement>
+      <feedback>
+        <p>While pair programming involves switching roles, the main benefit is the collaborative review of code.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It slows down development.</p>
+      </statement>
+      <feedback>
+        <p>While pair programming may initially seem slower, it often leads to higher quality code and faster debugging in the long run.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="brush-teeth">
+ <statement><p>
+    Let's do a pair programming simulation! Work with a partner to write an algorithm for brushing your teeth. 
+    It must be precise enough for a robot to follow. One partner will be the driver and the other will be the navigator. The driver
+    will write the steps while the navigator will check for mistakes and ask questions. After 2–3 minutes, switch roles. Write your
+    algorithm below. Put *'s next to steps that were rewritten because the navigator made suggestions. Did having a partner
+    help you write a better algorithm?
+ </p></statement>
+ <response/>
+</activity>
+</subsection>
+
+<subsection xml:id="user-testing">
+  <title>User Testing</title>
+  <idx>user testing</idx>
+
+    <p>
+      Watch the following <url href="https://www.youtube.com/watch?v=n8MnoJyl3W4">video</url> 
+      about <term>user testing</term> and how it can help find bugs, give feedback, and improve
+      apps. Try it out with your friends the next time you code!
+    </p>
+
+    <video youtube="n8MnoJyl3W4" label="video-user-testing"/>
+  
+  <activity label="user-testing-mcq">
+  <statement>
+    <p>Why do software developers perform user testing?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>To guarantee the program has no bugs.</p>
+      </statement>
+      <feedback>
+        <p>User testing can reveal problems, but it cannot guarantee that every bug has been found.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>To replace collaboration among team members.</p>
+      </statement>
+      <feedback>
+        <p>User testing complements collaboration rather than replacing it.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>To make sure only certain people can use the app.</p>
+      </statement>
+      <feedback>
+        <p>User testing makes sure your app works for all intended users.</p>
+      </feedback>
+    </choice>
+
+        <choice correct="yes">
+      <statement>
+        <p>To learn how well the app meets users' needs and identify improvements.</p>
+      </statement>
+      <feedback>
+        <p>Correct! User feedback helps developers improve both the functionality and usability of an app.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+ <activity label="runestone-user-testing">
+  <statement>
+    <p>Imagine that you are a user-tester for Runestone, which is the platform this ebook is on.
+      What are some things you would test to make sure the platform is easy to use? 
+      Did you find any tasks that were confusing or difficult to complete? 
+    </p>
+  </statement>
+  <response/>
+ </activity>
+ </subsection>
+
+<subsection xml:id="iterative-process">
+<title>Iterative Process</title>
+<idx>iterative process</idx>
+
+    <p>Software development teams use an <term>iterative design process</term> where
+      they design, test, and revise their apps multiple times to improve the app's functionality and 
+      usability. The following diagram is an example of an iterative design process:
+    </p>
+
+    <image source="_static/Unit1images/iterative-design.png" alt="Iterative Process" width="50%"/>
+  
+    <activity label="iterative-process">
+  <statement>
+    <p>Which statement best describes an iterative design process?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Develop the app once and release it without changes.</p>
+      </statement>
+      <feedback>
+        <p>Most software is improved through multiple rounds of revision.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Repeatedly design, test, revise, and test again to improve the app.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Iterative design uses multiple cycles of development and testing to better meet user needs.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Wait until the end of development before testing.</p>
+      </statement>
+      <feedback>
+        <p>Testing and feedback are most useful throughout development so improvements can be made early and often.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Allow only one team member to make all design decisions.</p>
+      </statement>
+      <feedback>
+        <p>Iterative design benefits from collaboration and input from multiple people, including users.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="iterative-design-feedback">
+  <statement>
+    <p>During testing, users struggle with an app's menu. According to the iterative design process, 
+      what should the development team do next?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>Revise the menu and conduct another round of testing.</p>
+      </statement>
+      <feedback>
+        <p>Correct! In an iterative design process, developers use user feedback to improve the app, then test again to see whether the changes were successful.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Stop testing because they have already tested the app.</p>
+      </statement>
+      <feedback>
+        <p>Iterative design involves multiple rounds of testing and improvement until the app better meets users' needs.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Remove the menu entirely.</p>
+      </statement>
+      <feedback>
+        <p>Removing the menu is not necessarily the best solution. The goal is to revise the design based on feedback and then test the revised version.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Release the app anyway.</p>
+      </statement>
+      <feedback>
+        <p>If testing shows that users are still having difficulty, the team should continue improving the app before releasing it.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+  </subsection>
+
+  <subsection xml:id="bias">
+    <title>Reducing Bias through Collaboration</title>
+    <idx>bias</idx>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=tJQSyzBUAew">video</url> to learn more about bias that can effect
+    AI systems.</p>
+    <video youtube="tJQSyzBUAew" label="video-bias"/>
+    
+    <activity label="human-data-bias">
+  <statement>
+    <p>A company creates a face recognition app. The developers assume the app will mostly be used 
+      in bright lighting, so they design and test it that way. They also train the app using a 
+      dataset that contains mostly images of adults with lighter skin tones. 
+      Which statement best explains the biases in this app? This is an actual historical example
+      pointed out by Joy Buolamwini from MIT in her <url href="https://www.youtube.com/watch?v=TWWsW1w-BVo">Gender
+         Shades project</url>.
+      </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The app only shows <term>human bias</term> because the programmers made assumptions about lighting.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. The programmers' assumptions are an example of <term>human bias</term>, but the training data is also incomplete and unrepresentative, which is <term>data bias</term>.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The app only shows <term>data bias</term> because the training data is not representative.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. The dataset shows <term>data bias</term>, but the programmers' assumption about lighting is also an example of <term>human bias</term>.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The app shows both <term>human bias</term> and <term>data bias</term> because the programmers' assumptions influenced the design, and the training data is incomplete and unrepresentative.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The design choices reflect <term>human bias</term>, while the unrepresentative training data reflects <term>data bias</term>. These two types of bias often interact to affect how an app behaves for different users.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The app shows no bias because it was trained using real photos.</p>
+      </statement>
+      <feedback>
+        <p>No. Even real-world data can be biased if it does not represent the people and situations the app is intended to work well for.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+    
+
+    <p>Take a look at the following comic strip where a cat who is a user of an app is letting the dog developers know
+      that the app doesn't work well for it, but the developers don't listen.</p>
+
+    <image source="_static/Unit1images/bias.png" alt="Cat says app is biased against it because of dog developers and testing" width="80%"/>
+
+    <activity label="bias-cat-dog">
+      <statement>
+        <p>What is the bias in the comic strip above? Why do you think the app works for dogs but not cats? How
+          could the developers have reduced bias in their app?</p>
+      </statement>
+        <response/>
+    </activity>
+
+  </subsection>
+
+    <subsection xml:id="vocab-1-2">
+  <title>Vocabulary Review</title>
+
+  <activity label="vocab-match-1-2">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>pair programming</premise>
+          <response>a collaboration practice in which two programmers work together at one computer</response>
+        </match>
+        <match>
+          <premise>user testing</premise>
+          <response>testing an app with a variety of users</response>
+        </match>
+        <match>
+          <premise>bias</premise>
+          <response>a tendency to favor certain people, values, or outcomes over others</response>
+        </match>
+        <match>
+          <premise>iterative design process</premise>
+          <response>a circular process in which an app is designed, tested, revised, and tested again multiple times</response>
+         </match>
+        </cardsort>
+    </activity>
+
+  </subsection>
+</section>

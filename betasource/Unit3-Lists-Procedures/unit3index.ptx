@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit3" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lists and Procedures</title>
+ 
+
+  <introduction>
+    <p>
+      This unit introduces students to lists and procedures.
+    </p>
+
+    <p>
+      <ul>
+       
+
+        <li>
+          <p>Instructional days: 14-17 days, Create Project: 7 days</p>
+        </li>
+
+        <li>
+          <p>
+            Time Estimates: 135 minutes per lesson
+          </p>
+        </li>
+
+     
+      </ul>
+    </p>
+  </introduction>  
+ <!--
+  <xi:include href="./topic3-1-lists.ptx" />
+  <xi:include href="./topic3-2-procedures.ptx" />
+  <xi:include href="./topic3-3-libraries.ptx" />
+  -->
+  
+  </chapter>

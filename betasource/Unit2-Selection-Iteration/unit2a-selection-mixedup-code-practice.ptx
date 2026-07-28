@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-selection-mixedup-coding-practice">
+  <time minutes="90" />
+
+  <title>Unit 2 Selection Mixed-Up Coding Practice Exercises</title>
+
+  <p>Try to solve each of the following. Click the <em>Check</em> button to check each solution. You will be told if
+        your solution is too short, has a block in the wrong order, or you are using the wrong block.</p>
+   
+   <p>These are exercises written by Dr. Barb Ericson from the AP CSP, Welcome to CS, and Python for Everybody  ebooks on Runestone.
+  </p>
+
+
+   <activity label="u2-selection-mixedup1" numbered="yes" indentation="hide" language="python">
+    <statement>
+      <p>The following program segment should ask the user for three numbers and say whether they are in order. The
+        numbers can be either ascending (going up) or descending (going down).</p>
+      <p>For example, if the inputs are <c>10 15 20</c>, the answer should be <q>yes, in order</q>. Same if the inputs
+        were <c>6 5 1</c>. But if the inputs were <c>3 5 4</c>, the answer would be <q>no, not in order</q>.</p>
+      <p>The blocks have been mixed up and include extra blocks that aren’t needed in the solution. Drag the
+        needed blocks from the left and put them in the correct order on the right.</p>
+    </statement>
+    <blocks>
+      <block order="6">
+        <cline>first = int( input("Enter the first number: ") )</cline>
+        <cline>second = int( input("Enter the second number: ") )</cline>
+        <cline>third = int( input("Enter the third number: ") )</cline>
+      </block>
+      <block order="5">
+        <cline>if (second &gt; first and second &lt; third)  
+                  or (third &lt; second and second &lt; first):</cline>
+      </block>
+      <block order="3" correct="no">
+        <cline>if (second &gt; first or second &lt; third) 
+               and (third &lt; second or second &lt; first): </cline>
+      </block>
+      <block order="4">
+        <cline> print("yes, in order")</cline>
+      </block>
+      <block order="1">
+        <cline>else:</cline>
+      </block>
+      <block order="2">
+        <cline> print("no, not in order")</cline>
+      </block>
+    </blocks>
+  </activity>
+  
+ <activity label="cndtnl-mixed-price_v2" xml:id="cndtnl-mixed-price_v2" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that sets <c>price</c> to 1.5 if <c>weight</c> is less than 2, otherwise set <c>price</c> to 1.3, then set <c>total</c> to the <c>weight</c> times <c>price</c>. For example, if <c>weight</c> is 0.5 then <c>price</c> should be set to 1.5 and <c>total</c> will be 0.75.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="6">
+        <cline>weight = 0.5</cline>
+        <cline>numItems = 5</cline>
+        <cline>if weight &lt; 2:</cline>
+      </block>
+      <block order="2">
+        <cline>    price = 1.50</cline>
+      </block>
+      <block order="1">
+        <cline>if weight &gt;= 2:</cline>
+      </block>
+      <block order="5">
+        <cline>    price = 1.30</cline>
+      </block>
+      <block order="4">
+        <cline>total = weight * price</cline>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity label="cndtnl-mixed-ten" xml:id="cndtnl-mixed-ten" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that sets the variable <c>number</c> to <c>x is a number from 1 to 10</c> if the value of x is 1-10, <c>x is a number less than 1</c> if the value of x is zero or below, and <c>x is a number greater than 10</c> if the value of x is more than 10.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="2">
+        <cline>x = 3</cline>
+      </block>
+      <block order="7">
+        <cline>if x &gt;= 1 and x &lt;= 10:</cline>
+      </block>
+      <block order="5">
+        <cline>    number = "x is a number from 1 to 10"</cline>
+      </block>
+      <block order="8">
+        <cline>elif x &lt; 1:</cline>
+      </block>
+      <block order="3">
+        <choice correct="yes">
+          <cline>    number = "x is a number less than 1"</cline>
+        </choice>
+        <choice>
+          <cline>    number = "x is greater than 1" </cline>
+        </choice>
+      </block>
+      <block order="4">
+        <cline>else:</cline>
+      </block>
+      <block order="9">
+        <choice correct="yes">
+          <cline>    number = "x is a number greater than 10"</cline>
+        </choice>
+        <choice>
+          <cline>else x &lt; 1: </cline>
+        </choice>
+      </block>
+    </blocks>
+  </activity>
+
+    <activity label="cndtnl-mixed-twelve" xml:id="cndtnl-mixed-twelve" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that sets the variable <c>rate</c> to the cost of a 14 mile cab ride. 
+        If the distance traveled is less than or equal to 12 miles, then <c>rate</c> cost is $2.00 a mile, 
+        and if the distance traveled is more than 12 miles then <c>rate</c> cost is $1.50 a mile. 
+        Assign the final cost to the variable <c>total</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="7">
+        <cline>distance = 14</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>if distance &lt;= 12:</cline>
+        </choice>
+        <choice>
+          <cline>if distance is 12: </cline>
+        </choice>
+      </block>
+      <block order="6">
+        <cline>    rate = 2.00</cline>
+      </block>
+      <block order="9">
+        <choice correct="yes">
+          <cline>if distance &gt; 12:</cline>
+        </choice>
+        <choice>
+          <cline>if distance &lt; 12: </cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>    rate = 1.50</cline>
+      </block>
+      <block order="5">
+        <choice correct="yes">
+          <cline>total = distance * rate</cline>
+        </choice>
+        <choice>
+          <cline>total = distance / rate </cline>
+        </choice>
+      </block>
+      <block order="10">
+        <cline>print("Total cost of trip: " + str(total))</cline>
+      </block>
+    </blocks>
+  </activity>
+
+  <activity label="cndtnl-mixed-nested" xml:id="cndtnl-mixed-nested" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code so that after x and y are defined, they are compared and if the value of x is less than y 
+        it sets the variable <c>result</c> to <c>"x is less than y"</c>; if x is greater than y then <c>result</c> 
+        is set to <c>"x is greater than y"</c>; and <c>result</c> is <c>"x and y must be equal"</c> if the values 
+        are equal.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="6">
+        <cline>x = 10</cline>
+      </block>
+      <block order="2">
+        <cline>y = 10</cline>
+      </block>
+      <block order="1">
+        <cline>if x &lt; y:</cline>
+      </block>
+      <block order="9">
+        <cline>    result = "x is less than y"</cline>
+      </block>
+      <block order="7">
+        <cline>else:</cline>
+      </block>
+      <block order="4">
+        <cline>    if x &gt; y:</cline>
+      </block>
+      <block order="3">
+        <cline>        result = "x is greater than y"</cline>
+      </block>
+      <block order="5">
+        <cline>    else:</cline>
+      </block>
+      <block order="8">
+        <cline>        result = "x and y must be equal"</cline>
+      </block>
+    </blocks>
+  </activity>
+
+    <activity label="cndtnl-mixed-logical" xml:id="cndtnl-mixed-logical" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+        <p>Write code so that after x and y are defined, they are compared and if the value of x and y are the same 
+          object the variable <c>value</c> will be set to <c>"x and y are the same"</c>; if x and y have the same 
+          value then <c>value</c> is <c>"x and y have the same value"</c>; and <c>value</c> is <c>"x and y are not 
+            similar"</c> if x and y do not fit the other conditionals.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="2">
+        <cline>x = 12</cline>
+      </block>
+      <block order="4">
+        <cline>y = x</cline>
+      </block>
+      <block order="7">
+        <cline>if x is y:</cline>
+      </block>
+      <block order="3">
+        <cline>    value = "x and y are the same"</cline>
+      </block>
+      <block order="8">
+        <cline>elif x == y:</cline>
+      </block>
+      <block order="5">
+        <cline>    value = "x and y have the same value"</cline>
+      </block>
+      <block order="1">
+        <cline>else:</cline>
+      </block>
+      <block order="6">
+        <cline>    value = "x and y have different values"</cline>
+      </block>
+    </blocks>
+  </activity>
+
+    <activity label="cndtnl-mixed-grade" xml:id="cndtnl-mixed-grade" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that will set the variable <c>grade</c> to the grade equivalent (string) for a score. It 
+        should set <c>grade</c> to E for any value below 60, D for 61 to 69, C for 70 to 79, B for 80 to 89 and A 
+        for 90 and above. For example, if the score is above 90, <c>grade</c> should be A.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="13">
+        <cline>score = 93</cline>
+      </block>
+      <block order="4">
+        <cline>if score &gt;= 90:</cline>
+      </block>
+      <block order="10">
+        <cline>    grade = "A"</cline>
+      </block>
+      <block order="3">
+        <cline>elif score &gt;= 80:</cline>
+      </block>
+      <block order="2">
+        <cline>    grade = "B"</cline>
+      </block>
+      <block order="14">
+        <cline>elif score &gt;= 70:</cline>
+      </block>
+      <block order="8">
+        <cline>    grade = "C"</cline>
+      </block>
+      <block order="9">
+        <cline>elif score &gt;= 60:</cline>
+      </block>
+      <block order="11">
+        <cline>    grade = "D"</cline>
+      </block>
+      <block order="5">
+        <cline>else:</cline>
+      </block>
+      <block order="12">
+        <cline>    grade = "E"</cline>
+      </block>
+      <block order="1">
+        <cline>print(grade)</cline>
+      </block>
+      <block order="7" correct="no">
+        <cline>    elif grade &gt;= 90: </cline>
+      </block>
+      <block order="6" correct="no">
+        <cline>    score = "c" </cline>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity label="cndtnl-mixed-even" xml:id="cndtnl-mixed-even" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that should set the variable <c>result</c> to determine whether a number is odd or even.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="2">
+        <cline>x = 3</cline>
+      </block>
+      <block order="5">
+        <choice correct="yes">
+          <cline>if x % 2 == 0:</cline>
+        </choice>
+        <choice>
+          <cline>if x / 2 == 0: </cline>
+        </choice>
+      </block>
+      <block order="4">
+        <cline>    result = "x is even!"</cline>
+      </block>
+      <block order="6">
+        <cline>else:</cline>
+      </block>
+      <block order="3">
+        <choice correct="yes">
+          <cline>    result = "x is odd"</cline>
+        </choice>
+        <choice>
+          <cline>elif x % 2 == 1: </cline>
+        </choice>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity label="cndtnl-mixed-goodJob" xml:id="cndtnl-mixed-goodJob" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create code that should set the variable <c>result</c> equal to <q>Good job</q> when the number is between 
+        1 and 10 (inclusive) or is 15 and <c>result</c> should be set to <q>Fail</q> when it is not.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="6">
+        <cline>x = 8</cline>
+      </block>
+      <block order="3">
+        <cline>if x &gt;= 1 and x &lt;= 10 or x == 15:</cline>
+      </block>
+      <block order="4">
+        <cline>    result = "Good job"</cline>
+      </block>
+      <block order="2">
+        <cline>else:</cline>
+      </block>
+      <block order="1">
+        <choice correct="yes">
+          <cline>    result = "Fail"</cline>
+        </choice>
+        <choice>
+          <cline>elif x == 15: </cline>
+        </choice>
+      </block>
+    </blocks>
+  </activity>
+</section>

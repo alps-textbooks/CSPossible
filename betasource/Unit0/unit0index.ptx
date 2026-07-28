@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit0" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Welcome to CSPossible</title>
+
+  <xi:include href="./introduction.ptx" />
+  <xi:include href="./aboutcsp.ptx" />
+  <xi:include href="./growth-mindset.ptx" />
+ 
+  <!--
+  <xi:include href="./IDEs.ptx" />
+  <xi:include href="./pretest.ptx" />
+  <xi:include href="./survey.ptx" />
+  -->
+
+
+</chapter>

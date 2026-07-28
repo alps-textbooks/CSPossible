@@ -1,0 +1,757 @@
+<section xml:id="topic-1-4-binary">
+  <time minutes="90"/>
+  <title>Binary Numbers</title>
+  <idx>binary</idx>
+  <idx>bit</idx>
+  <idx>bits</idx>
+
+  <introduction>
+        
+     <p>Quick Links: 
+      <xref text="global" ref="data-bits,binary,abstraction,encoding,binary-limits,vocab-1-4"/>
+    </p>
+
+    <p> Think about all the types of files and data that you store in your computer or phone.
+      Whether you look at a photo or listen to a song or write a paper or play a game, all of that
+      data is stored as bits, which are just 0's and 1's. It's all bits! In this topic, you'll learn
+      how computers use bits to represent and process data.
+    </p>
+    <image source="_static/Unit1images/allbits.png" width="60%" alt="All Bits"/>
+   
+  </introduction>
+
+  <subsection xml:id="data-bits">
+    <title>Data and Bits</title>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=USCBCmwMCDA">video</url> to
+      learn more about how computers use bits to represent data.</p>
+
+    <video youtube="USCBCmwMCDA" label="video-binary"/>
+
+  </subsection>
+
+  <subsection xml:id="binary">
+    <title>Binary Numbers</title>
+    <p>
+      Binary is a base-2 number system that uses only two digits, 0 and 1, to represent all numbers.
+      Humans use the decimal number system, counting in base 10, probably because we have 10
+      fingers,
+      but computers use the binary (base 2) number system to represent and process data because
+      computer circuits only have 2 states, on and off, where 1 is on and 0 is off.
+    </p>
+    <p>Watch this video from the Computer Science Unplugged, which illustrates how the binary number
+      system works.
+    </p>
+
+    <video youtube="b6vHZ95XDwU" label="video-binary-unplugged"/>
+
+    <p>As you saw in the video, the students were simulating a binary odometer (like a car odometer
+      counting miles) to count in binary. </p>
+       
+      <idx><h>unplugged</h><h>binary numbers</h></idx>
+
+      <p><term>Unplugged Activity:</term> You and your friends can act out the video above by
+      printing and using the following 
+      <url href="https://docs.google.com/document/d/1okQhwTYVLcXN13QioAH71VUhw5e88vxYZ4sVXvSPANY/edit?usp=sharing">Binary
+      Dot Cards</url>. Five students can hold the 5 binary dot cards and see if they can count up
+      from 0 to 11111. Or you can flip the cards randomly and see if the class can figure out the
+      binary and the corresponding decimal number they make by counting the dots. </p>
+
+    <p>Try the binary odometer below.</p>
+
+    <interactive iframe="webapps/binaryOdometer.html" width="100%" aspect="2.5:1"/>
+
+    <activity label="binary-next">
+      <statement>
+        <p>What is the next binary number after 1011? Try it out with the binary odometer above.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>1012</p>
+          </statement>
+          <feedback>
+            <p>Binary numbers only use the digits 0 and 1.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>1111</p>
+          </statement>
+          <feedback>
+            <p>This skips a few numbers. 1011 is 11 in decimal, and 1111 is 15. We are looking for
+              the very next number (12 in decimal).</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>1100</p>
+          </statement>
+          <feedback>
+            <p>Correct! 1011 is 11 in decimal. Adding 1 triggers a carry to the next column twice
+              resulting in 1100, which is 12 in decimal.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>10111</p>
+          </statement>
+          <feedback>
+            <p>This increases the bit length unnecessarily. It shouldn't require a 5th bit unless
+              the original number was 1111.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <activity label="fillin-binary-after-11">
+      <statement>
+        <p>What binary number comes after <c>11</c>? Try it in the binary odometer above.</p>
+        <p>
+          <fillin answer="100" mode="string"/>
+        </p>
+      </statement>
+
+      <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes"/>
+            <feedback> Correct! In binary, <c>11</c> represents the decimal number 3. Adding 1
+              triggers a carry that results in <c>100</c> (which represents 4). </feedback>
+          </test>
+
+          <test>
+            <strcmp>12</strcmp>
+            <feedback>Remember that binary numbers only use the digits 0 and 1.</feedback>
+          </test>
+
+          <test>
+            <feedback>Try it in the binary odometer above. It needs 3 bits. </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </activity>
+
+    <activity label="binary-next-id">
+      <statement>
+        <p>AP 2021 Sample Question: Each student that enrolls at a school is assigned a unique ID
+          number, which is stored as a binary number.
+          The ID numbers increase sequentially by 1 with each newly enrolled student.
+          If the ID number assigned to the last student who enrolled was the binary number 1001
+          0011,
+          what binary number will be assigned to the next student who enrolls?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>1001 0100</p>
+          </statement>
+          <feedback>
+            <p>Correct! Adding 1 to 1001 0011 causes the rightmost bits to carry over: 0011 + 1
+              becomes 0100, making the final value 1001 0100.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>1001 0111</p>
+          </statement>
+          <feedback>
+            <p>Try again. Remember that adding 1 to a binary number will trigger carries wherever
+              there is a 1, changing those 1s to 0s and carrying a 1 to the next left column.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>1101 0100</p>
+          </statement>
+          <feedback>
+            <p>Try again. This changes bits in the first 4-bit group, which isn't affected by adding
+              1 to this specific number.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>1101 0111</p>
+          </statement>
+          <feedback>
+            <p>Try again. This changes bits that should remain unaffected and misses the proper
+              carry operations on the rightmost bits.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <p>Try the following Binary Converter. In pairs, have one partner click on the binary digits
+      below to create a binary number,
+      and have the other partner figure out the number as a decimal number (click on the ? button to
+      check your the answer).
+    </p>
+    <interactive iframe="webapps/binaryConverter.html" width="100%" aspect="1.5:1"/>
+
+    <activity label="binary-largest">
+      <statement>
+        <p>What's the largest number that can be represented in 4 bits? Try it out with the binary
+          converter above.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>5</p>
+          </statement>
+          <feedback>
+            <p>The number 8 in binary is represented as 1000. Additional numbers can be represented
+              by turning some of the 0s into 1s. For example, the number 9 would be represented as
+              1001.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>12</p>
+          </statement>
+          <feedback>
+            <p>The number 12 in binary is represented as 1100. Additional numbers can be represented
+              by turning some of the 0s into 1s. For example, the number 13 would be represented as
+              1101.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>15</p>
+          </statement>
+          <feedback>
+            <p>Yes. The largest number that can be represented in 4 bits would be 1111, which is 1 +
+              2 + 4 + 8, which equals 15.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>16</p>
+          </statement>
+          <feedback>
+            <p>To represent 16 in binary, you would need 5 bits. It's representation is 10000.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+
+    <activity label="fillin-bits-for-9">
+      <statement>
+        <p>How many bits do you need to represent the decimal number 9?</p>
+        <p>
+          <fillin answer="4" mode="string"/>
+        </p>
+      </statement>
+
+      <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes"/>
+            <feedback> Correct! 3 bits can only represent up to the decimal number 7 (<c>111</c>).
+              You need 4 bits to represent 9, which is <c>1001</c> in binary. </feedback>
+          </test>
+
+          <test>
+            <strcmp>9</strcmp>
+            <feedback>Try again. 9 is the decimal number itself, not the number of binary digits
+              (bits) required to store it.</feedback>
+          </test>
+
+          <test>
+            <feedback>Try representing the number 9 using the binary converter above.</feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </activity>
+
+
+  </subsection>
+
+
+  <subsection xml:id="abstraction">
+    <title>Abstraction</title>
+
+    <idx>abstraction</idx>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=XpJdZrviSuw">video by Dr.
+        Ralph Morelli about abstraction</url> (<url href="http://www.teachertube.com/video/abstraction-347740">TeacherTube
+        version</url>, <url href="https://docs.google.com/a/css.edu/presentation/d/1nOMpxZpdkCcS6Wc-eU8eeBi-z55LyKSJRBCVolJDM78">
+      slides</url>). </p>
+
+
+    <video youtube="XpJdZrviSuw" label="video-abstraction"/>
+
+    <p>We use symbols like + and - in math or on a calculator to indicate arithmetic operations.
+      This is another form of abstraction. For example, go to <url href="https://www.google.com/search?q=calculator">Google calculator</url> and name the
+      functions that are represented by the symbols on the buttons. For example, the symbol <c>+</c>
+      represents the addition function, which takes two numbers as input and produces their sum as
+      output. </p>
+
+    <activity label="calculator-abstraction">
+      <statement>
+        <p>
+          Drag the abstract math symbol from the left and drop it on its corresponding arithmetic
+          function or meaning on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Try the <url href="https://www.google.com/search?q=calculator">Google calculator</url>
+          buttons to see what they do.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>+</premise>
+          <response>Addition</response>
+        </match>
+
+        <match>
+          <premise>−</premise>
+          <response>Subtraction</response>
+        </match>
+
+        <match>
+          <premise>×</premise>
+          <response>Multiplication</response>
+        </match>
+
+        <match>
+          <premise>÷</premise>
+          <response>Division</response>
+        </match>
+        <match>
+          <premise>=</premise>
+          <response>Equals</response>
+        </match>
+      </cardsort>
+    </activity>
+
+
+    <activity label="mcq-abstraction">
+      <statement>
+        <p>Complete the following definition: An abstraction is a ____________ representation that
+          stands for some collection of individual instances.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>general</p>
+          </statement>
+          <feedback>
+            <p>Yes. An abstraction is a general representation of something. Usually some of the
+              specific details are omitted.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>specific</p>
+          </statement>
+          <feedback>
+            <p>Try again. A specific representation focuses on individual details, whereas an
+              abstraction hides those details to look at the broader concept.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>fixed</p>
+          </statement>
+          <feedback>
+            <p>Try again. Abstractions can vary in their levels of detail and are not necessarily
+              rigid or fixed.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>artistic</p>
+          </statement>
+          <feedback>
+            <p>Try again. While abstraction is a term used in art, in computer science and data
+              context, it refers to a conceptual model rather than an artistic style.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <activity label="abstraction-tf">
+      <statement>
+        <p>True or False: One of the main characteristics of an abstraction is that it simplifies a
+          complex phenomenon by leaving out the irrelevant aspects.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>True</p>
+          </statement>
+          <feedback>
+            <p>Correct! Abstraction inherently manages complexity by focusing on essential details
+              while hiding unnecessary complications.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>False</p>
+          </statement>
+          <feedback>
+            <p>Try again. One of the primary purposes of abstraction is to reduce complexity by
+              filtering out details that aren't necessary for the current context.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <activity label="abstraction-examples">
+      <statement>
+        <p>Examples of abstraction can be found in which of the following? (Choose all that apply.)</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>Languages</p>
+          </statement>
+          <feedback>
+            <p>Correct! Words abstract complex concepts or physical items into simple symbolic
+              representations.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Designs</p>
+          </statement>
+          <feedback>
+            <p>Correct! Blueprints and architectural designs abstract material details to emphasize
+              layout and structural relationships.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Maps</p>
+          </statement>
+          <feedback>
+            <p>Correct! Maps omit specific terrain details like individual trees or minor topography
+              to cleanly illustrate routes and locations.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Computer science</p>
+          </statement>
+          <feedback>
+            <p>Correct! Computer science relies heavily on layers of abstraction, from high-level
+              programming languages down to binary logic gates.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <activity label="abstraction-synonyms">
+      <statement>
+        <p>In Computer Science, the process of abstracting also means: (Choose all that apply.)</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>Complexing</p>
+          </statement>
+          <feedback>
+            <p>Try again. Abstracting aims to achieve the opposite effect of making a concept more
+              complicated.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>Complicating</p>
+          </statement>
+          <feedback>
+            <p>Try again. Abstracting reduces complexity rather than increasing it.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Condensing</p>
+          </statement>
+          <feedback>
+            <p>Correct! Abstracting condenses information down to the most critical components
+              required for high-level operations.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Simplifying</p>
+          </statement>
+          <feedback>
+            <p>Correct! Abstracting simplifies systems so programmers and users do not need to
+              understand low-level mechanical or digital technicalities.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+
+  </subsection>
+
+  <subsection xml:id="encoding">
+    <title>Encoding in Bits</title>
+    <idx>encoding</idx>
+
+    <p>For example, the binary code <c>01000001</c> can represent the decimal number 65 or the
+      letter "A" in the <url href="https://www.ascii-code.com/">ASCII encoding</url>, or it could
+      represent a pixel color in an image file, or a sound sample in an audio file, etc. The context
+      of whether it is in a text file, image file, or audio file will determine what it means.</p>
+
+
+    <activity label="binary-representations">
+      <statement>
+        <p>The binary code <c>01000001</c> is just a sequence of 1s and 0s. Depending on the context
+          of the file or the software interpreting it, which of the following could this sequence
+          represent? (Choose all that apply.)</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>A decimal number like 65.</p>
+          </statement>
+          <feedback>
+            <p>Correct! Mathematically, <c>01000001</c> in base-2 directly converts to 65 in
+              base-10.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>A large decimal number like 2,197,320,981</p>
+          </statement>
+          <feedback>
+            <p>Try again. Eight bits won't be enough to represent a large decimal number. </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>A letter like "A".</p>
+          </statement>
+          <feedback>
+            <p>Correct! In <url href="https://www.ascii-code.com/">ASCII encoding</url>, the decimal
+              value 65 maps directly to the uppercase letter "A".</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>A large text file that contains the contents of a book.</p>
+          </statement>
+          <feedback>
+            <p>Try again. Eight bits won't be enough to represent a large text file or a book. </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>A pixel color in a digital image.</p>
+          </statement>
+          <feedback>
+            <p>Correct! In image file formats, sequences of bits correspond to color channel
+              intensities (like Red, Green, or Blue levels).</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>A small sound sample in an audio file.</p>
+          </statement>
+          <feedback>
+            <p>Correct! In digital audio files, binary numbers capture specific amplitude
+              measurements of a sound wave at a given microsecond.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="binary-limits">
+    <title>Limitations of Binary Representation</title>
+
+    <idx>roundoff error</idx>
+    <idx>overflow error</idx>
+
+    <p>When we try to store large numbers in a fixed number of bits, we may encounter 
+      <term>roundoff errors</term>. For example, the fraction 1/3 is a repeating decimal number
+       0.3333333333333333333333 with infinite 3's after the decimal point.
+      It cannot be represented exactly in binary with a finite number of bits. The computer will
+      round the value to fit within the available bits as an approximation.
+      A standard 32-bit floating-point number can only store seven 3's after the decimal point
+      safely (0.3333333).
+      If this approximate number is used in further calculations, we can get results that are
+      slightly off because of this
+      roundoff error. For example, if we multiply 1/3 by 3, we would expect to get exactly 1,
+      but due to the roundoff error in representing 1/3, we might get a result like 0.9999999
+      instead of 1.
+      This illustrates how roundoff errors can lead to results that are close but not exactly
+      correct.</p>
+
+    <p>An <term>overflow error</term> occurs when there aren't enough bits to represent a given number,
+      so some of them overflow. The number of bits is similar to how a glass can overflow if it's filled 
+      with too much water.</p>
+
+    <activity label="binary-overflow">
+      <statement>
+        <p>Which of following would cause an overflow error to occur. (Choose all that apply.)</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>Trying to represent 15 in 4 bits.</p>
+          </statement>
+          <feedback>
+            <p>No, this would not cause an overflow. 15 is represented as 1111 in 4 bits.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Trying to represent 16 in 4 bits.</p>
+          </statement>
+          <feedback>
+            <p>Yes. The largest number that can be represented in 4 bits is 15, which is 1111. To
+              represent 16 you would need an additional bit, 1 0000.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>Trying to represent 31 in 5 bits.</p>
+          </statement>
+          <feedback>
+            <p>No, this would not cause an overflow. 31 is represented as 1 1111 in 5 bits.</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>Trying to represent 32 in 5 bits.</p>
+          </statement>
+          <feedback>
+            <p>Yes. The largest number that can be represented in 5 bits is 31, which is 1 1111. To
+              represent 32 you would need a 6th bit, 10 0000.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <activity label="binary-limits-tf">
+      <statement>
+        <p>True or False. Using a fixed number of bits to represent numbers limits the range of
+          values and hence limits the range of problems
+          that can be solved with that representation.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>True.</p>
+          </statement>
+          <feedback>
+            <p>Yes, to think of a simple example, if you were using 4 bits to represent numbers you
+              wouldn't be able to represent the number 17, so you wouldn't be able to add 17 + 8.
+              Modern computers use 32 or 64 bits to represent whole numbers, which are called <em>
+              integers</em>. With 32 bits, you can represent <m>2^{32}</m> different values. That's
+              4,294,967,296, more than 4 billion values. But, of course, there are still numbers
+              that would cause overflow errors -- e.g., 4,300,000,000 could not be represented using
+              32 bits. This potential for overflow error is a necessary implication of using a <strong>
+              finite</strong> representation to model the <strong>infinite</strong> concept of
+              number.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>False.</p>
+          </statement>
+          <feedback>
+            <p>No. Using a fixed number of bits to represent numbers does limit the range of
+              problems you can solve. For example, if you were using 4 bits to represent numbers you
+              wouldn't be able to represent the number 17, so you wouldn't be able to add 17 + 8.
+              Modern computers use 32 or 64 bits to represent whole numbers, which are called <em>
+              integers</em>. With 32 bits, you can represent <m>2^{32}</m> different values. That's
+              4,294,967,296, more than 4 billion values. But, of course, there are still numbers
+              that would cause overflow errors -- e.g., 4,300,000,000 could not be represented using
+              32 bits. This potential for overflow error is a necessary implication of using a <strong>
+              finite</strong> representation to model the <strong>infinite</strong> concept of
+              number.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+  </subsection>
+
+
+  <subsection xml:id="vocab-1-4">
+    <title>Vocabulary Review</title>
+
+    <activity label="binary-vocab">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">bit</premise>
+          <response>A binary digit, either 0 or 1.</response>
+        </match>
+
+        <match>
+          <premise order="2">abstraction</premise>
+          <response>The process of removing detail to focus on the essential characteristics of
+            something.</response>
+        </match>
+
+        <match>
+          <premise order="3">encoding</premise>
+          <response>Converting information into a specific format for storage or transmission.</response>
+        </match>
+
+        <match>
+          <premise order="4">roundoff error</premise>
+          <response>The error that occurs when a number is approximated to fit in a fixed number of
+            bits.</response>
+        </match>
+
+        <match>
+          <premise order="5">overflow error</premise>
+          <response>The error that occurs when a number is too large to be represented within the
+            given number of bits.</response>
+        </match>
+      </cardsort>
+    </activity>
+
+  </subsection>
+</section>

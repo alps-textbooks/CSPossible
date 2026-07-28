@@ -1,0 +1,355 @@
+<section xml:id="topic-1-1-purpose">
+  <time minutes="45"/>
+  <title>Apps</title>
+  <introduction>
+    <p>Computer Science is an exciting field that is transforming the way we live and work. 
+      Watch the <url href="https://www.youtube.com/watch?v=QvyTEx1wyOY">video</url> below to learn more about how
+      computers and software are changing the world.
+    </p>
+    <video youtube="QvyTEx1wyOY" label="video-cs-everywhere"/>
+    <p>      
+      In this lesson, we will explore the purpose and behavior of apps by interacting with them and 
+      observing their input and output. 
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Purpose and Behavior of Apps</title>
+    <idx>purpose</idx>
+    <idx>behavior</idx>
+    <idx>app</idx>
+
+    <p>Think about your favorite apps on your phone and their purpose. <term>App</term> is short for <term>application</term>, 
+      which is a program that runs on a computer or any computing device including your phone.</p>
+  
+      <p>An app's <term>purpose</term> is why it was created, its ultimate goal or the problem it solves. 
+      For example, the purpose of a texting app on a phone is to help us to communicate with each other.</p>
+
+    <p>Take a look at the <url href="https://www.google.com/search?q=stopwatch">Google Stopwatch</url> or 
+        <url href="https://dwyl.github.io/stopwatch/">Github Stopwatch app</url> below. 
+        Why would someone use this app? What is its purpose? 
+        What happens when you click the Start button? What happens when you click the Pause or Reset buttons?
+        Try it out below.
+      </p>
+        <interactive iframe="https://dwyl.github.io/stopwatch/" width="100%" aspect="2.5:1"/>
+
+    <activity label="stopwatchPurpose">
+  <statement>
+    <p>What is the purpose of the <url href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url>?</p>
+  </statement>
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p>To tell time</p>
+      </statement>
+      <feedback>
+        <p>That would be a watch or clock app.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+          <p>To time an event by counting down from a set amount of time</p>
+      </statement>
+      <feedback>
+        <p>A timer counts down from a set amount of time. A stopwatch counts up from zero. </p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>To measure how much time has passed starting from zero</p>
+      </statement>
+      <feedback>
+        <p>Correct! A stopwatch keeps track of how much time has passed starting from zero, such as timing a race or an activity.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>To perform calculations</p>
+      </statement>
+      <feedback>
+        <p>Calculations are done with a calculator app, not a stopwatch.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+   
+    <p>Some apps are easy to use with clear purposes and behaviors, but sometimes apps and other designs can
+      fail to meet user needs or expectations. Watch the following 
+      <url href="https://www.youtube.com/watch?v=qtCEoGyfsxk">video</url> about bad design choices.</p>
+
+     <video youtube="qtCEoGyfsxk" label="video-bad-door-design"/>
+
+   <p>Take a look at this <url href="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html">app with bad design</url> below
+        or the <url href="https://userinyerface.com/">userinyerface.com</url> funny website. 
+        The purpose of the app is to accept your date of birth, but the app is not a successful design. Try to put in
+        your birthdate. Is it frustrating to use? 
+      </p>
+        <interactive iframe="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html" width="100%" aspect="2:1"/>
+
+      <activity label="bad-design">
+      <statement>
+        <p>What are the issues with the <url href="https://goulartnogueira.github.io/BadUI/Date/BadUIDate.html">Bad Date app</url> 
+        and how does it behave when you interact with it? How could it be improved to better meet user needs and expectations?
+        </p>
+      </statement>
+      <response/>
+    </activity>
+    
+    <activity label="google-maps">
+      <statement>
+        <p>Take a look at <url href="https://maps.google.com">Google Maps</url>. What is the purpose of Google Maps?
+       People may interact with Google Maps in different ways. 
+       Describe the behavior of Google Maps including how you interact with it and how it responds
+       to do two different tasks.
+      </p>
+      </statement>
+      <response/>
+    </activity>
+
+  </subsection>
+
+  <subsection>
+    <title>Inputs and Outputs</title>
+
+       <idx>input</idx>
+       <idx>output</idx>
+       <idx>user interface (UI)</idx>
+       <idx>event</idx>
+       <idx>event handler</idx>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=mCq8-xTH7jA">video</url> about what 
+      makes a computer a computer.</p>
+    
+      <video youtube="mCq8-xTH7jA" label="video-computer"/>
+
+    <p>As seen in the video, all computing devices and the apps that run on them are created to receive <term>input</term> 
+        from users, store it as data, process the data, and produce <term>output</term> to communicate with users.</p>
+
+    <image source="_static/Unit1images/phoneIO.png" alt="Inputs and Outputs" width="50%"/>
+
+    <p><term>Input</term> is data sent to a computer for processing by a program, and <term>output</term> is the 
+      data sent back from the program to the device. 
+      Input and output can come in many forms, such as tactile (for example touching a button or the device 
+      vibrating), audible (a sound), visual (an image), or text. </p>
+
+   <activity label="stopwatchIO">
+  <statement>
+    <p>Which of the following are examples of input and output in the <url href="https://www.google.com/search?q=stopwatch">Google Stopwatch app</url>?</p>
+  </statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>Tapping the Start button</p>
+      </statement>
+      <feedback>
+        <p>Correct! Tapping a button is user input.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>The system time</p>
+      </statement>
+      <feedback>
+        <p>The system time is used by the stopwatch app to calculate the elapsed time but it is not input or output to the user.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>The elapsed time displayed on the screen</p>
+      </statement>
+      <feedback>
+        <p>Correct! The app displays the elapsed time as output.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>The color of the displayed time</statement>
+      <feedback>
+        <p>The color of the displayed time is set by the app code but it is not input or output to the stopwatch app.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>Pressing the reset button</p>
+      </statement>
+      <feedback>
+        <p>Pressing the reset button is an input to the stopwatch app.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+    <p>The door design video above mentioned feedback in human-centered design, where feedback tells the user that
+      something happened after their input. 
+    </p>
+
+    <activity label="tiltVibrationExample">
+  <statement>
+    <p>Which app below is most likely to use tilting the device (accelerometer) as an input or vibration as an output?</p>
+  </statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>A car racing game</p>
+      </statement>
+      <feedback>
+        <p>Yes, a car racing game could use tilting the phone to steer the car and phone vibration as output during a crash. 
+         </p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>A calculator app that adds two numbers</p>
+      </statement>
+      <feedback>
+        <p>A calculator typically uses taps as input and text as output, not tilt or vibration.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>A tic tac toe game</p>
+      </statement>
+      <feedback>
+        <p>Tic tac toe games mainly use touch input and visual output.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>A weather app that displays today's forecast</p>
+      </statement>
+      <feedback>
+        <p>Weather apps primarily display information on the screen rather than using tilt or vibration.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+     <activity label="automatic-input">
+      <statement>
+        <p>Describe a device or app that uses input from a sensor or camera. If you cannot think of one,
+        search online for examples. 
+        </p>
+      </statement>
+      <response/> 
+      </activity>
+
+    <p>Most apps these days use <term>event-driven programming</term>, which means they display the 
+      <term>user interface (UI)</term> and wait for <term>user events</term> to trigger actions, 
+      for example for the user to touch a button. 
+In event-driven programming, the code is attached to input such as button click and only run when triggered. 
+The app's behavior is determined by the code that runs in response to the input.
+</p>
+    <p>Try the following pizza web app by typing in your name and choosing different options. 
+      Think about the inputs and outputs to the app. </p>
+
+    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2"/>
+
+    <activity label="pizzaAppIO">
+      <statement>
+        <p>Interact with the <url href="external/webapps/pizzaApp.html">pizza app</url> above. What are the inputs and outputs for this app?</p>
+      </statement>
+      <response/>
+    </activity>
+
+    
+    <activity label="pizzaAppOutputTypes">
+      <statement>
+        <p>Which of the following output types does the pizza app above use? Check all that apply.</p>  
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>text</p>
+          </statement>
+          <feedback>
+            <p>The app prints out text output when the button is clicked.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>vibration</statement>
+          <feedback>
+            <p>This app cannot vibrate.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>image</p>
+          </statement>
+          <feedback>
+            <p>Pizza images are displayed as output if the user likes pizza.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>sound</p>
+          </statement>
+          <feedback>
+            <p>There is no sound with this app.</p>
+          </feedback>
+        </choice> 
+          <choice correct="yes">
+          <statement>
+            <p>color</p>
+          </statement>
+          <feedback>
+            <p>Yes, the background color changes as a result of user interactions.</p>
+          </feedback>
+        </choice> 
+      </choices>
+    </activity>
+
+  </subsection>
+
+
+    <subsection xml:id="vocab-1-1">
+     <title>Vocabulary Review</title>
+
+    <activity label="vocab-IO">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>app</premise>
+          <response>a program that runs on a computer or any computing device</response>
+        </match>
+        <match>
+          <premise>purpose</premise>
+          <response>why an app exists or its goal</response>
+        </match>
+        <match>
+          <premise>behavior</premise>
+          <response>what an app does when used</response>
+        </match>
+        <match>
+          <premise>input</premise>
+          <response>data sent to a computer for a program to process.</response>
+        </match>
+        <match>
+          <premise>output</premise>
+          <response>data sent back from a program to the device or user</response>
+        </match>
+        <match>
+          <premise>user interface (UI)</premise>
+          <response>the part of an app (for example buttons) that users directly interact with</response>
+        </match>
+        <match>
+          <premise>event</premise>
+          <response>a signal that something happened, such as a button click or key press</response>
+        </match>
+        <match>
+          <premise>event handler</premise>
+          <response>code that runs in response to an event</response>
+        </match>
+      </cardsort>
+    </activity>
+  </subsection>
+</section>

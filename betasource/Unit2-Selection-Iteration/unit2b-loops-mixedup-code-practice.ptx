@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-loops-mixedup-coding-practice">
+
+
+  <title>Unit 2 Loops Mixed-Up Coding Practice Exercises</title>
+
+  <p>Try to solve each of the following. Click the <em>Check</em> button to check each solution. You will be told if
+        your solution is too short, has a block in the wrong order, or you are using the wrong block.</p>
+   
+   <p>These are exercises mostly written by Dr. Barb Ericson from the AP CSP and Python for Everybody ebooks on Runestone.
+  </p>
+
+   
+
+   <activity label="itr_odd_sum_muc" xml:id="itr_odd_sum_muc" numbered="yes" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a loop to calculate the sum of all of the odd 
+        numbers between 10 to 20 (including 20). </p>
+    </statement>
+    <blocks>
+      <block order="1">
+        <cline>sum = 0</cline>
+      </block>
+      <block order="6">
+        <choice correct="yes">
+          <cline>for number in range(10,21):</cline>
+        </choice>
+        <choice>
+          <cline>for numbers in range(10,20): </cline>
+        </choice>
+      </block>
+      <block order="3">
+        <choice correct="yes">
+        <cline>        if number % 2 == 1: </cline>   
+        </choice>
+        <choice>
+          <cline>      if number % 2 == 0: </cline>
+        </choice>
+        </block>
+        <block order="4">
+        <cline>            sum = sum + number</cline>
+      </block>
+    </blocks>
+  </activity>
+
+  <activity label="cspex1muc" xml:id="cspex1muc"
+    numbered="yes" adaptive="yes" indentation="hide" language="python">
+
+  <statement>
+    <p>The following program segment should print the value of <c>n</c> as long as <c>n</c> is 
+        less than 5. But the blocks have been mixed up and include an extra block that isn't needed 
+        in the solution. Drag the needed blocks from the left and put them in the correct order on 
+        the right. Click the <q>Check Me</q> button to check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>n = 0</cline>
+    </block>
+
+    <block order="2">
+      <choice correct="yes">
+        <cline>while n &lt; 5:</cline>
+      </choice>
+      <choice>
+        <cline>while n &gt; 5:</cline>
+      </choice>
+    </block>
+
+    <block order="3">
+      <cline>    print(n)</cline>
+    </block>
+
+    <block order="4">
+      <cline>    n = n + 1</cline>
+    </block>
+
+  </blocks>
+</activity>
+
+
+<activity label="cspex2muc" xml:id="cspex2muc"
+    numbered="yes" adaptive="yes" indentation="hide" language="python">
+
+  <statement>
+    <p>The following program segment should print 0, 2, 4, 6 on separate lines by using a while loop. 
+        Arrange the code so that <c>accum</c> prints before increasing its value. The blocks have 
+        been mixed up and include an extra block that isn't needed in the solution. Drag the needed 
+        blocks from the left and put them in the correct order on the right. Click the <q>Check 
+            Me</q> button to check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>accum = 0</cline>
+    </block>
+
+    <block order="2">
+      <choice correct="yes">
+        <cline>while accum &lt; 7:</cline>
+      </choice>
+      <choice>
+        <cline>while accum &lt; 6</cline>
+      </choice>
+    </block>
+
+    <block order="3">
+      <cline>    print(accum)</cline>
+    </block>
+
+    <block order="4">
+      <cline>    accum = accum + 2</cline>
+    </block>
+
+  </blocks>
+</activity>
+
+
+<activity label="cspex3muc" xml:id="cspex3muc"
+    numbered="yes" adaptive="yes" indentation="hide" language="python">
+
+  <statement>
+    <p>The following program segment should print all even numbers from 0 to 8 (this includes 0 and 
+        8). But the blocks have been mixed up and include an extra block that isn't needed in the 
+        solution. Drag the needed blocks from the left and put them in the correct order on the 
+        right. Click the <q>Check Me</q> button to check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>counter = 0</cline>
+    </block>
+
+       <block order="2">
+      <choice correct="yes">
+        <cline>while counter &lt;= 8:</cline>
+      </choice>
+      <choice>
+        <cline>while counter &lt; 8:</cline>
+      </choice>
+    </block>
+
+    <block order="4">
+      <cline>      print(counter)</cline>
+    </block>
+
+    <block order="5">
+      <cline>      counter += 2</cline>
+    </block>
+  </blocks>
+</activity>
+
+
+<activity label="cspex6muc" xml:id="cspex6muc"
+    numbered="yes"
+    adaptive="yes"
+    indentation="hide"
+    language="python">
+
+  <statement>
+    <p>The following program segment should calculate and print the sum of all numbers between 0 and 
+        30 (including 30). Start by initializing the variable <c>sum</c>. The blocks have been mixed 
+        up and include an extra block that isn't needed in the solution. Drag the needed blocks from 
+        the left and put them in the correct order on the right. Click the <q>Check Me</q> button to 
+        check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>sum = 0</cline>
+    </block>
+
+    <block order="2">
+      <choice correct="yes">
+        <cline>for number in range(31):</cline>
+      </choice>
+      <choice>
+        <cline>for number in range(30):</cline>
+      </choice>
+    </block>
+
+    <block order="4">
+      <cline>    sum = sum + number</cline>
+    </block>
+
+    <block order="5">
+      <cline>print(sum)</cline>
+    </block>
+
+  </blocks>
+
+</activity>
+
+
+<activity label="cspex7muc" xml:id="cspex7muc"
+    numbered="yes"
+    adaptive="yes"
+    indentation="hide"
+    language="python">
+
+  <statement>
+    <p>The following program segment should calculate the sum of all odd numbers between 0 and 30. 
+        Start by initializing the variable <c>sum</c> and loop through the odd numbers. The blocks 
+        have been mixed up and include an extra block that isn't needed in the solution. Drag the 
+        needed blocks from the left and put them in the correct order on the right. Click the 
+        <q>Check Me</q> button to check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>sum = 0</cline>
+    </block>
+
+    <block order="2">
+      <choice correct="yes">
+        <cline>for number in range(1,30,2):</cline>
+      </choice>
+      <choice>
+        <cline>for number in range(0,29,2):</cline>
+      </choice>
+    </block>
+
+    <block order="3">
+      <cline>for number in numbers:</cline>
+    </block>
+
+    <block order="4">
+      <cline>    sum = sum + number</cline>
+    </block>
+
+    <block order="5">
+      <cline>print(sum)</cline>
+    </block>
+
+  </blocks>
+
+</activity>
+
+
+<activity label="cspex8muc" xml:id="cspex8muc"
+    numbered="yes"
+    adaptive="yes"
+    indentation="hide"
+    language="python">
+
+  <statement>
+    <p>The following program should find the sum of every multiple of 3 between 3 and 36 and print the sum after each addition. But the blocks have been mixed up and include an extra block that isn't needed in the solution. Drag the needed blocks from the left and put them in the correct order on the right. Click the <q>Check Me</q> button to check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>sum = 0</cline>
+    </block>
+
+    <block order="2">
+      <cline>for number in range(3,37,3):</cline>
+    </block>
+
+    <block order="4">
+      <cline>    sum = sum + number</cline>
+    </block>
+
+    <block order="5">
+      <choice correct="yes">
+        <cline>    print(sum)</cline>
+      </choice>
+      <choice>
+        <cline>    print(number)</cline>
+      </choice>
+    </block>
+
+  </blocks>
+
+</activity>
+
+
+
+
+<activity label="cspex10muc" xml:id="cspex10muc"
+    numbered="yes"
+    adaptive="yes"
+    indentation="hide"
+    language="python">
+
+  <statement>
+    <p>The following program should print the numbers 5 to 1 starting with 5. But the blocks have been mixed up and include an extra block that isn't needed in the solution. Drag the needed blocks from the left and put them in the correct order on the right. Click the <q>Check Me</q> button to check your solution.</p>
+  </statement>
+
+  <blocks>
+
+    <block order="1">
+      <cline>counter = 5</cline>
+    </block>
+
+    <block order="2">
+      <cline>while counter &gt; 0:</cline>
+    </block>
+
+    <block order="3">
+      <cline>    print(counter)</cline>
+    </block>
+
+    <block order="4">
+      <choice correct="yes">
+        <cline>    counter = counter - 1</cline>
+      </choice>
+      <choice>
+        <cline>    counter = counter + 1</cline>
+      </choice>
+    </block>
+
+  </blocks>
+
+</activity>
+
+<activity label="csprepeatnumbers_exercises3" numbered="yes" indentation="hide" language="python">
+    <statement>
+      <p>The following program calculates the height of an object as it falls from 1000 feet. The program should use a
+        loop to print out the current height, then update the time by one second and calculate a new height. It should
+        stop looping once the object reaches the ground (height 0) and then print out the final number of seconds.</p>
+      <p>Put the blocks in the right order and indentation. As usual, you will not use all the blocks.</p>
+    </statement>
+    <blocks>
+      <block order="6">
+        <cline>initial_height = 1000</cline>
+        <cline>current_height = initial_height</cline>
+        <cline>time = 0</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>while current_height > 0:</cline>
+        </choice>
+        <choice>
+          <cline>while current_height == 0:</cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline> print("After", time, "seconds")</cline>
+        <cline> print("height is", current_height)</cline>
+      </block>
+      <block order="2">
+        <cline> time = time + 1</cline>
+      </block>
+      <block order="5">
+        <cline> # height = starting - 16.87*t^2</cline>
+        <cline> current_height = initial_height - 16.87 * (time ** 2)</cline>
+      </block>
+      <block order="4">
+        <cline>print("After", time, "seconds")</cline>
+        <cline>print("the object is on the ground")</cline>
+      </block>
+    </blocks>
+  </activity>
+ 
+  </section>

@@ -1,0 +1,818 @@
+<section xml:id="topic-2-5-algorithm-development">
+  <time minutes="90"/>
+  <title>Loop Algorithms</title>
+  <introduction>
+      <p>Quick Links: 
+      <xref text="global" ref="developing-algorithms, common-algorithms, comparing-algorithms, coding-challenge-algorithms  vocab-2-5"/>
+    </p>
+    <p>In this lesson, we will practive developing and comparing algorithms using repetition and selection. 
+      We will learn some common algorithms and patterns using loops that can be used to solve problems, for example
+      calculating the sum or average of a group of numbers or finding the maximum or minimum value in a group of numbers.
+      </p>
+  </introduction>
+
+  <subsection xml:id="developing-algorithms">
+    <title>Developing Algorithms</title>
+
+    <p>
+      The building blocks of algorithms are <term>sequencing</term>, <term>selection</term>, and <term>repetition</term>. With these three 
+      control structures, almost any problem can be solved.
+    </p>
+        
+    <image source="_static/Unit2images/sequence-selection-repetition.png" width="60%" alt="sequence selection repetition"/>
+
+    <p>For example, in the last lesson, we saw an algorithm that printed out the even numbers from 0 up to 10. We can
+      easily adapt that algorithm to print out the odd numbers from 0 up to 20 by changing the condition in the selection and iteration 
+      statements. Try it below.
+    </p>
+
+    <activity label="print-odd-numbers">
+      <statement>
+        <p>
+          Here is a for loop that prints the even numbers from 0 up to 10. 
+          Can you change the code so that it prints the odd numbers from 0 up to 20 instead?
+          You only need to change the range and the operator == in the if statement.
+        </p>
+      </statement>
+
+     <program interactive="activecode" language="python">
+      <code>
+          for count in range(10):
+              if count % 2 == 0:    
+                  print(count)
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("range(20)",self.getEditorText(), "Change to range(20)")
+              self.assertIn("!=",self.getEditorText(), "Use != in the if statement")
+              self.assertIn("1\n3\n5\n7\n9\n11\n13\n15\n17\n19",self.getOutput(), "Output odd numbers from 1 to 19")
+              
+          myTests().main()
+      </tests>
+     </program>
+    </activity>
+  </subsection>
+  
+  <subsection xml:id="common-algorithms">
+    <title>Common Algorithms</title>
+    <introduction>
+
+    <idx>loop algorithms</idx>
+
+    </introduction>
+    
+    <subsubsection xml:id="sum-average">
+      <title>Sum and Average Accumulator Algorithms</title>
+
+      <idx>sum</idx>
+      <idx>average</idx>
+      <idx>accumulator pattern</idx>
+
+      <p>
+        One common algorithm is to compute the sum or average of a set of numbers. This is called the 
+        <term>accumulator pattern</term>; it uses a loop and an <term>accumulator variable</term> to keep track of 
+        the running total as each number is added.
+        The accumulator pattern has 4 steps:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>Initialize the accumulator variable before the loop.</p>
+        </li>
+
+        <li>
+          <p>Loop through the values.</p>
+        </li>
+
+        <li>
+          <p>Update the accumulator variable inside the loop.</p>
+        </li>
+
+        <li>
+          <p>Print or use the accumulated value when the loop is done.</p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      For example, this loop calculates the sum of 0 through 100 using <c>range(101)</c> since this generates numbers up to 101 but not including 101. The <c>sum</c>
+      variable is the accumulator variable and <c>number</c> is added into the sum each time through the loop. Then, the average is calculated by dividing the sum by the number of values.
+    </p>
+
+    <program language="python">
+      <code>
+sum = 0
+for number in range(101):
+    sum += number
+print("The sum of 0 through 100 is", sum)
+average = sum / 100
+print("The average of 0 through 100 is", average)
+      </code>
+    </program>
+
+    <p>Try the accumulator practice below.</p>
+
+      <activity label="mixedup-average" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following program has the correct code to return the average of
+          10 random numbers, but the code is mixed up. Drag the
+          blocks from the left into the correct order on the right. You will be
+          told if any of the blocks are in the wrong order or are indented
+          incorrectly.
+        </p>
+      </statement>
+
+      <blocks>
+        <block order="1">
+          <cline>import random</cline>
+        </block>
+        <block order="4">
+          <cline>total = 0</cline>
+        </block>
+        <block order="2">
+          <cline>for i in range(10):</cline>
+        </block>
+        <block order="3">
+          <cline>    rnd = random.randint(1, 100)</cline>
+        </block>
+        <block order="5">
+          <cline>    total += rnd</cline>
+        </block>
+        <block order="6">
+          <cline>print("The average of 10 random numbers is", total / 10)</cline>
+        </block>
+      </blocks>
+    </activity>
+
+     <activity label="accumulator-practice">
+      <statement>
+        <p>
+          Complete the code below to calculate the sum and average of 2 to 5 (including 5). Use the accumulator pattern to calculate the total, then calculate the average. Try Code Lens to see the variable values change as the program runs.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+total = 0
+# 1. Complete the loop count from 2 to 5 (including 5)
+for number in range( , ):
+    # 2. Update the total with number
+
+# 3. Complete the average calculation below
+average = 
+print("The sum of 2 to 5 is", total)
+print("The average of 2 to 5 is", average)
+        </code>      
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("range(2,6)",self.getEditorText().replace(" ",""), "Change to range(2,6) to include 5")
+              self.assertIn("total/4",self.getEditorText().replace(" ",""), "Calculate the average by dividing the total by 4 numbers")
+              self.assertIn("14", self.getOutput(), "The sum of 2 to 5 is 14")
+              self.assertIn("3.5", self.getOutput(), "The average of 2 to 5 is 3.5")
+
+          myTests().main()
+        </tests>
+        </program>
+      </activity>
+
+    <activity label="accumulator-input">
+      <statement>
+        <p>
+          The following code calculates the sum and average of numbers entered by the user. 
+          Input-controlled loops usually use while loops. Since we do not know how many numbers the user will enter, we will use -1 to end the loop and count the number of inputs.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+sum = 0
+count = 0
+number = int(input("Enter a number (-1 to quit): "))
+# 1. Loop while the number entered by the user is not -1
+while 
+    # 2. Update the sum with the number
+
+    # 3. Increment the count 
+
+    # Get the next number from the user
+    number = int(input("Enter a number (-1 to quit): "))
+
+# 4. Complete the average using sum and count
+average = 
+print("The sum is", sum)
+print("The average is", average)
+        </code>      
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("number!=-1",self.getEditorText().replace(" ",""), "Loop while number != -1")
+              self.assertIn("count+=1",self.getEditorText().replace(" ",""), "Increment the count using +=1")
+              self.assertIn("sum/count",self.getEditorText().replace(" ",""), "Calculate the average by dividing sum by count")
+  
+          myTests().main()
+        </tests>
+        </program>
+      </activity>
+
+
+    </subsubsection>
+
+    <subsubsection xml:id="min-max">
+      <title>Minimum and Maximum</title>
+      <idx>minimum</idx>
+      <idx>maximum</idx>
+      <p>
+        Another common algorithm is to find the minimum or maximum value in a group of numbers. 
+        This is a variation of the accumulator pattern where there is an if-statement inside the loop that tests each value being considered in the loop. To determine the minimum or maximum value, the algorithm uses a variable to store the current minimum or maximum value. The algorithm loops through the sequence of numbers and updates the minimum or maximum value if it finds a number that is lower or higher than the current minimum or maximum. This pattern can also be used to search for a specific value in a group of numbers. 
+       For example, this loop chooses 10 random numbers and finds the
+       minimum value among them. Click on next to see each step.
+    </p>
+
+  <activity label="min-loop-codelens">
+      <statement><p>Click on Next to see each step of the loop!</p></statement>
+      <program interactive="codelens" language="python" label="mincodeLens" xml:id="mincodelens">
+      <code>
+import random
+
+min = 99999 # start with a high value
+for i in range(10):
+    num = random.randint(1, 10)
+    print(num)
+    if num &lt; min: # if num less than min
+        min = num    #      update min to num
+print("The minimum value is", min)
+      </code>
+    </program>
+   </activity>
+
+    <activity label="mixedup-max" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following program has the correct code to find the maximum of
+          positive numbers entered by the user, but the code is mixed up. Drag the
+          blocks from the left into the correct order on the right. You will be
+          told if any of the blocks are in the wrong order or are indented
+          incorrectly.
+        </p>
+      </statement>
+
+      <blocks>
+        <block order="4">
+          <cline>max = -99 # start low</cline>
+        </block>
+        <block>
+          <cline>number=int(input("Enter number (-1 to stop):"))</cline>
+        </block>
+        <block order="2">
+          <cline>while number != -1:</cline>
+        </block>
+        <block order="3">
+          <cline>    if number &gt; max:
+          </cline> 
+        </block>
+        <block order="5">
+          <cline>         max = number
+          </cline>
+        </block>
+           <block>
+          <cline>    number=int(input("Enter another number (-1 to stop):"))</cline>
+        </block>
+        <block order="6">
+          <cline>print("The maximum value is", max)</cline>
+        </block>
+      </blocks>
+    </activity>
+      
+  <activity label="max-algorithm">
+      <statement><p>Run the following code to see the minimum algorithm in action. Then, change the code to find the maximum value instead of the minimum.
+      </p></statement>
+      <program interactive="activecode" language="python">
+      <code>
+import random
+
+min = 99999 
+for i in range(10):
+    num = random.randint(1, 100)
+    print(num)
+    if num &lt; min:
+        min = num
+
+print("The minimum value is", min)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+   def test1(self):
+       self.assertIn("max",self.getEditorText(),"Use the variable max")
+       self.assertNotIn("=99999",self.getEditorText().replace(" ",""), "Start max with a low value like -1")
+       self.assertIn("&gt;",self.getEditorText(), "Use &gt; to find the maximum")
+  
+myTests().main()
+      </tests>
+    </program>
+   </activity>    
+    </subsubsection>
+
+    <subsubsection xml:id="divisibility">
+      <title>Divisibility</title>
+      <idx>divisibility</idx>
+      <p>
+        Another common algorithm is to check whether a number is evenly divisible by another. The algorithm uses the 
+        mod operator (%) to determine whether the remainder of the division is zero. We've already used this to 
+        see if a number is even or odd by checking if the number is divisible by 2. But we can generalize this algorithm to check for divisibility by any number.
+      </p>
+
+    <activity label="divisibility-algorithm">
+      <statement>
+        <p>
+          Change the code below which checks whether a number is even to instead check if a number is divisible by 5. If it is, print "Divisible by 5", otherwise print "Not divisible by 5".
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+number = int(input("Enter a number (-1 to quit): "))
+while number != -1:
+    if number % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+    number = int(input("Enter another number (-1 to quit): "))
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("%5",self.getEditorText().replace(" ",""), "Use % 5 to check for divisibility by 5")
+        self.assertIn("Divisible by 5",self.getEditorText(), "Print 'Divisible by 5' if the number is divisible by 5")
+        self.assertIn("Not divisible by 5",self.getEditorText(), "Print 'Not divisible by 5' if the number is not divisible by 5")
+  
+myTests().main()
+      </tests>
+      </program>
+    </activity>
+
+    </subsubsection>
+  </subsection>
+
+  <subsection xml:id="comparing-algorithms">
+    <title>Comparing Algorithms</title>
+
+    <p>A problem can be solved with different algorithms. A simple example is the problem of calculating the sum of a list of numbers.
+      We can use for loop or a while loop which look very different to solve the same problem. Compare the two algorithms below. Do they produce the same output? 
+    </p>
+
+    <activity label="compare-algorithms">
+      <statement>
+        <p>
+          Compare the two algorithms below. Do they produce the same output? Change each algorithm to calculate the sum of numbers from 1 to 10 instead of 1 to 5. Do they still produce the same output?
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+# Algorithm A
+total = 0
+for number in range(1, 6):
+    total += number
+print(total)
+
+# Algorithm B
+total = 0
+number = 1
+while number &lt;= 5:
+    total += number
+    number += 1
+print(total)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("range(1,11)",self.getEditorText(), "Change to range(1,11) to include 10")
+        self.assertIn("number&lt;=10",self.getEditorText().replace(" ",""), "Change while loop to number &lt;= 10 to include 10")
+        self.assertIn("55",self.getOutput(), "The sum of 1 to 10 is 55")
+  
+myTests().main()
+        </tests>
+      </program>
+    </activity>
+  
+
+    <activity label="while-to-for-conversion">
+      <statement>
+        <p>
+          The following for loop prints the numbers 0 to 6. Rewrite it as a while loop that does 
+          the same thing. Don't forget the 3 steps of writing a while loop: initialize, test, and
+          update the loop variable. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+for number in range(7):
+    print(number)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+      def test1(self):
+          self.assertIn("=0",self.getEditorText().replace(" ",""), "Initialze the loop variable to 0")
+          self.assertIn("while",self.getEditorText(), "Use a while loop")
+          self.assertIn("&lt;",self.getEditorText(), "Use &lt; or &lt;=in the loop condition")
+          self.assertIn("+=1",self.getEditorText().replace(" ",""), "Update the loop variable with += 1")
+          self.assertIn("0\n1\n2\n3\n4\n5\n6",self.getOutput(), "Print output from 0 to 6")
+          self.assertNotIn("for",self.getEditorText(), "Don't use a for loop")
+          self.assertNotIn("7",self.getOutput(), "Only output 0 - 6, not 7")
+  
+myTests().main()
+        </tests>
+      </program>
+    </activity>
+
+   <activity label="boolean-equivalent-expression">
+    <statement>
+  <p>
+    Which Boolean expression is equivalent to the following conditional statement?
+  </p>
+  <program language="python">
+    <code>
+if x &lt; 5:
+    small = True
+else:
+    small = False
+    </code>
+  </program>
+</statement>
+
+<choices randomize="yes">
+  <choice>
+    <statement>
+      <p><code>small = x &gt; 0</code></p>
+    </statement>
+    <feedback>
+      <p>No. This expression is true for all positive values of x, but the original conditional statement is only true for values less than 5.</p>
+    </feedback>
+  </choice>
+
+  <choice correct="yes">
+    <statement>
+      <p><code>small = not x &gt;= 5</code></p>
+    </statement>
+    <feedback>
+      <p>Correct! An expression is equivalent if it always produces the same result. The expression <code>not (x &gt;= 5)</code> is true exactly when <code>x &lt; 5</code>.</p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+      <p><code>small = not x &gt; 5</code></p>
+    </statement>
+    <feedback>
+      <p>No. This expression is true for values less than or equal to 5, but the original conditional statement is true for values less than 5.</p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+      <p><code>small = x &lt;= 5</code></p>
+    </statement>
+    <feedback>
+      <p>No. This expression is true if x = 5, but the original conditional statement is false if x = 5.</p>
+    </feedback>
+  </choice>
+</choices>
+</activity>
+
+    <p>Sometimes two algorithms may produce the same output but have different side effects. <term>Side effects</term> are anything an 
+      algorithm changes besides producing its main output, for example changing a variable's value or changing something on the screen.</p>
+    
+     <activity label="side-effect-variable">
+       <statement>
+        <p>
+          As we saw above, the following two algorithms produce the same output. Which line of code is a side effect that one
+          of the algorithms has that the other does not?
+        </p>
+        <program language="python">
+        <code>
+# Algorithm A
+total = 0
+for number in range(1, 6):
+    total += number
+print(total)
+
+# Algorithm B
+total = 0
+number = 1
+while number &lt;= 5:
+    total += number
+    number += 1
+print(total)
+        </code>
+        </program>
+       </statement>
+       <choices randomize="yes">
+        <choice>
+        <statement>
+        <p>total += number</p>
+      </statement>
+      <feedback>
+        <p>No, both algorithms update the variable total.</p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+        <p>while number &lt;= 5:</p>
+      </statement>
+      <feedback>
+        <p>Although only Algorithm B has a while loop, the program state doesn't change here, so it's not really a side effect.</p>
+      </feedback>
+      </choice>
+      <choice>
+        <statement>
+        <p>total = 0</p>
+      </statement>
+      <feedback>
+        <p>No, both algorithms initialize the variable total to 0.</p>
+      </feedback>
+      </choice>
+            <choice>
+        <statement>
+        <p>print(total)</p>
+      </statement>
+      <feedback>
+        <p>No, both algorithms print the value of the variable total.</p>
+      </feedback>
+      </choice>
+      </choices>
+     </activity>
+
+      <p>Sometimes side effects are unintended and can cause problems. For example, if you are playing a game 
+      and finish a level, and you notice that your score was reset to 0 in the next level, that may be an unitended side effect or bad design. 
+    </p>
+
+    <activity label="compare-algorithms-outputs-side-effects">
+       <statement>
+        <p>
+          Given the two algorithms below, do they have the same outputs and side effects?
+        </p>
+        <program language="python">
+        <code>
+# Algorithm A
+for i in range(3):
+    print("Hello")
+
+# Algorithm B
+count = 0
+while count &lt; 3:
+    print("Hello")
+    count += 1
+        </code>
+        </program>
+       </statement>
+       <choices randomize="yes">
+        <choice>
+        <statement>
+        <p>Same outputs and same side effects</p>
+      </statement>
+      <feedback>
+        <p>No, algorithm B has the additional side effect of updating the variable count.</p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+        <p>Same outputs and different side effects</p>
+      </statement>
+      <feedback>
+        <p>Yes, the two algorithms produce the same output (printing "Hello" 3 times) but have different side effects (Algorithm A doesn't update any variables, while Algorithm B updates the variable count).</p>
+      </feedback>
+      </choice>
+      <choice>
+        <statement>
+        <p>Different outputs and different side effects</p>
+      </statement>
+      <feedback>
+        <p>No, both algorithms produce the same output (printing "Hello" 3 times).</p>
+      </feedback>
+      </choice>
+      <choice>
+        <statement>
+        <p>Different outputs and same side effects</p>
+      </statement>
+      <feedback>
+        <p>No, both algorithms produce the same output (printing "Hello" 3 times).</p>
+      </feedback>
+      </choice>
+      </choices>
+     </activity> 
+    </subsection>
+
+    <subsection xml:id="coding-challenge-algorithms">
+      <title>Coding Challenge: Guessing Game</title>
+
+      <idx><h>projects</h><h>guessing game</h></idx>
+      <idx><h>coding challenge</h><h>guessing game</h></idx>
+
+    <p>In the following coding challenge, you will code a guessing game where the computer picks a random number from 0-100  and the user has to guess it. After each guess, the computer will give clues like “Too high” or “Too low”. We encourage you to work in pairs on this challenge. 
+    </p>
+    
+    <p>Before you start coding, play the guessing game a few times in pairs. One student should play the part
+      of the computer and think of a random number between 0 and 100. The other student should try to guess the number. After each guess, the student playing the computer should give clues like “Too high” or “Too low” until the correct number is guessed. Count the number of guesses you took. Switch roles and play again.
+    </p>
+ <p>
+    What is a good guessing strategy for guessing a number between 0 and 100? What  was your first guess? One great 
+    strategy is to always split the guessing space into two and eliminating half, so guessing 50 for the first 
+    guess. This is called a <term>divide and conquer</term> or <term>binary search algorithm</term> because it 
+    divides the search space in half with each guess. If your guess is  between 0-100, you should be able to guess 
+    the number within 7 guesses. 
+</p>
+
+<project label="coding-challenge-guessing-game">
+  <title>Guessing Game Coding Challenge</title>  
+  <statement>
+      <p>Follow the pseudocode below to code the guessing game. Work in pairs. What’s the loop variable for this program? Can you identify the 3 steps of writing this loop with respect to the loop variable?</p>
+    <ol>
+      <li>Choose a random number from 0-100</li>
+      <li>Get the first guess</li>
+      <li><p>Loop while the guess does not equal the random number:
+         <ul>
+          <li>Increment a count of the number of guesses</li>
+          <li>If the guess is less than the random number, print out “Too low!”</li>
+          <li>If the guess is greater than the random number, print out “Too high!”</li>
+          <li>Get a new guess (save it into the same variable)</li>
+         </ul></p>
+      </li>
+      <li>When the loop ends (guess equals random number), print "You got it" and the number of guesses it took.</li>
+    </ol>      
+        <p>An ungraded extension to this challenge is to test whether the user got it in 7 guesses 
+    or less and provide feedback on how well they did.</p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import random
+# 1. Choose a random number from 0-100 using random.randint
+
+# 2. Get the first guess from the user
+
+# 3. Loop while the guess does not equal the random number
+
+      # If the guess is less than the random number, print out "Too low!"
+      # If the guess is greater than the random number, print out "Too high!"
+      # Get a new guess (save it into the same variable)
+
+# 4. After the loop ends, print "You got it" and the number of guesses it took.
+
+        </code>
+<tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("random.randint(0",self.getEditorText(), "Use random.randint(0,100)")
+              self.assertIn("input",self.getEditorText(), "Use input to get the user's guess")
+              self.assertIn("=0",self.getEditorText().replace(" ", ""), "Initialize a variable to 0 to count the number of guesses")
+              self.assertIn("while",self.getEditorText(), "Use a while loop to repeat until the guess is correct")
+              self.assertIn("if",self.getEditorText(), "Use if statements to check if the guess is too low or too high")
+              self.assertIn("&lt;",self.getEditorText(), "Use &lt; to check if the guess is too low")
+
+
+          myTests().main()
+</tests>
+        </program>
+        </project>
+
+        <activity label="frq-conditional-equivalent">
+          <title>Conditionals Reflection</title>
+        <statement>
+          <p>
+            Consider the conditional (if) statements in your project code above. 
+            Identify the boolean expressions in the conditional statements by writing them below.
+            Explain what happens if they are true or false.  
+            Instead of the two separate if statements, try rewriting it as a single if/else statement below. Would the program still work the same way? Explain why or why not. 
+            </p>
+        </statement>
+        <response/>
+      </activity>
+      <activity label="frq-infinite-loop">
+        <title>Infinite Loop Reflection</title>
+        <statement>
+          <p>
+            Consider the first iteration statement in your project code above (the while loop). 
+            Identify the loop variable by writing it below.
+            Identify the number of times the body of your iteration statement will execute. 
+            Describe a condition or error that would cause your iteration statement to not terminate and cause an infinite loop. Explain how the loop condition could be modified to cause an infinite loop.
+          </p>
+        </statement>
+        <response/>
+      </activity>
+
+     <activity label="compare-algorithms-discussion">
+      <title>Comparing Algorithms Discussion</title>
+      <statement>
+        <p>
+          Discuss the 3 algorithms below in pairs or groups. Do they produce the same output? Do they have the same side effects? Trace through them to determine what each prints out. 
+        </p>
+
+      <program language="python">
+        <code>
+# Alg A
+total = 0
+for number in range(1, 6):
+    total += number
+print(total)
+
+# Alg B
+total = 1
+for number in range(2, 6):
+    total += number
+print(total)
+
+# Alg C
+total = 0
+for number in range(5):
+    total += number
+print(total)
+</code>
+</program>
+      </statement>
+      <response/>
+</activity>
+
+  </subsection>
+
+  <subsection xml:id="vocab-2-5">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-algs">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>sequencing</premise>
+        <response>ordering instructions one after another</response>
+        </match>
+        <match>
+        <premise>iteration</premise>
+        <response>repetition of a sequence of instructions</response>
+        </match>
+        <match>
+          <premise>selection</premise>
+          <response>choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+          <premise>algorithm</premise>
+          <response>a step-by-step procedure for solving a problem</response>
+        </match>
+        <match>
+          <premise>accumulator pattern</premise>
+          <response>a loop with a variable that accumulates a sum or total</response>
+        </match>
+        <match>
+          <premise>average</premise>
+          <response>the sum of a set of numbers divided by the size of the set</response>
+        </match>
+        <match>
+          <premise>minimum</premise>
+          <response>the smallest value in a set of numbers</response>
+        </match>
+        <match>
+          <premise>maximum</premise>
+          <response>the largest value in a set of numbers</response>
+        </match>
+        <match>
+          <premise>side effect</premise>
+          <response>a change other than the output to the program's state or variables when the program runs</response>
+        </match>
+        <match>
+          <premise>divide and conquer pattern</premise>
+          <response>an algorithm that divides the problem into smaller parts and solves each part</response>
+        </match>
+     </cardsort>
+    </activity>
+  </subsection>
+</section>

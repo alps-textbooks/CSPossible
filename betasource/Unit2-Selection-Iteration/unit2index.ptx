@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="unit2" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Selection and Iteration</title>
+
+  <introduction>
+    <p>
+      This unit introduces students to selection for decision-making and iteration for 
+      repetition in code. 
+    </p>
+
+    <p>
+      <ul>
+
+
+        <li>
+          <p>Instructional days: 23-25 days (45 minutes per day)</p>
+        </li>
+
+        <li>
+          <p>
+            Time Estimates: 90 minutes for most lessons, except 45 mins for 2.2.
+          </p>
+        </li>
+
+       
+      </ul>
+    </p>
+  </introduction>
+ 
+
+  <xi:include href="./topic-2-1-program-design-development.ptx" />
+  <xi:include href="./topic-2-2-boolean-expressions.ptx" />
+  <xi:include href="./topic-2-3-selection.ptx" />
+  <xi:include href="./topic-2-4-iteration.ptx" />
+  <xi:include href="./topic-2-5-algorithm-development.ptx" />
+  <xi:include href="./topic-2-6-errors.ptx" />
+  <xi:include href="./unit2-summary.ptx" />
+  <xi:include href="./unit2a-selection-mcq-exercises.ptx" />
+  <xi:include href="./unit2a-selection-mixedup-code-practice.ptx" />
+  <xi:include href="./unit2a-selection-coding-practice.ptx" />
+  <xi:include href="./unit2b-loops-mcq-exercises.ptx" />
+  <xi:include href="./unit2b-loops-mixedup-code-practice.ptx" />
+  <xi:include href="./unit2b-loops-coding-practice.ptx" />
+  <xi:include href="./appinventor-lights-off-app.ptx" /> 
+  
+  </chapter>

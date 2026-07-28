@@ -1,0 +1,882 @@
+<section xml:id="topic-1-7-expressions">
+  <time minutes="90"/>
+  <title>Mathematical Expressions</title>
+   <idx>expressions</idx>
+   <idx>math</idx>
+
+  <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="expressions, updating-state, operators, input-math, random-numbers,        coding-challenge-random-turtle-project,  vocab-1-7, appinventor-activity2"/>
+    </p>
+    <p>
+      Computers are very good at math! In this lesson, we'll learn how to do math in Python
+      using <term>mathematical expressions</term> which are mathematical formulas that combine numbers, 
+      variables, and operators to calculate a value like <c>width*height</c> below. 
+
+    <image source="_static/Unit1images/computer-math.png" width="50%" alt="computer loving math"/>
+
+    </p>
+  </introduction>
+
+  <subsection xml:id="expressions">
+    <title>Mathematical Expressions</title>
+ 
+    <p>In the last lesson, we assigned values to variables like <c>score = 0</c>, but the right side of an 
+    assignment statement can be more than just a simple value like 0. We can use <term>expressions</term> which 
+    combine numbers, variables, and operators to calculate a value and assign it to the variable in an assignment statement like below. 
+    </p>
+    
+     <image source="_static/Unit1images/assignment.png" width="50%" alt="variable assigned an expression"/>
+
+    <p>This looks like a mathematical formula, but in coding, an assignment statement always has a single variable on the left side and an expression on the right side. The expression is evaluated and then assigned to the variable. </p>
+
+     <activity label="trace-expr0">
+      <statement><p>If <c>points = 3</c>, what is the value of <c>score</c> after this assignment statement 
+        which multiplies points by 10 and adds 5?</p>
+      <program language="python">
+       <code>
+         score = (10 * points) + 5
+       </code>
+     </program>
+     <p><fillin answer="35" mode="string"/></p>
+     </statement>
+  <evaluation>
+    <evaluate>
+      <test>
+        <strcmp use-answer="yes"/>
+        <feedback>
+          Correct! <c>(10*3) + 5 = 35</c>
+        </feedback>
+      </test>
+
+      <test>
+        <!-- else -->
+        <feedback>
+          <p>
+           Incorrect, try again. What is (10 * 3) + 5?
+          </p>
+        </feedback>
+      </test>
+    </evaluate>
+  </evaluation>
+</activity>
+
+</subsection>
+
+<subsection xml:id="updating-state"> 
+  <title>Updating State with Expressions</title>
+    
+  <p>
+      If you use a variable to keep score, you would probably <term>increment</term> the score (add
+      one to the current value) as the game progresses. You can do this by
+      setting the variable to the current value of the variable plus one
+      (<c>score = score + 1</c>) as shown below. The formula would look strange
+      in math class, but it makes sense in coding because it is assigning a new
+      value to the variable on the left that comes from evaluating the
+      arithmetic expression on the right. So, the score variable is set to the
+      previous value of score plus 1.
+    </p>
+
+    <activity label="incrementScore">
+      <statement>
+        <p>
+          Try the code below to see how score is incremented by 1. Try
+          substituting 2 instead of 1 to increment by 2.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+        score = 10
+        print(score)
+        score = score + 1
+        print(score)
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("12",self.getOutput(),"Change + 1 to + 2")
+
+          myTests().main()
+         </tests>
+       </program>
+    </activity>
+
+
+    <p>In Python, you do not need to indicate the data type of a variable, but variable that are 
+      assigned whole number values like <c>score = 5</c> are automatically type <c>int</c> for <term>integer</term>.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="operators">
+    <title>Arithmetic Operators</title>
+
+    <idx>operators</idx>
+    <idx>
+      <h>math</h><h>operators</h>
+    </idx>
+
+    <idx>
+      <h>operators</h><h>addition</h>
+    </idx>
+
+    <idx>
+      <h>operators</h><h>subtraction</h>
+    </idx>
+
+    <idx>
+      <h>operators</h><h>multiplication</h>
+    </idx>
+
+    <idx>
+      <h>operators</h><h>division</h>
+    </idx>
+    <idx>
+      <h>operators</h><h>modulo</h>
+    </idx>
+    <idx>
+      <h>operators</h><h>mod</h>
+    </idx>
+     <idx>
+      <h>operators</h><h>remainder</h>
+    </idx>
+      <idx>
+      <h>operators</h><h>exponent</h>
+    </idx>
+      <idx>
+      <h>operators</h><h>power</h>
+    </idx>
+      <idx>
+      <h>operators</h><h>integer division</h>
+    </idx>
+
+    <p>Python uses the following basic arithmetic operators: 
+     </p>
+    <table xml:id="basic-operators">
+      <title>Python Basic Arithmetic Operators</title>
+        <tabular>
+            <row header="yes">
+                <cell bottom="minor"> Operator </cell>
+                <cell bottom="minor"> Meaning </cell>
+            </row>
+
+            <row>
+                <cell> +  </cell>
+                <cell> Addition</cell>
+            </row>
+               <row>
+                <cell> -  </cell>
+                <cell> Subtraction</cell>
+            </row>
+            <row>
+                <cell>  * </cell>
+                <cell> Multiplication</cell>
+            </row>
+            <row>
+                <cell>  /  </cell>
+                <cell> Division </cell>
+            </row>
+          </tabular>
+    </table>
+
+    <activity label="operators">
+      <statement>
+        <p>
+          Try the code below to see how the basic arithmetic operators work in Python.
+          Add two more lines to the code as described.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+        print(10 + 5)
+        print(10 - 5)
+        print(10 * 5)
+        print(10 / 5)
+        # print 2 times 3
+
+        # print 5 divided by 2
+        
+        </code>
+         <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("6",self.getOutput(),"Check 2 times 3")
+              self.assertIn("2.5",self.getOutput(),"Check 5 divided by 2")
+              count = self.getEditorText().count("*")
+              self.assertGreaterEqual(count, 2, "* used")
+
+          myTests().main()
+         </tests>
+       </program>
+      </activity>
+
+    <p>Python also has the following non-standard operators:</p>
+    <table xml:id="special-operators">
+      <title>Python Special Operators</title>
+        <tabular>
+             <row header="yes">
+                <cell bottom="minor"> Operator </cell>
+                <cell bottom="minor"> Meaning </cell>
+            </row>        
+            <row>
+                <cell>  // </cell>
+                <cell> Integer Division (everything after the decimal point is removed) </cell>
+            </row>
+            <row>
+                <cell>  %  </cell>
+                <cell> Modulo (integer remainder after integer division) </cell>
+            </row>
+            <row>
+                <cell> ** </cell>
+                <cell> Exponent (raises a number to a power) </cell>
+            </row>
+
+        </tabular>
+    </table>
+
+        <p>The <term>modulo (mod)</term> or <term>remainder operator</term> is very useful in coding. For example, it can be used to check if a number 
+      is even (divisible by 2) if it has no remainders when divided by 2. 
+      The expression <c>5 % 2</c> is equal to 1, because 5 divided by 2 is equal to 2 with a remainder of 1 
+      (since 2 * 2 = 4). 
+     </p>
+
+    <activity label="special-operators">
+      <statement>
+        <p>
+          Try the code below to see how the special arithmetic operators work in Python.
+          Compare the result of 5/2 and 5//2 and the remainder 5%2.
+          Add 1 more line to the code as described.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+        print("5 / 2 = ", 5 / 2)
+        print("5 // 2 = ", 5 // 2)
+        print("Mod or Remainder 5 % 2 = ", 5 % 2)
+        print("5 ** 2 = ", 5 ** 2)
+        # print 13 mod 5
+        
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("3",self.getOutput(),"Check 13 mod 5")
+              count = self.getEditorText().count("%")
+              self.assertGreaterEqual(count, 2, "% used")
+
+          myTests().main()
+         </tests>
+       </program>
+      </activity>
+
+  <activity label="mod-exercise">
+        <statement>
+            <p>What is the result of <c>2 % 6</c>?</p>
+        </statement>
+        <choices randomize="yes">
+            <choice>
+                <statement>
+                    <p>0</p>
+                </statement>
+                <feedback>
+                    <p>This would be correct if it was <c>6 % 2</c>.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>1</p>
+                </statement>
+                <feedback>
+                    <p>This would be correct if it was some odd number divided by 2, but it is not.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>2</p>
+                </statement>
+                <feedback>
+                    <p>6 goes into 2 zero times with 2 left over. If you have a smaller number divided by a larger number the remainder is always the smaller
+                        number.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>6</p>
+                </statement>
+                <feedback>
+                    <p>If you have a smaller number divided by a larger number the remainder is always the smaller
+                        number.</p>
+                </feedback>
+            </choice>
+        </choices>
+
+      </activity>
+
+      <p>If you have a smaller number divided by a larger number the remainder is always the smaller
+          number.</p>
+
+
+    <p>When compound expressions are evaluated, operator precedence rules are used, just like when we do 
+      math, so that multiplication *, division /, and remainder % are done before 
+      addition + and subtraction -. However, anything in parentheses is done first. The PEMDAS acronym 
+      can help you remember the order of operations: Parentheses, Exponents, Multiplication and Division, 
+      Addition and Subtraction (from left to right).
+      It doesn’t hurt to put in extra parentheses if you are unsure as to what will be done first or 
+      just to make it more clear.</p>
+
+      
+      <activity label="pemdas">
+        <statement>
+            <p>What is the result of <c>1 + 3 * (2 + 1)</c>?</p>
+        </statement>
+        <choices randomize="yes">
+            <choice>
+                <statement>
+                    <p>12</p>
+                </statement>
+                <feedback>
+                    <p>Remember PEMDAS! Don't do the addition first.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>9</p>
+                </statement>
+                <feedback>
+                    <p>Remember to do the parentheses first.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>15</p>
+                </statement>
+                <feedback>
+                    <p>Remember PEMDAS</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>10</p>
+                </statement>
+                <feedback>
+                    <p>Yes, 1 + 3 * (2 + 1) = 1 + 3 * 3 = 1 + 9 = 10</p>
+                </feedback>
+            </choice>
+        </choices>
+      </activity>
+
+       <idx>compound operators</idx>
+    <p>
+      Compound assignment operators <c>+=</c>, <c>-=</c>, <c>*=</c>, <c>/=</c>,
+      and <c>%=</c> are shortcuts that do a math operation and assignment in one
+      step. For example, <c>x += 1</c> adds 1 to the current value of <c>x</c>
+      and assigns the result back to <c>x</c>. It is the same as <c>x = x +
+      1</c>. This pattern is possible with any operator put in front of the
+      <c>=</c> sign.
+    </p>
+
+    <p>When tracing through code with expressions, always remember to evaluate the right-hand side of the 
+      assignment first, then assign the result to the variable on the left-hand side. You can practice and
+    check your answers by adding <c>print</c> statements to show the variables or click on the "Show CodeLens" button
+  on any Active Code exercise to turn on the interactive tracing tool called CodeLens as seen below. This is a
+tool called <url href="https://pythontutor.com">Python Tutor</url> that is built into Runestone.</p>
+    
+    <activity label="codelensAsgn">
+      <statement>
+        <p>
+          Keep clicking on the Next button at the bottom of the code to see how
+          the values of the variables change as you step through the running
+          program. You can see interactive tracing in any Active Code exercise by clicking the CodeLens button. 
+        </p>
+      </statement>
+
+      <program interactive="codelens" language="python" label="codeLens1" xml:id="codelensid1">
+        <code>
+    score = 9;
+    print(score)
+    score += 1  
+    print(score)
+    bonus = 11 % 3
+    print(bonus)
+    score *= bonus
+    print(score);
+        </code>
+      </program>
+    </activity>
+
+   <activity label="trace-expr">
+        <statement>
+            <p>What are the values of x and y after the following code executes?
+              Remember to evaluate the right hand side of = first and then assign the result to the variable on the left side.
+          You can step through this code by clicking on this <url href="https://pythontutor.com/visualize.html#code=x%20%3D%202%0Ay%20%3D%2010%0Ax%20%3D%20y%0Ax%20%3D%20x%20%2B%201%0Ay%20%3D%20y%20*%203&amp;curInstr=5&amp;mode=display&amp;origin=opt-frontend.js\&amp;py=311"> visualizer link</url>.</p>
+          <program language="python">
+            <code>
+            a = 2
+            b = 10
+            a = b
+            a = a + 1
+            b = b * 3
+            </code>
+          </program>
+        </statement>
+        <choices randomize="yes">
+            <choice>
+                <statement>
+                    <p>a = 10, b = 30</p>
+                </statement>
+                <feedback>
+                    <p>Remember that a is incremented.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>a = 11, b = 33</p>
+                </statement>
+                <feedback>
+                    <p>No, b's value is copied into a but they are not connected after that.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>a = 11, b = 30</p>
+                </statement>
+                <feedback>
+                    <p>Correct!</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>a = 10, b = 33</p>
+                </statement>
+                <feedback>
+                    <p>Try the visualizer to see the step-by-step evaluation.</p>
+                </feedback>
+            </choice>
+        </choices>
+      </activity>
+  </subsection>
+
+  <subsection xml:id="input-math">
+    <title>Input and Math</title>
+    <idx>input</idx>
+
+    <p>When you use the <c>input()</c> command to get input from a user, the value is always treated as a string, 
+      even if the user types in a number. If you want to use that input in a mathematical expression, you need to 
+      convert it to a number first using the <c>int()</c> command for integers or <c>float()</c> command for 
+      decimal numbers. For example:</p>
+      <program language="python">
+        <code>
+ageStr = input("How old are you? ")
+age = int(ageStr)
+# Now we can do math with the age variable since it is an int instead of a string
+print("Next year you will be", age + 1, "years old.")
+        </code>
+     </program>
+
+      <activity label="input-math">
+      <statement>
+        <p>
+          Try the code below to see that there is an error when you try to do math with a string. 
+          Then, fix the code by converting the input to an int before doing the math.
+        </p>
+      </statement>
+    <program language="python" interactive="activecode">
+        <code>
+        ageStr = input("How old are you? ")
+        # To fix the error, convert the string ageStr to an int and use it in the formula below
+        yearsUntil100 = 100 - ageStr
+        print("You will be 100 in", yearsUntil100, "years.")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("You will be 100",self.getOutput(),"It works!")
+
+          myTests().main()
+         </tests>
+    </program>
+    </activity>
+
+<activity label="mixedUpMath" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>The following program segment should calculate the number of hours and then the remaining 
+          minutes in 150 minutes, but the blocks are mixed up. 
+          For example, if there are 150 minutes, then that is 2 hours
+          and a remainder of 30 minutes.  Remember that <c>//</c> in Python is integer division
+          that returns a whole number, <c>/</c> is float division, and <c>%</c> is the remainder operator. 
+          Drag the blocks from the left and put them in the correct order on the right. 
+          There will be 2 extra blocks that you will not use. 
+          Click the <em>Check Me</em> button to check your solution.</p>
+      </statement>
+      <blocks>
+        <block>
+         <choice correct="yes">
+          <cline>minutes = 150</cline>
+          </choice>
+        </block>
+       
+        <block>
+          <choice correct="yes">
+           <cline>hours = minutes // 60</cline>
+          </choice>
+          <choice>
+           <cline>hours = minutes / 60</cline>
+          </choice>
+        </block>
+        <block>
+          <choice correct="yes">
+           <cline>remainingMinutes = minutes % 60</cline>
+          </choice>
+          <choice>
+           <cline>remainingMinutes = minutes / 60</cline>
+          </choice>
+        </block>
+      </blocks>
+    </activity>
+
+    <activity label="calculate-hours">
+      <statement>
+        <p>Write a program that asks the user for the number of minutes they have spent in class and then calculate 
+          the number of hours, remaining minutes, and seconds. Fill in the formulas for 1, 2, and 3 below.</p>
+      </statement>
+      <program language="python" interactive="activecode">
+        <code>
+        # 1. Ask the user for the number of minutes they have spent in class
+        minutesStr = input("How many minutes have you spent in class? ")
+        # convert the input to an int
+        minutes = int(minutesStr)
+
+        # 1. calculate the hours in minutes by using integer division // (there are 60 minutes in an hour)
+        hours = 
+        # 2. calculate the remaining minutes in minutes using the mod % operator and 60
+        remainingMinutes = 
+        # 3. calculate the number of seconds in minutes with multiplication (there are 60 seconds in a minute)
+        seconds = 
+        
+        # print the results
+        print("You have spent", hours, "hour(s) and", remainingMinutes, "minute(s), and a total of", seconds, "second(s) in class.")
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("minutes//60",self.getEditorText().replace(" ", ""),"Use minutes//60 to calculate hours")
+              self.assertIn("minutes%60",self.getEditorText().replace(" ", ""),"Use minutes%60 to calculate remaining minutes")
+              self.assertIn("minutes*60",self.getEditorText().replace(" ", ""),"Use minutes*60 to calculate seconds")
+
+          myTests().main()
+         </tests>
+        </program>
+    </activity>
+    </subsection>
+
+  <subsection xml:id="random-numbers">
+    <title>Random Numbers</title>
+    <idx>random numbers</idx>
+    <idx>random</idx>
+
+    <p>Games would be boring if the same thing happened each time you played the
+      game. Random numbers can be used in games to generate different actions or outcomes
+      each time the game is played. Try a game app on your phone or computer and try to identify where
+      random numbers are used. If you roll dice or flip a coin or if the enemies in the game do not always act 
+    the same way, then random numbers are likely being used.</p>
+
+    <p>In Python, there is a library called <c>random</c> that can be imported and used to generate 
+    random values. Use <c>random.randint(start, end)</c> to generate a random integer from <c>start</c> to 
+    <c>end</c>, including both endpoints. For example:</p>
+    <program language="python">
+      <code>
+import random
+# pick a random number from 0 to 10
+r = random.randint(0, 10)
+      </code>
+    </program>
+    
+    
+    <p>Try running the program below a few times to see that it generates different
+    random numbers each time it runs.</p>
+  <activity label="random-num-gen">
+    <statement>
+      <p>Try the code below to see how to generate random numbers in Python. 
+        Run it a few times to see that it generates different random numbers each time.
+      Then, generate another random number from -10 to 10.</p>
+    </statement>
+  <program xml:id="random-num-generator" interactive="activecode" language="python">
+    <code>
+import random
+# pick a random number from 1 to 100 
+r = random.randint(1, 100)  
+print(r)
+# print another random number from -10 to 10
+        </code>
+        <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              count = self.getEditorText().count("randint")
+              self.assertGreaterEqual(count, 2, "randint used twice")
+
+          myTests().main()
+         </tests>
+  </program>
+</activity>
+
+    <p>Computers can’t usually generate truly random numbers without measuring something that is
+      random (like static noise on radio frequencies or lava lamps). If they don’t have access to something like
+      that, they must rely on generating <term>pseudorandom</term> numbers that look
+      random even though they are created using a mathematical formula. Python takes the system
+      time as the seed or starting point (since it is always changing) and then uses a mathematical formula to
+      generate the next random number each time we ask for one.</p>
+
+  </subsection>
+
+  <subsection xml:id="coding-challenge-random-turtle-project">
+    <title>Coding Challenge: Random Turtle Project</title>
+    <idx><h>projects</h><h>random turtle</h></idx>
+    <idx><h>coding challenge</h><h>random turtle</h></idx>
+    
+    <p>
+      Let's practice with turtles drawing with random colors and random movements. 
+      Colors on computers and on the web can be set using RGB (red, green, blue) values that range from 0 to 255 (which can be saved in 8 bits). 
+      Try the <url href="https://www.w3schools.com/colors/colors_picker.asp">Color Picker</url> and look at the RGB values for different colors
+      below the selected color box.  Any color can be made by mixing different amounts of red, green, and blue light. Mixing light is 
+      different than mixing paint, so when you mix red, green, and blue light, you get white light.
+    </p>
+    <image source="_static/Unit1images/RGB.png" width="40%" alt="Mixing red, green, and blue light to make colors"/>
+
+    <activity label="rgb-color">
+     <statement> <p>What RGB values do you need to make black? Try the <url href="https://www.google.com/search?q=colorpicker">Google color picker</url> to test.</p></statement>
+     <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <p>0, 0, 0</p>
+            </statement>
+            <feedback>
+                <p>Correct! Black light is the default state of no light. For example at nighttime, all is black because of there is no sunlight.</p>
+            </feedback>
+        </choice>
+
+        <choice>
+            <statement>
+                <p>255, 255, 255</p>
+            </statement>
+            <feedback>
+                <p>This is white, not black. If you mix all three primary RGB colors of light, you get white.</p>
+            </feedback>
+        </choice>
+
+        <choice>
+            <statement>
+                <p>255, 0, 0</p>
+            </statement>
+            <feedback>
+                <p>This is red light, not black. Red light is made with all red and no green or blue.</p>
+            </feedback>
+        </choice>
+
+        <choice>
+            <statement>
+                <p>0, 255, 255</p>
+            </statement>
+            <feedback>
+                <p>This is cyan light, not black. Cyan light is made with all green and blue and no red.</p>
+            </feedback>
+        </choice>
+     </choices>
+    </activity>
+
+    <activity label="rand-predict">
+     <statement> <p>The assignment statement <c>x = random.randint(-200, 200)</c> can be used to generate a random x-coordinate for a turtle,
+      because it is initially placed at coordinates (0, 0) and can move 200 pixels to the right to 200 or left to -200. 
+      Which of the following numbers cannot be generated by this expression?</p></statement>
+     <choices randomize="yes">
+        <choice>
+            <statement>
+                <p>0</p>
+            </statement>
+            <feedback>
+                <p>0 is between -200 and 200, so it can be generated.</p>
+            </feedback>
+        </choice>
+
+        <choice>
+            <statement>
+                <p>-200</p>
+            </statement>
+            <feedback>
+                <p>-200 is between -200 and 200, so it can be generated.</p>
+            </feedback>
+        </choice>
+
+        <choice>
+            <statement>
+                <p>200</p>
+            </statement>
+            <feedback>
+                <p>200 is between -200 and 200, so it can be generated.</p>
+            </feedback>
+        </choice>
+
+        <choice correct="yes">
+            <statement>
+                <p>-255</p>
+            </statement>
+            <feedback>
+                <p>-255 is not between -200 and 200, so it cannot be generated by random.randint(-200, 200).</p>
+            </feedback>
+        </choice>
+     </choices>
+    </activity>
+
+     <project label="coding-challenge-random-turtle">
+      <title>Random Turtle Project</title>
+      <statement>
+        <p>
+          In the code below, you will use random numbers to set the background color, 
+          pen color, and turtle coordinates. Right now it uses default colors.
+          Change the lines of code that say "# Change these to use random.randint". 
+          Run the code a few times to see that it generates different random colors and movements each time it runs. 
+        </p>
+      </statement>
+    <program xml:id="random-turtle" interactive="activecode" language="python">
+      <code>
+import turtle
+import random
+screen = turtle.Screen()
+turt = turtle.Turtle()
+
+# Choose random RGB values for a light background color from 100 to 255
+# You can choose different ranges within that for r, g, and b.
+r = 255    # Change these to use random.randint(start,end)
+g = 255
+b = 255
+# Set the background color using the random RGB values (scaled by /255)
+screen.bgcolor(r/255, g/255, b/255)  
+
+# Choose random RGB values for a dark pen color from 0 to 100
+# You can choose different ranges within that for r, g, and b.
+r = 0    # Change these to use random.randint(start,end)
+g = 0
+b = 0
+# Set the pen color using the random RGB values (scaled by / 255)
+turt.color(r/255, g/255, b/255)  
+
+# Choose a random x and y coordinate from -200 to 200
+x = 100   # Change these to use random.randint(start,end)
+y = 100
+turt.goto(x, y)  # Move the turtle to the random (x, y) coordinates
+
+# Choose a random angle from 0 to 360 and a random distance from 20 to 100
+angle = 45   # Change these to use random.randint(start,end)
+distance = 50
+turt.right(angle)       # Turn the turtle right by the random angle
+turt.forward(distance)  # Move the turtle forward by the random distance
+turt.goto(0, 0) 
+
+# Repeat the code above to choose random colors, 
+# random x, y, angle, distance and move the turtle at least 3 times
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+                count = self.getEditorText().count("randint")
+                self.assertGreaterEqual(count, 30, "at least 30 randint used")
+
+          myTests().main()
+       </tests>
+    </program>
+    </project>
+
+     <activity label="frq-turtle-rand-reflection">
+      <title>Project Reflection</title>
+      <statement>
+        <p>Describe how you used random numbers in your turtle project. 
+          What was the range of random numbers you used for the RGB values and the x, y coordinates? 
+          How did the random numbers enhance the project?
+        </p>
+      </statement>
+      <response/>
+
+    </activity>
+  </subsection>
+
+   <subsection xml:id="vocab-1-7">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-exprs">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>expression</premise>
+          <response>combination of numbers, variables, and operators that 
+      represents a value</response>
+        </match>
+        <match>
+          <premise>increment</premise>
+          <response>to increase a variable's value, often by adding 1 to it</response>
+        </match>
+        <match>
+          <premise>integer</premise>
+          <response>
+            a numeric data type that represents positive and negative whole numbers, including zero.
+          </response>
+        </match>
+        <match>
+          <premise>modulo (%)</premise>
+          <response>operator that returns the remainder of a division operation</response>
+        </match>
+        <match>
+          <premise>random.randint</premise>
+          <response>Python function that generates a random integer between two specified values (inclusive)</response>
+        </match>
+      </cardsort>
+    </activity>
+
+</subsection>
+
+      <subsection xml:id="appinventor-activity2">
+      <title>App Inventor Project Continued (Optional)</title>
+
+    <p>If your class started the Paint Pot app using MIT's App Inventor, you can now 
+   finish the <url href="unit1-appinventor-paint.html#paint-part2">Paint Pot Tutorial</url> part 2, 
+   enhancements, and reflections.
+        </p>
+      
+    </subsection>
+</section>

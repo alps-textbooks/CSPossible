@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the bookinfo element: -->
+  <xi:include href="./bookinfo.ptx" />
+
+  <book xml:id="cspossible">
+    <title>CSPossible</title>
+     <subtitle>AP CSP in Python (beta)</subtitle>
+
+    <!-- Include chapters -->
+      <xi:include href="./Unit0/unit0index.ptx" />
+      <xi:include href="./Unit1-Creating-Programs/unit1index.ptx" />
+      <xi:include href="./Unit2-Selection-Iteration/unit2index.ptx" />
+      <xi:include href="./Unit3-Lists-Procedures/unit3index.ptx" />
+      <xi:include href="./Unit4-Data-Internet-AI/unit4index.ptx" />
+     <!-- <xi:include href="./Unit5-Optional/unit5index.ptx" /> -->
+  
+
+    <!-- Include backmatter -->
+   <backmatter>
+      <index>
+        <index-list />
+      </index>
+    </backmatter>
+
+  </book>
+</pretext>

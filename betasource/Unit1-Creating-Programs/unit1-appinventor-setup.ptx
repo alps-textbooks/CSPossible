@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit1-appinventor-setup">
+    <title>App Inventor Setup (Optional)</title>
+  <time minutes="45" />
+  <idx> <h>App Inventor</h><h>setup</h></idx>
+
+  <introduction>
+
+  <p>
+    As part of AP CSP, your class may choose to develop mobile apps using the Mobile CSP curriculum for 
+    <url href="http://appinventor.mit.edu/explore/">MIT's App Inventor</url>.  Imagine making
+    an app that runs on your own phone! App Inventor is a visual block-based drag and 
+    drop programming environment that can be used to quickly build mobile apps with many advanced features. 
+    Watch the <url href="https://www.youtube.com/watch?v=sNjGAiOrX-o" >video</url> 
+    about App Inventor below. </p>
+
+       <video youtube="sNjGAiOrX-o" label="video-app-inventor" />
+
+       
+  <p>In this lesson, you will try an already-built App Inventor project and make sure that it runs with 
+        your mobile device or computer.  App Inventor can be used with Android or iOS phones and tablets as well as <url href="https://appinventor.mit.edu/support/chromebooks">Chromebooks</url>. There is a new web-emulator coming soon for App Inventor to use on any computer even without a mobile device!</p>
+
+  </introduction>
+
+  <subsection xml:id="unit1-appinventor-setup-steps">
+  <title>App Inventor Setup Steps</title>
+
+    <image source="_static/Unit1images/appinvlogo.png" width="30%" alt="App Inventor Logo" />
+
+     <p>Click to open App Inventor with the <url href="http://ai2.appinventor.mit.edu/?repo=templates.appinventor.mit.edu/trincoll/csp/tutorials/aias/WelcomeApp.asc">App
+     Inventor Template Welcome App</url> (we recommend using the Chrome browser for this). You will need to log in with your Google (or App Inventor) account that you will use for this 
+     course. Once the project opens in App Inventor, an embedded tutorial on the left of this app will guide you through the setup directions which are also below. </p>
+     
+     <p>
+     If you need to come back to your project, you can go to <url href="http:/appinventor.mit.edu/">appinventor.mit.edu</url> and click the <em>Create Apps</em> button and login to find your project and open it again.  App Inventor is an Integrated Development Environment (IDE) which means that all of the software tools needed to design, develop, and test a mobile app are integrated within the App Inventor platform.
+     </p>
+
+     <p>When the project opens, you will be viewing the <em>App Inventor Designer</em>. The Designer is where you 
+        will design your app's <em>User Interface</em>.  The app you are testing has a button with an image (which 
+        displays on start up), a couple of labels that display text and a <em>Player</em> component that will play 
+        an applause sound.   </p>
+
+     
+     <image source="_static/Unit1images/DesignTab.png" width="100%" alt="App Inventor User Interface"/>
+
+     <p>If English is not your first language, you can switch App Inventor to a different language by clicking on English at the top right of the screen</p>
+
+      <p> Now, switch to the Blocks Editor by clicking on Blocks in the top right-hand corner of your window. 
+      </p>
+
+     <p><image source="_static/Unit1images/testappdesigner.png" width="100%" alt="Test App Designer"/></p>
+
+
+     <p>The Blocks Editor is where all the coding happens. There are built-in blocks as well as blocks for any  component that you add in the Designer window.
+     </p>
+     
+     <image source="_static/Unit1images/BlocksTab.png" width="100%" alt="Blocks Editor"/>
+
+       <p>Notice that App Inventor blocks connect together like puzzle pieces.  The blocks for this app will 
+        cause it to display a congratulatory message on your screen and play an applause sound on start up. When 
+        the button with the logo is clicked, the app will change the background color and say hello.  </p>
+
+    <p>To connect your mobile device to App Inventor:</p>
+     <ol>
+     <li>Make sure that both your computer and your phone or tablet are connected to the same wifi or that you
+        are using a Chromebook.</li>
+     <li>Install the <url href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3">
+      Android MIT AI2 Companion app</url> or <url  href="https://apps.apple.com/us/app/mit-app-inventor/id1422709355?uo=4&amp;itscg=30200&amp;itsct=apps_box&amp;mt=8">
+        iOS MIT App Inventor Companion</url> from the Play Store.</li>
+     <li><p>In App Inventor on your computer, click Connect and then select <em>AI Companion</em>. This will 
+      display a 6-letter code both as a barcode and as plain text. (Note: The 6-letter code will be a unique 
+      code and different from the one shown below)
+        <image source="_static/Unit1images/testappselect.png" width="50%" alt="Connect Menu"/>
+       <image source="_static/Unit1images/testappcompanion.png" width="50%" alt="Barcode"/>
+       </p></li>
+     <li>On the companion app, either type in the 6-letter code and click the “Connect to App Inventor” button 
+      or scan the barcode. You should see the app on your device!</li>
+     </ol>
+
+     <p>For set up instructions to use a USB connection instead of WiFi, please go 
+      <url  href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" style="line-height: 1.22;">here</url> 
+      and follow steps 1-6.</p>
+
+     <p>There is a new web-emulator coming soon for App Inventor!</p>
+
+      <p>If everything is configured properly, you should see the Welcome app on your device or emulator. You 
+        should see a message and the Mobile CSP logo. You should also hear a round of applause for your great 
+        work! Try clicking on the logo too and changing some things like the notifier message or the background 
+        color as described in the embedded tutorial. </p>
+
+     <p>If the app is not running correctly, you may need to retrace your setup steps to make sure you performed 
+      all of the necessary steps. Make sure your mobile device and your computer are on the same WiFi or other 
+      network. If the app seems frozen, try Connect/Reset Connection and then try Connect/AI Companion again. 
+      See the <url href="http://appinventor.mit.edu/explore/ai2/support/troubleshooting.html" >Troubleshooting</url>
+       page or try another method of connecting your device such as <url href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html">
+        USB</url> or using the <url href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" >emulator    
+        </url>.</p>
+
+    </subsection>
+  </section>

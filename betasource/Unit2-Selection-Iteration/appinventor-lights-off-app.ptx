@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="appinventor-lights-off-app">
+    <title>App Inventor Lights Off App (Optional)</title>
+  <time minutes="90" />
+  
+   <idx> <h>App Inventor</h><h>Lights Off App</h></idx>
+
+  <introduction>
+  <p>
+      In this lesson, you will create the classic Mole Mash or Whack-a-Mole game in App Inventor, but
+      with socially userful themes. First, you will follow a tutorial for the <i>LightsOff</i> app. where you click on light bulbs that pop up at random locations to turn them off to save electricity.  After the tutorial, you will create your own version of the game with a theme of your choice. 
+  </p>
+  <video youtube="bWLkchEpy6w" label="video-lights-intro"/>
+
+  <p>In this tutorial, you will learn to:
+		<ul>
+		<li>use the <i>Canvas</i> and <i>ImageSprite</i> components in AppInventor</li>
+		<li>use timing, animation, and randomness as part of an event-driven program</li>
+    <li>iteratively develop a new app using Design Thinking</li>
+		<li>use programming concepts such as variables and conditional <i>if</i> blocks in more advanced ways to enhance an app's functionality</li>
+		</ul>
+    </p>
+		<p>Language Objectives: you will be able to:
+		<ul>
+		<li>describe the functionality of an app using key vocabulary such as event, timer, and sprite, out loud and in writing, with the support of <url href="https://docs.google.com/presentation/d/1YsJJ7IwEEpQGLqSizFhIFJVIw5TfDc5LqDtCSD-o42E/copy"  title="">vocabulary notes</url> from previous lessons</li>
+     <li>describe the design process of an app using key vocabulary such as empathize, ideate, and prototype.</li>	
+		</ul>
+  </p>
+  </introduction>
+
+  <subsection xml:id="lights-off-tutorial">
+    <title>Tutorial: Creating the Lights Off App</title>
+
+    <p>To get started, open App Inventor with the <url href="http://ai2.appinventor.mit.edu/?repo=templates.appinventor.mit.edu/trincoll/csp/unit4/templates/LightsOffTemplate/TurnOffLightsTemplate.asc" >
+      LightsOff Template</url> in a separate tab.  Rename the project to <i>LightsOff</i> or 
+      something similar. If the template does not open, download the <url href="http://templates.appinventor.mit.edu/trincoll/csp/unit4/templates/LightsOffTemplate/TurnOffLightsTemplate.aia" >
+        .aia file</url>, go to <url href="http://ai2.appinventor.mit.edu" >App Inventor</url>
+         and do File/Import and import in the downloaded .aia file.
+        </p>
+
+    <p>Follow along with your teacher or the <url href="https://www.youtube.com/watch?v=_zsR2gxFEhk" >YouTube video</url>
+(<url href="https://teachertube.com/video/lightsoff-tutorial-476364"  title="">TeacherTube video</url>) tutorial. Or, if you prefer, follow the 
+      <url href="https://docs.google.com/document/d/1hS57DObILtWguAbc6NSrJC6MSHDMow8Y7KzeCc63jPs/"  title="">text-version</url> of the tutorial or use the <url href="https://docs.google.com/document/d/1CbF1qvDy9KcpUYYJvFRndJxCGbj190Q0UEWixlzQ0uw/view" >short handout</url> for more of a challenge.</p>
+    
+    <video youtube="_zsR2gxFEhk" label="video-lights-tutorial"/>
+
+  </subsection>
+
+  <subsection xml:id="design-app">
+    <title>Design Your Own App: Iteration 1</title>
+
+    <p>In pairs or groups, use Design Thinking to come up with ideas for a new version of the Lights Off app. Use a socially useful theme for your app, but you can change the images, sounds, and rules of the game.  Think about themes in health, nutrition, safety, the environment, etc. Think about "good" and "bad" sprites that users could click or avoid.
+    </p>
+
+      <p>
+	<term>Iteration 1: Paper Prototyping</term>
+    <ul>
+      <li><term>Empathize:</term> Think of a socially useful activity that your app can promote.
+                Who are the users of your app?</li>
+      <li><term>Define:</term> Define the problem or socially useful activity your app will address.</li>
+      <li><term> Ideate:</term> Brainstorm possible ideas for your app. What type of background or sprite images would be good? What would make the app more interesting?</li>
+      <li><term>Prototype:</term> 
+     Draw a simple sketch of your app's main screen and one other screen.
+              Label some features that support your program requirements. You can use 
+              <url href="https://wireframe.cc/">Wireframe.cc</url> or this 
+              <url href="https://docs.google.com/drawings/d/1M-DZITeDT9aiPZ7Oz-kXKEGkn0DiFOH1i8idBNlxwCA/edit">printout</url>.
+      </li>          
+      <li><term>Test:</term> Show your design to other students and get their feedback. What did they suggest should be changed in the app?</li>
+    </ul>
+  </p>
+
+    <activity label="app-design">
+      <title>App Design</title>
+      <statement>
+        <p> Describe the app that you are designing and answer the questions above for each
+          step of the Design Thinking process.  
+        </p>
+      </statement>
+      <response />
+    </activity>
+  </subsection>
+  
+  <subsection xml:id="iteration2-appinventor">
+    <title>Iteration 2: App Inventor </title>
+    
+
+  <p>
+	<term>Iteration 2: App Inventor</term> Start up <url href="http://ai2.appinventor.mit.edu/" >App Inventor</url> and copy your
+          LightsOff project and rename it for your new app.
+  </p>
+  <ul>
+      <li><term>Empathize:</term> Revisit users of the app. Is the socially useful activity focused on users of a certain age, users doing certain activities, or other specific users?
+      Imagine showing your paper prototype to some possible user. They want the app to be more game-like, with a score display.</li>
+      <li><term>Define:</term> Refine the problem or socially useful activity your app will address. Do you need to change the images used in the app?
+      What do you think the user means by adding a score to the app? What would you get points for?</li>
+      <li><term> Ideate:</term> Brainstorm ideas for new images for the app. Use <url href="https://www.google.com/imghp?tbm=isch" >Google
+                  Image search</url> to find a background image and sprite images and download these.
+    Remember many images are copyrighted so try to use the Tools in Google Image Search to find images “Labeled for noncommercial reuse”. 
+    Brainstorm ideas for scoring. Is there one sprite or multiple sprites worth different scores? Do you want good and bad sprites that both increment and decrement the score?
+    </li>
+      <li><term>Prototype:</term> Upload the new background and sprite images into the media area for App Inventor. Change the Canvas and Sprites to use the new images.
+                How will you add scoring to the app? Where will the score be displayed? Use what you learned in the Paint Pot app about incrementing a variable to implement the score
+                  feature.</li>
+    
+                   
+      <li><term>Test:</term> Run your app to test it. How does the new background and sprite images look? 
+    The best sprites have a transparent background, so add “transparent” to
+                    your image search to find these.
+                With the new images, when you click on a sprite does the sound still play?
+                Does scoring work? What would be appropriate test cases for the score?</li>
+    </ul>
+  
+ 
+  </subsection>
+
+  <subsection xml:id="iteration3-appinventor-ifs">
+    <title>Iteration 3: App Inventor If Blocks to Test Scores</title>
+
+<p>The <url href="https://ai2.appinventor.mit.edu/reference/blocks/control.html#if" >if block</url> in MIT App Inventor can be used to choose between different actions.
+If blocks are in the Control drawer of the block editor. This block has a blue mutator button where we can drag in an else block to make the block into an <span class="hover vocab yui-wk-div" data-id='If/Else'>If/Else</span> block which will allow us to choose between 2 actions (pause or play) depending on if the speech is already playing.</p>
+  
+<image source="_static/Unit2images/IfElseAnimated.gif" width="80%" alt="App Inventor If/Else Block" />
+
+      <p>
+	<term>Iteration 3: Additional Features</term> 
+    <ul>
+      <li><p><term>Empathize:</term> Imagine you talk to some users of your app and they ask for these features. The first two features will require if blocks.
+    <ol>
+    <li> a winning score feature that stops the game and congratulates the user when they reach a certain score.</li>
+    <li> the game speeding up after a certain score is reached.</li>
+    <li> a Reset button to the app that allows the player to restart the game after it's been stopped.</li>
+    </ol> </p></li>
+      <li><p><term>Define:</term> Stopping the game when the user reaches the winning score should include stopping the ImageSprite from jumping around.  What do you want the app to do when the user reaches the winning score? What should the reset button do?  
+    </p></li>
+      <li><term> Ideate: </term>Brainstorm ways to implement the winning score. Remember you can use an if-block to only run code blocks under specific conditions.
+                What options do you have for stopping the game on a winning score and starting it back up with the reset button? Do you need any new variables? 
+                Hint, the <url href="http://ai2.appinventor.mit.edu/reference/components/sensors.html#Clock" >Clock 
+                  component</url> has a Timer Enabled property that can be set to true or false in the program to start and stop the action.</li> 
+      <li><p><term>Prototype:  </term> 
+  Implement the winning score and reset button. Then, add one or more of your own enhancements or variations for this app. Here are some ideas:
+    <ol>
+     <li> Use a Notifier component to pop up and congratulate the player.</li>
+    <li> Use a TextToSpeech component and have it say something when the player reaches a certain score. </li>
+    <li>Implement keeping track of the number of misses -- i.e., the number of times the player failed
+            to touch the ImageSprite -- and factor this into your scoring algorithm.</li>
+    
+	<li><strong>Challenge: </strong>Add another sprite or two. Ask the player to distinguish between "good" and "bad" sprites. For example, if your app had a nutrition theme, perhaps one image could be a picture of a
+            healthy food item and the other a not-so-healthy item. Perhaps the player's score decreases if they touch the
+            "bad" choice.</li>
+	<li><strong>Challenge: </strong>Change the speed of the sprite when the player reaches a certain score. (Hint:
+            Recall that in this app, the sprite's speed is controlled by the Clock timer.)</li>
+    </ol>
+    </p>
+      </li>        
+      <li><term>Test:</term> What would be appropriate test cases for the winning score and the reset buttons? What would be good inputs and expected outputs to test? Share the app with friends or the class for user-testing.</li>
+    </ul>
+  </p>
+
+  
+    </subsection>
+
+  <subsection xml:id="app-reflection">
+    <title>Reflection</title>
+    <p>After you have completed your app, reflect on your experience by answering the following questions:
+    </p>
+
+     <activity label="app-reflection1">
+      <title>Project Reflection 1</title>
+      <statement>
+        <p>Describe the purpose and the users of your app. Describe an input and output of the app. 
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="app-reflection2">
+      <title>Project Reflection 2</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the app, and how you fixed your code to remove the bug. How did you test the app to make sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="app-reflection3">
+      <title>Project Reflection 3</title>
+      <statement>
+        <p>Describe a selection statement that you used in your app. What was the condition and 
+          what happened when the condition was true or false? How did you test both branches of the selection statement to make sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+  </subsection>
+</section>

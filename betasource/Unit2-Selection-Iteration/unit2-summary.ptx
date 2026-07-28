@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-summary">
+  <title>Unit 2 Summary</title>
+
+  
+<subsection xml:id="unit2-summary-vocab">
+    <title>Unit 2 Vocabulary</title>
+
+  <p>Review the following Unit 2 vocabulary:</p>
+
+     <activity label="vocab-review-2-1-design">
+      <title>2-1 Design Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-1. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-1 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>iterative development</premise>
+        <response>developing a program through repeated cycles of design, implementation, and testing</response>
+        </match>
+        <match>
+          <premise>incremental development</premise>
+          <response>developing a program by in small steps adding new features or functionality</response>
+        </match>
+        <match>
+          <premise>user research</premise>
+          <response>the process of gathering information about users and their needs</response>
+        </match>
+        <match>
+          <premise>program requirements</premise>
+          <response>the specific needs and constraints that a program must meet to be successful</response>
+        </match>
+        <match>
+          <premise>user stories</premise>
+          <response>short, simple descriptions of a feature from the perspective of the user</response>
+        </match>
+        <match>
+          <premise>storyboard</premise>
+          <response>a visual representation of a sequence of events or scenes</response>
+        </match>
+      </cardsort>
+      </activity>
+
+    <activity label="vocab-review-2-1-copyright">
+      <title>2-1 Copyright Vocabulary</title>
+         <statement>
+        <p>
+          Review the vocabulary in 2-1. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-1 and try again.</p>
+      </feedback>
+      <cardsort>
+        <match>
+          <premise>copyright</premise>
+          <response>a legal right that protects the creator's work from being used without permission</response>
+        </match>
+        <match>
+          <premise>intellectual property</premise>
+          <response>ownership for creations of the mind, like inventions, literary and artistic works</response>
+        </match>
+        <match>
+          <premise>Creative Commons license</premise>
+          <response>a type of license that allows creators to share their work with others while retaining some rights</response>
+        </match>
+        <match>
+          <premise>open source software</premise>
+          <response>software whose source code is available for anyone to view, modify, and distribute</response>
+        </match>
+        <match>
+          <premise>Creative Commons Zero (CC0)</premise>
+          <response>a license that waives all copyright and related rights in a work</response>
+        </match>
+      </cardsort>
+    </activity>
+
+     <activity label="vocab-review-2-2-boolean">
+      <title>2-2 Boolean Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-2. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-2 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>Boolean</premise>
+        <response>a data type that can only have the values True or False</response>
+        </match>
+        <match>
+          <premise>Boolean expression</premise>
+          <response>an expression that evaluates to either True or False</response>
+        </match>
+        <match>
+          <premise>relational operator</premise>
+          <response>an operator like <c>==</c> or <c>&lt;</c> that compares two values and 
+            returns True or False</response>
+        </match>
+        <match>
+          <premise>logical operator</premise>
+          <response>an operator like <c>and</c>, <c>or</c>, or <c>not</c> that combines Boolean 
+            expressions and returns True or False</response>
+        </match>
+      </cardsort>
+    </activity>
+
+     <activity label="vocab-review-2-3-selection">
+      <title>2-3 Selection Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-3 Selection. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 2-3 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>selection</premise>
+        <response>the process of choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+        <premise>conditional statement</premise>
+        <response>a statement that checks a condition and executes different code depending on whether the condition is true or false</response>
+        </match>
+        <match>
+        <premise>else</premise>
+        <response>a keyword used in conditional statements to specify code that should be executed if the condition is false</response>
+        </match>
+        <match>
+        <premise>nested conditionals</premise>
+        <response>conditional statements that are placed inside other conditional statements</response>
+        </match>
+      </cardsort>
+    </activity>
+       <activity label="vocab-loops-review">
+       <title>2-4 Iteration Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 2-4 Iteration. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the 2-4 Iteration lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>iteration</premise>
+        <response>repetition of a sequence of instructions</response>
+        </match>
+        <match>
+          <premise>while loop</premise>
+          <response>a type of loop that continues as long as a condition is true</response>
+        </match>
+        <match>
+          <premise>for loop</premise>
+          <response>a type of loop that repeats a set of statements a specific number of times</response>
+        </match>
+        <match>
+          <premise>loop variable</premise>
+          <response>a variable that is used to control the number of iterations in a loop</response>
+        </match>
+        <match>
+          <premise>infinite loop</premise>
+          <response>a loop that never ends</response>
+        </match>
+        <match>
+          <premise>tracing</premise>
+          <response>the process of following the line by line keeping track of the variables and output.</response>
+        </match>
+        </cardsort>
+       </activity>
+
+    <activity label="vocab-review-2-5-algorithms">
+      <statement>
+        <p>
+          Review the vocabulary in 2-5 Algorithms. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the words in the 2-5 lesson and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>sequencing</premise>
+        <response>ordering instructions one after another</response>
+        </match>
+        <match>
+        <premise>iteration</premise>
+        <response>repetition of a sequence of instructions</response>
+        </match>
+        <match>
+          <premise>selection</premise>
+          <response>choosing which statements to execute based on certain conditions</response>
+        </match>
+        <match>
+          <premise>algorithm</premise>
+          <response>a step-by-step procedure for solving a problem</response>
+        </match>
+        <match>
+          <premise>accumulator pattern</premise>
+          <response>a loop with a variable that accumulates a sum or total</response>
+        </match>
+        <match>
+          <premise>average</premise>
+          <response>the sum of a set of numbers divided by the size of the set</response>
+        </match>
+        <match>
+          <premise>minimum</premise>
+          <response>the smallest value in a set of numbers</response>
+        </match>
+        <match>
+          <premise>maximum</premise>
+          <response>the largest value in a set of numbers</response>
+        </match>
+        <match>
+          <premise>side effect</premise>
+          <response>a change other than the output to the program's state or variables when the program runs</response>
+        </match>
+        <match>
+          <premise>divide and conquer pattern</premise>
+          <response>an algorithm that divides the problem into smaller parts and solves each part</response>
+        </match>
+     </cardsort>
+    </activity>
+
+      <activity label="vocab-review-2-6-errors">
+      <statement>
+        <p>
+          Review the vocabulary in lesson 2-6 Errors. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson 2-6 Errors and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>syntax error</premise>
+          <response>an error caught by the interpreter because the rules of the programming language were not followed</response>
+        </match>
+        <match>
+          <premise>logic error</premise>
+          <response>an error in the code that causes it to produce incorrect results although it runs</response>
+        </match>
+        <match>
+          <premise>runtime error</premise>
+          <response>an error that occurs while the program is running</response>
+        </match>
+        <match>
+        <premise>test cases</premise>
+        <response>inputs used to check the correctness of an algorithm</response>
+        </match>
+      </cardsort>
+    </activity>
+  </subsection>
+</section>

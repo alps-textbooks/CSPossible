@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2b-coding-practice">
+  <time minutes="90" />
+
+  <title>Unit 2b Loops Coding Practice Exercises</title>
+
+  <introduction>
+    <p>This section contains coding practice exercises using loops. There are 3 subsections to practice 
+      with Turtle graphics, picture manipulation, and number calculations. </p>
+
+  <p>These are exercises mostly written by Dr. Barb Ericson in the AP CSP and Python for Everybody ebooks. 
+  </p>
+    </introduction>
+
+    <subsection xml:id="turtle-loop-practice">
+      <title>Turtle Loop Practice</title>
+
+  
+    <activity label="csprepeatturtles_exercises1">
+    <statement>
+      <p>The code currently draws a square. Change it so that it draws a triangle. Do so by 
+        modifying the loop condition and the turn that the turtle makes without modifying other code.</p>
+      <p>Remember that to make a complete shape, the turns must sum to 360 degrees.</p>
+
+    </statement>
+    <program xml:id="csprepeatturtles_exercises1_editor" interactive="activecode" language="python">
+      <code>
+        import turtle
+        alisha = turtle.Turtle()
+        alisha.shape("turtle")
+
+        alisha.setheading(90)
+        for sides in range(4):
+            alisha.forward(100)
+            alisha.right(90)
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertRegex(self.getEditorText(), r"for \w+ in range\(\s*3\s*\):", "Triangles have 3 sides!")
+                self.assertRegex(self.getEditorText(), r"alisha\.right\(\s*120\s*\)", "Turn should be 120 degreest")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="csprepeatturtles_exercises2">
+    <statement>
+      <p>Fix the errors in the code so that it draws an octagon (8-sided polygon). 
+        There are 4 bugs to fix.</p>
+      <p>Remember that to make a complete shape, the turns must sum to 360 degrees.</p>
+
+    </statement>
+    <program xml:id="csprepeatturtles_exercises2_editor" interactive="activecode" language="python">
+      <code>
+        import turtle
+        steve = turtle.Turtle()
+        steve.shape("turtle")
+
+        for sides in range(3)
+            steve.forward(45)
+        steve.right(50)
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertRegex(self.getEditorText(), r"for \w+ in range\(\s*8\s*\):", "Octagons have 8 sides!")
+                self.assertRegex(self.getEditorText(), r"\s{4}steve\.right", "Make sure the turn is indented correctly")
+                self.assertRegex(self.getEditorText(), r"steve\.right\(\s*45\s*\)", "Turn should be 45 degrees")
+
+        myTests().main()
+              </tests>
+    </program>
+  </activity>
+
+  <activity label="csprepeatturtles_exercises3">
+    <statement>
+      <p>Fix the indention in the code below to correctly draw 20 pentagons (5-sided polygons)
+        in a snowflake design. The second loop should be inside the first loop.</p>
+      <p>Make sure to use four spaces for each indentation level 
+        (the tab key will automatically use 4 spaces).</p>
+
+    </statement>
+    <program xml:id="csprepeatturtles_exercises3_editor" interactive="activecode" language="python">
+      <code>
+        import turtle
+        zoe = turtle.Turtle()
+        zoe.shape("turtle")
+        import sys
+        sys.setExecutionLimit(50000)
+        zoe.speed(0)
+
+        for repeats in range(20):
+        zoe.forward(10)
+        zoe.right(18)
+
+        for sides in range(5):
+        zoe.forward(50)
+        zoe.right(72)
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertRegex(self.getEditorText(), r"\n\s{4}zoe.forward\(10", "Indent line 9 four spaces")
+                self.assertRegex(self.getEditorText(), r"\n\s{4}zoe.right\(18", "Indent line 10 four spaces")
+                self.assertRegex(self.getEditorText(), r"\n\s{4}for sides", "Indent line 12 four spaces")
+                self.assertRegex(self.getEditorText(), r"\n\s{8}zoe.forward\(50", "Indent line 13 eight spaces")
+                self.assertRegex(self.getEditorText(), r"\n\s{8}zoe.right\(72", "Indent line 14 eight spaces")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+</subsection>
+
+
+<subsection xml:id="picture-loop-practice">
+      <title>Picture Loop Practice</title>
+
+    <datafile label="puppies" name="puppies.jpg">
+      <image source="_static/Unit2images/puppies.jpg"/>
+  </datafile>
+
+    <activity label="csprepeatimages_exercises2">
+    <statement>
+      <p>The code below sets all the red pixels to 0. 
+        Change it so that it sets all the green pixels to 0 instead. 
+        </p>
+
+    </statement>
+    <program xml:id="csprepeatimages_exercises2_editor" interactive="activecode" language="python">
+      <code>
+        from image import *
+
+        # PICK THE IMAGE AND DISPLAY (it will show updates automatically)
+        img = Image("external/_static/Unit2images/puppies.jpg")
+        win = ImageWin(img.getWidth(), img.getHeight())
+        img.draw(win)
+        img.setDelay(1, 400)   #SPEEDS UP THE DRAWING
+
+        # LOOP THROUGH THE PIXELS 
+        for p in img.getPixels():
+
+            # CHANGE this to set green to 0
+            p.setRed(0)
+
+            # UPDATE THE IMAGE
+            img.updatePixel(p)
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                testPixel = img.getPixel(3, 4)
+                self.assertEqual(testPixel.getGreen(), 0, "Testing you set right green value for a particular pixel")
+
+        myTests().main()
+        </tests>
+    </program>
+  </activity>
+
+<activity label="csprepeatimages_exercises5">
+    <statement>
+      <p>Write code to set the red value of each pixel to 255. This should give the entire image a 
+        rosy tint. </p>
+    </statement>
+    <program xml:id="csprepeatimages_exercises5_editor" interactive="activecode" language="python">
+      <code>
+        from image import *
+
+        img = Image("external/_static/Unit2images/puppies.jpg")
+        win = ImageWin(img.getWidth(), img.getHeight())
+        img.draw(win)
+        img.setDelay(1, 400)   #SPEEDS UP THE DRAWING
+
+        # LOOP THROUGH THE PIXELS
+        for p in img.getPixels():
+
+            # SET the red value of pixel p to 255
+
+
+            # UPDATE THE IMAGE PIXEL
+            img.updatePixel(p)
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                testPixel = img.getPixel(3, 40)
+                testPixel2 = img.getPixel(3, 42)
+                self.assertEqual(testPixel.getRed(), 255, "Testing you set right red value for a particular pixel")
+                self.assertEqual(testPixel2.getRed(), 255, "Testing you set right red value for a particular pixel")
+                self.assertIn("p.setRed(255)", self.getEditorText(), "Use p's setRed method to set it to 255")
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="picture-lab-black-and-white">
+    <statement>
+      <p>This program should make a black-and-white image by averaging
+        the red, green, and blue values of each pixel and then setting
+        the red, green, and blue values to that average.
+      </p>
+
+    </statement>
+    <program xml:id="csprepeatimages_exercises4_editor" interactive="activecode" language="python">
+      <code>
+        from image import *
+
+        img = Image("external/_static/Unit2images/puppies.jpg")
+        win = ImageWin(img.getWidth(), img.getHeight())
+        img.draw(win)
+        img.setDelay(1, 400)   #SPEEDS UP THE DRAWING
+
+        # STEP 1: LOOP THROUGH THE PIXELS
+        for p in img.getPixels():
+
+            # STEP 2: GET the red, green, and blue values of p
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+
+            # STEP 3: CALCULATE THE AVERAGE OF r, g, and b
+            # Add the three values together and divide by 3 to get the average
+            avg = 
+
+            # STEP 4: SET the red, green, blue of p to avg
+
+
+            # STEP 5: UPDATE THE IMAGE for p
+            img.updatePixel(p)
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("(r+g+b)/3", self.getEditorText().replace(" ", ""), 
+                "Calculate the average (r+g+b)/3")
+                self.assertIn("p.setRed(avg)", self.getEditorText(), "Use p's setRed(avg) method")
+                self.assertIn("p.setGreen(avg)", self.getEditorText(), "Use p's setGreen(avg) method")
+                self.assertIn("p.setBlue(avg)", self.getEditorText(), "Use p's setBlue(avg) method")
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+  </subsection>
+
+<subsection xml:id="number-loop-practice">
+      <title>Number Loop Practice</title>
+
+  <activity label="csprepeatnumbers_exercises1">
+    <statement>
+      <p>Complete the code to create a program that adds up all the numbers from 10 to 20. Make sure to include both 10
+        and 20 in the sum.</p>
+
+    </statement>
+    <program xml:id="csprepeatnumbers_exercises1_editor" interactive="activecode" language="python">
+      <code>
+        sum = 
+        for number in :
+            sum = sum + 
+        print(sum)
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("range(10,21)", self.getEditorText(), "Use a for loop with range(10,21)")
+                self.assertEqual(sum, 165, "Testing that you got the right sum")
+                self.assertNotRegex(self.getEditorText(), "165", "Testing that you did not hard code the answer.")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="csprepeatnumbers_exercises2">
+    <statement>
+      <p>Complete the code to calculate the sum of the squares of all numbers from 1-10 (inclusive). The sum of squares
+        is the result of squaring each value before adding it to the sum. The sum of squares for the numbers 1-4 would
+        be <m>1 * 1 + 2 * 2 + 3 * 3 + 4 * 4 = 30</m>.</p>
+ 
+
+    </statement>
+    <program xml:id="csprepeatnumbers_exercises2_editor" interactive="activecode" language="python">
+      <code>
+        sum = 0
+
+        # Write a loop from 1-10 (inclusive)
+        # square each number and add it to the sum
+
+        print(sum)
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("for", self.getEditorText(), "Use a for loop")
+                self.assertIn("11", self.getEditorText(), "Use a for loop with range(1, 11) or range(11)")
+                self.assertIn("*", self.getEditorText(), "Use number*number to add the square of each number to the sum")
+                self.assertEqual(sum, 385, "Testing that you got the right sum")
+                self.assertNotRegex(self.getEditorText(), "385", "Testing that you did not hard code the answer.")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="csprepeatnumbers_exercises5">
+    <statement>
+      <p>Below is the start of a program to calculate how long it will take to have at least $50,000 if you invest $300
+        per month at 0.5% interest per month (approximately 6% per year).</p>
+      <p>You should add code to continue doing the following until money reaches 50000:</p>
+      <p>
+        <ul>
+          <li>
+            <p>Increase the existing money by 0.5% (multiply it by 1.005). (This is interest earned on all money already
+              invested.)</p>
+          </li>
+          <li>
+            <p>Add the monthly investment amount to money. (This is another month of investment.)</p>
+          </li>
+          <li>
+            <p>Increase the months count by 1</p>
+          </li>
+        </ul>
+      </p>
+      <p>Remember the debugging tricks you used - use codelens or print out values to make sure your work is correct.</p>
+
+    </statement>
+    <program xml:id="csprepeatnumbers_exercises5_editor" interactive="activecode" language="python">
+      <code>
+        money = 0
+        invest_per_month = 300
+        months = 0
+
+        # TODO
+        # repeat WHILE the money is less than 50000
+        #    set money to itself times 1.005 for .5% interest 
+        #    add the invest_per_month to the money
+        #    increase the months by 1
+
+        print(months)
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("while money&lt;50000", self.getEditorText().replace(" ", ""), "Use a while money &lt; 50000:")
+                self.assertIn("money=money*1.005", self.getEditorText().replace(" ", ""), "Use money = money * 1.005 for interest")
+                self.assertEqual(months, 122, "Testing you calculated the right answer.")
+                self.assertNotRegex(self.getEditorText(), "122", "Testing that you did not hard code the answer.")
+
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+
+ </subsection>
+</section>

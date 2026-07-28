@@ -1,0 +1,1127 @@
+<section xml:id="topic-1-3-responsible-ai">
+  <time minutes="135"/>
+  <title>Responsible AI</title>
+  <idx>AI</idx>
+  <idx>Artificial Intelligence</idx>
+
+  <introduction>
+    <p>Quick Links: 
+      <xref text="global" ref="ai-data,ai-models,teachable-machine,genAI,automation-augmentation,vocab-1-3"/>
+    </p>
+    <p>
+      <term>Artificial Intelligence (AI)</term> is becoming a big part of our lives and changing the way we work and learn. 
+      AI is a branch of computer science with the goal of building smarter machines to do tasks that typically require human intelligence. 
+      Watch the following <url href="https://www.youtube.com/watch?v=ng4c1g3COfs">video</url> to learn more about the impacts of AI on society. 
+      In this lesson, we will learn about the importance of responsible AI use and human decision-making.
+    </p>
+      <video youtube="ng4c1g3COfs" label="video-impacts-of-ai"/>
+
+  
+  </introduction>
+
+  <subsection xml:id="ai-data">
+    <title>AI and Data</title>
+
+        <p><term>Artificial intelligence (AI)</term> systems are trained on large amounts of data to learn patterns and make predictions. 
+      Try <url href="https://quickdraw.withgoogle.com/">Google Quick Draw</url>. The Quick Draw AI is trained on millions 
+      of drawings from people around the world to recognize and predict what you are drawing. Take a look at 
+      <url href="https://quickdraw.withgoogle.com/data">the data</url> it uses. The following 
+      <url href="https://www.youtube.com/watch?v=X8v1GWzZYJ4">video</url> introduces Quick Draw.
+    </p>
+
+    <video youtube="X8v1GWzZYJ4" label="video-quick-draw"/>
+    
+    <activity label="quickdraw-ai-example">
+  <statement>
+    <p>Based on how Google Quick Draw works, which best explains why it counts as an example of artificial intelligence?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>It uses a database of pre-made drawings that it displays back to the user.</p>
+      </statement>
+      <feedback>
+        <p>No. Quick Draw does not simply retrieve and display stored drawings. It analyzes the user's sketch and predicts what it represents.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It follows a fixed set of rules written by a programmer for every possible object.</p>
+      </statement>
+      <feedback>
+        <p>No. AI systems like Quick Draw learn patterns from data rather than relying on explicit rules for every possible drawing.</p>
+      </feedback>
+    </choice>
+
+     <choice correct="yes">
+      <statement>
+        <p>It applies patterns learned from millions of drawings to predict what a new, unseen drawing represents.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Quick Draw is trained on a large dataset of drawings and uses the patterns it learned to make predictions about new sketches.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It randomly guesses an object name until the user confirms the correct one.</p>
+      </statement>
+      <feedback>
+        <p>No. Quick Draw makes informed predictions based on patterns learned from its training data, not random guesses.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="quickdraw-training-data">
+  <statement>
+    <p>Suppose the Quick Draw training data contains thousands of <url href="https://quickdraw.withgoogle.com/data/cat">drawings of cats</url> but only a 
+      few drawings of armadillos. Which outcome is most likely?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The AI may recognize armadillos more accurately than cats.</p>
+      </statement>
+      <feedback>
+        <p>No. With far fewer examples of armadillos, the AI is less likely to recognize them accurately.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The AI may recognize cats more accurately than armadillos.</p>
+      </statement>
+      <feedback>
+        <p>Correct! AI systems generally perform better on categories that have more representative training data because they have learned more patterns from those examples.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI may recognize both equally well.</p>
+      </statement>
+      <feedback>
+        <p>No. The amount and quality of training data can affect how accurately an AI recognizes different categories.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI may not recognize either animal.</p>
+      </statement>
+      <feedback>
+        <p>No. The AI will still make a prediction, although it may be less accurate for objects with fewer training examples.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+    <activity label="ai-common-apps">
+  <statement>
+    <p>Select all of the tools below that use AI.</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>A streaming service that recommends movies or TV shows based on what you have watched before.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Recommendation systems often use AI to predict what users are likely to enjoy.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>An online store that suggests products you might want to buy based on your browsing or purchase history.</p>
+      </statement>
+      <feedback>
+        <p>Correct! AI is commonly used to make personalized shopping recommendations.</p>
+      </feedback>
+    </choice>
+
+      <choice>
+      <statement>
+        <p>A calculator that does mathematical calculations.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. A basic calculator follows predefined mathematical rules and does not use AI to make predictions or recommendations.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A simple photo-sharing app that allows you to post photos to share with friends.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. A simple photo-sharing app doesn't use AI to make predictions or recommendations, but 
+          more complex ones may use AI for features like facial recognition or content suggestions.
+        </p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>A social-media app that shows you posts based on your interests.</statement>
+      <feedback>
+        <p>Correct! Social media platforms use AI to personalize content feeds learning from your preferences and behavior.</p>
+      </feedback>
+    </choice>
+    </choices>  
+    </activity>
+
+
+    <activity label="quickdraw-cultural-influence">
+  <statement>
+    <p>Google Quick Draw is trained on drawings submitted by people from around the world. 
+      Which objects are <em>most likely</em> to be drawn differently depending on a person's culture or where they live?
+      These human factors affect the training data and can influence how well the AI recognizes different objects.
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>houses</p>
+      </statement>
+      <feedback>
+        <p>Correct! Houses can have different shapes, roofs, building materials, and styles in different parts of the world.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>squares</p>
+      </statement>
+      <feedback>
+        <p>No, most people draw a square as a simple geometric shape, regardless of their culture or location.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>school buses</p>
+      </statement>
+      <feedback>
+        <p>Correct! School buses look very different across countries. For example, the familiar yellow school bus is common in the 
+          United States but not in many other places.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>apples</p>
+      </statement>
+      <feedback>
+        <p>Not quite. Although apples come in different varieties, people around the world generally draw them in similar ways.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>hats</p>
+      </statement>
+      <feedback>
+        <p>Correct! Hats can vary significantly in style, color, and design across different cultures and regions.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+</subsection>
+
+<subsection xml:id="ai-models">
+    <title>Machine Learning and AI Models</title>
+
+    <idx>Machine Learning</idx>
+    <idx>AI Models</idx>
+    <idx>LLMs</idx>
+    <idx>Large Language Models</idx>
+    <idx>Teachable Machine</idx>
+
+<p><term>Machine Learning (ML)</term> is a type of AI that learns patterns from data. Machine learning 
+  has become so successful that AI has become another term for machine learning, even though AI is a broader field. Watch the following 
+  <url href="https://www.youtube.com/watch?v=KHbwOetbmbs">video</url> to learn more about machine learning.</p>
+
+   <video youtube="KHbwOetbmbs" label="video-machine-learning"/>  
+
+  <p>Take a look at the following diagram showing how an AI learns to recognize green apples by looking at many examples
+    of apples that are labeled as green or not green. The set of patterns or rules that an AI learns is called the <term>model</term>. 
+    The model becomes more accurate as it is trained on more examples. Machine learning involves training and testing with data 
+    until the model is accurate enough for the task. Once we have a good model, we can use it to make predictions about new, 
+    unseen apples. The new apple is an input to the model, and the model produces an output that predicts whether the apple is green or not.
+  </p>
+
+      <image source="_static/Unit1images/apple-model.png" alt="Model learning a green apple from data" width="75%"/>
+
+    <p>For example, self-driving cars use AI models to recognize objects on the road and make decisions about how to drive. What objects do you see below that a self-driving car would need to recognize?</p>
+
+    <image source="_static/Unit1images/car-vision.webp" alt="Objects recognized byself-driving cars" width="75%"/>
+
+  <activity label="training-data-quality">
+  <statement>
+    <p>Adding more training data does not always improve an AI model. Which is the <em>best</em> explanation for this?</p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>AI models stop learning after they have seen a certain number of examples.</p>
+      </statement>
+      <feedback>
+        <p>No. AI models do not have a fixed limit on how many examples they can learn from.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>If the additional data is inaccurate, repetitive, or does not represent the variety of real-world examples, 
+          the model may not improve.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The quality and diversity of the training data are just as important as the quantity.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Adding more data causes the AI to forget what it learned from earlier examples.</p>
+      </statement>
+      <feedback>
+        <p>No. More data does not automatically cause an AI model to forget previous training examples.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>AI models become less accurate whenever they are trained with more than one category of data.</p>
+      </statement>
+      <feedback>
+        <p>No. AI models are often designed to recognize many categories. The issue is whether the training data is representative and of good quality.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+  </subsection>
+
+  <subsection xml:id="teachable-machine">
+    <title>Teachable Machine Project</title>
+    <idx><h>projects</h><h>teachable machine</h></idx>
+
+    <p>In this project, you will use Google's Teachable Machine which makes it easy to train AI models without writing code. Watch the
+      following <url href="https://www.youtube.com/watch?v=T2qQGqZxkD0">video</url> introducing Teachable Machine. You can train a model 
+      to recognize images, sounds, or poses. The model learns patterns from the examples you provide and can then make predictions about new inputs.
+    </p>
+    <video youtube="T2qQGqZxkD0" label="video-teachable-machine"/>
+
+   
+ <project label="teachable-machine">
+  <title>Teachable Machine</title>
+  <statement>
+    <p><ol>
+      <li>Go to <url href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</url> 
+        and click on Get Started. Work in pairs if possible.</li>
+      <li>If you have a webcam on your computer, try Image Project or Pose Project. You can also try the Image Project if you can
+        download images on your computer, for example you could download this 
+        <url href="https://drive.google.com/drive/folders/1xCj0EW-pfvLG08LU9As6Vy8_cEMV4bcd?usp=drive_link">folder of cat and dog images</url>. 
+        If you do not have a webcam or cannot download images, try the Audio Project which can use your computer's microphone to record sounds.
+      </li>
+      <li><term>Categories:</term> Teachable machine will learn to recognize two different categories of input. Decide
+        which two categories you want to use. For example, you could train a model to recognize cats and dogs, or happy and sad faces, 
+        or pointing up and down or clapping and snapping sounds. Click on the pencil icon next to Class 1 and type in your first category 
+        and do the same for Class 2.</li>
+      <li><term>Data:</term> Watch this short <url href="https://www.youtube.com/watch?v=DFBbSTvtpy4">gather video</url> on how to input your data. 
+        You will use your webcam or microphone or upload images to record at least 20 examples of your two categories. 
+      </li>
+      <li><term>Train:</term> Once you have collected at least 20 examples for each category, click on the "Train" button to train your 
+        model. Watch this <url href="https://www.youtube.com/watch?v=CO67EQ0ZWgA">train video</url> for more information.</li>
+        <li><term>Test:</term> After training, you can test your model in the Preview area. Upload or record a new sample and see
+          what your model predicts! You should use examples that are not in your training data and are difficult to guess. 
+          Under the uploaded sample, the model will tell you the percentage of confidence it has in its prediction of the category. 
+          For example, the model below thinks this image is a cat with 88% confidence. 
+          Did your model get it right? If not upload more training data and train again.
+         <image source="_static/Unit1images/test-cat.png" alt="Image of a cat with prediction cat 88%" width="30%"/>
+        </li>
+        <li><term>Reflection:</term> Answer the following questions below. What categories did you choose? After training,
+          how accurate was your model in the preview area and what kind of examples did it have difficulty with?  
+          How did your decisions about the categories and training data affect the model's accuracy and fairness?
+       </li>
+      </ol>
+    </p>
+  </statement>
+   <response/>
+ </project>
+
+ <p>The teachable machine does not require very many examples to learn your categories because it uses a technique called 
+  <term>transfer learning</term>, where it starts with a pre-trained model that is trained on the Imagenet dataset of millions of 
+  images with labels for 1000+ different classes which it then just tweaks to customize for your categories. 
+  However, the quality of data is crucial for a model's accuracy. There is a saying of "Garbage in, garbage out", where you cannot
+  expect good results if you feed the model incomplete or biased data. There is also the danger of machine learning algorithms 
+  learning the wrong or unexpected things from the data, because that is not something we can control.  </p>
+</subsection>
+  
+  <subsection xml:id="genAI">
+    <title>Generative AI</title>
+    <idx>Generative AI</idx>
+    <idx>Gen AI</idx>
+    <idx>ChatGPT</idx>
+
+    <p>
+      ChatGPT was publicly released by OpenAI in late 2022 and quickly went viral, attracting 1 million users within five days.
+      Most people were not aware of AI before ChatGPT (GPT stands for Generative Pre-trained Transformer). This was a major
+      turning point for AI technology and adoption. The Generative AI breakthrough was possible due to the massive growth of data available on the Internet for training,
+      new machine learning algorithms, and the increase in processing power to run the algorithms and store the resulting model.
+      ChatGPT, and others that followed like CoPilot, Claude, and Gemini, are examples of <term>Generative AI (Gen AI)</term> which is a 
+      type of AI trained on large amounts of data (most of the Internet) to create a <term>large language model (LLM)</term>
+      that can generate content such as text or code in many languages. The same technology can be used to generate images, audio, 
+      and recently even some video content. </p>
+
+      <image source="_static/Unit1images/chatgpt.webp" alt="chatGPT logo" width="50%"/>
+
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=X-AWdfSFCHQ">video (7 mins)</url> to learn how chatbots 
+      and LLMs work:</p>
+    <video youtube="X-AWdfSFCHQ" label="video-chatbots-llms"/>
+
+
+    <p>Go to the <url href="https://howllms.work/">How LLMs work</url> website and scroll down through the tutorial. 
+     LLMs are like the autocomplete feature on your phone texting apps, but much better. They predict the next word
+    or token based on the context and their training with a vast amount of data. For example, how would you 
+  finish the sentence "AI is transforming the ..."? Did you pick the same next word as the LLM below? </p>
+    <image source="_static/Unit1images/llm-predict-next-word.png" alt="LLM predicting the next word" width="80%"/>
+   
+  <activity label="llm-next-word-prediction">
+  <statement>
+    <p>Scroll down to the bottom of the <url href="https://howllms.work/">How LLMs work</url> website to the Interactive Playground
+      section. Type in the sentence fragment "Gen AI uses a large language" and click on Visualize. What word is predicted
+      to be the next word with the highest probability? </p>
+      <fillin answer="model" mode="string"/>
+      </statement>
+      <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes"/>
+            <feedback> Correct! In most cases, the LLM would see data with "large language model" occurring together.</feedback>
+          </test>
+          <test>
+            <feedback>What comes after large language? Use lower case letters</feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </activity>
+
+
+    <idx>AI hallucinations</idx>
+    <p>It is important to remember that Generative AI is a fairly new technology; it is not perfect and can make mistakes.
+      Common errors include <term>hallucinations</term> where the AI confidently invents fake information or sources often 
+      due to lack of accurate information in its training data. This is more likely to happen with languages or topics that are 
+      less common in the training data. Gen AI can also produce biased information if its training data is biased.  
+      It can also generate repetitive or long-winded text or struggle with arithmetic or complex logic. 
+      Users of Gen AI must critically evaluate the output and not blindly trust it, especially if it is being used for important decisions.
+    </p> 
+    
+    <activity label="human-review-high-stakes">
+  <statement>
+    <p>Which situation most requires a human to carefully review an AI system's output before acting on it?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>Accepting a medical treatment recommended by an AI system.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Decisions involving health can have serious consequences. A human should carefully review AI recommendations before making a final decision.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Using AI to suggest a movie to watch.</p>
+      </statement>
+      <feedback>
+        <p>Movie recommendations are generally low-risk, so they typically require less careful human review.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Using autocomplete while texting a friend.</p>
+      </statement>
+      <feedback>
+        <p>Autocomplete may make small mistakes, but the consequences are usually minor.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Asking AI to generate ideas for a story.</p>
+      </statement>
+      <feedback>
+        <p>Generating creative ideas is generally a low-risk use of AI. Humans still decide which ideas to use.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+<activity label="identify-ai-hallucination">
+  <statement>
+    <p>Which of the following are examples of a hallucinations produced by generative AI tools?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>The AI confidently names several court cases that do not actually exist.</p>
+      </statement>
+      <feedback>
+        <p>Correct! A hallucination occurs when an AI generates false information, such as made-up facts, while presenting them as if they are real.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI writes a story with repetitive sentences.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Repetitive writing is a limitation of some AI systems, but it is not a hallucination.</p>
+      </feedback>
+    </choice>
+
+        <choice correct="yes">
+      <statement>
+        <p>The AI generates a bibliography of books and articles where the dates of publication are incorrect.</p>
+      </statement>
+      <feedback>
+        <p>Yes. Large language models sometimes make errors in generating information especially with specific names and numbers that are not common.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The AI generates a response more slowly than expected.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. A slow response is a performance issue, not a hallucination.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+    <activity label="licenses-and-attribution">
+  <statement>
+    <p>Can you use AI-generated content without attribution (without mentioning where it is from)?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p>No, because AI-generated content is always copyrighted.</p>
+      </statement>
+      <feedback>
+        <p>Not necessarily. Copyright and licensing rules depend on the terms of use of the AI tool.
+          Currently only human-created content is protected by copyright law, but some AI tools may have licensing 
+          or attribution requirements.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Yes, because AI tools always provide original work.</p>
+      </statement>
+      <feedback>
+        <p>No, AI-generated content is not guaranteed to be completely original because it is based on 
+          existing work by humans and the AI tool you use 
+          may have licensing or attribution requirements.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>No, some content may require permission or credit before it is shared.</p>
+      </statement>
+      <feedback>
+        <p>Correct! When using AI-generated content, people should consider check whether the 
+          AI tool requires a license or attribution, and whether the place where it is being 
+          shared has any rules about using AI-generated content. </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Yes, attribution is only required for printed books.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Attribution requirements can apply to many types of content, not just printed 
+          books.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+<idx>deep fakes</idx>
+
+    <p>AI tools can generate images and other media that are difficult to distinguish from real content.
+      These are often called <term>deepfakes</term>. Deepfakes can be used for entertainment, but they 
+      can also be used to spread misinformation or create content that is harmful or misleading.
+    </p>
+
+  <activity label="deepfakes-dogs">
+  <statement>
+    <p>Which of the following images is real and not AI-generated? It's okay to try all the answers on this one!
+      <image source="_static/Unit1images/dogs.png" alt="Which image is real among 4 dogs" width="50%"/>
+    </p>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>Dog 1</p>
+        </statement>
+        <feedback>
+             <p>Incorrect. This image was AI-generated.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Dog 2</p>
+        </statement>
+        <feedback>
+            <p>Correct! This image is a real photograph of a dog.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Dog 3</p>
+        </statement>
+        <feedback>
+             <p>Incorrect. This image was AI-generated.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Dog 4</p>
+        </statement>
+        <feedback>
+         <p>Incorrect. This image was AI-generated.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+ <idx><h>POGIL group activity</h><h>deepfakes</h></idx>
+ <idx><h>projects</h><h>deepfakes</h></idx>
+
+<project label="deepfake-activity">
+  <statement>
+    <p>Visit the <url href="https://whichoneisreal.com/mode/mixed/">Which One Is Real</url> website 
+      and play one round of the Mixed or Images or Videos quiz. Try these together with a partner or a group. This could be a good POGIL group activity (<url href="https://pogil.org/what-is-pogil">What is POGIL</url>, <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>).</p>
+
+    <p>After you finish, answer the following questions:</p>
+
+    <ol>
+      <li>What was your score?</li>
+      <li>Was it easier or harder than you expected to identify the AI-generated content?</li>
+      <li>Why is it important to verify realistic-looking images or videos before sharing them online?</li>
+      <li>What are some of the dangers with deepfakes? </li>
+    </ol>
+  </statement>
+  <response/>
+</project>
+
+    
+<idx>model drift</idx>
+    <p><term>Model drift</term> means that the model's performance has degraded over time due to
+       changes in the real-world data. Modern AI systems have to be continuosly retrained on
+       current news and events or have to retrieve that information from the Internet while
+       answering prompts.</p>
+
+    <activity label="model-drift-response">
+  <statement>
+    <p>An AI model predicts traffic patterns for a city. After several new highways are built, 
+      the model's predictions become much less accurate. What is the best explanation and the 
+      most appropriate action to fix this issue?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>The model has experienced model drift, so humans should update the training data and 
+          retrain the model.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Model drift occurs when changes in real-world conditions reduce a model's accuracy. Humans should monitor AI systems and update or retrain them when drift is detected.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The model has become corrupted, so it can no longer be used.</p>
+      </statement>
+      <feedback>
+        <p>No, the decrease in accuracy is due to changes in real-world conditions, and the 
+          model can be still be fixed.
+        </p>     </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The model can still be used, but the city should publish a disclaimer about the model's limitations.</p>
+      </statement>
+      <feedback>
+        <p>Although this is a good temporary measure, the underlying problems should 
+          still be addressed.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Unfortunately, they would need to start over to train the model with the new information.</p>
+      </statement>
+      <feedback>
+        <p>The model is still useful and could be updated.   
+        </p>
+       </feedback>
+    </choice>
+  </choices>
+</activity>
+
+    <p><term>Transparency</term> in AI means providing clear and accessible information about how an AI system works, 
+      its capabilities, and its limitations.</p>
+
+  <activity label="ai-transparency">
+  <statement>
+    <p>A company publicly explains that its chatbot was trained on customer support conversations, 
+      works best for common questions, and sometimes produces incorrect answers. 
+      Why is this information useful?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>It increases transparency and helps users understand the chatbot's appropriate uses and limitations.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Explaining how an AI system was trained, what it is designed to do, and its limitations helps users make informed decisions about when and how to use it.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It guarantees every answer the chatbot gives is correct.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Even transparent AI systems can make mistakes. Transparency helps users understand the system, but it does not guarantee correct answers.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It prevents model drift.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Providing information about an AI system does not prevent model drift, which occurs when a model's performance changes because real-world data or conditions change over time.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It makes the chatbot respond faster.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Explaining how an AI system works does not affect its response speed.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+  </subsection>
+
+  <subsection xml:id="automation-augmentation">
+    <title>Automation and Augmentation</title>
+    <idx>Automation</idx>
+    <idx>Augmentation</idx>
+    
+ 
+
+   <p>
+    Generative AI tools are designed to <term>augment</term> or help humans as partners to do a task. They respond to  
+      human prompts, assisting with tasks while remaining under human direction rather than acting autonomously. 
+      However, newer AI tools such as <term>AI agents</term>, <term>agentic AI</term>, or <term>autonomous AI</term> can plan 
+      and automate multi-step tasks with very little human supervision. Watch the following <url href="https://www.youtube.com/shorts/QagTKYVfF_k">video</url> to learn more about the differences between automation and augmentation.
+    </p>
+    <video youtube="QagTKYVfF_k" label="video-automation-augmentation"/>
+
+   <p>The following table summarizes the key differences between <term>automation</term> and <term>augmentation</term>:</p>
+    
+<table xml:id="ai-augmentation-vs-automation">
+    <title>AI Augmentation vs. AI Automation</title>
+    <tabular>
+        <row header="yes">
+            <cell bottom="minor"/>
+            <cell bottom="minor">AI Augmentation</cell>
+            <cell bottom="minor">AI Automation</cell>
+        </row>
+
+        <row>
+            <cell><b>Role:</b></cell>
+            <cell>make recommendations with human oversight and accountability</cell>
+            <cell>perform tasks autonomously with little or no human involvement</cell>
+        </row>
+
+        <row>
+          <cell><b>Goal:</b></cell>
+            <cell>Help humans to complete tasks</cell>
+            <cell>Fast and cheap automatic execution of tasks</cell>
+        </row>
+
+        <row>
+          <cell><b>Best for:</b></cell>
+            <cell>Complex and important decisions</cell>
+            <cell>Predictable and low-risk tasks</cell>
+        </row>
+    </tabular>
+</table>
+
+<activity label="augmentation-vs-automation">
+  <statement>
+    <p>
+      Decide whether each AI application is primarily an example of
+      <term>AI augmentation</term> or <term>AI automation</term>.
+      Drag each application on the left to the correct category name on the right. There will be
+      4 applications in each category.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>
+      Think about whether the AI is assisting a human or performing the task on its own.
+    </p>
+  </feedback>
+
+  <cardsort>
+    <match>
+      <premise>Email assistant that drafts emails for review</premise>
+      <premise>AI coding assistant</premise>
+      <premise>AI meeting assistant that summarizes meeting notes</premise>
+      <premise>AI that suggests medical diagnoses</premise>
+      <response>AI augmentation</response>
+    </match>
+
+    <match>
+      <premise>Self-driving car that makes driving decisions</premise>
+      <premise>Warehouse robot that moves inventory to fullfill orders</premise>
+      <premise>Customer service agent that answers questions</premise>
+      <premise>Email agent that replies to certain emails</premise>
+      <response>AI automation</response>
+    </match>
+  </cardsort>
+</activity>
+
+
+    <p><term>Accuracy</term> is an important measure of an AI system's performance, but it is difficult to assess.</p>
+
+<activity label="accuracy-chatbot">
+  <statement>
+    <p>
+      A chatbot is given an AP CSP exam and answers 90 out of 100 questions correctly according to an answer key. Which of the following statements are true?
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The chatbot is unbiased.</p>
+      </statement>
+      <feedback>
+        <p>No. Accuracy measures how often the chatbot produces correct answers. A system can be accurate overall and still produce biased outputs.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The chatbot is 90% accurate.</p>
+      </statement>
+      <feedback>
+        <p>Correct! If the chatbot answered 90 out of 100 questions correctly, its accuracy on this test is 90%.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The chatbot is always reliable.</p>
+      </statement>
+      <feedback>
+        <p>No. A chatbot that is 90% accurate still produces incorrect answers about 10% of the time, so it is not always reliable.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The chatbot is fully automated.</p>
+      </statement>
+      <feedback>
+        <p>No. The percentage of correct answers measures accuracy, not whether the chatbot operates autonomously.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+  
+<p>Watch the following <url href="https://www.youtube.com/watch?v=2JQpEJQw7vo">video</url> about 
+  <term>Reinforcement Learning from Human Feedback (RLHF)</term> which is a type of 
+  <term>Human-In-the-Loop (HITL)</term> augmented machine-learning system where humans rate 
+  and rank the AI's results during training to improve accuracy and to teach the AI which responses 
+  are helpful, safe, and preferred by humans.</p>
+
+  <video youtube="2JQpEJQw7vo" label="video-rlhf"/>
+
+    <activity label="augmentation-vs-automation-choice">
+  <statement>
+    <p>
+      In which situation is <term>AI augmentation</term> generally preferable to <term>AI automation</term>?
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Automatically filtering spam emails</p>
+      </statement>
+      <feedback>
+        <p>No. This is typically a low-risk, high-volume task where full automation is appropriate.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Reordering office supplies</p>
+      </statement>
+      <feedback>
+        <p>No. This is a routine, predictable task that is well suited for automation.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Assisting a doctor in diagnosing a patient</p>
+      </statement>
+      <feedback>
+        <p>Correct. Medical diagnosis is high-stakes and requires human judgment, so AI is best used to support (augment) the decision-making process.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Turning lights on and off depending on occupancy and time</p>
+      </statement>
+      <feedback>
+        <p>No. This is a simple, predictable control task that is well suited for automation.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+    <activity label="automation-tradeoffs">
+  <statement>
+    <p>
+      A company wants to automate hiring decisions because it is faster and cheaper.
+      Which concern should also be considered?
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The company's electricity bill will go up.</p>
+      </statement>
+      <feedback>
+        <p>No. Although energy use may be a consideration in some cases, it is not the primary concern in this scenario.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Automated decisions could introduce bias.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Automated hiring systems can unintentionally reflect or amplify bias in their training data or design, so fairness should be evaluated alongside efficiency.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Automating hiring decisions is illegal.</p>
+      </statement>
+      <feedback>
+        <p>No. Automating hiring decisions is not illegal, although there are some ethical concerns.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Computers never make mistakes.</p>
+      </statement>
+      <feedback>
+        <p>No. Automated systems can make mistakes, so their outputs should be evaluated, especially in high-stakes decisions like hiring.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="ai-benefits-drawbacks">
+  <statement>
+    <p>
+      AI automation offer many advantages, but it also has potential drawbacks.
+      Drag each item on the left to the correct category name: <em>Benefits</em> or <em>Drawbacks</em>.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>
+      Think about whether each item is a positive outcome of using AI or a potential concern that should be considered.
+    </p>
+  </feedback>
+
+  <cardsort>
+    <match>
+      <premise>Faster</premise>
+      <premise>Cheaper</premise>
+      <premise>Available all the time</premise>
+      <response>Benefits</response>
+    </match>
+
+    <match>
+      <premise>Possible bias or incorrect results</premise>
+      <premise>Possible job displacement</premise>
+      <premise>Energy use</premise>
+      <response>Drawbacks</response>
+    </match>
+  </cardsort>
+</activity>
+
+    <activity label="user-trust-human-review">
+  <statement>
+    <p>
+      Which feature would most improve user trust in an automated system?
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Increase the speed at which the system makes decisions.</p>
+      </statement>
+      <feedback>
+        <p>No. Faster decisions may improve efficiency, but they do not necessarily make users trust the system more.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Provide a confidence score with each recommendation.</p>
+      </statement>
+      <feedback>
+        <p>Confidence scores can help users interpret recommendations, but they do not give users the ability to challenge or verify important decisions.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Allow users to request human review of important decisions.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Allowing human review gives users greater control and helps build trust, especially when automated decisions have significant consequences.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Automatically apply every recommendation.</p>
+      </statement>
+      <feedback>
+        <p>No. Automatically applying recommendations reduces user control, which can decrease trust, especially in high-stakes situations.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+  </activity>
+
+  </subsection>
+
+   <subsection xml:id="vocab-1-3">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-AI">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>Artificial Intelligence (AI)</premise>
+          <response>computer systems that use data and patterns to perform tasks that are often associated with human intelligence</response>
+        </match>
+        <match>
+          <premise>Generative AI (Gen AI)</premise>
+          <response>AI that creates new content, such as text, images, music, or code, based on patterns it has learned from examples</response>
+        </match>
+        <match>
+          <premise>Large Language Model (LLM)</premise>
+          <response>a type of AI model that is trained on large amounts of text data to generate human-like text</response>
+        </match>
+        <match>
+          <premise>Machine Learning (ML)</premise>
+          <response>algorithms that can learn from data</response>
+        </match>
+        <match>
+          <premise>Model</premise>
+          <response>the patterns or rules that an AI learns from data</response>
+        </match>
+        <match>
+          <premise>Model Drift</premise>
+          <response>decreased model performance because the real-world data or conditions it encounters shift</response>
+        </match>
+        <match>
+          <premise>Automation</premise>
+          <response>Computer systems that carry out tasks with limited human involvement
+          </response>
+        </match>
+        <match>
+          <premise>Augmentation</premise>
+          <response>AI tools that support human work while humans remain responsible for decisions and outcomes</response>  
+        </match>
+        <match>
+          <premise>Human-In-the-Loop (HITL) training</premise>
+          <response>AI training augmented with human feedback, where AI outputs are reviewed by humans to improve accuracy and accountability</response>
+        </match>
+
+      </cardsort>
+    </activity>
+
+      </subsection>
+</section>

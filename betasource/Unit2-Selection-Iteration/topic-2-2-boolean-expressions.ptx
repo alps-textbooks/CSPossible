@@ -1,0 +1,624 @@
+<section xml:id="topic-2-2-boolean-expressions">
+  <time minutes="45"/>
+  <title>Boolean Expressions</title>
+   <idx>boolean</idx>
+    <idx>boolean expression</idx>
+    
+
+  <introduction>
+     <p>Quick Links: 
+      <xref text="global" ref="decisions, relational-operators, logical-operators, unplugged-logic-project,  vocab-2-2, appinventor-lights-off-iteration2"/>
+    </p>
+    <p>Apps are a lot more fun if they can respond to different user actions and decisions. For example, if you are playing a game, the app can check whether 
+      you have enough points to move to the next level. A social media app needs to ask you for your password and check that
+      it is correct before allowing you to post a comment. Apps use <term>Boolean expressions</term> to make decisions based on true or false 
+      conditions, like in the flowchart below.
+      In this lesson, you will learn how to use Boolean expressions in your code to change an app's behavior.
+    </p>
+    <image source="_static/Unit2images/password-flowchart.png" width="70%" alt="Is your password correct flowchart"/>
+  </introduction>
+
+ 
+  <subsection xml:id="decisions">
+    <title>Boolean Expressions and Decision Making</title>
+
+    <p>In Python, <term>Boolean values</term> are represented by the keywords <c>True</c> and <c>False</c>.</p>
+
+      <activity label="boolvalues0">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it.
+          Change didHomework to True and run again.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+didHomework = False
+cleanedRoom = True
+print("I did everything?", cleanedRoom and didHomework )
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("True",self.getOutput(),"Change didHomework to True and run again.")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+
+    <p>Let's think about the pizza web app again. It lets the user choose different options, and
+    then chooses different outputs based on the user's choices.  </p>
+
+    <interactive iframe="webapps/pizzaApp.html" width="100%" aspect="2.5:1.2"/>
+
+    <activity label="pizzaAppBools">
+      <statement>
+        <p>Interact with the pizza app above.
+          Which of the following are Boolean expressions (True or False) that the app 
+          uses to determine its output? 
+          Select all that apply.
+          </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>User likes pizza</p>
+          </statement>
+          <feedback>
+            <p>Yes, the app needs to check whether the user likes pizza to display it and pizza images in
+              the output.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>User's name is 10 characters long</p>
+          </statement>
+          <feedback>
+            <p>The app doesn't care how long the user's name is.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>User's age is not less than 0</statement>
+          <feedback>
+            <p>This app doesn't care what the user types in for their age. 
+            </p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>There is a favorite color</p>
+          </statement>
+          <feedback>
+            <p>Yes, the app uses the favorite color value to change the background to that color.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="relational-operators">
+    <title>Relational Operators</title>
+
+    <idx>relational operators</idx>
+    <idx><h>relational operator</h><h>&lt;</h></idx>
+    <idx><h>relational operator</h><h>&gt;</h></idx>
+    <idx><h>relational operator</h><h>==</h></idx>
+    <idx><h>relational operator</h><h>!=</h></idx>
+
+
+    
+    <p><term>Relational operators</term> are operators like less than (<c>&lt;</c>), greater than (<c>&gt;</c>), and equal to (<c>==</c>) that compare two values or expressions. They are often used 
+      to compare a variable against a constant value or another variable or an expression.
+      For example, the following <term>Boolean expressions</term> (which evaluate to true or false)
+      can be used to see whether a number is positive or negative by seeing if it is greater than 0 or less than 0:
+    </p>
+
+    <program language="python">
+      <code>
+# Test if a number is positive (greater than 0)
+number &gt; 0
+# Test if a number is negative (less than 0)
+number &lt; 0
+      </code>
+    </program>
+
+    <p>
+      The relational operators <c>==</c> and <c>!=</c> (not equal) can be used
+      to compare values for equality. They return True or False boolean values. 
+      In Python, they can be used to compare numbers, strings, and other data types. For string comparisons like <c>"hello" != "Hello"</c>, 
+      Python will check that each character is the same (including its case) in the two strings. 
+      Don't confuse <c>=</c> and <c>==</c>. 
+      One <c>=</c> sign changes the value of a variable. Two <c>==</c> equal
+      signs are used to test if a variable holds a certain value, without
+      changing its value!
+  </p>
+
+    <p>
+      The relational operators <c>&lt;</c> and <c>&gt;</c> can be used to compare values and determine whether one is less than or greater than the other. 
+      If you have trouble telling <c>&lt;</c> and <c>&gt;</c> apart, remember that 
+      less than sign (<c>&lt;</c>) looks more like an L and always starts with the small pointy-end. To remember the correct order of the two characters in <c>&lt;=</c> and
+      <c>&gt;=</c>, just write them in the same order you would say them in
+      English: “less than or equal to” not “equal to or less than”.
+    </p>
+
+    <activity label="BooleanExps">
+      <statement>
+        <p>
+          Drag the boolean expression from the left and drop it on what it is
+          testing on the right. Click the "Check Me" button to see if you are
+          correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the relational operators above.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise order="1">x &gt; 0</premise>
+          <response>x is positive</response>
+        </match>
+
+        <match>
+          <premise order="2">x == y</premise>
+          <response>x equals y</response>
+        </match>
+
+        <match>
+          <premise order="3">x &lt; 0</premise>
+          <response>x is negative</response>
+        </match>
+
+        <match>
+          <premise order="4">x != y</premise>
+          <response>x does not equal y</response>
+        </match>
+
+        <match>
+          <premise order="5">x &lt; y</premise>
+          <response>x is less than y</response>
+        </match>
+
+        <match>
+          <premise order="6">x &gt; y</premise>
+          <response>x is greater than y</response>
+        </match>
+
+        <match>
+          <premise order="7">x &gt;= y</premise>
+          <response>x is greater than or equal to y</response>
+        </match>
+      </cardsort>
+    </activity>
+
+
+   <activity label="boolvalues1">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it.
+          Note that 1 equal sign (<c>=</c>) is used for assigning a value and 2
+          equal signs (<c>==</c>) for testing values. Then, add 3 more lines of
+          code that sets credit to 15 and prints out whether cost is equal to credit
+          and whether cost is not equal to credit.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+word1 = "hello"
+word2 = "Hello"
+# Will these print true or false? Capitalization matters!
+print(word1 == word2)
+
+cost = 15
+cash = 12
+# Will these print true or false?
+print(cost == cash)
+# Will these print true or false?
+print(cost != cash)
+
+# 1. Set credit to 15
+
+# 2. Print whether cost is equal to credit
+
+# 3. Print whether cost is not equal to credit
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("False\nFalse\nTrue\nTrue\nFalse",self.getOutput(),"Output")
+              self.assertIn("credit=15",self.getEditorText().replace(" ", ""), "credit = 15")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+
+  <activity label="boolvalues2">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it.
+          Then, set cash to 15 and print the boolean expression for whether cost
+          is less than or equal to cash.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+cost = 15
+cash = 12
+# Will these print true or false?
+print(cost &lt; cash)
+# Will these print true or false?
+print(cost &gt; cash)
+# 1. Set cash to 15
+
+# 2. Print whether cost is less than or equal to cash
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("False\nTrue\nTrue\n",self.getOutput(),"Output")
+              self.assertIn("&lt;=",self.getEditorText(), "Use &lt;=")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+  
+    <activity label="trace-bool-expr">
+        <statement>
+            <p>What is printed after the following code executes?
+            </p>
+          <program language="python">
+            <code>
+            apples = 5
+            bananas = 2
+            oranges = 3
+            print(apples &gt;= oranges + bananas)
+            </code>
+          </program>
+        </statement>
+        <choices randomize="yes">
+            <choice>
+                <statement>
+                    <p>False</p>
+                </statement>
+                <feedback>
+                    <p>No, apples is 5 and oranges + bananas is 5, so they are greater than or equal to each other.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>True</p>
+                </statement>
+                <feedback>
+                    <p>Correct! apples is 5 and oranges + bananas is 5, so they are greater than or equal to each other.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>5</p>
+                </statement>
+                <feedback>
+                    <p>No, the expression evaluates to a Boolean value, True or False.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>=</p>
+                </statement>
+                <feedback>
+                    <p>No, the expression evaluates to a Boolean value, True or False.</p>
+                </feedback>
+            </choice>
+        </choices>
+      </activity>
+
+  </subsection>
+
+  <subsection xml:id="logical-operators">
+    <title>Logical Operators</title>
+     <idx>logical operator</idx>
+     <idx>and</idx>
+     <idx>or</idx>
+     <idx>not</idx>
+     
+    <p><term>Logical operators</term> like <c>and</c>, <c>or</c>, and <c>not</c> are used to combine Boolean expressions.
+      For example, the following <term>Boolean expression</term> (which evaluates to true or false) can be used to see whether a 
+      number is between 1 and 10:
+      </p>
+      <program language="python">
+        <code>
+# Test if a number is between 1 and 10
+number &gt; 1 and number &lt; 10
+        </code>
+      </program>
+
+    <activity label="mixedup-boolean" adaptive="yes">
+      <statement>
+        <p>
+          Drag or click on the blocks you need to move them from the top section
+          into the yellow area to create a boolean expression that tests for a number between
+          -5 and 5 (including both). Number should be greater than or equal to -5 and less than or 
+          equal to 5. There are extra blocks that you don’t need. 
+        </p>
+      </statement>
+      <feedback><p>Number should be greater than or equal to -5 and less than or equal to 5.</p></feedback>
+      <blocks layout="horizontal">
+        <block>
+          <c>number &gt;=</c>
+        </block>
+         <block correct="no">
+          <c>number &gt;</c>
+        </block>
+        <block>
+          <c>-5 and</c>
+        </block>
+         <block correct="no">
+          <c>-5 or</c>
+        </block>
+        <block>
+          <c>number &lt;=</c>
+        </block>
+        <block correct="no">
+          <c>number &lt;</c>
+        </block>
+        <block>
+          <c>5</c>
+        </block>
+      </blocks>
+    </activity>
+
+    <p>The operator <c>and</c> is used to combine two things and verify that BOTH are true. The operator <c>or</c> is used to 
+      verify that at least one is true. The operator <c>not</c> is used to see if something is not true. 
+      With numerical values, the <term>and</term> operator is often used to see if a number is
+      in an range, for example to get a B grade, your grade must be between 80 <c>and</c> 90 (not including 90). 
+    </p>
+
+<activity label="logical-operators">
+      <statement>
+        <p>
+          Try to guess what the code below will print out before you run it. Then, 
+          test for one more grade range using a logical operator.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+grade = 80
+# Will these print true or false?
+print("Did you get an A?", grade &gt;= 90 and grade &lt; 100  )
+print("Did you get an B?", grade &gt;= 80 and grade &lt; 90  )
+print("Did you get an A or a B?", grade &gt;= 90 or grade &gt;= 80  )
+print("Did you get a passing grade?", not grade &lt; 60  ) 
+
+# print whether the student got a C using a logical operator
+
+      </code>
+      <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("&lt; 80",self.getEditorText(), "Use &lt; 80")
+              self.assertIn("&gt;= 70",self.getEditorText(), "Use &gt;= 70")
+
+          myTests().main()
+      </tests>
+       
+      </program>
+    </activity>
+  
+    <activity label="trace-logical-expr">
+        <statement>
+        <p>Given the code below, what are the values of x that will cause the code to print <c>True</c>?</p>
+        <program language="python">
+          <code>
+print( x &lt; 0 or x &gt;= 10)
+          </code>
+        </program>
+      </statement>
+      <choices randomize="yes">
+
+        <choice>
+          <statement>
+            <p>0 to 10</p>
+          </statement>
+          <feedback>
+            <p>No, because x has to be either negative or 10 or greater for the expression to be true.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>1 to 10</p>
+          </statement>
+          <feedback>
+            <p>No, because x has to be either negative or 10 or greater for the expression to be true.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>negative values</p>
+          </statement>
+          <feedback>
+            <p>That is partially correct. But what values would be true because they made ``x &gt;=
+              10`` true?</p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>negative values or 2+ digits</p>
+          </statement>
+          <feedback>
+            <p>Correct! x has to be either negative or 10 or greater for the expression to be true. Any number 10 or greater has at least 2 digits.</p>
+          </feedback>
+        </choice>
+      </choices>
+      </activity>
+
+      <p>
+        In English, we often use an exclusive-or like in the sentence “do you
+        want to be player 1 <em>or</em> player 2?” where you can’t be both
+        player 1 and player 2. In programming, the or-operator is an
+        inclusive-or which means that the whole expression is true if either one
+        or the other or <em>both</em> conditions are true.
+      </p>
+
+    <p>For complex logical expressions, it helps to first figure out the values of each boolean expression and then
+      put it together with the logical operators. For example, try to figure out the logical expression 
+      <c>((age &gt;= 12) and (age &lt;= 18)) or (occupation == "student")</c> in the code below.</p>
+
+  <activity label="trace-logical-expr2">
+   <statement><p>What is printed when you run this code? Try the CodeLens button to step through the 
+    code. Then, change the value of age to 19, try to guess the result, and run to check. 
+    Change the value of occupation and run again. </p>
+  </statement>       
+    <program language="python" interactive="activecode">
+      <code>
+age = 15
+occupation = "student"
+print("Eligible for discount?", ((age &gt;= 12) and (age &lt;= 18)) or (occupation == "student") )
+# Evaluate this in multiple steps
+# Is age &gt;= 12?
+greater_than_12 = age &gt;= 12
+print("Is age &gt;= 12?", greater_than_12)
+# Is age &lt;= 18?
+less_than_18 = age &lt;= 18
+print("Is age &lt;= 18?", less_than_18)
+# Is age between 12 and 18?
+age_between_12_and_18 = greater_than_12 and less_than_18
+# Is occupation == "student"?
+is_student = occupation == "student"
+# Put it all together
+print("Eligible for discount?", age_between_12_and_18 or is_student)
+      </code>
+    <tests>
+          from unittest.gui import TestCaseGui
+
+          class myTests(TestCaseGui):
+            def test1(self):
+              self.assertIn("True",self.getOutput(),"Output")
+              self.assertIn("19",self.getEditorText(), "Try changing the value of age to 19")
+
+          myTests().main()
+    </tests>
+    </program>
+  </activity>
+
+
+  </subsection>
+  <subsection xml:id="unplugged-logic-project">
+    <title>Unplugged Boolean Logic Project</title>
+
+     <idx><h>unplugged</h><h>boolean Venn diagrams</h></idx>
+     <idx><h>projects</h><h>boolean Venn diagrams</h></idx>
+
+    <p>Do the following project in a group of 4 people. If you don't have a group, imagine that you are doing this activity
+      with 3 other friends or family members and write down their names and ages. (Thank you
+            to Jill Westerlund of Hoover High School and Art Lopez of Sweetwater
+            High School for this activity suggestion).
+    </p>
+    <project label="unplugged-venn-diagram">
+
+      <statement>
+        <ol>
+          <li>Draw or print a <url href="https://docs.google.com/document/d/1lpjk0LS_KdAddRurMayJZmaFzeyEg4FyhviZcSTXvtU/edit?usp=sharing">Venn
+            diagram</url> of 4 intersecting circles. </li>
+          <li>Put each of the names of the 4 people in your group in a circle of the Venn Diagram (one name in each circle). </li>
+          <li>Write down the age of each person in your group in the circles. If two or more people are the
+            same age, put the age in the intersecting parts of their circles. </li>
+          <li>
+            Write a Boolean expression that compares the age of each person in
+            the group using <c>==</c>, <c>&lt;</c>, <c>&gt;</c>, 
+            <c>and</c>, for example Ada’s age <c>&gt;</c> Alan’s age
+            <c>and</c> Alan’s age <c>==</c> Grace’s age. </li>
+          <li> Then, ask each person in your group their favorite food. If two or more people
+            have the same favorite food, put the food in the intersecting
+            parts of their circles. </li>
+          <li>Write a Boolean expression that compares the
+            favorite foods in the group using <c>==</c>, <c>!=</c>, and
+            <c>and</c>, for example Ada’s favorite food pizza <c>==</c> Alan’s favorite food pizza
+            <c>and</c> Alan’s favorite food <c>!=</c> Grace’s favorite food. 
+            </li>
+            <li>Think of 1 more comparison and write it in the circles and as a Boolean
+            expression. </li>
+            <li>Share the Boolean expressions with the class and type them in below. 
+              </li>
+              </ol>
+          </statement>
+          <response/>
+        </project>
+  </subsection>
+
+   <subsection xml:id="vocab-2-2">
+    <title>Vocabulary Review</title>
+
+    <activity label="vocab-boolean">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+        <premise>Boolean</premise>
+        <response>a data type that can only have the values True or False</response>
+        </match>
+        <match>
+          <premise>Boolean expression</premise>
+          <response>an expression that evaluates to either True or False</response>
+        </match>
+        <match>
+          <premise>relational operator</premise>
+          <response>an operator like <c>==</c> or <c>&lt;</c> that compares two values and 
+            returns True or False</response>
+        </match>
+        <match>
+          <premise>logical operator</premise>
+          <response>an operator like <c>and</c>, <c>or</c>, or <c>not</c> that combines Boolean 
+            expressions and returns True or False</response>
+        </match>
+      </cardsort>
+    </activity>
+  </subsection>
+
+    <subsection xml:id="appinventor-lights-off-iteration2">
+      <title>App Inventor Project Continued (Optional)</title>
+
+    <p>If your class started the Lights Off app in MIT's App Inventor, you
+      can continue to do section 2.14.3 Iteration 2 of your project in the
+   <url href="appinventor-lights-off-app.html#iteration2-appinventor">App InventorLights Off App Lesson</url>.
+   The rest of the sections can be completed after the next lesson.
+        </p>
+      
+      </subsection>
+</section>
