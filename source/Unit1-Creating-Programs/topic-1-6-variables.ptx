@@ -254,10 +254,7 @@ Your score is?
           <c>,</c>
         </block>
         <block>
-          <c>name</c>
-        </block>
-        <block>
-          <c>,</c>
+          <c>name,</c>
         </block>
         <block>
           <c>"!"</c>
@@ -761,7 +758,7 @@ print(name + " is " + age + " years old")
     <image source="_static/Unit1images/stringIndex.png" width="60%" alt="string hello with the indices 0-5 above it"/>
 
     <p>Python has a special <term>slicing</term> operator to pull out a <term>substring</term>
-      from a start index up to a end index (but not including the end index), <c>message[start:end]</c>. </p>
+      from a start index up to an end index (but not including the end index), <c>message[start:end]</c>. </p>
 
     <program language="python">
       <code>
@@ -811,7 +808,7 @@ print(name + " is " + age + " years old")
   <statement>
     <p>
       Trace the code below keeping track of the variables and their values. 
-      What is the value in the variable <c>score</c> after the code executes?  
+      What is printed after the code executes?  
     </p>
     <program language="python">
       <code>
@@ -860,7 +857,7 @@ print(name + " is " + age + " years old")
     <title>Input</title>
         <idx>input</idx>
 
-    <p>Python has an <term>input</term> function that can be used to get input from the typed in by
+    <p>Python has an <term>input</term> function that can be used to get input typed in by
       user. This input must be saved into a variable. This is another way to initialize or assign to a variable.
       The syntax for an input statement is: </p>
 
@@ -968,7 +965,7 @@ print(name + " is " + age + " years old")
           # This will cause an error because bonus needs to be an int to be added to an int
           score += bonus
 
-          # This will cause an error because score needs to be an string to be added to a string
+          # This will cause an error because score needs to be a string to be added to a string
           print("Total score: " + score)
         </code>
         <tests>
@@ -1037,7 +1034,11 @@ print(name + " is " + age + " years old")
     </project>
 
     <activity label="varIO">
-      <statement><p>Is the variable <c>color1</c> in the code above used to store input or output?</p>
+      <statement>
+        <p>
+          Is the variable <c>color1</c> in line 5 of the code above used to store 
+          input or output?
+        </p>
      </statement>
   <choices randomize="yes">
         <choice correct="yes">
