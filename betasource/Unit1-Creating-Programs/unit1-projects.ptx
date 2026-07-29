@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit1-projects">
+  <time minutes="90" />
+
+  <title>Unit 1 Projects</title>
+
+  <introduction>
+  <p>
+    These projects were designed by Leigh Anne Fitz of Virginia Beach City Public Schools.  
+  </p>
+  </introduction>
+
+  <subsection xml:id="unit1-project1-roadtrip">
+    <title>Project 1: Road Trip Budget Planner</title>
+   
+    <p>A family is planning a road trip and wants to estimate fuel costs, food costs, and 
+        see if they qualify for a random travel discount. You will write code to plan their road trip budget.
+    </p>
+
+  <p>Program Requirements: Ask the user for the following information and store the input into variables.
+  </p>
+  <ul>`
+    <li>Driver's name</li>
+    <li>Total trip miles</li>
+    <li>Vehicle miles per gallon</li>
+    <li>Gas price per gallon</li>
+    <li>Number of travelers</li>
+    <li>Food budget per person</li>
+  </ul>
+
+  <p>Calculate the following and store the results into variables:</p>
+  <ul>
+    <li>Gallons of gas needed</li>
+    <li>Fuel cost</li>
+    <li>Total food cost</li>
+    <li>Total trip cost</li>
+    <li>Average cost per traveler</li>
+    <li>Whole number of gas stops (assume there will be a stop every 120 miles)</li>
+    <li>Remaining miles after the last full gas stop</li>
+    <li>Random discount between 5% and 20% (divide by 100 to convert to decimal)</li>
+    <li>Discounted total</li>
+  </ul>
+
+  <p>Display a formatted trip summary (see sample below).</p>
+<pre>
+Sample output:
+---------------------------------
+ROAD TRIP SUMMARY
+—------------------------------
+Driver: Maria
+Number of Travelers: 4
+Gas Needed: 30.18 gallons
+Fuel Cost: $108.35
+Food Cost: $220.00
+Total Cost: $328.35
+Average Cost Per Traveler: $82.09
+Random Discount: 14%
+Discounted Cost: $282.38
+Estimated Gas Stops: 8
+Miles After Last Stop: 45
+</pre>
+
+
+  <activity label="unit1-project1-roadtrip">
+  <statement>
+    <p>Calculate a road trip budget from the inputs of driver name, total trip miles, vehicle miles 
+        per gallon, gas price per gallon, number of travelers, and food budget per person. Calculate
+        the gallons of gas needed, fuel cost, total food cost, total trip cost, average cost per traveler,
+        whole number of gas stops, remaining miles after the last full gas stop, random discount,
+        and discounted total. Display a formatted trip summary like below.
+        Please use the variables provided in the starting code below.
+        Run your code at least once with the following input for autograding: 
+        <pre>
+Sample input: Pat, 200, 30, 4.00, 3, 15
+---------------------------------
+ROAD TRIP SUMMARY
+---------------------------------
+Driver: Pat
+Number of Travelers: 3
+Gas Needed: 6.67 gallons
+Fuel Cost: $26.67
+Food Cost: $45.00
+Total Cost: $71.67
+Average Cost Per Traveler: $23.89
+Random Discount: 13%
+Discounted Cost: $62.35
+Estimated Gas Stops: 1
+Miles After Last Stop: 80.00
+        </pre>
+    </p>
+</statement>
+<program interactive="activecode" language="python">
+<code>
+import random
+
+# 1. Input: get the following input from the user 
+#    Convert the numerical inputs to float or int
+driver = 
+miles = 
+mpg = 
+gas_price = 
+travelers = 
+food_budget = 
+
+# 2. Calculate the following
+gallons_needed = 
+fuel_cost = 
+food_cost = 
+total_cost = 
+average_cost = 
+gas_stops = 
+remaining_miles = 
+
+# 3. Generate a random discount from 5% to 20% using random.randint() 
+#    Divide by 100 to convert to decimal
+discount =
+
+# 4. Calculate the discounted amount and total 
+discount_amount = 
+discounted_total = 
+
+# 5. Print the results of all of calculations (see sample output above)
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("miles/mpg", code, "gallons_needed can be calculated using miles, mpg, and /")
+        self.assertIn("gallons_needed*gas_price",code,"fuel_cost can be calculated using gallons_needed, gas_price, and *.")
+        self.assertIn("travelers*food_budget",code,"food_cost can be calculated using travelers, food_budget, and *.")
+        self.assertIn("total_cost/travelers",code,"average_cost can be calculated using total_cost, travelers, and /.")
+        self.assertIn("miles//120",code,"gas_stops can be calculated using miles, 120, and //.")
+        self.assertIn("miles%120",code,"remaining_miles can be calculated using miles, 120, and %.")
+        self.assertIn("random.randint(5,21)",code,"discount can be generated using random.randint(5, 21).")
+        self.assertIn("total_cost-discount_amount",code,"discounted_total can be calculated using total_cost and discount_amount.")
+        self.assertIn(average_cost, 23.8, "average_cost starts with 23.8 if you enter the test case input: Pat, 200, 30, 4.00, 3, 15")
+        self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code") 
+
+myTests().main()
+</tests>
+</program>
+</activity>
+
+</subsection>
+
+
+<subsection>
+    <title>Unit 1 Coding Project 2: Event Invitation Generator</title>
+
+
+
+<p>A community center is hosting its annual Community Fun Run and wants a program 
+    that automatically creates personalized invitations and printable name badges for participants. 
+    The program should personalize the invitation using information entered by the user.
+    </p>
+
+ <p>Program Requirements: Ask the user for the following information and store the input into 
+    variables.
+    </p>
+
+    <ul>
+        <li>First Name</li>
+        <li>Last Name</li>
+        <li>Favorite Hobby</li>
+        <li>Favorite Color</li>
+        <li>City</li>
+    </ul>
+
+    <p>In your code, create the following:</p>
+    <ul>
+        <li>A full name using string concatenation.</li>
+        <li>Initials using the first letter of the first and last names.</li>
+        <li><p>A Badge ID using:
+            <ul>
+                <li>First 3 letters of the first name</li>
+                <li>First 3 letters of the last name</li>
+                <li>Random two-digit number</li>
+            </ul>
+            </p></li>
+        <li><p>An Invitation Code using:
+            <ul>
+                <li>First 2 letters of the city</li>
+                <li>First 2 letters of the hobby</li>
+                <li>Random three-digit number</li>
+            </ul>
+            </p></li>
+        <li>A Lucky Prize Number (1–100).</li>
+
+    </ul>
+
+<p>Display the personalized invitation and name badge (see sample below).</p>
+
+<pre>
+Sample output:
+Sample output:
+===================================
+Community Fun Run Invitation
+===================================
+Hello Dani Garcia!
+You are officially invited to the Community Fun Run
+October 12 at 9:00 AM
+Riverside Park
+Please wear something blue and be prepared
+to share your favorite hobby: painting!
+Invitation Code: Chpa428
+Lucky Prize Number: 57
+----------------------------------
+NAME BADGE
+----------------------------------
+COMMUNITY FUN RUN
+Name: Dani Garcia
+Initials: DG
+City: Chicago
+Badge ID: DanGar84
+----------------------------------
+We look forward to seeing you!
+</pre>
+
+
+<activity label="unit1-project2-invitation">
+  <statement>
+    <p>Create a personalized invitation and name badge from the inputs of  
+        first name, last name, favorite hobby, favorite color, and city. 
+        Create the full name, initials, badge id, invitation code, and lucky number.
+        Display a formatted invitation and name badge like below.
+        Use the variables provided in the starting code below. Run it at least once 
+        with the following input for auto-grading:
+        <pre>
+Input: Dani, Garcia, painting, blue, Chicago
+
+Sample output:
+===================================
+Community Fun Run Invitation
+===================================
+Hello Dani Garcia!
+You are officially invited to the Community Fun Run
+October 12 at 9:00 AM
+Riverside Park
+Please wear something blue and be prepared
+to share your favorite hobby: painting!
+Invitation Code: Chpa428
+Lucky Prize Number: 57
+----------------------------------
+NAME BADGE
+----------------------------------
+COMMUNITY FUN RUN
+Name: Dani Garcia
+Initials: DG
+City: Chicago
+Badge ID: DanGar84
+----------------------------------
+We look forward to seeing you!
+</pre>
+    </p>
+    </statement>
+    <program interactive="activecode" language="python">
+        <code>
+import random
+
+# 1. Input: get the following input from the user 
+first_name =
+last_name =
+favorite_hobby =
+favorite_color =
+city =
+
+# 2. Create the full name of the participant
+fullname =
+
+# 3. Get the initials (first letter of first name and first letter of last name)
+initials =
+
+# 4. Create the badge id for the participant
+#    Use the first three letters of the first name, the first three letters of the last name, 
+#    and a random two-digit number
+badge_id =
+
+# 5. Create the invitation code for the participant
+#   Use the first two letters of the city, the first two letters of the hobby, 
+#   and a random three-digit number
+invitation_code =
+
+# 6. Calculate a random lucky number for the participant from 1 - 100
+lucky_number =
+# print out the invitation and the name badge using the sample output above as a guide
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("first_name+\" \"+last_name", code, "fullname concatenates first_name, \" \", and last_name.")
+        self.assertIn("first_name[0]", code, "first_name[0] gets the first letter of first_name for the initials")
+        self.assertIn("first_name[0:3]",code,"first_name[0:3] gets the first 3 letters of first_name.")
+        self.assertIn("random.randint(10",code,"random.randint used starting at 10 for a 2-digit number")
+        self.assertIn("city[0:2]",code,"city[0:2] gets the first two letters of the city.")
+        self.assertIn(favorite_color, self.getOutput(), "favorite_color should be printed in the invitation.")
+        self.assertIn("DanGar", self.getOutput(), "Badge ID should start with DanGar for the test case input: Dani, Garcia, painting, blue, Chicago")
+        self.assertIn("Chpa", self.getOutput(), "Invitation Code should start with Chpa for the test case input: Dani, Garcia, painting, blue, Chicago")
+        self.assertIn("Dani Garcia", self.getOutput(), "Full name should be printed in the invitation for the test case input: Dani, Garcia, painting, blue, Chicago")
+        self.assertNotIn("Dani Garcia", code, "Dani Garcia should not be hard-coded in the code") 
+myTests().main()
+</tests>
+</program>
+</activity>
+
+
+</subsection>
+</section>
