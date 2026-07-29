@@ -137,7 +137,7 @@ class myTests(TestCaseGui):
         self.assertIn("miles%120",code,"remaining_miles can be calculated using miles, 120, and %.")
         self.assertIn("random.randint(5,21)",code,"discount can be generated using random.randint(5, 21).")
         self.assertIn("total_cost-discount_amount",code,"discounted_total can be calculated using total_cost and discount_amount.")
-        self.assertIn(average_cost, 23.8, "average_cost starts with 23.8 if you enter the test case input: Pat, 200, 30, 4.00, 3, 15")
+        self.assertIn("23.8", str(average_cost), "average_cost starts with 23.8 if you enter the test case input: Pat, 200, 30, 4.00, 3, 15")
         self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code") 
 
 myTests().main()
