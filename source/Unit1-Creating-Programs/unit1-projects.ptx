@@ -135,7 +135,7 @@ class myTests(TestCaseGui):
         self.assertIn("total_cost/travelers",code,"average_cost can be calculated using total_cost, travelers, and /.")
         self.assertIn("miles//120",code,"gas_stops can be calculated using miles, 120, and //.")
         self.assertIn("miles%120",code,"remaining_miles can be calculated using miles, 120, and %.")
-        self.assertIn("random.randint(5,21)",code,"discount can be generated using random.randint(5, 21).")
+        self.assertIn("random.randint(5,20)",code,"discount can be generated using random.randint(5, 20).")
         self.assertIn("total_cost-discount_amount",code,"discounted_total can be calculated using total_cost and discount_amount.")
         self.assertIn("23.8", str(average_cost), "average_cost starts with 23.8 if you enter the test case input: Pat, 200, 30, 4.00, 3, 15")
         self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code") 
@@ -296,7 +296,7 @@ class myTests(TestCaseGui):
 
     def testOne(self):
         code = self.getEditorText().replace(" ", "")
-        self.assertIn("first_name+\" \"+last_name", code, "fullname concatenates first_name, \" \", and last_name.")
+        self.assertIn("first_name+\"\"+last_name", code, "fullname concatenates first_name, \" \", and last_name.")
         self.assertIn("first_name[0]", code, "first_name[0] gets the first letter of first_name for the initials")
         self.assertIn("first_name[0:3]",code,"first_name[0:3] gets the first 3 letters of first_name.")
         self.assertIn("random.randint(10",code,"random.randint used starting at 10 for a 2-digit number")
