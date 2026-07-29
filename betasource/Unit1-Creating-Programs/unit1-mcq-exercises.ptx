@@ -30,7 +30,7 @@ Statement 3 : alex.forward(50)
           <p>2-3-1</p>
         </statement>
         <feedback>
-          <p>You must create a turtle object before you ask it to do things using dot notation.</p>
+          <p>You must create a turtle object before you ask it to do things.</p>
         </feedback>
       </choice>
       <choice>
@@ -43,10 +43,11 @@ Statement 3 : alex.forward(50)
       </choice>
       <choice correct="yes">
         <statement>
-          <p>2-3-1</p>
+          <p>2-1-3</p>
         </statement>
         <feedback>
-          <p>Correct! The turtle module needs to be imported and then a screen needs to be created before creating a turtle object.</p>
+          <p>Correct! The turtle module needs to be imported and then the turtle needs to be
+            created before it can move forward.</p>
         </feedback>
       </choice>
     </choices>
@@ -259,7 +260,7 @@ print(s[7:11], s[7:11], s[7:11])
     <choices  randomize="yes">
       <choice correct="yes">
         <statement>
-          <p>rockrockrock</p>
+          <p>rock rock rock</p>
         </statement>
         <feedback>
           <p>Correct! s[7:11] = "rock" (from the 7th character up to the 11th but not including 11th), 
@@ -268,23 +269,23 @@ print(s[7:11], s[7:11], s[7:11])
       </choice>
       <choice>
         <statement>
-          <p>rock rock rock</p>
+          <p>rocks rocks rocks</p>
         </statement>
         <feedback>
-          <p>Incorrect! s[7:11] is "rock", not " rock". Try again.</p>
+          <p>No because the slice is up to but not the end index. So s[7:11] is "rock", not "rocks". Try again.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-          <p>rocksrocksrocks</p>
+          <p>python python python</p>
         </statement>
         <feedback>
-          <p>Incorrect! Slicing will not include the character at index 11, just the characters up to it. Try again.</p>
+          <p>Incorrect! That starts at index 0, not 7. Try again.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-          <p>rocks</p>
+          <p>rock</p>
         </statement>
         <feedback>
           <p>Incorrect! It is repeated 3 times. Try again.</p>

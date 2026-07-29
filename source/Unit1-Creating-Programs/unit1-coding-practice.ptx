@@ -94,7 +94,7 @@
   <activity label="unit1_strings2">
     <statement>
       <p>Run the code below to see the errors.Fix the code to print correctly without errors. It
-        should print, <em><q>Your name is Carly and your age is 19.</q></em></p>
+        should print, <em><q>Your name is Carly and your age is 16.</q></em></p>
       <p>Note: Don’t forget that to turn an <term>int</term> into a string you do something like <c>str(x)</c> where <c>x</c>
         is the <term>int</term> you want to turn into a string.</p>
 
@@ -266,7 +266,7 @@
 
   <activity label="unit1_coding5">
     <statement>
-      <p>It is currently 10:00, complete the code to tell what time it is going to be in 18 hours (using 12-hour time,
+      <p>Assume it is currently 10:00 AM. Complete the code to tell what time it is going to be in 18 hours (using 12-hour time,
         not 24-hour time). Use the <c>%</c> (modulo or remainder operator) to calculate the correct value for <term>
         clockTime</term> based on the <term>newTime</term> value that is already calculated.</p>
       <p>The answer should be 4 because 28 hours divided into 12-hour chunks leaves a remainder of 4. But make sure not
@@ -287,6 +287,7 @@
               class myTests(TestCaseGui):
 
                   def testOne(self):
+                      self.assertIn("%", self.getEditorText().replace(" ", ""), "Use % with newTime and 12.")
                       self.assertEqual(clockTime, 4, "Testing that clockTime has the correct value." )
                       self.assertNotIn("4", self.getEditorText(), "Testing that you didn't hardcode the answer. Make sure to calculate it!")
 
