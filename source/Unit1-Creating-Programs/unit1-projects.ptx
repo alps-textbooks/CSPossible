@@ -68,12 +68,11 @@ Miles After Last Stop: 45
         per gallon, gas price per gallon, number of travelers, and food budget per person. Calculate
         the gallons of gas needed, fuel cost, total food cost, total trip cost, average cost per traveler,
         whole number of gas stops, remaining miles after the last full gas stop, random discount,
-        and discounted total. Display a formatted trip summary (see sample above).
-        Please use the variables provided in the starting code below and use the testing plan
-        in the next activity to verify your code is working correctly.
-        Run your code at least once with the following input: 
-        <pre>Input:Sam, 100, 25, 3.50, 4, 
-Sample output: Pat, 200, 30, 4.00, 3, 15
+        and discounted total. Display a formatted trip summary like below.
+        Please use the variables provided in the starting code below.
+        Run your code at least once with the following input for autograding: 
+        <pre>
+Sample input: Pat, 200, 30, 4.00, 3, 15
 ---------------------------------
 ROAD TRIP SUMMARY
 ---------------------------------
@@ -145,43 +144,6 @@ myTests().main()
 </tests>
 </program>
 </activity>
-
-<activity label="road-trip-test-cases">
-      <title>Road Trip Test Cases</title>
-      <statement>
-<p>Use the following test plan to input the following values to get the expected output. 
-    If you do not get the expected output, check your calculations in your code.
- </p>
-</statement>
-
- <table>
-      <title>Test Cases</title>
-        <tabular>
-             <row header="yes">
-                <cell bottom="minor"> Test Case</cell>
-                <cell bottom="minor"> Input </cell>
-                <cell bottom="minor"> Expected Output </cell>
-                <cell bottom="minor"> Actual Output </cell>
-            </row>  
-            <row>
-                <cell>Test Case 1</cell>
-                <cell>Sam, 100, 25, 3.50, 4, 20</cell>
-                <cell>
-                     23.5 (for Average Cost Per Traveler before discount)
-                </cell>
-                <cell><fillin answer="23.5" mode="string" /></cell>
-            </row>
-            <row>
-                <cell>Test Case 2</cell>
-                <cell>Pat, 200, 30, 4.00, 3, 15</cell>
-                <cell>
-                     23.8 (starts with 23.8 for Average Cost Per Traveler before discount)
-                </cell>
-                <cell><fillin answer="23.8" mode="string" /></cell>
-                </row>
-            </tabular>
-      </table>
-       </activity>
 
 </subsection>
 
@@ -264,10 +226,9 @@ We look forward to seeing you!
     <p>Create a personalized invitation and name badge from the inputs of  
         first name, last name, favorite hobby, favorite color, and city. 
         Create the full name, initials, badge id, invitation code, and lucky number.
-        Display a formatted invitation and name badge.
-        Use the variables provided in the starting code below and use the testing plan
-        in the next activity to verify your code is working correctly. Run it at least once 
-        with the following input:
+        Display a formatted invitation and name badge like below.
+        Use the variables provided in the starting code below. Run it at least once 
+        with the following input for auto-grading:
         <pre>
 Input: Dani, Garcia, painting, blue, Chicago
 
@@ -350,44 +311,6 @@ myTests().main()
 </program>
 </activity>
 
-<activity label="invitation-test-cases">
-      <title>Invitation and Badge Test Cases</title>
-      <statement>
-<p>Use the following test plan to input the following values to get the expected output. 
-    If you do not get the expected output, fix your code.
- </p>
-</statement>
-
- <table>
-      <title>Test Cases</title>
-        <tabular>
-             <row header="yes">
-                <cell bottom="minor"> Test Case</cell>
-                <cell bottom="minor"> Input </cell>
-                <cell bottom="minor"> Expected Output </cell>
-                <cell bottom="minor"> Actual Output </cell>
-            </row>  
-            <row>
-                <cell>Test Case 1</cell>
-                <cell>Dani, Garcia, painting, blue, Chicago</cell>
-                <cell>
-                    Badge ID starts with: DanGar 
-                </cell>
-                <cell><fillin answer="DanGar" mode="string" /></cell>
-            </row>
-            <row>
-                <cell>Test Case 2</cell>
-                <cell>Pat, Smith, reading, green, Boston</cell>
-                <cell>
-                    Invitation Code starts with: Bore
-                </cell>
-                <cell><fillin answer="Bore" mode="string" /></cell>
-                </row>
-            </tabular>
-      </table>
-       </activity>
 
 </subsection>
-
-
 </section>
