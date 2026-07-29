@@ -985,7 +985,7 @@ for p in img.getPixels():
   </p>
 
   
-  <datafile label="student" name="student.jpg">
+  <datafile label="student" filename="student.jpg">
       <image source="_static/Unit2images/student.jpg"/>
   </datafile>
 

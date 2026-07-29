@@ -128,7 +128,7 @@
 <subsection xml:id="picture-loop-practice">
       <title>Picture Loop Practice</title>
 
-    <datafile label="puppies" name="puppies.jpg">
+    <datafile label="puppies" filename="puppies.jpg">
       <image source="_static/Unit2images/puppies.jpg"/>
   </datafile>
 
