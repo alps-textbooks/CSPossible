@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-3-3-libraries">
+  <time minutes="90" />
+  <title>Using Existing Code and Libraries</title>
+
+  <idx>libraries</idx>
+  <introduction>
+     <p>Quick Links: 
+      <xref text="global" ref="libraries, apis, LOs-3-3, vocab-3-1"/>
+    </p>
+    <p>In this unit, we will learn how to use existing code and libraries.
+    </p>
+       
+  </introduction>
+
+  <subsection xml:id="libraries">
+    <title>Libraries</title>
+  
+    <note>
+      <title>3.3.A.1</title>
+      <p>
+        A software <term>library</term> is a collection of prewritten 
+        procedures that programmers can use to add features to a 
+        program without writing everything from scratch (for 
+        example, drawing graphics, working with data, or 
+        generating random values).
+      </p>
+    </note>
+
+      <note>
+      <title>3.3.A.2</title>
+      <p>
+       Existing code segments can come from internal sources 
+       (your own prior projects or your team’s code) or external 
+       sources (libraries, sample code, or online repositories). 
+       Reusing code can save time and reduce errors when the 
+       code is well-tested and well-understood.
+      </p>
+    </note>
+
+    <note>
+      <title>3.3.A.3</title>
+      <p>
+        Libraries and reusable code simplify complex tasks by 
+        providing procedures that handle common problems, 
+        allowing programmers to focus on the parts of the 
+        program that are unique to their users and goals.
+      </p>
+    </note>
+  </subsection>
+  <subsection xml:id="apis">
+    <title>Application Programming Interfaces (APIs)</title>
+    
+    <note>
+      <title>3.3.A.4</title>
+      <p>
+        An <term>application programming interface (API)</term> 
+        is a set of rules that specifies how one piece of 
+        software can interact with another. An API describes 
+        what inputs are accepted, what output is returned (if 
+        any), and what side effects may occur.
+      </p>
+    </note>
+
+    <note>
+      <title>3.3.A.5</title>
+      <p>
+        Library documentation describes the API and is necessary 
+        for correct use. Programmers use documentation to learn 
+        required inputs, possible outputs, examples, limitations, 
+        and common errors.
+      </p>
+    </note>
+
+    <note>
+      <title>3.3.A.6</title>
+      <p>
+        Selecting appropriate libraries or code segments requires 
+        checking whether they fit the program’s purpose and user 
+        needs, are compatible with the programming environment, 
+        come from a trustworthy source, and are licensed for reuse.
+      </p>
+    </note>
+
+    <note>
+      <title>3.3.A.7</title>
+      <p>
+        When using existing code, programmers test how reused 
+        procedures work within their own program. They compare 
+        actual results to expected results using both typical 
+        inputs and boundary cases to confirm the integration 
+        works as intended.
+      </p>
+    </note>
+
+    </subsection>
+
+    <subsection xml:id="LOs-3-3">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>3.3.A</title>
+      <p>
+        Develop code using appropriate libraries or existing code segments to create a program.
+      </p>
+    </remark>
+  </subsection>
+  <subsection xml:id="vocab-3-3">
+   <title>Vocabulary Review</title>
+  </subsection>  
+
+</section>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-6-ai-ethics">
+  <time minutes="90" />
+  <title>Ethics and Effects of AI</title>
+
+  <idx>ai-ethics-effects</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="ethical-design-evaluation, ai-society-economy-culture,
+      LOs-4-6, vocab-4-6"/>
+    </p>
+    <p>
+      In this topic, we evaluate AI systems with ethical design criteria and explain
+      how AI impacts society, the economy, and culture.
+    </p>
+  </introduction>
+
+  <subsection xml:id="ethical-design-evaluation">
+    <title>Evaluating AI with Ethical Design Criteria</title>
+
+    <note>
+      <title>4.6.A.1</title>
+      <p>
+        Ethical design uses criteria to evaluate AI systems, including fairness,
+        transparency, privacy, safety, and accountability. Developers use these criteria
+        to guide choices about data, model behavior, user experience, and safeguards.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.A.2</title>
+      <p>
+        Developers use evidence to evaluate whether a system is meeting ethical design
+        criteria. Methods include testing performance across different groups and contexts,
+        reviewing how data is collected and used, observing users to identify confusion or
+        barriers, and examining how the system's outputs are used in decision making.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.A.3</title>
+      <p>
+        Ethical design often involves trade-offs, such as how personalization can conflict
+        with privacy. Developers should document decisions, explain constraints, and choose
+        designs that reduce risk and protect users.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.A.4</title>
+      <p>
+        Developers assess impacts before deployment and revise designs based on user feedback,
+        then continue monitoring after release because real-world use can reveal new issues or
+        model drift.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.A.5</title>
+      <p>
+        Documentation and testing support accountability by making it clear what the system does,
+        what data it relies on, what limitations it has, and what safeguards or human review steps
+        are in place when the risks are high.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.A.6</title>
+      <p>
+        To evaluate an AI system, people apply ethical design criteria by asking questions such as:
+        Is the system fair across different users and contexts? Is it transparent about when it is
+        used and what it is doing? Does it minimize data collection and protect privacy? Who is
+        responsible when it fails? What protections reduce harm?
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.A.7</title>
+      <p>
+        Ethical evaluation includes proposing changes to reduce harm, such as improving disclosure,
+        reducing data collection, adding human review for high-risk cases, expanding testing across
+        groups, or giving users meaningful control like the ability to opt out or adjust settings.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="ai-society-economy-culture">
+    <title>How AI Impacts Society, Economy, and Culture</title>
+
+    <note>
+      <title>4.6.B.1</title>
+      <p>
+        AI systems are designed to optimize specific goals, such as efficiency, engagement,
+        accuracy, or generating options. Because the goal shapes what the system prioritizes,
+        it helps explain the kinds of outcomes the system produces in areas like health,
+        transportation, education, and media.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.2</title>
+      <p>
+        AI impacts can change when a tool is deployed in a new context or used beyond its
+        original purpose. In these cases, mismatches between training data, design assumptions,
+        and real-world use can lead to different outcomes.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.3</title>
+      <p>
+        The scale of an AI system refers to how widely it is used and how much it influences
+        outcomes, such as the number of users, the volume of decisions it helps make, how often
+        it is used, and the number of contexts in which it is used, including different schools,
+        jobs, regions, or languages.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.4</title>
+      <p>
+        When an AI tool is used on a large scale, even small design choices, errors, or biased
+        patterns can affect many people, and impacts that seem minor for one user can become
+        significant across a large population. AI tools can also influence individual behavior
+        and habits. When many people rely on the same tool, those shifts can accumulate and
+        reshape group norms and expectations, such as how people write, search, or communicate,
+        even if the tool was originally intended as only a helper.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.5</title>
+      <p>
+        AI can produce uneven outcomes through multiple pathways. These may include training data
+        and labels that shape which users the system works well for, design choices that determine
+        what errors are tolerated and what feedback users receive, and decision-making practices
+        that determine how outputs are applied in real life.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.6</title>
+      <p>
+        AI can reshape work and economic systems by changing the cost, speed, and quality of tasks.
+        This can increase productivity and create new jobs and skills needs, while also contributing
+        to job displacement or changes in wages and working conditions.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.7</title>
+      <p>
+        AI shapes culture and communication by filtering what people see and what content gets
+        created and shared. When these systems are widely used, they can influence what spreads,
+        what is rewarded with attention, and what people consider normal or trustworthy.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.8</title>
+      <p>
+        AI systems can have environmental impacts due to energy use, computing infrastructure,
+        and material consumption.
+      </p>
+    </note>
+
+    <note>
+      <title>4.6.B.9</title>
+      <p>
+        To analyze AI's broader impact, consider how the system is used: identify who uses it and
+        who is affected, where it is deployed and at what scale, and how outputs influence decisions
+        and behavior. Use these observations to determine who benefits, who may be harmed or left
+        out, and what changes when context or scale changes.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-6">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.6.A</title>
+      <p>
+        Evaluate the implementation of AI systems using ethical design criteria.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.6.B</title>
+      <p>
+        Explain how AI impacts society, the economy, and culture.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-6">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

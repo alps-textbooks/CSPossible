@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-7-machine-learning">
+  <time minutes="90" />
+  <title>Machine Learning</title>
+
+  <idx>machine-learning</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="ml-outputs-from-data-and-probability,
+      training-data-accuracy-privacy-bias, LOs-4-7, vocab-4-7"/>
+    </p>
+    <p>
+      In this topic, we examine how data and probabilistic algorithms shape machine learning outputs,
+      and how training-data choices affect accuracy, privacy, and bias.
+    </p>
+  </introduction>
+
+  <subsection xml:id="ml-outputs-from-data-and-probability">
+    <title>How Data and Probabilistic Algorithms Shape Outputs</title>
+
+    <note>
+      <title>4.7.A.1</title>
+      <p>
+        Training data for machine learning can come from sources such as sensors, surveys,
+        simulations, or existing data sets. Depending on the task, the data may include labels,
+        which are the correct outputs paired with example data inputs.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.2</title>
+      <p>
+        Machine learning models use training data to learn patterns that connect inputs to outputs.
+        These patterns come from the examples in the training data and, for supervised learning,
+        the labels attached to them.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.3</title>
+      <p>
+        Training data is often split into separate sets so the model can learn from one set and
+        then be evaluated on different data it has not seen before. The training set is used to
+        build the model, the validation set is used to adjust model choices and check performance
+        during development, and the test set is used for a final check of how well the model
+        performs on new examples.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.4</title>
+      <p>
+        In supervised learning, training examples are paired with labels that represent the
+        correct output. Using both examples that match the target and nonexamples that do not
+        match the target helps the model learn boundaries and make more accurate distinctions.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.5</title>
+      <p>
+        Many machine learning models produce probabilistic outputs, such as a likelihood or
+        confidence score, rather than a guaranteed answer. People decide how to use these scores
+        by choosing a threshold, which determines when the system accepts a prediction automatically
+        and when it requires more checking or human review.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.6</title>
+      <p>
+        When using a threshold, a system can make two kinds of mistakes. A false positive occurs
+        when the system incorrectly accepts something that should be rejected. A false negative
+        occurs when the system incorrectly rejects something that should be accepted. Changing
+        the threshold usually reduces one kind of error while increasing the other, so developers
+        choose thresholds by considering which error is more harmful for the user and the situation.
+        Developers may also add human review or additional checks to reduce harm.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.7</title>
+      <p>
+        Training sets that include diverse examples and counterexamples help a model generalize,
+        meaning it performs well on new inputs and varied real-world situations, not just the
+        examples it learned from.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.A.8</title>
+      <p>
+        A model can appear to work well during development but still perform poorly on new inputs
+        if it learns patterns that do not generalize beyond the training examples. Testing a model
+        on new data helps evaluate whether its patterns transfer beyond the training sets.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="training-data-accuracy-privacy-bias">
+    <title>Training Data, Accuracy, Privacy, and Bias</title>
+
+    <note>
+      <title>4.7.B.1</title>
+      <p>
+        Training data may be processed before a model is trained to decide which examples are
+        included and how they are organized. Sampling can reduce data set size or balance the
+        number of examples across categories. Sampling decisions can improve performance for
+        underrepresented cases, but they can also reduce accuracy if important cases are removed
+        or under-sampled.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.B.2</title>
+      <p>
+        Training data can expose sensitive information. Privacy protection includes minimizing,
+        limiting access to, and protecting sensitive data during storage and sharing.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.B.3</title>
+      <p>
+        Bias can occur when training data does not represent the people or situations the model
+        will be used for, or when labels reflect human assumptions. Collecting more data does not
+        necessarily reduce bias if the same sampling methods or labeling choices continue.
+      </p>
+    </note>
+
+    <note>
+      <title>4.7.B.4</title>
+      <p>
+        Training data should reflect the intended users and real-world contexts where the model
+        will be used. If the data set differs from actual use, the model can perform poorly or
+        unevenly across users even if it appears accurate during testing. Evaluating training data
+        includes checking whether it represents the people, environments, languages, and situations
+        the system is meant to support, and testing with representative user scenarios to reduce
+        confusion and unequal performance.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-7">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.7.A</title>
+      <p>
+        Explain how data and probabilistic algorithms shape machine learning outputs.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.7.B</title>
+      <p>
+        Explain how training data decisions can affect accuracy, privacy, and bias.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-7">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

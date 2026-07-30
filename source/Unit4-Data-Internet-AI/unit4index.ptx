@@ -39,14 +39,14 @@
       </ul>
     </p>
    </introduction>
- <!--
-  <xi:include href="./topic4-1-internet.ptx" />
-  <xi:include href="./topic4-2-effects.ptx" />
-  <xi:include href="./topic4-3-privacy-security.ptx" />
-  <xi:include href="./topic4-4-data-analysis.ptx" />
-  <xi:include href="./topic4-5-ai-algorithm-development.ptx" />
-  <xi:include href="./topic4-6-ai-ethics.ptx" />
-  <xi:include href="./topic4-7-machine-learning.ptx" />
-  -->
+ 
+  <xi:include href="./topic-4-1-internet.ptx" />
+  <xi:include href="./topic-4-2-effects.ptx" />
+  <xi:include href="./topic-4-3-privacy-security.ptx" />
+  <xi:include href="./topic-4-4-data-analysis.ptx" />
+  <xi:include href="./topic-4-5-ai-algorithm-development.ptx" />
+  <xi:include href="./topic-4-6-ai-ethics.ptx" />
+  <xi:include href="./topic-4-7-machine-learning.ptx" />
+  
   
   </chapter>

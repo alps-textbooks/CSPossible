@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-1-internet">
+  <time minutes="90" />
+  <title>The Internet</title>
+
+  <idx>internet</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="internet-protocols-and-scale, network-communication-and-conditions,
+      fault-tolerance-and-failure, LOs-4-1, vocab-4-1"/>
+    </p>
+    <p>
+      In this topic, we explain how the Internet exchanges data, scales to demand,
+      and remains functional through packets, dynamic routing, and redundancy.
+    </p>
+  </introduction>
+
+  <subsection xml:id="internet-protocols-and-scale">
+    <title>Internet Protocols and Scale</title>
+
+    <note>
+      <title>4.1.A.1</title>
+      <p>
+        The Internet is a global network of networks that communicates using standardized protocols.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.A.2</title>
+      <p>
+        A protocol is an agreed-upon set of rules for communication, such as how data is
+        formatted, sent, received, or acknowledged so different devices and networks can work
+        together reliably.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.A.3</title>
+      <p>
+        Because Internet protocols are open and nonproprietary (not owned or controlled by a
+        single company), devices and networks from different companies can communicate and
+        exchange data. This makes widespread connectivity possible and allows new devices and
+        networks to join the Internet without relying on proprietary systems (owned or controlled
+        by one company).
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.A.4</title>
+      <p>
+        Devices access the Internet by connecting to a local network (like home or school Wi-Fi)
+        or directly to a cellular provider's network. In both cases, the connection is carried by
+        an Internet service provider (ISP) to the broader Internet.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.A.5</title>
+      <p>
+        The Internet was designed to be scalable, meaning it can expand over time to meet demand.
+        Scalability is a system's ability to grow or change to meet new demands, such as more users,
+        more devices, or higher traffic, while continuing to function efficiently and reliably.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="network-communication-and-conditions">
+    <title>Network Communication and User Experience</title>
+
+    <note>
+      <title>4.1.B.1</title>
+      <p>
+        A networked computing device, such as a computer, tablet, server, router, or smart sensor,
+        is a physical artifact that can run programs and can send and/or receive data over a network.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.2</title>
+      <p>
+        A computing system is a group of computing devices and programs that work together to
+        accomplish a shared purpose. A messaging service may rely on an app on a phone, a Wi-Fi
+        router, and cloud servers working together to send and receive messages.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.3</title>
+      <p>
+        A computer network is a group of interconnected computing devices that communicate by
+        sending and receiving data. It is a type of computing system because multiple devices
+        coordinate to exchange data and provide services.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.4</title>
+      <p>
+        Data sent across a network typically travels through multiple intermediate devices, such as
+        switches and routers, before reaching its destination. A path from sender to receiver is the
+        sequence of directly connected devices that the data follows from start to finish.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.5</title>
+      <p>
+        Bandwidth commonly refers to the maximum rate at which data can be transmitted over a
+        connection, usually measured in bits per second. More available bandwidth generally allows
+        higher data rates. Higher data-rate bandwidth can support faster downloads and higher-quality
+        streaming.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.6</title>
+      <p>
+        Latency is the time it takes for data to travel from one device to another across a network.
+        Latency is typically measured in milliseconds. High latency creates noticeable delays, like
+        slow page loads, lag in video calls, or delayed responses in online games, even if bandwidth
+        is high.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.7</title>
+      <p>
+        Network conditions shape user experience. When bandwidth is limited, latency is high, or
+        networks are congested, apps may lag, buffer, or fail to load. Developers design for these
+        situations by reducing file sizes, loading content in chunks, saving progress, and showing
+        clear status messages like "Loading..." or "Try again."
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.B.8</title>
+      <p>
+        Understanding bandwidth, latency, and routing helps programmers design apps that stay usable
+        under common situations such as crowded public Wi-Fi, weak cellular signals, or unreliable
+        connections, so users can complete tasks reliably or receive clear feedback when connectivity
+        prevents it.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="fault-tolerance-and-failure">
+    <title>Fault Tolerance and Network Failure</title>
+
+    <note>
+      <title>4.1.C.1</title>
+      <p>
+        Data sent over the Internet is broken into smaller pieces called packets. Sending data as
+        packets lets routers send each packet along available paths, and the receiving device
+        reassembles the data at the destination, which improves efficiency.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.2</title>
+      <p>
+        A packet contains a chunk of data (part of a message) and metadata (information such as
+        where it came from and where it is going). This metadata helps networks route packets to
+        the correct destination and may help the receiving device reassemble the original data.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.3</title>
+      <p>
+        Packets may arrive out of order, be delayed, or fail to arrive. Certain Internet protocols
+        help handle these situations by organizing packets correctly and requesting missing data
+        when needed.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.4</title>
+      <p>
+        Routing is the process of selecting a path for data to travel from a sender to a receiver.
+        Routing on the Internet is usually dynamic, meaning data can take different paths when
+        network conditions change, especially when links or devices fail or become unavailable.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.5</title>
+      <p>
+        The Internet is designed to be fault-tolerant, meaning it can continue to function even
+        when some devices or connections fail. This matters because failures happen regularly,
+        and fault tolerance helps users continue to access information.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.6</title>
+      <p>
+        Redundancy is the inclusion of extra components or alternate paths that can reduce the
+        impact of failure when part of a system stops working. Redundancy often requires additional
+        resources, but it increases reliability.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.7</title>
+      <p>
+        Because data is sent as packets and routing is dynamic, packets can be redirected when a
+        path fails. Redundant routes can allow the network to continue delivering data even if some
+        devices or connections stop working.
+      </p>
+    </note>
+
+    <note>
+      <title>4.1.C.8</title>
+      <p>
+        To predict the impact of a failure, identify the intermediate devices and connections used
+        along a path. If removing one device or connection leaves no remaining path between the
+        sender and receiver, that failure can stop communication. Redundancy reduces this risk by
+        providing alternate paths.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-1">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.1.A</title>
+      <p>
+        Explain how the Internet exchanges data and scales with demand.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.1.B</title>
+      <p>
+        Explain how computing devices communicate in a network, and how network conditions affect communication and user experience.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.1.C</title>
+      <p>
+        Explain how network failures can occur, and how fault-tolerant networks use packets, dynamic routing, and redundancy to keep communication working.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-1">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

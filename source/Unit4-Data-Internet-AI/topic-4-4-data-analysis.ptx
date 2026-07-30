@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-4-data-analysis">
+  <time minutes="90" />
+  <title>Data Analysis</title>
+
+  <idx>data-analysis</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="learning-from-data, learning-from-metadata,
+      algorithms-for-data-analysis, LOs-4-4, vocab-4-4"/>
+    </p>
+    <p>
+      In this topic, we analyze how people learn from data and metadata,
+      and how programmers design algorithms and code for data analysis.
+    </p>
+  </introduction>
+
+  <subsection xml:id="learning-from-data">
+    <title>What People Can Learn from Data</title>
+
+    <note>
+      <title>4.4.A.1</title>
+      <p>
+        People use data-driven features every day, such as feeds, dashboards, recommendations,
+        and filters. Many apps generate annual profiles by organizing a user's activity into
+        categories such as top items, totals, and trends over time, revealing patterns in how
+        the user engaged with the app.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.2</title>
+      <p>
+        Data are raw values or observations. Information is what people learn from data after
+        analyzing it to identify patterns or meaning. One common process is to collect or select
+        data, clean it if needed, then transform, filter, aggregate, and visualize it to answer
+        questions and reveal patterns.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.3</title>
+      <p>
+        Depending on how data is collected, it may not be uniform. When people enter data into an
+        open text field, they may represent the same idea in different ways (using abbreviations,
+        different spellings, or different capitalization). Real-world data is often messy because
+        people use different terms, type differently, or make mistakes.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.4</title>
+      <p>
+        Cleaning data is the process of making data more consistent and usable without changing its
+        meaning, such as standardizing equivalent entries like "1/5," "01-05," and "Jan 5" to a
+        single agreed-upon date format.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.5</title>
+      <p>
+        Filtering data keeps only the items that meet a condition so patterns are easier to see,
+        such as filtering for trips under ten miles or survey responses that selected "strongly agree".
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.6</title>
+      <p>
+        Aggregating data combines many values into a summary, such as counting how many items meet
+        a condition or computing a total or average. Comparing data values can identify key results,
+        such as finding the maximum or minimum value or determining which category occurs most often.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.7</title>
+      <p>
+        Visualizations, such as tables, charts, and graphs, communicate insights by making trends
+        and comparisons easier to notice than raw data alone. Different visual formats highlight
+        different patterns.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.8</title>
+      <p>
+        Tools like spreadsheets can efficiently organize data, apply filters, sort records, and
+        compute summaries, making it easier to explore patterns quickly.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.A.9</title>
+      <p>
+        Programmers should choose data processes and visualizations that match user goals and avoid
+        misleading conclusions. This includes using clear labels, selecting a visualization that fits
+        the type of data and the question being asked, and ensuring filters match what users want to compare.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="learning-from-metadata">
+    <title>What People Can Learn from Metadata</title>
+
+    <note>
+      <title>4.4.B.1</title>
+      <p>
+        Metadata are data about data. They describe properties of a digital item, such as when it
+        was created, who created it, where it came from, its type or format, its size, or what
+        device or app produced it.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.B.2</title>
+      <p>
+        Changing metadata does not change the primary data. Editing a photo's date taken, for
+        instance, does not alter the image itself. However, changing metadata can affect how the
+        data is searched, sorted, grouped, or interpreted.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.B.3</title>
+      <p>
+        Metadata helps systems find, organize, and manage information by providing labels and
+        structure, such as titles, tags, categories, timestamps, or file types.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.B.4</title>
+      <p>
+        Metadata adds context that makes data more useful for analysis, such as identifying the
+        source of information, when it was recorded, or settings used to collect it, which helps
+        people and programs compare data and interpret results more accurately.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.B.5</title>
+      <p>
+        People can use metadata to detect patterns or support conclusions without examining the full
+        content, such as how often events occur or how items can be grouped or filtered.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.B.6</title>
+      <p>
+        Programmers use metadata to support user tasks such as sorting by most recent, filtering by
+        location, and organizing items into groups like favorites. Clear metadata and labels help
+        users find what they need quickly and reduce confusion or mistakes.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="algorithms-for-data-analysis">
+    <title>Algorithms and Code for Data Analysis</title>
+
+    <note>
+      <title>4.4.C.1</title>
+      <p>
+        Programs can analyze data to reveal patterns, such as counts, totals, averages, trends,
+        comparisons, and unusual values. This helps people answer questions and make decisions
+        based on evidence.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.C.2</title>
+      <p>
+        To analyze data with a program, programmers often begin by stating a question or goal and
+        defining what counts as relevant data and correct output. They then choose processes that
+        match the goal, such as transforming values, filtering records, combining values to compute
+        summaries, or comparing items to find a best match or extreme.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.C.3</title>
+      <p>
+        Programmers verify extracted information by checking sample rows, comparing against a small
+        hand-checked subset, and confirming that filters and transformations match intended results
+        and the conclusions match the data.
+      </p>
+    </note>
+
+    <note>
+      <title>4.4.C.4</title>
+      <p>
+        Many data analysis programs follow a common pattern: traverse a data set, apply a condition
+        to keep or skip items, update an accumulator (such as a count, total, or maximum), and then
+        produce output (a summary value, a new filtered collection, or a visualization-ready result).
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-4">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.4.A</title>
+      <p>
+        Determine what people can learn from analyzing data.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.4.B</title>
+      <p>
+        Determine what people can learn from metadata.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.4.C</title>
+      <p>
+        Develop algorithms and code to analyze data.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-4">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

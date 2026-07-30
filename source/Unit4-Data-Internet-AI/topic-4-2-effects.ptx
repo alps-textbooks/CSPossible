@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-2-effects">
+  <time minutes="90" />
+  <title>Effects of Technology</title>
+
+  <idx>effects-of-technology</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="beneficial-and-harmful-effects, impacts-beyond-intended-purpose,
+      LOs-4-2, vocab-4-2"/>
+    </p>
+    <p>
+      In this topic, we analyze how technology can create both benefits and harms,
+      including effects beyond intended use.
+    </p>
+  </introduction>
+
+  <subsection xml:id="beneficial-and-harmful-effects">
+    <title>Beneficial and Harmful Effects</title>
+
+    <note>
+      <title>4.2.A.1</title>
+      <p>
+        Technology is created and used by people, and human choices shape how it affects others.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.A.2</title>
+      <p>
+        When a new technology is adopted, it often changes how people complete tasks by making
+        some actions easier, faster, or more convenient, which sometimes changes habits and expectations.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.A.3</title>
+      <p>
+        A new technology can have both beneficial and harmful effects depending on the user,
+        the situation, and what the person values. The same person may view an effect as
+        beneficial in one context and harmful in another.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.A.4</title>
+      <p>
+        Advances in technology can increase creativity and capabilities in many fields
+        (e.g., medicine, engineering, communication, and the arts). They can also create
+        risks when tools are misused to cause harm, when people over-rely on outputs
+        without checking accuracy, when misinformation spreads faster or seems more believable,
+        or when unequal access limits opportunities and widens gaps in education, jobs,
+        or services.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="impacts-beyond-intended-purpose">
+    <title>Impacts Beyond Intended Purpose</title>
+
+    <note>
+      <title>4.2.B.1</title>
+      <p>
+        Digital tools are often used in ways their creators did not intend, especially when users
+        adapt features for new goals or when the tool spreads to new contexts.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.B.2</title>
+      <p>
+        Technologies can have impacts beyond their intended use because they can change people's
+        behavior, what information is shared, and who has access to opportunities or influence.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.B.3</title>
+      <p>
+        As technologies spread, they can also create unequal impacts. The digital divide refers
+        to differences in access to computing devices and the Internet based on socioeconomic,
+        geographic, or demographic factors.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.B.4</title>
+      <p>
+        The digital divide affects both groups and individuals by shaping who can participate
+        fully in digital spaces and benefit from technology. It can be affected by the actions
+        of individuals, organizations, and governments.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.B.5</title>
+      <p>
+        Because impacts can be uneven, responsible developers consider who may be unable to
+        access or use the technology and who may be negatively affected by its design or use.
+        They design features and supports to reduce barriers to access, usability, and participation.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.B.6</title>
+      <p>
+        Developers cannot predict every future use of a tool or system, especially once it is
+        widely shared. However, they can anticipate likely risks, test with real users, and update
+        the system over time as new impacts appear.
+      </p>
+    </note>
+
+    <note>
+      <title>4.2.B.7</title>
+      <p>
+        Technology tools can have effects beyond their main purpose. When many people use a tool,
+        its features can reshape habits, relationships, and opportunities in ways that were not
+        planned or predicted. Recognizing these broader effects helps people make more informed
+        choices about how they use a tool and helps developers revise designs more responsibly.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-2">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.2.A</title>
+      <p>
+        Explain how effects of technology can be both beneficial and harmful.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.2.B</title>
+      <p>
+        Explain how technology can have an impact beyond its intended purpose.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-2">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

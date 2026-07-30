@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-3-privacy-security">
+  <time minutes="90" />
+  <title>Privacy and Security</title>
+
+  <idx>privacy-security</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="data-collection-and-privacy-risks, how-systems-are-compromised,
+      protecting-digital-systems, LOs-4-3, vocab-4-3"/>
+    </p>
+    <p>
+      In this topic, we examine how personal data is collected, how systems can be compromised,
+      and how digital systems and information can be protected.
+    </p>
+  </introduction>
+
+  <subsection xml:id="data-collection-and-privacy-risks">
+    <title>Data Collection, Tracking, and Privacy Risks</title>
+
+    <note>
+      <title>4.3.A.1</title>
+      <p>
+        Websites, apps, and devices can collect data about user activity, including searches,
+        clicks, page views, purchases, and device information. Some systems also collect or infer
+        location and other details based on signals from the device or network.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.2</title>
+      <p>
+        Collected activity data can be used to personalize experiences, such as search results
+        or recommendations, and may also be used for advertising or analytics, depending on user
+        settings, company practices, and applicable laws.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.3</title>
+      <p>
+        Cookies are small pieces of data that a website stores in a user's browser or device to
+        remember information such as login status, preferences, or items in a shopping cart.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.4</title>
+      <p>
+        Cookies and other identifiers can be used to recognize a user across visits and, in some
+        cases, across different sites or apps, enabling measurement, personalization, and targeted
+        advertising.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.5</title>
+      <p>
+        Geolocation data estimates or identifies a device's physical location. It can enable useful
+        services, like navigation or nearby results, but can also reveal sensitive patterns, such as
+        where someone lives, goes to school, works, or spends time.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.6</title>
+      <p>
+        Data from different sources, such as geolocation, browsing history, app activity, purchases,
+        and social media, can be aggregated to create a detailed profile of an individual. Even if a
+        single data point seems harmless, combining many points can reveal identity, habits, and
+        relationships.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.7</title>
+      <p>
+        Some data is personally identifiable information (PII). Some PII is directly identifying,
+        like a name or phone number, and some becomes identifying when combined with other data.
+        Examples include: full name, phone number, email address, Social Security number,
+        government ID numbers, precise location, and biometrics.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.A.8</title>
+      <p>
+        Privacy risks increase when data is stored, shared, or reused beyond the user's expectations.
+        Once information is posted or shared digitally, it can be copied, forwarded, or saved by
+        others, making it difficult to fully control or remove.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="how-systems-are-compromised">
+    <title>How Systems and Information Can Be Compromised</title>
+
+    <note>
+      <title>4.3.B.1</title>
+      <p>
+        A data breach occurs when sensitive data is accessed, disclosed, or stolen by an unauthorized
+        party, often because data was stored insecurely, shared improperly, or protected by weak
+        security controls.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.2</title>
+      <p>
+        When PII is exposed in a data breach, individuals may be at risk of harms such as identity
+        theft, account takeover, or fraud, especially if the data can be used to impersonate them
+        or access their accounts.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.3</title>
+      <p>
+        Reusing the same password across multiple accounts increases the risk of account compromise
+        because, if one account's password is exposed, an adversary can try the same username and
+        password on other services to gain unauthorized access.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.4</title>
+      <p>
+        Social engineering is a strategy adversaries use to compromise systems by targeting people
+        rather than exploiting a technical weakness. An adversary influences a user into taking an
+        action that compromises security, often by impersonating a trusted source or creating urgency,
+        fear, or curiosity.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.5</title>
+      <p>
+        Phishing is a type of social engineering in which an adversary attempts to influence a user
+        into revealing personal information, such as passwords or verification codes. Adversaries can
+        use that information to access accounts, financial services, or other protected systems.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.6</title>
+      <p>
+        Unsolicited emails, attachments, links, and forms can be used to gain unauthorized access by
+        influencing a user into opening a file, entering information, or installing harmful software.
+        These messages may come from unknown senders or from accounts that appear familiar because they
+        were compromised.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.7</title>
+      <p>
+        Malicious links can be disguised to look trustworthy, such as by using misleading text,
+        shortened URLs, or look-alike website addresses, leading users to fake pages or unsafe downloads.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.8</title>
+      <p>
+        Email is not inherently private. Email messages can be forwarded, stored, intercepted, or
+        accessed by people other than the sender and receiver, which can expose sensitive information
+        if an account or message is accessed by an unauthorized party.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.9</title>
+      <p>
+        Malware is software designed to harm a device or enable unauthorized access, such as by
+        stealing data, monitoring user activity, or controlling parts of the system. Malware can be
+        installed through unsafe downloads, malicious attachments, or compromised websites.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.B.10</title>
+      <p>
+        Adversaries often focus on moments when users are rushed or confused such as with urgent
+        "account locked" messages. These situations increase the chance a user will click a link,
+        share information, or approve access without noticing warning signs.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="protecting-digital-systems">
+    <title>Protecting Digital Systems and Information</title>
+
+    <note>
+      <title>4.3.C.1</title>
+      <p>
+        Authentication is how a system verifies a user's identity, such as with passwords, passkeys,
+        or biometrics. Strong authentication can reduce unauthorized access to devices and accounts.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.2</title>
+      <p>
+        Multifactor authentication (MFA) requires two or more different pieces of evidence, typically
+        in at least two of the following categories: knowledge (something a user knows), possession
+        (something a user has), and biometrics (something a user is). MFA adds protection because an
+        attacker must compromise multiple factors, not just a single password, to access an account.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.3</title>
+      <p>
+        Encryption encodes data so it cannot be read without a key. Decryption decodes it so it can
+        be read. Encryption helps protect data stored on devices and sent over networks.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.4</title>
+      <p>
+        End-to-end encryption is a method of secure communication in which data are encrypted on the
+        sender's device and can only be decrypted on the intended recipient's device, so services that
+        transmit or store the data along the way cannot read the contents without the decryption key.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.5</title>
+      <p>
+        Systems can be compromised when adversaries exploit software flaws. Installing software updates
+        helps reduce risk by fixing known vulnerabilities that adversaries may target.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.6</title>
+      <p>
+        Malware scanning tools can help detect or block some malicious software, reducing the chance
+        that a device is infected or controlled without the user's knowledge.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.7</title>
+      <p>
+        Apps and websites sometimes request permissions like access to location, contacts,
+        microphone, camera, or photos. Reviewing and limiting permissions helps protect privacy
+        and reduces the chance of misuse if an app is untrustworthy or becomes compromised.
+      </p>
+    </note>
+
+    <note>
+      <title>4.3.C.8</title>
+      <p>
+        Security measures reduce risk in different ways: authentication and MFA limit who can access
+        an account, encryption limits who can read data if it is intercepted or stolen, updates reduce
+        known weaknesses adversaries exploit, and permissions limit what an app can access. No single
+        measure prevents all compromise, so systems often use multiple protections together.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-3">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.3.A</title>
+      <p>
+        Explain how personal data is collected, tracked, and aggregated in digital systems, and how these practices can create privacy risks.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.3.B</title>
+      <p>
+        Explain how digital systems and information can be compromised.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.3.C</title>
+      <p>
+        Explain how digital systems and information can be protected.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-3">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-5-ai-algorithm-development">
+  <time minutes="90" />
+  <title>AI Algorithm Development</title>
+
+  <idx>ai-algorithm-development</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="deterministic-vs-probabilistic, rule-based-vs-trained-models,
+      LOs-4-5, vocab-4-5"/>
+    </p>
+    <p>
+      In this topic, we compare deterministic and probabilistic algorithms and evaluate
+      strengths and limitations of rule-based systems and data-trained AI models.
+    </p>
+  </introduction>
+
+  <subsection xml:id="deterministic-vs-probabilistic">
+    <title>Deterministic and Probabilistic Algorithms</title>
+
+    <note>
+      <title>4.5.A.1</title>
+      <p>
+        Many tools people use every day include both predictable steps and best-guess behavior.
+        A calculator performing arithmetic produces the same output every time for the same input.
+        Statistical AI systems (like spam filters and chatbots) use probability to choose what
+        output is most likely under uncertainty, which means they can still make mistakes even
+        when they behave consistently. Understanding these differences helps users decide when
+        results should be checked or verified.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.A.2</title>
+      <p>
+        A deterministic algorithm produces the same output every time it is given the same input,
+        so its behavior is predictable and repeatable.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.A.3</title>
+      <p>
+        A probabilistic algorithm makes decisions based on likelihoods rather than fixed rules.
+        Because it models uncertainty, it may produce outputs that include a confidence score or
+        probability estimate. For a given input, the system will often produce the same result when
+        the model and decision threshold stay the same, but the outcome can change if the threshold
+        is adjusted or the model is updated.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.A.4</title>
+      <p>
+        Probabilistic algorithms are often used for problems where inputs are incomplete, variable,
+        or ambiguous and there is no single clear rule-based solution, such as recognizing objects
+        in images, interpreting speech, filtering spam, or generating text. Because these systems
+        make best-guess decisions, programmers evaluate them by testing performance across many
+        examples and checking how often outputs are accurate, useful, and reliable for the intended context.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.A.5</title>
+      <p>
+        Testing deterministic and probabilistic algorithms requires different approaches.
+        Deterministic algorithms can be checked with fixed expected outputs, while probabilistic
+        algorithms are evaluated by testing performance across many examples and checking whether
+        outputs meet success criteria for the intended context.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="rule-based-vs-trained-models">
+    <title>Rule-Based Systems vs. Trained AI Models</title>
+
+    <note>
+      <title>4.5.B.1</title>
+      <p>
+        AI systems can produce outputs using different approaches, such as rule-based systems and
+        models trained on data. Each approach has different strengths and limitations, so the best
+        choice depends on the task, available data, and the need for transparency.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.B.2</title>
+      <p>
+        Rule-based systems use explicit rules created by people. They are predictable and easier to
+        test, but can struggle with complex real-world situations that are variable, ambiguous, or
+        hard to capture with rules, such as identifying spam messages that change over time.
+        A spam filter that relies only on fixed keyword rules may miss new scams or incorrectly flag
+        legitimate messages because the same words can appear in both spam and non-spam messages.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.B.3</title>
+      <p>
+        Some AI models use mathematical relationships to estimate likelihoods and make a best guess
+        when information is uncertain or incomplete. They can be transparent and consistent, but their
+        accuracy depends on whether the model's assumptions fit the real situation. A weather forecast
+        model might estimate the chance of rain based on pressure, humidity, and past patterns.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.B.4</title>
+      <p>
+        Machine learning models learn patterns from training data to make predictions, classify inputs,
+        or generate outputs. They can perform well on complex pattern-based tasks, but results depend
+        heavily on the quality and representativeness of the training data, and it may be difficult to
+        explain why a particular output was produced. For example, an image classifier trained mostly on
+        bright, high-quality photos may perform poorly on blurry or low-light images.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.B.5</title>
+      <p>
+        Choosing between rule-based systems and AI models trained on data depends on the task and
+        constraints, such as the type of output needed, acceptable error rate, speed, cost, and
+        whether people need a clear explanation of how the result was produced.
+      </p>
+    </note>
+
+    <note>
+      <title>4.5.B.6</title>
+      <p>
+        People interact with AI-enabled features every day, such as autocorrect, recommendations,
+        spam filters, and face unlock. These tools produce outputs in different ways: some follow
+        fixed rules, and others use models trained on data to estimate the most likely result.
+        Rule-driven tools usually produce more predictable outputs. Model-driven tools may produce
+        outputs that are uncertain, context-dependent, or affected by changes to data, settings,
+        or the model itself.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-4-5">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>4.5.A</title>
+      <p>
+        Describe the differences between deterministic algorithms and probabilistic algorithms.
+      </p>
+    </remark>
+
+    <remark>
+      <title>4.5.B</title>
+      <p>
+        Compare the strengths and limitations of rule-based systems and AI models trained on data.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-4-5">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

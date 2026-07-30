@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-3-1-lists">
+  <time minutes="90" />
+  <title>Lists</title>
+
+  <idx>lists</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="storing-values-in-lists,manipulating-lists,traversing-lists,data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
+    </p>
+    <p>
+      In this topic, we use lists to store related values, manipulate list contents,
+      traverse lists with iteration, and explain how data abstraction manages complexity.
+    </p>
+  </introduction>
+
+  <subsection xml:id="storing-values-in-lists">
+    <title>Storing Values in Lists</title>
+
+    <note>
+      <title>3.1.A.1</title>
+      <p>
+        A data collection is a way to store multiple related values together so a program
+        can treat them as one unit, such as storing multiple names, scores, or messages.
+        Different programming languages support different kinds of collections, such as
+        lists, arrays, or dictionaries.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.A.2</title>
+      <p>
+        Data collections help programs support user-facing features that involve many items,
+        such as a list of saved favorites, recent searches, or a playlist. Storing related
+        values in one variable makes it easier to manage, update, and process the information
+        as users interact with an app.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.A.3</title>
+      <p>
+        A value stored inside a data collection is an element. Programs can work with the
+        entire collection of items as one unit or with individual elements.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.A.4</title>
+      <p>
+        In a list, elements are stored in an ordered sequence, meaning the position of each
+        element matters (first, second, third, etc.). When the following code runs, a list
+        called <c>aList</c> contains the elements <c>v1, v2, v3</c>, and so on.
+      </p>
+      <pre>
+aList = [v1, v2, v3, ...]</pre>
+    </note>
+
+    <note>
+      <title>3.1.A.5</title>
+      <p>
+        Lists can start empty, which allows a program to collect information, such as items
+        a user adds, results found during a search, or responses entered in a form. When the
+        following code runs, an empty list is assigned to <c>aList</c>.
+      </p>
+      <pre>
+aList = [ ]</pre>
+    </note>
+
+    <note>
+      <title>3.1.A.6</title>
+      <p>
+        Lists can be built over time by adding new elements, often as the user enters
+        information or the program collects it. When the following code runs, <c>value</c>
+        is added to the end of <c>aList</c> and the length of <c>aList</c> is increased by 1.
+      </p>
+      <pre>
+aList.append(value)</pre>
+    </note>
+
+    <note>
+      <title>3.1.A.7</title>
+      <p>
+        An index is a number used to reference a specific element by position in a list or
+        in a string. Many programming languages use zero-based indexing, meaning the first
+        element is at index 0, the second at index 1, and so on.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.A.8</title>
+      <p>
+        Programs can access a specific list element using its index. This allows programs to
+        read or use stored values in a list. When the following code runs, the element in
+        <c>aList</c> at index <c>j</c> is accessed.
+      </p>
+      <pre>
+aList[j]</pre>
+    </note>
+
+    <note>
+      <title>3.1.A.9</title>
+      <p>
+        Lists support apps that respond to users by remembering and reusing information.
+        For example, a music app can store a user's queued songs in a list. Each time the
+        user taps "Add to Queue," the song title is appended to the list, and the app uses
+        the list to display the upcoming songs in order and play the next track.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="manipulating-lists">
+    <title>Manipulating Lists</title>
+
+    <note>
+      <title>3.1.B.1</title>
+      <p>
+        Programmers sometimes make a copy of a list so they can modify the copy, such as
+        removing or reordering elements, while keeping the original list unchanged.
+        Preserving the original list can make a program easier to understand, test, and
+        debug because the program can still refer back to the original data if needed.
+        When the following code runs, a copy of the list <c>bList</c> is assigned to the
+        list <c>aList</c>.
+      </p>
+      <pre>
+aList = bList</pre>
+    </note>
+
+    <note>
+      <title>3.1.B.2</title>
+      <p>
+        Elements in a list can be changed to different values, which allows a program to
+        update stored information without rebuilding the entire list. When the following
+        code runs, the value of <c>x</c> is assigned to the element at index <c>j</c> in
+        <c>aList</c>. The previous value at that index is overwritten, and the length of
+        the list does not change.
+      </p>
+      <pre>
+aList[j] = x</pre>
+    </note>
+
+    <note>
+      <title>3.1.B.3</title>
+      <p>
+        The length of a list can change while a program runs as elements are added or
+        removed. Knowing the length of a list helps programmers write code that works
+        correctly as the list changes. When the following code runs, it evaluates to
+        the number of items in <c>aList</c>.
+      </p>
+      <pre>
+length(aList)</pre>
+    </note>
+
+    <note>
+      <title>3.1.B.4</title>
+      <p>
+        Elements can be inserted at particular positions in a list, which allows a program
+        to keep items in a meaningful order, such as priority or ranking, as new information
+        is added. When the following code runs, any elements at indices greater than or
+        equal to <c>j</c> are shifted so that their indices are increased by 1 and
+        <c>value</c> is placed at index <c>j</c>. The length of the list is increased by 1.
+      </p>
+      <pre>
+aList.insert(j, value)</pre>
+    </note>
+
+    <note>
+      <title>3.1.B.5</title>
+      <p>
+        Elements at particular positions can be removed from a list, which allows a program
+        to delete outdated, incorrect, or unwanted information while keeping the remaining
+        elements usable. When the following code runs, the element at index <c>j</c> is
+        removed and the elements after it shift one position so that their indices are
+        decreased by 1. The length of the list is decreased by 1.
+      </p>
+      <pre>
+aList.remove(j)</pre>
+    </note>
+
+    <note>
+      <title>3.1.B.6</title>
+      <p>
+        To select a random element from a list, a program can generate a random index and
+        use it to access an element. This allows for features like selecting a random song
+        from a playlist, choosing a random prompt in a game, or assigning a random partner
+        from a list of names. In programming languages that use zero-based indexing, if
+        <c>aList</c> has <c>length(aList)</c> items, the valid indices are 0 through
+        <c>length(aList) - 1</c>. When the following code runs, the program generates one
+        of the valid indices with equal likelihood and accesses the element at that index.
+      </p>
+      <pre>
+aList[random(0, length(aList) - 1)]</pre>
+    </note>
+
+    <note>
+      <title>3.1.B.7</title>
+      <p>
+        Apps often update lists in response to user actions. Adding or removing items
+        supports user goals such as saving favorites, managing a to-do list, updating a
+        roster, or keeping a recent-search history. Programmers choose list operations
+        that match how users expect information to change as they interact with the app.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.B.8</title>
+      <p>
+        To determine what output a program produces after list operations, programmers
+        trace statements in order and update the list after each step. This includes
+        tracking how element positions change when items are inserted or removed and using
+        the updated list to determine what values are accessed or displayed next.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.B.9</title>
+      <p>
+        List operations that use an index depend on the index being valid for the current
+        list. When a program accesses, updates, inserts, or removes using an index,
+        programmers must consider the current length of the list and how earlier operations
+        may have shifted element positions. In many programming languages, using an index
+        that is outside the allowed range produces an error and may cause the program to stop.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="traversing-lists">
+    <title>Traversing Lists with Iteration</title>
+
+    <note>
+      <title>3.1.C.1</title>
+      <p>
+        Traversing a list is often used to accomplish a goal, such as counting elements
+        that meet a condition, finding a value (like a maximum), computing a total or
+        average, or building an output (such as a message that includes all elements that
+        match a rule).
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.C.2</title>
+      <p>
+        Traversals often update an accumulator variable, such as a count or total, each
+        time an element is processed.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.C.3</title>
+      <p>
+        Iteration statements can be used to traverse a list, which allows a program to
+        process each element in order without writing repeated code for every element.
+        When the following code runs, the variable <c>item</c> is assigned the value of
+        each element of <c>aList</c> sequentially, in order, from the first element to
+        the last element. The code in block of statements is executed once for each
+        element in <c>aList</c>.
+      </p>
+      <pre>
+for item in aList
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+    <note>
+      <title>3.1.C.4</title>
+      <p>
+        A linear or sequential search checks elements in order until the desired value is
+        found or the list ends. Programs often store the index where a match was found or
+        store a Boolean value to indicate whether a match was found.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.C.5</title>
+      <p>
+        Traversing a list can be a complete traversal, where every element is accessed,
+        or a partial traversal, where only some elements are examined. Some partial
+        traversals stop early when a goal is reached, such as finding the first match
+        in a search, which may require fewer steps than traversing the entire list.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.C.6</title>
+      <p>
+        Traversing a list supports user-facing features like calculating a total in a
+        shopping cart, counting votes in a poll, or checking whether a username is already
+        taken. Programmers choose complete vs. partial traversal based on whether a user
+        needs to check every element or find a particular match in the list.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.C.7</title>
+      <p>
+        To determine the result of a traversal, programmers trace the loop and track how
+        variables update each time an element is processed.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="data-abstraction-with-lists">
+    <title>Data Abstraction with Lists</title>
+
+    <note>
+      <title>3.1.D.1</title>
+      <p>
+        Data abstraction manages complexity by allowing programmers to use data based on
+        its name and purpose without needing to focus on how the data is represented.
+        This separation helps programmers reason about what the data represents and what
+        operations can be done with it.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.D.2</title>
+      <p>
+        A list is a type of data abstraction because it allows many related values to be
+        treated as a single variable. Instead of writing code for many individual
+        variables, programmers can use the list's name to perform the same kinds of
+        operations on its elements, such as accessing, updating, inserting, removing,
+        or traversing.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.D.3</title>
+      <p>
+        Using data abstractions such as lists can make programs easier to develop, read,
+        test, and maintain because the same algorithm can often work even when the amount
+        of data changes. When elements are added or removed, the code structure often
+        stays the same.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.D.4</title>
+      <p>
+        Data abstraction makes it easier to adapt a program as user needs change (for
+        example, handling more saved favorites, more songs on a playlist, or more
+        messages) without redesigning the entire program.
+      </p>
+    </note>
+
+    <note>
+      <title>3.1.D.5</title>
+      <p>
+        Data abstraction reduces complexity by reducing duplication in code. For example,
+        using a single list and a loop can process any number of elements, instead of
+        requiring many separate variables and repeated statements. This means fewer places
+        to update code during development, which lowers the chance of errors.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-3-1">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>3.1.A</title>
+      <p>
+        Develop code that stores multiple related values in a single variable.
+      </p>
+    </remark>
+
+    <remark>
+      <title>3.1.B</title>
+      <p>
+        Develop code to manipulate a list, and determine the result produced.
+      </p>
+    </remark>
+
+    <remark>
+      <title>3.1.C</title>
+      <p>
+        Develop code using iteration statements to traverse a list, and determine the result produced.
+      </p>
+    </remark>
+
+    <remark>
+      <title>3.1.D</title>
+      <p>
+        Explain how the use of data abstraction manages complexity in program code.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-3-1">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-3-2-procedures">
+  <time minutes="90" />
+  <title>Procedures</title>
+
+  <idx>procedures</idx>
+  <introduction>
+   <p>Quick Links:
+      <xref text="global" ref="defining-procedures,procedure-calls,procedural-abstraction,
+      LOs-3-2, vocab-3-2"/>
+    </p>
+    <p>
+      In this topic, we develop code with procedures, trace procedure calls,
+      and explain how procedural abstraction helps manage complexity.
+    </p>
+  </introduction>
+
+  <subsection xml:id="defining-procedures">
+    <title>Defining Procedures</title>
+
+    <note>
+      <title>3.2.A.1</title>
+      <p>
+        A procedure is a named group of programming instructions that performs a task.
+        Using procedures helps programmers organize code, avoid unnecessary code, and
+        make programs easier to read, test, and update. Procedures may also be called
+        functions or methods depending on the programming language.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.A.2</title>
+      <p>
+        If a procedure does not need any input information to complete its intended task,
+        it can be defined with its name followed by parentheses and a block of statements.
+        Each time the procedure is called, the statements in the procedure execute, and
+        then the program continues with the next statement after the call.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.A.3</title>
+      <p>
+        Procedures can use parameters to receive input. A parameter is a variable name
+        listed in the procedure definition. An argument is the actual value provided
+        when the procedure is called.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.A.4</title>
+      <p>
+        A procedure may not need parameters when it always performs the same steps with
+        no changing input (for example, displaying an instructions screen or resetting a
+        game to a default starting state). Procedures need parameters when they need
+        input information to complete the intended task. If a procedure should work for
+        many different inputs (for example, greeting different users or calculating totals
+        for different numbers), parameters make it flexible and reusable because the
+        program can pass different arguments each time it is called. Using parameters
+        when input varies helps avoid duplicating code and keeps the program easier to
+        update.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.A.5</title>
+      <p>
+        Procedures with parameters make it easier to adapt an app's behavior or output
+        to different users and situations without rewriting code. A single procedure with
+        parameters can generate many clear, personalized messages for different users by
+        using different argument values each time it is called.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.A.6</title>
+      <p>
+        A procedure is defined with a name and a list of zero or more parameters. When
+        the following code runs, a procedure named <c>pName</c> is defined with zero or
+        more parameters (<c>p1, p2, ...</c>). When the procedure is called, the statements
+        in <c>&lt;block of statements&gt;</c> execute.
+      </p>
+      <pre>
+procedure pName(p1, p2, ...)
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+    <note>
+      <title>3.2.A.7</title>
+      <p>
+        Some procedures use a return statement to send a result back to the part of the
+        program that called the procedure, which allows the returned value to be stored in
+        a variable, used in an expression, or displayed as output. The return statement
+        ends the procedure immediately, even if more statements appear later in the
+        procedure. When the following code runs in the body of a procedure, the value of
+        <c>expression</c> is returned to the place in the program where the procedure was called.
+      </p>
+      <pre>
+return expression</pre>
+    </note>
+
+    <note>
+      <title>3.2.A.8</title>
+      <p>
+        Some procedures perform an action, such as displaying output or updating
+        variables, and do not return a value. Other procedures compute a value and use
+        a return statement so the result can be used elsewhere in the program.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.A.9</title>
+      <p>
+        Defining a procedure creates the named steps, but the code inside runs only when
+        the procedure is called.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="procedure-calls">
+    <title>Procedure Calls</title>
+
+    <note>
+      <title>3.2.B.1</title>
+      <p>
+        Calling a procedure runs a named sequence of steps, which helps programs reuse
+        code and keep the overall program easier to read and follow.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.B.2</title>
+      <p>
+        A procedure is called by using its name in a statement so the program runs the
+        steps stored in that procedure. When the call happens, the program pauses the
+        current sequence of statements, executes the procedure's instructions, and then
+        resumes at the next statement after the call.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.B.3</title>
+      <p>
+        In a procedure call, the values inside the parentheses are arguments. When the
+        call runs, each argument value is assigned to the matching parameter in the
+        procedure definition. This allows the same procedure to run with different input
+        values. When the following code runs, <c>a1</c> is assigned to the first parameter
+        and <c>a2</c> is assigned to the second parameter before the procedure's statements
+        execute.
+      </p>
+      <pre>
+pName(a1, a2)</pre>
+    </note>
+
+    <note>
+      <title>3.2.B.4</title>
+      <p>
+        A procedure can also be called with no arguments (empty parentheses) when it has
+        no parameters. The number of arguments in a call must match the number of
+        parameters in the procedure definition.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.B.5</title>
+      <p>
+        To determine the result of a procedure call, programmers trace the call by
+        matching arguments to parameters, stepping through the procedure's statements in
+        order, tracking any variable updates and outputs, and then returning to where the
+        procedure was called to continue program execution.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.B.6</title>
+      <p>
+        If a procedure returns a value, the procedure call evaluates to that value. The
+        returned value can be stored in a variable, used in an expression, or displayed
+        as output. If a procedure does not return a value, the call is used to perform
+        actions such as updating variable values or producing output.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="procedural-abstraction">
+    <title>Procedural Abstraction</title>
+
+    <note>
+      <title>3.2.C.1</title>
+      <p>
+        Procedural abstraction manages complexity by grouping related code into named
+        procedures that can be called from other parts of a program.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.2</title>
+      <p>
+        Procedural abstraction allows programmers to use a procedure by knowing what it
+        does without needing to know how it works internally. Programmers often use
+        built-in procedures, such as <c>print</c> or <c>random</c>, by relying on the
+        procedure's name, purpose, and expected behavior while the implementation details
+        stay hidden.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.3</title>
+      <p>
+        Procedural abstraction helps manage complexity by breaking a large problem into
+        smaller subproblems and creating procedures to solve each part.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.4</title>
+      <p>
+        The subdivision of a program into smaller, independent procedures or components
+        is called modularity. Modularity helps programmers focus on one part at a time
+        and makes programs easier to build, test, and revise.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.5</title>
+      <p>
+        Procedural abstraction supports code reuse by extracting shared behavior into a
+        single procedure instead of duplicating code in multiple places.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.6</title>
+      <p>
+        Using parameters generalizes a procedure so it can be reused with different
+        inputs, allowing one procedure to handle many situations without rewriting code.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.7</title>
+      <p>
+        Procedural abstraction allows programmers to change a procedure's internal steps
+        (for example, to improve efficiency or fix a bug) without changing the rest of
+        the program. This makes larger programs easier to maintain because updates can be
+        made in one place.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.C.8</title>
+      <p>
+        Using procedural abstraction improves readability because the rest of the program
+        can call procedures with descriptive names, so the overall steps of the program
+        are easier to understand at a glance.
+      </p>
+    </note>
+  </subsection>
+
+  <subsection xml:id="LOs-3-2">
+    <title>Learning Objectives Review</title>
+
+    <remark>
+      <title>3.2.A</title>
+      <p>
+        Develop code to define procedures with and without parameters.
+      </p>
+    </remark>
+
+    <remark>
+      <title>3.2.B</title>
+      <p>
+        Develop code for procedure calls, and determine the result of procedure calls.
+      </p>
+    </remark>
+
+    <remark>
+      <title>3.2.C</title>
+      <p>
+        Explain how the use of procedural abstraction manages complexity in a program.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="vocab-3-2">
+   <title>Vocabulary Review</title>
+  </subsection>
+</section>
