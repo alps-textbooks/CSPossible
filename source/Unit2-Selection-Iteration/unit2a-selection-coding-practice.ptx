@@ -86,7 +86,7 @@ myTests().main()
     </statement>
     <program interactive="activecode" language="python">
       <code>
-          weight = 3
+          weight = 1
           if weight &lt; 2:
           price = 1.50
           if weight &gt;= 2:
@@ -103,7 +103,7 @@ class myTests(TestCaseGui):
         def contains(item, container):
             return item if item in container else None
 
-        self.assertAlmostEqual(total, 3.9, 2, "Testing the total is 3.9.")
+        self.assertAlmostEqual(total, 1.5, 2, "Testing the total is 1.5.")
         self.assertEqual(contains("else:", self.getEditorText()), "else:", "Check for else:")
 
 myTests().main()

@@ -8,7 +8,12 @@
   <p>These are exercises mostly written by Dr. Barb Ericson in the AP CSP and Python for Everybody ebooks on Runestone. 
   </p>
 
-      
+ <datafile label="unittesthelper" filename="unittesthelper" editable="no" hide="yes">
+   <pre>
+def contains(item, container):
+    return item if item in container else None    
+   </pre>
+</datafile>      
 
     <activity label="if-email">
     <statement>
@@ -17,7 +22,7 @@
         Change the code to check to work for other domains than "gmail.com" by just checking for @ and . in the email.
         </p>
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python" datafile="unittesthelper">
         <code>
 email = "student@school.edu"
 # Change this to check if @ is in the email and . is in the email.
@@ -27,16 +32,16 @@ else:
     print("Invalid email.")
         </code>
        <tests>
-        from unittest.gui import TestCaseGui
+from unittest.gui import TestCaseGui
 
-        class myTests(TestCaseGui):
-            def test1(self):
-                self.assertIn('"@" in email',self.getEditorText(), 'Check for "@" in email')
-                self.assertIn('"." in email',self.getEditorText(), 'Check for "." in email')
-                self.assertNotIn("@gmail.com",self.getEditorText(), "Don't use @gmail.com")
+class myTests(TestCaseGui):
+    def test1(self):        
+        self.assertEqual(contains('"@" in email', self.getEditorText()), '"@" in email', 'Check for "@" in email')
+        self.assertEqual(contains('"." in email', self.getEditorText()), '"." in email', 'Check for "." in email')
+        self.assertEqual(contains("@gmail.com", self.getEditorText()), None, "Don't use @gmail.com")
 
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
       </program>
     </activity>
 
@@ -45,7 +50,7 @@ else:
             <p>Fix the indentation errors in the code, and change it to use only one if/else statement. The code should print
               <q>The number is 5</q> when the number is 5, and should print <q>The number is NOT 5</q> when it is not.</p>
           </statement>
-          <program interactive="activecode" language="python" xml:id="cndtnl-wc-fiveq_editor">
+          <program interactive="activecode" language="python"  datafile="unittesthelper">
             <code>
 x = 5
 if x == 5:
@@ -54,15 +59,15 @@ if x != 5:
 print("The number is NOT 5")
         </code>
         <tests>
-          from unittest.gui import TestCaseGui
+from unittest.gui import TestCaseGui
 
-          class myTests(TestCaseGui):
-                def test1(self):
-                    self.assertNotIn("if x != 5",self.getEditorText(), "Don't use x != 5")
-                    self.assertIn("else",self.getEditorText(), "Use else")
+class myTests(TestCaseGui):
+      def test1(self):
+          self.assertEqual(contains("if x != 5", self.getEditorText()), None, "Don't use x != 5")
+          self.assertEqual(contains("else", self.getEditorText()), "else", "Use else")
 
-          myTests().main()
-        </tests>
+myTests().main()
+</tests>
           </program>
 
           </activity>
@@ -76,9 +81,9 @@ print("The number is NOT 5")
        
 
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
-          weight = 3
+          weight = 1
           if weight &lt; 2:
           price = 1.50
           if weight &gt;= 2:
@@ -87,15 +92,15 @@ print("The number is NOT 5")
           print(total)
         </code>
       <tests>
-          from unittest.gui import TestCaseGui
+from unittest.gui import TestCaseGui
 
-          class myTests(TestCaseGui):
-              def testOne(self):
-                  self.assertAlmostEqual(total, 3.9, 2, "Testing the total is 3.9.")
-                  self.assertIn("else:",self.getEditorText(), "Check for else:")
+class myTests(TestCaseGui):
+    def testOne(self): 
+        self.assertAlmostEqual(total, 1.5, 2, "Testing the total is 1.5.")
+        self.assertEqual(contains("else:", self.getEditorText()), "else:", "Check for else:")
 
-          myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
@@ -108,7 +113,7 @@ print("The number is NOT 5")
       </p>
 
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
         totalCredits = 22
         mathCredits = 2
@@ -117,18 +122,17 @@ print("The number is NOT 5")
 
       </code>
       <tests>
+from unittest.gui import TestCaseGui
 
-        from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(contains("totalCredits&gt;=22", self.getEditorText().replace(" ", "")), "totalCredits&gt;=22", 'Check for totalCredits &gt;= 22')
+        self.assertEqual(contains("mathCredits&gt;=3", self.getEditorText().replace(" ", "")), "mathCredits&gt;=3", 'Check for mathCredits &gt;= 3')
+        self.assertEqual(contains('else:', self.getEditorText()), 'else:', 'Check for else:')
+        self.assertEqual(contains("Cannot Graduate", self.getOutput()), "Cannot Graduate", "Output has Cannot Graduate (for 22 total and 2 math)")
 
-        class myTests(TestCaseGui):
-            def testOne(self):
-                self.assertIn("totalCredits&gt;=22",self.getEditorText().replace(" ", ""), 'Check for totalCredits &gt;= 22')
-                self.assertIn("mathCredits&gt;=3",self.getEditorText().replace(" ", ""), 'Check for mathCredits &gt;= 3')
-                self.assertIn('else:',self.getEditorText(), 'Check for else:')
-                self.assertIn("Cannot Graduate", self.getOutput(), "Output has Cannot Graduate (for 22 total and 2 math)")
-
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
@@ -140,7 +144,7 @@ print("The number is NOT 5")
        </p>
 
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
         number = 9
         # Check if the number is even using % and print out "even" or "odd"
@@ -149,16 +153,16 @@ print("The number is NOT 5")
 
       </code>
       <tests>
-        from unittest.gui import TestCaseGui
+from unittest.gui import TestCaseGui
 
-        class myTests(TestCaseGui):
-            def testOne(self):
-                self.assertIn("number%2==0",self.getEditorText().replace(" ", ""), "Check if number % 2 == 0")
-                self.assertIn("else:",self.getEditorText(), "Use else: for odd numbers")
-                self.assertIn("odd", self.getOutput(), "Check that the output is odd for 9")
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(contains("number%2==0", self.getEditorText().replace(" ", "")), "number%2==0", "Check if number % 2 == 0")
+        self.assertEqual(contains("else:", self.getEditorText()), "else:", "Use else: for odd numbers")
+        self.assertEqual(contains("odd", self.getOutput()), "odd", "Check that the output is odd for 9")
 
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
@@ -172,7 +176,7 @@ print("The number is NOT 5")
         $18 per hour they would receive <m>40 \cdot 18 + ((50 - 40) \cdot 18) \cdot 1.5</m></p>
 
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
         hours = 50
         payRate = 18
@@ -182,17 +186,16 @@ print("The number is NOT 5")
 
       </code>
       <tests>
+from unittest.gui import TestCaseGui
 
-        from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(contains("hours&lt;=40", self.getEditorText().replace(" ", "")), "hours&lt;=40", "Check for hours &lt;= 40")
+        self.assertEqual(contains("hours-40", self.getEditorText().replace(" ", "")), "hours-40", "Check for hours - 40")
+        self.assertEqual(contains("990", self.getOutput()), "990", "Answer is 990 for 50 hours at $18/hr + overtime")
 
-        class myTests(TestCaseGui):
-            def testOne(self):
-                self.assertIn("hours&lt;=40",self.getEditorText().replace(" ", ""), "Check for hours &lt;= 40")
-                self.assertIn("hours-40",self.getEditorText().replace(" ", ""), "Check for hours - 40")
-                self.assertIn("990", self.getOutput(), "Answer is 990 for 50 hours at $18/hr + overtime")
-
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
@@ -207,7 +210,7 @@ print("The number is NOT 5")
         <c>"Senior"</c>, <c>"Junior"</c>, <c>"Sophomore"</c>, or <c>"First Year"</c>.</p>
 
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
         credits = 40
         # Write if statements to determine if the student is a Senior, Junior, Sophomore or First Year
@@ -215,18 +218,17 @@ print("The number is NOT 5")
 
       </code>
       <tests>
+from unittest.gui import TestCaseGui
 
-        from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(contains("credits&gt;=90", self.getEditorText().replace(" ", "")), "credits&gt;=90", "Check for credits &gt;= 90")
+        self.assertEqual(contains("credits&gt;=60", self.getEditorText().replace(" ", "")), "credits&gt;=60", "Check for credits &gt;= 60")
+        self.assertEqual(contains("credits&gt;=30", self.getEditorText().replace(" ", "")), "credits&gt;=30", "Check for credits &gt;= 30")
+        self.assertEqual(contains("Sophomore", self.getOutput()), "Sophomore", "Output has Sophomore (for 40 credits)")
 
-        class myTests(TestCaseGui):
-            def testOne(self):
-                self.assertIn("credits&gt;=90",self.getEditorText().replace(" ", ""), "Check for credits &gt;= 90")
-                self.assertIn("credits&gt;=60",self.getEditorText().replace(" ", ""), "Check for credits &gt;= 60")
-                self.assertIn("credits&gt;=30",self.getEditorText().replace(" ", ""), "Check for credits &gt;= 30")
-                self.assertIn("Sophomore", self.getOutput(), "Output has Sophomore (for 40 credits)")
-
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
@@ -241,7 +243,7 @@ print("The number is NOT 5")
       <p>Remember that you can use <c>in</c> to check if one string appears inside another.</p>
 
     </statement>
-    <program  interactive="activecode" language="python">
+    <program  interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
         mealPrice = 10
         mealLocation = "I want it to dine in please"
@@ -251,16 +253,16 @@ print("The number is NOT 5")
 
       </code>
       <tests>
-        from unittest.gui import TestCaseGui
+from unittest.gui import TestCaseGui
 
-        class myTests(TestCaseGui):
-            def testOne(self):
-              self.assertIn('"to go" in mealLocation:',self.getEditorText(), 'Check for "to go" in mealLocation:')
-              self.assertIn('else',self.getEditorText(), 'Check for else')
-              self.assertIn("10.8", self.getOutput(), "Output has cost 10.8 (with tax)")
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(contains('"to go" in mealLocation:', self.getEditorText()), '"to go" in mealLocation:', 'Check for "to go" in mealLocation:')
+        self.assertEqual(contains('else', self.getEditorText()), 'else', 'Check for else')
+        self.assertEqual(contains("10.8", self.getOutput()), "10.8", "Output has cost 10.8 (with tax)")
 
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
@@ -269,7 +271,7 @@ print("The number is NOT 5")
       <p>The program below is supposed to figure out the cost of a ticket for a customer to a museum. Anyone who is at least
         65 or who is younger than 12 gets in free. Anyone who is 12 through 17 gets in for $8. Everyone else is $15.</p>
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python"  datafile="unittesthelper">
       <code>
         age = 12
         # Cost is 0 for 65+ or under 12, $8 for 12-17, of $15 otherwise
@@ -278,19 +280,18 @@ print("The number is NOT 5")
   
       </code>
       <tests>
+from unittest.gui import TestCaseGui
 
-        from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(contains("age&gt;65", self.getEditorText().replace('\n', '')), "age&gt;65", 'Check for age &gt;= 65')
+        self.assertEqual(contains('if', self.getEditorText()), 'if', 'Check for if')
+        self.assertEqual(contains("elif", self.getEditorText().replace('\n', '')), "elif", 'Check for elif')
+        self.assertEqual(contains('else', self.getEditorText()), 'else', 'Check for else')
+        self.assertEqual(contains("8", self.getOutput()), "8", "Output has cost 8 (for 12-17)")
 
-        class myTests(TestCaseGui):
-            def testOne(self):
-              self.assertIn("age&gt;65",self.getEditorText().replace('\n', ''), 'Check for age &gt;= 65')
-              self.assertIn('if',self.getEditorText(), 'Check for if')
-              self.assertIn("elif",self.getEditorText().replace('\n', ''), 'Check for elif')
-              self.assertIn('else',self.getEditorText(), 'Check for else')
-              self.assertIn("8", self.getOutput(), "Output has cost 8 (for 12-17)")
-
-        myTests().main()
-      </tests>
+myTests().main()
+</tests>
     </program>
   </activity>
 
