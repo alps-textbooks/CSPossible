@@ -122,7 +122,7 @@ print("The number is NOT 5")
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertIn("totalCredits&gt;=22",,self.getEditorText().replace(" ", ""), 'Check for totalCredits &gt;= 22')
+                self.assertIn("totalCredits&gt;=22",self.getEditorText().replace(" ", ""), 'Check for totalCredits &gt;= 22')
                 self.assertIn("mathCredits&gt;=3",self.getEditorText().replace(" ", ""), 'Check for mathCredits &gt;= 3')
                 self.assertIn('else:',self.getEditorText(), 'Check for else:')
                 self.assertIn("Cannot Graduate", self.getOutput(), "Output has Cannot Graduate (for 22 total and 2 math)")
