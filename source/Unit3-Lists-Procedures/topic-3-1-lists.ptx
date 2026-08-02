@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="topic-3-1-lists">
-  <time minutes="90" />
+  <time minutes="135" />
   <title>Lists</title>
 
   <idx>lists</idx>
   <introduction>
     <p>Quick Links:
-      <xref text="global" ref="storing-values-in-lists,manipulating-lists,traversing-lists,data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
+      <xref text="global" ref="storing-values-in-lists,unplugged-lists,append,changing-lists,list-loops,data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
     </p>
     <p>
-      In this topic, we use lists to store related values, manipulate list contents,
-      traverse lists with iteration, and explain how data abstraction manages complexity.
+      We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
+      or playlists. Python makes it easy to work with lists. In this topic, we will learn to use lists 
+      to store values, manipulate list contents, and traverse lists with loops.
     </p>
+
+    <image source="_static/Unit3images/lists.jpg" width="45%" alt="shopping lists"/>
+
   </introduction>
 
   <subsection xml:id="storing-values-in-lists">
@@ -21,7 +25,7 @@
     <note>
       <title>3.1.A.1</title>
       <p>
-        A data collection is a way to store multiple related values together so a program
+        A <term>data collection</term> is a way to store multiple related values together so a program
         can treat them as one unit, such as storing multiple names, scores, or messages.
         Different programming languages support different kinds of collections, such as
         lists, arrays, or dictionaries.
@@ -38,18 +42,31 @@
       </p>
     </note>
 
-    <note>
+    <p>All programming languages have ways to store collections of data. Python has a built-in data 
+    type called a <term>list</term> which can store an ordered sequence of items. 
+    Lists are sometimes called arrays in other programming languages. Here are some examples 
+    of lists in Python:</p>
+    <program language="python">
+        <code>
+# A shopping list
+shopping_list = ["milk", "eggs", "bread", "butter"]
+# A list of scores
+scores = [95, 87, 92, 100]
+        </code>
+    </program>
+    
+   <note>
       <title>3.1.A.3</title>
       <p>
-        A value stored inside a data collection is an element. Programs can work with the
-        entire collection of items as one unit or with individual elements.
+        A value stored inside a data collection is an <term>element</term>. Programs can work with 
+        the entire collection of items as one unit or with individual elements.
       </p>
     </note>
 
     <note>
       <title>3.1.A.4</title>
       <p>
-        In a list, elements are stored in an ordered sequence, meaning the position of each
+        In a <term>list</term>, elements are stored in an ordered sequence, meaning the position of each
         element matters (first, second, third, etc.). When the following code runs, a list
         called <c>aList</c> contains the elements <c>v1, v2, v3</c>, and so on.
       </p>
@@ -57,36 +74,25 @@
 aList = [v1, v2, v3, ...]</pre>
     </note>
 
-    <note>
-      <title>3.1.A.5</title>
-      <p>
-        Lists can start empty, which allows a program to collect information, such as items
-        a user adds, results found during a search, or responses entered in a form. When the
-        following code runs, an empty list is assigned to <c>aList</c>.
-      </p>
-      <pre>
-aList = [ ]</pre>
-    </note>
-
-    <note>
-      <title>3.1.A.6</title>
-      <p>
-        Lists can be built over time by adding new elements, often as the user enters
-        information or the program collects it. When the following code runs, <c>value</c>
-        is added to the end of <c>aList</c> and the length of <c>aList</c> is increased by 1.
-      </p>
-      <pre>
-aList.append(value)</pre>
-    </note>
+<idx>index</idx>
 
     <note>
       <title>3.1.A.7</title>
       <p>
-        An index is a number used to reference a specific element by position in a list or
+        An <term>index</term> is a number used to reference a specific element by position in a list or
         in a string. Many programming languages use zero-based indexing, meaning the first
         element is at index 0, the second at index 1, and so on.
       </p>
     </note>
+
+    <p>
+     You can imagine a list as a row of lockers where each locker holds one item or <term>element</term>. 
+    The lockers are numbered with an <term>index</term> that starts at 0 for the first locker, 1 for the second locker, and so on.
+    Most programming languages, including Python, use zero-based indexing where the first item in 
+    the list is at index 0. Just like binary code, computers almost always start counting at 0. 
+    </p>
+
+    <image source="_static/Unit3images/lockers.jpg" width="70%" alt="a row of numbered lockers"/>
 
     <note>
       <title>3.1.A.8</title>
@@ -99,6 +105,192 @@ aList.append(value)</pre>
 aList[j]</pre>
     </note>
 
+    <p>Imagine a Python list called <c>lockers</c>. Let's put your books in locker 0 and 
+        a backpack in locker 1 with the code below. To get to a specific locker or a specific 
+        <term>element</term> in a list, use the list name followed by square brackets and the 
+        <term>index</term> (number) of the element you want to access like below.</p>
+    <program language="python">
+        <code>
+lockers[0] = "books"
+lockers[1] = "backpack"
+print("What's in locker 0?", lockers[0] )
+print("What's in locker 1?", lockers[1] )
+        </code>
+        </program>
+
+        <p>Let's try it below:</p>
+
+<activity label="lockers-index">
+    <statement><p>Using the <c>lockers</c> list below, print what is in locker 0 and locker 2
+    using the list name and the index in square brackets, for example: <c>lockers[1]</c>.</p></statement>
+     <program interactive="activecode" language="python">
+        <code>
+lockers = ["books", "backpack", "jacket", "lunchbox"]
+# print what is in the first locker and the last locker
+# using the list name and the index in square brackets
+
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("lockers[0]", self.getEditorText(), "Use lockers[0]")
+        self.assertIn("lockers[3]", self.getEditorText(), "Use lockers[3]")
+        self.assertIn("books", self.getOutput(), "Print books")
+        self.assertIn("lunchbox", self.getOutput(), "Print lunchbox")
+
+myTests().main()
+        </tests>
+        </program>
+</activity>
+
+</subsection>
+
+<subsection xml:id="unplugged-lists">
+    <title>Unplugged Activity: List of Chairs</title>
+  
+    <idx><h>unplugged</h><h>ifs</h></idx>
+    <idx><h>projects</h><h>unplugged list of chairs</h></idx>
+
+     <image source="_static/Unit3images/chairs.jpg" width="70%" alt="a row of numbered chairs"/>
+
+     <project label="unplugged-list-of-chairs">
+       <title>List of Chairs</title>
+      <statement>
+    <p>
+        In groups or as a class, simulate a list using students in chairs.
+        Organize a line of empty chairs as the list. 
+        Each student who sits in a chair represents an element in the list.
+        The first chair in the line has the index 0. The second chair has the index 1, and so on.
+        Have students follow the code below to swap students in chairs, for example,
+        <c>chairs[0] = None</c> means that the student in chair 0 gets up and empties the chair, 
+        and <c>chairs[0] = chairs[1]</c> means that the student in chair 1 moves to chair 0.
+        Substitute in the names of students in your class.
+      </p>
+        <program language="python">
+            <code>
+# Fill the chairs with students
+chairs = ["Alex", "Sam", "Ryan"]
+# Example code to swap students in chairs
+chairs[0] = None
+chairs[0] = chairs[1]
+chairs[1] = None
+chairs[1] = chairs[2]
+chairs[2] = "Alex" # substitute the name of the student who used to be in chair 0
+            </code>
+        </program>
+       <p>    
+       What did the code above do? Write your own code below to rotate students the other way
+       and then act it out.  
+      </p></statement>
+
+       <response/>
+     </project>
+
+</subsection>
+
+<subsection xml:id="append">
+    <title>Appending to Lists</title>
+ <idx>append</idx>
+ <idx>empty list</idx>
+
+    <note>
+      <title>3.1.A.5</title>
+      <p>
+        Lists can start empty, which allows a program to collect information, such as items
+        a user adds, results found during a search, or responses entered in a form. When the
+        following code runs, an empty list is assigned to <c>aList</c>.
+      </p>
+      <pre>
+aList = [ ]</pre>
+    </note>
+
+    <p>If you do not know what values you want to store in a list when you create it, 
+        you can start with <term>empty list ([])</term> which is a list that contains no elements and
+        add in elements while the program is running. For example, we can start with an empty shopping list.</p>
+    <program language="python">
+        <code>
+# An empty shopping list
+shopping_list = []
+        </code>
+</program>
+    <note>
+      <title>3.1.A.6</title>
+      <p>
+        Lists can be built over time by adding new elements, often as the user enters
+        information or the program collects it. When the following code runs, <c>value</c>
+        is added to the end of <c>aList</c> and the length of <c>aList</c> is increased by 1.
+      </p>
+      <pre>
+aList.append(value)</pre>
+    </note>
+
+    <p>Elements can be added to a list using the <c>append</c> method which adds the element 
+        to the end of the list.</p>
+    <program language="python">
+        <code>
+# An empty shopping list
+shopping_list = []
+shopping_list.append("milk")
+shopping_list.append("eggs")
+shopping_list.append("bread")
+print(shopping_list)
+        </code>
+        </program>
+
+    <idx>
+      <h>list</h><h>length</h>
+    </idx>
+    <idx>
+      <h>list</h><h>len</h>
+    </idx>
+
+      <note>
+      <title>3.1.B.3</title>
+      <p>
+        The length of a list can change while a program runs as elements are added or
+        removed. Knowing the length of a list helps programmers write code that works
+        correctly as the list changes. When the following code runs, it evaluates to
+        the number of items in <c>aList</c>.
+      </p>
+      <pre>
+length(aList)</pre>
+    </note>
+        
+    <p>The length of the list will increase as elements are added. 
+    In Python, you can get the length of a list by using the <c>len(list)</c> function, note the
+    shortened form of len for length.
+    Let's try <c>append</c> and <c>len</c> below.</p>
+
+    <activity label="append-to-list">
+    <statement><p>Add two more items to the <c>shopping_list</c> below.
+    </p></statement>
+        <program interactive="activecode" language="python">
+            <code>
+shopping_list = []
+shopping_list.append("milk")
+shopping_list.append("eggs")
+shopping_list.append("bread")
+print("Length of shopping list: ", len(shopping_list))
+print(shopping_list)
+# Add 2 more elements to the shopping_list and then print it!
+
+</code>
+            <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertGreaterEqual(5, len(shopping_list), "shopping_list should have at least 5 elements")
+        count = self.getEditorText().count("append")
+        self.assertGreaterEqual(count, 5, "at least 5 appends used")
+
+myTests().main()
+            </tests>
+        </program>
+    </activity>
+
     <note>
       <title>3.1.A.9</title>
       <p>
@@ -110,22 +302,8 @@ aList[j]</pre>
     </note>
   </subsection>
 
-  <subsection xml:id="manipulating-lists">
-    <title>Manipulating Lists</title>
-
-    <note>
-      <title>3.1.B.1</title>
-      <p>
-        Programmers sometimes make a copy of a list so they can modify the copy, such as
-        removing or reordering elements, while keeping the original list unchanged.
-        Preserving the original list can make a program easier to understand, test, and
-        debug because the program can still refer back to the original data if needed.
-        When the following code runs, a copy of the list <c>bList</c> is assigned to the
-        list <c>aList</c>.
-      </p>
-      <pre>
-aList = bList</pre>
-    </note>
+  <subsection xml:id="changing-lists">
+    <title>Changing List Elements</title>
 
     <note>
       <title>3.1.B.2</title>
@@ -140,18 +318,40 @@ aList = bList</pre>
 aList[j] = x</pre>
     </note>
 
-    <note>
-      <title>3.1.B.3</title>
+        <note>
+      <title>3.1.B.1</title>
       <p>
-        The length of a list can change while a program runs as elements are added or
-        removed. Knowing the length of a list helps programmers write code that works
-        correctly as the list changes. When the following code runs, it evaluates to
-        the number of items in <c>aList</c>.
+        Programmers sometimes make a copy of a list so they can modify the copy, such as
+        removing or reordering elements, while keeping the original list unchanged.
+        Preserving the original list can make a program easier to understand, test, and
+        debug because the program can still refer back to the original data if needed.
+        When the following code runs, a copy of the list <c>bList</c> is assigned to the
+        list <c>aList</c>.
       </p>
       <pre>
-length(aList)</pre>
+aList = bList</pre>
     </note>
 
+    <p>Before making changes to a list, it's often a good idea to make a copy of it first. 
+        Then the original list can be preserved and used later if needed. The <c>[index]</c>
+        notation can be used to access and change elements in a list.  
+    </p>
+    <program language="python">
+        <code>
+# A list of scores
+scores = [95, 87, 92, 100]
+# Make a copy of the scores list
+scores_bonus = scores
+# Add bonus points to the first two scores in the copy
+scores_bonus[0] += 5
+scores_bonus[1] += 5
+</code>
+</program>
+
+
+
+
+        <idx>insert</idx>
     <note>
       <title>3.1.B.4</title>
       <p>
@@ -225,8 +425,8 @@ aList[random(0, length(aList) - 1)]</pre>
     </note>
   </subsection>
 
-  <subsection xml:id="traversing-lists">
-    <title>Traversing Lists with Iteration</title>
+  <subsection xml:id="list-loops">
+    <title>Traversing Lists with Loops</title>
 
     <note>
       <title>3.1.C.1</title>
