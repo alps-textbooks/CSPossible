@@ -17,13 +17,13 @@
      <!-- <xi:include href="./Unit5-Optional/unit5index.ptx" /> -->
   
 
-    <!-- Include backmatter 
+    <!-- Include backmatter: needed to generate index  -->
    <backmatter>
       <index>
         <index-list />
       </index>
     </backmatter>
-    -->
+   
 
   </book>
 </pretext>

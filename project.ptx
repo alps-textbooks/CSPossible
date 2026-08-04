@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
-<project ptx-version="2" source="betasource">
+<project ptx-version="2" source="source">
   <targets>
     <target
       name="web"
@@ -9,7 +9,9 @@
       source="main.ptx"
       publication="publication.ptx"
       xsl="pretext-style-time.xsl">
-    <stringparams author.tools="yes" html.css.extra="external/_static/css/custom.css" />
+      <stringparams author.tools="yes" 
+                  html.css.extra="external/_static/css/custom.css" 
+                  html.js.extra="external/_static/js/custom.js" />
    </target>
     <target
       name="runestone"
@@ -18,7 +20,8 @@
       platform="runestone"
       publication="runestone.ptx"
       xsl="pretext-style-time.xsl">
-    <stringparams author.tools="yes" html.css.extra="external/_static/css/custom.css" />
+     <stringparams author.tools="yes" html.css.extra="external/_static/css/custom.css"  
+      html.js.extra="external/_static/js/custom.js" />
    </target>
    <target
        name="print"

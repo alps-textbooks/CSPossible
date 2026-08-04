@@ -1,6 +1,9 @@
-:root {
+html:root {
   --emphasisColor: #007d9f;
   --codeColor: #641227;
+  --content-fontSize: 90%;
+  --ptx-content-font-size: 90%;
+  --ptx-content-line-height: 90%;
 }
 
 :root.dark-mode {
@@ -17,9 +20,10 @@
 
 /* The wide style seems to add huge font size so put it down */
 .ptx-content .para {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 90%;
+  /* line-height: 1.5; */
 }
+
 
 /* Default spacing between paragraphs is too much. */
 section>.para+.para {
@@ -29,7 +33,7 @@ section>.para+.para {
 .ptx-content section>.heading,
 .ptx-content section section>.heading,
 .ptx-content section section section>.heading {
-  font-size: 1.4rem;
+  font-size: 1.3em;
   color: var(--emphasisColor);
   border-bottom: 2px solid #70d549;
   padding-top: 0.5em;
@@ -37,7 +41,7 @@ section>.para+.para {
 }
 
 .ptx-content .heading h4 {
-  font-size: 1.4rem;
+  font-size: 1.3em;
   color: var(--emphasisColor);
 }
 
@@ -54,7 +58,7 @@ section>.para+.para {
   border: none;
   background: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 
 .ptx-content .code-display {
@@ -80,7 +84,7 @@ section>.para+.para {
 }
 
 .ptx-content .summary-links {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 /* For displaying exercise ids */
@@ -152,5 +156,5 @@ div.time {
 
 .ptx-content .note .heading,
 .ptx-content .remark .heading {
-  font-size: 1rem;
+  font-size: 1em;
 }

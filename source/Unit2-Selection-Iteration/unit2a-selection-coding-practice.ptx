@@ -8,7 +8,14 @@
   <p>These are exercises mostly written by Dr. Barb Ericson in the AP CSP and Python for Everybody ebooks on Runestone. 
   </p>
 
-      
+ <datafile xml:id="unittesthelper" label="unittesthelper" filename="unittesthelper" editable="no" hide="yes">
+   <pre>
+testvar = 5
+def contains(item, container):
+    return item if item in container else None    
+   </pre>
+</datafile>  
+         
 
     <activity label="if-email">
     <statement>
@@ -17,7 +24,7 @@
         Change the code to check to work for other domains than "gmail.com" by just checking for @ and . in the email.
         </p>
     </statement>
-    <program interactive="activecode" language="python">
+    <program interactive="activecode" language="python" add-files="unittesthelper">
         <code>
 email = "student@school.edu"
 # Change this to check if @ is in the email and . is in the email.
@@ -32,8 +39,7 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
-        def contains(item, container):
-            return item if item in container else None
+
 
         self.assertEqual(contains('"@" in email', self.getEditorText()), '"@" in email', 'Check for "@" in email')
         self.assertEqual(contains('"." in email', self.getEditorText()), '"." in email', 'Check for "." in email')
