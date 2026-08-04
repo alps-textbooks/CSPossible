@@ -7,11 +7,12 @@
   <idx>lists</idx>
   <introduction>
     <p>Quick Links:
-      <xref text="global" ref="storing-values-in-lists,unplugged-lists,append,changing-lists,list-loops,data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
+      <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
+      insert-remove-lists,list-loops,data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
-      or playlists. Python makes it easy to work with lists. In this topic, we will learn to use lists 
+      or song playlists. Python makes it easy to work with lists. In this topic, we will learn to use lists 
       to store values, manipulate list contents, and traverse lists with loops.
     </p>
 
@@ -19,8 +20,8 @@
 
   </introduction>
 
-  <subsection xml:id="storing-values-in-lists">
-    <title>Storing Values in Lists</title>
+  <subsection xml:id="lists-intro">
+    <title>Lists as Data Collections</title>
 
     <note>
       <title>3.1.A.1</title>
@@ -44,16 +45,15 @@
 
     <p>All programming languages have ways to store collections of data. Python has a built-in data 
     type called a <term>list</term> which can store an ordered sequence of items. 
-    Lists are sometimes called arrays in other programming languages. Here are some examples 
-    of lists in Python:</p>
-    <program language="python">
-        <code>
-# A shopping list
-shopping_list = ["milk", "eggs", "bread", "butter"]
-# A list of scores
-scores = [95, 87, 92, 100]
-        </code>
-    </program>
+    Lists are sometimes called arrays in other programming languages.    
+   </p>
+    
+    <p>
+     You can imagine a list as a row of lockers where each locker holds one item or <term>element</term>. 
+    The lockers are numbered with an <term>index</term> that starts at 0 for the first locker, 1 for the second locker, and so on.
+    </p>
+
+    <image source="_static/Unit3images/lockers.jpg" width="70%" alt="a row of numbered lockers"/>
     
    <note>
       <title>3.1.A.3</title>
@@ -74,7 +74,26 @@ scores = [95, 87, 92, 100]
 aList = [v1, v2, v3, ...]</pre>
     </note>
 
-<idx>index</idx>
+     <p>
+    Here are some examples of lists in Python. Notice how square brackers [] are used to collect multiple values to store in one list variable.
+ Instead of using many variables like score1, score2, etc., which would get unmanageable pretty quickly, 
+ you can use a single list variable like <c>scores</c> or <c>shopping_list</c> to store a collection of values. 
+</p>
+    <program language="python">
+        <code>
+# A shopping list
+shopping_list = ["milk", "eggs", "bread", "butter"]
+# A list of scores
+scores = [95, 87, 92, 100]
+        </code>
+    </program>
+
+</subsection>
+<subsection xml:id="list-index">
+    <title>Index to Access Elements</title>
+
+    <idx>index</idx>
+    <idx>indexing</idx>
 
     <note>
       <title>3.1.A.7</title>
@@ -86,13 +105,15 @@ aList = [v1, v2, v3, ...]</pre>
     </note>
 
     <p>
-     You can imagine a list as a row of lockers where each locker holds one item or <term>element</term>. 
-    The lockers are numbered with an <term>index</term> that starts at 0 for the first locker, 1 for the second locker, and so on.
+        To access elements in a list, we use the list name and the <term>index</term> (the position or number) of the element in 
+        square brackets. For example, <c>shopping_list[0]</c> accesses the first element in the <c>shopping_list</c>, 
+        which is "milk".
     Most programming languages, including Python, use zero-based indexing where the first item in 
     the list is at index 0. Just like binary code, computers almost always start counting at 0. 
     </p>
-
-    <image source="_static/Unit3images/lockers.jpg" width="70%" alt="a row of numbered lockers"/>
+    <p>Note that the AP CSP exam currently starts indexing at 1 in its pseudocode including in the 2027 exam, but will 
+        switch to zero-based indexing as of 2028.
+    </p>
 
     <note>
       <title>3.1.A.8</title>
@@ -103,6 +124,16 @@ aList = [v1, v2, v3, ...]</pre>
       </p>
       <pre>
 aList[j]</pre>
+    </note>
+
+     <note>
+      <title>3.1.A.9</title>
+      <p>
+        Lists support apps that respond to users by remembering and reusing information.
+        For example, a music app can store a user's queued songs in a list. Each time the
+        user taps "Add to Queue," the song title is appended to the list, and the app uses
+        the list to display the upcoming songs in order and play the next track.
+      </p>
     </note>
 
     <p>Imagine a Python list called <c>lockers</c>. Let's put your books in locker 0 and 
@@ -121,12 +152,12 @@ print("What's in locker 1?", lockers[1] )
         <p>Let's try it below:</p>
 
 <activity label="lockers-index">
-    <statement><p>Using the <c>lockers</c> list below, print what is in locker 0 and locker 2
-    using the list name and the index in square brackets, for example: <c>lockers[1]</c>.</p></statement>
+    <statement><p>Using the <c>lockers</c> list below, print what is in the first and last locker
+    using the list name and the index in square brackets, for example: <c>lockers[0]</c>.</p></statement>
      <program interactive="activecode" language="python">
         <code>
 lockers = ["books", "backpack", "jacket", "lunchbox"]
-# print what is in the first locker and the last locker
+# print what is in the first (0th) locker and the last locker
 # using the list name and the index in square brackets
 
         </code>
@@ -145,55 +176,493 @@ myTests().main()
         </program>
 </activity>
 
+
 </subsection>
 
 <subsection xml:id="unplugged-lists">
     <title>Unplugged Activity: List of Chairs</title>
   
-    <idx><h>unplugged</h><h>ifs</h></idx>
+    <idx><h>unplugged</h><h>lists</h></idx>
     <idx><h>projects</h><h>unplugged list of chairs</h></idx>
 
-     <image source="_static/Unit3images/chairs.jpg" width="70%" alt="a row of numbered chairs"/>
+     <image source="_static/Unit3images/chairs.jpg" width="50%" alt="a row of numbered chairs"/>
 
      <project label="unplugged-list-of-chairs">
-       <title>List of Chairs</title>
+       <title>Unplugged List of Chairs</title>
       <statement>
     <p>
         In groups or as a class, simulate a list using students in chairs.
-        Organize a line of empty chairs as the list. 
-        Each student who sits in a chair represents an element in the list.
-        The first chair in the line has the index 0. The second chair has the index 1, and so on.
-        Have students follow the code below to swap students in chairs, for example,
-        <c>chairs[0] = None</c> means that the student in chair 0 gets up and empties the chair, 
-        and <c>chairs[0] = chairs[1]</c> means that the student in chair 1 moves to chair 0.
-        Substitute in the names of students in your class.
-      </p>
+        Organize a line of empty chairs as the list in memory. 
+        Each student who sits in a chair represents a value in the list.
+        The first chair in the line of chairs has the index 0. The second chair has the index 1, and so on.
+        Have students follow the code similar to the example below. Substitute in the names of students in your class.
+        For example, <c>chairs[0] = "Pat"</c> means that the student in chair 0 gets up and Pat sits down. 
+        If Pat was already in a chair, they would have to get up; in real Python, assignment copies values, 
+        but in this simulation, we can't make copies of students, so we have to simplify by emptying chairs.
+    </p>
         <program language="python">
             <code>
 # Fill the chairs with students
 chairs = ["Alex", "Sam", "Ryan"]
-# Example code to swap students in chairs
-chairs[0] = None
-chairs[0] = chairs[1]
-chairs[1] = None
-chairs[1] = chairs[2]
-chairs[2] = "Alex" # substitute the name of the student who used to be in chair 0
+# Students should yell out their names!
+print(chairs[1])
+print(chairs[0])
+print(chairs[2])
+# Alex gets up, Pat sits down in chair 0!
+chairs[0] = "Pat"   
+chairs[1] = "Riley"
+chairs[2] = "Alex"
             </code>
         </program>
        <p>    
-       What did the code above do? Write your own code below to rotate students the other way
-       and then act it out.  
+       How many chairs did you use in your list? What was the index of the first and last chairs in your class?
+       What would happen if you tried to access a chair that was more than the last index in your list?
+       Write your own code to swap students in chairs and print them out in a different order. Try it out with your classmates!
       </p></statement>
 
        <response/>
      </project>
 
+     <activity label="array-access-mcq1">
+      <statement>
+        <p>
+          Which code below accesses "Alex" using the following list:
+          <c>chairs = ["Alex", "Sam", "Ryan"]</c>
+        </p>
+      </statement>
+
+       <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>chairs[0]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Yes, this would access "Alex". Remember that the first element in
+              an array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>chairs[1]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              No, this would access "Sam". Remember that the first element in
+              an array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>chairs[2]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              No, this would access "Ryan". Remember that the first element in an
+              array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>chairs[3]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              No, this would result in an IndexOutOfBounds error. Remember that
+              the first element in an array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <activity label="array-access-mcq2">
+      <statement>
+        <p>
+          Which code below accesses "Ryan" in the array: <c>chairs = ["Alex", "Sam", "Ryan"]</c>
+        </p>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>chairs[0]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              No, this would access "Alex". Remember that the first element in
+              an array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>chairs[1]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              No, this would access "Sam". Remember that the first element in
+              an array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>chairs[2]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Yes, this would access "Ryan". If there are n elements and you
+              start indexing at 0, the last element is at index n-1.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>chairs[3]</p>
+          </statement>
+
+          <feedback>
+            <p>
+              No, this would result in an IndexOutOfBounds error. Remember that
+              the first element in an array starts at index 0.
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
 </subsection>
+
+
+  <subsection xml:id="changing-lists">
+    <title>Changing List Elements with Assignment</title>
+
+    <note>
+      <title>3.1.B.2</title>
+      <p>
+        Elements in a list can be changed to different values, which allows a program to
+        update stored information without rebuilding the entire list. When the following
+        code runs, the value of <c>x</c> is assigned to the element at index <c>j</c> in
+        <c>aList</c>. The previous value at that index is overwritten, and the length of
+        the list does not change.
+      </p>
+      <pre>
+aList[j] = x</pre>
+    </note>
+
+    <p>Click on next in the following Code Lens to see how the list is created
+        in memory and then changed with assignment statements.
+    </p>
+   <activity label="list-codelens">
+     <statement>
+        <p>
+          Click on the Next button at the bottom of the code to see how
+          the values in the list  change as you step through the running
+          program. You can see interactive tracing in any Active Code exercise by 
+          clicking the Code Lens button. 
+        </p>
+      </statement>
+     <program interactive="codelens" language="python">
+    <code>
+numbers = [1,2,3,4]
+numbers[0] = 2
+numbers[1] = numbers[0] + 2
+numbers[2] *= 2 
+numbers[3] = numbers[3] + numbers[1]
+print(numbers)
+    </code>
+  </program>
+   </activity>
+  
+    <activity label="list-trace1">
+    <statement>
+      <p> What is printed by the following statements? See the Code Lens above.</p>
+       <program  language="python">
+    <code>
+numbers = [1,2]
+numbers[0] = 2
+numbers[1] = numbers[0] + 2
+print(numbers)
+    </code>
+    </program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>[1, 2]</p>
+        </statement>
+        <feedback>
+          <p>No, the list is changed.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[2, 4, 1, 2]</p>
+        </statement>
+        <feedback>
+          <p>No, assignment changes the values. It does not append to the list.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>[2, 4]</p>
+        </statement>
+        <feedback>
+          <p>Yes, see how each line is calculated in the Code Lens above.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[2, 3]</p>
+        </statement>
+        <feedback>
+          <p>No, the 0th element is 2 when the third line is executed.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+  <activity label="list-trace2">
+    <statement>
+      <p> What would the following code print?</p>
+<program language="python">
+    <code>
+values = [3, 2, 1]
+values[0] = values[1]
+values[2] = values[2] + 1
+print(values)
+    </code>
+    </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>[3, 2, 1]</p>
+        </statement>
+        <feedback>
+          <p>That is the original contents of <code>values</code>, but the contents are changed.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[2, 0, 2]</p>
+        </statement>
+        <feedback>
+          <p>No, when you set <code>values[0]</code> to <code>values[1]</code> it makes a copy of the value and doesn't zero it out.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>[2, 2, 2]</p>
+        </statement>
+        <feedback>
+          <p>Yes, the value at index 0 is set to a copy of the value at index 1 and the value at index 2 is incremented.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[2, 3, 1]</p>
+        </statement>
+        <feedback>
+          <p>No, the element at index 2 is the last element in the list since we start counting at 0.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+        <note>
+      <title>3.1.B.1</title>
+      <p>
+        Programmers sometimes make a copy of a list so they can modify the copy, such as
+        removing or reordering elements, while keeping the original list unchanged.
+        Preserving the original list can make a program easier to understand, test, and
+        debug because the program can still refer back to the original data if needed.
+        When the following code runs, a copy of the list <c>bList</c> is assigned to the
+        list <c>aList</c>.
+      </p>
+      <pre>
+aList = bList</pre>
+    </note>
+
+    <p>Before making changes to a list, it's often a good idea to make a copy of it first. 
+        Then the original list can be preserved and used later if needed. The <c>[index]</c>
+        notation can be used to access and change elements in a list.  
+    </p>
+    <program language="python">
+        <code>
+# A list of scores
+scores = [95, 87, 92, 100]
+# Make a copy of the scores list
+scores_bonus = scores
+# Add bonus points to the first two scores in the copy
+scores_bonus[0] += 5
+scores_bonus[1] += 5
+</code>
+</program>
+</subsection>
+
+<subsection xml:id="length">
+    <title>Length of a List, Random Elements, and slicing</title>
+    <idx>
+      <h>list</h><h>length</h>
+    </idx>
+    <idx>
+      <h>list</h><h>len</h>
+    </idx>
+
+      <note>
+      <title>3.1.B.3</title>
+      <p>
+        The length of a list can change while a program runs as elements are added or
+        removed. Knowing the length of a list helps programmers write code that works
+        correctly as the list changes. When the following code runs, it evaluates to
+        the number of items in <c>aList</c>.
+      </p>
+      <pre>
+length(aList)</pre>
+    </note>
+        
+    <p>
+    In Python, you can get the length of a list by using the <c>len(list)</c> function, note the
+    shortened form of len for length.</p>
+
+    <idx>random index</idx>
+     <idx>
+      <h>list</h><h>random index</h>
+    </idx>
+    
+
+  <note>
+      <title>3.1.B.6</title>
+      <p>
+        To select a random element from a list, a program can generate a random index and
+        use it to access an element. This allows for features like selecting a random song
+        from a playlist, choosing a random prompt in a game, or assigning a random partner
+        from a list of names. In programming languages that use zero-based indexing, if
+        <c>aList</c> has <c>length(aList)</c> items, the valid indices are 0 through
+        <c>length(aList) - 1</c>. When the following code runs, the program generates one
+        of the valid indices with equal likelihood and accesses the element at that index.
+      </p>
+      <pre>
+aList[random(0, length(aList) - 1)]</pre>
+    </note>
+
+<p>Sometimes you may want to pick a random element from the list.  One way to do this is to generate a random index. It would
+    start at 0 and go up to the length of the list minus 1. If there are 3 elements in the list, the valid indices would be 0, 1, and 2. 
+    In Python, you can use the <c>random.randint()</c> function to generate a random index. 
+    The valid indices are 0 through <c>ranodm(0, len(list) - 1</c>. 
+    For example, if you have a list of songs, you can select a random song from the playlist using the code below.
+    Python actually has a built-in function called <c>random.choice(list)</c> that will select a random element from a list, 
+    but we will use the random index method here to match AP pseudocode.
+    </p>
+    <program language="python">
+        <code>
+import random
+songs = ["Song 1", "Song 2", "Song 3", "Song 4"]
+random_index = random.randint(0, len(songs) - 1)
+random_song = songs[random_index]
+print(random_song)
+        </code>
+      </program>
+    
+    <activity label="random-emoji">
+    <statement>
+      <p>Use the code below to select a random emoji from the list. 
+        Use the <c>random.randint()</c> function to generate a random index and then use that index to access an element in the list.
+        Run the code multiple times to see different emojis printed!
+      </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+import random
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# create a random index from 0 to the length of the list minus 1
+
+# Use the random index to print a random emoji from the list
+
+</code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            code = self.getEditorText().replace(" ", "")
+            self.assertIn("random.randint(0,len(emojis)-1)", code, "Use random.randint from 0 to len(emojis)-1")
+            self.assertIn("emojis[random_index]", code, "Use the random index to access an element in the list")
+
+myTests().main()
+        </tests>
+        </program>
+    </activity>
+
+     <idx>
+      <h>list</h><h>slicing</h>
+    </idx>
+    <idx>slicing</idx>
+
+<p>Python also has a cool slicing operator (<c>[start:end]</c>) that allows you to extract a portion of a list from 
+    a start index up to (but not including) an end index, 
+    just like we saw with strings.
+</p>
+
+  <activity label="list-slice">
+    <statement>
+      <p> Write code that prints out slices of the emoji list, using [start-index : up-to-end-index]. 
+      </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+import random
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# Print the last 3 emojis using slicing.
+print("Last 3 emojis:", emojis[2:5])
+
+# print the first 3 emojis using slicing
+
+</code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            self.assertIn("emojis[0:3]", self.getEditorText(), "Use slicing [0:3] to print the first 3 emojis")
+
+myTests().main()
+        </tests>
+        </program>
+    </activity>
+
+
+
+
+</subsection>
+
 
 <subsection xml:id="append">
     <title>Appending to Lists</title>
  <idx>append</idx>
  <idx>empty list</idx>
+ <idx>
+      <h>list</h><h>empty</h>
+    </idx>
+ <idx>
+      <h>list</h><h>append</h>
+    </idx>
 
     <note>
       <title>3.1.A.5</title>
@@ -226,7 +695,7 @@ shopping_list = []
 aList.append(value)</pre>
     </note>
 
-    <p>Elements can be added to a list using the <c>append</c> method which adds the element 
+    <p>Elements can be added to a list using the <c>append</c> function which adds the element 
         to the end of the list.</p>
     <program language="python">
         <code>
@@ -239,32 +708,11 @@ print(shopping_list)
         </code>
         </program>
 
-    <idx>
-      <h>list</h><h>length</h>
-    </idx>
-    <idx>
-      <h>list</h><h>len</h>
-    </idx>
-
-      <note>
-      <title>3.1.B.3</title>
-      <p>
-        The length of a list can change while a program runs as elements are added or
-        removed. Knowing the length of a list helps programmers write code that works
-        correctly as the list changes. When the following code runs, it evaluates to
-        the number of items in <c>aList</c>.
-      </p>
-      <pre>
-length(aList)</pre>
-    </note>
-        
-    <p>The length of the list will increase as elements are added. 
-    In Python, you can get the length of a list by using the <c>len(list)</c> function, note the
-    shortened form of len for length.
+      <p>The length of the list will increase as elements are added. 
     Let's try <c>append</c> and <c>len</c> below.</p>
 
     <activity label="append-to-list">
-    <statement><p>Add two more items to the <c>shopping_list</c> below.
+    <statement><p>Add two more items to the <c>shopping_list</c> below. Then, print the list and the length of the list.
     </p></statement>
         <program interactive="activecode" language="python">
             <code>
@@ -272,9 +720,11 @@ shopping_list = []
 shopping_list.append("milk")
 shopping_list.append("eggs")
 shopping_list.append("bread")
+print("Shopping list: ", shopping_list)
 print("Length of shopping list: ", len(shopping_list))
-print(shopping_list)
-# Add 2 more elements to the shopping_list and then print it!
+
+# Add 2 more elements to the shopping_list  
+# Then print the list and its length!
 
 </code>
             <tests>
@@ -282,76 +732,31 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
-        self.assertGreaterEqual(5, len(shopping_list), "shopping_list should have at least 5 elements")
+        self.assertGreaterEqual(len(shopping_list), 5, "shopping_list should have at least 5 elements")
         count = self.getEditorText().count("append")
         self.assertGreaterEqual(count, 5, "at least 5 appends used")
+        count = self.getEditorText().count("len(")
+        self.assertGreaterEqual(count, 2, "at least 2 len() calls used")
 
 myTests().main()
             </tests>
         </program>
     </activity>
 
-    <note>
-      <title>3.1.A.9</title>
-      <p>
-        Lists support apps that respond to users by remembering and reusing information.
-        For example, a music app can store a user's queued songs in a list. Each time the
-        user taps "Add to Queue," the song title is appended to the list, and the app uses
-        the list to display the upcoming songs in order and play the next track.
-      </p>
-    </note>
+   
   </subsection>
 
-  <subsection xml:id="changing-lists">
-    <title>Changing List Elements</title>
-
-    <note>
-      <title>3.1.B.2</title>
-      <p>
-        Elements in a list can be changed to different values, which allows a program to
-        update stored information without rebuilding the entire list. When the following
-        code runs, the value of <c>x</c> is assigned to the element at index <c>j</c> in
-        <c>aList</c>. The previous value at that index is overwritten, and the length of
-        the list does not change.
-      </p>
-      <pre>
-aList[j] = x</pre>
-    </note>
-
-        <note>
-      <title>3.1.B.1</title>
-      <p>
-        Programmers sometimes make a copy of a list so they can modify the copy, such as
-        removing or reordering elements, while keeping the original list unchanged.
-        Preserving the original list can make a program easier to understand, test, and
-        debug because the program can still refer back to the original data if needed.
-        When the following code runs, a copy of the list <c>bList</c> is assigned to the
-        list <c>aList</c>.
-      </p>
-      <pre>
-aList = bList</pre>
-    </note>
-
-    <p>Before making changes to a list, it's often a good idea to make a copy of it first. 
-        Then the original list can be preserved and used later if needed. The <c>[index]</c>
-        notation can be used to access and change elements in a list.  
-    </p>
-    <program language="python">
-        <code>
-# A list of scores
-scores = [95, 87, 92, 100]
-# Make a copy of the scores list
-scores_bonus = scores
-# Add bonus points to the first two scores in the copy
-scores_bonus[0] += 5
-scores_bonus[1] += 5
-</code>
-</program>
-
-
-
+<subsection xml:id="insert-remove-lists">
+    <title>Insert and Remove List Elements</title>
 
         <idx>insert</idx>
+         <idx>
+      <h>list</h><h>insert</h>
+    </idx>
+     <idx>
+      <h>list</h><h>remove</h>
+    </idx>
+
     <note>
       <title>3.1.B.4</title>
       <p>
@@ -378,20 +783,96 @@ aList.insert(j, value)</pre>
 aList.remove(j)</pre>
     </note>
 
-    <note>
-      <title>3.1.B.6</title>
-      <p>
-        To select a random element from a list, a program can generate a random index and
-        use it to access an element. This allows for features like selecting a random song
-        from a playlist, choosing a random prompt in a game, or assigning a random partner
-        from a list of names. In programming languages that use zero-based indexing, if
-        <c>aList</c> has <c>length(aList)</c> items, the valid indices are 0 through
-        <c>length(aList) - 1</c>. When the following code runs, the program generates one
-        of the valid indices with equal likelihood and accesses the element at that index.
+    <p>Python also provides built-in functions to change list elements. We already saw the <c>append()</c> 
+      function, which adds an element to the end of a list. We can also use 
+      <c>list.insert(index, element)</c> that adds an element at a 
+       specific index and moves the elements after it one position to the right. It's important to remember that
+    append, insert, and remove always change the length of the list moving elements to the right or left as needed!</p>
+
+    <p>In the AP CSP Pseudocode, the functions to change a list are similar to those in Python, but the AP CSP pseudocode
+        <c>list.remove(index)</c> function removes the element from the list at a certain index. 
+        Python  has  <c>list.remove(value)</c> which deletes the very first occurrence 
+       of a specific value from the list or <c>list.pop(index)</c> which removes and returns 
+       the element at a specific index, but not a <c>list.remove(index)</c> function.
+    </p>
+
+
+    <activity label="insert-remove">
+    <statement>
+        <p>The code below uses a list to keep track of dogs at the animal shelter.
+            Try the insert and remove functions in the code below. Then follow the directions in the comments
+            to insert and remove elements from the list.</p>
+            </statement>
+        
+        <program interactive="activecode" language="python">
+            <code>
+# List of puppies in alphabetical order at the shelter
+puppies = ["Biscuit", "Coco", "Daisy"]
+print("Puppies at the shelter:", puppies)
+
+# .append() adds a new puppy to the end of the list
+puppies.append("Mochi")
+print("A new puppy arrived! Updated list:", puppies)
+
+# .remove() removes a puppy by its name when it gets adopted
+puppies.remove("Coco")
+print("Coco got adopted! Remaining puppies:", puppies)
+
+# Use insert to add "Buddy" at the correct index to keep the list in alphabetical order
+
+# Use remove to remove "Daisy" from the list since she got adopted
+
+# Use insert or append to add another puppy
+
+# Print the remaining puppies
+            </code>
+            <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn('puppies.insert("Buddy",1)', code, "Use insert to add Buddy at correct index")
+        self.assertIn("puppies.remove("Daisy")", code, "Use remove to remove Daisy")
+
+myTests().main()
+            </tests>
+            </program>
+        </activity>
+
+            <idx><h>unplugged</h><h>lists</h></idx>
+    <idx><h>projects</h><h>unplugged list of chairs 2</h></idx>
+
+     <project label="unplugged-list-of-chairs2">
+       <title>Unplugged List of Chairs Revisited</title>
+      <statement>
+    <p>
+        Let's revisit the unplugged activity with students in chairs and simulate append, insert, and remove operations.
+        In groups or as a class, organize a line of empty chairs as the list. Have some extra chairs ready to append or insert.
+        Each student who sits in a chair represents an element in the list.
+        The first chair in the line has the index 0. The second chair has the index 1, and so on.
+        Have students follow the code below to insert and remove students and chairs.
+        Substitute in the names of students in your class.
       </p>
-      <pre>
-aList[random(0, length(aList) - 1)]</pre>
-    </note>
+        <program language="python">
+            <code>
+# Fill the chairs with students
+chairs = ["Alex", "Sam", "Ryan"]
+# Example code to insert and remove students in chairs
+chairs.append("Dani") # Add a new chair and student to the end of the list
+# Remove the student in chair 1, all students should move left 1 chair, remove the last chair
+chairs.remove(1) 
+# Insert a new student in chair 1 and move students to the right to make room.
+chairs.insert(1, "Taylor") 
+            </code>
+        </program>
+       <p>    
+       How do append, insert, and remove affect the list differently than changing the values of existing elements? 
+       Write your own code below using append, insert, and remove, and then act it out.  
+      </p></statement>
+
+       <response/>
+    </project>
+
 
     <note>
       <title>3.1.B.7</title>
@@ -413,6 +894,59 @@ aList[random(0, length(aList) - 1)]</pre>
       </p>
     </note>
 
+     <activity label="list-trace-insert-remove">
+    <statement>
+      <p> 
+What are the values in the list after executing the following AP Pseudocode? Remember that list indexing starts at 0
+and the pseudocode uses <c>list.insert(index, value)</c> and <c>list.remove(index)</c> to change the list. Insert and
+remove always change the length of the list moving elements to the right or left as needed.
+To trace this code, write down the list after each line of code.
+      </p>
+      <program language="python">
+        <code>
+list = [ 0, 3, 5 ]
+list.append(7)
+list.insert(0, 1)
+list.remove(1)
+        </code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>[1, 3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>Yes, the list is updated as follows: [0, 3, 5], after appends [0, 3, 5, 7], then insert [1, 0, 3, 5, 7], then remove [1, 3, 5, 7].</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[0, 1, 3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>Don't forget the remove!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[0, 3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>No, this is correct after the append, but not after the insert.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>No, the insert does not replace the element but inserts and moves everything down.</p>
+        </feedback>
+      </choice>
+    </choices>
+    </activity>
+  
     <note>
       <title>3.1.B.9</title>
       <p>
@@ -423,7 +957,38 @@ aList[random(0, length(aList) - 1)]</pre>
         that is outside the allowed range produces an error and may cause the program to stop.
       </p>
     </note>
-  </subsection>
+
+    <p>What happens if you try to access an element that is not there? 
+        Try to access puppies at index 7 below to see what happens. 
+        The index must be between 0 and the length of the list - 1 or it will give an error message 
+        "IndexError: list index out of range".</p>
+   
+  <activity label="index-out-of-range">
+    <statement>
+        <p>Run the code below to see an index out of range error. Fix the error by changing the index. </p>
+            </statement>
+        
+        <program interactive="activecode" language="python">
+            <code>
+# List of puppies in alphabetical order at the shelter
+puppies = ["Biscuit", "Coco", "Daisy"]
+print("Puppies at the shelter:", puppies)
+
+# Try to access the last puppy - fix the error
+print("The last puppy on the list is:", puppies[3])  
+            </code>
+            <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("puppies[2]", self.getEditorText(), "Use puppies[2] to access the last puppy")
+
+myTests().main()
+            </tests>
+            </program>
+        </activity>
+
+</subsection>
 
   <subsection xml:id="list-loops">
     <title>Traversing Lists with Loops</title>
