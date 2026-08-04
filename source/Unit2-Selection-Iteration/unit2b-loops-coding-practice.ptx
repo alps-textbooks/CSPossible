@@ -204,7 +204,7 @@
                 testPixel2 = img.getPixel(3, 42)
                 self.assertEqual(testPixel.getRed(), 255, "Testing you set right red value for a particular pixel")
                 self.assertEqual(testPixel2.getRed(), 255, "Testing you set right red value for a particular pixel")
-                self.assertIn("p.setRed(255)", self.getEditorText(), "Use p's setRed method to set it to 255")
+                self.assertIn("p.setRed(255)", self.getEditorText(), "Use p's setRed to set it to 255")
         myTests().main()
       </tests>
     </program>
@@ -253,9 +253,9 @@
             def testOne(self):
                 self.assertIn("(r+g+b)/3", self.getEditorText().replace(" ", ""), 
                 "Calculate the average (r+g+b)/3")
-                self.assertIn("p.setRed(avg)", self.getEditorText(), "Use p's setRed(avg) method")
-                self.assertIn("p.setGreen(avg)", self.getEditorText(), "Use p's setGreen(avg) method")
-                self.assertIn("p.setBlue(avg)", self.getEditorText(), "Use p's setBlue(avg) method")
+                self.assertIn("p.setRed(avg)", self.getEditorText(), "Use p's setRed(avg)")
+                self.assertIn("p.setGreen(avg)", self.getEditorText(), "Use p's setGreen(avg)")
+                self.assertIn("p.setBlue(avg)", self.getEditorText(), "Use p's setBlue(avg)")
         myTests().main()
       </tests>
     </program>

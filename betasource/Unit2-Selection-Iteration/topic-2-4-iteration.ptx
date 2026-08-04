@@ -189,7 +189,7 @@ while condition:
     <activity label="print_evens_while" numbered="yes" adaptive="yes" indentation="hide" language="python">
       <statement>
         <p>
-          The following method has the correct code to print out all the even
+          The following has the correct code to print out all the even
           numbers between 1 and 10, but the code is mixed up. Drag the blocks from
           the left into the correct order on the right and indent them
           correctly. Use all of the blocks! You will be told if any of the blocks are in the
