@@ -311,7 +311,7 @@
 
               expected = "Knock knock!\nWho's there?\nLettuce.\nLettuce who?\nLet us in, it's cold out here!\n"
               
-              self.assertEqual(output,expected,"The joke lines are in the correct order.")
+              self.assertEqual(expected,output,"The joke lines are in the correct order.")
 
           myTests().main()
         </tests>
@@ -400,7 +400,7 @@
             class myTests(TestCaseGui):
               def test1(self):
                   input_count = self.getEditorText().count(".forward")
-                  self.assertGreaterEqual(input_count, 3, "at least 3 forward statements")
+                  self.assertLessEqual(3,input_count, "at least 3 forward statements")
             myTests().main()
         </tests>
       </program>
@@ -477,11 +477,11 @@
             class myTests(TestCaseGui):
               def test1(self):
                   input_count = self.getEditorText().count(".forward")
-                  self.assertGreaterEqual(input_count, 4, "at least 4 forward statements")
+                  self.assertLessEqual(4,input_count, "at least 4 forward statements")
                   input_count = self.getEditorText().count(".right")
-                  self.assertGreaterEqual(input_count, 3, "at least 3 right turns")
+                  self.assertLessEqual(3,input_count, "at least 3 right turns")
                   input_count = self.getEditorText().count(".color")
-                  self.assertGreaterEqual(input_count, 2, "at least 2 colors")
+                  self.assertLessEqual(2,input_count, "at least 2 colors")
                   
             myTests().main()
         </tests>
@@ -589,7 +589,7 @@ zari.forward(100)
             class myTests(TestCaseGui):
               def test1(self):
                   input_count = self.getEditorText().count(".xcor")
-                  self.assertGreaterEqual(input_count, 3, "at least 3 xcor")
+                  self.assertLessEqual(3,input_count, "at least 3 xcor")
                   self.assertIn("100",self.getOutput(),"50+50")
             myTests().main()
         </tests>
@@ -700,7 +700,7 @@ print( teeny.xcor() )
             class myTests(TestCaseGui):
               def test1(self):
                   input_count = self.getEditorText().count(".forward")
-                  self.assertGreaterEqual(input_count, 8, "at least 8 forward statements")
+                  self.assertLessEqual(8,input_count, "at least 8 forward statements")
             myTests().main()
         </tests>
       </program>

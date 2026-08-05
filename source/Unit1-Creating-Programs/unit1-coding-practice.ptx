@@ -26,7 +26,7 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertAlmostEqual(alex.xcor(), 150, 2, "Testing alex's x position." )
+                self.assertAlmostEqual(150, alex.xcor(), 2, "Testing alex's x position." )
 
         myTests().main()
       </tests>
@@ -54,8 +54,8 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertAlmostEqual(alex.xcor(), 75, 2, "Testing alex's x position." )
-                self.assertAlmostEqual(alex.ycor(), 150, 2, "Testing alex's y position." )
+                self.assertAlmostEqual(75, alex.xcor(), 2, "Testing alex's x position." )
+                self.assertAlmostEqual(150, alex.ycor(), 2, "Testing alex's y position." )
 
         myTests().main()
       </tests>
@@ -82,9 +82,9 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertEqual(color, "red", "Testing that color has the correct value." )
-                self.assertEqual(name, "Carly", "Testing that name has the correct value." )
-                self.assertEqual(self.getOutput().strip(), "Your name is Carly and your favorite color is red.", "Testing output. Make sure you have spaces in all the right places!")
+                self.assertEqual("red", color, "Testing that color has the correct value." )
+                self.assertEqual("Carly", name, "Testing that name has the correct value." )
+                self.assertEqual("Your name is Carly and your favorite color is red.", self.getOutput().strip(), "Testing output. Make sure you have spaces in all the right places!")
 
         myTests().main()
       </tests>
@@ -111,9 +111,9 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertEqual(age, 16, "Testing that age has the correct value." )
-                self.assertEqual(name, "Carly", "Testing that name has the correct value." )
-                self.assertEqual(self.getOutput().strip(), "Your name is Carly and your age is 16.", "Testing that you have the right output - make sure your spaces are correct!")
+                self.assertEqual(16, age, "Testing that age has the correct value." )
+                self.assertEqual("Carly", name, "Testing that name has the correct value." )
+                self.assertEqual("Your name is Carly and your age is 16.", self.getOutput().strip(), "Testing that you have the right output - make sure your spaces are correct!")
                 self.assertNotIn("16", self.getEditorText(), "Testing that you didn't hardcode the answer.")
 
         myTests().main()
@@ -141,7 +141,7 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertEqual(s1, "giant alligator", "Testing that s1 has the correct value. Make sure you don't have an extra space at the start or end!" )
+                self.assertEqual("giant alligator", s1, "Testing that s1 has the correct value. Make sure you don't have an extra space at the start or end!" )
                 self.assertNotIn("alligator", self.getEditorText().split("\n")[1], "Testing that you didn't hardcode the answer.")
 
         myTests().main()
@@ -197,7 +197,7 @@
 
             class myTests(TestCaseGui):
                 def testOne(self):
-                    self.assertEqual(x, -6, "Testing that x has the correct value." )
+                    self.assertEqual(-6, x, "Testing that x has the correct value." )
                     self.assertNotIn("-6", self.getEditorText(), "Testing that you didn't hardcode the answer.")
 
             myTests().main()
@@ -223,7 +223,7 @@
             class myTests(TestCaseGui):
 
                 def testOne(self):
-                    self.assertEqual(x, -4, "Testing that x has the correct value." )
+                    self.assertEqual(-4, x, "Testing that x has the correct value." )
                     self.assertRegex(self.getEditorText(), r"x = [()\s]*12[()\s]*\*[()\s]*2[()\s]*-[()\s]*3[()\s]*\+[()\s]*4[()\s]*\*[()\s]*2[()\s]*", "Testing that you still have all the original pieces.")
 
             myTests().main()
@@ -256,7 +256,7 @@
             class myTests(TestCaseGui):
 
                 def testOne(self):
-                    self.assertAlmostEqual(float(self.getOutput().strip()), 66.34615384615385, 7, "Testing that output has the correct value." )
+                    self.assertAlmostEqual(66.34615384615385, float(self.getOutput().strip()), 7, "Testing that output has the correct value." )
                     self.assertNotIn("66.346153", self.getEditorText(), "Testing that you didn't hardcode the answer.")
 
             myTests().main()
@@ -288,7 +288,7 @@
 
                   def testOne(self):
                       self.assertIn("%", self.getEditorText().replace(" ", ""), "Use % with newTime and 12.")
-                      self.assertEqual(clockTime, 4, "Testing that clockTime has the correct value." )
+                      self.assertEqual(4, clockTime, "Testing that clockTime has the correct value." )
                       self.assertNotIn("4", self.getEditorText(), "Testing that you didn't hardcode the answer. Make sure to calculate it!")
 
               myTests().main()
@@ -322,8 +322,8 @@
         class myTests(TestCaseGui):
 
             def testOne(self):
-                self.assertEqual(numHours, 4, "Testing that numHours has the correct value." )
-                self.assertEqual(numMinutes, 30, "Testing that numHours has the correct value." )
+                self.assertEqual(4, numHours, "Testing that numHours has the correct value." )
+                self.assertEqual(30, numMinutes, "Testing that numMinutes has the correct value." )
                 self.assertNotIn("30", self.getEditorText(), "Testing that you didn't hardcode the answer.")
                 self.assertNotIn("4", self.getEditorText(), "Testing that you didn't hardcode the answer.")
 

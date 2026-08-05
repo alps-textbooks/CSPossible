@@ -164,7 +164,7 @@
         class myTests(TestCaseGui):
             def testOne(self):
                 testPixel = img.getPixel(3, 4)
-                self.assertEqual(testPixel.getGreen(), 0, "Testing you set right green value for a particular pixel")
+                self.assertEqual(0, testPixel.getGreen(), "Testing you set right green value for a particular pixel")
 
         myTests().main()
         </tests>
@@ -202,8 +202,8 @@
             def testOne(self):
                 testPixel = img.getPixel(3, 40)
                 testPixel2 = img.getPixel(3, 42)
-                self.assertEqual(testPixel.getRed(), 255, "Testing you set right red value for a particular pixel")
-                self.assertEqual(testPixel2.getRed(), 255, "Testing you set right red value for a particular pixel")
+                self.assertEqual(255, testPixel.getRed(), "Testing you set right red value for a particular pixel")
+                self.assertEqual(255, testPixel2.getRed(), "Testing you set right red value for a particular pixel")
                 self.assertIn("p.setRed(255)", self.getEditorText(), "Use p's setRed to set it to 255")
         myTests().main()
       </tests>
@@ -285,7 +285,7 @@
         class myTests(TestCaseGui):
             def testOne(self):
                 self.assertIn("range(10,21)", self.getEditorText(), "Use a for loop with range(10,21)")
-                self.assertEqual(sum, 165, "Testing that you got the right sum")
+                self.assertEqual(165, sum, "Testing that you got the right sum")
                 self.assertNotRegex(self.getEditorText(), "165", "Testing that you did not hard code the answer.")
 
         myTests().main()
@@ -319,7 +319,7 @@
                 self.assertIn("for", self.getEditorText(), "Use a for loop")
                 self.assertIn("11", self.getEditorText(), "Use a for loop with range(1, 11) or range(11)")
                 self.assertIn("*", self.getEditorText(), "Use number*number to add the square of each number to the sum")
-                self.assertEqual(sum, 385, "Testing that you got the right sum")
+                self.assertEqual(385, sum, "Testing that you got the right sum")
                 self.assertNotRegex(self.getEditorText(), "385", "Testing that you did not hard code the answer.")
 
         myTests().main()
@@ -370,7 +370,7 @@
             def testOne(self):
                 self.assertIn("while money&lt;50000", self.getEditorText().replace(" ", ""), "Use a while money &lt; 50000:")
                 self.assertIn("money=money*1.005", self.getEditorText().replace(" ", ""), "Use money = money * 1.005 for interest")
-                self.assertEqual(months, 122, "Testing you calculated the right answer.")
+                self.assertEqual(122, months, "Testing you calculated the right answer.")
                 self.assertNotRegex(self.getEditorText(), "122", "Testing that you did not hard code the answer.")
 
         myTests().main()

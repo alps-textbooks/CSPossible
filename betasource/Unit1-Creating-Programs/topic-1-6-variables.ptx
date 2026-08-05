@@ -589,7 +589,7 @@ print("Hello" + fullName)        # fix smushed output and add "!"
 
           class myTests(TestCaseGui):
             def testOne(self):
-              self.assertEqual(self.getOutput().strip(), "Hello Sam Smith!", "Add a space after Hello and add a ! at the end")
+              self.assertEqual("Hello Sam Smith!", self.getOutput().strip(), "Add a space after Hello and add a ! at the end")
           myTests().main()
         </tests>   
 
@@ -621,7 +621,7 @@ print(name + " is " + age + " years old")
 
           class myTests(TestCaseGui):
             def testOne(self):
-              self.assertEqual(self.getOutput().strip(), "Sam is 16 years old", "Use str(age)")
+              self.assertEqual("Sam is 16 years old", self.getOutput().strip(), "Use str(age)")
           myTests().main()
         </tests>   
         </program>
@@ -889,7 +889,7 @@ print(name + " is " + age + " years old")
             def test1(self):
               self.assertIn("I like",self.getOutput(),"output")
               input_count = self.getEditorText().count("input(")
-              self.assertGreaterEqual(input_count, 7, "at least 7 input statements")
+              self.assertLessEqual(7,input_count, "at least 7 input statements")
 
           myTests().main()
         </tests>

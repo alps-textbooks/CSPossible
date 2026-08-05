@@ -237,7 +237,7 @@
               self.assertIn("6",self.getOutput(),"Check 2 times 3")
               self.assertIn("2.5",self.getOutput(),"Check 5 divided by 2")
               count = self.getEditorText().count("*")
-              self.assertGreaterEqual(count, 2, "* used")
+              self.assertLessEqual(2,count, "* used")
 
           myTests().main()
          </tests>
@@ -308,7 +308,7 @@
             def test1(self):
               self.assertIn("3",self.getOutput(),"Check 13 mod 5")
               count = self.getEditorText().count("%")
-              self.assertGreaterEqual(count, 2, "% used")
+              self.assertLessEqual(3,count, "% used")
 
           myTests().main()
          </tests>
@@ -714,7 +714,7 @@ print(r)
           class myTests(TestCaseGui):
             def test1(self):
               count = self.getEditorText().count("randint")
-              self.assertGreaterEqual(count, 2, "randint used twice")
+              self.assertLessEqual(2,count, "randint used twice")
 
           myTests().main()
          </tests>
@@ -889,7 +889,7 @@ turt.goto(0, 0)
           class myTests(TestCaseGui):
             def test1(self):
                 count = self.getEditorText().count("randint")
-                self.assertGreaterEqual(count, 30, "at least 30 randint used")
+                self.assertLessEqual(30,count, "at least 30 randint used")
 
           myTests().main()
        </tests>

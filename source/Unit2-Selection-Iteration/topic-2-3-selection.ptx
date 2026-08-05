@@ -475,7 +475,7 @@ favoriteFlavor = input("What is your favorite ice cream flavor? ")
                       if line.strip() and not line.lstrip().startswith("#")
                       )
               input_count = actual.count("else")
-              self.assertGreaterEqual(input_count, 2, "at least 2 else statements")
+              self.assertLessEqual(2,input_count, "at least 2 else statements")
 
           myTests().main()
     </tests>
@@ -694,9 +694,9 @@ print("Ticket price:", price, "dollars.")
                       if line.strip() and not line.lstrip().startswith("#")
                       )
               input_count = actual.count("if")
-              self.assertGreaterEqual(input_count, 2, "at least 2 if statements")
+              self.assertLessEqual(2,input_count, "at least 2 if statements")
               input_count = actual.count("else")
-              self.assertGreaterEqual(input_count, 2, "at least 2 else statements")
+              self.assertLessEqual(2,input_count, "at least 2 else statements")
               self.assertIn("15",self.getOutput(),"Output when age is 15 and hour is 6 should be 15")
 
           myTests().main()
@@ -930,9 +930,9 @@ else:
                       )
               self.assertNotIn("...",actual,"Replace ... with your own adventure text")
               input_count = actual.count("elif")
-              self.assertGreaterEqual(input_count, 3, "at least 3 elif statements")
+              self.assertLessEqual(3,input_count, "at least 3 elif statements")
               input_count = actual.count("else:")
-              self.assertGreaterEqual(input_count, 3, "at least 3 else statements")
+              self.assertLessEqual(3,input_count, "at least 3 else statements")
 
           myTests().main()
         </tests>
