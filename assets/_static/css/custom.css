@@ -90,8 +90,9 @@ section>.para+.para {
    padding: 8px;
 }
 
+/* These are the big buttons for the sections */
 .ptx-content .summary-links {
-  font-size: 1em;
+  font-size: 90%;
 }
 
 /* For displaying exercise ids */
