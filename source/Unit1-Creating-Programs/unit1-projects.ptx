@@ -127,18 +127,76 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
 
+    def findLine(self, lines, target):
+        for line in lines:
+            if target in line.replace(" ", ""):
+                #print(line)
+                return line
+        return "None"
+            
+    def run_file(self, code, inputs):
+        print("****************************************************************************")
+        print("Testing code with inputs: " + inputs)
+        print("****************************************************************************")
+
+        lines = code.split("\n")
+        ins = inputs.split(",")
+        inN = 0
+
+        for i in range(len(lines)):
+            if "input" in lines[i] and not "#" in lines[i]:
+                equals = lines[i].find("=") + 1
+                lines[i] = lines[i][0:equals] + ins[inN]
+                inN += 1
+
+        code = "\n".join(lines)
+        
+        # Create an isolated scope for the code execution
+        scope = {}
+        exec(code, scope)
+        
+        # print(scope)
+        return scope
+
     def testOne(self):
-        code = self.getEditorText().replace(" ", "")
-        self.assertIn("miles/mpg", code, "gallons_needed can be calculated using miles, mpg, and /")
-        self.assertIn("gallons_needed*gas_price",code,"fuel_cost can be calculated using gallons_needed, gas_price, and *.")
-        self.assertIn("travelers*food_budget",code,"food_cost can be calculated using travelers, food_budget, and *.")
-        self.assertIn("total_cost/travelers",code,"average_cost can be calculated using total_cost, travelers, and /.")
-        self.assertIn("miles//120",code,"gas_stops can be calculated using miles, 120, and //.")
-        self.assertIn("miles%120",code,"remaining_miles can be calculated using miles, 120, and %.")
-        self.assertIn("random.randint(5,20)",code,"discount can be generated using random.randint(5, 20).")
-        self.assertIn("total_cost-discount_amount",code,"discounted_total can be calculated using total_cost and discount_amount.")
-        self.assertIn("23.8", str(average_cost), "average_cost starts with 23.8 if you enter the test case input: Pat, 200, 30, 4.00, 3, 15")
-        self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code") 
+        code = self.getEditorText()
+
+        lines = code.replace(" ", "").split("\n")
+
+        line1 = self.findLine(lines,"gallons_needed") 
+        self.assertIn("miles/mpg", line1, "gallons_needed can be calculated using miles, mpg, and /")
+
+        line2 = self.findLine(lines,"fuel_cost")
+        self.assertIn("gallons_needed*gas_price",line2,"fuel_cost can be calculated using gallons_needed, gas_price, and *.")
+
+        line3 = self.findLine(lines,"food_cost")
+        self.assertIn("travelers*food_budget",line3,"food_cost can be calculated using travelers, food_budget, and *.")
+
+        line4 = self.findLine(lines,"average_cost")
+        self.assertIn("total_cost/travelers",line4,"average_cost can be calculated using total_cost, travelers, and /.")
+
+        line5 = self.findLine(lines,"gas_stops")
+        self.assertIn("miles//120",line5,"gas_stops can be calculated using miles, 120, and //.")
+
+        line6 = self.findLine(lines,"remaining_miles")
+        self.assertIn("miles%120",line6,"remaining_miles can be calculated using miles, 120, and %.")
+
+        line7 = self.findLine(lines,"random.randint")
+        self.assertIn("random.randint(5,20)",line7,"discount can be generated using random.randint(5, 20).")
+    
+        line8 = self.findLine(lines,"discounted_total")
+        self.assertIn("total_cost-discount_amount",line8,"discounted_total can be calculated using total_cost and discount_amount.")
+
+        output = self.run_file(code, "\"Pat\", 200, 30, 4.00, 3, 15")
+        output = self.findLine(str(output).split(","), "average_cost")
+        self.assertIn("23.8", output, "average_cost starts with 23.8 if you enter the test case input: Pat, 200, 30, 4.00, 3, 15")
+
+        output2 = self.run_file(code, "\"Pat\", 500, 25, 3.50, 2, 10")
+        output2 = self.findLine(str(output2).split(","), "average_cost")
+        self.assertIn("45.0", output2, "average_cost starts with 45.0 if you enter the test case input: Pat, 500, 25, 3.50, 2, 10")
+
+        self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code")  
+     
 
 myTests().main()
 </tests>
