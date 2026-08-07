@@ -20,7 +20,7 @@
 
   <p>Program Requirements: Ask the user for the following information and store the input into variables.
   </p>
-  <ul>`
+  <ul>
     <li>Driver's name</li>
     <li>Total trip miles</li>
     <li>Vehicle miles per gallon</li>
