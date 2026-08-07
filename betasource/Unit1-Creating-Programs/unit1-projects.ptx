@@ -129,6 +129,9 @@ class myTests(TestCaseGui):
 
     def findLine(self, lines, target):
         for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
             if target in line.replace(" ", ""):
                 #print(line)
                 return line
