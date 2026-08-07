@@ -20,7 +20,7 @@
 
   <p>Program Requirements: Ask the user for the following information and store the input into variables.
   </p>
-  <ul>`
+  <ul>
     <li>Driver's name</li>
     <li>Total trip miles</li>
     <li>Vehicle miles per gallon</li>
@@ -129,6 +129,9 @@ class myTests(TestCaseGui):
 
     def findLine(self, lines, target):
         for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
             if target in line.replace(" ", ""):
                 #print(line)
                 return line
