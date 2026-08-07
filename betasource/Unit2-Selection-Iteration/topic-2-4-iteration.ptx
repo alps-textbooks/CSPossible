@@ -111,7 +111,7 @@ while condition:
     </program>
 
     <p>Notice that this looks just like an if statement, but with a while keyword instead of if! An if statement runs once if its condition is true, but a while loop continues to run as long as its condition remains true. By the way, here's a 
-      <url href="https://www.youtubeeducation.com/watch?v=j2bL0ng3A94">video of a python snake climbing a tree</url> in a looping pattern!
+      <url href="https://www.youtube.com/watch?v=j2bL0ng3A94">video of a python snake climbing a tree</url> in a looping pattern!
     </p>
 
 
@@ -965,6 +965,8 @@ img.draw(window)
       </statement>
       <response/>
     </activity>
+
+     <idx><h>AI use</h><h>debugging</h></idx>
 
     <activity label="frq-loop-error-reflection">
       <title>Project Reflection on Errors</title>

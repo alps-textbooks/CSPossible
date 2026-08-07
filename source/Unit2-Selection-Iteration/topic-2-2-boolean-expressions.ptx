@@ -95,11 +95,11 @@ print("I did everything?", cleanedRoom and didHomework )
       <statement>
         <p>Interact with the pizza app above.
           Which of the following are Boolean expressions (True or False) that the app 
-          uses to determine its output? 
-          Select all that apply.
+          uses to determine its output?  Try different input to see if the app checks for these 
+          conditions. Select all that apply.
           </p>
       </statement>
-      <choices  randomize="yes">
+      <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>User likes pizza</p>
@@ -117,19 +117,19 @@ print("I did everything?", cleanedRoom and didHomework )
             <p>The app doesn't care how long the user's name is.</p>
           </feedback>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>User's age is not less than 0</statement>
           <feedback>
-            <p>This app doesn't care what the user types in for their age. 
+            <p>Yes, the app checks that the age is not less than 0. 
             </p>
           </feedback>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
-            <p>There is a favorite color</p>
+            <p>User's name is empty</p>
           </statement>
           <feedback>
-            <p>Yes, the app uses the favorite color value to change the background to that color.</p>
+            <p>The app doesn't care if the user name is empty. Try it and see!</p>
           </feedback>
         </choice>
       </choices>
@@ -648,7 +648,7 @@ print("Eligible for discount?", age_between_12_and_18 or is_student)
       <statement>
         <ol>
           <li>Draw or print a <url
-            href="https://docs.google.com/document/d/1lpjk0LS_KdAddRurMayJZmaFzeyEg4FyhviZcSTXvtU/edit?usp=sharing">Venn
+            href="https://docs.google.com/document/d/1e1YkSd1lanJgM1uslxGw-ZvG3sISjhTbNEzsF57dfFg/edit?usp=sharing">Venn
             diagram</url> of 4 intersecting circles. </li>
           <li>Put each of the names of the 4 people in your group in a circle of the Venn Diagram (one name in each circle). </li>
           <li>Write down the age of each person in your group in the circles. If two or more people are the

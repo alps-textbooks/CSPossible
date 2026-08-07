@@ -274,14 +274,14 @@
    <p>There are 5 stages in the Design Thinking process, and it all starts with connecting with your users with empathy 
     to understand their needs.</p>
    <ol>
-			<li><p><term>Empathize: </term>Investigate and understand your users to identify the program requirements
+			<li><p><span><term>Empathize: </term>Investigate and understand your users to identify the program requirements</span>
 			<ul><li>collect data through surveys</li>
 			<li>conduct user testing</li>
 			<li>conduct interviews </li>
 			<li>make direct observations</li></ul>
       </p></li>
 			<li><p><term>Define:</term> Analyze the problem and determine the program specifications</p></li>
-			<li><p><term>Ideate:</term> Brainstorm possible solutions
+			<li><p><span><term>Ideate:</term> Brainstorm possible solutions</span>
 			<ul><li>make a list of your ideas</li>
 				<li>draw the interface on paper or online</li>
       </ul></p>
@@ -291,26 +291,28 @@
 		</ol>
 
     <idx><h>projects</h><h>design thinking</h></idx>
-     <idx><h>POGIL group activity</h><h>design thinking chair project</h></idx>
-    
+    <idx><h>POGIL group activity</h><h>design thinking chair project</h></idx>
+    <idx><h>AI use</h><h>design</h></idx>
+    <idx><h>AI use</h><h>image generation</h></idx>
     
       <project label="design-thinking-chair-project" xml:id="design-chair-project">
         <title>Design Thinking: Chair Project</title>
         <statement>
           <p>
-            In this project, you will use the design thinking process to design a chair for one of the Simpsons characters.
+            In this project, you will use the design thinking process to design a chair for one of the Simpsons characters. If you
+            have a GenAI tool available, you may use it to generate images of your chair design.
             You will work in groups (your class may use POGIL groups: <url href="https://pogil.org/what-is-pogil">What is POGIL</url>, 
             <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>).
             You may choose or be assigned a character and follow the <url 
-            href="https://docs.google.com/document/d/16Y9RPf6IhZ4pZRjtosXdergQPCLRgrmY_TTMr4N9xpU/">Design a Simpsons Chair Instructions</url>. 
+            href="https://docs.google.com/document/d/1hi0MpG1I5f6F7aS0dRiZixLPep5CIp_fyrmHNOTi5QQ/edit?usp=sharing">Design a Simpsons Chair Handout (do File/Make a Copy)</url>. 
+            Include the link to your copy of the handout below.
             After completing the project, reflect on the following questions as a group:
             <ul>
               <li>Describe the characteristics of your user and how your design addresses their needs.</li>
               <li>Did you use iterative design where you changed some aspects of your design during implementation? What did you change?</li>
               <li>Did you use incremental design where you built the chair in steps? What parts did you build in each step? 
                 </li>
-              <li>How could Gen AI be used in the design process? If you have access to a Gen AI tool, try using it to generate
-                ideas for your chair design. How did it help you? What were the limitations?</li>
+              <li>If you used an AI tool in the design process, how did it help you? What were its limitations?</li>
             </ul>
           </p>
         </statement>
@@ -403,13 +405,10 @@
       </p>
     </note>
 
-    <p>The Simpsons chair design project above presented <term>user stories</term> for each Simpsons character that
-    described their needs, for example, the one for Lisa Simpson below. <term>Use cases</term> are detailed descriptions of how a user interacts with a system to achieve a 
+    <p>In the Simpsons chair design project above, you may have read or created <term>user stories</term> for each Simpsons character that
+    described their needs. <term>Use cases</term> are detailed descriptions of how a user interacts with a system to achieve a 
     specific goal. For example, a non-standard use-case of a chair for a child might be to tip it over and pretend it is a rocket ship. 
     Users sometimes use products in ways that the designers did not anticipate! </p>
-   
-
-   <image source="_static/Unit2images/user-story-lisa.png" alt="User story for Lisa Simpson" width="90%" />
 
  <p>
     <term>Storyboards</term> are visual representations of a sequence of events, often used to illustrate how a 
@@ -496,7 +495,7 @@
             <p>4. Storyboard: Draw a simple sketch of your app's main screen and one other screen.
               Label some features that support your program requirements. You can use 
               <url href="https://wireframe.cc/">Wireframe.cc</url> or this 
-              <url href="https://docs.google.com/drawings/d/1M-DZITeDT9aiPZ7Oz-kXKEGkn0DiFOH1i8idBNlxwCA/edit">printout</url>.
+              <url href="https://drive.google.com/file/d/1K-33DPsUfSYJc_V_n9UySgoiDNP9P_LI/view?usp=sharing">printout</url>.
             </p>
             <p>5. Reflection: How did your user research help you design your app? 
                 What would you do next to improve your design? Share your design with the class.</p>

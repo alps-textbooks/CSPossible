@@ -745,7 +745,7 @@ else:
           <cline>if x &lt; 2:</cline>
         </choice>
         <choice>
-          <cline>if x &lt; 2: </cline>
+          <cline>if x &gt; 2: </cline>
         </choice>
       </block>
       <block order="7">
@@ -968,12 +968,14 @@ else:
       <response />
     </activity>
 
+     <idx><h>AI use</h><h>generate test cases</h></idx>
+
     <activity label="selection-testing-reflection">
       <title>Project Reflection on Testing</title>
       <statement>
         <p>Explain how you tested your code with different inputs to make sure it worked correctly.
         If you have access to a Gen AI system, ask it what test cases it would recommend for your code 
-        and describe your prompt andits response.
+        and describe your prompt and its response.
         </p>
       </statement>
       <response />
