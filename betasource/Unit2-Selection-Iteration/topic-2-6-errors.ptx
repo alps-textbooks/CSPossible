@@ -238,10 +238,17 @@ print("The average score is", average)
             <url href="https://pogil.org/uploads/attachments/wcuuolutqjpvkazq12dv7kfl-pogillaminatedrolecards-final.pdf">POGIL Role Cards</url>).
    </p> 
          
-    <p>Try the code below which has some logic errors. Use the test plan in the table in the activity below to test it. After you have filled in the actual output column, you can fix the code
+   <p>Try the code below which has some logic errors. Use the test plan in the table in the activity below to test it. After you have filled in the actual output column, you can fix the code
           by changing "if" to "elif" after the first "if" to chain all the conditions together.
-          This would be a good exercise to do in pairs or POGIL groups.</p>
-    <program interactive="activecode" language="python">
+          </p>
+
+    <activity label="selection-test-cases">
+      <title>Selection Test Cases</title>
+      <statement>
+        <p>
+          Run the code below following the test plan table underneath it. Fill in the actual output column of the table.
+          This code has some logic errors. Do not fix them until you have completed the test plan!</p>
+        <program label="selection-test-cases-sample-code" interactive="activecode" language="python">
         <code>
 score = int(input("Enter a score: "))
 if score &gt;= 90:
@@ -257,13 +264,6 @@ else:
 print(grade)
         </code>
       </program>
-
-    <activity label="selection-test-cases">
-      <title>Selection Test Cases</title>
-      <statement>
-        <p>
-          Run the code above following the test plan below. Fill in the actual output column of the table.
-          This code has some logic errors. 
           <table>
         <tabular>
              <row header="yes">
@@ -276,52 +276,51 @@ print(grade)
                 <cell>Grade A</cell>
                 <cell>90</cell>
                 <cell>A</cell>
-                <cell> <fillin answer="D" mode="string"/></cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
             </row>
               <row>
                 <cell>Grade B</cell>
                 <cell>80</cell>
                 <cell>B</cell>
-                <cell> <fillin answer="D" mode="string"/></cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
             </row>
             <row>
                 <cell>Grade C</cell>
                 <cell>70</cell>
                 <cell>C</cell>
-                <cell> <fillin answer="D" mode="string"/></cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
             </row>
             <row>
                 <cell>Grade D</cell>
                 <cell>60</cell>
                 <cell>D</cell>
-                <cell> <fillin answer="D" mode="string"/></cell>
+                <cell> <fillin answer="D" mode="string" /></cell>
             </row>
             <row>
                 <cell>Grade F</cell>
                 <cell>0</cell>
                 <cell>F</cell>
-                <cell> <fillin answer="F" mode="string"/></cell>
+                <cell> <fillin answer="F" mode="string" /></cell>
             </row>
             <row>
                 <cell>Invalid</cell>
                 <cell>2000</cell>
                 <cell>Error</cell>
-                <cell><fillin answer="D" mode="string"/></cell>
+                <cell><fillin answer="D" mode="string" /></cell>
             </row>
              <row>
                 <cell>Invalid</cell>
                 <cell>-200</cell>
                 <cell>Error</cell>
-                <cell><fillin answer="F" mode="string"/></cell>
+                <cell><fillin answer="F" mode="string" /></cell>
             </row>
             </tabular>
       </table>
-        </p>
       </statement>
       <evaluation>
         <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -330,7 +329,7 @@ print(grade)
         </evaluate>
                 <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -339,7 +338,7 @@ print(grade)
         </evaluate>
                 <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -348,7 +347,7 @@ print(grade)
         </evaluate>
                 <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -357,7 +356,7 @@ print(grade)
         </evaluate>
                 <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -366,7 +365,7 @@ print(grade)
         </evaluate>
                 <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -375,7 +374,7 @@ print(grade)
         </evaluate>
                 <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -385,9 +384,14 @@ print(grade)
       </evaluation>
     </activity>
   
-    <p>Run the following code with a loop using the test cases in the activity below:</p>
+ 
 
-     <program interactive="activecode" language="python">
+   <activity label="loop-test-cases">
+    <title>Loop Test Plan</title>
+      <statement><p>
+          Run the code below following the test plan table underneath it. Fill in the actual output column of the table.
+      </p> 
+       <program label="loop-test-cases-sample-code" interactive="activecode" language="python">
         <code>
 value = int(input("Enter a number (-1 to stop): "))
 while value != -1:
@@ -401,12 +405,6 @@ while value != -1:
 print("Done!")
         </code>
         </program>
-
-   <activity label="loop-test-cases">
-    <title>Loop Test Plan</title>
-      <statement><p>
-          Run the code above following the test plan below. Fill in the actual output column of the table.
-      </p> 
       <table>
       <title>Test Cases</title>
           <tabular>
@@ -420,19 +418,19 @@ print("Done!")
                 <cell>0 repetitions</cell>
                 <cell>-1</cell>
                 <cell>Done!</cell>
-                <cell> <fillin answer="Done!" mode="string"/></cell>
+                <cell> <fillin answer="Done!" mode="string" /></cell>
             </row>
             <row>
                 <cell>1 repetition 7</cell>
                 <cell>7  -1</cell>
                 <cell>lucky number!</cell>
-                <cell> <fillin answer="lucky number!" mode="string"/></cell>
+                <cell> <fillin answer="lucky number!" mode="string" /></cell>
             </row>
                 <row>
                 <cell>1 repetition not 7</cell>
                 <cell>5  -1</cell>
                 <cell>You entered 5</cell>
-                <cell> <fillin answer="You entered 5" mode="string"/></cell>
+                <cell> <fillin answer="You entered 5" mode="string" /></cell>
             </row>
             </tabular>
             </table>
@@ -440,7 +438,7 @@ print("Done!")
         <evaluation>
         <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -449,7 +447,7 @@ print("Done!")
         </evaluate>
           <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>
@@ -458,7 +456,7 @@ print("Done!")
         </evaluate>
           <evaluate>
           <test>
-            <strcmp use-answer="yes"/>
+            <strcmp use-answer="yes" />
             <feedback>Correct! </feedback>
           </test>
           <test>

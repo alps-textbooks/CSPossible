@@ -34,7 +34,7 @@
   <source>
     <!-- Paths to folders containing external assets and generated assets -->
     <!-- relative to your main source file.                               -->
-    <directories external="../assets" generated="../generated-assets" />>
+    <directories generated="../generated-assets" />
 
     <!-- Set which marked elements are included in this version: -->
     <!-- See
@@ -72,6 +72,9 @@
    <!--The platform host can be "web" or "runestone"-->
    <platform host="runestone"/>
    <index-page ref="cspossible"/>
+
+    <!-- Moving brandlogo here did not work! -->
+   <brandlogo url="./index.html" source="_static/CSPossible.png" alt="CSPossible" />
 
     <!-- knowled checkpoints interfere with ActiveCode problems -->
     <knowl exercise-inline="no" example="no" listing="no"/>

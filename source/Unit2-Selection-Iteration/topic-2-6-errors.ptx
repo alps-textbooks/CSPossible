@@ -400,8 +400,16 @@ print("The average score is", average)
          
     <p>Try the code below which has some logic errors. Use the test plan in the table in the activity below to test it. After you have filled in the actual output column, you can fix the code
           by changing "if" to "elif" after the first "if" to chain all the conditions together.
-          This would be a good exercise to do in pairs or POGIL groups.</p>
-    <program interactive="activecode" language="python">
+          </p>
+
+    <activity label="selection-test-cases">
+      <title>Selection Test Cases</title>
+      <statement>
+        <p>
+          Run the code below following the test plan table underneath it. Fill in the actual output column of the table.
+          This code has some logic errors. Do not fix them until you have completed the test plan!</p>
+        
+        <program label="selection-test-cases-sample-code" interactive="activecode" language="python">
         <code>
 score = int(input("Enter a score: "))
 if score &gt;= 90:
@@ -417,13 +425,6 @@ else:
 print(grade)
         </code>
       </program>
-
-    <activity label="selection-test-cases">
-      <title>Selection Test Cases</title>
-      <statement>
-        <p>
-          Run the code above following the test plan below. Fill in the actual output column of the table.
-          This code has some logic errors. 
           <table>
         <tabular>
              <row header="yes">
@@ -476,7 +477,6 @@ print(grade)
             </row>
             </tabular>
       </table>
-        </p>
       </statement>
       <evaluation>
         <evaluate>
@@ -545,9 +545,14 @@ print(grade)
       </evaluation>
     </activity>
   
-    <p>Run the following code with a loop using the test cases in the activity below:</p>
+ 
 
-     <program interactive="activecode" language="python">
+   <activity label="loop-test-cases">
+    <title>Loop Test Plan</title>
+      <statement><p>
+          Run the code below following the test plan table underneath it. Fill in the actual output column of the table.
+      </p> 
+       <program label="loop-test-cases-sample-code" interactive="activecode" language="python">
         <code>
 value = int(input("Enter a number (-1 to stop): "))
 while value != -1:
@@ -561,12 +566,6 @@ while value != -1:
 print("Done!")
         </code>
         </program>
-
-   <activity label="loop-test-cases">
-    <title>Loop Test Plan</title>
-      <statement><p>
-          Run the code above following the test plan below. Fill in the actual output column of the table.
-      </p> 
       <table>
       <title>Test Cases</title>
           <tabular>
