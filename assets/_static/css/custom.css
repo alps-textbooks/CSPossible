@@ -166,3 +166,10 @@ div.time {
 .ptx-content .remark .heading {
   font-size: 1em;
 }
+
+/* Make the unittest results table wider hopefully*/
+.ptx-content .unittest-results,
+.ptx-runestone-container .unittest-results, 
+.runestone-sphinx .unittest-results {
+  min-width: 100%;
+}
