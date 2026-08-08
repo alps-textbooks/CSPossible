@@ -8,7 +8,7 @@
   <introduction>
     <p>Quick Links:
       <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
-      insert-remove-lists,list-loops,data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
+      insert-remove-lists,list-loops,linear-search, data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
@@ -16,7 +16,7 @@
       to store values, manipulate list contents, and traverse lists with loops.
     </p>
 
-    <image source="_static/Unit3images/lists.jpg" width="45%" alt="shopping lists"/>
+    <image source="_static/Unit3images/lists.jpg" width="30%" alt="shopping lists"/>
 
   </introduction>
 
@@ -91,7 +91,8 @@ scores = [95, 87, 92, 100]
 </subsection>
 <subsection xml:id="list-index">
     <title>Index to Access Elements</title>
-
+    <idx><h>list</h><h>index</h></idx>
+      <idx><h>list</h><h>element</h></idx>
     <idx>index</idx>
     <idx>indexing</idx>
 
@@ -353,6 +354,7 @@ chairs[2] = "Alex"
 
   <subsection xml:id="changing-lists">
     <title>Changing List Elements with Assignment</title>
+  <idx><h>list</h><h>assignment</h></idx>
 
     <note>
       <title>3.1.B.2</title>
@@ -732,11 +734,11 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
-        self.assertGreaterEqual(len(shopping_list), 5, "shopping_list should have at least 5 elements")
+        self.assertLessEqual(5,len(shopping_list), "shopping_list should have at least 5 elements")
         count = self.getEditorText().count("append")
-        self.assertGreaterEqual(count, 5, "at least 5 appends used")
+        self.assertLessEqual(5,count, "at least 5 appends used")
         count = self.getEditorText().count("len(")
-        self.assertGreaterEqual(count, 2, "at least 2 len() calls used")
+        self.assertLessEqual(2,count, "at least 2 len() calls used")
 
 myTests().main()
             </tests>
@@ -797,12 +799,12 @@ aList.remove(j)</pre>
     </p>
 
 
-    <activity label="insert-remove">
+    <activity label="insert-remove-puppies">
     <statement>
         <p>The code below uses a list to keep track of dogs at the animal shelter.
             Try the insert and remove functions in the code below. Then follow the directions in the comments
             to insert and remove elements from the list.</p>
-            </statement>
+    </statement>
         
         <program interactive="activecode" language="python">
             <code>
@@ -838,6 +840,7 @@ myTests().main()
             </tests>
             </program>
         </activity>
+        
 
             <idx><h>unplugged</h><h>lists</h></idx>
     <idx><h>projects</h><h>unplugged list of chairs 2</h></idx>
@@ -992,25 +995,7 @@ myTests().main()
 
   <subsection xml:id="list-loops">
     <title>Traversing Lists with Loops</title>
-
-    <note>
-      <title>3.1.C.1</title>
-      <p>
-        Traversing a list is often used to accomplish a goal, such as counting elements
-        that meet a condition, finding a value (like a maximum), computing a total or
-        average, or building an output (such as a message that includes all elements that
-        match a rule).
-      </p>
-    </note>
-
-    <note>
-      <title>3.1.C.2</title>
-      <p>
-        Traversals often update an accumulator variable, such as a count or total, each
-        time an element is processed.
-      </p>
-    </note>
-
+<idx><h>list</h><h>traversal</h></idx>
     <note>
       <title>3.1.C.3</title>
       <p>
@@ -1028,20 +1013,274 @@ for item in aList
 }</pre>
     </note>
 
+    <p>Python has a simple way to <term>traverse</term> (step through) a list, visiting each element in the list, using a for loop with the pattern: <c>for item in list:</c> 
+   </p>
+
+   <program language="python">
+      <code>
+aList = [1, 2, 3, 4, 5]
+for item in aList:
+    print(item)
+      </code>
+    </program>
+
+    <activity label="list-count">
+      <statement>
+        <p>Count the number of elements in the list using a for loop and an accumulator variable.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+aList = [0, 10.5, 3, 7, 2.5, 8, 4, 1]
+count = 0
+# Use a for-loop to traverse the list, print each element, and increment the count
+   
+
+print("The number of elements in the list is:", count)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
+            self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
+            self.assertIn("8", self.getOutput(), "The count should be 8")
+        </tests>
+      </program>
+    </activity>
+    
+    <note>
+      <title>3.1.C.1</title>
+      <p>
+        Traversing a list is often used to accomplish a goal, such as counting elements
+        that meet a condition, finding a value (like a maximum), computing a total or
+        average, or building an output (such as a message that includes all elements that
+        match a rule).
+      </p>
+    </note>
+
+
+    <note>
+      <title>3.1.C.2</title>
+      <p>
+        Traversals often update an accumulator variable, such as a count or total, each
+        time an element is processed.
+      </p>
+    </note>
+
+    <idx><h>list</h><h>accumulator pattern</h></idx>
+
+    <p>When we were learning about loops, we learned about the <term>accumulator pattern</term>
+      which uses a loop and an <term>accumulator variable</term> to keep track of the running total 
+      as each number is added in.  
+      This accumulator pattern is often used to process lists and perform calculations on the elements.
+      In the example above, the <c>count</c> variable is the accumulator variable. In the activity below, we will
+      use <c>sum</c> as an accumulator variable to calculate the sum of all the elements in a list. We can compute the average of
+      a list by dividing the sum by the length of the list using <c>len(list)</c>.
+    </p>
+   
+
+    <program language="python">
+      <code>
+scores = [ 100, 90, 95, 85, 93 ]
+sum = 0
+
+for number in scores:
+    sum += number
+      </code>
+    </program>
+
+     <activity label="mixedup-average-list" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following program has the correct code to return the average of
+          a list of numbers, but the code is mixed up. Drag the
+          blocks from the left into the correct order on the right. You will be
+          told if any of the blocks are in the wrong order or are indented
+          incorrectly.
+        </p>
+      </statement>
+
+      <blocks>
+        <block order="1">
+          <cline>numbers = [10, 20, 30, 40, 50]</cline>
+        </block>
+        <block order="4">
+          <cline>sum = 0</cline>
+        </block>
+        <block order="2">
+          <cline>for number in numbers:</cline>
+        </block>
+        <block order="3">
+          <cline>    sum += number</cline>
+        </block>
+        <block order="5">
+          <cline>print("Average:", sum/len(numbers))</cline>
+        </block>
+      </blocks>
+    </activity>
+
+     <activity label="list-accumulator-practice">
+      <statement>
+        <p>
+          Use the accumulator pattern to add taxes to each price in a list of prices. Try Code Lens to see the variable values change as the program runs. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+prices = [2.99, 5.49, 3.99, 4.99]
+total = 0
+tax_rate = 0.07
+
+# Use a for-loop to go through prices
+#     add the price and its tax (the price times the tax rate) to the total
+
+
+print("Total", total)
+        </code>      
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+  def test1(self):
+      code = self.getEditorText().replace(" ", "")
+      self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
+      self.assertIn("total+=", code, "Use += to add the price and tax to the total")
+      self.assertIn("*", code, "Multiply the price by the tax rate")
+      self.assertEqual("18.6822", total, "The total should be 18.6822")
+
+myTests().main()
+        </tests>
+        </program>
+      </activity>
+
+</subsection>
+
+<subsection xml:id="linear-search">
+    <title>Linear Search</title>
+<idx>linear search</idx>
+<idx>sequential search</idx>
+<idx>search</idx>
+  <idx><h>list</h><h>search</h></idx>
+
+    <p>Another common algorithm with lists is searching for a particular item in the list. 
+      <term>Linear Search</term> (also called <term>sequential search</term>) is a simple search 
+      algorithm that checks each element in the list one by one until it finds the desired value or 
+      reaches the end of the list. Watch the animation of the algorithm below of searching for the value 33 in a list of numbers.
+    </p>
+
+    <image source="_static/Unit3images/linearsearch.gif" alt="Linear Search" width="70%"/>
+
     <note>
       <title>3.1.C.4</title>
       <p>
-        A linear or sequential search checks elements in order until the desired value is
+        A <term>linear search</term> or <term>sequential search</term> checks elements in order until the desired value is
         found or the list ends. Programs often store the index where a match was found or
         store a Boolean value to indicate whether a match was found.
       </p>
     </note>
 
+    <p>The searching pattern has an if-statement inside the loop to check if you have found the correct value.</p>
+
+    <program language="python">
+      <code>
+numbers = [10, 20, 30, 40, 50]
+search_value = int(input("Enter a number to search for: "))
+for number in numbers:
+    if number == search_value:
+        print("Found!")
+      </code>
+</program>
+
+<p>If you are only looking for the first occurrence of a value, you can use a <c>break</c> 
+  statement on a line on its own to exit the loop once the value is found. This is called a 
+  <term>partial traversal</term> where only some elements of the list are visited. 
+  The <c>break</c> statement will immediately exit the 
+  loop. A boolean flag variable can be used to indicate whether the value was found. Try it out 
+  below.</p>
+
+    <activity label="mixedup-linear-search" numbered="yes" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following program has the correct code for linear search, but the code is mixed up. Drag the
+          blocks from the left into the correct order on the right. You will be
+          told if any of the blocks are in the wrong order or are indented
+          incorrectly.
+        </p>
+      </statement>
+
+      <blocks>
+        <block order="1">
+          <cline>numbers = [10, 20, 30, 40, 50]</cline>
+          <cline>found = False</cline>
+          <cline>search_value = 100</cline>
+        </block>
+        <block order="2">
+          <cline>for number in numbers:</cline>
+        </block>
+        <block order="3">
+          <cline>    if number == search_value:</cline>
+        </block>
+        <block order="5">
+          <cline>        found = True</cline>
+          <cline>        break</cline>
+        </block>
+        <block order="4">
+          <cline>if found:</cline>
+          </block>
+        <block order="6">
+          <cline>    print("Found!")</cline>
+        </block>
+        <block>
+          <cline>else:</cline>
+          </block>
+          <block>
+          <cline>    print("Not found.")</cline>
+          </block>
+      </blocks>
+    </activity>
+
+<activity label="linear-search-with-break">
+      <statement>
+        <p>Complete the following linear search algorithm. This algorithm uses a boolean flag to indicate whether the value was found and allows for early termination of the loop with break.</p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+numbers = [10, 20, 30, 40, 50]
+search_value = int(input("Enter a number to search for: "))
+found = False
+# Use a for-loop to traverse the list
+#     Use an if-statement to check if the number is equal to the search_value
+#     If it is, set found to True and break out of the loop
+
+
+# After the loop
+if found:
+    print("Found!")
+else:
+    print("Not found.")
+        </code>      
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            code = self.getEditorText().replace(" ", "")
+            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
+            self.assertIn("   if", self.getEditorText(), "Use an if statement inside the loop")
+            self.assertIn("found=True", code, "Set found to True inside if")
+            self.assertIn("   break", self.getEditorText(), "Use break if the number is found")
+
+myTests().main()
+          </tests>
+        </program>
+      </activity>
+
     <note>
       <title>3.1.C.5</title>
       <p>
         Traversing a list can be a complete traversal, where every element is accessed,
-        or a partial traversal, where only some elements are examined. Some partial
+        or a <term>partial traversal</term>, where only some elements are examined. Some partial
         traversals stop early when a goal is reached, such as finding the first match
         in a search, which may require fewer steps than traversing the entire list.
       </p>
@@ -1057,6 +1296,45 @@ for item in aList
       </p>
     </note>
 
+  <idx>minimum</idx>
+  <idx>maximum</idx>
+  <idx><h>list</h><h>minimum</h></idx>
+  <idx><h>list</h><h>maximum</h></idx>
+
+    <p>The find minimum and maximum algorithms that we looked at with loops are just a variation
+      the search pattern. They also have an if-statement inside the loop to check if the current element is less than or greater than the current minimum or maximum.
+    </p>
+
+    <activity label="max-list">
+      <statement><p>Run the following code to see the minimum algorithm in action. Then, change the code to find the maximum value instead of the minimum.
+      </p></statement>
+      <program interactive="activecode" language="python">
+      <code>
+numbersList = [90, 50, 75, 25, 100]
+# Assume the first number is the minimum
+min = numbersList[0]
+for num in numbersList:
+    if num &lt; min:
+        min = num
+
+print("The minimum value in the list is", min)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+   def test1(self):
+       self.assertIn("max",self.getEditorText(),"Use the variable max")
+       self.assertIn("&gt;",self.getEditorText(), "Use &gt; to find the maximum")
+       self.assertIn("100", self.getOutput(), "The maximum value should be 100")
+
+  
+myTests().main()
+      </tests>
+    </program>
+   </activity>    
+
+  <idx><h>list</h><h>tracing</h></idx>
     <note>
       <title>3.1.C.7</title>
       <p>
@@ -1064,6 +1342,103 @@ for item in aList
         variables update each time an element is processed.
       </p>
     </note>
+
+    <p>When tracing through code with lists, it helps to draw the list and its elements on paper 
+      or a whiteboard to visualize the process. The Code Lens button on the activecode activities 
+      or <url href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor</url> can also help you visualize the 
+      execution of your code step by step.</p>
+
+<activity label="list-loop-tracing">
+  <statement>
+    <p>Trace the following code to determine count at the end of the loop. If you get stuck, try it
+      in an activecode window (or the pencil icon scratch code up at the top) and use Code Lens.
+    </p>
+    <program language="python">
+      <code>
+numbers = [1, 2, 3, 4, 5, 6, 7]
+count = 0
+for number in numbers:
+    if number % 2 == 0:
+        count += 1
+      </code>
+    </program>
+    <p>The value of <c>count</c> after the loop: <fillin answer="3" mode="string" /></p>
+  </statement>
+<evaluation>
+    <evaluate>
+      <test>
+        <strcmp use-answer="yes" />
+        <feedback>
+          Correct! This loop counts the number of even numbers in the list. The even numbers are 2, 4, and 6, so the count is 3. 
+        </feedback>
+      </test>
+
+      <test>
+        <!-- else -->
+        <feedback>
+          <p>
+            Not quite. Remember that <c>number % 2 == 0</c> checks if a number is evenly divided by 2 with no remainder. This means it is an even number. 
+          </p>
+        </feedback>
+      </test>
+    </evaluate>
+  </evaluation>
+</activity>
+
+<activity label="list-csp-pseudocode">
+  <statement>
+    <p>The following pseudocode is intended to return the number of times the value
+<c>val</c> appears in the list <c>myList</c>. It does not work as intended.</p>
+<pre>
+Line 1: for item in myList
+Line 2: {
+Line 3:     count = 0
+Line 4:     if (item == val)
+Line 5:     {
+Line 6:         count = count + 1
+Line 7:     }
+Line 8: }
+</pre>
+<p>
+Which of the following changes can be made so that the procedure will work
+as intended?
+</p>
+</statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>Moving the statement in line 3 so that it appears before line 1</p>
+      </statement>
+      <feedback>
+        <p>Correct! The count variable should be initialized to 0 before the loop starts, not inside the loop. Otherwise, it will reset to 0 on each iteration.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Changing line 4 to <c>if (item == count)</c></p>
+      </statement>
+      <feedback>
+        <p>No, we need to use the <c>==</c> operator to test, not the assignment (<c>=</c>) operator.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Changing line 4 to <c>if (myList[item] == val)</c></p>
+      </statement>
+      <feedback>
+        <p>No, item is an element from the list, not an index.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Moving the statement in line 6 so that it appears after line 7</p>
+      </statement>
+      <feedback>
+        <p>No, this change would not fix the issue of resetting count on each iteration.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
   </subsection>
 
   <subsection xml:id="data-abstraction-with-lists">
