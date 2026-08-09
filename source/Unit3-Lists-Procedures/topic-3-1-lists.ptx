@@ -521,7 +521,7 @@ scores_bonus[1] += 5
 </subsection>
 
 <subsection xml:id="length">
-    <title>Length of a List, Random Elements, and slicing</title>
+    <title>Length of a List, Random Elements, and Slicing</title>
     <idx>
       <h>list</h><h>length</h>
     </idx>
@@ -542,8 +542,18 @@ length(aList)</pre>
     </note>
         
     <p>
-    In Python, you can get the length of a list by using the <c>len(list)</c> function, note the
-    shortened form of len for length.</p>
+    In Python, you can get the length of a list by using the <c>len(aList)</c> function, note the
+    shortened form of len for length. In AP Pseudocode, the function used is <c>length(aList)</c>.
+    </p>
+
+    <program language="python">
+        <code>  
+# A list of names
+names = ["Jordan", "Alex", "Sam", "Taylor"]
+# Get the length of the names list
+print("The length of the names list is:", len(names))
+        </code>
+    </program>
 
     <idx>random index</idx>
      <idx>
