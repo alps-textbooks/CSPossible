@@ -8,7 +8,7 @@
   <introduction>
     <p>Quick Links:
       <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
-      insert-remove-lists,list-loops,linear-search, data-abstraction-with-lists, coding-challenge-lists, LOs-3-1, vocab-3-1"/>
+      insert-remove-lists,list-loops,linear-search, data-abstraction-with-lists, coding-challenge-lists, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
