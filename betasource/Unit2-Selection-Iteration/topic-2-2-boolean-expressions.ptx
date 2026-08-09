@@ -58,7 +58,7 @@ print("I did everything?", cleanedRoom and didHomework )
 
     <activity label="pizzaAppBools">
       <statement>
-        <p>Interact with the pizza app above.
+        <p>Interact with the <url href="external/webapps/pizzaApp.html">pizza app</url> above.
           Which of the following are Boolean expressions (True or False) that the app 
           uses to determine its output? 
           Select all that apply.

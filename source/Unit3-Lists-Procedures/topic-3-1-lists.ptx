@@ -8,7 +8,7 @@
   <introduction>
     <p>Quick Links:
       <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
-      insert-remove-lists,list-loops,linear-search, data-abstraction-with-lists, LOs-3-1, vocab-3-1"/>
+      insert-remove-lists,list-loops,linear-search, data-abstraction-with-lists, coding-challenge-lists, LOs-3-1, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
@@ -834,7 +834,7 @@ class myTests(TestCaseGui):
     def test1(self):
         code = self.getEditorText().replace(" ", "")
         self.assertIn('puppies.insert("Buddy",1)', code, "Use insert to add Buddy at correct index")
-        self.assertIn("puppies.remove("Daisy")", code, "Use remove to remove Daisy")
+        self.assertIn('puppies.remove("Daisy")', code, "Use remove to remove Daisy")
 
 myTests().main()
             </tests>
@@ -845,24 +845,25 @@ myTests().main()
             <idx><h>unplugged</h><h>lists</h></idx>
     <idx><h>projects</h><h>unplugged list of chairs 2</h></idx>
 
-     <project label="unplugged-list-of-chairs2">
+        <project label="unplugged-list-of-chairs-revisited">
        <title>Unplugged List of Chairs Revisited</title>
       <statement>
     <p>
-        Let's revisit the unplugged activity with students in chairs and simulate append, insert, and remove operations.
+      Let's revisit the unplugged activity with students in chairs and simulate append, insert, and remove operations.
         In groups or as a class, organize a line of empty chairs as the list. Have some extra chairs ready to append or insert.
         Each student who sits in a chair represents an element in the list.
         The first chair in the line has the index 0. The second chair has the index 1, and so on.
         Have students follow the code below to insert and remove students and chairs.
         Substitute in the names of students in your class.
-      </p>
+    </p>
         <program language="python">
             <code>
 # Fill the chairs with students
 chairs = ["Alex", "Sam", "Ryan"]
 # Example code to insert and remove students in chairs
 chairs.append("Dani") # Add a new chair and student to the end of the list
-# Remove the student in chair 1, all students should move left 1 chair, remove the last chair
+# Remove the student in chair 1, move students left 1 chair, 
+#   and remove the last chair
 chairs.remove(1) 
 # Insert a new student in chair 1 and move students to the right to make room.
 chairs.insert(1, "Taylor") 
@@ -870,12 +871,11 @@ chairs.insert(1, "Taylor")
         </program>
        <p>    
        How do append, insert, and remove affect the list differently than changing the values of existing elements? 
-       Write your own code below using append, insert, and remove, and then act it out.  
+       Write your own code below using append, insert, and remove, and then act it out.         
       </p></statement>
 
        <response/>
-    </project>
-
+     </project>
 
     <note>
       <title>3.1.B.7</title>
@@ -1047,7 +1047,32 @@ class myTests(TestCaseGui):
         </tests>
       </program>
     </activity>
-    
+
+    <p>An index-controlled for-loop using <c>range(len(aList))</c> or a while loop can also be used 
+      to traverse a list. The loop variable is the index to access each element in the list. This 
+      is why programmers often use the variable i, short for index, as the loop variable. However, 
+      it is a lot more complex. If you do not need the index, it is simpler to use the <c>for item 
+      in list</c> loop instead. The code below compares all three loops. The first one is the simplest and most often used with lists. </p>
+
+    <program language="python">
+      <code>
+aList = [1, 2, 3, 4, 5]
+# Simple for loop for lists
+for item in aList:
+    print(item)
+
+# More complex indexed for-loop
+for i in range(len(aList)):
+    print( aList[i] )
+
+# More complex while loop
+i = 0
+while i &lt; len(aList):
+    print( aList[i] )
+    i += 1
+        </code>
+        </program>
+
     <note>
       <title>3.1.C.1</title>
       <p>
@@ -1444,10 +1469,20 @@ as intended?
   <subsection xml:id="data-abstraction-with-lists">
     <title>Data Abstraction with Lists</title>
 
+    <p>In previous lessons, we talked about <term>abstraction</term> in computer science which 
+      about focusing on the general features while hiding the specific details.  
+    <term>Data Abstraction</term> is the process of hiding the complex implementation details of a 
+    data structure and showing only the needed features to the user. Variables are a type of data 
+    abstraction because they allow programmers to use a name to represent a value without needing 
+    to know how the value is stored in memory.  Lists are another type of data abstraction because 
+    they allow programmers to use a single variable name to represent a collection of values 
+    without needing to know how the values are stored or organized in memory. Data abstraction 
+    using lists <term>reduces complexity</term> in code and makes it easier to read, write, and maintain.
+    </p>
     <note>
       <title>3.1.D.1</title>
       <p>
-        Data abstraction manages complexity by allowing programmers to use data based on
+        <term>Data Abstraction</term> manages complexity by allowing programmers to use data based on
         its name and purpose without needing to focus on how the data is represented.
         This separation helps programmers reason about what the data represents and what
         operations can be done with it.
@@ -1465,6 +1500,130 @@ as intended?
       </p>
     </note>
 
+  <activity label="list-data-abstraction">
+    <statement>
+      <p>
+        A programmer creates a program that displays the names of all students
+        enrolled in a class. Which implementation best demonstrates the use of
+        data abstraction?
+      </p>
+    </statement>
+<choices randomize="yes">
+  <choice>
+    <statement>
+      
+      <program language="python">
+        <code>
+  student1 = "Alex"
+  student2 = "Marion"
+  student3 = "Jordan"
+        </code>
+      </program>
+          
+    </statement>
+
+    <feedback>
+      <p>
+        No. This implementation uses a separate variable for each student
+        rather than treating the related values as a single collection.
+      </p>
+    </feedback>
+  </choice>
+
+  <choice correct="yes">
+    <statement>
+     
+      <program language="python">
+        <code>
+students = ["Alex", "Marion", "Jordan"]
+        </code>
+      </program>
+    </statement>
+
+    <feedback>
+      <p>
+        Yes. A list allows related values to be treated as a single data
+        abstraction. The programmer can use the name <code>students</code>
+        to work with the collection without needing separate variables
+        for each student.
+      </p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+
+      <program language="python">
+        <code>
+  studentCount = 3
+        </code>
+      </program>
+    </statement>
+
+    <feedback>
+      <p>
+        No. This variable stores the number of students but does not provide
+        a collection containing the students' names.
+      </p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+      <program language="python">
+        <code>
+print("Alex")
+print("Marion")
+print("Jordan")
+        </code>
+      </program>
+    </statement>
+
+    <feedback>
+      <p>
+        No. This implementation contains repeated statements instead of
+        using a single abstraction to represent the related student names.
+      </p>
+    </feedback>
+  </choice>
+</choices>
+</activity>
+
+<p><term>Refactoring code</term> means to rewrite the code to improve it while maintaining the 
+same functionality. Adding data abstraction is a great way to refactor code to reduce its 
+complexity and make it more maintainable and easier to understand. Try it below! </p>
+
+  <activity label="rewrite-as-list">
+    <statement><p>Refactor the following code to use a list instead of individual variables.
+      Make sure you use a for-loop to traverse the list and print each favorite food.
+     
+    </p></statement>
+    <program interactive="activecode" language="python">
+      <code>  
+# Refactor to use a list instead of individual variables
+favoriteFood1 = "Pizza"
+favoriteFood2 = "Hamburger"
+favoriteFood3 = "Sushi"
+
+# Refactor to use a for-loop
+print("My favorite foods are:")
+print(favoriteFood1)
+print(favoriteFood2)
+print(favoriteFood3)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+          code = self.getEditorText().replace(" ", "")
+          self.assertIn("[", self.getEditorText(), "Use a list to store the favorite foods")
+          self.assertIn("for ", self.getEditorText(), "Use a for-loop to print the list")
+           
+myTests().main()
+      </tests>
+    </program>
+  </activity>
+    
     <note>
       <title>3.1.D.3</title>
       <p>
@@ -1484,7 +1643,34 @@ as intended?
       </p>
     </note>
 
-    <note>
+    <p>Data abstraction also makes it easier to add data without having to rewrite the algorithms. 
+      Try adding data to the list below. You will see that you do not need to rewrite the loop 
+      processing the list at all. This makes it much easier to maintain and update the code.</p>
+
+      <activity label="add-data-to-list">
+    <statement><p>Add at least 3 more colors to the list below. Do you need to change the for-loop? 
+    </p></statement>
+    <program interactive="activecode" language="python">
+      <code>  
+# Add at least 3 more colors to the list
+colors = ["Red", "Green", "Blue"]
+
+# Run to see we do not need to change the loop!
+for color in colors:
+    print(color)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+          self.assertLessEqual(6, len(colors), "Add at least 3 more colors to the list")
+
+myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+      <note>
       <title>3.1.D.5</title>
       <p>
         Data abstraction reduces complexity by reducing duplication in code. For example,
@@ -1493,6 +1679,177 @@ as intended?
         to update code during development, which lowers the chance of errors.
       </p>
     </note>
+
+    <p>Data abstraction using lists also removes a lot of repetitive duplication in code. Instead of having 
+      multiple variables and repeated code to process each variable, we can use a single list and a loop to process all the elements.
+    </p>
+
+<activity label="reduce-complexity">
+  <statement>
+    <p>
+      Consider the following code.
+    </p>
+
+    <program language="python">
+      <code>
+temperatures = [72, 75, 68, 70]
+total = 0
+for temperature in temperatures:
+    total = total + temperature
+print(total)</code>
+    </program>
+
+    <p>
+      Which of the following are reasons why using data abstraction with a list reduces program
+      complexity? Select two answers.
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>
+          The same algorithm can process the data even if we add new temperatures or update or  remove temperatures.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>
+          Yes. The loop processes each element in the list, so the same
+          algorithm can work with different amounts of data without needing
+          to be rewritten.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>
+          The list reduces the need for repeated variables and statements
+          for processing individual temperatures.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>
+          Yes. Without a list, the programmer might need separate variables
+          and repeated statements for each temperature. Using a list and loop
+          reduces this repeated code.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>
+          The list automatically calculates the sum of the temperatures.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>
+          No. The list only stores the temperatures. The <code>for</code> loop
+          and addition operation are responsible for calculating the sum.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>
+          The list guarantees that there are no duplicate temperatures. 
+        </p>
+      </statement>
+
+      <feedback>
+        <p>
+          No. A list can contain duplicate values. Preventing duplicate values
+          is not a reason why using a list reduces program complexity.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+  </subsection>
+
+  <subsection xml:id="coding-challenge-lists">
+    <title>Coding Challenge: Lists</title>
+       <idx><h>projects</h><h></h></idx>
+      <idx><h>coding challenge</h><h></h></idx>
+
+      <p>A bakery uses parallel lists to store the names, emoji images, and prices of baked goods in three lists. The lists are kept in parallelorder so that an index can be used to access the corresponding elements in each list. For example, the first element in the list of baked goods corresponds to the first element in the list of prices, the second element corresponds to the second element, and so on. This allows a program to easily look up the price and image of a baked good by index. In the following coding challenge, you will use an input-controlled while loop to  ask the user to choose baked goods from the bakery and put its index in an order list. You will then print out their receipt and calculate the total cost of their order using a for loop and the order list.
+      </p>
+
+    <project label="coding-challenge-parallel-lists">
+      <title>Bakery Parallel Lists</title>
+      <statement>
+        <p>A bakery uses 3 parallel lists below to store the names, emoji images, and prices of baked goods. The while-loop below prints the lists and asks for the user's order by choosing an index number. You will write code to append the chosen index to the order list after checking that it is in range. You will then print out their receipt and calculate the total cost of their order using a for loop and the order list.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+# Bakery parallel lists
+baked_goods = ["Donut", "Cookie", "Croissant", "Cupcake", "Bagel" ]
+images = ["🍩", "🍪", "🥐", "🧁", "🥯", ]
+prices = [1.50, 2.00, 3.00, 2.50, 1.75]
+
+print("Welcome to the Bakery! Here are our baked goods:")
+print(images)
+print(baked_goods)
+print(prices)
+
+# Empty Order list of indices of baked goods chosen by the user
+order = []
+choice = 0
+while choice != -1:
+    choice = int(input("Enter the index of the baked good you want to order (or -1 to end): "))
+    # TODO: Check if the choices is a valid index between 0 and the length of the list - 1
+    #      and append to the order list
+    # else print an error message and ask the user to try again 
+
+
+# TODO: Print the receipt and calculate the total cost of the order
+# using a for-loop through the order list and the indices to access the baked goods and prices
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            code = self.getEditorText().replace(" ", "")
+            self.assertIn("if choice", self.getEditorText(), "Use an if-statement to check if the choice is a valid index")
+            self.assertIn("len(", self.getEditorText(), "Use len() to check the length of a list in the if-statement")
+            self.assertIn("else", self.getEditorText(), "Use an else-statement to handle invalid input")
+            self.assertIn("order.append(choice)", self.getEditorText(), "Append the choice to the order list")
+            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the order list")
+            self.assertIn("baked_goods[", code, "Access the name of each baked good using its index")
+            self.assertIn("prices[", code, "Access the price of each baked good using its index")
+            self.assertIn("+=", code, "Use += to add the price to the total cost")
+
+
+myTests().main()
+</tests>
+</program>
+</project>
+
+     <activity label="frq-data-abstraction">
+        <title>Data Abstraction Reflection</title>
+        <statement>
+          <p>
+            Consider the lists used in your project code above. 
+          </p>
+            <ol>
+              <li>Explain how the lists use data abstraction to manage complexity in your program.</li>
+              <li>Explain how your code would be more complex if you did not have lists.</li>
+              <li>If the bakery decides to add more baked goods to the menu, 
+                describe how you would need to adjust your code. How do lists make this easier?</li>
+            </ol>
+
+        </statement>
+        <response/>
+      </activity>
   </subsection>
 
   <subsection xml:id="LOs-3-1">
@@ -1529,5 +1886,58 @@ as intended?
 
   <subsection xml:id="vocab-3-1">
    <title>Vocabulary Review</title>
+
+    <activity label="vocab-lists">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>data collection</premise>
+          <response>a set of data, organized and stored together</response>
+        </match>
+        <match>
+          <premise>list</premise>
+          <response>an ordered collection of values stored under a single variable name</response>
+        </match>
+        <match>
+          <premise>index</premise>
+          <response>the position of an element in a list, starting from 0</response>
+        </match>
+        <match>
+          <premise>element</premise>
+          <response>a single value in a list</response>
+        </match>
+        <match> 
+          <premise>traversal</premise>
+          <response>stepping through each element in a list, often using a loop</response>
+        </match>
+        <match>
+          <premise>linear search</premise>
+          <response>checking each element in a list one by one until the desired value is found or the end of the list is reached</response>
+        </match>
+        <match>
+          <premise>partial traversal</premise>
+          <response>stepping through only some elements in a list, often stopping early when a goal is reached</response>
+        </match>
+        <match>
+          <premise>data abstraction</premise>
+          <response>hiding the complex implementation details of a data structure and showing only the needed features to the user</response>
+        </match>
+        <match>
+          <premise>refactor</premise>
+          <response>the process of rewriting existing code without changing its functionality</response>
+        </match>
+      </cardsort>
+      </activity>
   </subsection>
 </section>
