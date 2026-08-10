@@ -456,8 +456,9 @@ print("The length of the names list is:", len(names))
 <p>Sometimes you may want to pick a random element from the list.  One way to do this is to generate a random index. It would
     start at 0 and go up to the length of the list minus 1. If there are 3 elements in the list, the valid indices would be 0, 1, and 2. 
     In Python, you can use the <c>random.randint()</c> function to generate a random index. 
-    The valid indices are 0 through <c>ranodm(0, len(list) - 1</c>. 
-    For example, if you have a list of songs, you can select a random song from the playlist using the code below.
+    The valid indices are 0 through <c>len(list) - 1</c>. 
+    For example, if you have a list of songs, you can select a random song from the playlist using 
+    the code <c>random.randint(0, len(songs) - 1)</c>.
     Python actually has a built-in function called <c>random.choice(list)</c> that will select a random element from a list, 
     but we will use the random index method here to match AP pseudocode.
     </p>
@@ -1166,7 +1167,7 @@ Line 7:     }
 Line 8: }
 </pre>
 <p>
-Which of the following changes can be made so that the procedure will work
+Which of the following changes can be made so that the code will work
 as intended?
 </p>
 </statement>
@@ -1211,7 +1212,7 @@ as intended?
     <title>Data Abstraction with Lists</title>
 
     <p>In previous lessons, we talked about <term>abstraction</term> in computer science which 
-      about focusing on the general features while hiding the specific details.  
+     is about focusing on the general features while hiding the specific details.  
     <term>Data Abstraction</term> is the process of hiding the complex implementation details of a 
     data structure and showing only the needed features to the user. Variables are a type of data 
     abstraction because they allow programmers to use a name to represent a value without needing 
@@ -1473,7 +1474,7 @@ print(total)</code>
        <idx><h>projects</h><h></h></idx>
       <idx><h>coding challenge</h><h></h></idx>
 
-      <p>A bakery uses parallel lists to store the names, emoji images, and prices of baked goods in three lists. The lists are kept in parallelorder so that an index can be used to access the corresponding elements in each list. For example, the first element in the list of baked goods corresponds to the first element in the list of prices, the second element corresponds to the second element, and so on. This allows a program to easily look up the price and image of a baked good by index. In the following coding challenge, you will use an input-controlled while loop to  ask the user to choose baked goods from the bakery and put its index in an order list. You will then print out their receipt and calculate the total cost of their order using a for loop and the order list.
+      <p>A bakery uses parallel lists to store the names, emoji images, and prices of baked goods in three lists. The lists are kept in parallel order so that an index can be used to access the corresponding elements in each list. For example, the first element in the list of baked goods corresponds to the first element in the list of prices, the second element corresponds to the second element, and so on. This allows a program to easily look up the price and image of a baked good by index. In the following coding challenge, you will use an input-controlled while loop to  ask the user to choose baked goods from the bakery and put its index in an order list. You will then print out their receipt and calculate the total cost of their order using a for loop and the order list.
       </p>
 
     <project label="coding-challenge-parallel-lists">
