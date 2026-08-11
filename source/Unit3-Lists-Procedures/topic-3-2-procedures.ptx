@@ -1,50 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="topic-3-2-procedures">
-  <time minutes="90" />
-  <title>Procedures</title>
-
-  <idx>procedures</idx>
+  <time minutes="135" />
+  <title>Procedures (Functions)</title>
+ 
   <introduction>
    <p>Quick Links:
-      <xref text="global" ref="defining-procedures,procedure-calls,procedural-abstraction,
+      <xref text="global" ref="procedures,function-call-defn, arguments,procedural-abstraction,
       LOs-3-2, vocab-3-2"/>
     </p>
     <p>
-      In this topic, we develop code with procedures, trace procedure calls,
-      and explain how procedural abstraction helps manage complexity.
+      Our programs are getting longer and longer! Advanced programmers break up 
+      large programs into smaller, more manageable pieces called 
+      <term>procedures</term> or <term>functions</term>. This allows us to
+       solve complex problems by breaking them into smaller subproblems and to reuse code.
+      In this lesson, we will learn to write our own Python functions and learn how procedural abstraction 
+      helps manage complexity.
     </p>
+
+    <image source="_static/Unit3images/decomposition.png" alt="Problem decomposition" width="70%"/>
+
   </introduction>
 
-  <subsection xml:id="defining-procedures">
-    <title>Defining Procedures</title>
+  <subsection xml:id="procedures">
+    <title>What is a Procedure or Function</title>
+    <idx>procedures</idx>
+    <idx>functions</idx>
 
     <note>
       <title>3.2.A.1</title>
       <p>
-        A procedure is a named group of programming instructions that performs a task.
+        A <term>procedure</term> is a named group of programming instructions that performs a task.
         Using procedures helps programmers organize code, avoid unnecessary code, and
         make programs easier to read, test, and update. Procedures may also be called
-        functions or methods depending on the programming language.
+        <term>functions</term> or <term>methods</term> depending on the programming language.
+      </p>
+    </note>
+
+    <p>
+      A <term>procedure</term> or <term>function</term> is a named block of code that performs a 
+      task when it is called.    
+    </p>
+
+    <p>We have already used several built-in Python functions in our programs, for example 
+     <c>input()</c> and <c>print()</c> which are input/output functions built into Python. Notice
+     that functions end with parentheses () which can contain <term>arguments</term>, the data that 
+     the function needs to do its job, for example what to print for the <c>print("Print this!")</c> function. 
+     Some functions like <c>input()</c> or <c>random.randint()</c> also return values back like
+     the user's input or a random number that we usually store in a variable.  A function is like a black box
+      where you know what goes in and what comes out, but not necessarily how it works inside. 
+    </p>
+
+    <program language="python">
+      <code>
+  # The print() function takes 1 argument that it prints to the screen
+  print("Hello World!")  
+
+  # The input() function takes 1 argument, the prompt, and returns the user's input
+  #     which we save in a variable
+  name = input("Enter your name: ")
+
+  # The random.randint() function takes 2 arguments, the low and high values, 
+  # and returns a random number between those values (inclusive)
+  random_number = random.randint(1, 10)
+      </code>
+    </program>
+
+    <image source="_static/Unit3images/function.png" alt="Function with arguments and return value" width="65%"/>
+
+     <idx><h>unplugged</h><h>functions</h></idx>
+    <idx><h>projects</h><h>unplugged functions</h></idx>
+       <idx><h>unplugged</h><h>procedures</h></idx>
+    <idx><h>projects</h><h>unplugged procedures</h></idx>
+      <idx><h>POGIL group activity</h><h>functions</h></idx>
+        <idx><h>POGIL group activity</h><h>procedures</h></idx>
+
+    <project label="unplugged-functions">
+      <title>Unplugged: Functions</title>
+      <statement>
+     <p>
+      In groups, choose one person to be the function. The person playing
+      the function should choose a secret math formula with a variable and 2 operations,
+      for example <c>2*x + 1</c>. Don't tell the rest of the group what the formula is! 
+     </p>
+     <p>
+      The other members of the group will give the
+      function different argument values for <c>x</c>, and the function will
+      return the result of the formula. Write down the input/output pairs for each argument 
+      and return value.
+    </p>
+    <p>
+      For example, if the function's formula is <c>2*x + 1</c> and a group
+      member provides <c>3</c> as the argument, the function returns <c>7</c>.
+      After each member gets a return value, the group should try to figure
+      out the function's secret formula. Then, discuss and answer the following 
+      questions as a group.
+    </p>
+      <ol>
+        <li>What arguments did your group provide to the function? 
+        What return value did the function produce for each argument?
+          </li>
+        <li>What was the function's secret formula? 
+          How did your group use the input/output pairs to try to figure it out?</li>
+         <li>How does this activity demonstrate that a function can be reused with different arguments?</li>
+         <li>Can you use a function without knowing how it works inside? 
+          How does this activity demonstrate that a function is an abstraction like a "black box"?</li>
+      </ol>
+  </statement>
+    <response/>
+    </project>
+  </subsection>
+
+  <subsection xml:id="function-call-defn">
+    <title>Procedure/Function Call and Definition</title>
+
+  
+<activity label="repeatedcode-this-old-man">
+  <statement>
+    <p>
+      Click on all the lines that are completely identical and repeated.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>Look for lines of Python code that are completely identical.</p>
+  </feedback>
+
+  <areas>
+    <cline><area correct="no">print("This old man, he played one.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my thumb.")</area></cline>
+    <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
+    <cline><area correct="no">print("This old man, he played two.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my shoe.")</area></cline>
+    <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
+    <cline><area correct="no">print("This old man, he played three.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my knee.")</area></cline>
+    <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
+  </areas>
+</activity>
+
+ <note>
+      <title>3.2.B.1</title>
+      <p>
+        Calling a procedure runs a named sequence of steps, which helps programs reuse
+        code and keep the overall program easier to read and follow.
       </p>
     </note>
 
     <note>
+      <title>3.2.B.2</title>
+      <p>
+        A procedure is called by using its name in a statement so the program runs the
+        steps stored in that procedure. When the call happens, the program pauses the
+        current sequence of statements, executes the procedure's instructions, and then
+        resumes at the next statement after the call.
+      </p>
+    </note>
+
+<activity label="codelensSong1">
+  <statement>
+    <p>
+      Click on the next button below the code to step through the code.
+      Watch the red arrow as the program calls the <c>chorus()</c> function
+      and then returns to the line where the function was called.
+    </p>
+  </statement>
+
+  <program interactive="codelens" language="python">
+    <code>
+def chorus():
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+
+print("This old man, he played one.")
+print("He played knick-knack on my thumb.")
+chorus()
+
+print("This old man, he played two.")
+print("He played knick-knack on my shoe.")
+chorus()
+    </code>
+  </program>
+</activity>
+
+    
+
+      <note>
+      <title>3.2.A.6</title>
+      <p>
+        A procedure is defined with a name and a list of zero or more parameters. When
+        the following code runs, a procedure named <c>pName</c> is defined with zero or
+        more parameters (<c>p1, p2, ...</c>). When the procedure is called, the statements
+        in <c>&lt;block of statements&gt;</c> execute.
+      </p>
+      <pre>
+procedure pName(p1, p2, ...)
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+  <note>
       <title>3.2.A.2</title>
       <p>
         If a procedure does not need any input information to complete its intended task,
         it can be defined with its name followed by parentheses and a block of statements.
         Each time the procedure is called, the statements in the procedure execute, and
         then the program continues with the next statement after the call.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.A.3</title>
-      <p>
-        Procedures can use parameters to receive input. A parameter is a variable name
-        listed in the procedure definition. An argument is the actual value provided
-        when the procedure is called.
       </p>
     </note>
 
@@ -73,20 +239,7 @@
       </p>
     </note>
 
-    <note>
-      <title>3.2.A.6</title>
-      <p>
-        A procedure is defined with a name and a list of zero or more parameters. When
-        the following code runs, a procedure named <c>pName</c> is defined with zero or
-        more parameters (<c>p1, p2, ...</c>). When the procedure is called, the statements
-        in <c>&lt;block of statements&gt;</c> execute.
-      </p>
-      <pre>
-procedure pName(p1, p2, ...)
-{
-   &lt;block of statements&gt;
-}</pre>
-    </note>
+  
 
     <note>
       <title>3.2.A.7</title>
@@ -120,24 +273,15 @@ return expression</pre>
     </note>
   </subsection>
 
-  <subsection xml:id="procedure-calls">
-    <title>Procedure Calls</title>
+  <subsection xml:id="arguments">
+    <title>Arguments and Parameters</title>
 
-    <note>
-      <title>3.2.B.1</title>
+   <note>
+      <title>3.2.A.3</title>
       <p>
-        Calling a procedure runs a named sequence of steps, which helps programs reuse
-        code and keep the overall program easier to read and follow.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.B.2</title>
-      <p>
-        A procedure is called by using its name in a statement so the program runs the
-        steps stored in that procedure. When the call happens, the program pauses the
-        current sequence of statements, executes the procedure's instructions, and then
-        resumes at the next statement after the call.
+        Procedures can use parameters to receive input. A <term>parameter</term> is a variable name
+        listed in the procedure definition. An <term>argument</term> is the actual value provided
+        when the procedure is called.
       </p>
     </note>
 
