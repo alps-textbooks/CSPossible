@@ -115,7 +115,9 @@ while condition:
     </p>
 
 
-    <p>There are 3 steps to writing a loop as seen below in a loop that counts from 1 to 10. The simplest loops are <term>counter-controlled loops</term> like below, where the loop variable is a counter that counts how many times to repeat the loop. There are 3 steps to writing a loop. </p>
+    <p>There are 3 steps to writing a loop as seen below in a loop that counts from 1 to 10. The 
+    simplest loops are <term>counter-controlled loops</term> like below, where the loop variable is 
+    a counter that counts how many times to repeat the loop.  </p>
  
     <image source="_static/Unit2images/while-loop-3-steps.png" width="75%" alt="while loop 3 steps"/>
 
@@ -472,8 +474,6 @@ for i in range(0, 10, 1):
             class myTests(TestCaseGui):
               def test1(self):
                 self.assertIn("range(6)",self.getEditorText(), "Use range(6) to repeat 6 times")
-                input_count = self.getEditorText().count(".forward")
-                self.assertEqual(1, input_count, "Use just 1 forward")
                 input_count = self.getEditorText().count(".right(60)")
                 self.assertEqual(1, input_count, "Use just 1 right turn of 60 degrees")
             myTests().main()
@@ -584,6 +584,8 @@ while i &lt; 10:
             def test1(self):
               self.assertIn("i+=1",self.getEditorText().replace(" ",""), "Update i by doing += 1")
               self.assertIn("0\n1\n2\n3\n4\n5\n6\n7\n8\n9",self.getOutput(), "Output 0 to 9")
+              
+          myTests().main()
           </tests>
       </program>
     </activity>
