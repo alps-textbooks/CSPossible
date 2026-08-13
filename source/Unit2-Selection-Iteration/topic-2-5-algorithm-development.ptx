@@ -71,7 +71,7 @@
           class myTests(TestCaseGui):
             def test1(self):
               self.assertIn("range(20)",self.getEditorText(), "Change to range(20)")
-              self.assertIn("!=",self.getEditorText(), "Use != in the if statement")
+              self.assertEqual(True,"!=" in self.getEditorText() or "== 1" in self.getEditorText(),"Use either != or == 1 in the if statement")
               self.assertIn("1\n3\n5\n7\n9\n11\n13\n15\n17\n19",self.getOutput(), "Output odd numbers from 1 to 19")
               
           myTests().main()
@@ -247,15 +247,16 @@ print("The sum is", sum)
 print("The average is", average)
         </code>      
         <tests>
-          from unittest.gui import TestCaseGui
+from unittest.gui import TestCaseGui
 
-          class myTests(TestCaseGui):
-            def test1(self):
-              self.assertIn("number!=-1",self.getEditorText().replace(" ",""), "Loop while number != -1")
-              self.assertIn("count+=1",self.getEditorText().replace(" ",""), "Increment the count using +=1")
-              self.assertIn("sum/count",self.getEditorText().replace(" ",""), "Calculate the average by dividing sum by count")
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ","")
+        self.assertIn("number!=-1",code, "Loop while number != -1")
+        self.assertIn("count+=1",code, "Increment the count using +=1")
+        self.assertIn("sum/count",code, "Calculate the average by dividing sum by count")
   
-          myTests().main()
+myTests().main()
         </tests>
         </program>
       </activity>
@@ -303,27 +304,25 @@ print("The minimum value is", min)
       </statement>
 
       <blocks>
-        <block order="4">
+        <block>
           <cline>max = -99 # start low</cline>
         </block>
         <block>
           <cline>number=int(input("Enter number (-1 to stop):"))</cline>
         </block>
-        <block order="2">
+        <block>
           <cline>while number != -1:</cline>
         </block>
-        <block order="3">
-          <cline>    if number &gt; max:
-          </cline> 
+        <block>
+          <cline>    if number &gt; max:</cline> 
         </block>
-        <block order="5">
-          <cline>         max = number
-          </cline>
+        <block>
+          <cline>        max = number</cline>
         </block>
            <block>
           <cline>    number=int(input("Enter another number (-1 to stop):"))</cline>
         </block>
-        <block order="6">
+        <block>
           <cline>print("The maximum value is", max)</cline>
         </block>
       </blocks>
@@ -462,8 +461,9 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
-        self.assertIn("range(1,11)",self.getEditorText(), "Change to range(1,11) to include 10")
-        self.assertIn("number&lt;=10",self.getEditorText().replace(" ",""), "Change while loop to number &lt;= 10 to include 10")
+        code = self.getEditorText().replace(" ","")
+        self.assertIn("range(1,11)", code, "Change to range(1,11) to count 1 to 10")
+        self.assertIn("number&lt;=10", code, "Change while loop to number &lt;= 10 to include 10")
         self.assertIn("55",self.getOutput(), "The sum of 1 to 10 is 55")
   
 myTests().main()
@@ -593,88 +593,7 @@ else:
     <p>Sometimes two algorithms may produce the same output but have different side effects. <term>Side effects</term> are anything an 
       algorithm changes besides producing its main output, for example changing a variable's value or changing something on the screen.</p>
     
-     <activity label="side-effect-variable">
-       <statement>
-        <p>
-          As we saw above, the following two algorithms produce the same output. Which line of code is a side effect that one
-          of the algorithms has that the other does not?
-        </p>
-        <program language="python">
-        <code>
-# Algorithm A
-total = 0
-for number in range(1, 6):
-    total += number
-print(total)
-
-# Algorithm B
-total = 0
-number = 1
-while number &lt;= 5:
-    total += number
-    number += 1
-print(total)
-        </code>
-        </program>
-       </statement>
-       <choices randomize="yes">
-        <choice>
-        <statement>
-        <p>total += number</p>
-      </statement>
-      <feedback>
-        <p>No, both algorithms update the variable total.</p>
-      </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement>
-        <p>while number &lt;= 5:</p>
-      </statement>
-      <feedback>
-        <p>Although only Algorithm B has a while loop, the program state doesn't change here, so it's not really a side effect.</p>
-      </feedback>
-      </choice>
-      <choice>
-        <statement>
-        <p>total = 0</p>
-      </statement>
-      <feedback>
-        <p>No, both algorithms initialize the variable total to 0.</p>
-      </feedback>
-      </choice>
-            <choice>
-        <statement>
-        <p>print(total)</p>
-      </statement>
-      <feedback>
-        <p>No, both algorithms print the value of the variable total.</p>
-      </feedback>
-      </choice>
-      </choices>
-     </activity>
-
-      <note>
-      <title>2.5.B.4</title>
-      <p>
-        Side effects can impact the user experience. An unintended side effect, such as an incorrect variable update, an unexpected 
-        screen change, or an inconsistent program state, can confuse or frustrate users.
-      </p>
-    </note>
-
-    <p>Sometimes side effects are unintended and can cause problems. For example, if you are playing a game 
-      and finish a level, and you notice that your score was reset to 0 in the next level, that may be an unitended side effect or bad design. 
-    </p>
-
-    <note>
-      <title>2.5.B.5</title>
-      <p>
-        Algorithms that look similar may behave differently with certain inputs or may produce different side effects. To determine 
-        whether two algorithms are equivalent, programmers compare their outputs and side effects using the same inputs, often by tracing 
-        the steps and tracking changes to variables and displayed output.
-      </p>
-    </note>
-
- <activity label="compare-algorithms-outputs-side-effects">
+      <activity label="compare-algorithms-outputs-side-effects">
        <statement>
         <p>
           Given the two algorithms below, do they have the same outputs and side effects?
@@ -686,8 +605,8 @@ for i in range(3):
     print("Hello")
 
 # Algorithm B
-count = 0
-while count &lt; 3:
+count = 1
+while count &lt;= 3:
     print("Hello")
     count += 1
         </code>
@@ -699,7 +618,8 @@ while count &lt; 3:
         <p>Same outputs and same side effects</p>
       </statement>
       <feedback>
-        <p>No, algorithm B has the additional side effect of updating the variable count.</p>
+        <p>No, the algorithms update different variables, which is a side effect.
+          </p>
       </feedback>
       </choice>
       <choice correct="yes">
@@ -707,7 +627,8 @@ while count &lt; 3:
         <p>Same outputs and different side effects</p>
       </statement>
       <feedback>
-        <p>Yes, the two algorithms produce the same output (printing "Hello" 3 times) but have different side effects (Algorithm A doesn't update any variables, while Algorithm B updates the variable count).</p>
+        <p>Yes, the two algorithms produce the same output (printing "Hello" 3 times) but have different side effects 
+          (Algorithm A updates variable <c>i</c> from 0 to 2, while Algorithm B updates the variable <c>count</c>) from 1 to 3.</p>
       </feedback>
       </choice>
       <choice>
@@ -728,6 +649,100 @@ while count &lt; 3:
       </choice>
       </choices>
      </activity> 
+
+
+      <note>
+      <title>2.5.B.4</title>
+      <p>
+        Side effects can impact the user experience. An unintended side effect, such as an incorrect variable update, an unexpected 
+        screen change, or an inconsistent program state, can confuse or frustrate users.
+      </p>
+    </note>
+
+    <p>Sometimes side effects are unintended and can cause problems. For example, if you are playing a game 
+      and finish a level, and you notice that your score was reset to 0 in the next level, that may be an unintended side effect or bad design. 
+    </p>
+
+    <activity label="side-effect-variable">
+       <statement>
+        <p>
+          The following two algorithms produce the same output. Which line of code is a side effect that one
+          of the algorithms has that the other does not?
+        </p>
+        <program language="python">
+        <code>
+# Algorithm A
+level = 1
+score = 10
+if score &lt; 10:
+   level = 1
+else:
+   level = 2
+print("You've reached level", level)
+
+# Algorithm B
+level = 1
+score = 10
+if score &gt;= 10:
+   level = 2
+   score = 0
+print("You've reached level", level)
+        </code>
+        </program>
+       </statement>
+       <choices randomize="yes">
+        <choice>
+        <statement>
+        <p>level = 2</p>
+        </statement>
+        <feedback>
+        <p>No. Both algorithms change <c>level</c> to 2 when <c>score</c> is 10, even though the boolean conditions are different.</p>
+        </feedback>
+        </choice>
+
+        <choice correct="yes">
+        <statement>
+        <p>score = 0</p>
+        </statement>
+        <feedback>
+        <p>Yes. Algorithm B changes <c>score</c> to 0 in the if-statement. This is a side effect of Algorithm B.  
+          Algorithm A does not change <c>score</c>.</p>
+        </feedback>
+        </choice>
+
+        <choice>
+        <statement>
+        <p>if score &gt;= 10:</p>
+        </statement>
+        <feedback>
+        <p>No. The algorithms use different boolean conditions, but the results are the same. 
+        </p>
+        </feedback>
+        </choice>
+
+        <choice>
+        <statement>
+        <p>else:</p>
+        </statement>
+        <feedback>
+        <p>No. Only one algorithm uses an <c>else</c> statement, but that is not a side effect because it does not change
+          a variable or the program's state. 
+        </p>
+        </feedback>
+        </choice>
+       </choices>
+     </activity>
+
+    <note>
+      <title>2.5.B.5</title>
+      <p>
+        Algorithms that look similar may behave differently with certain inputs or may produce different side effects. To determine 
+        whether two algorithms are equivalent, programmers compare their outputs and side effects using the same inputs, often by tracing 
+        the steps and tracking changes to variables and displayed output.
+      </p>
+    </note>
+
+ 
     </subsection>
 
     <subsection xml:id="coding-challenge-algorithms">
@@ -885,6 +900,7 @@ print(total)
     <title>Vocabulary Review</title>
 
     <activity label="vocab-algs">
+      <title>Vocabulary Review</title>
       <statement>
         <p>
           Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it

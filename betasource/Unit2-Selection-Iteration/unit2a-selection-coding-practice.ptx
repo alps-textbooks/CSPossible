@@ -325,7 +325,7 @@ class myTests(TestCaseGui):
         def contains(item, container):
             return item if item in container else None
 
-        self.assertEqual("age&gt;65", contains("age&gt;65", self.getEditorText().replace(' ', '')), 'Check for age &gt;= 65')
+        self.assertEqual("age&gt;=65", contains("age&gt;=65", self.getEditorText().replace(' ', '')), 'Check for age &gt;= 65')
         self.assertEqual('if', contains('if', self.getEditorText()), 'Check for if')
         self.assertEqual("elif", contains("elif", self.getEditorText().replace(' ', '')), 'Check for elif')
         self.assertEqual('else', contains('else', self.getEditorText()), 'Check for else')

@@ -200,8 +200,8 @@
     <statement>
         <p>Write code so that after x and y are defined, they are compared and if the value of x and y are the same 
           object the variable <c>value</c> will be set to <c>"x and y are the same"</c>; if x and y have the same 
-          value then <c>value</c> is <c>"x and y have the same value"</c>; and <c>value</c> is <c>"x and y are not 
-            similar"</c> if x and y do not fit the other conditionals.</p>
+          value then <c>value</c> is <c>"x and y have the same value"</c>;  and <c>value</c> is <c>"x and y have 
+            different values"</c>  if x and y do not fit the other conditionals.</p>
     </statement>
     <blocks numbered="left">
       <block order="2">
@@ -234,7 +234,7 @@
     <activity label="cndtnl-mixed-grade" xml:id="cndtnl-mixed-grade" numbered="yes" adaptive="yes" indentation="hide" language="python">
     <statement>
       <p>Create code that will set the variable <c>grade</c> to the grade equivalent (string) for a score. It 
-        should set <c>grade</c> to E for any value below 60, D for 61 to 69, C for 70 to 79, B for 80 to 89 and A 
+        should set <c>grade</c> to E for any value below 60, D for 60 to 69, C for 70 to 79, B for 80 to 89 and A 
         for 90 and above. For example, if the score is above 90, <c>grade</c> should be A.</p>
     </statement>
     <blocks numbered="left">

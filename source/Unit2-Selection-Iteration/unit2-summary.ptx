@@ -63,17 +63,17 @@
   <p>Review the following Unit 2 vocabulary:</p>
 
      <activity label="vocab-review-2-1-design">
-      <title>2-1 Design Vocabulary</title>
+      <title>2.1 Design Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in 2-1. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2.1. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Review the vocabulary in 2-1 and try again.</p>
+        <p>Review the vocabulary in 2.1 and try again.</p>
       </feedback>
 
       <cardsort>
@@ -105,17 +105,17 @@
       </activity>
 
     <activity label="vocab-review-2-1-copyright">
-      <title>2-1 Copyright Vocabulary</title>
+      <title>2.1 Copyright Vocabulary</title>
          <statement>
         <p>
-          Review the vocabulary in 2-1. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2.1. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Review the vocabulary in 2-1 and try again.</p>
+        <p>Review the vocabulary in 2.1 and try again.</p>
       </feedback>
       <cardsort>
         <match>
@@ -142,17 +142,17 @@
     </activity>
 
      <activity label="vocab-review-2-2-boolean">
-      <title>2-2 Boolean Vocabulary</title>
+      <title>2.2 Boolean Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in 2-2. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2.2. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Review the vocabulary in 2-2 and try again.</p>
+        <p>Review the vocabulary in 2.2 and try again.</p>
       </feedback>
 
       <cardsort>
@@ -178,17 +178,17 @@
     </activity>
 
      <activity label="vocab-review-2-3-selection">
-      <title>2-3 Selection Vocabulary</title>
+      <title>2.3 Selection Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in 2-3 Selection. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2.3 Selection. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Review the vocabulary in 2-3 and try again.</p>
+        <p>Review the vocabulary in 2.3 and try again.</p>
       </feedback>
 
       <cardsort>
@@ -211,17 +211,17 @@
       </cardsort>
     </activity>
        <activity label="vocab-loops-review">
-       <title>2-4 Iteration Vocabulary</title>
+       <title>2.4 Iteration Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in 2-4 Iteration. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2.4 Iteration. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Find the words in the 2-4 Iteration lesson above and try again.</p>
+        <p>Find the words in the 2.4 Iteration lesson above and try again.</p>
       </feedback>
 
       <cardsort>
@@ -253,16 +253,17 @@
        </activity>
 
     <activity label="vocab-review-2-5-algorithms">
+        <title>2.5 Algorithms Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in 2-5 Algorithms. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in 2.5 Algorithms. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Review the words in the 2-5 lesson and try again.</p>
+        <p>Review the words in the 2.5 lesson and try again.</p>
       </feedback>
 
       <cardsort>
@@ -310,16 +311,17 @@
     </activity>
 
       <activity label="vocab-review-2-6-errors">
+          <title>2.6 Errors Vocabulary</title>
       <statement>
         <p>
-          Review the vocabulary in lesson 2-6 Errors. Drag the vocabulary term from the left and drop it
+          Review the vocabulary in lesson 2.6 Errors. Drag the vocabulary term from the left and drop it
           on its correct definition on the right.
           Click the "Check Me" button to see if you are correct.
         </p>
       </statement>
 
       <feedback>
-        <p>Find the words in the lesson 2-6 Errors and try again.</p>
+        <p>Find the words in the lesson 2.6 Errors and try again.</p>
       </feedback>
 
       <cardsort>

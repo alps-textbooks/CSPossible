@@ -60,7 +60,7 @@
 
         <program interactive="activecode" language="python">
       <code>
- Print("Hello World
+ Print("Hello world
       </code>
       <tests>
           from unittest.gui import TestCaseGui
@@ -193,14 +193,42 @@ print("The average score is", average)
       </tests>
       </program>
     </activity>
+    </subsection>
+
+    <subsection xml:id="rubber-duck-AI-debugging">
+      <title>Rubber Duck and AI Tools for Debugging</title>
+      <idx><h>AI use</h><h>debugging</h></idx>
+      <idx>rubber duck debugging</idx>
+    
+     <image source="_static/Unit2images/rubberduck.jpg" alt="Rubber duck debugging" width="30%"/>
+
     <p>If you get stuck trying to find the bugs, sometimes another pair of eyes really helps. 
       Ask a friend if you get stuck or try explaining your code line by line
-      to someone or even a rubber duck. <url href="https://rubberduckdebugging.com/">Rubber duck debugging</url> is a
-      lot of fun! This site also has a virtual rubber duck AI tool that can help you. 
-      You can also use AI tools to help you debug your code, but remember that the AI tool may not always be correct, 
-      so you should always check the suggestions and test your code.
+      to someone or even a rubber duck. <url
+      href="https://rubberduckdebugging.com/">Rubber duck debugging</url> is a
+      lot of fun! 
     </p>
-     <image source="_static/Unit2images/rubberduck.jpg" alt="Rubber duck debugging" width="30%"/>
+    
+        <video youtube="it0Xpv5QD3k" label="video-rubber-duck-debugging" />
+
+
+      <p>If you don't have a rubber duck, try a virtual AI rubber duck like the  <url
+      href="https://rubberduckdebugging.com/cyberduck/">Cyber Duck chatbot</url> or
+      <url href="https://cs50.ai/">CS50 AI Chat</url> (available with a Github account) or 
+      <url href="https://spiggiecode.github.io/rubberduck/">a duck that just squeeks</url>! 
+      </p>
+     
+
+      <p>
+        Many programmers use Gen AI tools to help them debug their code. Some AI tools like Co-pilot 
+        are built into the IDE and can suggest code to fix errors. 
+        Other AI tools like ChatGPT or Gemini can be used to explain what your code is doing 
+        and suggest ways to fix errors. However, remember that AI tools are not perfect and can make 
+        mistakes, so it is important to verify any suggestions they provide by testing your code 
+        and checking the results.
+      </p>
+        
+     
   </subsection>
 
   <subsection>
