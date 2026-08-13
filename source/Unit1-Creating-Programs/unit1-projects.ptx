@@ -206,6 +206,27 @@ myTests().main()
 </program>
 </activity>
 
+     <activity label="u1project1-reflection1">
+      <title>Project Reflection 1</title>
+      <statement>
+        <p>Describe the purpose and the users of your code. Describe an input and output of the 
+            code. 
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="u1project1-reflection2">
+      <title>Project Reflection 2</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the code, 
+            and how you fixed your code to remove the bug. How did you test the code to make 
+            sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
 </subsection>
 
 
@@ -371,6 +392,26 @@ myTests().main()
 </program>
 </activity>
 
+     <activity label="u1project2-reflection1">
+      <title>Project Reflection 1</title>
+      <statement>
+        <p>Describe the purpose and the users of your code. Describe an input and output of the 
+            code. 
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="u1project2-reflection2">
+      <title>Project Reflection 2</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the code, 
+            and how you fixed your code to remove the bug. How did you test the code to make 
+            sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
 
 </subsection>
 </section>
