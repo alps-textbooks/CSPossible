@@ -3,7 +3,7 @@
 <section xml:id="unit2b-coding-practice">
   <time minutes="90" />
 
-  <title>Unit 2b Loops Coding Practice Exercises</title>
+  <title>Unit 2 Loops Coding Practice Exercises</title>
 
   <introduction>
     <p>This section contains coding practice exercises using loops. There are 3 subsections to practice 
@@ -284,10 +284,35 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertIn("range(10,21)", self.getEditorText(), "Use a for loop with range(10,21)")
+                self.assertIn("range(10,21)", self.getEditorText().replace(" ", ""), "Use a for loop with range(10,21)")
                 self.assertEqual(165, sum, "Testing that you got the right sum")
-                self.assertNotRegex(self.getEditorText(), "165", "Testing that you did not hard code the answer.")
+                self.assertNotIn("165", self.getEditorText(), "Testing that you did not hard code the answer.")
 
+        myTests().main()
+      </tests>
+    </program>
+  </activity>
+
+  <activity label="countdown-by5">
+    <statement>
+      <p>The following code counts down from 10 to 1 using a step of -1. Remember that the range function can include (start, stop, step)
+        where it counts from start up to stop using the step to change to the next value.
+        Change the range to count down from 20 to 5 (including 5) by 5's.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+        for count in range(10, 0, -1):
+            print(count)
+
+      </code>
+      <tests>
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertIn("range(20,4,-5)", self.getEditorText().replace(" ", ""), "Change the range")
+                self.assertIn("20\n15\n10\n5", self.getOutput(), "Checking output")
+                
         myTests().main()
       </tests>
     </program>
@@ -320,7 +345,7 @@
                 self.assertIn("11", self.getEditorText(), "Use a for loop with range(1, 11) or range(11)")
                 self.assertIn("*", self.getEditorText(), "Use number*number to add the square of each number to the sum")
                 self.assertEqual(385, sum, "Testing that you got the right sum")
-                self.assertNotRegex(self.getEditorText(), "385", "Testing that you did not hard code the answer.")
+                self.assertNotIn("385", self.getEditorText(), "Testing that you did not hard code the answer.")
 
         myTests().main()
       </tests>
@@ -368,10 +393,11 @@
 
         class myTests(TestCaseGui):
             def testOne(self):
-                self.assertIn("while money&lt;50000", self.getEditorText().replace(" ", ""), "Use a while money &lt; 50000:")
-                self.assertIn("money=money*1.005", self.getEditorText().replace(" ", ""), "Use money = money * 1.005 for interest")
+                code = self.getEditorText().replace(" ", "")
+                self.assertIn("whilemoney&lt;50000", code, "Use a while money &lt; 50000:")
+                self.assertIn("money=money*1.005", code, "Use money = money * 1.005 for interest")
                 self.assertEqual(122, months, "Testing you calculated the right answer.")
-                self.assertNotRegex(self.getEditorText(), "122", "Testing that you did not hard code the answer.")
+                self.assertNotIn("122", self.getEditorText(), "Testing that you did not hard code the answer.")
 
         myTests().main()
       </tests>

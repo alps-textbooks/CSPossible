@@ -32,14 +32,14 @@
       </block>
       <block order="3">
         <choice correct="yes">
-        <cline>        if number % 2 == 1: </cline>   
+        <cline>    if number % 2 == 1: </cline>   
         </choice>
         <choice>
-          <cline>      if number % 2 == 0: </cline>
+        <cline>    if number % 2 == 0: </cline>
         </choice>
         </block>
         <block order="4">
-        <cline>            sum = sum + number</cline>
+        <cline>        sum = sum + number</cline>
       </block>
     </blocks>
   </activity>
@@ -205,8 +205,9 @@
 
   <statement>
     <p>The following program segment should calculate the sum of all odd numbers between 0 and 30. 
-        Start by initializing the variable <c>sum</c> and loop through the odd numbers. The blocks 
-        have been mixed up and include an extra block that isn't needed in the solution. Drag the 
+        Start by initializing the variable <c>sum</c> and loop through the odd numbers. Remember
+        that the range function can take three arguments: start, stop, and step. The blocks 
+        have been mixed up and include extra blocks that aren't needed in the solution. Drag the 
         needed blocks from the left and put them in the correct order on the right. Click the 
         <q>Check Me</q> button to check your solution.</p>
   </statement>
@@ -224,10 +225,6 @@
       <choice>
         <cline>for number in range(0,29,2):</cline>
       </choice>
-    </block>
-
-    <block order="3">
-      <cline>for number in numbers:</cline>
     </block>
 
     <block order="4">
