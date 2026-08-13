@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-selection-project">
+  <time minutes="45" />
+
+  <title>Unit 2 Selection Project</title>
+
+  <introduction>
+  <p>
+    The Smart Parking Fee Calculator project was designed by Leigh Anne Fitz of Virginia Beach City Public Schools
+    and the autograding tests were designed by Kate McDonnell of Cherry Creek Schools in Colorado.
+  </p>
+  </introduction>
+
+ <subsection xml:id="parking-fee-calculator">
+  <title>Smart Parking Fee Calculator</title>
+<p>
+A downtown parking garage wants to replace its manual parking-fee system with a Python program. The 
+program will ask a customer for information about their parking visit and determine how much they 
+owe.
+The garage has different rates depending on how long the customer parked and whether they are a garage member. The program should also 
+determine whether the customer qualifies for free parking.
+</p>
+<p>
+Create a Python program that determines a customer's parking fee based on information they provide. Your program should make decisions 
+using Boolean expressions and display a personalized receipt. Be sure to format all dollar amounts in the receipt to two decimal places.
+</p>
+
+<p>Program Requirements: Ask the user for the following information and store the input into variables.
+  </p>
+  <ul>
+    <li>Customer name</li>
+    <li>Number of hours parked</li>
+    <li>Whether they are a garage member (yes or no)</li>
+    <li>Whether they parked on a weekend (yes or no)</li>
+  </ul>
+
+    <table xml:id="parking-rates">
+      <title>Parking Rates</title>
+      <tabular>
+        <row header="yes">
+           <cell bottom="minor">Parking Time </cell>
+          <cell bottom="minor">  Regular Customer </cell>
+           <cell bottom="minor">  Member </cell>
+         </row>
+        <row>  
+         <cell> 0.5 to 2 hours </cell>
+         <cell> $5 </cell>
+         <cell> $3 </cell>
+        </row>
+        <row>  
+         <cell> More than 2 hours to 4 hours </cell>
+         <cell> $10 </cell>
+         <cell> $7 </cell>
+        </row>
+        <row>  
+         <cell> More than 4 hours to 8 hours </cell>
+         <cell> $18 </cell>
+         <cell> $12 </cell>
+        </row>
+        <row>  
+         <cell> More than 8 hours </cell>
+         <cell> $25 </cell>
+         <cell> $18 </cell>
+        </row>
+      </tabular>
+</table>
+
+<p>Special Rules:</p>
+<ul>
+    <li>Members receive a discounted rate (see table above).</li>
+    <li>Parking for 30 minutes or less is free.</li>
+    <li>On weekends, all customers receive an additional 20% discount.</li>
+    <li>A customer who parks for more than 12 hours receives a warning that they have exceeded the recommended parking time.</li>
+</ul>
+
+<table>
+    <title>Sample Outputs</title>
+    <tabular>
+         <row header="yes">
+           <cell bottom="minor">Regular </cell>
+          <cell bottom="minor">Weekend </cell>
+           <cell bottom="minor">Free Parking </cell>
+           <cell bottom="minor">Long-Term Parking </cell>
+         </row>
+        <row>  
+         <cell bottom="minor"> 
+<pre>
+Inputs:
+Customer name: Morgan
+Hours parked: 3
+Are you a member? no
+Is today a weekend? no
+</pre>
+       </cell>
+         <cell bottom="minor"> 
+<pre>
+Inputs:
+Customer name: Jordan
+Hours parked: 5
+Are you a member? yes
+Is today a weekend? yes 
+</pre>    
+        </cell>
+         <cell bottom="minor"> 
+<pre>
+Inputs:
+Customer name: Alex
+Hours parked: 0.5
+Are you a member? no
+Is today a weekend? no
+</pre>
+        </cell>
+        <cell bottom="minor">
+            <pre>
+Inputs:
+Customer name: Taylor
+Hours parked: 14
+Are you a member? no
+Is today a weekend? no
+            </pre>
+        </cell>
+        </row>
+        <row>
+<cell>
+<pre>
+------------------------------
+           RECEIPT
+------------------------------
+Customer: Morgan
+Parking Time: 3.0 hours
+Customer Type: Regular
+
+Parking Fee: $10.00
+Weekend Discount: $0.00
+
+------------------------------
+Amount Due: $10.00
+------------------------------
+
+Thank you for parking with us!
+</pre>
+        </cell>
+<cell>
+    <pre>
+------------------------------
+            RECEIPT
+------------------------------
+Customer: Jordan
+Parking Time: 5.0 hours
+Customer Type: Member
+
+Parking Fee: $12.00
+Weekend Discount: $2.40
+
+------------------------------
+Amount Due: $9.60
+------------------------------
+
+Thank you for parking with us!
+       
+    </pre>
+</cell>
+<cell>
+    <pre>
+------------------------------
+            RECEIPT
+------------------------------
+Customer: Alex
+Parking Time: 0.5 hours
+Customer Type: Regular
+
+Parking Fee: $0.00
+
+Amount Due: $0.00
+
+Your parking visit is free!
+       
+    </pre>
+</cell>
+<cell>
+    <pre>
+------------------------------
+            RECEIPT
+------------------------------
+Customer: Taylor
+Parking Time: 14.0 hours
+Customer Type: Regular
+
+Parking Fee: $25.00
+
+Amount Due: $25.00
+
+WARNING: You have exceeded the 
+recommended 12-hour parking time.
+    </pre>
+</cell>
+        </row>
+</tabular>
+</table>
+
+
+<project label="unit2-selection-project-parking-fee-calculator">
+    <title>Smart Parking Fee Calculator</title>
+  <statement>
+    <p>
+Create a Python program that determines a customer's parking fee based on information they provide. 
+Your program should make decisions using Boolean expressions and display a personalized receipt. 
+Be sure to format all dollar amounts in the receipt to two decimal places in <c>print</c> using <c>format(num, ".2f")</c>.
+    </p>
+</statement>
+<program interactive="activecode" language="python">
+<code>
+# Smart Parking Calculator
+# This program calculates the cost of parking
+# based on parking time, membership, and weekend status.
+
+# Get information from the customer
+name = 
+hours = 
+member = 
+weekend = 
+
+# Determine the parking fee
+# Remember:
+# 0.5 hours or less = FREE
+# 0.5-2 hours = $5 regular / $3 member
+# More than 2-4 hours = $10 regular / $7 member
+# More than 4-8 hours = $18 regular / $12 member
+# More than 8 hours = $25 regular / $18 member
+
+# YOUR CODE HERE
+parking_fee = 
+
+# Determine the weekend discount
+# If it is a weekend, calculate a 20% discount.
+# Otherwise, there is no discount.
+
+# YOUR CODE HERE
+discount = 
+
+# Calculate the final amount
+amount_due = 
+
+# Display the receipt
+
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("if", code, "Use if statements")
+        self.assertIn("else", code, "Use else statements")
+        self.assertIn("==",code,"Use == to compare strings to yes or no")
+        
+myTests().main()
+</tests>
+</program>
+</project>
+</subsection>
+
+<subsection>
+    <title>Project Reflection</title>
+
+     <activity label="u2project-selection-reflection">
+      <title>Project Reflection: Selection</title>
+      <statement>
+        <p>Describe a selection statement that you used in your app. What was the condition and 
+          what happened when the condition was true or false? How did you test both branches of the selection statement to make sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="u2project-error-reflection">
+      <title>Project Reflection: Errors</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the code, 
+            and how you fixed your code to remove the bug. How did you test the code to make 
+            sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+</subsection>
+  
+ 
+</section>

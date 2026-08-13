@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit2-loops-coding-project">
+  <time minutes="45" />
+
+  <title>Unit 2 Loops Project</title>
+
+  <introduction>
+   <p>This project was designed by Leigh Anne Fitz of Virginia Beach City Public Schools
+    and the autograding tests were designed by Kate McDonnell of Cherry Creek Schools in Colorado.
+  </p>
+  </introduction>
+
+  <subsection xml:id="seven-day-fitness-challenge">
+    <title>Seven-Day Fitness Challenge</title>
+
+     <p>
+      Your school is running a Seven-Day Fitness Challenge. Students will enter
+      the number of minutes they exercised each day for one week. The program will
+      analyze their activity and determine whether they met their daily goals.
+    Create a Python program that helps a student track their exercise for one
+      week.
+    </p>
+    <p>
+     For each of the 7 days, the program should:
+    </p>
+    <ol>
+      <li>Ask the user how many minutes they exercised.</li>
+      <li>Verify that the number entered is valid.</li>
+      <li>Determine the student's activity level for that day.</li>
+      <li>Display the result.</li>
+      <li>Keep track of the total exercise minutes.</li>
+    </ol>
+
+    <p>
+      At the end of the week, the program should calculate the student's average
+      daily exercise time and provide an overall assessment.
+    </p>
+
+    <table xml:id="activity-levels">
+      <title>Activity Levels</title>
+      <tabular>
+        <row header="yes">
+          <cell bottom="minor">Daily Exercise Minutes</cell>
+          <cell bottom="minor">Activity Level</cell>
+        </row>
+        <row>
+          <cell>0 - 19</cell>
+          <cell>Needs Improvement</cell>
+        </row>
+        <row>
+          <cell>20 - 39</cell>
+          <cell>Good</cell>
+        </row>
+        <row>
+          <cell>40 - 59</cell>
+          <cell>Great</cell>
+        </row>
+        <row>
+          <cell>60 or more</cell>
+          <cell>Excellent</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      For example:
+    </p>
+
+    <pre>
+        Day 1: 45 minutes
+
+        Activity Level: Great
+    </pre>
+
+
+      <p>
+        Input Validation: Exercise minutes must be between 0 and 300. If the user enters an
+        invalid value, the program should continue asking until a valid value
+        is entered. For example:
+      </p>
+
+      <pre>
+    How many minutes did you exercise? -20
+
+    Please enter a value between 0 and 300.
+
+    How many minutes did you exercise? 400
+
+    Please enter a value between 0 and 300.
+
+    How many minutes did you exercise? 35
+
+    Activity Level: Good
+      </pre>
+ 
+ <p>Overall Weekly Assessment: 
+        At the end of the week, determine an overall assessment based on the
+        student's average daily exercise time.
+      </p>
+
+      <table xml:id="overall-assessment">
+        <title>Overall Assessment</title>
+        <tabular>
+          <row header="yes">
+            <cell bottom="minor">Average Daily Minutes</cell>
+            <cell bottom="minor">Assessment</cell>
+          </row>
+          <row>
+            <cell>Less than 20</cell>
+            <cell>Keep Working!</cell>
+          </row>
+          <row>
+            <cell>20 - 39</cell>
+            <cell>Good Job!</cell>
+          </row>
+          <row>
+            <cell>40 - 59</cell>
+            <cell>Great Work!</cell>
+          </row>
+          <row>
+            <cell>60 or more</cell>
+            <cell>Fitness Champion!</cell>
+          </row>
+        </tabular>
+      </table>
+
+    <p>Sample Output:</p>
+
+      <pre>
+========================================
+       SEVEN-DAY FITNESS CHALLENGE
+========================================
+
+Day 1: 30 minutes
+
+Activity Level: Good
+
+
+Day 2: 45 minutes
+
+Activity Level: Great
+
+
+Day 3: 15 minutes
+
+Activity Level: Needs Improvement
+
+
+Day 4: 60 minutes
+
+Activity Level: Excellent
+
+
+Day 5: 40 minutes
+
+Activity Level: Great
+
+
+Day 6: 25 minutes
+
+Activity Level: Good
+
+
+Day 7: 50 minutes
+
+Activity Level: Great
+
+
+========================================
+             WEEKLY SUMMARY
+========================================
+
+Total Exercise Minutes: 265
+
+Average Daily Minutes: 37.86
+
+Overall Assessment: Good Job!
+
+========================================
+      </pre>
+    
+
+    <project label="project-fitness-challenge">
+      <title>Seven-Day Fitness Challenge</title>
+
+      <statement>
+        <p>
+          Create a Python program that helps a student track their exercise
+          for one week. The program should use a loop toask for the number of exercise
+          minutes for each of 7 days, validate each entry, determine the
+          activity level for each day, keep track of the total exercise
+          minutes, calculate the average daily exercise time, and provide an
+          overall assessment.
+        </p>
+
+        <p>
+          Exercise minutes must be between 0 and 300. Use a
+          <c>while</c> loop to continue asking for a valid value when the
+          user enters an invalid number.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+# Seven-Day Fitness Challenge
+
+# Print the three lines for the Header shown in the sample output
+
+
+# Initialize the accumulator for total exercise minutes
+total_minutes = 
+
+
+# Repeat for each of the 7 days
+for day in 
+
+
+    # Get the number of exercise minutes from the user
+    minutes = 
+
+
+    # Use a while loop to make sure minutes
+    # is between 0 and 300.
+    # If the value is invalid, ask the user again.
+
+
+
+    # Determine the activity level:
+    # 0-19 minutes: Needs Improvement
+    # 20-39 minutes: Good
+    # 40-59 minutes: Great
+    # 60+ minutes: Excellent
+    activity_level = 
+
+
+    # Display the number of minutes in the form
+    # Day __: ___ minutes
+    # Fill in the correct day number and the number
+    # of minutes entered
+
+
+    # Display the activity level in the form
+    # Activity Level: ______
+    # Fill in the blank with the correct activity level comment
+
+
+
+    # Add today's minutes to the total
+
+
+
+# Calculate the average number of minutes per day
+average_minutes = 
+
+
+# Determine the overall assessment
+# Less than 20: Keep Working!
+# 20-39: Good Job!
+# 40-59: Great Work!
+# 60+: Fitness Champion!
+assessment = 
+
+
+# Display the weekly summary
+
+        </code>
+     <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("range", code, "Use range to repeat for 7 days")
+        self.assertIn("if", code, "Use if statements")
+        self.assertIn("while",code,"Use while loops for input validation")
+        
+myTests().main()
+     </tests>
+    </program>
+    </project>
+  </subsection>
+  
+
+  <subsection xml:id="unit2-project2-reflection">
+    <title>Project Reflection</title>
+
+    <activity label="u2project2-iteration-reflection">
+      <title>Project Reflection: Iteration</title>
+        <statement>
+          <p>
+            Consider the first iteration statement in your project code above (the for loop). 
+            Identify the loop variable by writing it below.
+            Identify the number of times the body of your iteration statement will execute. 
+            Explain how a for loop using range cannot cause an infinite loop. 
+          </p>
+        </statement>
+        <response/>
+      </activity>
+       
+
+    <activity label="u2project2-whileloop-reflection">
+      <title>Project Reflection: Loops and Input Validation</title>
+      <statement>
+        <p>
+          Describe how you used a <c>while</c> loop to validate input. 
+          What happened when the user entered an invalid value?
+          How did you test your program to make sure that invalid values were
+          rejected and valid values were accepted?
+          Describe a condition or error that would cause your iteration statement to not terminate and cause an infinite loop. 
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+
+  </subsection>
+
+</section>
