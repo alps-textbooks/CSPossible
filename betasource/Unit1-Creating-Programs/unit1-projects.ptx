@@ -7,7 +7,8 @@
 
   <introduction>
   <p>
-    These projects were designed by Leigh Anne Fitz of Virginia Beach City Public Schools.  
+    These projects were designed by Leigh Anne Fitz of Virginia Beach City Public Schools
+    and the autograding tests were designed by Kate McDonnell of Cherry Creek Schools in Colorado.
   </p>
   </introduction>
 
@@ -62,7 +63,7 @@ Miles After Last Stop: 45
 </pre>
 
 
-  <activity label="unit1-project1-roadtrip">
+  <project label="unit1-project1-roadtrip">
   <statement>
     <p>Calculate a road trip budget from the inputs of driver name, total trip miles, vehicle miles 
         per gallon, gas price per gallon, number of travelers, and food budget per person. Calculate
@@ -204,7 +205,7 @@ class myTests(TestCaseGui):
 myTests().main()
 </tests>
 </program>
-</activity>
+</project>
 
      <activity label="u1project1-reflection1">
       <title>Project Reflection 1</title>
@@ -302,7 +303,7 @@ We look forward to seeing you!
 </pre>
 
 
-<activity label="unit1-project2-invitation">
+<project label="unit1-project2-invitation">
   <statement>
     <p>Create a personalized invitation and name badge from the inputs of  
         first name, last name, favorite hobby, favorite color, and city. 
@@ -390,7 +391,7 @@ class myTests(TestCaseGui):
 myTests().main()
 </tests>
 </program>
-</activity>
+</project>
 
      <activity label="u1project2-reflection1">
       <title>Project Reflection 1</title>
