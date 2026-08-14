@@ -187,7 +187,7 @@ Overall Assessment: Good Job!
       <statement>
         <p>
           Create a Python program that helps a student track their exercise
-          for one week. The program should use a loop toask for the number of exercise
+          for one week. The program should use a loop to ask for the number of exercise
           minutes for each of 7 days, validate each entry, determine the
           activity level for each day, keep track of the total exercise
           minutes, calculate the average daily exercise time, and provide an
