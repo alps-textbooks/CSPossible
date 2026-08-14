@@ -6,7 +6,7 @@
  
   <introduction>
    <p>Quick Links:
-      <xref text="global" ref="procedures,function-call-defn, arguments,procedural-abstraction,
+      <xref text="global" ref="procedures,function-call-defn, arguments, return-values,procedural-abstraction,
       LOs-3-2, vocab-3-2"/>
     </p>
     <p>
@@ -48,7 +48,8 @@
      the function needs to do its job, for example what to print for the <c>print("Print this!")</c> function. 
      Some functions like <c>input()</c> or <c>random.randint()</c> also return values back like
      the user's input or a random number that we usually store in a variable.  A function is like a black box
-      where you know what goes in and what comes out, but not necessarily how it works inside. 
+      where you know what goes in and what comes out, but not necessarily how it works inside. This is a powerful abstraction 
+      that allows our programs to be more complex without being overwhelming.
     </p>
 
     <program language="python">
@@ -66,7 +67,7 @@
       </code>
     </program>
 
-    <image source="_static/Unit3images/function.png" alt="Function with arguments and return value" width="65%"/>
+    <image source="_static/Unit3images/function.png" alt="Function with arguments and return value" width="55%"/>
 
      <idx><h>unplugged</h><h>functions</h></idx>
     <idx><h>projects</h><h>unplugged functions</h></idx>
@@ -112,10 +113,21 @@
   </subsection>
 
   <subsection xml:id="function-call-defn">
-    <title>Procedure/Function Call and Definition</title>
+    <title>Procedure/Function Calls and Definitions</title>
+    <idx>function call</idx>
+    <idx>function definition</idx>
+    <idx>procedure call</idx>
+    <idx>procedure definition</idx>
 
-  
-<activity label="repeatedcode-this-old-man">
+  <p>Let's learn how to define our own funtions and call them to do their jobs!
+    The main reasons to divide up a program into multiple functions are to organize the code to reduce its complexity and 
+    to avoid repetition of code. 
+    For example, the "This Old Man" song below has a lot of repetition    
+    (<url href="https://www.youtube.com/watch?v=Di23O5cN4ZU">listen here</url>).
+    Instead of writing the same code over and over in order to print the song, we can write functions that for different
+    parts of the song and run them when needed. Click on all lines of code that are repeated in the song below, and then we will learn how they can be replaced with a function called <c>chorus()</c>.
+  </p>
+    <activity label="repeatedcode-this-old-man">
   <statement>
     <p>
       Click on all the lines that are completely identical and repeated.
@@ -135,14 +147,44 @@
     <cline><area correct="no">print("He played knick-knack on my shoe.")</area></cline>
     <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
     <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
-    <cline><area correct="no">print("This old man, he played three.")</area></cline>
-    <cline><area correct="no">print("He played knick-knack on my knee.")</area></cline>
-    <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
-    <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
   </areas>
 </activity>
 
- <note>
+ <p>There are two steps to writing a function: the <term>function definition</term> and the <term>function call</term>. 
+  A function in Python is defined by using the keyword <c>def</c> followed by the function name which the programmer chooses. 
+  Indented inside the function, we write the code that will be executed when the function is called. 
+  We can call a function or procedure by using its name, for example <c>chorus()</c>. Functions always have parentheses
+ () after their name even if it's empty parentheses. In Python, functions always have to be defined before they can be called, so  
+ programmers put the function definitions at the top of the program and the main program below.</p>
+
+ <program language="python">
+      <code>
+  # Function definition
+  def functionName():
+      &lt;block of statements&gt;
+
+  # Function call
+  functionName() 
+      </code>
+    </program>
+
+       <p>In AP CSP pseudocode, functions are called <term>procedures</term>, and the keyword <c>procedure</c> is used instead of <c>def</c> to define a function. Curly braces are used to enclose the block of statements, insead of just indentation. Procedure calls
+      just use the name of the procedure with parentheses like in Python.</p>
+
+    <program language="python">
+      <code>
+  # AP pseudocode procedure definition
+  procedure procName()
+  {
+      &lt;block of statements&gt;
+  }
+
+  # AP pseudocode procedure call
+  procName() 
+      </code>
+</program>
+ 
+<note>
       <title>3.2.B.1</title>
       <p>
         Calling a procedure runs a named sequence of steps, which helps programs reuse
@@ -160,6 +202,11 @@
       </p>
     </note>
 
+<p>When a function is called to do its job, the computer jumps to the function definition and runs the code inside it. 
+  When the function is finished, the computer jumps back to the line after the function call and continues running the program. 
+  See how the <c>chorus()</c> function is called in the code below by clicking on the next button. Watch the red arrow as the program jumps to the function definition and then returns to the line after the function call. Notice how we have reduced repetition of
+  code by abstracting the chorus into a function that can be called multiple times. 
+</p>
 <activity label="codelensSong1">
   <statement>
     <p>
@@ -187,24 +234,9 @@ chorus()
   </program>
 </activity>
 
-    
 
-      <note>
-      <title>3.2.A.6</title>
-      <p>
-        A procedure is defined with a name and a list of zero or more parameters. When
-        the following code runs, a procedure named <c>pName</c> is defined with zero or
-        more parameters (<c>p1, p2, ...</c>). When the procedure is called, the statements
-        in <c>&lt;block of statements&gt;</c> execute.
-      </p>
-      <pre>
-procedure pName(p1, p2, ...)
-{
-   &lt;block of statements&gt;
-}</pre>
-    </note>
-
-  <note>
+  
+    <note>
       <title>3.2.A.2</title>
       <p>
         If a procedure does not need any input information to complete its intended task,
@@ -214,6 +246,311 @@ procedure pName(p1, p2, ...)
       </p>
     </note>
 
+    <note>
+      <title>3.2.A.9</title>
+      <p>
+        Defining a procedure creates the named steps, but the code inside runs only when
+        the procedure is called.
+      </p>
+    </note>
+  
+     <p>
+      Try writing your own function calls below to reduce repetition of code and organize your program.
+    </p>
+
+    <activity label="song-add-calls">
+      <statement>
+        <p>
+          Replace the repeated chorus lines in the code below with a function call to <c>chorus()</c> to reduce repetition of code. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+def chorus():
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+# Main program
+print("This old man, he played one.")
+print("He played knick-knack on my thumb.")
+chorus()
+
+print("This old man, he played two.")
+print("He played knick-knack on my shoe.")
+# Replace the lines below with a chorus function call
+print("With a knick-knack paddywhack, give a dog a bone,")
+print("This old man came rolling home.")
+
+print("This old man, he played three.")
+print("He played knick-knack on my knee.")
+# Replace the lines below with a chorus function call
+print("With a knick-knack paddywhack, give a dog a bone,")
+print("This old man came rolling home.")
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        count = self.getEditorText().count("chorus()")
+        self.assertLessEqual(4, count, "Call chorus() at least twice more")
+        count = self.getEditorText().count("With a knick-knack paddywhack")
+        self.assertEqual(1, count, "Use chorus() instead of repeated lines \"With a knick-knack paddywhack\"")
+
+myTests().main()
+          </tests>
+          </program>
+          </activity>
+
+    <activity label="songMethodsTrace">
+      <statement>
+        <p>Trace through the code below and determine what it prints.</p>
+        <program language="python">
+          <code>
+def fruit():
+    print("apples and bananas!")
+
+def song():
+    print("I like to eat, eat, eat")
+    fruit()
+    fruit()
+
+song()
+          </code>
+        </program>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>I like to eat eat eat</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Try tracing through the song function and see what happens when it
+              calls the other functions.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>I like to eat eat eat fruit</p>
+          </statement>
+
+          <feedback>
+            <p>
+              There is a fruit() function but it does not print out the word
+              fruit.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>I like to eat, eat, eat apples and bananas!</p>
+          </statement>
+
+          <feedback>
+            <p>
+              There are 2 calls to the fruit() function in song().
+            </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p><pre>
+I like to eat eat eat
+apples and bananas!
+apples and bananas!</pre></p>
+          </statement>
+
+          <feedback>
+            <p>
+              Yes, song() prints the first line and then calls fruit() twice to print the other lines.
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+  </subsection>
+
+  <subsection xml:id="arguments">
+    <title>Arguments and Parameters</title>
+
+    <idx>arguments</idx>
+    <idx>parameters</idx>
+
+    <p>
+  Let’s take another look at the <i>This Old Man</i> song and see if we can
+  replace more repeated code. Each verse of the song is similar except it uses a different number and rhyme.
+  If we can pull these out into variables, we can write a single function that can print any verse of the song!
+  Click on the words that are different in the lines that are repeated to
+  discover what variables we need to add to the functions.
+</p>
+
+<activity label="this-old-man-find-different-words">
+  <statement>
+    <p>
+      Click on the words that are different in the repeated lines.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>
+      Look for lines that are similar except for a different number or action
+      and click on those words.
+    </p>
+  </feedback>
+
+  <areas>
+    <cline><area correct="no">print("This old man, he played</area> <area correct="yes">one</area><area correct="no">.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my</area> <area correct="yes">thumb</area><area correct="no">.")</area></cline>
+    <cline><area correct="no">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="no">print("This old man came rolling home.")</area></cline>
+    <cline><area correct="no">print("This old man, he played</area> <area correct="yes">two</area><area correct="no">.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my</area> <area correct="yes">shoe</area><area correct="no">.")</area></cline>
+  <cline><area correct="no">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="no">print("This old man came rolling home.")</area></cline>
+  </areas>
+</activity>
+
+
+
+<p>
+  We can make functions even more powerful and more abstract by giving them
+  parameters for the data that they need to do their job. A
+  <term>parameter</term> is a variable listed in the definition of a function
+  and can be used inside the function body. This allows values, called
+  <term>arguments</term>, to be passed into the function. The argument value is copied into the 
+  corresponding parameter variable. Many people use the terms "parameter" and "argument" interchangeably, but formally, 
+  the parameter is the variable in the function definition and the argument is the value passed to the function when it is called. 
+</p>
+<p>
+  For example, here is a procedure called <c>forward</c> with a parameter variable called <c>pixels</c> that we used with turtles 
+  with procedure calls like <c>forward(50)</c> telling it to move forward 40 or 100 pixels. The value 40 is the argument that is passed to the parameter variable <c>pixels</c> in the procedure definition.
+</p>
+
+  <image source="_static/Unit3images/procedure-defn-call.png" alt="Parameter and Argument" width="90%"/>
+
+ <note>
+      <title>3.2.A.3</title>
+      <p>
+        Procedures can use parameters to receive input. A <term>parameter</term> is a variable name
+        listed in the procedure definition. An <term>argument</term> is the actual value provided
+        when the procedure is called.
+      </p>
+    </note>
+
+<p>Going back to our song, we can make a function called <c>verse</c> that takes the number and the rhyme as parameters and uses them to 
+  print any verse! The parameter variables <c>number</c> and <c>rhyme</c> will hold different values each time the function is called. </p>
+
+<program language="python"> 
+  <code> 
+# This function prints a verse for a given number and rhyme. 
+# @param number - the number used in the verse 
+# @param rhyme - the word that rhymes with the number
+
+def verse(number, rhyme):
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+</code>
+</program>
+
+<p>The <c>verse</c> function can now be used to print any verse of the song. The values passed to the function become the values of the parameter variables. The main part of the program can now mostly be calls to the <c>verse</c> function. Main program code often looks like an outline for the program, calling functions to do the work. </p>
+
+<program language="python"> 
+  <code> 
+verse("one", "thumb")
+verse("two", "shoe")
+</code>
+</program>
+
+<p>Notice that the same function is called two times with different arguments. When <c>verse("one", "thumb")</c> is called, the 
+  parameter <c>number</c> gets the value <c>"one"</c> and the parameter <c>rhyme</c> gets the value <c>"thumb"</c>. When <c>verse("two", "shoe")</c> is called, the same parameters receive different values. The function does not need to change. The 
+  arguments provide the values that makes each verse different. </p>
+
+  <image source="_static/Unit3images/procedure-verse-call.png" alt="Calling verse(number, rhyme)" width="70%"/>
+
+
+<activity label="codelensSong2"> 
+  <statement> 
+    <p> Click on the next button below the code to step through the code. Watch the red arrow jump to the <c>verse</c> function each time 
+      it is called. Pay attention to how the arguments are passed into the parameter variables. 
+    </p> </statement>
+
+<program interactive="codelens" language="python" label="codeLens3" xml:id="codelensid3"> 
+  <code>
+def chorus(): 
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+def verse(number, rhyme): 
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+
+verse("one", "thumb")
+verse("two", "shoe")
+</code>
+</program>
+</activity>
+
+<p> Let’s try adding more verses to the song. With the power of abstraction using a function with parameters, 
+  it becomes very easy to add more verses to the song, just by calling the <c>verse</c> function with different arguments.
+  Parameters make it more general, flexible, and reusable! 
+ </p>
+
+<activity label="ThisOldManSong2"> 
+  <statement> 
+    <p>Run the following code to see the song <i>This Old Man</i> using the <c>verse</c> function. 
+  Add another verse using <c>"three"</c> and the rhyme <c>"knee"</c> and another verse using <c>"four"</c> and the rhyme <c>"door"</c> by
+  calling the <c>verse</c> function with the two arguments. 
+</p>
+
+</statement>
+
+<program interactive="activecode" language="python"> 
+  <code> 
+def chorus(): 
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+def verse(number, rhyme): 
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+
+verse("one", "thumb")
+verse("two", "shoe")
+# TODO:
+# Call verse again with "three" and "knee"
+# Call verse again with "four" and "door"
+
+
+</code>
+
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+       
+        self.assertIn("verse(\"three\",\"knee\")", code, "Call verse() with \"three\" and \"knee\"")
+        self.assertIn("verse(\"four\",\"door\")", code, "Call verse() with \"four\" and \"door\"")
+
+myTests().main()
+</tests>
+
+</program> 
+</activity>
+
+  
     <note>
       <title>3.2.A.4</title>
       <p>
@@ -239,9 +576,219 @@ procedure pName(p1, p2, ...)
       </p>
     </note>
 
-  
+    <p>Let's now write our own functions with parameters. Let's write a procedure or function that welcomes a user.
+      In AP CSP pseudocode, we would start the procedure definition with the header <c>procedure welcome(name)</c> where the parameter variable is put inside the parentheses after the procedure name.
+    </p>
+
+   <image source="_static/Unit3images/procedure-welcome.png" alt="Parameter and Argument" width="50%"/>
+ 
+    <note>
+      <title>3.2.A.6</title>
+      <p>
+        A procedure is defined with a name and a list of zero or more parameters. When
+        the following code runs, a procedure named <c>pName</c> is defined with zero or
+        more parameters (<c>p1, p2, ...</c>). When the procedure is called, the statements
+        in <c>&lt;block of statements&gt;</c> execute.
+      </p>
+      <pre>
+procedure pName(p1, p2, ...)
+{
+   &lt;block of statements&gt;
+}</pre>
+    </note>
+
+        <p>In AP CSP pseudocode, a procedure with parameters is defined using the following syntax:</p>
+    <program language="python">
+      <code>
+procedure procedureName(param1, param2, ...)
+{
+   &lt;block of statements&gt;
+}
+</code>
+    </program>
+ 
+    <p>In Python, a function with parameters is defined using the following syntax:</p>
+    <program language="python">
+      <code>
+def functionName(param1, param2, ...):
+    # function body
+</code>
+    </program>
+
 
     <note>
+      <title>3.2.B.3</title>
+      <p>
+        In a procedure call, the values inside the parentheses are <term>arguments</term>. When the
+        call runs, each argument value is assigned to the matching parameter in the
+        procedure definition. This allows the same procedure to run with different input
+        values. When the following code runs, <c>a1</c> is assigned to the first parameter
+        and <c>a2</c> is assigned to the second parameter before the procedure's statements
+        execute.
+      </p>
+      <pre>
+pName(a1, a2)</pre>
+    </note>
+
+    <p>Python and AP CSP pseudocode have very similar simple procedure or function call with the procedure name
+      followed by the argument values inside the parentheses. The number of arguments in a call must match the number of parameters in the 
+      procedure definition. Each argument value is assigned to the matching parameter in the procedure definition in order.
+    </p>
+    <program language="python">
+      <code>
+# Python and AP CSP pseudocode procedure/function call
+functionName(arg1, arg2, ...)
+    </code>
+    </program>
+
+    <activity label="welcome-function">
+      <statement>
+        <p>
+          Write a procedure called <c>welcome</c> that takes a parameter for the user's
+          name and prints Hello using the name. Then call the procedure with your name as
+          the argument.
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          # TODO: Write the welcome function using def and a parameter name
+
+          # Function Calls
+          welcome("World")
+          # Call welcome with your name as the argument
+          # Call welcome again with a different name as the argument
+
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("def", code, "Define the welcome function with def")
+        self.assertIn("welcome(name)", code, "Define the welcome function with a parameter name")
+        self.assertIn("World", self.getOutput(), "The output should include a welcome message to World")
+        count = code.count("welcome(")
+        self.assertLessEqual(4, count, "Call welcome() at least 2 more times")
+
+myTests().main()
+</tests>
+</program>
+    </activity>
+
+    <note>
+      <title>3.2.B.4</title>
+      <p>
+        A procedure can also be called with no arguments (empty parentheses) when it has
+        no parameters. The number of arguments in a call must match the number of
+        parameters in the procedure definition.
+      </p>
+    </note>
+
+    <note>
+      <title>3.2.B.5</title>
+      <p>
+        To determine the result of a procedure call, programmers trace the call by
+        matching arguments to parameters, stepping through the procedure's statements in
+        order, tracking any variable updates and outputs, and then returning to where the
+        procedure was called to continue program execution.
+      </p>
+    </note>
+
+    <p>When tracing through code that has procedures/functions, it is important to write down and keep track of the 
+      parameter variables and their values with each function call. Remember to match the arguments with the parameter in order.
+    </p>
+    
+  <activity label="parametersTrace">
+  <statement>
+    <p>
+      Consider the following pseudocode for a procedure <c>song</c>.
+    </p>
+<program language="python">
+  <code>
+procedure song(food1, food2)
+{
+    print("I like to eat, eat, eat", food1, "and", food2, "!")
+}
+</code>
+</program>
+<p>Given the following procedure calls, what would be printed when the code is run? </p>
+  <program language="python">
+    <code>
+song("bananas", "apples")
+song("pizza", "pineapples") 
+</code> </program>
+ </statement>
+  <choices randomize="yes">
+<choice>
+  <statement>
+    <p><c>I like to eat, eat, eat apples and bananas!</c></p>
+  </statement>
+
+  <feedback>
+    <p>
+      The first procedure call is <c>song("bananas", "apples")</c>, so the first argument, <c>"bananas"</c>, is assigned to the
+      <c>food1</c> parameter.
+    </p>
+  </feedback>
+</choice>
+
+<choice correct="yes">
+  <statement>
+    <p><pre>
+I like to eat, eat, eat bananas and apples!
+I like to eat, eat, eat pizza and pineapples!
+</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      Correct! The first procedure call is <c>song("bananas", "apples")</c>, so the first argument, <c>"bananas"</c>, is assigned to the
+      <c>food1</c> parameter and the second argument, <c>"apples"</c>, is assigned to the <c>food2</c> parameter. The second procedure call is <c>song("pizza", "pineapples")</c>, so the first argument, <c>"pizza"</c>, is assigned to the <c>food1</c> parameter and the second argument, <c>"pineapples"</c>, is assigned to the <c>food2</c> parameter.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p><pre>
+I like to eat, eat, eat apples and bananas!
+I like to eat, eat, eat pineapples and pizzas!
+</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      Remember that arguments are assigned to parameters in order. The
+      first argument is assigned to the first parameter variable, etc.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p><pre>
+I like to eat, eat, eat pizzas and pineapples!
+</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      Both procedure calls will print a line, so there should be two lines printed. 
+    </p>
+    </feedback>
+</choice>
+  </choices>
+</activity>
+
+
+    </subsection>
+    
+    <subsection xml:id="return-values">
+    <title>Return Values</title>
+<idx>return values</idx>
+<idx>return</idx>
+       <note>
       <title>3.2.A.7</title>
       <p>
         Some procedures use a return statement to send a result back to the part of the
@@ -261,60 +808,6 @@ return expression</pre>
         Some procedures perform an action, such as displaying output or updating
         variables, and do not return a value. Other procedures compute a value and use
         a return statement so the result can be used elsewhere in the program.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.A.9</title>
-      <p>
-        Defining a procedure creates the named steps, but the code inside runs only when
-        the procedure is called.
-      </p>
-    </note>
-  </subsection>
-
-  <subsection xml:id="arguments">
-    <title>Arguments and Parameters</title>
-
-   <note>
-      <title>3.2.A.3</title>
-      <p>
-        Procedures can use parameters to receive input. A <term>parameter</term> is a variable name
-        listed in the procedure definition. An <term>argument</term> is the actual value provided
-        when the procedure is called.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.B.3</title>
-      <p>
-        In a procedure call, the values inside the parentheses are arguments. When the
-        call runs, each argument value is assigned to the matching parameter in the
-        procedure definition. This allows the same procedure to run with different input
-        values. When the following code runs, <c>a1</c> is assigned to the first parameter
-        and <c>a2</c> is assigned to the second parameter before the procedure's statements
-        execute.
-      </p>
-      <pre>
-pName(a1, a2)</pre>
-    </note>
-
-    <note>
-      <title>3.2.B.4</title>
-      <p>
-        A procedure can also be called with no arguments (empty parentheses) when it has
-        no parameters. The number of arguments in a call must match the number of
-        parameters in the procedure definition.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.B.5</title>
-      <p>
-        To determine the result of a procedure call, programmers trace the call by
-        matching arguments to parameters, stepping through the procedure's statements in
-        order, tracking any variable updates and outputs, and then returning to where the
-        procedure was called to continue program execution.
       </p>
     </note>
 
