@@ -1881,7 +1881,7 @@ print(total)</code>
 # Do not change the following draw function. It will display the image of the pioneer.
 from image import *
 def draw(image):
-    img = Image("external/_static/Unit3images/" + image)
+    img = Image(image)
     win = ImageWin(img.getWidth(), img.getHeight())
     img.draw(win)
     
@@ -1960,7 +1960,7 @@ myTests().main()
 # Do not change the following draw function. It will display the image of the pioneer.
 from image import *
 def draw(image):
-    img = Image("external/_static/Unit3images/" + image)
+    img = Image(image)
     win = ImageWin(img.getWidth(), img.getHeight())
     img.draw(win)
     
@@ -2019,12 +2019,14 @@ myTests().main()
 </program>
 </project>
 
-<p>The final part of this challenge is to create your own data lists and use it in a quiz app.</p>
+<p>The final part of this challenge is to create your own data lists and use it in a quiz app.
+ Create 2 parallel lists with at least 3 elements each about something you are interested in, for example famous athletes and their teams, singers and their albums, actors and their movies, animals and their habitats, or any other topic you are interested in. If you'd like to do images, you can copy in the import and draw function from the previous quiz app and use complete http or https links to small images on the web. 
+</p>
 
     <project label="coding-challenge-personal-quiz-app">
       <title>Your Own Quiz App</title>
       <statement>
-        <p>Create your own Quiz app using 2 parallel lists with at least 3 elements each about something you are interested in, 
+        <p>Create your own Quiz App using 2 parallel lists with at least 3 elements each about something you are interested in, 
           for example famous athletes and their teams, singers and their albums, actors and their movies, animals and their habitats, or 
           any other topic you are interested in. First, present some information about the topic using a search algorithm like in part 1 
           of this challenge. Then, create a quiz app like in part 2 of this challenge.
@@ -2040,11 +2042,15 @@ myTests().main()
 # TODO: Introduce the data using a for-loop
 
 
-# TODO: Ask the user for input and search through the list to display information
-# Use a for-loop with i in the range of len(list) to search through the list
+# TODO: Ask "Who do you want to learn about" and get input 
+# Use a for-loop with i in the range of len(list) to search one of the lists
+# If you find the input in the list, print the corresponding information from the other list
 
-# TODO: Use a for-loop with i in the range of len(pioneers) to present questions
-#  Ask the user for the answer and Check if the answer is correct 
+# TODO: Start the Quiz! 
+# Use a for-loop with i in the range of len(list) 
+# Ask questions based on one of the lists 
+# Get the input answer from the user 
+# Check if the answer is correct using the other list
 
 
 </code>
@@ -2063,9 +2069,10 @@ class myTests(TestCaseGui):
             
     def test1(self):
             lines = self.getEditorText().replace(" ", "").split("\n")
+            self.assertIn("=[", self.findLine(lines,"=[") , "Create 2 parallel lists of data")
             count = self.getEditorText().count("for ")
             self.assertLessEqual(3, count, "Code should have 3 for-loops")
-            self.assertIn("range", self.findLine(lines,"range(len(") , "Use range(len(yourlist)) to traverse the lists by index in some for-loops")            
+            self.assertIn("range(len(", self.findLine(lines,"range(len(") , "Use range(len(yourlist)) to traverse the lists by index in some for-loops")            
             self.assertIn("[i]", self.getEditorText(), "Use [i] in the loop to ask the question")
             self.assertIn("input(", self.getEditorText(), "Use input")
             self.assertIn("else:", self.getEditorText(), "Use if/else in the loop to check if the answer is correct")
@@ -2084,7 +2091,7 @@ myTests().main()
             <ol>
               <li>Explain how the lists use data abstraction to manage complexity in your program.</li>
               <li>Explain how your code would be more complex if you did not have lists.</li>
-              <li>If the bakery decides to add more baked goods to the menu, 
+              <li>If you decide to add more elements to your lists, 
                 describe how you would need to adjust your code. How do lists make this easier?</li>
             </ol>
 
