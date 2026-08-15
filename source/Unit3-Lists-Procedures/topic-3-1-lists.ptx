@@ -8,7 +8,8 @@
   <introduction>
     <p>Quick Links:
       <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
-      insert-remove-lists,list-loops,linear-search, data-abstraction-with-lists, coding-challenge-lists, LOs-3-1, vocab-3-1"/>
+      insert-remove-lists,list-loops,coding-challenge-lists1,linear-search, data-abstraction-with-lists, 
+      coding-challenge-lists2, LOs-3-1, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
@@ -1191,6 +1192,76 @@ myTests().main()
 
 </subsection>
 
+<subsection xml:id="coding-challenge-lists1">
+    <title>Coding Challenge: Lists in a Bakery</title>
+       <idx><h>projects</h><h>lists bakery</h></idx>
+      <idx><h>coding challenge</h><h>lists bakery</h></idx>
+
+      <p>A bakery uses parallel lists to store the names, emoji images, and prices of baked goods 
+        in three lists. The lists are kept in parallel order so that an index can be used to access 
+        the corresponding elements in each list. For example, the first element in the list of 
+        baked goods corresponds to the first element in the list of prices, the second element 
+        corresponds to the second element, and so on. This allows a program to easily look up the 
+        price and image of a baked good by index. In the following coding challenge, you will use 
+        an input-controlled while loop to  ask the user to choose baked goods from the bakery and 
+        put its index in an order list. You will then print out their receipt and calculate the 
+        total cost of their order using a for loop and the order list.
+      </p>
+
+    <project label="coding-challenge-parallel-lists">
+      <title>Bakery Parallel Lists</title>
+      <statement>
+        <p>A bakery uses 3 parallel lists below to store the names, emoji images, and prices of baked goods. The while-loop below prints the lists and asks for the user's order by choosing an index number. You will write code to append the chosen index to the order list after checking that it is in range. You will then print out their receipt and calculate the total cost of their order using a for loop and the order list.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+# Bakery parallel lists
+baked_goods = ["Donut", "Cookie", "Croissant", "Cupcake", "Bagel" ]
+images = ["🍩", "🍪", "🥐", "🧁", "🥯", ]
+prices = [1.50, 2.00, 3.00, 2.50, 1.75]
+
+print("Welcome to the Bakery! Here are our baked goods:")
+print(images)
+print(baked_goods)
+print(prices)
+
+# Empty Order list of indices of baked goods chosen by the user
+order = []
+choice = 0
+while choice != -1:
+    choice = int(input("Enter the index of the baked good you want to order (or -1 to end): "))
+    # TODO: Check if the choices is a valid index between 0 and the length of the list - 1
+    #      and append to the order list
+    # else print an error message and ask the user to try again 
+
+
+# TODO: Print the receipt and calculate the total cost of the order
+# using a for-loop through the order list and the indices to access the baked goods and prices
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            code = self.getEditorText().replace(" ", "")
+            self.assertIn("if choice", self.getEditorText(), "Use an if-statement to check if the choice is a valid index")
+            self.assertIn("len(", self.getEditorText(), "Use len() to check the length of a list in the if-statement")
+            self.assertIn("else:", self.getEditorText(), "Use an else-statement to handle invalid input")
+            self.assertIn("order.append(choice)", self.getEditorText(), "Append the choice to the order list")
+            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the order list")
+            self.assertIn("baked_goods[", code, "Access the name of each baked good using its index")
+            self.assertIn("prices[", code, "Access the price of each baked good using its index")
+            self.assertIn("+=", code, "Use += to add the price to the total cost")
+
+
+myTests().main()
+</tests>
+</program>
+</project>
+</subsection>
+
 <subsection xml:id="linear-search">
     <title>Linear Search</title>
 <idx>linear search</idx>
@@ -1783,69 +1854,221 @@ print(total)</code>
 
   </subsection>
 
-  <subsection xml:id="coding-challenge-lists">
-    <title>Coding Challenge: Lists</title>
-       <idx><h>projects</h><h></h></idx>
-      <idx><h>coding challenge</h><h></h></idx>
+  <subsection xml:id="coding-challenge-lists2">
+    <title>Coding Challenge: Quiz App</title>
+       <idx><h>projects</h><h>lists quiz app</h></idx>
+      <idx><h>coding challenge</h><h>lists quiz app</h></idx>
 
-      <p>A bakery uses parallel lists to store the names, emoji images, and prices of baked goods 
-        in three lists. The lists are kept in parallel order so that an index can be used to access 
-        the corresponding elements in each list. For example, the first element in the list of 
-        baked goods corresponds to the first element in the list of prices, the second element 
-        corresponds to the second element, and so on. This allows a program to easily look up the 
-        price and image of a baked good by index. In the following coding challenge, you will use 
-        an input-controlled while loop to  ask the user to choose baked goods from the bakery and 
-        put its index in an order list. You will then print out their receipt and calculate the 
-        total cost of their order using a for loop and the order list.
+      <p>In this challenge, you will use parallel lists to allow users to search for data and quiz them about the data. 
+        There are 3 parts to this challenge: search for data, quiz the user about the data, and create your own data.
       </p>
+      
+      <p>The first part of this challenge is to use a search algorithm to find and display information from the lists.</p>
 
-    <project label="coding-challenge-parallel-lists">
-      <title>Bakery Parallel Lists</title>
+ <project label="coding-challenge-search">
+      <title>Search App</title>
       <statement>
-        <p>A bakery uses 3 parallel lists below to store the names, emoji images, and prices of baked goods. The while-loop below prints the lists and asks for the user's order by choosing an index number. You will write code to append the chosen index to the order list after checking that it is in range. You will then print out their receipt and calculate the total cost of their order using a for loop and the order list.
+        <p>The search app allows users to search for information in the 3 parallel lists that store the names of pioneers, 
+          facts about their contributions, and their images. A special function called draw is provided to display the image of the pioneer. First, present the list of pioneers using a simple <c>for item in list</c> loop. Ask the user who they want to learn about.
+          Then, use a for-loop with <c>range(len(pioneers))</c> to search through the pioneers list and check if the user's input is in the list. If it is, print the corresponding fact and display the image of the pioneer by using <c>draw(images[i])</c> where i is the index of the pioneer in the pioneers list. 
         </p>
       </statement>
 
       <program interactive="activecode" language="python">
         <code>
-# Bakery parallel lists
-baked_goods = ["Donut", "Cookie", "Croissant", "Cupcake", "Bagel" ]
-images = ["🍩", "🍪", "🥐", "🧁", "🥯", ]
-prices = [1.50, 2.00, 3.00, 2.50, 1.75]
+# Search App
+# Three parallel lists
+# Do not change the following draw function. It will display the image of the pioneer.
+from image import *
+def draw(image):
+    img = Image("external/_static/Unit3images/" + image)
+    win = ImageWin(img.getWidth(), img.getHeight())
+    img.draw(win)
+    
+# Lists of Data
+pioneers = ["Ada Lovelace", "Alan Turing", "Grace Hopper", "Mary Jackson"]
+facts = [
+    "the first programmer of a theoretical computer",
+    "the decoder of the German Enigma Code during World War 2",
+    "the creator of the first compiler of a programming language",
+    "the first Black female engineer at NASA",
+     ]
+images = ["AdaLovelace.png", "AlanTuring.png", "GraceHopper.png", "MaryJackson.png"]
 
-print("Welcome to the Bakery! Here are our baked goods:")
-print(images)
-print(baked_goods)
-print(prices)
 
-# Empty Order list of indices of baked goods chosen by the user
-order = []
-choice = 0
-while choice != -1:
-    choice = int(input("Enter the index of the baked good you want to order (or -1 to end): "))
-    # TODO: Check if the choices is a valid index between 0 and the length of the list - 1
-    #      and append to the order list
-    # else print an error message and ask the user to try again 
+print("Welcome to the Computer Science Pioneers Search App!")
+print("Here are the pioneers in computer science:")
+# TODO: Use a simple for-loop to traverse the pioneers list
+#   and print out each name
+
+person = input("Who do you want to learn about? ")
+
+# TODO: Use a for-loop with i in the range of len(pioneers) to search
+# In the loop, check if person in pioneers[i] (in will check substrings)
+# If it is, print the facts[i] and do draw(images[i]) to display the image of the pioneer
 
 
-# TODO: Print the receipt and calculate the total cost of the order
-# using a for-loop through the order list and the indices to access the baked goods and prices
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
+            if target in line.replace(" ", ""):
+                #print(line)
+                return line
+        return "None"
+    
+    def test1(self):
+        lines = self.getEditorText().replace(" ", "").split("\n")
+        count = self.getEditorText().count("for ")
+        self.assertLessEqual(2, count, "Code should have two for-loops")
+        self.assertIn("range", self.findLine(lines,"range(len(") , "Use range(len(pioneers)) to traverse the lists by index in the second for-loop")
+        self.assertIn("pioneers[i]", self.findLine(lines,"pioneers[i]"), "Use pioneers[i] in the loop to check if the person is in the pioneers list")
+        self.assertIn("facts[i]", self.findLine(lines,"facts[i]"), "Use facts[i] in the loop to print the fact")
+        self.assertIn("draw(images[i])", self.findLine(lines,"draw(images[i])"), "Use draw(images[i]) in the loop to display the images")
+
+myTests().main()
+</tests>
+</program>
+</project>
+        
+      <p>The second part of the challenge is to create a quiz app about pioneers in computer science. The pioneers, 
+        facts, and images are in parallel lists where the first pioneer in the pionners list corresponds to the first fact in the facts 
+        list and the first image in the image list, and so on for each element in the lists.
+      </p>
+
+    <project label="coding-challenge-quiz-app">
+      <title>Quiz App</title>
+      <statement>
+        <p>A quiz app uses 3 parallel lists to store the names of pioneers, facts about their contributions, and their images. 
+          Use for loops to to print out questions from the facts list and check the user's answers against the pioneers list. 
+        </p>
+        <p>Extra challenges: Add and print a score variable. Do research to find more CS pioneers and add them to the lists. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+# Quiz App
+# Three parallel lists
+# Do not change the following draw function. It will display the image of the pioneer.
+from image import *
+def draw(image):
+    img = Image("external/_static/Unit3images/" + image)
+    win = ImageWin(img.getWidth(), img.getHeight())
+    img.draw(win)
+    
+# Lists of Data
+pioneers = ["Ada Lovelace", "Alan Turing", "Grace Hopper", "Mary Jackson"]
+facts = [
+    "the first programmer of a theoretical computer",
+    "the decoder of the German Enigma Code during World War 2",
+    "the creator of the first compiler of a programming language",
+    "the first Black female engineer at NASA",
+     ]
+images = ["AdaLovelace.png", "AlanTuring.png", "GraceHopper.png", "MaryJackson.png"]
+
+print("Welcome to the Computer Science Pioneers Quiz!")
+print("Here are the pioneers in computer science:")
+
+# TODO: Use a simple for-loop to traverse the pioneers list
+#   and print out each name
+
+
+# TODO: Use a for-loop with i in the range of len(pioneers) to present questions
+# Create a question by adding "Who was" to each fact.
+# Use draw(images[i]) to display the image of the pioneer
+# Get the answer input from the user
+# Check if the answer is correct by comparing it to the pioneers list
+# Print Correct or Incorrect and the answer from the pioneers list
+
 
 </code>
 <tests>
 from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
+            if target in line.replace(" ", ""):
+                #print(line)
+                return line
+        return "None"
+            
     def test1(self):
-            code = self.getEditorText().replace(" ", "")
-            self.assertIn("if choice", self.getEditorText(), "Use an if-statement to check if the choice is a valid index")
-            self.assertIn("len(", self.getEditorText(), "Use len() to check the length of a list in the if-statement")
-            self.assertIn("else", self.getEditorText(), "Use an else-statement to handle invalid input")
-            self.assertIn("order.append(choice)", self.getEditorText(), "Append the choice to the order list")
-            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the order list")
-            self.assertIn("baked_goods[", code, "Access the name of each baked good using its index")
-            self.assertIn("prices[", code, "Access the price of each baked good using its index")
-            self.assertIn("+=", code, "Use += to add the price to the total cost")
+            lines = self.getEditorText().replace(" ", "").split("\n")
+            count = self.getEditorText().count("for ")
+            self.assertLessEqual(2, count, "Code should have two for-loops")
+            self.assertIn("range", self.findLine(lines,"range(len(") , "Use range(len(pioneers)) to traverse the lists by index in the second for-loop")
+            self.assertIn("facts[i]", self.findLine(lines,"facts[i]"), "Use facts[i] in the loop to ask the question")
+            self.assertIn("input(", self.findLine(lines,"input("), "Use input in the loop to ask the user for their answer")
+            self.assertIn("else:", self.findLine(lines,"else:"), "Use if/else in the loop to check if the answer is correct")
+            self.assertIn("pioneers[i]", self.findLine(lines,"pioneers[i]"), "Use pioneers[i] in the loop to check and print the answer") 
+            self.assertIn("draw(images[i])", self.findLine(lines,"draw(images[i])"), "Use draw(images[i]) in the loop to display the images")
 
+myTests().main()
+</tests>
+</program>
+</project>
+
+<p>The final part of this challenge is to create your own data lists and use it in a quiz app.</p>
+
+    <project label="coding-challenge-personal-quiz-app">
+      <title>Your Own Quiz App</title>
+      <statement>
+        <p>Create your own Quiz app using 2 parallel lists with at least 3 elements each about something you are interested in, 
+          for example famous athletes and their teams, singers and their albums, actors and their movies, animals and their habitats, or 
+          any other topic you are interested in. First, present some information about the topic using a search algorithm like in part 1 
+          of this challenge. Then, create a quiz app like in part 2 of this challenge.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+# Quiz App
+# TODO: Create 2 parallel lists of data
+
+
+# TODO: Introduce the data using a for-loop
+
+
+# TODO: Ask the user for input and search through the list to display information
+# Use a for-loop with i in the range of len(list) to search through the list
+
+# TODO: Use a for-loop with i in the range of len(pioneers) to present questions
+#  Ask the user for the answer and Check if the answer is correct 
+
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
+            if target in line.replace(" ", ""):
+                #print(line)
+                return line
+        return "None"
+            
+    def test1(self):
+            lines = self.getEditorText().replace(" ", "").split("\n")
+            count = self.getEditorText().count("for ")
+            self.assertLessEqual(3, count, "Code should have 3 for-loops")
+            self.assertIn("range", self.findLine(lines,"range(len(") , "Use range(len(yourlist)) to traverse the lists by index in some for-loops")            
+            self.assertIn("[i]", self.getEditorText(), "Use [i] in the loop to ask the question")
+            self.assertIn("input(", self.getEditorText(), "Use input")
+            self.assertIn("else:", self.getEditorText(), "Use if/else in the loop to check if the answer is correct")
 
 myTests().main()
 </tests>
