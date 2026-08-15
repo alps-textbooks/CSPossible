@@ -128,7 +128,7 @@
 <subsection xml:id="picture-loop-practice">
       <title>Picture Loop Practice</title>
 
-    <datafile label="puppies" filename="puppies.jpg">
+    <datafile xml:id="puppies" label="puppies" filename="puppies.jpg">
       <image source="_static/Unit2images/puppies.jpg"/>
   </datafile>
 
@@ -139,12 +139,12 @@
         </p>
 
     </statement>
-    <program xml:id="csprepeatimages_exercises2_editor" interactive="activecode" language="python">
+    <program add-files="puppies" interactive="activecode" language="python">
       <code>
         from image import *
 
         # PICK THE IMAGE AND DISPLAY (it will show updates automatically)
-        img = Image("external/_static/Unit2images/puppies.jpg")
+        img = Image("puppies.jpg")
         win = ImageWin(img.getWidth(), img.getHeight())
         img.draw(win)
         img.setDelay(1, 400)   #SPEEDS UP THE DRAWING
@@ -176,11 +176,11 @@
       <p>Write code to set the red value of each pixel to 255. This should give the entire image a 
         rosy tint. </p>
     </statement>
-    <program xml:id="csprepeatimages_exercises5_editor" interactive="activecode" language="python">
+    <program add-files="puppies" interactive="activecode" language="python">
       <code>
         from image import *
 
-        img = Image("external/_static/Unit2images/puppies.jpg")
+        img = Image("puppies.jpg")
         win = ImageWin(img.getWidth(), img.getHeight())
         img.draw(win)
         img.setDelay(1, 400)   #SPEEDS UP THE DRAWING
@@ -218,11 +218,11 @@
       </p>
 
     </statement>
-    <program xml:id="csprepeatimages_exercises4_editor" interactive="activecode" language="python">
+    <program add-files="puppies" interactive="activecode" language="python">
       <code>
         from image import *
 
-        img = Image("external/_static/Unit2images/puppies.jpg")
+        img = Image("puppies.jpg")
         win = ImageWin(img.getWidth(), img.getHeight())
         img.draw(win)
         img.setDelay(1, 400)   #SPEEDS UP THE DRAWING

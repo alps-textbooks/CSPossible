@@ -1545,9 +1545,25 @@ print(total)</code>
        <idx><h>projects</h><h>lists quiz app</h></idx>
       <idx><h>coding challenge</h><h>lists quiz app</h></idx>
 
-      <p>In this challenge, you will use parallel lists to allow users to search for data and quiz them about the data. 
-        There are 3 parts to this challenge: search for data, quiz the user about the data, and create your own data.
+     
+      <p>In this challenge, you will use parallel lists that contain data about the Computer Science 
+        Pioneers shown below. You will create a search app and a
+        quiz app. There are 3 parts to this challenge: the search app, the quiz app, and 
+        the create your own data and app.
       </p>
+
+    <datafile label="AdaLovelace" xml:id="AdaLovelace" filename="AdaLovelace.png" hide="yes">
+        <image source="_static/Unit3images/AdaLovelace.png" width="50%" hide="yes"/>
+    </datafile>
+    <datafile label="AlanTuring" xml:id="AlanTuring" filename="AlanTuring.png" hide="yes">
+        <image source="_static/Unit3images/AlanTuring.png" width="50%"/>
+    </datafile>
+    <datafile label="GraceHopper" xml:id="GraceHopper" filename="GraceHopper.png" hide="yes">
+        <image source="_static/Unit3images/GraceHopper.png" width="50%"/>
+    </datafile>
+    <datafile label="MaryJackson" xml:id="MaryJackson" filename="MaryJackson.png" hide="yes">
+        <image source="_static/Unit3images/MaryJackson.png" width="50%"/>
+    </datafile>
       
       <p>The first part of this challenge is to use a search algorithm to find and display information from the lists.</p>
 
@@ -1560,7 +1576,7 @@ print(total)</code>
         </p>
       </statement>
 
-      <program interactive="activecode" language="python">
+      <program interactive="activecode" language="python" add-files="AdaLovelace,AlanTuring,GraceHopper,MaryJackson">
         <code>
 # Search App
 # Three parallel lists
@@ -1639,7 +1655,7 @@ myTests().main()
         </p>
       </statement>
 
-      <program interactive="activecode" language="python">
+      <program interactive="activecode" language="python" add-files="AdaLovelace,AlanTuring,GraceHopper,MaryJackson">
         <code>
 # Quiz App
 # Three parallel lists

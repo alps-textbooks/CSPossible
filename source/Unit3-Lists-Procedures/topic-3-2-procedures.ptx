@@ -1377,7 +1377,7 @@ myTests().main()
   </subsection>
 
   <subsection xml:id="coding-challenge-functions">
-    <title>Coding Challenge: Functions in Tic Tac Toe</title>
+    <title>Coding Challenge: Functions </title>
 
     <activity label="functionsChallenge">
       <statement>

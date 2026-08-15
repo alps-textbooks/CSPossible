@@ -872,7 +872,7 @@ for p in img.getPixels():
   </p>
 
   
-  <datafile label="student" filename="student.jpg">
+  <datafile xml:id="student" label="student" filename="student.jpg">
       <image source="_static/Unit2images/student.jpg"/>
   </datafile>
 
@@ -905,12 +905,12 @@ for p in img.getPixels():
           </ul>
     </statement>
 
-    <program interactive="activecode" language="python">
+    <program add-files="student" interactive="activecode" language="python">
       <code>
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("external/_static/Unit2images/student.jpg")
+img = Image("student.jpg")
 
 # LOOP THROUGH ALL PIXELS
 for p in img.getPixels():
