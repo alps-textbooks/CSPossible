@@ -6,8 +6,8 @@
  
   <introduction>
    <p>Quick Links:
-      <xref text="global" ref="procedures,function-call-defn, arguments, return-values,procedural-abstraction,
-      LOs-3-2, vocab-3-2"/>
+      <xref text="global" ref="procedures,function-call-defn, arguments, return-values, procedural-abstraction,
+      coding-challenge-functions, LOs-3-2, vocab-3-2"/>
     </p>
     <p>
       Our programs are getting longer and longer! Advanced programmers break up 
@@ -788,6 +788,21 @@ I like to eat, eat, eat pizzas and pineapples!
     <title>Return Values</title>
 <idx>return values</idx>
 <idx>return</idx>
+
+   <p>
+      Some procdures or functions also return a value back to the code that called them. 
+      For example, we have used the Python built-in <c>input()</c> function, which returns the user's input as a string,
+      and the <c>random.randint()</c> function, which returns a random integer. You can imagine a function as a calculating
+      machine that takes numbers as arguments and returns a calculated result,
+      or like a toaster that takes bread as an argument and returns toast.</p>
+      
+    <image source="_static/Unit3images/function.png" alt="Function with arguments and return value" width="55%"/>
+      
+    <p>When writing your own functions, you can use the keyword <c>return</c> to return a variable or value or expression. 
+      If you do not have a return statement in your function, Python automatically returns the special value <c>None</c> by default.
+      So, all Python functions actually return a value, even if it's just <c>None</c>. The return statement also immediately ends the function, so any code after the return statement is not executed.
+    </p>
+
        <note>
       <title>3.2.A.7</title>
       <p>
@@ -811,6 +826,53 @@ return expression</pre>
       </p>
     </note>
 
+    <p>
+  Consider a simple function that squares a number. For example,
+  <c>square(3)</c> returns 9.
+</p>
+
+<program language="python">
+  <code>
+# Define function square
+def square(number):
+  return number * number 
+
+# Call the function
+print( square(3) )  # prints 9
+result = square(4)
+print(result)  # prints 16
+ </code> 
+</program>
+
+<p>
+  Let’s try this below. Click on the next button to step through the code
+  and see how the argument is passed to the parameter and how the return
+  value is sent back to the calling code.
+</p>
+
+<activity label="codelensSquare">
+  <statement>
+    <p>
+      Click on the next button below the code to step through the code.
+      Watch the red arrow move to the function that is being called, see
+      how the argument is passed into the parameter variable, and watch the
+      return value move back to the calling code.
+    </p>
+  </statement>
+
+  <program interactive="codelens" language="python" label="codeLenssq" xml:id="codelensidsq">
+    <code>
+def square(number):
+  return number * number
+
+# Call the function
+print( square(3) )  # prints 9
+result = square(4)
+print(result)  # prints 16
+</code> 
+</program> 
+</activity>
+
     <note>
       <title>3.2.B.6</title>
       <p>
@@ -820,10 +882,161 @@ return expression</pre>
         actions such as updating variable values or producing output.
       </p>
     </note>
+<p>
+  After calling a function, the return value can be printed or stored in
+  a variable or used as part of an expression. The value is substituted in place of the function call.
+</p>
+
+<program language="python">
+  <code>
+# Print the return value
+print( square(3) )  # prints 9
+# Save the return value in a variable
+# and use it in an expression
+result = square(4) + square(2) + 1
+</code>
+</program>
+
+<activity label="traceReturns">
+  <statement>
+    <p>
+      What does the following code print when run?
+    </p>
+    <program language="python">
+      <code>
+def square(x):
+  return x * x
+
+def divide(x, y):
+  return x / y
+
+print(square(2) + divide(10, 2)) 
+</code> 
+</program> 
+</statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>9.0</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Yes. The <c>square(2)</c> function returns 4. The
+          <c>divide(10, 2)</c> function returns 5.0. The
+          sum of 4 and 5.0 is 9.0.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>45</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Sometimes string concatenation happens, but in this case, the <c>+</c> operator performs addition because both functions 
+          return numeric values.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>square(3)+divide(5,2)</p>
+      </statement>
+
+      <feedback>
+        <p>
+          The functions return values that are then added. 
+         </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Nothing, it does not run.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Try the code in an active code window. Both functions are valid
+          Python functions and the expression produces a numeric result.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+    <p>
+      Here are some common errors when working with functions:
+    </p>
+    <ul>
+      <li>Giving the wrong number of arguments to a function.</li>
+      <li>Giving the arguments in the wrong order.</li>
+      <li>Forgetting to use what a function returns.</li>
+    </ul> 
+
+    <activity label="fixFunctionErrors">
+  <statement>
+    <p>
+      Fix the function calls below. Make sure the correct number and order
+      of arguments are used.  Do not change the function definitions.
+    </p>
+  </statement>
+
+  <program interactive="activecode" language="python">
+    <code>
+# square returns the square of a number.
+# Do NOT change.
+def square(number):
+  return number * number
+
+# divide divides x by y and returns the result.
+# Do NOT change.
+def divide(x, y):
+  return x / y
+
+# TO DO: Fix the function calls below.
+# Make sure the number and order of the
+# arguments match what the functions expect.
+# result1 should be 4 squared.
+# result2 should be 5 divided by 2.
+result1 = square(4, 2)
+result2 = divide(2, 5)
+
+print("4 squared is", result1)
+print("5 divided by 2 is", result2) 
+</code> 
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("4 squared is 16", self.getOutput(), "Correct output for 4 squared")
+        self.assertIn("5 divided by 2 is 2.5", self.getOutput(), "Correct output for 5 divided by 2")
+        self.assertIn("square(4)", self.getEditorText(), "Call square() with one argument")
+        self.assertIn("divide(5,", self.getEditorText(), "Call divide() with the first argument as 5")
+
+myTests().main()
+</tests> 
+</program> 
+</activity> 
+
+
   </subsection>
 
   <subsection xml:id="procedural-abstraction">
     <title>Procedural Abstraction</title>
+<idx>procedural abstraction</idx>
+
+  <p>
+      <term>Procedural abstraction</term> means using functions or procedures 
+      in order to manage complexity in a program. It allows programmers to use a procedure
+      and not worry about the details of how it exactly works (i.e. abstracting
+      away the details and treating it as a black box).
+    </p>
 
     <note>
       <title>3.2.C.1</title>
@@ -852,38 +1065,17 @@ return expression</pre>
       </p>
     </note>
 
+    <p><term>Modularity</term> is the practice of dividing a program into smaller independent parts. Each part or 
+       does one specific job. This is a great way to manage complexity because it divides the problem into more manageable
+       parts that make it easier to design, test, and maintain. It also makes the code easier to understand.
+      </p>
+
     <note>
       <title>3.2.C.4</title>
       <p>
         The subdivision of a program into smaller, independent procedures or components
-        is called modularity. Modularity helps programmers focus on one part at a time
+        is called <term>modularity</term>. Modularity helps programmers focus on one part at a time
         and makes programs easier to build, test, and revise.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.C.5</title>
-      <p>
-        Procedural abstraction supports code reuse by extracting shared behavior into a
-        single procedure instead of duplicating code in multiple places.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.C.6</title>
-      <p>
-        Using parameters generalizes a procedure so it can be reused with different
-        inputs, allowing one procedure to handle many situations without rewriting code.
-      </p>
-    </note>
-
-    <note>
-      <title>3.2.C.7</title>
-      <p>
-        Procedural abstraction allows programmers to change a procedure's internal steps
-        (for example, to improve efficiency or fix a bug) without changing the rest of
-        the program. This makes larger programs easier to maintain because updates can be
-        made in one place.
       </p>
     </note>
 
@@ -895,6 +1087,310 @@ return expression</pre>
         are easier to understand at a glance.
       </p>
     </note>
+
+    <p>Procedural abstraction also removes repetition in code because it allows programmers to define a procedure once and then call it 
+      multiple times, rather than writing the same code repeatedly. This allows for code reuse and makes the code easier to maintain. If 
+      a change is needed, it can be made in one place instead of multiple places.</p>
+
+    <note>
+      <title>3.2.C.5</title>
+      <p>
+        Procedural abstraction supports code reuse by extracting shared behavior into a
+        single procedure instead of duplicating code in multiple places.
+      </p>
+    </note>
+
+  <activity label="refactorIsValidFunction">
+  <statement>
+    <p>
+      The following program asks the user for 2 numbers and then 
+      checks that they are between 1 and 10. Refactor the code by creating a
+      function named <c>get_valid_number</c>. The function should repeatedly
+      ask the user to enter a number from 1 to 10 and print an error message
+      when the input is not valid. For this exercise, the function does not
+      need to return a value. Replace the repeated validation code with calls to your function.
+</p>
+  </statement>
+
+  <program interactive="activecode" language="python">
+    <code>
+# The function get_valid_number repeatedly checks 
+# if the user's input is between 1-10 and returns the valid number.
+def get_valid_number():
+    # TODO: Move and indent the repeated validation code below into this function.
+
+
+    # return the valid number entered by the user
+    return number
+
+
+print("Enter your first number:")
+# TODO: Remove the repeated validation code below 
+#    Replace with
+# number = get_valid_number()   
+number = int(input("Number: "))
+while number &lt; 1 or number &gt; 10:
+      number = int(input("Invalid number! Enter a number from 1 to 10: "))
+
+print("Enter your second number.")
+# TODO: Remove the repeated validation code below 
+#    Replace with
+# number2 = get_valid_number()   
+number2 = int(input("Number: "))
+while number2 &lt; 1 or number2 &gt; 10:
+      number2 = int(input("Invalid number! Enter a number from 1 to 10: "))
+
+sum = number + number2
+print("The sum of your numbers is:", sum) </code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace("# number = get_valid_number()", "").replace("# number2 = get_valid_number()", "")
+        count = code.count("get_valid_number()")
+        self.assertLessEqual(3, count, "Call get_valid_number at least 2 times")
+        count = code.count("while")
+        self.assertEqual(1, count, "Move while loop into get_valid_number")
+        self.assertGreaterEqual(20, sum, "The sum of the two numbers should be less than or equal to 20")
+
+myTests().main() 
+    </tests> 
+  </program> 
+</activity>
+
+
+    <note>
+      <title>3.2.C.7</title>
+      <p>
+        Procedural abstraction allows programmers to change a procedure's internal steps
+        (for example, to improve efficiency or fix a bug) without changing the rest of
+        the program. This makes larger programs easier to maintain because updates can be
+        made in one place.
+      </p>
+    </note>
+
+  <activity label="proceduralAbstractionChange">
+  <statement>
+    <p>
+      Suppose a program uses the following procedure and procedure calls to calculate the cost of an order.
+    </p>
+<program language="python">
+  <code>
+procedure calculate_total(price, quantity)
+{
+    subtotal = price * quantity
+    tax = subtotal * 0.06
+    return subtotal + tax 
+}
+
+calculate_total(5.95, 3)
+calculate_total(10.25, 4)
+</code> 
+</program>
+<p>
+  The programmer later changes the tax rate from 6% to 7%. 
+  How does procedural abstraction make it easier to update the program?
+</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>
+          The programmer can change the tax rate in one place in the procedure, and calls to
+          the procedure will use the updated calculation.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct. Procedural abstraction helps make programs easier to
+          maintain because the implementation can be changed without requiring
+          every part of the program that uses the procedure to be rewritten.
+        </p>
+      </feedback>
+    </choice>
+<choice>
+  <statement>
+    <p>
+      The procedure automatically changes every variable in the program
+      that contains a price.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      A procedure does not automatically change unrelated variables. It
+      performs its calculation using the arguments passed to it.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p>
+      The procedure prevents the tax rate from being changed accidentally.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      The tax rate can still be changed by modifying the procedure. The
+      advantage is that the change only needs to be made in one place.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p>
+      The procedure makes the program faster because Python only has to
+      calculate the tax once.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      The procedure is executed each time it is called. Its main advantage
+      here is maintainability, not automatically improving performance.
+    </p>
+  </feedback>
+</choice>
+  </choices>
+</activity>
+
+      <note>
+      <title>3.2.C.6</title>
+      <p>
+        Using parameters generalizes a procedure so it can be reused with different
+        inputs, allowing one procedure to handle many situations without rewriting code.
+      </p>
+    </note>
+
+    <p>Using functions with paramenters is an even more powerful abstraction that allows for greater flexibility and reusability in code.
+      Try refactoring the code below to remove the repeated calculations by creating a function that takes parameters and returns a value.
+    </p>
+
+<activity label="refactorFunctions">
+  <statement>
+    <p>
+      The following program prints out reports for 3 students, but it has a lot of repeated code!
+      Refactor the program by creating a function named
+      <c>print_report</c>. The function should take <c>name</c> and <c>score</c> as parameters 
+      and print the name, score, and whether the student passed or failed. 
+      Replace the repeated code with calls to your function.
+    </p>
+ </statement>
+<program interactive="activecode" language="python">
+    <code>
+# TODO: Define a function print_report(name, score)
+#  that prints the name, score, and whether the student passed or failed.
+
+
+
+# The following code has a lot of repetition! 
+# Refactor the code with function calls to print_report 
+name = "Ava"
+score = 92
+print("Student:", name)
+print("Score:", score)
+print("Passed:", score &gt;= 60)
+
+name = "Luis"
+score = 78
+print("Student:", name)
+print("Score:", score)
+print("Passed:", score &gt;= 60)
+
+
+name = "Maya"
+score = 55
+print("Student:", name)
+print("Score:", score)
+print("Passed:", score &gt;= 60)
+</code> 
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("def print_report(name, score):", self.getEditorText(), "Define the print_report function with parameters name and score")
+        count = self.getEditorText().count("print_report(")
+        self.assertLessEqual(4, count, "Call print_report at least 3 times")
+        count = self.getEditorText().count("60")
+        self.assertEqual(1, count, "Use print_report instead of repeated lines of code with score &gt;= 60")
+
+myTests().main()
+    </tests>
+  </program>
+</activity>
+
+  <activity label="refactorFunctionsParams">
+  <statement>
+    <p>
+      The following program repeats the same calculation in several places.
+      Refactor the program by creating a function named
+      <c>calculate_total</c>. The function should take <c>price</c> and
+      <c>quantity</c> as parameters and return the total. Replace the
+      repeated calculations with calls to your function.
+    </p>
+ </statement>
+<program interactive="activecode" language="python">
+    <code>
+# TODO: Define a function calculate_total
+# The function should take price and quantity as parameters
+#   and return the product.
+
+
+# The following code has a lot of repetition! 
+# Refactor the code with function calls.
+price1 = 5
+quantity1 = 3
+total1 = price1 * quantity1
+print("Order 1:", total1)
+
+price2 = 12
+quantity2 = 4
+total2 = price2 * quantity2
+print("Order 2:", total2)
+
+price3 = 8
+quantity3 = 6
+total3 = price3 * quantity3
+print("Order 3:", total3)
+</code> 
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("def calculate_total(price, quantity):", self.getEditorText(), "Define the calculate_total function with parameters price and quantity")
+        self.assertIn("return", self.getEditorText(), "Use a return statement in the calculate_total function")
+        count = self.getEditorText().count("calculate_total(")
+        self.assertLessEqual(4, count, "Call calculate_total at least 3 times")
+        count = self.getEditorText().count("*")
+        self.assertEqual(1, count, "Use calculate_total() instead of repeated lines with * operator")
+        self.assertEqual(15, calculate_total(5, 3), "calculate_total(5, 3) should return 15")
+
+myTests().main()
+    </tests>
+  </program>
+</activity>
+    
+  </subsection>
+
+  <subsection xml:id="coding-challenge-functions">
+    <title>Coding Challenge: Functions in Tic Tac Toe</title>
+
+    <activity label="functionsChallenge">
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+        </code>
+      </program>
+
+      </activity>
   </subsection>
 
   <subsection xml:id="LOs-3-2">
