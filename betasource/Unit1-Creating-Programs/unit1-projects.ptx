@@ -421,9 +421,7 @@ class myTests(TestCaseGui):
 
         line = self.findLine(lines,"badge_id=")
         self.assertIn("first_name[0:3]",line,"first_name[0:3] gets the first 3 letters of first_name.")
-
-        line = self.findLine(lines,"random.randint(")
-        self.assertIn("random.randint(10",line,"random.randint used starting at 10 for a 2-digit number")
+        self.assertIn("random.randint(10", line.replace(" ", ""), "random.randint used starting at 10 for a 2-digit number")
 
         line = self.findLine(lines,"invitation_code=")
         self.assertIn("city[0:2]",line,"city[0:2] gets the first two letters of the city.")
