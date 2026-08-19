@@ -411,10 +411,10 @@ class myTests(TestCaseGui):
     
     def testOne(self):
         code = self.getEditorText()
-        lines = code.replace(" ", "").split("\n")
+        lines = code.split("\n")
 
-        line = self.findLine(lines,"full_name=")
-        self.assertIn("first_name+\"\"+last_name", line, "fullname concatenates first_name, \" \", and last_name.")
+        line = self.findLine(lines, "full_name=")
+        self.assertTrue(("first_name" in line) and ("last_name" in line) and ('" "' in line), 'full_name should combine first_name, a space (" "), and last_name.')
 
         line = self.findLine(lines,"initials=")
         self.assertIn("first_name[0]", line, "first_name[0] gets the first letter of first_name for the initials")
