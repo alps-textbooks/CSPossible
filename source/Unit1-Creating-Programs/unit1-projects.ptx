@@ -6,7 +6,7 @@
   <title>Unit 1 Projects</title>
 
   <introduction>
-   <p>
+  <p>
     These projects were designed by Leigh Anne Fitz of Virginia Beach City Public Schools
     and the autograding tests were designed by Kate McDonnell of Cherry Creek Schools in Colorado.
   </p>
@@ -133,7 +133,7 @@ class myTests(TestCaseGui):
             if "#" in line:
                 index = line.find("#")
                 line = line[0:index]
-            if target in line.replace(" ", ""):
+            if target.replace(" ", "") in line.replace(" ", ""):
                 #print(line)
                 return line
         return "None"
@@ -351,7 +351,7 @@ favorite_color =
 city =
 
 # 2. Create the full name of the participant
-fullname =
+full_name =
 
 # 3. Get the initials (first letter of first name and first letter of last name)
 initials =
@@ -375,19 +375,82 @@ lucky_number =
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
+            if target.replace(" ", "") in line.replace(" ", ""):
+                #print(line)
+                return line
+        return "None"
+            
+    def run_file(self, code, inputs):
+        stars = "****************************************************************************" 
+        print(stars)
+        print("Testing code with inputs: " + inputs)
+        print(stars)
 
+        lines = code.split("\n")
+        ins = inputs.split(",")
+        inN = 0
+
+        for i in range(len(lines)):
+            if "input" in lines[i] and not "#" in lines[i]:
+                equals = lines[i].find("=") + 1
+                lines[i] = lines[i][0:equals] + ins[inN]
+                inN += 1
+
+        code = "\n".join(lines)
+        
+        # Create an isolated scope for the code execution
+        scope = {}
+        exec(code, scope)
+        
+        output = self.getOutput()
+
+        ind = output.find(stars) + len(stars) + 1
+        output = output[ind:]
+        ind = output.find(stars) + len(stars) + 1
+        output = output[ind:]
+
+        return str(scope), output
+    
     def testOne(self):
-        code = self.getEditorText().replace(" ", "")
-        self.assertIn("first_name+\"\"+last_name", code, "fullname concatenates first_name, \" \", and last_name.")
-        self.assertIn("first_name[0]", code, "first_name[0] gets the first letter of first_name for the initials")
-        self.assertIn("first_name[0:3]",code,"first_name[0:3] gets the first 3 letters of first_name.")
-        self.assertIn("random.randint(10",code,"random.randint used starting at 10 for a 2-digit number")
-        self.assertIn("city[0:2]",code,"city[0:2] gets the first two letters of the city.")
-        self.assertIn(favorite_color, self.getOutput(), "favorite_color should be printed in the invitation.")
-        self.assertIn("DanGar", self.getOutput(), "Badge ID should start with DanGar for the test case input: Dani, Garcia, painting, blue, Chicago")
-        self.assertIn("Chpa", self.getOutput(), "Invitation Code should start with Chpa for the test case input: Dani, Garcia, painting, blue, Chicago")
-        self.assertIn("Dani Garcia", self.getOutput(), "Full name should be printed in the invitation for the test case input: Dani, Garcia, painting, blue, Chicago")
-        self.assertNotIn("Dani Garcia", code, "Dani Garcia should not be hard-coded in the code") 
+        code = self.getEditorText()
+        lines = code.split("\n")
+
+        line = self.findLine(lines, "full_name=")
+        self.assertTrue(("first_name" in line) and ("last_name" in line) and ('" "' in line), 'full_name should combine first_name, a space (" "), and last_name.')
+
+        line = self.findLine(lines,"initials=")
+        self.assertIn("first_name[0]", line, "first_name[0] gets the first letter of first_name for the initials")
+
+        line = self.findLine(lines,"badge_id=")
+        self.assertIn("first_name[0:3]",line,"first_name[0:3] gets the first 3 letters of first_name.")
+
+        line = self.findLine(lines,"random.randint(10")
+        self.assertIn("random.randint(10", line.replace(" ", ""), "random.randint used starting at 10 for a 2-digit number")
+
+        line = self.findLine(lines,"invitation_code=")
+        self.assertIn("city[0:2]",line,"city[0:2] gets the first two letters of the city.")
+
+        scope, output = self.run_file(code, "\"Dani\", \"Garcia\", \"painting\", \"blue\", \"Chicago\"")
+
+        line = self.findLine(output.split("\n"), "blue")
+        self.assertIn("blue", line, "favorite_color should be printed in the invitation.")
+
+        line = self.findLine(output.split("\n"), "DanGar")
+        self.assertIn("DanGar", line, "Badge ID should start with DanGar for the test case input: Dani, Garcia, painting, blue, Chicago")
+
+        line = self.findLine(output.split("\n"), "Chpa")
+        self.assertIn("Chpa", line, "Invitation Code should start with Chpa for the test case input: Dani, Garcia, painting, blue, Chicago")
+
+        line = self.findLine(output.split("\n"), "Dani Garcia")
+        self.assertIn("Dani Garcia", line, "Full name should be printed in the invitation for the test case input: Dani, Garcia, painting, blue, Chicago")
+
+        self.assertNotIn("Dani Garcia", code, "Dani Garcia should not be hard-coded in the code")
+
 myTests().main()
 </tests>
 </program>

@@ -1,0 +1,1539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-3-2-procedures">
+  <time minutes="135" />
+  <title>Procedures (Functions)</title>
+ 
+  <introduction>
+   <p>Quick Links:
+      <xref text="global" ref="procedures,function-call-defn, arguments, return-values, procedural-abstraction,
+      coding-challenge-draw-functions, vocab-3-2"/>
+    </p>
+    <p>
+      Our programs are getting longer and longer! Advanced programmers break up 
+      large programs into smaller, more manageable pieces called 
+      <term>procedures</term> or <term>functions</term>. This allows programmers to
+       solve complex problems by breaking them into smaller subproblems and to reuse code.
+      In this lesson, we will learn to write our own Python functions and learn how procedural abstraction 
+      helps manage complexity.
+    </p>
+
+    <image source="_static/Unit3images/decomposition.png" alt="Problem decomposition" width="70%"/>
+
+  </introduction>
+
+  <subsection xml:id="procedures">
+    <title>What is a Procedure or Function</title>
+    <idx>procedures</idx>
+    <idx>functions</idx>
+
+    <p>
+      A <term>procedure</term> or <term>function</term> is a named block of code that performs a 
+      task when it is called.    
+    </p>
+
+    <p>We have already used several built-in Python functions in our programs, for example 
+     <c>input()</c> and <c>print()</c> which are input/output functions built into Python. Notice
+     that functions end with parentheses () which can contain <term>arguments</term>, the data that 
+     the function needs to do its job, for example what to print for the <c>print("Print this!")</c> function. 
+     Some functions like <c>input()</c> or <c>random.randint()</c> also return values back like
+     the user's input or a random number that we usually store in a variable.  </p>
+     
+     <p>A function is like a <term>black box</term> where you know what data goes in and what 
+      data omes out, but not necessarily how it works inside. We don't really need to know exactly
+      how <c>print()</c> or <c>input()</c> works internally; we just need to know what it does. 
+      This is called <term>procedural abstraction</term> where the code is grouped into manageable 
+     chunks called procedures or functions that can be called by name, hiding the detailed 
+     implementation steps from the rest of the program. This allows programs to be more complex 
+     without being overwhelming. Here are some of the Python functions that we have used so far.
+    </p>
+
+    <program language="python">
+      <code>
+  # The print() function takes 1 argument that it prints to the screen
+  print("Hello World!")  
+
+  # The input() function takes 1 argument, the prompt, and returns the user's input
+  #     which we save in a variable
+  name = input("Enter your name: ")
+
+  # The random.randint() function takes 2 arguments, the low and high values, 
+  # and returns a random number between those values (inclusive)
+  random_number = random.randint(1, 10)
+      </code>
+    </program>
+
+    <image source="_static/Unit3images/function.png" alt="Function with arguments and return value" width="55%"/>
+
+     <idx><h>unplugged</h><h>functions</h></idx>
+    <idx><h>projects</h><h>unplugged functions</h></idx>
+       <idx><h>unplugged</h><h>procedures</h></idx>
+    <idx><h>projects</h><h>unplugged procedures</h></idx>
+      <idx><h>POGIL group activity</h><h>functions</h></idx>
+        <idx><h>POGIL group activity</h><h>procedures</h></idx>
+
+    <project label="unplugged-functions">
+      <title>Unplugged: Functions</title>
+      <statement>
+     <p>
+      In groups, choose one person to be the function. The person playing
+      the function should choose a secret math formula with a variable and 2 operations,
+      for example <c>2*x + 1</c>. Don't tell the rest of the group what the formula is! 
+     </p>
+     <p>
+      The other members of the group will give the
+      function different argument values for <c>x</c>, and the function will
+      return the result of the formula. Write down the input/output pairs for each argument 
+      and return value.
+    </p>
+    <p>
+      For example, if the function's formula is <c>2*x + 1</c> and a group
+      member provides <c>3</c> as the argument, the function returns <c>7</c>.
+      After each member gets a return value, the group should try to figure
+      out the function's secret formula. Then, discuss and answer the following 
+      questions as a group.
+    </p>
+      <ol>
+        <li>What arguments did your group provide to the function? 
+        What return value did the function produce for each argument?
+          </li>
+        <li>What was the function's secret formula? 
+          How did your group use the input/output pairs to try to figure it out?</li>
+         <li>How does this activity demonstrate that a function can be reused with different arguments?</li>
+         <li>Can you use a function without knowing how it works inside? 
+          How does this activity demonstrate that a function is a procedural abstraction like a "black box"?</li>
+      </ol>
+  </statement>
+    <response/>
+    </project>
+  </subsection>
+
+  <subsection xml:id="function-call-defn">
+    <title>Procedure/Function Calls and Definitions</title>
+    <idx>function call</idx>
+    <idx>function definition</idx>
+    <idx>procedure call</idx>
+    <idx>procedure definition</idx>
+
+  <p>Let's learn how to define our own funtions and call them to do their jobs!
+    The main reasons to divide up a program into multiple functions are to organize the code to reduce its complexity and 
+    to avoid repetition of code. 
+    For example, the "This Old Man" song below has a lot of repetition    
+    (<url href="https://www.youtube.com/watch?v=Di23O5cN4ZU">listen here</url>).
+    Instead of writing the same code over and over in order to print the song, we can write functions for different
+    parts of the song and run them when needed. Click on all lines of code that are repeated in the song below, and then we will learn how they can be replaced with a function called <c>chorus()</c>.
+  </p>
+    <activity label="repeatedcode-this-old-man">
+  <statement>
+    <p>
+      Click on all the lines that are completely identical and repeated.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>Look for lines of Python code that are completely identical.</p>
+  </feedback>
+
+  <areas>
+    <cline><area correct="no">print("This old man, he played one.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my thumb.")</area></cline>
+    <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
+    <cline><area correct="no">print("This old man, he played two.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my shoe.")</area></cline>
+    <cline><area correct="yes">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="yes">print("This old man came rolling home.")</area></cline>
+  </areas>
+</activity>
+
+ <p>There are two steps to writing a function: the <term>function definition</term> and the <term>function call</term>. 
+  A function in Python is defined by using the keyword <c>def</c> followed by the function name which the programmer chooses. 
+  Indented inside the function, we write the code that will be executed when the function is called. 
+  We can call a function or procedure by using its name, for example <c>chorus()</c>. Functions always have parentheses
+ () after their name even if it's empty parentheses. In Python, functions always have to be defined before they can be called, so  
+ programmers put the function definitions at the top of the program and the main program below.</p>
+
+ <program language="python">
+      <code>
+  # Function definition
+  def functionName():
+      &lt;block of statements&gt;
+
+  # Function call
+  functionName() 
+      </code>
+    </program>
+
+       <p>In AP CSP pseudocode, functions are called <term>procedures</term>, and the keyword <c>procedure</c> is used instead of <c>def</c> to define a function. Curly braces are used to enclose the block of statements, insead of just indentation. Procedure calls
+      just use the name of the procedure with parentheses like in Python.</p>
+
+    <program language="python">
+      <code>
+  # AP pseudocode procedure definition
+  procedure procName()
+  {
+      &lt;block of statements&gt;
+  }
+
+  # AP pseudocode procedure call
+  procName() 
+      </code>
+</program>
+ 
+
+<p>When a function is called to do its job, the computer jumps to the function definition and runs the code inside it. 
+  When the function is finished, the computer jumps back to the line after the function call and continues running the program. 
+  See how the <c>chorus()</c> function is called in the code below by clicking on the next button. Watch the red arrow as the program jumps to the function definition and then returns to the line after the function call. Notice how we have reduced repetition of
+  code by abstracting the chorus into a function that can be called multiple times. 
+</p>
+<activity label="codelensSong1">
+  <statement>
+    <p>
+      Click on the next button below the code to step through the code.
+      Watch the red arrow as the program calls the <c>chorus()</c> function
+      and then returns to the line where the function was called.
+    </p>
+  </statement>
+
+  <program interactive="codelens" language="python">
+    <code>
+def chorus():
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+
+print("This old man, he played one.")
+print("He played knick-knack on my thumb.")
+chorus()
+
+print("This old man, he played two.")
+print("He played knick-knack on my shoe.")
+chorus()
+    </code>
+  </program>
+</activity>
+
+
+  
+     <p>
+      Try writing your own function calls below to reduce repetition of code and organize your program.
+    </p>
+
+    <activity label="song-add-calls">
+      <statement>
+        <p>
+          Replace the repeated chorus lines in the code below with a function call to <c>chorus()</c> to reduce repetition of code. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+def chorus():
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+# Main program
+print("This old man, he played one.")
+print("He played knick-knack on my thumb.")
+chorus()
+
+print("This old man, he played two.")
+print("He played knick-knack on my shoe.")
+# Replace the lines below with a chorus function call
+print("With a knick-knack paddywhack, give a dog a bone,")
+print("This old man came rolling home.")
+
+print("This old man, he played three.")
+print("He played knick-knack on my knee.")
+# Replace the lines below with a chorus function call
+print("With a knick-knack paddywhack, give a dog a bone,")
+print("This old man came rolling home.")
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        count = self.getEditorText().count("chorus()")
+        self.assertLessEqual(4, count, "Call chorus() at least twice more")
+        count = self.getEditorText().count("With a knick-knack paddywhack")
+        self.assertEqual(1, count, "Use chorus() instead of repeated lines \"With a knick-knack paddywhack\"")
+
+myTests().main()
+          </tests>
+          </program>
+          </activity>
+
+    <activity label="songMethodsTrace">
+      <statement>
+        <p>Trace through the code below and determine what it prints.</p>
+        <program language="python">
+          <code>
+def fruit():
+    print("apples and bananas!")
+
+def song():
+    print("I like to eat, eat, eat")
+    fruit()
+    fruit()
+
+song()
+          </code>
+        </program>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>I like to eat eat eat</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Try tracing through the song function and see what happens when it
+              calls the other functions.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>I like to eat eat eat fruit fruit</p>
+          </statement>
+
+          <feedback>
+            <p>
+              There is a fruit() function but it does not print out the word
+              fruit.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+             <p><pre>
+I like to eat, eat, eat 
+apples and bananas!</pre></p>
+          </statement>
+
+          <feedback>
+            <p>
+              There are 2 calls to the fruit() function in song().
+            </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p><pre>
+I like to eat eat eat
+apples and bananas!
+apples and bananas!</pre></p>
+          </statement>
+
+          <feedback>
+            <p>
+              Yes, song() prints the first line and then calls fruit() twice to print the other lines.
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+    <p>In the previous unit, we learned how to draw squares with loops. Let's put that code in a function, so 
+      that it can be called multiple times to draw multiple squares. First, try it with a mixed up code problem, and
+      then write the code yourself.
+    </p>
+
+ <activity label="turtleFunctionMixedUp" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following code should define a function that draws a square using a turtle called tina, 
+          but it is mixed up. 
+          Drag the needed code to the right side in the correct order.
+          Remember that the statements in the function must be indented! To
+          indent a block drag it further right.
+        </p>
+      </statement>
+      <blocks>
+        <block order="3">
+          <cline>def drawSquare():</cline>
+        </block>
+        <block order="1">
+          <cline>    for i in range(4):</cline>
+          </block>
+        <block order="2">
+          <cline>        tina.forward(50)</cline>
+          <cline>        tina.right(90)</cline>
+        </block>
+      </blocks>
+      </activity>
+
+   <activity label="turtleSquareFunction">
+      <statement>
+        <p>
+          Write a function called <c>drawSquare()</c> with no parameters that draws a square of size 50 using the turtle. 
+          Move the loop into this function and then call the function to draw the square multiple times.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+tina = turtle.Turtle()
+tina.shape("turtle")
+tina.color("green")
+
+# Put this code in a def drawSquare() function (no parameters)
+# Make sure you indent the code inside the function 
+#  and keep the indent inside the loop
+for count in range(4):
+    tina.forward(50)
+    tina.right(90)
+
+# Add a function call to drawSquare() here
+
+tina.goto(-100,150) # move turtle up
+# Replace this code with a function call to drawSquare()
+for count in range(4):
+    tina.forward(50)
+    tina.right(90)
+
+# Move the turtle to a new location and call drawSquare() again
+
+          </code>
+          <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        # remove comments
+        actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+
+        self.assertIn("def drawSquare():",self.getEditorText(), "Define a function called drawSquare()")
+        for_count = actual.count("for ")
+        self.assertEqual(1, for_count, "Use just 1 for loop")
+        drawSquare_count = actual.count("drawSquare()")
+        self.assertLessEqual(3, drawSquare_count, "Call drawSquare() at least 3 times")
+
+myTests().main()
+          </tests>
+          </program>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="arguments">
+    <title>Arguments and Parameters</title>
+
+    <idx>arguments</idx>
+    <idx>parameters</idx>
+
+
+
+    <p>
+  Let’s take another look at the "This Old Man" song and see if we can
+  replace more repeated code. Each verse of the song is similar except it uses a different number and rhyme.
+  If we can pull these out into variables, we can write a single function that can print any verse of the song!
+  Click on the words that are different in the lines that are repeated to
+  discover what variables we need to add to the functions.
+</p>
+
+<activity label="this-old-man-find-different-words">
+  <statement>
+    <p>
+      Click on the words that are different in the repeated lines.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>
+      Look for lines that are similar except for a different number or action
+      and click on those words.
+    </p>
+  </feedback>
+
+  <areas>
+    <cline><area correct="no">print("This old man, he played</area> <area correct="yes">one</area><area correct="no">.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my</area> <area correct="yes">thumb</area><area correct="no">.")</area></cline>
+    <cline><area correct="no">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="no">print("This old man came rolling home.")</area></cline>
+    <cline><area correct="no">print("This old man, he played</area> <area correct="yes">two</area><area correct="no">.")</area></cline>
+    <cline><area correct="no">print("He played knick-knack on my</area> <area correct="yes">shoe</area><area correct="no">.")</area></cline>
+  <cline><area correct="no">print("With a knick-knack paddywhack, give a dog a bone,")</area></cline>
+    <cline><area correct="no">print("This old man came rolling home.")</area></cline>
+  </areas>
+</activity>
+
+
+
+<p>
+  We can make functions even more powerful and more abstract by giving them
+  parameters for the data that they need to do their job. A
+  <term>parameter</term> is a variable listed in the definition of a function
+  and can be used inside the function body. This allows values, called
+  <term>arguments</term>, to be passed into the function. The argument value is copied into the 
+  corresponding parameter variable. Many people use the terms "parameter" and "argument" interchangeably, but formally, 
+  the parameter is the variable in the function definition and the argument is the value passed to the function when it is called. 
+</p>
+<p>
+  For example, here is a procedure called <c>forward</c> with a parameter variable called <c>pixels</c> that we used with turtles 
+  with procedure calls like <c>forward(50)</c> telling it to move forward 40 or 100 pixels. The value 40 is the argument that is passed to the parameter variable <c>pixels</c> in the procedure definition.
+</p>
+
+  <image source="_static/Unit3images/procedure-defn-call.png" alt="Parameter and Argument" width="90%"/>
+
+<p>Going back to our song, we can make a function called <c>verse</c> that takes the number and the rhyme as parameters and uses them to 
+  print any verse! The parameter variables <c>number</c> and <c>rhyme</c> will hold different values each time the function is called. </p>
+
+<program language="python"> 
+  <code> 
+# This function prints a verse for a given number and rhyme. 
+# @param number - the number used in the verse 
+# @param rhyme - the word that rhymes with the number
+
+def verse(number, rhyme):
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+</code>
+</program>
+
+<p>The <c>verse</c> function can now be used to print any verse of the song. The values passed to the function become the values of 
+  the parameter variables. The main part of the program can be just calls to the <c>verse</c> function. Main program code often 
+  looks like an outline for the program, calling all the functions to do the work. </p>
+
+<program language="python"> 
+  <code> 
+verse("one", "thumb")
+verse("two", "shoe")
+</code>
+</program>
+
+<p>Notice that the same function is called two times with different arguments. When <c>verse("one", "thumb")</c> is called, the 
+  parameter <c>number</c> gets the value <c>"one"</c> and the parameter <c>rhyme</c> gets the value <c>"thumb"</c>. When 
+  <c>verse("two", "shoe")</c> is called, the same parameters receive different values. The function does not need to change. The 
+  arguments provide the values that makes each verse different. </p>
+
+  <image source="_static/Unit3images/procedure-verse-call.png" alt="Calling verse(number, rhyme)" width="70%"/>
+
+
+<activity label="codelensSong2"> 
+  <statement> 
+    <p> Click on the next button below the code to step through the code. Watch the red arrow jump to the <c>verse</c> function each time 
+      it is called. Pay attention to how the arguments are passed into the parameter variables. 
+    </p> </statement>
+
+<program interactive="codelens" language="python" label="codeLens3" xml:id="codelensid3"> 
+  <code>
+def chorus(): 
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+
+def verse(number, rhyme): 
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+
+verse("one", "thumb")
+verse("two", "shoe")
+</code>
+</program>
+</activity>
+
+<p> Let’s try adding more verses to the song. With the power of procedural abstraction using a function with parameters, 
+  it becomes very easy to add more verses to the song, just by calling the <c>verse</c> function with different arguments.
+  Parameters make it more general, flexible, and reusable! 
+ </p>
+
+<activity label="ThisOldManSong2"> 
+  <statement> 
+    <p>Run the following code to see the song "This Old Man" using the <c>verse</c> function. 
+  Add another verse using <c>"three"</c> and the rhyme <c>"knee"</c> and another verse using <c>"four"</c> and the rhyme <c>"door"</c> by
+  calling the <c>verse</c> function with the two arguments. 
+</p>
+
+</statement>
+
+<program interactive="activecode" language="python"> 
+  <code> 
+def chorus(): 
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+    print()  # print extra empty line
+
+def verse(number, rhyme): 
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+
+verse("one", "thumb")
+verse("two", "shoe")
+# TODO:
+# Call verse again with "three" and "knee"
+# Call verse again with "four" and "door"
+
+
+</code>
+
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+       
+        self.assertIn("verse(\"three\",\"knee\")", code, "Call verse() with \"three\" and \"knee\"")
+        self.assertIn("verse(\"four\",\"door\")", code, "Call verse() with \"four\" and \"door\"")
+
+myTests().main()
+</tests>
+
+</program> 
+</activity>
+
+<p>Let's add one more abstraction! Let's add <term>data abstraction</term> using lists along with <term>procedural abstraction</term>.
+We can create two parallel lists of the <c>number</c> and <c>rhyme</c> values and iterate through them. This abstraction
+makes our code even more flexible and makes it even easier to add another verse by just adding a new element to each list.</p>
+
+<program language="python">
+  <code>
+numbers = ["one", "two", "three"]
+rhymes = ["thumb", "shoe", "knee"]
+# Iterate through the lists and call verse() for each number and rhyme
+for i in range(len(numbers)):
+    verse(numbers[i], rhymes[i])
+  </code>
+</program>
+
+<activity label="ThisOldManSongLists"> 
+  <statement> 
+    <p>Change the code below to use two parallel lists of the <c>number</c> and <c>rhyme</c> values and iterate through them to call the <c>verse</c> function for each number and rhyme. For help, see the code above. Create your list with 3 elements to start with and
+      then extend it to 4 or 5 elements to see how easy it is to add more verses to the song using lists and a for loop.
+</p>
+
+</statement>
+
+<program interactive="activecode" language="python"> 
+  <code> 
+def chorus(): 
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+    print()
+
+def verse(number, rhyme): 
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+
+# Create 2 parallel lists: numbers with the values "one", "two", "three", "four"
+#     and rhymes with the values "thumb", "shoe", "knee", "door"
+
+# Use a for loop to iterate through the lists and call verse() for each number and rhyme in the lists
+# instead of the 2 lines below
+verse("one", "thumb")
+verse("two", "shoe")
+</code>
+
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+       
+        self.assertIn('["one","two","three","four"', code, "Create a list of at least 4 numbers")
+        self.assertIn('["thumb","shoe","knee","door"', code, "Create a list of at least 4 rhymes")
+        self.assertIn("for i in range", self.getEditorText(), "Use for i in range loop"")
+        self.assertIn("verse(numbers[i],rhymes[i])", code, "Call verse(numbers[i], rhymes[i]) in the loop")
+
+myTests().main()
+</tests>
+
+</program> 
+</activity>
+  
+
+    <p>Let's now write our own functions with parameters. Let's write a procedure or function that welcomes a user.
+      In AP CSP pseudocode, we would start the procedure definition with the header <c>procedure welcome(name)</c> where the parameter variable is put inside the parentheses after the procedure name. Then, we can call <c>welcome</c> with different values for the parameter variable <c>name</c> to print a personalized welcome message. 
+    </p>
+
+   <image source="_static/Unit3images/procedure-welcome.png" alt="Parameter and Argument" width="50%"/>
+ 
+
+        <p>In AP CSP pseudocode, a procedure with parameters is defined using the following syntax:</p>
+    <program language="python">
+      <code>
+procedure procedureName(param1, param2, ...)
+{
+   &lt;block of statements&gt;
+}
+</code>
+    </program>
+ 
+    <p>In Python, a function with parameters is defined using the following syntax:</p>
+    <program language="python">
+      <code>
+def functionName(param1, param2, ...):
+    # function body
+</code>
+    </program>
+
+
+
+    <p>Python and AP CSP pseudocode have very similar simple procedure or function call with the procedure name
+      followed by the argument values inside the parentheses. The number of arguments in a call must match the number of parameters in the 
+      procedure definition. Each argument value is assigned to the matching parameter in the procedure definition in order.
+    </p>
+    <program language="python">
+      <code>
+# Python and AP CSP pseudocode procedure/function call
+functionName(arg1, arg2, ...)
+    </code>
+    </program>
+
+    <activity label="welcome-function">
+      <statement>
+        <p>
+          Write a procedure called <c>welcome</c> that takes a parameter for the user's
+          name and prints Hello using the name. Then call the procedure with your name as
+          the argument.
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+          # TODO: Write the welcome function using def and a parameter name
+          #       Inside the function, print a Hello and the name
+
+
+          # Function Calls
+          welcome("World")
+          # TODO: Call welcome with your name as the argument
+          # TODO: Call welcome again with a different name as the argument
+
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("def", code, "Define the welcome function with def")
+        self.assertIn("welcome(name)", code, "Define the welcome function with a parameter name")
+        self.assertIn("World", self.getOutput(), "The output should include a welcome message to World")
+        count = code.count("welcome(")
+        self.assertLessEqual(4, count, "Call welcome() at least 2 more times")
+
+myTests().main()
+</tests>
+</program>
+    </activity>
+
+    <p>Let's also add parameters to our turtle square function so that we can draw squares of different sizes and colors.
+    </p>
+
+   <activity label="turtleSquareFunctionParams">
+      <statement>
+        <p>
+          Write a function called <c>drawSquare(size, color)</c> that draws a square of the specified size and color using the turtle. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+tina = turtle.Turtle()
+tina.shape("turtle")
+tina.color("green")
+
+# TODO: Change this function to take 2 parameters for size and color
+def drawSquare():
+    # TODO: Change the code below to use the color and size variables
+    #   instead of "green" and 50
+    tina.begin_fill()
+    tina.color("green")
+    for count in range(4):
+        tina.forward(50)
+        tina.right(90)
+    tina.end_fill()
+
+# TODO: Add arguments of 150 and "red" to the function call below
+drawSquare()
+
+tina.goto(-100,150) # move turtle up
+# TODO: Add arguments of 100 and "blue" to the function call below
+drawSquare()
+
+# Move the turtle to a new location and call drawSquare with any arguments
+
+          </code>
+          <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("drawSquare(size,color):", code, "Add parameters for size and color to the drawSquare function")
+        self.assertIn("tina.color(color)", code, "Use the color parameter in the drawSquare function")
+        self.assertIn("tina.forward(size)", code, "Use the size parameter in the drawSquare function")
+        self.assertIn("drawSquare(150,\"red\")", code, "Call drawSquare(150,\"red\")")
+        self.assertIn("drawSquare(100,\"blue\")", code, "Call drawSquare(100,\"blue\")")
+
+myTests().main()
+          </tests>
+          </program>
+    </activity>
+
+
+    <p>When tracing through code that has procedures/functions, it is important to write down and keep track of the 
+      parameter variables and their values with each function call. Remember to match the arguments with the parameter in order.
+    </p>
+    
+  <activity label="parametersTrace">
+  <statement>
+    <p>
+      Consider the following pseudocode for a procedure <c>song</c>.
+    </p>
+<program language="python">
+  <code>
+procedure song(food1, food2)
+{
+    print("I like to eat, eat, eat", food1, "and", food2, "!")
+}
+</code>
+</program>
+<p>Given the following procedure calls, what would be printed when the code is run? </p>
+  <program language="python">
+    <code>
+song("bananas", "apples")
+song("pizza", "pineapples") 
+</code> </program>
+ </statement>
+  <choices randomize="yes">
+<choice>
+  <statement>
+    <p><pre>I like to eat, eat, eat apples and bananas!</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      The first procedure call is <c>song("bananas", "apples")</c>, so the first argument, <c>"bananas"</c>, is assigned to the
+      <c>food1</c> parameter.
+    </p>
+  </feedback>
+</choice>
+
+<choice correct="yes">
+  <statement>
+    <p><pre>
+I like to eat, eat, eat bananas and apples!
+I like to eat, eat, eat pizza and pineapples!
+</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      Correct! The first procedure call is <c>song("bananas", "apples")</c>, so the first argument, <c>"bananas"</c>, is assigned to the
+      <c>food1</c> parameter and the second argument, <c>"apples"</c>, is assigned to the <c>food2</c> parameter. The second procedure call is <c>song("pizza", "pineapples")</c>, so the first argument, <c>"pizza"</c>, is assigned to the <c>food1</c> parameter and the second argument, <c>"pineapples"</c>, is assigned to the <c>food2</c> parameter.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p><pre>
+I like to eat, eat, eat apples and bananas!
+I like to eat, eat, eat pineapples and pizzas!
+</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      Remember that arguments are assigned to parameters in order. The
+      first argument is assigned to the first parameter variable, etc.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p><pre>
+I like to eat, eat, eat pizzas and pineapples!
+</pre></p>
+  </statement>
+
+  <feedback>
+    <p>
+      Both procedure calls will print a line, so there should be two lines printed. 
+    </p>
+    </feedback>
+</choice>
+  </choices>
+</activity>
+
+
+    </subsection>
+    
+    <subsection xml:id="return-values">
+    <title>Return Values</title>
+<idx>return values</idx>
+<idx>return</idx>
+
+   <p>
+      Some procdures or functions also return a value back to the code that called them. 
+      For example, we have used the Python built-in <c>input()</c> function, which returns the user's input as a string,
+      and the <c>random.randint()</c> function, which returns a random integer. You can imagine a function as a calculating
+      machine that takes numbers as arguments and returns a calculated result,
+      or like a toaster that takes bread as an argument and returns toast.</p>
+      
+    <image source="_static/Unit3images/function.png" alt="Function with arguments and return value" width="55%"/>
+      
+    <p>When writing your own functions, you can use the keyword <c>return</c> to return a variable or value or expression. 
+      If you do not have a return statement in your function, Python automatically returns the special value <c>None</c> by default.
+      So, all Python functions actually return a value, even if it's just <c>None</c>. The return statement also immediately ends the function, so any code after the return statement is not executed.
+    </p>
+
+      
+
+    <p>
+  Consider a simple function that squares a number. For example,
+  <c>square(3)</c> returns 9.
+</p>
+
+<program language="python">
+  <code>
+# Define function square
+def square(number):
+  return number * number 
+
+# Call the function
+print( square(3) )  # prints 9
+result = square(4)
+print(result)  # prints 16
+ </code> 
+</program>
+
+<p>
+  Let’s try this below. Click on the next button to step through the code
+  and see how the argument is passed to the parameter and how the return
+  value is sent back to the calling code.
+</p>
+
+<activity label="codelensSquare">
+  <statement>
+    <p>
+      Click on the next button below the code to step through the code.
+      Watch the red arrow move to the function that is being called, see
+      how the argument is passed into the parameter variable, and watch the
+      return value move back to the calling code.
+    </p>
+  </statement>
+
+  <program interactive="codelens" language="python" label="codeLenssq" xml:id="codelensidsq">
+    <code>
+def square(number):
+  return number * number
+
+# Call the function
+print( square(3) )  # prints 9
+result = square(4)
+print(result)  # prints 16
+</code> 
+</program> 
+</activity>
+
+   
+<p>
+  After calling a function, the return value can be printed or stored in
+  a variable or used as part of an expression. The value is substituted in place of the function call.
+</p>
+
+<program language="python">
+  <code>
+# Print the return value
+print( square(3) )  # prints 9
+# Save the return value in a variable
+# and use it in an expression
+result = square(4) + square(2) + 1
+</code>
+</program>
+
+<activity label="traceReturns">
+  <statement>
+    <p>
+      What does the following code print when run?
+    </p>
+    <program language="python">
+      <code>
+def square(x):
+  return x * x
+
+def divide(x, y):
+  return x / y
+
+print(square(2) + divide(10, 2)) 
+</code> 
+</program> 
+</statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>9.0</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Yes. The <c>square(2)</c> function returns 4. The
+          <c>divide(10, 2)</c> function returns 5.0. The
+          sum of 4 and 5.0 is 9.0.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>45</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Sometimes string concatenation happens, but in this case, the <c>+</c> operator performs addition because both functions 
+          return numeric values.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>square(3)+divide(5,2)</p>
+      </statement>
+
+      <feedback>
+        <p>
+          The functions return values that are then added. 
+         </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Nothing, it does not run.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Try the code in an active code window. Both functions are valid
+          Python functions and the expression produces a numeric result.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+    <p>
+      Here are some common errors when working with functions:
+    </p>
+    <ul>
+      <li>Giving the wrong number of arguments to a function.</li>
+      <li>Giving the arguments in the wrong order.</li>
+      <li>Forgetting to use what a function returns.</li>
+    </ul> 
+
+    <activity label="fixFunctionErrors">
+  <statement>
+    <p>
+      Fix the function calls below. Make sure the correct number and order
+      of arguments are used.  Do not change the function definitions.
+    </p>
+  </statement>
+
+  <program interactive="activecode" language="python">
+    <code>
+# square returns the square of a number.
+# Do NOT change.
+def square(number):
+  return number * number
+
+# divide divides x by y and returns the result.
+# Do NOT change.
+def divide(x, y):
+  return x / y
+
+# TO DO: Fix the function calls below.
+# Make sure the number and order of the
+# arguments match what the functions expect.
+# result1 should be 4 squared.
+# result2 should be 5 divided by 2.
+result1 = square(4, 2)
+result2 = divide(2, 5)
+
+print("4 squared is", result1)
+print("5 divided by 2 is", result2) 
+</code> 
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("4 squared is 16", self.getOutput(), "Correct output for 4 squared")
+        self.assertIn("5 divided by 2 is 2.5", self.getOutput(), "Correct output for 5 divided by 2")
+        self.assertIn("square(4)", self.getEditorText(), "Call square() with one argument")
+        self.assertIn("divide(5,", self.getEditorText(), "Call divide() with the first argument as 5")
+
+myTests().main()
+</tests> 
+</program> 
+</activity> 
+
+
+  </subsection>
+
+  <subsection xml:id="procedural-abstraction">
+    <title>Procedural Abstraction</title>
+<idx>procedural abstraction</idx>
+
+  <p>
+      <term>Procedural abstraction</term> means using functions or procedures 
+      in order to manage complexity in a program. It allows programmers to use a procedure
+      and not worry about the details of how it exactly works (i.e. abstracting
+      away the details and treating it as a black box).
+    </p>
+
+  
+
+    <p><term>Modularity</term> means dividing a program into smaller independent parts. Each part or 
+       does one specific job. This is a great way to manage complexity because it divides the problem into more manageable
+       parts that make it easier to design, test, and maintain. It also makes the code easier to understand.
+      </p>
+
+   
+
+    <p>Procedural abstraction also removes repetition in code because it allows programmers to define a procedure once and then call it 
+      multiple times, rather than writing the same code repeatedly. This allows for code reuse and makes the code easier to maintain. If 
+      a change is needed, it can be made in one place instead of multiple places. In the following activities, we will <term>refactor</term> existing code by creating reusable functions. Remember that refactoring means making changes to the code's structure without changing what it does.</p>
+
+   
+
+  <activity label="refactorIsValidFunction">
+  <statement>
+    <p>
+      The following program asks the user for 2 numbers and then 
+      checks that they are between 1 and 10. Refactor the code by creating a
+      function named <c>get_valid_number</c>. The function should repeatedly
+      ask the user to enter a number from 1 to 10 and print an error message
+      when the input is not valid. For this exercise, the function does not
+      need to return a value. Replace the repeated validation code with calls to your function.
+</p>
+  </statement>
+
+  <program interactive="activecode" language="python">
+    <code>
+# The function get_valid_number repeatedly checks 
+# if the user's input is between 1-10 and returns the valid number.
+def get_valid_number():
+    # TODO: Move and indent the repeated validation code below into this function.
+
+
+    # return the valid number entered by the user
+    return number
+
+
+print("Enter your first number:")
+# TODO: Move the repeated validation code below into the function above
+# Replace with the function call:
+# number = get_valid_number()   
+number = int(input("Number: "))
+while number &lt; 1 or number &gt; 10:
+      number = int(input("Invalid number! Enter a number from 1 to 10: "))
+
+print("Enter your second number.")
+# TODO: Remove the repeated validation code below 
+#    Replace with
+# number2 = get_valid_number()   
+number2 = int(input("Number: "))
+while number2 &lt; 1 or number2 &gt; 10:
+      number2 = int(input("Invalid number! Enter a number from 1 to 10: "))
+
+sum = number + number2
+print("The sum of your numbers is:", sum) </code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace("# number = get_valid_number()", "").replace("# number2 = get_valid_number()", "")
+        count = code.count("get_valid_number()")
+        self.assertLessEqual(3, count, "Call get_valid_number at least 2 times")
+        count = code.count("while")
+        self.assertEqual(1, count, "Move while loop into get_valid_number")
+        self.assertGreaterEqual(20, sum, "The sum of the two numbers should be less than or equal to 20")
+
+myTests().main() 
+    </tests> 
+  </program> 
+</activity>
+
+
+
+  <activity label="proceduralAbstractionChange">
+  <statement>
+    <p>
+      Suppose a program uses the following procedure and procedure calls to calculate the cost of an order.
+    </p>
+<program language="python">
+  <code>
+procedure calculate_total(price, quantity)
+{
+    subtotal = price * quantity
+    tax = subtotal * 0.06
+    return subtotal + tax 
+}
+
+calculate_total(5.95, 3)
+calculate_total(10.25, 4)
+</code> 
+</program>
+<p>
+  The programmer later changes the tax rate from 6% to 7%. 
+  How does procedural abstraction make it easier to update the program?
+</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>
+          The programmer can change the tax rate in one place in the procedure, and calls to
+          the procedure will use the updated calculation.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct. Procedural abstraction helps make programs easier to
+          maintain because the implementation can be changed without requiring
+          every part of the program that uses the procedure to be rewritten.
+        </p>
+      </feedback>
+    </choice>
+<choice>
+  <statement>
+    <p>
+      The procedure automatically changes every variable in the program
+      that contains a price.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      A procedure does not automatically change unrelated variables. It
+      performs its calculation using the arguments passed to it.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p>
+      The procedure prevents the tax rate from being changed accidentally.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      The tax rate can still be changed by modifying the procedure. The
+      advantage is that the change only needs to be made in one place.
+    </p>
+  </feedback>
+</choice>
+
+<choice>
+  <statement>
+    <p>
+      The procedure makes the program faster because Python only has to
+      calculate the tax once.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      The procedure is executed each time it is called. Its main advantage
+      here is maintainability, not automatically improving performance.
+    </p>
+  </feedback>
+</choice>
+  </choices>
+</activity>
+
+   
+
+    <p>Using functions with parameters is an even more powerful abstraction that allows for greater flexibility and reusability in code.
+      Try refactoring the code below to remove the repeated calculations by creating a function that takes parameters and returns a value.
+    </p>
+
+<activity label="refactorFunctions">
+  <statement>
+    <p>
+      The following program prints out reports for 3 students, but it has a lot of repeated code!
+      Refactor the program by creating a function named
+      <c>print_report</c>. The function should take <c>name</c> and <c>score</c> as parameters 
+      and print the name, score, and whether the student passed or failed. 
+      Replace the repeated code with calls to your function.
+    </p>
+ </statement>
+<program interactive="activecode" language="python">
+    <code>
+# TODO: Define a function print_report(name, score)
+#  that prints the name, score, and whether the student passed or failed.
+
+
+
+# The following code has a lot of repetition! 
+# Refactor the code with function calls to print_report 
+name = "Ava"
+score = 92
+print("Student:", name)
+print("Score:", score)
+print("Passed:", score &gt;= 60)
+
+name = "Luis"
+score = 78
+print("Student:", name)
+print("Score:", score)
+print("Passed:", score &gt;= 60)
+
+
+name = "Maya"
+score = 55
+print("Student:", name)
+print("Score:", score)
+print("Passed:", score &gt;= 60)
+</code> 
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("def print_report(name, score):", self.getEditorText(), "Define the print_report function with parameters name and score")
+        count = self.getEditorText().count("print_report(")
+        self.assertLessEqual(4, count, "Call print_report at least 3 times")
+        count = self.getEditorText().count("60")
+        self.assertEqual(1, count, "Use print_report instead of repeated lines of code with score &gt;= 60")
+
+myTests().main()
+    </tests>
+  </program>
+</activity>
+    
+  </subsection>
+
+  <subsection xml:id="coding-challenge-draw-functions">
+    <title>Coding Challenge: Draw Functions </title>
+
+       <idx><h>projects</h><h>functions drawing shapes</h></idx>
+      <idx><h>coding challenge</h><h>functions drawing shapes</h></idx>
+
+        <image source="_static/Unit3images/snowflake.png" alt="Turtle Snowflake design" width="30%"/>
+
+   <p>In the activities above, you created a <c>drawSquare()</c> and a <c>drawSquare(size, color)</c> 
+    function. In this project, we will abstract even further and create a function  <c>drawPolygon(sides, size, color, fill)</c> to draw any polygon with the specified number of <c>sides</c>. 
+    The angle of each turn in the polygon can be calculated by dividing 360 by the number of sides, since 360 degrees is a complete circle. For example,
+    for a square which has 4 sides, the angle of each turn is 360/4 = 90 degrees. For a octagon which has 8 sides, the external angle of each turn 
+    is 360/8 = 45 degrees. We can also use a boolean parameter <c>fill</c> to determine whether the polygon should be filled with color or not, adding calls to <c>begin_fill()</c> and <c>end_fill()</c> if the boolean parameter is true.  
+  </p>
+  <p>We will also add two more functions: <c>drawCircle(radius, color, fill)</c> and <c>drawStar(size, color, fill)</c>. To draw a circle, 
+    use the <c>tina.circle(radius)</c> method of the turtle. To draw a star, use a for loop that repeats 5 times, moving forward  and turning right by <c>144</c> degrees each time. The star can also be filled with color if the fill parameter is true. 
+  </p>
+    <p>Once you create these function, create a function called <c>drawSnowflake(sides,size,color,rotation)</c> that uses a loop and calls your drawPolygon 
+      function and then turns a little to draw a spiralling pattern. Experiment with different types of polygons and rotation amounts to create a cool snowflake design.
+      Then, create another function called <c>drawMyDesign()</c>to draw a 
+      more complex design, for example, a house, a creature, a car, a face, a flag, etc. The code below also has some advanced
+    turtle movement functions that will move the turtle anywhere you click on the screen and move the turtle with the arrow keys. Try 
+    running it to see it in action! See if you can incorporate the mouse and keyboard controls into your design.</p>
+
+
+   <project label="challenge-draw-functions">
+    <title>Coding Challenge: Draw Functions  </title>
+      <statement>
+        <p>
+          Create the following functions:</p>
+          <ul>
+            <li><c>drawPolygon(sides, size, color, fill)</c> which draws a polygon with the specified number of sides, size, and color. Use if statements to check if <c>fill</c> is True to call <c>begin_fill()</c> and <c>end_fill()</c>. For the angle, use <c>360/sides</c>.</li>
+            <li><c>drawCircle(radius, color, fill)</c> which draws a circle using <c>tina.circle(radius)</c> and if statements for the fill.</li>
+            <li><c>drawStar(size, color, fill)</c> which draws a 5-pointed star using a for loop that repeats 5 times, moving forward by the size and turning right by 144 degrees each time.</li>
+            <li><c>drawSnowflake(sides,size,color,rotation)</c> which uses a loop that runs <c>360/rotation</c> times and in the loop,
+            calls the <c>drawPolygon</c> function with no fill and turns the turtle by the rotation amount afterwards to get ready for the next shape. For an additional challenge, you can use an if-else statement to check if the loop counter is even or odd, and
+            change the color to create a multi-colored snowflake. </li>
+            <li><c>drawMyDesign()</c> that draws a more complex design, for example, a house, a creature, a car, a face, a flag, etc., using your other functions. You can also ask the user for input on different colors or sizes. You can call your function after all the other function definition. You can also call functions from the goto function below that draws things starting at a clicked location.</li>
+          </ul>
+        <p>If you need to clear the screen, use <c>tina.clear()</c>. </p>
+        <p>There are also some cool mouse and keyboard controlling functions introduced in the code below. Try running and clicking below to see <c>onscreenclick</c> in action. This will also work with a tap on a touch screen or touch pad.  Try using the arrow keys to move the turtle around the screen. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+tina = turtle.Turtle()
+tina.shape("turtle")
+tina.color("green")
+
+# 1. Create a function called drawPolygon(sides, size, color, fill) 
+#    Then, write 2 function calls to draw 2 different polygons with different number of sides
+
+
+# tina.clear()  # clear the screen if needed (uncomment)
+
+# 2. Create a function drawCircle(radius, color, fill) and then call it
+
+
+# 3. Create a function drawStar(size, color, fill)  remember to use 144 degree turns and then call it
+
+
+
+# tina.clear()  # clear the screen if needed (uncomment)
+
+# 4. Create a function drawSnowflake(sides,size,color,rotation) and then call it 
+
+
+
+# 5. Create drawMyDesign() and then call it
+
+
+
+
+# Try these mouse and keyboard functions! You can add draw functions inside these functions too.
+
+# Try clicking on the screen to move the turtle to a new location
+# This will work for 20 seconds.
+# You can add other function calls inside this function to draw shapes at the new location.
+def goto(x, y):
+    tina.goto(x, y)
+
+turtle.onscreenclick(goto)
+
+# Define movement functions
+def move_up():
+    tina.setheading(90)   # Face straight up
+    tina.forward(20)
+
+def move_down():
+    tina.setheading(270)  # Face straight down
+    tina.forward(20)
+
+def move_left():
+    tina.setheading(180)  # Face straight left
+    tina.forward(20)
+
+def move_right():
+    tina.setheading(0)    # Face straight right
+    tina.forward(20)
+    
+turtle.onkey(move_up, "Up")
+turtle.onkey(move_down, "Down")
+turtle.onkey(move_left, "Left")
+turtle.onkey(move_right, "Right")
+turtle.listen()
+          </code>
+          <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("drawPolygon(sides,size,color,fill):", code, "Define the drawPolygon(sides,size,color,fill) function")
+        self.assertIn("range(sides):", code, "Use range(sides) in the loop in the drawPolygon function")
+        self.assertIn("if fill", self.getEditorText(), "Use if statements to check if fill is True in the functions")
+        count = code.count("drawPolygon(")
+        self.assertLessEqual(2, count, "Call drawPolygon at least 2 times")
+        self.assertIn("drawCircle(radius,color,fill):", code, "Define the drawCircle(radius, color, fill) function")
+        self.assertIn("tina.circle(radius)", code, "Use the radius parameter in the drawCircle function")
+        self.assertIn("drawStar(size,color,fill):", code, "Define the drawStar(size, color, fill) function")
+        self.assertIn("drawSnowflake(sides,size,color,rotation):", code, "Define the drawSnowflake(sides,size,color,rotation) function")
+        self.assertIn("drawMyDesign():", code, "Define the drawMyDesign() function")
+        self.assertIn("360/sides", code, "Use 360/sides for the turns in the loop in the drawPolygon function")
+        self.assertIn("(144)", code, "Use 144 degree turns in the drawStar function")
+        self.assertIn("360/rotation", code, "Use 360/rotation for the turns in the loop in the drawSnowflake function")
+
+myTests().main()
+          </tests>
+          </program>
+          </project>
+
+          <activity label="frq-procedure-abstraction">
+             <title>Procedural Abstraction Reflection</title>
+            <statement>
+              <p>Consider one of the procedures (i.e. functions) that you wrote in the drawing project above.
+                Describe the functionality provided by this procedure. Explain the advantages of implementing 
+                this functionality as a procedure (i.e. function). Describe how the program would be coded if this functionality 
+                was not in a procedure. What are the benefits of using procedural abstraction in your code?
+              </p>
+            </statement>
+            <response/>
+          </activity>
+        
+          <activity label="frq-procedure-calls">
+             <title>Procedure Calls Reflection</title>
+            <statement>
+              <p>Consider one of the procedures (i.e. functions) that you wrote in the drawing project above. 
+                Write two calls to your procedure that each cause a different code segment in the 
+                procedure to execute. Describe the expected behavior of each call. 
+                Describe why this is a good use of procedural abstraction. If it is not 
+                possible for two calls to your procedure to cause different code segments to 
+                execute, explain why this is the case for your procedure.
+                </p>
+            </statement>
+            <response/>
+          </activity>
+
+  </subsection>
+
+  <subsection xml:id="vocab-3-2">
+   <title>Vocabulary Review</title>
+
+   <activity label="vocab-functions">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>procedure/function</premise>
+          <response>a named group of programming instructions that perform a specific task</response>
+        </match>
+        <match>
+          <premise>procedural abstraction</premise>
+          <response>grouping related code into procedures that can be called by name, hiding detailed implementationsteps from the rest of the program</response>
+        </match>
+        <match>
+          <premise>modularity</premise>
+          <response>the subdivision of a program into smaller, independent procedures or components</response> 
+        </match>
+        <match>
+          <premise>procedure/function definition</premise>
+          <response>the code that defines what a procedure or function does</response>
+        </match>
+        <match>
+          <premise>procedure/function call</premise>
+          <response>the code that runs a procedure or function</response>
+          </match>
+        <match>
+          <premise>parameters</premise>
+          <response>variables that are defined in a procedure or function and used to pass in data</response>
+        </match>
+        <match>
+          <premise>arguments</premise>
+          <response>values that are passed to a procedure or function when it is called</response>
+        </match>
+      </cardsort>
+    </activity>
+
+  </subsection>
+</section>

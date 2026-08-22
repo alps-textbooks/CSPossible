@@ -1,0 +1,58 @@
+  <activity label="refactorFunctionsParams">
+  <statement>
+    <p>
+      The following program repeats the same calculation in several places.
+      Refactor the program by creating a function named
+      <c>calculate_total</c>. The function should take <c>price</c> and
+      <c>quantity</c> as parameters and return the total. Replace the
+      repeated calculations with calls to your function.
+    </p>
+ </statement>
+<program interactive="activecode" language="python">
+    <code>
+# TODO: Define a function calculate_total
+# The function should take price and quantity as parameters
+#   and return the product.
+
+
+# The following code has a lot of repetition! 
+# TODO: Refactor the code for 3 orders with function calls.
+price = 5
+quantity = 3
+total = price * quantity
+print("Order 1:", total)
+
+# Order 2
+price = 12
+quantity = 4
+total = price * quantity
+print("Order 2:", total)
+
+# Order 3
+price = 8
+quantity = 6
+total = price * quantity
+print("Order 3:", total)
+</code> 
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+         # remove comments
+        actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )    
+        self.assertIn("defcalculate_total(price,quantity):", actual.replace(" ",""), "Define the calculate_total function with parameters price and quantity")
+        self.assertIn("return", actual, "Use a return statement in the calculate_total function")
+        count = actual.count("calculate_total(")
+        self.assertLessEqual(4, count, "Call calculate_total at least 3 times")
+        count = actual.count("*")
+        self.assertEqual(1, count, "Use calculate_total() instead of repeated lines with * operator")
+        self.assertEqual(15, calculate_total(5, 3), "calculate_total(5, 3) should return 15")
+
+myTests().main()
+    </tests>
+  </program>
+</activity>

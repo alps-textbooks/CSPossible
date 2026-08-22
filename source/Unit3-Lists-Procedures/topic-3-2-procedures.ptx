@@ -7,12 +7,12 @@
   <introduction>
    <p>Quick Links:
       <xref text="global" ref="procedures,function-call-defn, arguments, return-values, procedural-abstraction,
-      coding-challenge-functions, LOs-3-2, vocab-3-2"/>
+      coding-challenge-draw-functions, LOs-3-2, vocab-3-2"/>
     </p>
     <p>
       Our programs are getting longer and longer! Advanced programmers break up 
       large programs into smaller, more manageable pieces called 
-      <term>procedures</term> or <term>functions</term>. This allows us to
+      <term>procedures</term> or <term>functions</term>. This allows programmers to
        solve complex problems by breaking them into smaller subproblems and to reuse code.
       In this lesson, we will learn to write our own Python functions and learn how procedural abstraction 
       helps manage complexity.
@@ -47,9 +47,15 @@
      that functions end with parentheses () which can contain <term>arguments</term>, the data that 
      the function needs to do its job, for example what to print for the <c>print("Print this!")</c> function. 
      Some functions like <c>input()</c> or <c>random.randint()</c> also return values back like
-     the user's input or a random number that we usually store in a variable.  A function is like a black box
-      where you know what goes in and what comes out, but not necessarily how it works inside. This is a powerful abstraction 
-      that allows our programs to be more complex without being overwhelming.
+     the user's input or a random number that we usually store in a variable.  </p>
+     
+     <p>A function is like a <term>black box</term> where you know what data goes in and what 
+      data omes out, but not necessarily how it works inside. We don't really need to know exactly
+      how <c>print()</c> or <c>input()</c> works internally; we just need to know what it does. 
+      This is called <term>procedural abstraction</term> where the code is grouped into manageable 
+     chunks called procedures or functions that can be called by name, hiding the detailed 
+     implementation steps from the rest of the program. This allows programs to be more complex 
+     without being overwhelming. Here are some of the Python functions that we have used so far.
     </p>
 
     <program language="python">
@@ -105,7 +111,7 @@
           How did your group use the input/output pairs to try to figure it out?</li>
          <li>How does this activity demonstrate that a function can be reused with different arguments?</li>
          <li>Can you use a function without knowing how it works inside? 
-          How does this activity demonstrate that a function is an abstraction like a "black box"?</li>
+          How does this activity demonstrate that a function is a procedural abstraction like a "black box"?</li>
       </ol>
   </statement>
     <response/>
@@ -124,7 +130,7 @@
     to avoid repetition of code. 
     For example, the "This Old Man" song below has a lot of repetition    
     (<url href="https://www.youtube.com/watch?v=Di23O5cN4ZU">listen here</url>).
-    Instead of writing the same code over and over in order to print the song, we can write functions that for different
+    Instead of writing the same code over and over in order to print the song, we can write functions for different
     parts of the song and run them when needed. Click on all lines of code that are repeated in the song below, and then we will learn how they can be replaced with a function called <c>chorus()</c>.
   </p>
     <activity label="repeatedcode-this-old-man">
@@ -337,7 +343,7 @@ song()
 
         <choice>
           <statement>
-            <p>I like to eat eat eat fruit</p>
+            <p>I like to eat eat eat fruit fruit</p>
           </statement>
 
           <feedback>
@@ -350,7 +356,9 @@ song()
 
         <choice>
           <statement>
-            <p>I like to eat, eat, eat apples and bananas!</p>
+             <p><pre>
+I like to eat, eat, eat 
+apples and bananas!</pre></p>
           </statement>
 
           <feedback>
@@ -376,6 +384,91 @@ apples and bananas!</pre></p>
         </choice>
       </choices>
     </activity>
+
+    <p>In the previous unit, we learned how to draw squares with loops. Let's put that code in a function, so 
+      that it can be called multiple times to draw multiple squares. First, try it with a mixed up code problem, and
+      then write the code yourself.
+    </p>
+
+    <activity label="turtleFunctionMixedUp" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>
+          The following code should define a function that draws a square using a turtle called tina, 
+          but it is mixed up. 
+          Drag the needed code to the right side in the correct order.
+          Remember that the statements in the function must be indented! To
+          indent a block drag it further right.
+        </p>
+      </statement>
+      <blocks>
+        <block order="3">
+          <cline>def drawSquare():</cline>
+        </block>
+        <block order="1">
+          <cline>    for i in range(4):</cline>
+          </block>
+        <block order="2">
+          <cline>        tina.forward(50)</cline>
+          <cline>        tina.right(90)</cline>
+        </block>
+      </blocks>
+      </activity>
+
+   <activity label="turtleSquareFunction">
+      <statement>
+        <p>
+          Write a function called <c>drawSquare()</c> with no parameters that draws a square of size 50 using the turtle. 
+          Move the loop into this function and then call the function to draw the square multiple times.
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+tina = turtle.Turtle()
+tina.shape("turtle")
+tina.color("green")
+
+# Put this code in a def drawSquare() function (no parameters)
+# Make sure you indent the code inside the function 
+#  and keep the indent inside the loop
+for count in range(4):
+    tina.forward(50)
+    tina.right(90)
+
+# Add a function call to drawSquare() here
+
+tina.goto(-100,150) # move turtle up
+# Replace this code with a function call to drawSquare()
+for count in range(4):
+    tina.forward(50)
+    tina.right(90)
+
+# Move the turtle to a new location and call drawSquare() again
+
+          </code>
+          <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        # remove comments
+        actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+
+        self.assertIn("def drawSquare():",self.getEditorText(), "Define a function called drawSquare()")
+        for_count = actual.count("for ")
+        self.assertEqual(1, for_count, "Use just 1 for loop")
+        drawSquare_count = actual.count("drawSquare()")
+        self.assertLessEqual(3, drawSquare_count, "Call drawSquare() at least 3 times")
+
+myTests().main()
+          </tests>
+          </program>
+    </activity>
+
   </subsection>
 
   <subsection xml:id="arguments">
@@ -384,8 +477,17 @@ apples and bananas!</pre></p>
     <idx>arguments</idx>
     <idx>parameters</idx>
 
+     <note>
+      <title>3.2.A.3</title>
+      <p>
+        Procedures can use parameters to receive input. A <term>parameter</term> is a variable name
+        listed in the procedure definition. An <term>argument</term> is the actual value provided
+        when the procedure is called.
+      </p>
+    </note>
+
     <p>
-  Let’s take another look at the <i>This Old Man</i> song and see if we can
+  Let’s take another look at the "This Old Man" song and see if we can
   replace more repeated code. Each verse of the song is similar except it uses a different number and rhyme.
   If we can pull these out into variables, we can write a single function that can print any verse of the song!
   Click on the words that are different in the lines that are repeated to
@@ -436,15 +538,6 @@ apples and bananas!</pre></p>
 
   <image source="_static/Unit3images/procedure-defn-call.png" alt="Parameter and Argument" width="90%"/>
 
- <note>
-      <title>3.2.A.3</title>
-      <p>
-        Procedures can use parameters to receive input. A <term>parameter</term> is a variable name
-        listed in the procedure definition. An <term>argument</term> is the actual value provided
-        when the procedure is called.
-      </p>
-    </note>
-
 <p>Going back to our song, we can make a function called <c>verse</c> that takes the number and the rhyme as parameters and uses them to 
   print any verse! The parameter variables <c>number</c> and <c>rhyme</c> will hold different values each time the function is called. </p>
 
@@ -461,7 +554,9 @@ def verse(number, rhyme):
 </code>
 </program>
 
-<p>The <c>verse</c> function can now be used to print any verse of the song. The values passed to the function become the values of the parameter variables. The main part of the program can now mostly be calls to the <c>verse</c> function. Main program code often looks like an outline for the program, calling functions to do the work. </p>
+<p>The <c>verse</c> function can now be used to print any verse of the song. The values passed to the function become the values of 
+  the parameter variables. The main part of the program can be just calls to the <c>verse</c> function. Main program code often 
+  looks like an outline for the program, calling all the functions to do the work. </p>
 
 <program language="python"> 
   <code> 
@@ -471,7 +566,8 @@ verse("two", "shoe")
 </program>
 
 <p>Notice that the same function is called two times with different arguments. When <c>verse("one", "thumb")</c> is called, the 
-  parameter <c>number</c> gets the value <c>"one"</c> and the parameter <c>rhyme</c> gets the value <c>"thumb"</c>. When <c>verse("two", "shoe")</c> is called, the same parameters receive different values. The function does not need to change. The 
+  parameter <c>number</c> gets the value <c>"one"</c> and the parameter <c>rhyme</c> gets the value <c>"thumb"</c>. When 
+  <c>verse("two", "shoe")</c> is called, the same parameters receive different values. The function does not need to change. The 
   arguments provide the values that makes each verse different. </p>
 
   <image source="_static/Unit3images/procedure-verse-call.png" alt="Calling verse(number, rhyme)" width="70%"/>
@@ -500,14 +596,14 @@ verse("two", "shoe")
 </program>
 </activity>
 
-<p> Let’s try adding more verses to the song. With the power of abstraction using a function with parameters, 
+<p> Let’s try adding more verses to the song. With the power of procedural abstraction using a function with parameters, 
   it becomes very easy to add more verses to the song, just by calling the <c>verse</c> function with different arguments.
   Parameters make it more general, flexible, and reusable! 
  </p>
 
 <activity label="ThisOldManSong2"> 
   <statement> 
-    <p>Run the following code to see the song <i>This Old Man</i> using the <c>verse</c> function. 
+    <p>Run the following code to see the song "This Old Man" using the <c>verse</c> function. 
   Add another verse using <c>"three"</c> and the rhyme <c>"knee"</c> and another verse using <c>"four"</c> and the rhyme <c>"door"</c> by
   calling the <c>verse</c> function with the two arguments. 
 </p>
@@ -519,6 +615,7 @@ verse("two", "shoe")
 def chorus(): 
     print("With a knick-knack paddywhack, give a dog a bone,")
     print("This old man came rolling home.")
+    print()  # print extra empty line
 
 def verse(number, rhyme): 
     print("This old man, he played", number, ".")
@@ -550,6 +647,66 @@ myTests().main()
 </program> 
 </activity>
 
+<p>Let's add one more abstraction! Let's add <term>data abstraction</term> using lists along with <term>procedural abstraction</term>.
+We can create two parallel lists of the <c>number</c> and <c>rhyme</c> values and iterate through them. This abstraction
+makes our code even more flexible and makes it even easier to add another verse by just adding a new element to each list.</p>
+
+<program language="python">
+  <code>
+numbers = ["one", "two", "three"]
+rhymes = ["thumb", "shoe", "knee"]
+# Iterate through the lists and call verse() for each number and rhyme
+for i in range(len(numbers)):
+    verse(numbers[i], rhymes[i])
+  </code>
+</program>
+
+<activity label="ThisOldManSongLists"> 
+  <statement> 
+    <p>Change the code below to use two parallel lists of the <c>number</c> and <c>rhyme</c> values and iterate through them to call the <c>verse</c> function for each number and rhyme. For help, see the code above. Create your list with 3 elements to start with and
+      then extend it to 4 or 5 elements to see how easy it is to add more verses to the song using lists and a for loop.
+</p>
+
+</statement>
+
+<program interactive="activecode" language="python"> 
+  <code> 
+def chorus(): 
+    print("With a knick-knack paddywhack, give a dog a bone,")
+    print("This old man came rolling home.")
+    print()
+
+def verse(number, rhyme): 
+    print("This old man, he played", number, ".")
+    print("He played knick-knack on my", rhyme, ".")
+    chorus()
+
+# Create 2 parallel lists: numbers with the values "one", "two", "three", "four"
+#     and rhymes with the values "thumb", "shoe", "knee", "door"
+
+# Use a for loop to iterate through the lists and call verse() for each number and rhyme in the lists
+# instead of the 2 lines below
+verse("one", "thumb")
+verse("two", "shoe")
+</code>
+
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+       
+        self.assertIn('["one","two","three","four"', code, "Create a list of at least 4 numbers")
+        self.assertIn('["thumb","shoe","knee","door"', code, "Create a list of at least 4 rhymes")
+        self.assertIn("for i in range", self.getEditorText(), "Use for i in range loop"")
+        self.assertIn("verse(numbers[i],rhymes[i])", code, "Call verse(numbers[i], rhymes[i]) in the loop")
+
+myTests().main()
+</tests>
+
+</program> 
+</activity>
   
     <note>
       <title>3.2.A.4</title>
@@ -577,7 +734,7 @@ myTests().main()
     </note>
 
     <p>Let's now write our own functions with parameters. Let's write a procedure or function that welcomes a user.
-      In AP CSP pseudocode, we would start the procedure definition with the header <c>procedure welcome(name)</c> where the parameter variable is put inside the parentheses after the procedure name.
+      In AP CSP pseudocode, we would start the procedure definition with the header <c>procedure welcome(name)</c> where the parameter variable is put inside the parentheses after the procedure name. Then, we can call <c>welcome</c> with different values for the parameter variable <c>name</c> to print a personalized welcome message. 
     </p>
 
    <image source="_static/Unit3images/procedure-welcome.png" alt="Parameter and Argument" width="50%"/>
@@ -652,11 +809,13 @@ functionName(arg1, arg2, ...)
       <program interactive="activecode" language="python">
         <code>
           # TODO: Write the welcome function using def and a parameter name
+          #       Inside the function, print a Hello and the name
+
 
           # Function Calls
           welcome("World")
-          # Call welcome with your name as the argument
-          # Call welcome again with a different name as the argument
+          # TODO: Call welcome with your name as the argument
+          # TODO: Call welcome again with a different name as the argument
 
         </code>
         <tests>
@@ -674,6 +833,61 @@ class myTests(TestCaseGui):
 myTests().main()
 </tests>
 </program>
+    </activity>
+
+    <p>Let's also add parameters to our turtle square function so that we can draw squares of different sizes and colors.
+    </p>
+
+   <activity label="turtleSquareFunctionParams">
+      <statement>
+        <p>
+          Write a function called <c>drawSquare(size, color)</c> that draws a square of the specified size and color using the turtle. 
+        </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+tina = turtle.Turtle()
+tina.shape("turtle")
+tina.color("green")
+
+# TODO: Change this function to take 2 parameters for size and color
+def drawSquare():
+    # TODO: Change the code below to use the color and size variables
+    #   instead of "green" and 50
+    tina.begin_fill()
+    tina.color("green")
+    for count in range(4):
+        tina.forward(50)
+        tina.right(90)
+    tina.end_fill()
+
+# TODO: Add arguments of 150 and "red" to the function call below
+drawSquare()
+
+tina.goto(-100,150) # move turtle up
+# TODO: Add arguments of 100 and "blue" to the function call below
+drawSquare()
+
+# Move the turtle to a new location and call drawSquare with any arguments
+
+          </code>
+          <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("drawSquare(size,color):", code, "Add parameters for size and color to the drawSquare function")
+        self.assertIn("tina.color(color)", code, "Use the color parameter in the drawSquare function")
+        self.assertIn("tina.forward(size)", code, "Use the size parameter in the drawSquare function")
+        self.assertIn("drawSquare(150,\"red\")", code, "Call drawSquare(150,\"red\")")
+        self.assertIn("drawSquare(100,\"blue\")", code, "Call drawSquare(100,\"blue\")")
+
+myTests().main()
+          </tests>
+          </program>
     </activity>
 
     <note>
@@ -722,7 +936,7 @@ song("pizza", "pineapples")
   <choices randomize="yes">
 <choice>
   <statement>
-    <p><c>I like to eat, eat, eat apples and bananas!</c></p>
+    <p><pre>I like to eat, eat, eat apples and bananas!</pre></p>
   </statement>
 
   <feedback>
@@ -1041,7 +1255,7 @@ myTests().main()
     <note>
       <title>3.2.C.1</title>
       <p>
-        Procedural abstraction manages complexity by grouping related code into named
+        <term>Procedural abstraction</term> manages complexity by grouping related code into named
         procedures that can be called from other parts of a program.
       </p>
     </note>
@@ -1065,7 +1279,7 @@ myTests().main()
       </p>
     </note>
 
-    <p><term>Modularity</term> is the practice of dividing a program into smaller independent parts. Each part or 
+    <p><term>Modularity</term> means dividing a program into smaller independent parts. Each part or 
        does one specific job. This is a great way to manage complexity because it divides the problem into more manageable
        parts that make it easier to design, test, and maintain. It also makes the code easier to understand.
       </p>
@@ -1090,7 +1304,7 @@ myTests().main()
 
     <p>Procedural abstraction also removes repetition in code because it allows programmers to define a procedure once and then call it 
       multiple times, rather than writing the same code repeatedly. This allows for code reuse and makes the code easier to maintain. If 
-      a change is needed, it can be made in one place instead of multiple places.</p>
+      a change is needed, it can be made in one place instead of multiple places. In the following activities, we will <term>refactor</term> existing code by creating reusable functions. Remember that refactoring means making changes to the code's structure without changing what it does.</p>
 
     <note>
       <title>3.2.C.5</title>
@@ -1125,8 +1339,8 @@ def get_valid_number():
 
 
 print("Enter your first number:")
-# TODO: Remove the repeated validation code below 
-#    Replace with
+# TODO: Move the repeated validation code below into the function above
+# Replace with the function call:
 # number = get_valid_number()   
 number = int(input("Number: "))
 while number &lt; 1 or number &gt; 10:
@@ -1264,7 +1478,7 @@ calculate_total(10.25, 4)
       </p>
     </note>
 
-    <p>Using functions with paramenters is an even more powerful abstraction that allows for greater flexibility and reusability in code.
+    <p>Using functions with parameters is an even more powerful abstraction that allows for greater flexibility and reusability in code.
       Try refactoring the code below to remove the repeated calculations by creating a function that takes parameters and returns a value.
     </p>
 
@@ -1321,76 +1535,167 @@ myTests().main()
     </tests>
   </program>
 </activity>
+    
+  </subsection>
 
-  <activity label="refactorFunctionsParams">
-  <statement>
-    <p>
-      The following program repeats the same calculation in several places.
-      Refactor the program by creating a function named
-      <c>calculate_total</c>. The function should take <c>price</c> and
-      <c>quantity</c> as parameters and return the total. Replace the
-      repeated calculations with calls to your function.
-    </p>
- </statement>
-<program interactive="activecode" language="python">
-    <code>
-# TODO: Define a function calculate_total
-# The function should take price and quantity as parameters
-#   and return the product.
+  <subsection xml:id="coding-challenge-draw-functions">
+    <title>Coding Challenge: Draw Functions </title>
+      <idx><h>projects</h><h>functions drawing shapes</h></idx>
+      <idx><h>coding challenge</h><h>functions drawing shapes</h></idx>
+
+        <image source="_static/Unit3images/snowflake.png" alt="Turtle Snowflake design" width="30%"/>
+
+   <p>In the activities above, you created a <c>drawSquare()</c> and a <c>drawSquare(size, color)</c> 
+    function. In this project, we will abstract even further and create a function  <c>drawPolygon(sides, size, color, fill)</c> to draw any polygon with the specified number of <c>sides</c>. 
+    The angle of each turn in the polygon can be calculated by dividing 360 by the number of sides, since 360 degrees is a complete circle. For example,
+    for a square which has 4 sides, the angle of each turn is 360/4 = 90 degrees. For a octagon which has 8 sides, the external angle of each turn 
+    is 360/8 = 45 degrees. We can also use a boolean parameter <c>fill</c> to determine whether the polygon should be filled with color or not, adding calls to <c>begin_fill()</c> and <c>end_fill()</c> if the boolean parameter is true.  
+  </p>
+  <p>We will also add two more functions: <c>drawCircle(radius, color, fill)</c> and <c>drawStar(size, color, fill)</c>. To draw a circle, 
+    use the <c>tina.circle(radius)</c> method of the turtle. To draw a star, use a for loop that repeats 5 times, moving forward  and turning right by <c>144</c> degrees each time. The star can also be filled with color if the fill parameter is true. 
+  </p>
+    <p>Once you create these function, create a function called <c>drawSnowflake(sides,size,color,rotation)</c> that uses a loop and calls your drawPolygon 
+      function and then turns a little to draw a spiralling pattern. Experiment with different types of polygons and rotation amounts to create a cool snowflake design.
+      Then, create another function called <c>drawMyDesign()</c>to draw a 
+      more complex design, for example, a house, a creature, a car, a face, a flag, etc. The code below also has some advanced
+    turtle movement functions that will move the turtle anywhere you click on the screen and move the turtle with the arrow keys. Try 
+    running it to see it in action! See if you can incorporate the mouse and keyboard controls into your design.</p>
 
 
-# The following code has a lot of repetition! 
-# Refactor the code with function calls.
-price1 = 5
-quantity1 = 3
-total1 = price1 * quantity1
-print("Order 1:", total1)
+   <project label="challenge-draw-functions">
+    <title>Coding Challenge: Draw Functions  </title>
+      <statement>
+        <p>
+          Create the following functions:</p>
+          <ul>
+            <li><c>drawPolygon(sides, size, color, fill)</c> which draws a polygon with the specified number of sides, size, and color. Use if statements to check if <c>fill</c> is True to call <c>begin_fill()</c> and <c>end_fill()</c>. For the angle, use <c>360/sides</c>.</li>
+            <li><c>drawCircle(radius, color, fill)</c> which draws a circle using <c>tina.circle(radius)</c> and if statements for the fill.</li>
+            <li><c>drawStar(size, color, fill)</c> which draws a 5-pointed star using a for loop that repeats 5 times, moving forward by the size and turning right by 144 degrees each time.</li>
+            <li><c>drawSnowflake(sides,size,color,rotation)</c> which uses a loop that runs <c>360/rotation</c> times and in the loop,
+            calls the <c>drawPolygon</c> function with no fill and turns the turtle by the rotation amount afterwards to get ready for the next shape. For an additional challenge, you can use an if-else statement to check if the loop counter is even or odd, and
+            change the color to create a multi-colored snowflake. </li>
+            <li><c>drawMyDesign()</c> that draws a more complex design, for example, a house, a creature, a car, a face, a flag, etc., using your other functions. You can also ask the user for input on different colors or sizes. You can call your function after all the other function definition. You can also call functions from the goto function below that draws things starting at a clicked location.</li>
+          </ul>
+        <p>If you need to clear the screen, use <c>tina.clear()</c>. </p>
+        <p>There are also some cool mouse and keyboard controlling functions introduced in the code below. Try running and clicking below to see <c>onscreenclick</c> in action. This will also work with a tap on a touch screen or touch pad.  Try using the arrow keys to move the turtle around the screen. 
+        </p>
+      </statement>
 
-price2 = 12
-quantity2 = 4
-total2 = price2 * quantity2
-print("Order 2:", total2)
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+tina = turtle.Turtle()
+tina.shape("turtle")
+tina.color("green")
 
-price3 = 8
-quantity3 = 6
-total3 = price3 * quantity3
-print("Order 3:", total3)
-</code> 
-<tests>
+# 1. Create a function called drawPolygon(sides, size, color, fill) 
+#    Then, write 2 function calls to draw 2 different polygons with different number of sides
+
+
+# tina.clear()  # clear the screen if needed (uncomment)
+
+# 2. Create a function drawCircle(radius, color, fill) and then call it
+
+
+# 3. Create a function drawStar(size, color, fill)  remember to use 144 degree turns and then call it
+
+
+
+# tina.clear()  # clear the screen if needed (uncomment)
+
+# 4. Create a function drawSnowflake(sides,size,color,rotation) and then call it 
+
+
+
+# 5. Create drawMyDesign() and then call it
+
+
+
+
+# Try these mouse and keyboard functions! You can add draw functions inside these functions too.
+
+# Try clicking on the screen to move the turtle to a new location
+# This will work for 20 seconds.
+# You can add other function calls inside this function to draw shapes at the new location.
+def goto(x, y):
+    tina.goto(x, y)
+
+turtle.onscreenclick(goto)
+
+# Define movement functions
+def move_up():
+    tina.setheading(90)   # Face straight up
+    tina.forward(20)
+
+def move_down():
+    tina.setheading(270)  # Face straight down
+    tina.forward(20)
+
+def move_left():
+    tina.setheading(180)  # Face straight left
+    tina.forward(20)
+
+def move_right():
+    tina.setheading(0)    # Face straight right
+    tina.forward(20)
+    
+turtle.onkey(move_up, "Up")
+turtle.onkey(move_down, "Down")
+turtle.onkey(move_left, "Left")
+turtle.onkey(move_right, "Right")
+turtle.listen()
+          </code>
+          <tests>
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
-        self.assertIn("def calculate_total(price, quantity):", self.getEditorText(), "Define the calculate_total function with parameters price and quantity")
-        self.assertIn("return", self.getEditorText(), "Use a return statement in the calculate_total function")
-        count = self.getEditorText().count("calculate_total(")
-        self.assertLessEqual(4, count, "Call calculate_total at least 3 times")
-        count = self.getEditorText().count("*")
-        self.assertEqual(1, count, "Use calculate_total() instead of repeated lines with * operator")
-        self.assertEqual(15, calculate_total(5, 3), "calculate_total(5, 3) should return 15")
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("drawPolygon(sides,size,color,fill):", code, "Define the drawPolygon(sides,size,color,fill) function")
+        self.assertIn("range(sides):", code, "Use range(sides) in the loop in the drawPolygon function")
+        self.assertIn("if fill", self.getEditorText(), "Use if statements to check if fill is True in the functions")
+        count = code.count("drawPolygon(")
+        self.assertLessEqual(2, count, "Call drawPolygon at least 2 times")
+        self.assertIn("drawCircle(radius,color,fill):", code, "Define the drawCircle(radius, color, fill) function")
+        self.assertIn("tina.circle(radius)", code, "Use the radius parameter in the drawCircle function")
+        self.assertIn("drawStar(size,color,fill):", code, "Define the drawStar(size, color, fill) function")
+        self.assertIn("drawSnowflake(sides,size,color,rotation):", code, "Define the drawSnowflake(sides,size,color,rotation) function")
+        self.assertIn("drawMyDesign():", code, "Define the drawMyDesign() function")
+        self.assertIn("360/sides", code, "Use 360/sides for the turns in the loop in the drawPolygon function")
+        self.assertIn("(144)", code, "Use 144 degree turns in the drawStar function")
+        self.assertIn("360/rotation", code, "Use 360/rotation for the turns in the loop in the drawSnowflake function")
 
 myTests().main()
-    </tests>
-  </program>
-</activity>
-    
-  </subsection>
+          </tests>
+          </program>
+          </project>
 
-  <subsection xml:id="coding-challenge-functions">
-    <title>Coding Challenge: Functions </title>
+          <activity label="frq-procedure-abstraction">
+             <title>Procedural Abstraction Reflection</title>
+            <statement>
+              <p>Consider one of the procedures (i.e. functions) that you wrote in the drawing project above.
+                Describe the functionality provided by this procedure. Explain the advantages of implementing 
+                this functionality as a procedure (i.e. function). Describe how the program would be coded if this functionality 
+                was not in a procedure. What are the benefits of using procedural abstraction in your code?
+              </p>
+            </statement>
+            <response/>
+          </activity>
+        
+          <activity label="frq-procedure-calls">
+             <title>Procedure Calls Reflection</title>
+            <statement>
+              <p>Consider one of the procedures (i.e. functions) that you wrote in the drawing project above. 
+                Write two calls to your procedure that each cause a different code segment in the 
+                procedure to execute. Describe the expected behavior of each call. 
+                Describe why this is a good use of procedural abstraction. If it is not 
+                possible for two calls to your procedure to cause different code segments to 
+                execute, explain why this is the case for your procedure.
+                </p>
+            </statement>
+            <response/>
+          </activity>
 
-    <activity label="functionsChallenge">
-      <statement>
-        <p>
-          
-        </p>
-      </statement>
-      <program interactive="activecode" language="python">
-        <code>
-        </code>
-      </program>
-
-      </activity>
   </subsection>
 
   <subsection xml:id="LOs-3-2">
@@ -1420,5 +1725,51 @@ myTests().main()
 
   <subsection xml:id="vocab-3-2">
    <title>Vocabulary Review</title>
+
+   <activity label="vocab-functions">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>procedure/function</premise>
+          <response>a named group of programming instructions that perform a specific task</response>
+        </match>
+        <match>
+          <premise>procedural abstraction</premise>
+          <response>grouping related code into procedures that can be called by name, hiding detailed implementationsteps from the rest of the program</response>
+        </match>
+        <match>
+          <premise>modularity</premise>
+          <response>the subdivision of a program into smaller, independent procedures or components</response> 
+        </match>
+        <match>
+          <premise>procedure/function definition</premise>
+          <response>the code that defines what a procedure or function does</response>
+        </match>
+        <match>
+          <premise>procedure/function call</premise>
+          <response>the code that runs a procedure or function</response>
+          </match>
+        <match>
+          <premise>parameters</premise>
+          <response>variables that are defined in a procedure or function and used to pass in data</response>
+        </match>
+        <match>
+          <premise>arguments</premise>
+          <response>values that are passed to a procedure or function when it is called</response>
+        </match>
+      </cardsort>
+    </activity>
+
   </subsection>
 </section>
