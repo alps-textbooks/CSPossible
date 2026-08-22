@@ -1554,7 +1554,7 @@ myTests().main()
   <p>We will also add two more functions: <c>drawCircle(radius, color, fill)</c> and <c>drawStar(size, color, fill)</c>. To draw a circle, 
     use the <c>tina.circle(radius)</c> method of the turtle. To draw a star, use a for loop that repeats 5 times, moving forward  and turning right by <c>144</c> degrees each time. The star can also be filled with color if the fill parameter is true. 
   </p>
-    <p>Once you create these function, create a function called <c>drawSnowflake(sides,size,color,rotation)</c> that uses a loop and calls your drawPolygon 
+    <p>Once you create these function, create a function called <c>drawSnowflake(sides, size, color, rotation)</c> that uses a loop and calls your drawPolygon 
       function and then turns a little to draw a spiralling pattern. Experiment with different types of polygons and rotation amounts to create a cool snowflake design.
       Then, create another function called <c>drawMyDesign()</c>to draw a 
       more complex design, for example, a house, a creature, a car, a face, a flag, etc. The code below also has some advanced
