@@ -656,7 +656,7 @@ print( teeny.xcor() )
     <subsection xml:id="coding-challenge-turtle-project">
       <title>Coding Challenge: Turtle Project</title>
 
-      <activity label="coding-challenge-turtle-project">
+      <project label="coding-challenge-turtle-project">
       <statement>
         <p>Draw something interesting with the turtle.  
           You could draw a flower, a house for the turtle, a smiley face, or anything you want.
@@ -704,7 +704,7 @@ print( teeny.xcor() )
             myTests().main()
         </tests>
       </program>
-    </activity>
+    </project>
 
      <activity label="turtle-project-reflection">
       <title>Project Reflection</title>
