@@ -535,6 +535,40 @@ tool called <url href="https://pythontutor.com">Python Tutor</url> that is built
     <title>Input and Math</title>
     <idx>input</idx>
 
+    <p>Many algorithms that use calculations follow a simple pattern:</p>
+    <ol>
+      <li><term>Input:</term> Get input from the user and save it into variables.</li> 
+      <li><term>Calculate:</term> Calculate the result based on the input.</li> 
+      <li><term>Output:</term> Print the result.</li> 
+    </ol>
+
+
+      <activity label="parsons-algorithm-input-math" numbered="yes" adaptive="yes" indentation="show"
+      language="python">
+      <statement>
+        <p>
+          Put the following code into the correct order. The code should compute and print the salary
+          based on the hours worked and the hourly pay rate provided by the user. Notice how the input
+          is converted to the int or float data type so that it can be used in the calculation.
+        </p>
+      </statement>
+
+      <blocks>
+        <block>
+          <cline>hoursWorked = int(input("How many hours did you work? "))</cline>
+          <cline>hourlyRate = float(input("What is your hourly rate? "))</cline>
+        </block>
+
+        <block>
+          <cline>salary = hoursWorked * hourlyRate</cline>
+        </block>
+
+        <block>
+          <cline>print("Your salary is:", salary)</cline>
+        </block>
+      </blocks>
+    </activity>
+
     <p>When you use the <c>input()</c> command to get input from a user, the value is always treated as a string, 
       even if the user types in a number. If you want to use that input in a mathematical expression, you need to 
       convert it to a number first using the <c>int()</c> command for integers or <c>float()</c> command for 
@@ -547,6 +581,14 @@ age = int(ageStr)
 print("Next year you will be", age + 1, "years old.")
         </code>
      </program>
+
+     <p>Or you can get the input and convert it in one line by embedding the input in the conversion function:</p>
+     <program language="python">
+        <code>
+# Get the age from the user and convert it to an int in one line
+age = int(input("How old are you? "))
+</code>
+</program>
 
       <activity label="input-math">
       <statement>
@@ -568,11 +610,67 @@ print("Next year you will be", age + 1, "years old.")
           class myTests(TestCaseGui):
             def test1(self):
               self.assertIn("You will be 100",self.getOutput(),"It works!")
+              self.assertIn("int(",self.getEditorText(),"Convert input to int")
 
           myTests().main()
          </tests>
     </program>
     </activity>
+
+    <idx>format</idx>
+    <idx>round</idx>
+
+    <p>Let's practice getting input, converting it, and using it in a calculation below. The
+      code below also demonstrates how to format a number to 2 decimal places using the 
+      <c>format(num, ".2f")</c> command. This function will also round the number to 2 decimal places if it has more than 2 decimal places.
+    </p>
+
+    <program language="python">
+        <code>
+# formatting a variable to 2 float or decimal places
+cost = 10.666666
+print("Cost is $", format(cost, ".2f"))
+        </code>
+     </program>
+
+    <activity label="calculate-quantity-cost">
+      <statement>
+        <p>
+          In the code below, ask the user for how many pieces of candy they want to buy. 
+          Assume that each piece of candy costs $0.25. Then, calculate the total cost and print it out.
+        </p>
+      </statement>
+    <program language="python" interactive="activecode">
+        <code>
+candyCost = 0.25
+# Ask the user how many pieces of candy they want to buy
+# Don't forget to convert it to an int!
+candyQuantity = 
+
+# Compute the total cost of the candy they want to buy
+totalCost =
+
+# Print the total cost formatted with 2 float or decimal places
+print("The total cost is $", format(totalCost, ".2f"))
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("input(",self.getEditorText(),"Use input function")
+        self.assertIn("int(",self.getEditorText(),"Convert input to int")
+        self.assertIn("*",self.getEditorText(),"Use candyQuantity * candyCost to calculate totalCost")
+
+myTests().main()
+         </tests>
+    </program>
+    </activity>
+
+    <p>In order to compute the number of hours in a given number of minutes, you can divide the number of minutes by 60, since
+      there are 60 minutes in an hour. The remainder operator <c>%</c> can be used to calculate the remaining minutes after the hours are calculated. 
+      For example, if there are 150 minutes, then that is 2 hours and a remainder of 30 minutes.
+    </p>
 
 <activity label="mixedUpMath" numbered="yes" adaptive="yes" indentation="hide" language="python">
       <statement>
@@ -841,6 +939,7 @@ print(r)
           In the code below, you will use random numbers to set the background color, 
           pen color, and turtle coordinates. Right now it uses default colors.
           Change the lines of code that say "# Change these to use random.randint". 
+          Also calculate the distance that the turtle has traveled.
           Run the code a few times to see that it generates different random colors and movements each time it runs. 
         </p>
       </statement>
@@ -850,37 +949,49 @@ import turtle
 import random
 screen = turtle.Screen()
 turt = turtle.Turtle()
+turt.shape("turtle")
+# total_distance keeps track of the total distance the turtle has traveled
+total_distance = 0
+# Do not repeat the code above
 
-# Choose random RGB values for a light background color from 100 to 255
+# Repeat code from here
+# Choose random RGB values for a light background color from 150 to 255
 # You can choose different ranges within that for r, g, and b.
-r = 255    # Change these to use random.randint(start,end)
+r = 255    # TODO: Change these to use random.randint(start,end)
 g = 255
 b = 255
 # Set the background color using the random RGB values (scaled by /255)
 screen.bgcolor(r/255, g/255, b/255)  
 
-# Choose random RGB values for a dark pen color from 0 to 100
-# You can choose different ranges within that for r, g, and b.
-r = 0    # Change these to use random.randint(start,end)
+# Choose random RGB values for a dark pen color from 0 to 255 for 2 of the colors
+# and 0 to 100 for the other color to make it darker.
+r = 0    # TODO: Change these to use random.randint(start,end)
 g = 0
 b = 0
 # Set the pen color using the random RGB values (scaled by / 255)
 turt.color(r/255, g/255, b/255)  
 
 # Choose a random x and y coordinate from -200 to 200
-x = 100   # Change these to use random.randint(start,end)
+x = 100   # TODO: Change these to use random.randint(start,end)
 y = 100
+turt.begin_fill()  # Start filling the shape with the pen color
 turt.goto(x, y)  # Move the turtle to the random (x, y) coordinates
+# distance from the origin (0, 0) to the random (x, y) coordinates
+distance_from_origin = turt.distance(0, 0)
 
-# Choose a random angle from 0 to 360 and a random distance from 20 to 100
-angle = 45   # Change these to use random.randint(start,end)
+# Choose a random angle from 80 to 100 and a random distance from 50 to 100
+angle = 45   # TODO: Change these to use random.randint(start,end)
 distance = 50
 turt.right(angle)       # Turn the turtle right by the random angle
 turt.forward(distance)  # Move the turtle forward by the random distance
-turt.goto(0, 0) 
+turt.goto(0, 0)         # Go back to the origin (0, 0)
+turt.end_fill()         # Stop filling the shape with the pen color
 
-# Repeat the code above to choose random colors, 
-# random x, y, angle, distance and move the turtle at least 3 times
+# TODO: Add to total_distance: (2 times distance_from_origin) + distance
+
+print("Total distance: ", format(total_distance, ".2f"))
+
+# TODO: Repeat the code from line 10 to line 45 two more times
 
       </code>
       <tests>
@@ -890,7 +1001,8 @@ turt.goto(0, 0)
             def test1(self):
                 count = self.getEditorText().count("randint")
                 self.assertLessEqual(30,count, "at least 30 randint used")
-
+                self.assertIn("total_distance+=",self.getEditorText().replace(" ", ""),"Add to total_distance using +=")
+                
           myTests().main()
        </tests>
     </program>
