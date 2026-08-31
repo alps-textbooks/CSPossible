@@ -55,14 +55,19 @@
     <activity label="flowchart-clothes">
       <title>POGIL Group Activity: Flowchart for Clothes Based on Weather</title>
       <statement>
-        <p>Follow the directions in this <url href="https://docs.google.com/document/d/1u6swe0xmqogwKZ-vqEKR7Wgg8-kbqjvzHc_r_gDnv8k/edit?usp=drive_link">
-          flowchart worksheet</url>, to create a flowchart to help someone decide what clothes to wear based on the weather.
-          Be sure to include yes/no questions and different paths for at least 4 different outcomes.
-          This can be done as a <url href="https://pogil.org/what-is-pogil">POGIL</url> group activity
-          using <url href="https://app.diagrams.net/">diagrams.net</url> or paper and pencil.     
-          Do File/Make a copy to make your own editable copy of the worksheet and share the link below 
-          when it is complete. 
-            </p>
+        <p>
+          Using <url href="https://app.diagrams.net/">https://app.diagrams.net/</url> or on paper, 
+          create a flowchart to help someone decide what clothes to wear based on the weather.
+          Be sure to include yes/no questions and different paths for at least 4 different outcomes. 
+        </p>
+        <p>
+          This can be done as a <url href="https://pogil.org/what-is-pogil">POGIL</url> group activity. 
+          Follow the directions in this <url href="https://docs.google.com/document/d/1u6swe0xmqogwKZ-vqEKR7Wgg8-kbqjvzHc_r_gDnv8k/template/preview">
+          flowchart worksheet</url>, to complete it as a POGIL. Make a copy and share it with your group members.
+        </p>
+        <p>
+          Share a link to the flowchart or your POGIL document below when it is complete. 
+        </p>
         </statement>
       <response/>
     </activity>
