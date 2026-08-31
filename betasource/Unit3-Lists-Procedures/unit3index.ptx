@@ -30,8 +30,7 @@
 
   <xi:include href="./topic3-1-lists.ptx" />
   <xi:include href="./topic3-2-procedures.ptx" />
-  <!--
   <xi:include href="./topic3-3-libraries.ptx" />
-  -->
+  
   
   </chapter>

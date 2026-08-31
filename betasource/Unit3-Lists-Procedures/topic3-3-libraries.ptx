@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-3-3-libraries">
+  <time minutes="45" />
+  <title>Using Existing Code and Libraries</title>
+
+    <idx>libraries</idx>
+    <idx>library</idx>
+    <idx>package</idx>
+    <idx>module</idx>
+
+  <introduction>
+     <p>Quick Links: 
+      <xref text="global" ref="libraries, apis, API-project, vocab-3-3"/>
+    </p>
+    <p>We can use existing code written by other programmers to help us write programs more quickly and efficiently. 
+      For example, we have been using the Turtle library to draw shapes and patterns. The Turtle library is a collection of code 
+      that allows us to use the turtle graphics system in our programs.
+    </p>
+       
+  </introduction>
+
+  <subsection xml:id="libraries">
+    <title>Libraries</title>
+  
+      <p>A <term>library</term> is a collection of code written by other programmers that we can use in our own programs. 
+      Libraries have existing code that can quickly add functionality to our programs without having to write everything ourselves. 
+      </p>
+
+
+    <p>In Python, you can <term>import</term> libraries like random or turtle and then use the functions they provide. 
+    Single python files that are imported in are called <term>modules</term>, and a folder of these Python files is called a 
+    <term>package</term>. Libraries can be collections of modules or packages. </p>
+
+    <program language="python">
+import random
+# We can now use the randint() function from the random library
+number = random.randint(1, 10)
+
+import turtle
+# We can now use the turtle library to draw shapes
+turt = turtle.Turtle()
+turt.forward(100)
+    </program>
+
+    <p>Libraries often have <term>documentation</term> that explains how to use the code and what each function does. For example,
+    <url href="https://docs.python.org/3/library/turtle.html#turtle-methods">https://docs.python.org/3/library/turtle.html#turtle-methods
+    </url> explains every function in the Turtle library. Unfortunately, not all of the Python Turtle functions work in this ebook, 
+    because it uses a browser implementation of Python.</p>
+
+
+   <activity label="turtleLibrary">
+      <statement>
+        <p>
+          Look up the function <c>home()</c> in the Turtle documentation
+          <url href="https://docs.python.org/3/library/turtle.html#turtle-methods">https://docs.python.org/3/library/turtle.html#turtle-methods
+    </url> and try using it below. Then, find another Turtle function that you haven't used before and try it below.  
+    Not all functions will work in this ebook, unfortunately, so keep trying different ones until you find one that works. </p>
+      </statement>
+
+      <program interactive="activecode" language="python">
+        <code>
+import turtle
+t = turtle.Turtle()
+t.shape("turtle")
+t.color("green")
+t.forward(50)
+t.right(90)
+t.forward(50)
+
+# Try using the Turtle home function
+
+
+# Try a different function you have not used before
+
+          </code>
+          <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("t.home()",self.getEditorText(), "Use t.home()")
+        count = self.getEditorText().count("t.")
+        self.assertLessEqual(7, count, "Use at least 2 more turtle functions")
+
+myTests().main()
+          </tests>
+          </program>
+    </activity>
+
+
+    <p>We can also package our code into modules and packages for easier reuse. We can also include existing code from other sources,
+      including Gen AI.
+      When including code from other sources, it is important to check the license and to give credit to the original creator. 
+    </p>
+
+      <activity label="purpose_libraries">
+      <statement>
+        <p>What is the purpose of libraries in programming?</p>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>To write new code from scratch</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Incorrect. Libraries allow you to use code written by
+              others.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p>To use code written by others to quickly add functionality to our programs</p>
+          </statement>
+
+          <feedback>
+            <p>Correct! Libraries let you use code written by others to add functionality to your programs.</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>To create programming languages</p>
+          </statement>
+
+          <feedback>
+            <p>
+              Incorrect. Libraries are defined <em>in</em> a
+              programming language.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p>To compile code</p>
+          </statement>
+
+          <feedback>
+            <p>Incorrect. Libraries are not for compiling code.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+
+  </subsection>
+
+  <subsection xml:id="apis">
+    <title>Application Programming Interfaces (APIs)</title>
+    
+      <idx>API</idx>
+
+      <p>An <term>application programming interface (API)</term> is the set of rules or specification
+        that specifies how to use a library or software component.  These rules are spelled out
+        in the library documentation.  The API describes what inputs are accepted and 
+        what output is returned.
+       </p>
+
+
+    
+<activity label="api-definition">
+  <statement>
+    <p>Which statement best describes an API?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p>A collection of reusable code.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Incorrect. A library is a collection of reusable code.
+          An API describes how software can be used.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A Python file containing functions.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Incorrect. A Python file containing reusable code is a
+          module. An API describes how software can be used.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>
+          A set of rules that specifies how software can be used by other software.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>
+          Correct! An API specifies how software can be used,
+          including what inputs are accepted and what outputs may
+          be returned.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A website where programmers download code.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Incorrect. An API is not a website. It is a set of rules
+          or specifications for how software can interact.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+    <p>For example, the following documentation describes the API for the math function 
+      <c>isqrt</c> in the Python <c>math</c> module <url href="https://docs.python.org/3/library/math.html#math.isqrt">
+        https://docs.python.org/3/library/math.html#math.isqrt</url>:</p>
+
+    <pre>
+math.isqrt(n)
+Return the integer square root of the nonnegative integer n. 
+This is the floor of the exact square root of n, or equivalently the greatest integer a 
+such that a² &lt;= n.
+</pre>
+
+
+<activity label="isqrt-documentation">
+  <statement>
+    <p>
+      The documentation for <c>math.isqrt()</c> says:
+    </p>
+
+    <pre>
+math.isqrt(n)
+Return the integer square root of the nonnegative integer n.
+    </pre>
+
+    <p>Which function call correctly uses this math library function?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p><c>math.isqrt()</c></p>
+      </statement>
+
+      <feedback>
+        <p>
+          No. The function requires a nonnegative integer as
+          an input.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p><c>math.isqrt(25)</c></p>
+      </statement>
+
+      <feedback>
+        <p>
+          Correct! The function requires a nonnegative integer, and
+          <c>25</c> is a valid input.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>math.isqrt("25")</c></p>
+      </statement>
+
+      <feedback>
+        <p>
+          No. <c>"25"</c> is a string, not an integer. The
+          documentation specifies that the input should be a
+          nonnegative integer.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>math.isqrt(25, 5)</c></p>
+      </statement>
+
+      <feedback>
+        <p>
+          No. The documentation shows that <c>isqrt()</c>
+          accepts one input, <c>n</c>, not two inputs.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+<p>Many web service or platforms, for example Google Maps, Youtube, Wikipedia, etc. have APIs that allow 
+  access to their service for programmers. This simplifies complex programming tasks and allows 
+  communication between different programs. For example, you can use the Google Maps API to embed a map in an app that you are creating.
+</p>
+
+<p>We can often see a web platform's API in action while using the platform. For example, go 
+  to <url href="https://www.google.com/maps">https://www.google.com/maps</url> and search for a 
+  location. Notice how the url (web address) changes. For example, if you search for 
+  "Philadelphia", the url changes to <url href="https://www.google.com/maps/place/
+  Philadelphia">https://www.google.com/maps/place/Philadelphia</url> followed by other geographic 
+  information, but just the city name is enough to get the map to show Philadelphia. This is an 
+  example of a web API in action.  We now know the rule that we can take the base url and add 
+  "place/cityname" to get a map of that city.  Try just changing the url to find the map of another 
+  city, for example Chicago. 
+</p>
+
+
+ <activity label="mapAPI">
+      <statement>
+        <p>As you explore the map of Philadelphia in Google Maps and Zoom into level 15, you see the url <url href="https://www.google.com/maps/place/Philadelphia,+PA/@40.002498,-75.0129578,15z">
+  https://www.google.com/maps/place/Philadelphia,+PA/@40.002498,-75.0129578,15z</url>. Following the API rules of that url,
+   what url would you use to get a map of Chicago at Zoom level 11?</p>
+      </statement>
+
+       <choices randomize="yes">
+        <choice>
+          <statement>
+            <p><url href="https://www.google.com/maps/place/Philadelphia,+PA/@40.002498,-75.0129578,15z">
+  https://www.google.com/maps/place/Philadelphia,+PA/@40.002498,-75.0129578,15z</url></p>
+          </statement>
+
+          <feedback>
+            <p>
+             Incorrect, this is unchanged. This will show Philadelphia at Zoom level 15, not Chicago at Zoom level 11.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice correct="yes">
+          <statement>
+            <p><url href="https://www.google.com/maps/place/Chicago,+IL/@41.8337105,-87.731879,11z">
+  https://www.google.com/maps/place/Chicago,+IL/@41.8337105,-87.731879,11z</url></p>
+          </statement>
+
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+          <p><url href="https://www.google.com/maps/place/Chicago,+IL/@40.002498,-75.0129578,11z">
+  https://www.google.com/maps/place/Chicago,+IL/@40.002498,-75.0129578,15z</url></p>
+          </statement>
+
+          <feedback>
+            <p>
+              Incorrect. The numbers after the @ sign are the latitude and longitude of Philadelphia, not Chicago.
+            </p>
+          </feedback>
+        </choice>
+
+        <choice>
+          <statement>
+            <p><url href="https://www.google.com/maps/place/Chicago/">
+  https://www.google.com/maps/place/Chicago/</url></p>
+          </statement>
+
+          <feedback>
+            <p>Incorrect. Although this url will take you to a map of Chicago, it doesn't specify the zoom level.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </activity>
+    
+    <p>When selecting libraries or existing code segments, it's important to consider the following factors:</p>
+    <ul>
+      <li>Does the library or code segment fit the program's purpose and user needs?</li>
+      <li>Is it compatible with the programming environment?</li>
+      <li>Does it come from a trustworthy source?</li>
+      <li>Is it licensed for reuse?</li>
+    </ul>
+
+    <p>It is also important to cite the sources of any libraries or code segments you use in the comments of your code, 
+      and to test it.
+    </p>
+
+    <p>If you were creating a calculator app and wanted to have a square root function, you could use the <c>sqrt</c> 
+      function from the Python <c>math</c> module. You would first look at its documentation at <url href="https://docs.python.org/3/library/math.html#math.sqrt">
+        https://docs.python.org/3/library/math.html#math.sqrt</url> to understand how to use it. After using it in your code, you would
+      need to test it to make sure it works as expected on typical inputs and boundary cases, for example with positive numbers, zero, and 
+      negative numbers. The square root of a negative number is not defined in the real number system, so you would expect that to give an error.</p>
+
+  <activity label="use-sqrt">
+    <statement><p>Use the <c>sqrt</c> function from the Python <c>math</c> module to find the integer square root of a number.
+      Test it with positive numbers, zero, and negative numbers. 
+    </p>
+  <p>After testing with a negative number, comment that line and run again to get all of the points for this activity.</p></statement>
+    <program interactive="activecode" language="python">
+      <code>  
+import math
+
+print(math.sqrt(16))  # Should print 4
+
+# Test with 9
+
+# Test with 10
+
+# Test with zero
+
+# Test with a negative number to see error, but then comment it out and run again
+
+</code>
+      <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+          self.assertIn("math.sqrt(9)", self.getEditorText(), "Use math.sqrt(9) to test with 9")
+          self.assertIn("math.sqrt(10)", self.getEditorText(), "Use math.sqrt(10) to test with 10")
+          self.assertIn("math.sqrt(0)", self.getEditorText(), "Test with 0")
+          self.assertIn("math.sqrt(-", self.getEditorText(), "Test with a negative number but comment it out")
+
+myTests().main()
+      </tests>
+    </program>
+  </activity>
+   
+  
+  <activity label="sqrt-test-cases">
+    <title>sqrt Test Plan</title>
+      <statement><p>
+         Fill in the test plan below for the <c>sqrt</c> function as you run it in the previous activity.</p>
+      <table>
+      <title>Test Cases</title>
+          <tabular>
+             <row header="yes">
+                <cell bottom="minor">Test Case</cell>
+                <cell bottom="minor">Input </cell>
+                <cell bottom="minor">Expected Output </cell>
+                <cell bottom="minor">Actual Output </cell>
+            </row>  
+            <row>
+                <cell>positive number</cell>
+                <cell>9</cell>
+                <cell>3</cell>
+                <cell> <fillin answer="3" mode="string" /></cell>
+            </row>
+            <row>
+                <cell>zero</cell>
+                <cell>0</cell>
+                <cell>0</cell>
+                <cell> <fillin answer="0" mode="string" /></cell>
+            </row>
+                <row>
+                <cell>negative number</cell>
+                <cell>-1</cell>
+                <cell>ValueError</cell>
+                <cell> <fillin answer="ValueError" mode="string" /></cell>
+            </row>
+            </tabular>
+            </table>
+      </statement>
+        <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+          <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+          <evaluate>
+          <test>
+            <strcmp use-answer="yes" />
+            <feedback>Correct! </feedback>
+          </test>
+          <test>
+            <feedback>Run the original code with the input to see the output. </feedback>
+          </test>
+        </evaluate>
+        </evaluation>
+        </activity>
+
+<activity label="test-library-code">
+  <statement>
+    <p>Why should you test code from a library or other existing code after adding it to your program?</p>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <p>Library code is always correct.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Incorrect. Library functions are generally designed to work
+          correctly, but you should still test them in your program.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Testing makes it faster.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Incorrect. Testing does not make the code
+          run faster.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>
+          The code may behave differently than you expected.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>
+          Correct! Testing helps you make sure that the reused code
+          works as expected in your program.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It won't work without testing.</p>
+      </statement>
+
+      <feedback>
+        <p>
+          Incorrect. It will probably work, but you should still test it to make sure.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+  
+    </subsection>
+
+<subsection xml:id="API-project">
+  <title>API Project</title>
+
+    <idx><h>projects</h><h>dog API</h></idx>
+    <idx><h>coding challenge</h><h>dog API</h></idx>
+
+  <p>In this project, you will use an API For a web service called <url href="https://dog.ceo/dog-api">
+  https://dog.ceo/dog-api</url> which provides free dog images by breed. In the documentation,
+  <url href="https://dog.ceo/dog-api/documentation/random">https://dog.ceo/dog-api/documentation/random</url>, you can find
+  the url (web address) for fetching random dog images. You can also try it in your browser to see  
+  that <url href="https://dog.ceo/api/breeds/image/random">https://dog.ceo/api/breeds/image/random</url>
+ returns some text like <c>{"message":"https://images.dog.ceo/breeds/german-shepherd/n02106662_16342.jpg","status":"success"}</c> and if we paste the embedded image link into a browser, 
+  we can see the image that it returns <url href="https://images.dog.ceo/breeds/german-shepherd/n02106662_16342.jpg">
+  https://images.dog.ceo/breeds/german-shepherd/n02106662_16342.jpg</url>. Try 
+  running the active code below to see the random images that it returns which is
+  displayed in the web page using a hidden <c>showImage</c> function.
+</p>
+
+<p>Now, take a look at the documentation for showing random dog images of a certain breed at <url href="https://dog.ceo/dog-api/breeds-list">https://dog.ceo/dog-api/breeds-list</url>. Pull down the menu to see different breeds.</p>
+
+<p>Let's use this API to fetch images of a specific dog breed that the user chooses. 
+  First, create a list of at least 5 dog breeds that are in the API. Then, use a loop to 
+  print the list of dog breeds with their index number. Then, ask the user to input the index number of the dog breed they want to see. 
+  Finally, use the API to fetch a random image of that breed and display it on the web page using the <c>showImage</c> function. 
+</p>
+
+<project label="projectAPI">
+  <title>Dog API Project</title>
+  <statement>
+    <p>Run the code below to see a random dog image from the dog API.</p>
+    <p>Then, change it to show different breeds. </p>
+    <ol>
+      <li>Create a list of at least 5 dog breeds that are in 
+      <url href="https://dog.ceo/dog-api/breeds-list">https://dog.ceo/dog-api/breeds-list</url>.</li>
+      <li>Use an indexed for loop to print the list of dog breeds with their index number.</li>
+      <li>Ask the user to input the index number of the dog breed they want to see.</li>
+      <li>Use the breeds list and the user's index input to save the selected breed name.</li>
+      <li>Use the selected breed name to fetch a random image using the APIString "https://dog.ceo/api/breed/" + breed + "/images/random"  </li>
+    </ol>
+  </statement>
+
+  <program interactive="activecode" language="python">
+  <preamble visible="no">
+import document
+
+def showImage(image):
+    id = "cspossible__projectAPI_graphics"
+    output = document.getElementById(id)
+    output.innerHTML = ""
+    img = document.createElement("img")
+    img.src = image
+    img.width = 400
+    output.appendChild(img)
+  </preamble>
+  <code>
+import requests
+
+# Run this to see a random dog image from the dog API
+apiString = "https://dog.ceo/api/breeds/image/random"
+data = requests.get(apiString).json()
+print(data)
+showImage(data["message"])
+
+# TODO: 
+# 1. Create a list of at least 5 dog breeds that are in the API https://dog.ceo/dog-api/breeds-list
+
+# 2. Use an indexed for-loop to print the list of dog breeds with their index number
+
+# 3. Ask the user to input the index number of the dog breed they want to see (convert to int)
+
+# 4. Use the breeds list and the user's index input to save the selected breed name
+
+# 5. Use the selected breed name to fetch a random image 
+# Hint: Create an APIString that has "https://dog.ceo/api/breed/", the breed, and "/images/random" 
+
+  </code>
+ <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("=[", code, "Define a list of breeds")
+        self.assertIn("for ", self.getEditorText(), "Use an indexed for loop with range to print the list of breeds with their index number")
+        self.assertIn("input(", code, "Ask the user for input")
+        self.assertIn('\"https://dog.ceo/api/breed/\"+', code, "Add the selected breed to the APIString")
+
+myTests().main()
+ </tests>
+  </program>
+</project>
+
+  <activity label="frq-data-api-abstraction">
+        <title>Data and API Abstraction Reflection</title>
+        <statement>
+          <p>
+            Consider the list and the API used in your project code above. 
+          </p>
+            <ol>
+              <li>Explain how the list uses data abstraction to manage complexity in your program.</li>
+              <li>How easy or difficult would it be to add more breeds to your program?</li>
+              <li>How did the API help to quickly add more functionality to your program?</li>
+              <li>How did you use the API? What rules or structure of the API did you follow to show the correct images? </li>
+            </ol>
+
+        </statement>
+        <response/>
+      </activity>
+</subsection>
+
+  <subsection xml:id="vocab-3-3">
+   <title>Vocabulary Review</title>
+
+     <activity label="vocab-libraries">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>library</premise>
+          <response>A collection of classes written by other programmers</response>
+          
+        </match>
+
+        <match>
+          <premise>import</premise>
+          <response>To include a library in your code</response>
+        </match>
+
+        <match>
+          <premise>API</premise>
+          <response>The rules or specification on how to use a library</response>
+        </match>
+
+        <match>
+          <premise>module</premise>
+          <response>A single Python file that can be imported into another program</response>
+        </match>
+
+        <match>
+          <premise>documentation</premise>
+          <response>The written description of a library's usage</response>
+        </match>
+
+       
+      </cardsort>
+    </activity>
+
+  </subsection>  
+
+</section>
