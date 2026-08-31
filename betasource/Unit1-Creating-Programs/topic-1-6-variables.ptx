@@ -886,10 +886,66 @@ print(name + " is " + age + " years old")
           from unittest.gui import TestCaseGui
 
           class myTests(TestCaseGui):
-            def test1(self):
-              self.assertIn("I like",self.getOutput(),"output")
-              input_count = self.getEditorText().count("input(")
-              self.assertLessEqual(7,input_count, "at least 7 input statements")
+                def findLine(self, lines, target):
+                    for line in lines:
+                        if target.replace(" ", "") in line.replace(" ", ""):
+                            #print(line)
+                            return line
+                    return "None"
+                        
+                def run_file(self, code, inputs):
+                    stars = "****************************************************************************" 
+                    print(stars)
+                    print("Testing code with inputs: " + inputs)
+                    print(stars)
+
+                    lines = code.split("\n")
+                    ins = inputs.split(",")
+                    inN = 0
+
+                    for i in range(len(lines)):
+                        if "input" in lines[i] and not "#" in lines[i]:
+                            equals = lines[i].find("=") + 1
+                            if inN &lt; len(ins):
+                                lines[i] = lines[i][0:equals] + "\"" + ins[inN].strip() + "\""
+                                inN += 1
+
+                    code = "\n".join(lines)
+
+                    # Create an isolated scope for the code execution
+                    scope = {}
+                    exec(code, scope)
+                    output = self.getOutput()
+
+                    ind = output.find(stars) + len(stars) + 1
+                    output = output[ind:]
+                    ind = output.find(stars) + len(stars) + 1
+                    output = output[ind:]
+
+                    return str(scope), output.strip()
+                
+                def test1(self):
+                    code = self.getEditorText()
+                    lines = code.replace(" ", "").split("\n")
+
+                    input_count = code.count("input(")
+                    self.assertLessEqual(7,input_count, "at least 7 input statements")
+
+                    print_count = code.count("print(")
+                    self.assertLessEqual(7,print_count, "at least 7 print statements")
+
+                    inputs = "cats,dogs,red,blue,pizza,added_input1,added_input2,added_input3,added_input4,added_input5,added_input6"
+                    scope, output = self.run_file(code, inputs)
+
+                    num_lines = len(output.split("\n"))
+                    self.assertGreaterEqual(num_lines, 7, "at least 7 lines of output")
+
+                    output_lines = output.split("\n")
+                    elephant_line = self.findLine(output_lines, "added_input1")
+                    self.assertIn("added_input1", elephant_line, "first input used in output")
+
+                    funny_line = self.findLine(output_lines, "added_input2")
+                    self.assertIn("added_input2", funny_line, "second input used in output")
 
           myTests().main()
         </tests>
