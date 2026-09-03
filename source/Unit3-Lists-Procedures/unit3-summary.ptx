@@ -40,7 +40,7 @@
   <p>Review the following Unit 3 vocabulary:</p>
 
      <activity label="vocab-review-3-1-lists">
-      <title>3.1 Lists Vocabulary</title>
+      <title>Lists Vocabulary</title>
       <statement>
         <p>
           Review the vocabulary in 3.1. Drag the vocabulary term from the left and drop it
@@ -94,6 +94,7 @@
       </activity>
 
  <activity label="vocab-review-3-2-functions">
+     <title>Functions Vocabulary</title>
       <statement>
         <p>
           Review the vocabulary in 3.2 Functions. Drag the vocabulary term from the left and drop it
@@ -139,6 +140,7 @@
     </activity>
 
       <activity label="vocab-review-3-3-libraries">
+         <title>Libraries Vocabulary</title>
       <statement>
         <p>
            Review the vocabulary in 3.3 Libraries. Drag the vocabulary term from the left and drop it
