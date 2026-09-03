@@ -43,6 +43,17 @@
   <xi:include href="./topic-3-1-lists.ptx" />
   <xi:include href="./topic-3-2-procedures.ptx" />
   <xi:include href="./topic-3-3-libraries.ptx" />
-  
+  <xi:include href="./unit3-summary.ptx" />
+  <!--
+  <xi:include href="./unit3a-lists-mcq-exercises.ptx" />
+  <xi:include href="./unit3a-lists-mixedup-code-practice.ptx" />
+  <xi:include href="./unit3a-lists-coding-practice.ptx" />
+  <xi:include href="./unit3b-functions-mcq-exercises.ptx" />
+  <xi:include href="./unit3b-functions-mixedup-code-practice.ptx" />
+  <xi:include href="./unit3b-functions-coding-practice.ptx" />
+  <xi:include href="./unit3-lists-project.ptx" />
+  <xi:include href="./unit3-functions-project.ptx" />
+  <xi:include href="./appinventor-quiz-app.ptx" /> 
+  -->
   
   </chapter>

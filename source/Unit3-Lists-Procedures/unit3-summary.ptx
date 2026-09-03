@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3-summary">
+  <title>Unit 3 Summary</title>
+
+   <subsection xml:id="unit3-summary-objectives">
+    <title>Unit 3 Learning Objectives</title>
+
+  <p>In Unit 3, we covered the following Learning Objectives:</p>
+   <ul>
+    <li><p>3.1 Lists
+        <ul>
+          <li>3.1.A Develop code that stores multiple related values in a single variable.</li>
+          <li>3.1.B Develop code to manipulate a list, and determine the result produced.</li>
+          <li>3.1.C Develop code using iteration statements to traverse a list, and determine the result produced.</li>
+          <li>3.1.D Explain how the use of data abstraction manages complexity in program code.</li>
+        </ul>
+        </p>
+    </li>
+    <li><p>3.2 Procedures
+        <ul>
+          <li>3.2.A Develop code to define procedures with and without parameters.</li>
+            <li>3.2.B Develop code for procedure calls, and determine the result of procedure calls.</li>
+            <li>3.2.C Explain how the use of procedural abstraction manages complexity in a program.</li>
+        </ul>
+        </p>
+    </li>
+    <li><p>3.3 Using Existing Code and Libraries
+        <ul>
+          <li>3.3.A Develop code using appropriate libraries or existing code segments to create a program.</li>
+        </ul>
+        </p>
+    </li>
+   </ul>
+   </subsection>
+
+   <subsection xml:id="unit3-summary-vocab">
+    <title>Unit 3 Vocabulary</title>
+
+  <p>Review the following Unit 3 vocabulary:</p>
+
+     <activity label="vocab-review-3-1-lists">
+      <title>3.1 Lists Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in 3.1. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 3.1 and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>data collection</premise>
+          <response>a set of data, organized and stored together</response>
+        </match>
+        <match>
+          <premise>list</premise>
+          <response>an ordered collection of values stored under a single variable name</response>
+        </match>
+        <match>
+          <premise>index</premise>
+          <response>the position of an element in a list, starting from 0</response>
+        </match>
+        <match>
+          <premise>element</premise>
+          <response>a single value in a list</response>
+        </match>
+        <match> 
+          <premise>traversal</premise>
+          <response>stepping through each element in a list, often using a loop</response>
+        </match>
+        <match>
+          <premise>linear search</premise>
+          <response>checking each element in a list one by one until the desired value is found or the end of the list is reached</response>
+        </match>
+        <match>
+          <premise>partial traversal</premise>
+          <response>stepping through only some elements in a list, often stopping early when a goal is reached</response>
+        </match>
+        <match>
+          <premise>data abstraction</premise>
+          <response>hiding the complex implementation details of a data structure and showing only the needed features to the user</response>
+        </match>
+        <match>
+          <premise>refactor</premise>
+          <response>the process of rewriting existing code without changing its functionality</response>
+        </match>
+      </cardsort>
+      </activity>
+
+ <activity label="vocab-review-3-2-functions">
+      <statement>
+        <p>
+          Review the vocabulary in 3.2 Functions. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 3.2 Functions and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>procedure/function</premise>
+          <response>a named group of programming instructions that perform a specific task</response>
+        </match>
+        <match>
+          <premise>procedural abstraction</premise>
+          <response>grouping related code into procedures that can be called by name, hiding detailed implementationsteps from the rest of the program</response>
+        </match>
+        <match>
+          <premise>modularity</premise>
+          <response>the subdivision of a program into smaller, independent procedures or components</response> 
+        </match>
+        <match>
+          <premise>procedure/function definition</premise>
+          <response>the code that defines what a procedure or function does</response>
+        </match>
+        <match>
+          <premise>procedure/function call</premise>
+          <response>the code that runs a procedure or function</response>
+          </match>
+        <match>
+          <premise>parameters</premise>
+          <response>variables that are defined in a procedure or function and used to pass in data</response>
+        </match>
+        <match>
+          <premise>arguments</premise>
+          <response>values that are passed to a procedure or function when it is called</response>
+        </match>
+      </cardsort>
+    </activity>
+
+      <activity label="vocab-review-3-3-libraries">
+      <statement>
+        <p>
+           Review the vocabulary in 3.3 Libraries. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Review the vocabulary in 3.3 Libraries and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>library</premise>
+          <response>A collection of classes written by other programmers</response>
+          
+        </match>
+
+        <match>
+          <premise>import</premise>
+          <response>To include a library in your code</response>
+        </match>
+
+        <match>
+          <premise>API</premise>
+          <response>The rules or specification on how to use a library</response>
+        </match>
+
+        <match>
+          <premise>module</premise>
+          <response>A single Python file that can be imported into another program</response>
+        </match>
+
+        <match>
+          <premise>documentation</premise>
+          <response>The written description of a library's usage</response>
+        </match>
+
+       
+      </cardsort>
+    </activity>
+  </subsection>
+</section>
