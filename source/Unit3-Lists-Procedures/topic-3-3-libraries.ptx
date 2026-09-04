@@ -676,6 +676,7 @@ myTests().main()
       <li>Ask the user to input the index number of the dog breed they want to see.</li>
       <li>Use the breeds list and the user's index input to save the selected breed name.</li>
       <li>Use the selected breed name to fetch a random image using the APIString "https://dog.ceo/api/breed/" + breed + "/images/random"  </li>
+      <li>Change the function apiDog and its function call to have the selected breed as an argument</li>
     </ol>
   </statement>
 
@@ -684,7 +685,9 @@ myTests().main()
 import document
 
 def showImage(image):
-    id = "cspossible__projectAPI_graphics"
+    #id = "cspossible__projectAPI_graphics"
+    # for local testing
+    id = "rs-projectAPI_graphics"
     output = document.getElementById(id)
     output.innerHTML = ""
     img = document.createElement("img")
@@ -695,11 +698,13 @@ def showImage(image):
   <code>
 import requests
 
-# Run this to see a random dog image from the dog API
-apiString = "https://dog.ceo/api/breeds/image/random"
-data = requests.get(apiString).json()
-print(data)
-showImage(data["message"])
+# Run once to see a random dog image from the dog API
+# You will edit this function and its function call in step 6 below
+def apiDog():
+    apiString = "https://dog.ceo/api/breeds/image/random"
+    data = requests.get(apiString).json()
+    print(data)
+    showImage(data["message"])
 
 # TODO: 
 # 1. Create a list of at least 5 dog breeds that are in the API https://dog.ceo/dog-api/breeds-list
@@ -710,8 +715,12 @@ showImage(data["message"])
 
 # 4. Use the breeds list and the user's index input to save the selected breed name
 
-# 5. Use the selected breed name to fetch a random image 
-# Hint: Create an APIString that has "https://dog.ceo/api/breed/", the breed, and "/images/random" 
+# 5. Change the function apiDog and its function call to have the selected breed as an argument
+
+apiDog()
+
+# 6. In the apiDog function above use the argument selected breed name to fetch a random image 
+# Hint: Create an APIString that has "https://dog.ceo/api/breed/", the breed, and "/images/random"
 
   </code>
  <tests>
@@ -724,6 +733,7 @@ class myTests(TestCaseGui):
         self.assertIn("for ", self.getEditorText(), "Use an indexed for loop with range to print the list of breeds with their index number")
         self.assertIn("input(", code, "Ask the user for input")
         self.assertIn('\"https://dog.ceo/api/breed/\"+', code, "Add the selected breed to the APIString")
+        self.assertNotIn("apiDog()", code, "Change function to apiDog(breed) with the selected breed as an argument")
 
 myTests().main()
  </tests>
