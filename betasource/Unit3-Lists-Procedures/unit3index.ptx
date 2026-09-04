@@ -32,10 +32,10 @@
   <xi:include href="./topic3-2-procedures.ptx" />
   <xi:include href="./topic3-3-libraries.ptx" />
   <xi:include href="./unit3-summary.ptx" />
-  <!--
-  <xi:include href="./unit3a-lists-mcq-exercises.ptx" />
-  <xi:include href="./unit3a-lists-mixedup-code-practice.ptx" />
-  <xi:include href="./unit3a-lists-coding-practice.ptx" />
+  <xi:include href="./lists-mcq-exercises.ptx" />
+  <xi:include href="./lists-mixedup-code-practice.ptx" />
+     <!--
+  <xi:include href="./lists-coding-practice.ptx" />
   <xi:include href="./unit3b-functions-mcq-exercises.ptx" />
   <xi:include href="./unit3b-functions-mixedup-code-practice.ptx" />
   <xi:include href="./unit3b-functions-coding-practice.ptx" />

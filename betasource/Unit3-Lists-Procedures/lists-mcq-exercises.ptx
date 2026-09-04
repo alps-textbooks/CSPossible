@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lists-mcq-exercises">
+  <title>Lists Multiple-Choice Exercises</title>
+
+  <p>Some of  the exercises below were adapted from the Python for Everybody Interactive ebook 
+    on Runestone by Dr. Barb Ericson.</p>
+
+  <activity label="mcq_list_len">
+    <statement>
+      <p> What is the printed when the following code runs?</p>
+      <program language="python">
+        <code>
+alist = [3, 67, "cat", 3.14, False]
+print( len(alist) )
+</code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>4</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The built in function, len, returns the actual number of items in the list, not the maximum index value.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>5</p>
+        </statement>
+        <feedback>
+          <p>Correct! There are 5 items in this list.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>False</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The built in function, len, returns the actual number of items in the list.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3.14</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The built in function, len, returns the actual number of items in the list.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+ <activity label="mcq_list_index">
+    <statement>
+      <p>What is the printed when the following code runs?</p>
+      <program language="python">
+        <code>
+alist = [2, 67, "cat", 3.14, False]
+print( alist[2] )
+</code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>67</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Remember that the list indexing starts at 0. </p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>"cat"</p>
+        </statement>
+        <feedback>
+          <p>Correct! The item at index 2 in this list is "cat" because the list is indexed starting at 0.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>2</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! 2 is the item at index 0, but not the item at index 2.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>alist[2]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The print would evaluate alist[2] and print the item in alist at index 2.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+  <activity label="mcq_list_update">
+    <statement>
+      <p>What is the printed when the following code runs?</p>
+      <program language="python">
+        <code>
+alist = [2, 67, "cat", 3.14, False]
+alist[1] = "dog"
+alist[3] = 99
+print( alist )
+</code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>["dog", 67, 99, 3.14, False]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect, remember that the list is indexed starting at 0.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+         <p>[2, "dog", "cat", 99, False]</p>
+        </statement>
+        <feedback>
+          <p>Correct! List items 1 and 3 have been updated to "dog" and 99.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[2, "dog", 67, 99, "cat", 3.14, False]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect, the items at index 1 and 3 should be replaced, not inserted. The length of the list should not change.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>["dog", 2, 99, 67, "cat", 3.14, False]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect, the items at index 1 and 3 should be replaced, not inserted. The length of the list should not change. And remember that the list is indexed starting at 0.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="mcq_list_update2">
+    <statement>
+      <p>What is the printed when the following code runs?</p>
+      <program language="python">
+        <code>
+alist = [2, 67, "cat", 3.14, False]
+alist.insert(1, "dog")
+alist.insert(3, 99)
+print( alist )
+</code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>["dog", 67, 99, 3.14, False]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect, remember that the list is indexed starting at 0.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+         <p>[2, "dog", "cat", 99, False]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Insert adds an additional item at the specified index, but it doesn't replace the item at that index. The list will get larger.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>[2, "dog", 67, 99, "cat", 3.14, False]</p>
+        </statement>
+        <feedback>
+          <p>Correct, the items have been inserted at index 1 and 3. The length of the list has increased.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>["dog", 2, 99, 67, "cat", 3.14, False]</p>
+        </statement>
+        <feedback>
+          <p>Incorrect, remember that the list is indexed starting at 0.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+ <activity label="list_funstions">
+    <statement>
+      <p>Which function is used to add a variable a to the end of a list alist?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>alist.insert(a)</p>
+        </statement>
+        <feedback>
+          <p>While you can use insert, you would need to specify an index for where to insert the item.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>alist.pop(a)</p>
+        </statement>
+        <feedback>
+          <p>pop removes an item from a list</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>alist.append(a)</p>
+        </statement>
+        <feedback>
+          <p>Yes, append adds an item to the end of a list.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>alist.remove(a)</p>
+        </statement>
+        <feedback>
+          <p>remove deletes the first occurrence of any item that it is told. It does not add an item.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="list_loop_mcq">
+    <statement>
+      <p> What is printed by the following program?</p>
+      <program language="python">
+        <code>
+alist = [4, 2, 8, 6, 5]
+blist = [ ]
+for item in alist:
+     blist.append(item + 5)
+print(blist)
+</code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>[4, 2, 8, 6, 5]</p>
+        </statement>
+        <feedback>
+          <p>5 is added to each item before the append is performed.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[4, 2, 8, 6, 5, 5]</p>
+        </statement>
+        <feedback>
+          <p>There are too many items in this list.  Only 5 append operations are performed.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>[9, 7, 13, 11, 10]</p>
+        </statement>
+        <feedback>
+          <p>Yes, the for loop processes each item of the list.  5 is added before it is appended to blist.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Error, you cannot concatenate inside an append.</p>
+        </statement>
+        <feedback>
+          <p>5 is added to each item before the append is performed.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+  <activity label="mcq_list_accumulator">
+    <statement>
+      <p>Which of the following code segments shows the correct way to accumulate the total sum of a list of numbers?</p>
+      <ol marker="I">
+        <li>
+      <program language="python">
+        <code>
+    nums = [4, 5, 2, 93, 3, 5]
+    s = 0
+    for n in nums:
+        s = s + 1
+    print(s)
+</code>
+      </program>
+    </li>
+    <li>
+      <program language="python">
+        <code>
+    nums = [4, 5, 2, 93, 3, 5]
+    s = 0
+    for n in nums:
+        s = n + n
+    print(s)
+</code>
+      </program>
+    </li>
+    <li>
+      
+      <program language="python">
+        <code>
+    nums = [4, 5, 2, 93, 3, 5]
+    s = 0
+    for n in nums:
+        s = s + n
+    print(s)
+</code>
+      </program>
+    </li>
+  </ol>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>Pattern I</p>
+        </statement>
+        <feedback>
+          <p>This pattern will only count how many items are in the list, not provide the total accumulated value.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Pattern II</p>
+        </statement>
+        <feedback>
+          <p>This would reset the value of s each time the for loop iterated, and so by the end s would be assigned the value of the last item in the list plus the last item in the list.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Pattern III</p>
+        </statement>
+        <feedback>
+          <p>Yes, this will solve the problem.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>None of the above would be appropriate for the problem.</p>
+        </statement>
+        <feedback>
+          <p>One of the patterns above is a correct way to solve the problem.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="mcq_list_append">
+    <statement>
+      <p> What will the following code print?</p>
+      <program><code>
+num_list = [5, 10, 15, 20]
+out = []
+for num in num_list:
+    if num &gt; 10:
+        out.append(num)
+print(out)
+</code></program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>[10, 15, 20]</p>
+        </statement>
+        <feedback>
+          <p>It only appends numbers that are greater than 10</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[20, 15]</p>
+        </statement>
+        <feedback>
+          <p>This would be true if append added at the front, but it appends at the end</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>[15, 20]</p>
+        </statement>
+        <feedback>
+          <p>Yes, it appends all numbers greater than 10 in order.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[20, 15, 10]</p>
+        </statement>
+        <feedback>
+          <p>Append adds items to the end of the list.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="mcq_list_remove">
+    <statement>
+      <p> What will the following AP CSP Pseudocode print?</p>
+      <program language="python"><code>
+alist = [3, 0, 2, 0, 0]
+index = 0
+while (index &lt; length(alist))
+{    
+    num = alist[index]
+    if (num == 0)
+    {
+       alist.remove(index)
+    }
+    index = index + 1
+}
+print(alist)</code></program>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>[3, 0, 2, 0, 0]</p>
+        </statement>
+        <feedback>
+          <p>The list is modified by the pop.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[3, 0, 2]</p>
+        </statement>
+        <feedback>
+          <p>It will remove 0's except for the last one.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[3, 2]</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it didn't always increment the index.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>[3, 2, 0]</p>
+        </statement>
+        <feedback>
+          <p>Since it always increments the index it will miss the last zero.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+</section>
