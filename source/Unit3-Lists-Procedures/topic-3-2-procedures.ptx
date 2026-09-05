@@ -1167,7 +1167,7 @@ myTests().main()
       <p>
         Create a whack-a-mole game where the turtle randomly moves on the screen, and the user tries to catch it
         with mouse clicks. Use a global score variable to keep track of how many times the turtle is caught.
-        On Runestone, this game will only run for 20 seconds, so try to catch the turtle as many times as you can in 20 seconds!
+        The turtle will stop after 40 moves, so try to catch the turtle as many times as you can before it stops!
       </p>
       <p>Optional enhancements: change the colors with each move, increase the speed if the turtle is caught! </p>
     </statement>
@@ -1180,6 +1180,7 @@ import random
 t = turtle.Turtle()
 t.shape("turtle")
 t.color("green")
+timer = 0
 
 score = 0
 
@@ -1191,12 +1192,15 @@ def click_handler(x,y):
 
 # move is called every 500 milliseconds to move the turtle to a new random location
 def move():
+    global timer
     # TODO:Use the random.randint() function to choose random x and y coordinates between -200 and 200
   
     # TODO: Call t's goto function with the random coordinates to move the turtle 
 
-    # Call move again in 500 milliseconds (reduce to make faster)
-    turtle.ontimer(move, 500)
+    # Call move again in 500 milliseconds (reduce 500 to make faster)
+    if timer &lt; 40: # stop after 40 moves
+       turtle.ontimer(move, 500)
+       timer += 1
     
 move()
 t.onclick(click_handler)
