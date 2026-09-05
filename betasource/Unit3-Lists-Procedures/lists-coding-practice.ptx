@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lists-coding-practice">
+  <time minutes="45" />
+
+  <title>Lists Coding Practice Exercises</title>
+
+ 
+    <p>This section contains coding practice exercises using lists. Some of these are
+        adapted from the AP CSP and Python for Everybody ebooks by Dr. Barb Ericson. 
+  </p>
+
+
+<activity label="lists-practice1">
+    <statement>
+      <p>
+        Write code to change the first item in the list <c>weekdays</c> to <q>Monday</q>, 
+        and append <q>Friday</q> to the end of the list. 
+      </p>
+    </statement>
+
+    <program interactive="activecode" language="python">
+      <code>
+# Do not change the next line
+weekdays = ["Mon", "Tuesday", "Wednesday", "Thursday"] 
+
+# TODO: Change the first item in the list to "Monday", 
+# and append "Friday" to the end of the list
+
+
+print(weekdays)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], weekdays,"Changed list")
+        self.assertIn("weekdays[0]", self.getEditorText(), "Use weekdays[0] = to change the first item to Monday")
+        self.assertIn("weekdays.append", self.getEditorText(), "Use weekdays.append to add Friday to the end of the list")
+
+myTests().main()
+      </tests>
+    </program>
+</activity>
+
+ <activity label="lists-practice2">
+    <statement>
+      <p>
+        Write code to change the first item in the list <c>months</c> to <q>February</q>, 
+        to insert <q>April</q> between <q>March</q> and <q>May</q>, and to remove <q>August</q>.
+      </p>
+    </statement>
+
+    <program interactive="activecode" language="python">
+      <code>
+months = ["asdf", "March", "May", "June", "August"] # do not change
+
+# TODO: Change the first item in the list to "February", 
+# and insert April between March and May, and remove August
+
+
+print(months)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(["February", "March", "April", "May", "June"], months,"Changed list")
+        self.assertIn("months[0]", self.getEditorText(), "Use months[0] = to change the first item to February")
+        self.assertIn("months.insert(2,", self.getEditorText(), "Use months.insert to insert April between March and May")
+        self.assertIn("months.remove", self.getEditorText(), "Use months.remove to remove August")
+
+myTests().main()
+      </tests>
+    </program>
+</activity>
+
+ <activity label="lists-practice3">
+    <statement>
+      <p>
+        Write code that uses a for loop to traverse the list <c>numbers</c> and prints out 10 times
+        each number. 
+      </p>
+    </statement>
+
+    <program interactive="activecode" language="python">
+      <code>
+# Do not change the next line
+numbers = [5, 2, 10, 15]
+
+# TODO: Use a for-loop to go through the list with the loop variable num
+#    Print each number multiplied by 10
+
+
+
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertIn("50\n20\n100\n150", self.getOutput(), "Output should be the numbers multiplied by 10")
+        self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
+        self.assertIn("*", self.getEditorText(), "Multiply each number by 10")
+
+myTests().main()
+      </tests>
+    </program>
+</activity>
+
+<activity label="lists-practice4">
+    <statement>
+      <p>
+        Write code that uses a for loop to go through a list of words and print out the first letter of each word to form an acronym.
+      </p>
+    </statement>
+
+    <program interactive="activecode" language="python">
+      <code>
+# Do not change the next line
+words = ["You", "Only", "Live", "Once"]
+# TODO: Use a for-loop to go through the list
+#    Print the first letter of each word
+
+
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual("Y\nO\nL\nO", self.getOutput().strip(), "Output should be the acronym")
+        self.assertIn("for ", self.getEditorText(), "Use a for loop to iterate through the list")
+        self.assertIn("[0]", self.getEditorText(), "Get the first letter of each word with [0]")
+
+myTests().main()
+      </tests>
+    </program>
+</activity>
+
+<activity label="lists-practice5">
+    <statement>
+      <p>
+        Write code that uses a for loop to go through a list of temperatures and counts how many days were below freezing (32 degrees).
+      </p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+# Do not change the next line
+temps = [18, 50, 72, 31, 60] 
+count = 0
+# TODO: Use a for-loop to go through the list 
+#    If a temp is below 32, add 1 to the count variable
+
+
+print(count, "days were below freezing.")
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual(2, count,"Count of days below freezing")
+        self.assertIn("for ", self.getEditorText(), "Use a for loop to iterate through the list")
+        self.assertIn(" if", self.getEditorText(), "Use an if statement inside the loop")
+        self.assertIn("&lt;", self.getEditorText(), "Use if temp &lt; 32")
+        self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Use count += 1 to increment the counter in the loop and if statement")
+
+myTests().main()
+      </tests>
+    </program>
+</activity>
+
+<activity label="lists-practice6">
+    <statement>
+      <p>
+        Write code that uses a for loop to go through a list of words and prints out any words
+        that have the substring "cat" in them.
+      </p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+# Do not change the next line
+words = ["cat", "dog", "bird", "catfish", "hamster", "caterpillar", "fish"] 
+# TODO: Use a for-loop to go through the list 
+#    If "cat" is in the word, print the word
+
+
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def testOne(self):
+        self.assertEqual("cat\ncatfish\ncaterpillar", self.getOutput().strip(), "Output should be the words that contain 'cat'")
+        self.assertIn("for ", self.getEditorText(), "Use a for loop to iterate through the list")
+        self.assertIn(" if", self.getEditorText(), "Use an if statement inside the loop")
+        self.assertIn('if \"cat\" in', self.getEditorText(), "Use if \"cat\" in the word")
+
+myTests().main()
+      </tests>
+    </program>
+</activity>
+
+
+</section>
