@@ -974,7 +974,7 @@ print(name + " is " + age + " years old")
           class myTests(TestCaseGui):
             def test1(self):
               self.assertIn("Total score",self.getOutput(),"output")
-              self.assertIn("int(bonus)", self.getEditorText(), "Used int(bonus)"" )
+              self.assertIn("int(bonus)", self.getEditorText(), "Used int(bonus)" )
 
           myTests().main()
         </tests>
