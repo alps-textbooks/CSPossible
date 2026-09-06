@@ -328,9 +328,9 @@
           number.</p>
 
 
-    <p>When compound expressions are evaluated, operator precedence rules are used, just like when we do 
-      math, so that multiplication *, division /, and remainder % are done before 
-      addition + and subtraction -. However, anything in parentheses is done first. The PEMDAS acronym 
+    <p>If there is more than one math operator in an expression, <term>operator precedence</term> rules are used, 
+      just like in math, so that multiplication *, division /, and remainder % are done before 
+      addition + and subtraction -. Anything in parentheses is done first. The PEMDAS acronym 
       can help you remember the order of operations: Parentheses, Exponents, Multiplication and Division, 
       Addition and Subtraction (from left to right).
       It doesn’t hurt to put in extra parentheses if you are unsure as to what will be done first or 
@@ -389,6 +389,42 @@
       1</c>. This pattern is possible with any operator put in front of the
       <c>=</c> sign.
     </p>
+
+    <table xml:id="compound-operators">
+      <title>Compound Assignment Operators</title>
+        <tabular>
+             <row header="yes">
+                <cell bottom="minor"> Operator </cell>
+                <cell bottom="minor"> Example </cell>
+                <cell bottom="minor"> Equivalent to </cell>
+            </row>        
+            <row>
+                <cell>  += </cell>
+                <cell> x += 1 </cell>
+                <cell> x = x + 1 </cell>
+            </row>
+            <row>
+                <cell>  -= </cell>
+                <cell> x -= 1 </cell>
+                <cell> x = x - 1 </cell>
+            </row>
+            <row>
+                <cell>  *= </cell>
+                <cell> x *= 2 </cell>
+                <cell> x = x * 2 </cell>
+            </row>
+            <row>
+                <cell>  /= </cell>
+                <cell> x /= 2 </cell>
+                <cell> x = x / 2 </cell>
+            </row>
+            <row>
+                <cell>  %= </cell>
+                <cell> x %= 2 </cell>
+                <cell> x = x % 2 </cell>
+            </row>
+        </tabular>
+    </table>
 
     <p>When tracing through code with expressions, always remember to evaluate the right-hand side of the 
       assignment first, then assign the result to the variable on the left-hand side. You can practice and
