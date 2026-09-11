@@ -81,15 +81,15 @@
       <p>Here are some ways to enhance and extend the Quiz App. 
       </p>
       <ol>
-    <li style="margin-bottom: 5px;">As you might have noticed, if the answer is “Alan Turing” and the user types in “alan turing”, 
+    <li>As you might have noticed, if the answer is “Alan Turing” and the user types in “alan turing”, 
           the answer will be marked incorrect.  That’s not very nice for the user.  To remedy this 
           problem you will want to convert both the user’s answer and the stored answer to upper case 
           “ALAN TURING”.  (HINT: use the <b><i>upcase</i></b> block in the <i>Text</i> drawer to convert both strings.)
         </li>
-    <li style="margin-bottom: 5px;">When the user gets an incorrect answer, instead of just reporting “incorrect”, use a <i><b>join</b></i>
+    <li>When the user gets an incorrect answer, instead of just reporting “incorrect”, use a <i><b>join</b></i>
           block to also display the correct answer. For example, “Sorry, that is incorrect. The correct answer is Grace Hopper.” 
         </li>
-    <li style="margin-bottom: 5px;">  Add <i>RandomButton</i> to the app that when clicked will display a random 
+    <li>  Add <i>RandomButton</i> to the app that when clicked will display a random 
           question from the quiz.  (HINT:  You could use some new blocks from the <url href="https://ai2a.appinventor.mit.edu/reference/blocks/lists.html#pickrandomitem" >List drawer</url> such as a <em>pick a random item</em> block fed into an <em>index in list thing</em> block to set the index randomly.)
         </li>
     <li>Add a fourth question (and answer and image) to the quiz.  Research 
@@ -108,20 +108,26 @@
 
     <video youtube="zEZ3F9SgfPE" label="video-loops-lists-appinventor"/>
 
+    <p>The rest of this lesson can be finished after you learn about procedures in lesson 3.2.</p>
+
     </subsection>
 
     <subsection xml:id="quiz-app-extensions2">
-    <title>Quiz App Extensions with a Search Loop</title>
+    <title>Quiz App Extensions with Search Procedure</title>
 
     <ol>
-    <li style="margin-bottom: 5px;"><b>If/else Scoring Algorithm:</b> Modify your app to keep score of how many questions are answered correctly or 
+    <li><b>If/else Scoring Algorithm:</b> Modify your app to keep score of how many questions are answered correctly or 
         incorrectly. Be sure to restrict it so that the quiz taker can only receive credit 
         for answering each question once (i.e., if there are three questions, the quiz taker 
         can only be credited with three correct answers).
         Use this <url href="https://docs.google.com/document/d/1g3vEjfz1jBxCAoddWHA2D_CxpY7PPk6Qkw1H90Imxy8/edit?usp=sharing" >short handout</url> to guide you with this project.
         
       </li>
-    <li style="margin-bottom: 5px;"><b>Loop Algorithm for Searching:</b> Add a keyword search capability to your app.  For example, if the user types in NASA and clicks on the search button, you should find the question or answer with the word NASA in it and show that question.  This will be a linear search through the parallel question and answer lists using a loop. Use this <url href="https://docs.google.com/document/d/1IuSbMQM_NlNplN2pzNRNTD7LduyxAScvmzKz5En1u18/edit?usp=sharing" >short handout</url> to guide you with this project.
+    <li><b>Loop Algorithm for Searching:</b> Add a keyword search capability to your app.  For 
+      example, if the user types in NASA and clicks on the search button, you should find the 
+      question or answer with the word NASA in it and show that question.  This will be a linear 
+      search through the parallel question and answer lists using a loop. Use this <url 
+      href="https://docs.google.com/document/d/1IuSbMQM_NlNplN2pzNRNTD7LduyxAScvmzKz5En1u18/edit?usp=sharing" >short handout</url> to guide you with this project.
       </li>
     <li><b>Your Own Quiz App:</b> Use the Quiz App as a template to 
         create a quiz on a topic of your own choosing. Besides changing the questions, 
@@ -148,6 +154,33 @@
         </statement>
         <response/>
       </activity>
+
+       <activity label="quiz-app-procedure-abstraction">
+             <title>Procedural Abstraction Reflection</title>
+            <statement>
+              <p>Consider the search procedure that you wrote in the quiz app..
+                Describe the functionality provided by this procedure. Explain the advantages of implementing 
+                this functionality as a procedure. Describe how the program would be coded if this functionality 
+                was not in a procedure. What are the benefits of using procedural abstraction in your code?
+              </p>
+            </statement>
+            <response/>
+          </activity>
+        
+          <activity label="quiz-app-procedure-calls">
+             <title>Procedure Calls Reflection</title>
+            <statement>
+              <p>Consider the search procedure that you wrote in the quiz app. 
+                Write two calls to your procedure that each cause a different code segment in the 
+                procedure to execute. (Hint: whether the search keyword is found or not.) 
+                Describe the expected behavior of each call. 
+                Describe why this is a good use of procedural abstraction. If it is not 
+                possible for two calls to your procedure to cause different code segments to 
+                execute, explain why this is the case for your procedure.
+                </p>
+            </statement>
+            <response/>
+          </activity>
     </subsection>
 
 </section>

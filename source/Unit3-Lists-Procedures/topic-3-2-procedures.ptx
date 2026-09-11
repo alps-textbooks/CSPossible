@@ -6,7 +6,7 @@
  
   <introduction>
    <p>Quick Links:
-      <xref text="global" ref="procedures,function-call-defn, arguments, event-handlers, return-values, procedural-abstraction,
+      <xref text="global" ref="procedures,function-call-defn, arguments, appinventor-quiz-app2, event-handlers, return-values, procedural-abstraction,
       coding-challenge-draw-functions, LOs-3-2, vocab-3-2"/>
     </p>
     <p>
@@ -997,6 +997,16 @@ I like to eat, eat, eat pizzas and pineapples!
 
 
     </subsection>
+
+    <subsection xml:id="appinventor-quiz-app2">
+      <title>App Inventor Quiz App Project Continued (Optional)</title>
+
+      <p>If you did the optional 
+   <url href="appinventor-quiz-app.html">App Inventor Quiz App Tutorial</url> in the last lesson,
+   you can now finish sections 3.8.4-3.8.5 to add a search procedure.
+    </p>
+      
+      </subsection>
 
       <subsection xml:id="event-handlers">
     <title>Event-Handling Functions and Global Variables</title>

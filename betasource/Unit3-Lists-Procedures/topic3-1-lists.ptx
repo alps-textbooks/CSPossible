@@ -9,7 +9,7 @@
     <p>Quick Links:
       <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
       insert-remove-lists,list-loops, coding-challenge-lists1, linear-search, 
-      data-abstraction-with-lists, coding-challenge-lists2, vocab-3-1"/>
+      data-abstraction-with-lists, appinventor-quiz-app-link, coding-challenge-lists2, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
@@ -1539,6 +1539,17 @@ print(total)</code>
 </activity>
 
   </subsection>
+
+      <subsection xml:id="appinventor-quiz-app-link">
+      <title>App Inventor Quiz App Project (Optional)</title>
+
+    <p>If your class is using MIT's App Inventor, you may want to do the optional 
+   <url href="appinventor-quiz-app.html">App Inventor Quiz App Lesson (sections 3.8.1-3.8.3)</url>
+     before you try it in the Python coding challenge below. You can finish sections 3.8.4-3.8.5
+     which use a search procedure in the next lesson on procedures.
+    </p>
+      
+      </subsection>
 
     <subsection xml:id="coding-challenge-lists2">
     <title>Coding Challenge: Quiz App</title>
