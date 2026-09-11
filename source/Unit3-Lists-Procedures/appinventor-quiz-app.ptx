@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="appinventor-quiz-app">
+    <title>App Inventor Quiz App Tutorial (Optional)</title>
+  <time minutes="90" />
+  
+   <idx> <h>App Inventor</h><h>Quiz App</h></idx>
+
+  <introduction>
+    <p>In this App Inventor tutorial, you will learn how to create a quiz app about computer science pioneers.</p>
+
+    <video youtube="G_BrTzwHcoU" label="video-quiz-app-intro"/>
+
+     <p>In this tutorial, you will learn to:
+    <ul>
+			<li>navigate a list using an index variable</li>
+			<li>perform operations on a list, such as selecting items and checking for the end</li>
+			<li>use parallel lists to organize data</li>
+      <li>use loops with lists and standard algorithms to enhance the app</li>
+			</ul>
+            </p>
+     <p>Language Objectives: you will be able to:
+        <ul>
+			<li>explain how items in parallel lists are related to each other</li>
+			<li>use target vocabulary, such as <term>index </term> and <term>parallel list </term>, 
+                while describing app features and User Interface with the support of concept definitions 
+                and <url href="https://docs.google.com/presentation/d/1-IY5fs_ygKlgwUGBD9nX_tx_tFerN7pEeQvdgQIwrdw/copy">
+                vocabulary notes</url> from this lesson</li>
+			</ul>
+            </p>
+  </introduction>
+
+   <subsection xml:id="quiz-app1">
+    <title>Quiz App Tutorial Part 1</title>
+    <p>
+      To get started, open App Inventor with the 
+      <url href="http://ai2a.appinventor.mit.edu/?repo=templates.appinventor.mit.edu/trincoll/csp/unit6/templates/QuizApp/QuizAppTemplate.asc">Quiz App template</url> 
+      in a separate tab and follow along with the <url href="https://youtu.be/y7epbJbCZOI" > video tutoral</url> below,
+      or follow the 
+    <url href="https://docs.google.com/document/d/1RPxUXIbluNl4RBjEsBojSzQTvBZqWm3eO5Y9Fci_-0k/edit?usp=sharing"  title="">text tutorial</url>
+     or for an extra challenge use just the 
+    <url href="https://docs.google.com/document/d/1esBQ08ydu6a-ZpNjQ9FPk-qMuHmg6gjSRtnLPaOLo60/edit?usp=sharing" >short handout</url>.
+    </p>
+
+    <video youtube="y7epbJbCZOI" label="video-quiz-app-tutorial"/>
+
+     <p>In the app, you will construct 3 separate lists for the questions, answers, and the 
+        names of image files. The first question in the question list corresponds to the first 
+        answer in answer list and the first image in the image list. 		
+        This parallel setup allows you to use an <term>index</term> variable to associate each 
+        question with its corresponding answer and image. For example, when the index variable has 
+        the value 2, it is referring to the second question, second answer, and second image.	
+    </p>
+
+	<p>You will be typing in the quiz questions, answers, and image names (the image jpg files are provided in the Quiz App template).</p>
+      
+   <p>The questions are:</p>
+    <ol>
+    <li>Which computer science pioneer broke the German Enigma Code during the World War II?
+      </li>
+    <li>Which NASA engineer was the first black female engineer at NASA and a human computer featured in the movie Hidden Figures?  </li>
+    <li>Which Navy admiral led the creation of COBOL, one of the first high level programming languages?
+      </li>
+    </ol>
+    <p>The corresponding answers are:</p>
+    <ol>
+    <li>Alan Turing</li>
+    <li>Mary Jackson</li>
+    <li>Grace Hopper</li>
+    </ol>   
+  <p>The corresponding images are:</p>
+    <ol>
+    <li>AlanTuring.jpg</li>
+    <li>MaryJackson.jpg</li>
+    <li>GraceHopper.jpg</li>
+    </ol> 
+    </subsection>
+
+    <subsection xml:id="quiz-app-extensions">
+    <title>Quiz App Extensions</title>
+      <p>Here are some ways to enhance and extend the Quiz App. 
+      </p>
+      <ol>
+    <li style="margin-bottom: 5px;">As you might have noticed, if the answer is “Alan Turing” and the user types in “alan turing”, 
+          the answer will be marked incorrect.  That’s not very nice for the user.  To remedy this 
+          problem you will want to convert both the user’s answer and the stored answer to upper case 
+          “ALAN TURING”.  (HINT: use the <b><i>upcase</i></b> block in the <i>Text</i> drawer to convert both strings.)
+        </li>
+    <li style="margin-bottom: 5px;">When the user gets an incorrect answer, instead of just reporting “incorrect”, use a <i><b>join</b></i>
+          block to also display the correct answer. For example, “Sorry, that is incorrect. The correct answer is Grace Hopper.” 
+        </li>
+    <li style="margin-bottom: 5px;">  Add <i>RandomButton</i> to the app that when clicked will display a random 
+          question from the quiz.  (HINT:  You could use some new blocks from the <url href="https://ai2a.appinventor.mit.edu/reference/blocks/lists.html#pickrandomitem" >List drawer</url> such as a <em>pick a random item</em> block fed into an <em>index in list thing</em> block to set the index randomly.)
+        </li>
+    <li>Add a fourth question (and answer and image) to the quiz.  Research 
+          famous computer scientists on the Web to find a fourth person.  (HINT: You should only have to modify the 3 lists 
+          and upload an image file. The code should work with any number of questions as long as you used 
+          the length of list block instead of hard coding in the number 3 for the number of questions.)
+        </li>
+    </ol>
+
+    </subsection>
+
+    <subsection xml:id="loops-lists-appinventor">
+<title>App Inventor Loops with Lists</title>
+    <p>Watch the following <url href="https://youtu.be/zEZ3F9SgfPE" >video</url>
+    to learn how to use loops with lists in App Inventor (<url href="https://docs.google.com/presentation/d/1puzK5D_unNI65CMvxNwqPHW6DkDuPq-reuISHST5bMQ/edit?usp=sharing"  title="">Slides</url>).</p>
+
+    <video youtube="zEZ3F9SgfPE" label="video-loops-lists-appinventor"/>
+
+    </subsection>
+
+    <subsection xml:id="quiz-app-extensions2">
+    <title>Quiz App Extensions with a Search Loop</title>
+
+    <ol>
+    <li style="margin-bottom: 5px;"><b>If/else Scoring Algorithm:</b> Modify your app to keep score of how many questions are answered correctly or 
+        incorrectly. Be sure to restrict it so that the quiz taker can only receive credit 
+        for answering each question once (i.e., if there are three questions, the quiz taker 
+        can only be credited with three correct answers).
+        Use this <url href="https://docs.google.com/document/d/1g3vEjfz1jBxCAoddWHA2D_CxpY7PPk6Qkw1H90Imxy8/edit?usp=sharing" >short handout</url> to guide you with this project.
+        
+      </li>
+    <li style="margin-bottom: 5px;"><b>Loop Algorithm for Searching:</b> Add a keyword search capability to your app.  For example, if the user types in NASA and clicks on the search button, you should find the question or answer with the word NASA in it and show that question.  This will be a linear search through the parallel question and answer lists using a loop. Use this <url href="https://docs.google.com/document/d/1IuSbMQM_NlNplN2pzNRNTD7LduyxAScvmzKz5En1u18/edit?usp=sharing" >short handout</url> to guide you with this project.
+      </li>
+    <li><b>Your Own Quiz App:</b> Use the Quiz App as a template to 
+        create a quiz on a topic of your own choosing. Besides changing the questions, 
+        answers, and pictures, add at least one enhancement to the app. Be creative! 
+      </li>
+    </ol>
+    
+    </subsection>
+    <subsection xml:id="quiz-app-reflection">
+    <title>Quiz App Reflection</title>
+     <activity label="frq-data-abstraction-appinventor">
+        <title>Data Abstraction Reflection</title>
+        <statement>
+          <p>
+            Consider the lists used in your project code above. 
+          </p>
+            <ol>
+              <li>Explain how the lists use data abstraction to manage complexity in your program.</li>
+              <li>Explain how your code would be more complex if you did not have lists.</li>
+              <li>If you decide to add more elements to your lists, 
+                describe how you would need to adjust your code. How do lists make this easier?</li>
+            </ol>
+
+        </statement>
+        <response/>
+      </activity>
+    </subsection>
+
+</section>
