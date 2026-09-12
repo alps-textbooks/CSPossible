@@ -1277,6 +1277,73 @@ as intended?
     </choice>
   </choices>
 </activity>
+
+
+<activity label="list-csp-pseudocode2">
+  <statement>
+    <p>Which code below could be placed in the following loop to print out the item in a list that 
+      has the lowest (minimum) value?</p>
+    <pre>
+list = [1, 0, 4, 2]
+x = 99
+for item in myList
+{
+    &lt;MISSING CODE&gt;
+}
+print(x)
+    </pre>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <pre>
+if (item &gt; 99)
+    x = item
+       </pre>
+      </statement>
+      <feedback>
+        <p>No. This condition looks for an item greater than 99, but none of the items in the list meet that condition.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <pre>
+if (item &lt; 99)
+   x = item
+  </pre>
+      </statement>
+      <feedback>
+        <p>Not quite. This would assign every item that is less than 99 to <c>x</c>, so the final value would be 2 rather than the minimum value, 0.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <pre>
+if (item &gt; x)
+    x = item
+  </pre>
+      </statement>
+      <feedback>
+        <p>No. This condition would replace <c>x</c> when an item is greater than the current value of <c>x</c>, which would find a maximum rather than a minimum.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <pre>
+if (item &lt; x)
+    x = item
+    </pre>
+      </statement>
+      <feedback>
+        <p>Correct! Starting with <c>x</c> equal to 99, the code replaces <c>x</c> whenever it finds a smaller item. After checking every item, <c>x</c> contains the minimum value, 0.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
   </subsection>
 
   <subsection xml:id="data-abstraction-with-lists">

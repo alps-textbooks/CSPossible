@@ -1117,7 +1117,7 @@ myTests().main()
 <idx>return</idx>
 
    <p>
-      Some procdures or functions also return a value back to the code that called them. 
+      Some procedures or functions also return a value back to the code that called them. 
       For example, we have used the Python built-in <c>input()</c> function, which returns the user's input as a string,
       and the <c>random.randint()</c> function, which returns a random integer. You can imagine a function as a calculating
       machine that takes numbers as arguments and returns a calculated result,
@@ -1322,6 +1322,105 @@ myTests().main()
 </program> 
 </activity> 
 
+
+<activity label="csp-list-isfound">
+  <statement>
+    <p>
+      A summer camp offers a morning session and an afternoon session.
+    </p>
+    <p>
+      The list <c>morningList</c> contains the names of all children attending
+      the morning session, and the list <c>afternoonList</c> contains the names
+      of all children attending the afternoon session.
+    </p>
+    <p>
+      Only children who attend both sessions eat lunch at the camp. The camp
+      director wants to create <c>lunchList</c>, which will contain the names of children attending both sessions.</p>
+    	<p>The following code segment is intended to create <c>lunchList</c>, which is initially empty. It uses the procedure 
+        <c>IsFound(list, name)</c>, which returns <c>true</c> if <c>name</c> is found in <c>list</c> and returns <c>false</c> otherwise.</p>
+    	<pre>
+    	for child in morningList
+    	{  
+    		&lt;MISSING CODE&gt;
+    	}
+    	</pre>
+    	<p>Which of the following could replace &lt;MISSING CODE&gt; so that the code segment works as intended?</p>
+   </statement>
+   <choices randomize="yes">
+  <choice correct="yes">
+    <statement>
+      <pre>
+if (IsFound(afternoonList, child))
+{
+    lunchList.append(child)
+}
+      </pre>
+    </statement>
+    <feedback>
+      <p>
+        Correct! Since the loop goes through every child in
+        <c>morningList</c>, checking whether the child is also found in
+        <c>afternoonList</c> identifies children who attend both sessions.
+      </p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+      <pre>
+if (IsFound(lunchList, child))
+{
+    afternoonList.append(child)
+}
+      </pre>
+    </statement>
+    <feedback>
+      <p>
+        Incorrect. <c>lunchList</c> is initially empty, so this condition
+        cannot be used to determine whether a child attends the afternoon
+        session.
+      </p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+      <pre>
+if (IsFound(morningList, child))
+{
+    lunchList.append(child)
+}
+      </pre>
+    </statement>
+    <feedback>
+      <p>
+        Incorrect. The loop already considers only children in
+        <c>morningList</c>. The code must check whether each child is also
+        in <c>afternoonList</c>.
+      </p>
+    </feedback>
+  </choice>
+
+  <choice>
+    <statement>
+      <pre>
+if ( IsFound(morningList, child)  or
+     IsFound(afternoonList, child) )
+{
+    lunchList.append(child)
+}
+      </pre>
+    </statement>
+    <feedback>
+      <p>
+        Incorrect. The child must attend <em>both</em> sessions, so the
+        condition should check for membership in <c>afternoonList</c>.
+        Using <c>OR</c> would not correctly represent the requirement.
+      </p>
+    </feedback>
+  </choice>
+</choices>
+</activity>
 
   </subsection>
 

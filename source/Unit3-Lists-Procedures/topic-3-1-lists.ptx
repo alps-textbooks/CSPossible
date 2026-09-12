@@ -1299,6 +1299,16 @@ for number in numbers:
       </code>
 </program>
 
+<note>
+      <title>3.1.C.5</title>
+      <p>
+        Traversing a list can be a complete traversal, where every element is accessed,
+        or a <term>partial traversal</term>, where only some elements are examined. Some partial
+        traversals stop early when a goal is reached, such as finding the first match
+        in a search, which may require fewer steps than traversing the entire list.
+      </p>
+    </note>
+
 <p>If you are only looking for the first occurrence of a value, you can use a <c>break</c> 
   statement on a line on its own to exit the loop once the value is found. This is called a 
   <term>partial traversal</term> where only some elements of the list are visited. 
@@ -1382,16 +1392,6 @@ myTests().main()
           </tests>
         </program>
       </activity>
-
-    <note>
-      <title>3.1.C.5</title>
-      <p>
-        Traversing a list can be a complete traversal, where every element is accessed,
-        or a <term>partial traversal</term>, where only some elements are examined. Some partial
-        traversals stop early when a goal is reached, such as finding the first match
-        in a search, which may require fewer steps than traversing the entire list.
-      </p>
-    </note>
 
     <note>
       <title>3.1.C.6</title>
@@ -1542,6 +1542,72 @@ as intended?
       </statement>
       <feedback>
         <p>No, this change would not fix the issue of resetting count on each iteration.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+<activity label="list-csp-pseudocode2">
+  <statement>
+    <p>Which code below could be placed in the following loop to print out the item in a list that 
+      has the lowest (minimum) value?</p>
+    <pre>
+list = [1, 0, 4, 2]
+x = 99
+for item in myList
+{
+    &lt;MISSING CODE&gt;
+}
+print(x)
+    </pre>
+  </statement>
+
+  <choices randomize="yes">
+    <choice>
+      <statement>
+        <pre>
+if (item &gt; 99)
+    x = item
+       </pre>
+      </statement>
+      <feedback>
+        <p>No. This condition looks for an item greater than 99, but none of the items in the list meet that condition.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <pre>
+if (item &lt; 99)
+   x = item
+  </pre>
+      </statement>
+      <feedback>
+        <p>Not quite. This would assign every item that is less than 99 to <c>x</c>, so the final value would be 2 rather than the minimum value, 0.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <pre>
+if (item &gt; x)
+    x = item
+  </pre>
+      </statement>
+      <feedback>
+        <p>No. This condition would replace <c>x</c> when an item is greater than the current value of <c>x</c>, which would find a maximum rather than a minimum.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <pre>
+if (item &lt; x)
+    x = item
+    </pre>
+      </statement>
+      <feedback>
+        <p>Correct! Starting with <c>x</c> equal to 99, the code replaces <c>x</c> whenever it finds a smaller item. After checking every item, <c>x</c> contains the minimum value, 0.</p>
       </feedback>
     </choice>
   </choices>
@@ -1852,6 +1918,7 @@ print(total)</code>
     </choice>
   </choices>
 </activity>
+
 
   </subsection>
 
