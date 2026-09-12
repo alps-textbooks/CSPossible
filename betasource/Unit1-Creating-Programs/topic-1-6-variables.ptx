@@ -861,13 +861,15 @@ print(name + " is " + age + " years old")
         <p>Finish the input statements below to ask the user for 2 colors and a food item.
           Run to see the silly poem. Then, ask the user for more input words and create your own
           poem or story using the variables in print statements.</p>
+          <p>Remember: Write the questions or prompts in your code, not the user's answers. 
+          Enter the answers only when you run and test your program. </p>
       </statement>
       <program interactive="activecode" language="python">
         <code>
           # Get user input
           pluralnoun1 = input("Enter a plural noun: ")
           pluralnoun2 = input("Enter another plural noun: ")
-          # Complete 3 input statements below
+          # Complete 3 input statements below with prompts or questions
           color1 = input( )
           color2 =
           food =
