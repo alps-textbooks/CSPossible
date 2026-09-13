@@ -35,6 +35,9 @@
   <xi:include href="./lists-mcq-exercises.ptx" />
   <xi:include href="./lists-mixedup-code-practice.ptx" />
   <xi:include href="./lists-coding-practice.ptx" />
+  <xi:include href="./functions-mcq-exercises.ptx" />
+  <xi:include href="./functions-mixedup-code-practice.ptx" />
+  <xi:include href="./functions-coding-practice.ptx" />
   <xi:include href="./appinventor-quiz-app.ptx" /> 
  <!--
   <xi:include href="./unit3b-functions-mcq-exercises.ptx" />

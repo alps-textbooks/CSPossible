@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="functions-mcq-exercises">
+  <title>Functions Multiple-Choice Exercises</title>
+
+  <p>Most of the exercises below are from the Python for Everybody Interactive ebook 
+    on Runestone by Dr. Barb Ericson.</p>
+
+ <activity label="functEx_2">
+    <statement>
+      <p> What will the following Python program print out? (Given that each word will actually print on a new line)</p>
+      <program language="python">
+        <code>
+def fred():
+    print("Zap")
+
+def jane():
+    print("ABC")
+
+jane()
+fred()
+jane()
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>Zap ABC jane fred jane</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This code will only print the strings "Zap" or "ABC", not "jane" or "fred". Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Zap ABC Zap</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be correct if the call was fred() jane() fred(). Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>ABC Zap jane</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This code will only print the strings "Zap" or "ABC", not "jane" or "fred". Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>ABC Zap ABC</p>
+        </statement>
+        <feedback>
+          <p>Correct! jane() fred() jane() will print ABC Zap ABC.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Zap Zap Zap</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! This would be correct if the call was fred() fred() fred(). Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="functEx_3">
+    <statement>
+      <p> What value is printed when the following code is executed?</p>
+      <program language="python">
+        <code>
+name = "Jane Doe"
+def myFunction(parameter):
+    value = "First"
+    value = parameter
+    print (value)
+
+myFunction("Second")
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>value</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! "value" is the name of a variable. This code will print what "value" is assigned to. Try again.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Second</p>
+        </statement>
+        <feedback>
+          <p>Correct! "value" is assigned to the value of parameter which is "Second", so that's what will print.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>parameter</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! "parameter" is equal to the function call's argument. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>First</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Although the variable value is assigned to "First" initially, it is then reassigned to be equal to the parameter. Try again.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Jane Doe</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! The "name" variable is unused in the function call, so it does not affect what is printed. Try again.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+ <activity label="functEx_5_v2">
+    <statement>
+      <p> What will the following code print?</p>
+      <program language="python">
+        <code>
+def pow(b, p):
+    y = b ** p
+    return y
+
+def square(x):
+    a = pow(x, 2)
+    return a
+
+n = 5
+result = square(n)
+print(result)
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>5</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it first printed the value of x.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>10</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it printed 5 * 2 but it is 5 ** 2 which is 5 * 5.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>25</p>
+        </statement>
+        <feedback>
+          <p>It prints the value of 5 raised to the 2nd power which is 5 * 5 = 25.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>32</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it was 2 raised to the 5th power (2 * 2 * 2 * 2 * 2) = 32.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>3125</p>
+        </statement>
+        <feedback>
+          <p>This would be ture if it was 5 raised to the 5th power (5 * 5 * 5 * 5 * 5) = 3125.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  <activity label="functEx_6_v2">
+    <statement>
+      <p> Consider the following Python code. What does this code print?</p>
+      <program language="python">
+        <code>
+def rem(a, b):
+    return a % b
+
+print(rem(3,7))
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>0</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it was rem(3,3).  The value 3 would go into 3 one time with 0 remainder.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>3</p>
+        </statement>
+        <feedback>
+          <p>The value 7 goes into 3 zero times, so the remainder is 3.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>7</p>
+        </statement>
+        <feedback>
+          <p>How many times does 7 go evenly into 3 and what is the remainder?</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>1</p>
+        </statement>
+        <feedback>
+          <p>This would be true if it was rem(7,3)</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+  
+
+<activity label="func_exercise_4">
+    <statement>
+      <p> After running the following code, what will the output be?</p>
+      <program language="python">
+        <code>
+def multiplication_one(num1, num2):
+    num1 * num2
+
+print(multiplication_one(5, 10))
+
+def multiplication_two(num1, num2):
+    return num1 * num2
+
+multiplication_two(5, 10)
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>None will be outputted after printing and calling multiplication_one(5, 10). Nothing will be outputted after calling multiplication_two(5, 10).</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Nothing will be outputted after printing and calling multiplication_one(5, 10). None will be outputted after calling multiplication_two(5, 10).</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! None is printed when you print and call a function and there is no return statement in the function body. Nothing is outputted when you call a function that only has a return statement and you don't print the function call.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>50 will be outputted after printing and calling multiplication_one(5, 10) and after calling multiplication_two(5, 10).</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! None is printed when you print and call a function and there is no return statement in the function body. Nothing is outputted when you call a function that only has a return statement and you don't print the function call.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>None will be outputted after printing and calling multiplication_one(5, 10). 50 will be outputted after calling multiplication_two(5, 10).</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! Nothing is outputted when you call a function that only has a return statement and you don't print the function call.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>50 will be outputted after printing and calling multiplication_one(5, 10). Nothing will be outputted after calling multiplication_two(5, 10).</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! None is printed when you print and call a function and there is no return statement in the function body.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="func_exercise_5">
+    <statement>
+      <p> What would be printed after running the code below? (Note: Ignore whitespaces.)</p>
+      <program language="python">
+        <code>
+def addition(num1, num2):
+    return(num1 + num2)
+
+def subtraction(num1, num2):
+    print(num1 - num2)
+
+def main():
+    add_answer = addition(2, 4)
+    new_add_answer = addition(add_answer, 105)
+    print(subtraction(new_add_answer, 200))
+
+main()
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>None and -89</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! When you print a function call (e.g., print(subtraction(new_add_answer, 200))) and the function prints an output (e.g., def subtraction(num1, num2): print(num1 - num2)), the output will be printed first due to the function call. Then, printing the function call will output None because the function does not have a return statement.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>None</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! When you print a function call (e.g., print(subtraction(new_add_answer, 200))) and the function prints an output (e.g., def subtraction(num1, num2): print(num1 - num2)), the output will be printed first due to the function call. Then, printing the function call will output None because the function does not have a return statement.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>-89</p>
+        </statement>
+        <feedback>
+          <p>Incorrect! When you print a function call (e.g., print(subtraction(new_add_answer, 200))) and the function prints an output (e.g., def subtraction(num1, num2): print(num1 - num2)), the output will be printed first due to the function call. Then, printing the function call will output None because the function does not have a return statement.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>-89 and None</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="functions_with_loops_mc3">
+    <statement>
+      <p> Which of the following values for <c>x</c>, <c>y</c>, and <c>z</c> would result in the 
+        function returning <q>True</q>?</p>
+      <program language="python">
+        <code>
+def addition(x,y,z):
+   if (x + y) == z:
+      return True
+   else:
+      return False
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>x = 5, y = 6, z = 11</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>x = 1, y = 5, z = 6</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>x = 1, y = 3, z = 10</p>
+        </statement>
+        <feedback>
+          <p>Try again! The value of z should be 4 in order to return "True".</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>x = -2, y = 1, z = -1</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>x = 50, y = 41, z = 94</p>
+        </statement>
+        <feedback>
+          <p>Try again! The value of z should be 91 in order to return "True".</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+   <activity label="functions_with_loops_mc1">
+    <statement>
+      <p> Given the code below, what would the function print?</p>
+      <program language="python">
+        <code>
+def countodd(lst):
+   num_of_odd = 0
+   for item in lst:
+      if item % 2 == 1:
+         num_of_odd += 1
+
+   return num_of_odd
+
+print(countodd([1,2,3,4,5]))
+</code>
+      </program>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>1</p>
+        </statement>
+        <feedback>
+          <p>Try again! This function uses modulus to find the amount of odd numbers in the list that is passed in.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>2</p>
+        </statement>
+        <feedback>
+          <p>Try again! This function uses modulus to find the amount of odd numbers in the list that is passed in.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>3</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>4</p>
+        </statement>
+        <feedback>
+          <p>Try again! This function uses modulus to find the amount of odd numbers in the list that is passed in.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>5</p>
+        </statement>
+        <feedback>
+          <p>Try again! This function uses modulus to find the amount of odd numbers in the list that is passed in.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </activity>
+
+</section>

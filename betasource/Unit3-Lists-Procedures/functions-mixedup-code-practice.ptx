@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="functions-mixedup-coding-practice">
+
+
+  <title>Functions Mixed-Up Coding Practice</title>
+
+  <p>Try to solve each of the following. Click the <em>Check</em> button to check each solution. You will be told if
+        your solution is too short, has a block in the wrong order, or you are using the wrong block.</p>
+   
+   <p>These are exercises are adapted from Dr. Barb Ericson's exercises in the AP CSP and Python 
+    for Everybody ebooks on Runestone.
+  </p>
+
+   <activity label="functDef_PP_flavors" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Construct a block of code with two functions. The first function is called printFlavors,
+            which lists the available flavors. The second function should print the products and call the
+            first function. Finally, call the second function. Watch your indentation! Hint: there is one
+            unused code block.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="3">
+        <cline>def printFlavors():</cline>
+      </block>
+      <block order="6">
+        <cline>    print("Vanilla")</cline>
+        <cline>    print("Chocolate")</cline>
+        <cline>    print("Strawberry")</cline>
+      </block>
+      <block order="5">
+        <cline>def printProducts():</cline>
+      </block>
+      <block order="2">
+        <cline>    print("Ice cream")</cline>
+        <cline>    print("Milkshake")</cline>
+        <cline>    print("Frozen yogurt")</cline>
+        <cline>    print("************")</cline>
+        <cline>    print("Flavors:")</cline>
+        <cline>    printFlavors()</cline>
+      </block>
+      <block order="1" correct="no">
+        <cline>    print("Ice cream")</cline>
+        <cline>    print("Milkshake")</cline>
+        <cline>    print("Frozen yogurt")</cline>
+        <cline>    print("************")</cline>
+        <cline>    print("Flavors:")</cline>
+        <cline>    print(printFlavors())</cline>
+      </block>
+      <block order="4">
+        <cline>printProducts()</cline>
+      </block>
+    </blocks>
+  </activity>
+
+ <activity label="func_pp_print_name_v2" adaptive="yes" indentation="hide" language="python">
+      <statement>
+        <p>Drag the blocks from the left and put them in the correct order on the right to define a function <c>print_greeting</c> that asks for your name and prints <q>Hello Name</q>. Then define a <c>main</c> function that calls <c>print_greeting</c>.  Be sure to also call the <c>main</c> function. Note that you will have to indent the lines that are in the body of each function.  Click the <em>Check</em> button to check your solution.</p>
+      </statement>
+       <blocks randomize="no" numbered="left">
+        <block order="5">
+          <choice correct="yes">
+            <cline>def print_greeting():</cline>
+          </choice>
+          <choice>
+            <cline>def print_greeting() </cline>
+          </choice>
+        </block>
+        <block order="8">
+          <cline>    name = input("What is your name?")</cline>
+        </block>
+        <block order="9">
+          <cline>    print("Hello " + name)</cline>
+        </block>
+        <block order="7">
+          <choice correct="yes">
+            <cline>def main():</cline>
+          </choice>
+          <choice>
+            <cline>Def main(): </cline>
+          </choice>
+        </block>
+        <block order="4">
+          <choice correct="yes">
+            <cline>    print_greeting()</cline>
+          </choice>
+          <choice>
+            <cline>    print_greeting </cline>
+          </choice>
+        </block>
+        <block order="3">
+          <cline>main()</cline>
+        </block>
+      </blocks>
+    </activity>
+
+     <activity label="Functions_MixedUpCode_1P_v2" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a function called <c>exp</c> that takes in two parameters, <c>num1</c> and <c>num2</c>, and returns <c>num1</c> raised to the
+            power of <c>num2</c>. For example, <c>exp(2,3)</c> should return <c>8</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="3">
+        <choice correct="yes">
+          <cline>def exp(num1, num2):</cline>
+        </choice>
+        <choice>
+          <cline>def exp(num1, num2) </cline>
+        </choice>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>    value = num1 ** num2</cline>
+        </choice>
+        <choice>
+          <cline>    value = num1 * num2 </cline>
+        </choice>
+      </block>
+      <block order="5">
+        <cline>    return value</cline>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity label="Functions_MixedUpCode_2" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a function called <c>poly_perimeter</c> that takes in two parameters, <c>len_side</c> and <c>num_sides</c>, and
+            returns the perimeter of the polygon.  The perimeter of a polygon is the length of each side times the number of sides.  For example, <c>poly_perimeter(4,5)</c>
+            should return <c>20</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="1">
+        <choice correct="yes">
+          <cline>def poly_perimeter(len_side, num_sides):</cline>
+        </choice>
+        <choice>
+          <cline>Def poly_perimeter(len_side, num_sides): </cline>
+        </choice>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>    per = len_side * num_sides</cline>
+        </choice>
+        <choice>
+          <cline>    per = len_side ** num_sides </cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>    return per</cline>
+      </block>
+    </blocks>
+  </activity>
+  
+    <activity label="Functions_MixedUpCode_7" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a function called <c>convert_to_miles</c> that takes in <c>feet</c> as a parameter and
+            returns the value in miles. <c>feet</c> contains the length of an object in feet. 1 mile is equal to 5280 feet.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="5">
+        <choice correct="yes">
+          <cline>def convert_to_miles(feet):</cline>
+        </choice>
+        <choice>
+          <cline>def convert_to_miles(feet) </cline>
+        </choice>
+      </block>
+      <block order="4">
+        <choice correct="yes">
+          <cline>    miles = feet / 5280</cline>
+        </choice>
+        <choice>
+          <cline>    miles = 5280 / feet </cline>
+        </choice>
+      </block>
+      <block order="2">
+        <cline>    return miles</cline>
+      </block>
+    </blocks>
+  </activity>
+
+    <activity label="Functions_MixedUpCode_9" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a function called <c>larger_string</c> that takes in two parameters, <c>str1</c> and <c>str2</c>, and
+            returns the string that has the larger length. If the lengths are equal, return <c>str1</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="1">
+        <choice correct="yes">
+          <cline>def larger_string(str1, str2):</cline>
+        </choice>
+        <choice>
+          <cline>def larger_string(str1, str2) </cline>
+        </choice>
+      </block>
+      <block order="3">
+        <choice correct="yes">
+          <cline>    if len(str1) &gt;= len(str2):</cline>
+          <cline>        return str1</cline>
+        </choice>
+        <choice>
+          <cline>    if len(str1) &gt; len(str2): </cline>
+          <cline>        return str1</cline>
+        </choice>
+      </block>
+      <block order="4">
+        <cline>    else:</cline>
+        <cline>        return str2</cline>
+      </block>
+    </blocks>
+  </activity>
+
+     <activity label="funct_conditional_mixedupcode_2" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a function called <c>even_or_odd</c> that takes in a parameter <c>num</c>. If <c>num</c> is odd, return <c>"This is odd."</c>, and if <c>num</c> is even, return <c>"This is even." ``.
+For example, ``even_or_odd(-65)</c> should return <c>"This is odd."</c>. Note: For this function, <c>num</c> is solely an integer.</p>
+    </statement>
+     <blocks numbered="left">
+      <block order="5">
+        <choice correct="yes">
+          <cline>def even_or_odd(num):</cline>
+        </choice>
+        <choice>
+          <cline>Def even_or_odd(num): </cline>
+        </choice>
+      </block>
+      <block order="1">
+        <choice correct="yes">
+          <cline>    if num % 2 == 0:</cline>
+        </choice>
+        <choice>
+          <cline>    if num % 2 = 1: </cline>
+        </choice>
+      </block>
+      <block order="2">
+        <cline>    if num % 2 = 0: </cline>
+      </block>
+      <block order="8">
+        <cline>        return "This is even."</cline>
+      </block>
+      <block order="6">
+        <cline>    else:</cline>
+      </block>
+      <block order="3">
+        <cline>        return "This is odd."</cline>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity xml:id="funct_conditional_writecode1q_pp" label="funct_conditional_writecode1q_pp" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Arrange the blocks to define a function <c>cropped_photo</c> that takes the <c>height</c> and <c>width</c> of a photo.
+            If the <c>height</c> and <c>width</c> are equal, then the function returns <c>"Cropped Photo"</c>. Otherwise,
+            it returns <c>"The photo needs to be cropped."</c></p>
+    </statement>
+    <blocks numbered="left">
+      <block order="1">
+        <cline>def cropped_photo(height, width):</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>    if height == width:</cline>
+        </choice>
+        <choice>
+          <cline>    if height = width:</cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>        return "Cropped Photo"</cline>
+      </block>
+      <block order="4">
+        <cline>    else:</cline>
+      </block>
+      <block order="5">
+        <cline>        return "The photo needs to be cropped."</cline>
+      </block>
+    </blocks>
+  </activity>
+
+   <activity xml:id="funct_conditional_writecode2q_pp" label="funct_conditional_writecode2q_pp" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Arrange the blocks to define a function <c>bonus</c> that takes two parameters, <c>years</c> and <c>quality</c>.
+            If <c>years</c> is more than 5, then the person gets a bonus.
+            The person also gets a bonus if their <c>quality</c> of work was more than 90.
+            They can also get a bonus if they worked for at least 3 <c>years</c> and had <c>quality</c> more than 80.
+            If the person is eligible for a bonus, return <c>"Eligible for Bonus"</c>. Otherwise, return <c>"Ineligible for Bonus"</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="1">
+        <cline>def bonus(years, quality):</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>    if years > 5 or quality > 90 or (years >= 3 and quality > 80):</cline>
+        </choice>
+        <choice>
+          <cline>    if years > 5 and quality > 90 or (years >= 3 and quality > 80):</cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>        return "Eligible for Bonus"</cline>
+      </block>
+      <block order="4">
+        <cline>    else:</cline>
+      </block>
+      <block order="5">
+        <cline>        return "Ineligible for Bonus"</cline>
+      </block>
+    </blocks>
+  </activity>
+
+  <activity xml:id="funct_conditional_writecode3q_pp" label="funct_conditional_writecode3q_pp" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Arrange the blocks to define a function <c>move_elevator</c> that takes two parameters, <c>current_floor</c> and <c>next_floor</c>. If the elevator moves
+            to a floor above, then it should return <c>"Up"</c>. Otherwise, it should return <c>"Down"</c>. Also, if <c>next_floor</c> is the same as <c>current_floor</c>, it should return 0.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="1">
+        <cline>def move_elevator(current_floor, next_floor):</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>    if next_floor &lt; current_floor:</cline>
+        </choice>
+        <choice>
+          <cline>    if next_floor &gt; current_floor:</cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>        return "Down"</cline>
+      </block>
+      <block order="4">
+        <choice correct="yes">
+          <cline>    elif next_floor &gt; current_floor:</cline>
+        </choice>
+        <choice>
+          <cline>    elif next_floor &lt; current_floor:</cline>
+        </choice>
+      </block>
+      <block order="5">
+        <cline>        return "Up"</cline>
+      </block>
+      <block order="6">
+        <cline>    else:</cline>
+      </block>
+      <block order="7">
+        <cline>        return 0</cline>
+      </block>
+    </blocks>
+  </activity>
+
+  <activity xml:id="funct_conditional_writecode4q_pp" label="funct_conditional_writecode4q_pp" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Arrange the blocks to define a function <c>lunch_break</c> that takes a parameter <c>class_standing</c> and determines how long a lunch break will be based on
+            the student's class standing. If a person is a ‘Freshman', return <c>40</c>. If a person is a ‘Sophomore', return <c>30</c>.
+            If a person is a ‘Junior', return <c>20</c>. If a person is a ‘Senior', return <c>15</c>. If a person is none of these, return <c>0</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="1">
+        <cline>def lunch_break(class_standing):</cline>
+      </block>
+      <block order="2">
+        <choice correct="yes">
+          <cline>    if class_standing == 'Freshman':</cline>
+        </choice>
+        <choice>
+          <cline>    if class_standing = 'Freshman':</cline>
+        </choice>
+      </block>
+      <block order="3">
+        <cline>        return 40</cline>
+      </block>
+      <block order="4">
+        <cline>    elif class_standing == 'Sophomore':</cline>
+      </block>
+      <block order="5">
+        <cline>        return 30</cline>
+      </block>
+      <block order="6">
+        <cline>    elif class_standing == 'Junior':</cline>
+      </block>
+      <block order="7">
+        <cline>        return 20</cline>
+      </block>
+      <block order="8">
+        <choice correct="yes">
+          <cline>    elif class_standing == 'Senior':</cline>
+        </choice>
+        <choice>
+          <cline>    else class_standing == 'Senior':</cline>
+        </choice>
+      </block>
+      <block order="9">
+        <cline>        return 15</cline>
+      </block>
+      <block order="10">
+        <cline>    else:</cline>
+      </block>
+      <block order="11">
+        <cline>        return 0</cline>
+      </block>
+    </blocks>
+  </activity>
+
+  <activity label="Functions_Loops_MixedUpCode_3" adaptive="yes" indentation="hide" language="python">
+    <statement>
+      <p>Create a function called <c>countdown</c> that takes in one integer parameter <c>seconds</c> and creates a list of numbers that counts down from
+            seconds to 1, and then returns that list. Note: <c>seconds</c> must be greater than or equal to 1. For example, <c>countdown(3)</c> would return <c>[3, 2, 1]</c>.</p>
+    </statement>
+    <blocks numbered="left">
+      <block order="6">
+        <choice correct="yes">
+          <cline>def countdown(seconds):</cline>
+        </choice>
+        <choice>
+          <cline>def countdown(): </cline>
+        </choice>
+      </block>
+      <block order="2">
+        <cline>    countdown_lst = []</cline>
+      </block>
+      <block order="5">
+        <cline>    while seconds &gt; 0:</cline>
+      </block>
+      <block order="3">
+        <cline>        countdown_lst.append(seconds)</cline>
+      </block>
+      <block order="7">
+        <cline>        seconds -= 1</cline>
+      </block>
+      <block order="4">
+        <cline>    return countdown_lst</cline>
+      </block>
+    </blocks>
+  </activity>
+
+</section>
