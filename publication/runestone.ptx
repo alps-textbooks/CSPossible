@@ -82,6 +82,10 @@
     <calculator activecode="python"/>
     <css theme="salem" color-main="#007FAF"/>
     <tableofcontents level="3" focused="yes"/>
+
+
+    <analytics statcounter-project="13354702"
+           statcounter-security="6b76f0df"/>
    
     <!-- A possible attribute for the html tag above is @short-answer-responses, with values either "always" or "graded".  As in: -->
     <!--<html short-answer-responses="always">-->
