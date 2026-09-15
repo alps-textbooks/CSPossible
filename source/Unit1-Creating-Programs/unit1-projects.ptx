@@ -199,7 +199,10 @@ class myTests(TestCaseGui):
         output2 = self.findLine(str(output2).split(","), "average_cost")
         self.assertIn("45.0", output2, "average_cost starts with 45.0 if you enter the test case input: Pat, 500, 25, 3.50, 2, 10")
 
-        self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code")  
+        if ("23.8" in code):
+            self.assertNotIn("23.8", code, "23.8 should not be hard-coded in the code")
+        if ("45" in code):
+            self.assertNotIn("45.0", code, "45.0 should not be hard-coded in the code")  
      
 
 myTests().main()

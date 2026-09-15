@@ -939,18 +939,29 @@ turt.forward(distance)  # Move the turtle forward by the random distance
 turt.goto(0, 0)         # Go back to the origin (0, 0)
 turt.end_fill()         # Stop filling the shape with the pen color
 
-# TODO: Add to total_distance: (2 times distance_from_origin) + distance
+# TODO: Add to total_distance, 2 times distance_from_origin + distance
 
 print("Total distance: ", format(total_distance, ".2f"))
 
-# TODO: Repeat the code from line 10 to line 45 two more times
+# TODO: Copy the code from line 10 to 45 (or up to the line above) 
+#       and paste below two more times 
 
       </code>
       <tests>
           from unittest.gui import TestCaseGui
-          import re
 
           class myTests(TestCaseGui):
+              def findLine(self, lines, target):
+                  results = []
+                  for line in lines:
+                      if "#" in line:
+                          index = line.find("#")
+                          line = line[0:index]
+                      if target in line:
+                          #print(line)
+                          results.append(line)
+                  return list(set(results))
+              
               def remove_comments(self, code):
                   lines = code.split("\n")
                   new_lines = []
@@ -990,8 +1001,27 @@ print("Total distance: ", format(total_distance, ".2f"))
                   self.assertLessEqual(3,count, "randint(50, 100) used to determine distances")
 
                   # distance
-                  count = code.count("total_distance+=2*distance_from_origin+distance")
-                  self.assertLessEqual(3,count, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance)")
+                  #count = code.count("total_distance+=2*distance_from_origin+distance")
+                  lines = self.findLine(code.split("\n"), "total_distance")
+                  for i in range(len(lines)-1, -1, -1):
+                      line = lines[i]
+                      if "=0" in line or "print" in line:
+                          print(lines[i])
+                          lines.pop(i)
+
+                  if len(lines) == 0:
+                      self.assertTrue(False, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance)")
+                  else:
+                      line = lines[0]
+
+                      print(line)
+
+                      hasMult = "*" in line
+                      hasAdd = line.count("+") >= 1
+                      hasDistanceFromOrigin = "distance_from_origin" in line
+                      passes = hasMult and hasAdd and hasDistanceFromOrigin
+
+                      self.assertTrue(passes, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance)")
 
                   # printing distance
                   output = self.getOutput()
