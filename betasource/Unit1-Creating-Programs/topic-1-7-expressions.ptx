@@ -939,11 +939,12 @@ turt.forward(distance)  # Move the turtle forward by the random distance
 turt.goto(0, 0)         # Go back to the origin (0, 0)
 turt.end_fill()         # Stop filling the shape with the pen color
 
-# TODO: Add to total_distance: (2 times distance_from_origin) + distance
+# TODO: Add to total_distance, 2 times distance_from_origin + distance
 
 print("Total distance: ", format(total_distance, ".2f"))
 
-# TODO: Copy the code from line 10 to 45 (or whatever line the print is on) and paste below two more times 
+# TODO: Copy the code from line 10 to 45 (or up to the line above) 
+#       and paste below two more times 
 
       </code>
       <tests>
@@ -1009,7 +1010,7 @@ print("Total distance: ", format(total_distance, ".2f"))
                           lines.pop(i)
 
                   if len(lines) == 0:
-                      self.assertTrue(False, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance) and added to total_distance")
+                      self.assertTrue(False, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance)")
                   else:
                       line = lines[0]
 
@@ -1020,7 +1021,7 @@ print("Total distance: ", format(total_distance, ".2f"))
                       hasDistanceFromOrigin = "distance_from_origin" in line
                       passes = hasMult and hasAdd and hasDistanceFromOrigin
 
-                      self.assertTrue(passes, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance) and added to total_distance")
+                      self.assertTrue(passes, "total_distance calculated correctly 3 times (total_distance += 2*distance_from_origin + distance)")
 
                   # printing distance
                   output = self.getOutput()
