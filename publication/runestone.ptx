@@ -84,8 +84,8 @@
     <tableofcontents level="3" focused="yes"/>
 
 
-    <analytics statcounter-project="13354702"
-           statcounter-security="6b76f0df"/>
+    <analytics statcounter-project="13354702" statcounter-security="6b76f0df"
+               google-gst="G-5EFD0J3E99"/>
    
     <!-- A possible attribute for the html tag above is @short-answer-responses, with values either "always" or "graded".  As in: -->
     <!--<html short-answer-responses="always">-->
