@@ -426,15 +426,10 @@ print("The average score is", average)
           by changing "if" to "elif" after the first "if" to chain all the conditions together.
           </p>
 
-    <activity label="selection-test-cases">
-      <title>Selection Test Cases</title>
-      <statement>
-        <p>
-          Run the code below following the test plan table underneath it. Fill in the actual output column of the table.
-          This code has some logic errors. Do not fix them until you have completed the test plan!</p>
-        
-        <program label="selection-test-cases-sample-code" interactive="activecode" language="python">
+ 
+        <program xml:id="selection-test-cases-sample-code" label="selection-test-cases-sample-code" interactive="activecode" language="python">
         <code>
+# Code to use with test plan activity
 score = int(input("Enter a score: "))
 if score &gt;= 90:
     grade = "A"
@@ -449,7 +444,15 @@ else:
 print(grade)
         </code>
       </program>
-          <table>
+
+   <activity label="selection-test-cases">
+      <title>Selection Test Cases</title>
+      <statement>
+        <p>
+          Run the code above (<xref ref="POGIL-test-plans"/>) following the test plan table below. Fill in the actual output column of the table.
+          This code has some logic errors. Do not fix them until you have completed the test plan!</p>
+        
+      <table>
         <tabular>
              <row header="yes">
                 <cell bottom="minor">Test Case</cell>
@@ -571,13 +574,11 @@ print(grade)
   
  
 
-   <activity label="loop-test-cases">
-    <title>Loop Test Plan</title>
-      <statement><p>
-          Run the code below following the test plan table underneath it. Fill in the actual output column of the table.
-      </p> 
-       <program label="loop-test-cases-sample-code" interactive="activecode" language="python">
+ <p>Use the sample code below to complete the test plan in the next activity.</p>
+
+       <program xml:id="loop-test-cases-sample-code" label="loop-test-cases-sample-code" interactive="activecode" language="python">
         <code>
+# Code to use with test plan activity
 value = int(input("Enter a number (-1 to stop): "))
 while value != -1:
     if value == 7:
@@ -585,12 +586,19 @@ while value != -1:
     else:
         print("You entered", value)
 
-    # 3. Update the loop variable with new input!
+    # Update the loop variable with new input
     value = int(input("Enter a another number (-1 to stop): "))
+
 print("Done!")
         </code>
         </program>
-      <table>
+
+   <activity label="loop-test-cases">
+    <title>Loop Test Plan</title>
+      <statement><p>
+          Run the code above (<xref ref="POGIL-test-plans"/>) following the test plan table below. Fill in the actual output column of the table.
+      </p>
+        <table>
       <title>Test Cases</title>
           <tabular>
              <row header="yes">
