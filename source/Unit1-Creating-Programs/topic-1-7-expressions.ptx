@@ -660,14 +660,15 @@ age = int(input("How old are you? "))
 
     <p>Let's practice getting input, converting it, and using it in a calculation below. The
       code below also demonstrates how to format a number to 2 decimal places using the 
-      <c>format(num, ".2f")</c> command. This function will also round the number to 2 decimal places if it has more than 2 decimal places.
+      <c>round(num, 2)</c> function. This function rounds the number to 2 decimal places,
+      for example <c>2.555555</c> will be rounded to <c>2.56</c>. Another option is to use <c>format(num, ".2f")</c>.
     </p>
 
     <program language="python">
         <code>
-# formatting a variable to 2 float or decimal places
+# rounding a variable to 2 float or decimal places
 cost = 10.666666
-print("Cost is $", format(cost, ".2f"))
+print("Cost is $", round(cost, 2))
         </code>
      </program>
 
@@ -689,7 +690,7 @@ candyQuantity =
 totalCost =
 
 # Print the total cost formatted with 2 float or decimal places
-print("The total cost is $", format(totalCost, ".2f"))
+print("The total cost is $", round(totalCost, 2))
         </code>
         <tests>
 from unittest.gui import TestCaseGui

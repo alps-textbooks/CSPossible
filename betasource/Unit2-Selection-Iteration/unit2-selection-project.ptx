@@ -206,7 +206,8 @@ recommended 12-hour parking time.
     <p>
 Create a Python program that determines a customer's parking fee based on information they provide. 
 Your program should make decisions using Boolean expressions and display a personalized receipt. 
-Be sure to format all dollar amounts in the receipt to two decimal places in <c>print</c> using <c>format(num, ".2f")</c>.
+Be sure to format all dollar amounts in the receipt to two decimal places in <c>print</c> using 
+<c>round(num, 2)</c> or <c>format(num, ".2f")</c>.
     </p>
 </statement>
 <program interactive="activecode" language="python">
