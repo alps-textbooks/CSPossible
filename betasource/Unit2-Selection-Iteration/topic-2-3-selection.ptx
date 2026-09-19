@@ -9,7 +9,8 @@
   
     <introduction>
       <p>Quick Links: 
-      <xref text="global" ref="selection-in-algorithms, unplugged-ifs, if-statements, if-else,        nested-conditionals, adventure-project,  vocab-2-3, appinventor-lights-off-iteration3"/>
+      <xref text="global" ref="selection-in-algorithms, unplugged-ifs, if-statements, 
+       if-rel-ops, if-else, if-and-or, nested-conditionals, adventure-project,  vocab-2-3, appinventor-lights-off-iteration3"/>
     </p>
     <p>Up until now, we have been writing code one line at a time in sequence which then gets executed by the 
       computer in that sequential order by default. However, we can create more complex algorithms that do not 
@@ -156,6 +157,27 @@ if "B" in name:
     print("Welcome all names with B!")
       </code>
     </program>
+ </subsection>
+
+    <subsection xml:id="if-rel-ops">
+      <title>Relational Operators in If Statements</title>
+
+      <p>If statements can use relational operators to compare values. These operators which we saw in the last lesson are:</p>
+      <ul>
+        <li><term>==</term> (equal to)</li>
+        <li><term>!=</term> (not equal to)</li>
+        <li><term>&gt;</term> (greater than)</li>
+        <li><term>&lt;</term> (less than)</li>
+        <li><term>&gt;=</term> (greater than or equal to)</li>
+        <li><term>&lt;=</term> (less than or equal to)</li>
+      </ul>
+
+      <p>Do not confuse the equality operator (<c>==</c>) with the assignment operator (<c>=</c>). 
+        The equality operator checks if two values are equal, while the assignment operator assigns a value to a variable.
+       If statements always use <c>==</c> to test a variable to see if it is equal to another value or expression.</p>
+
+       <p>If the variable in an if statement is a number that is user input, you must convert it to an integer or decimal (floating point number) 
+        using the <c>int()</c>  or the <c>float()</c> function before you can use it in a comparison with relational operators, as seen below.</p>
 
    <activity label="positive-negative">
     <statement>
@@ -466,6 +488,55 @@ else:
     </choices>
 
   </activity>
+
+ </subsection>
+  <subsection xml:id="if-and-or">
+    <title>Logical Operators (and/or) in If Statements</title>
+
+    <p>To check multiple conditions in an if statement, you can use the logical operators <c>and</c> and <c>or</c>. 
+    Put complete tests using relational operators in each condition. With the <c>and</c> operator, both conditions must be true for the 
+    if statement to execute. With the <c>or</c> operator, at least one of the conditions must be true. The <c>and</c> operator
+    is often used to check if a number is in a range, for example between 1 and 10 like below. The <c>or</c> operator can be used
+    to check if a value is one of several possible values (for example uppercase or lowercase name like below) or error conditions like in the activity below.</p>
+    <program language="python">
+      <code>
+if x &gt;= 1 and x &lt;= 10:
+    print("x is between 1 and 10")
+      
+if name == "Ali" or name == "ali":
+   print("Hello Ali!")
+      </code> 
+    </program>
+
+      <activity label="if-or-indent">
+          <statement>
+            <p>Fix the indentation errors in the code below, and change it to use only one if 
+              statement using the <c>or</c> operator. The code should print "Error" if the number 
+              is less than 1 or greater than 10.
+              </p>
+          </statement>
+          <program interactive="activecode" language="python">
+            <code>
+number = int(input("Enter a number (1-10, or test error with 0 or 11): "))
+print("You entered:", number)
+
+# TODO: fix the indentation and change to one if statement using the or operator
+if number &lt; 1:
+print("Error!")
+if number &gt; 10:
+print("Error!")
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("if number &lt; 1 or number &gt; 10:", self.getEditorText, "Use the or operator to check if number &lt; 1 or number &gt; 10:")
+
+myTests().main()
+</tests>
+          </program>
+          </activity>
 
     <activity label="grades-separate-ifs">
       <statement>
