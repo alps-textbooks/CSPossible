@@ -194,7 +194,7 @@ myTests().main()
        <title>Unplugged List of Chairs</title>
       <statement>
     <p>
-        In groups or as a class, simulate a list using students in chairs.
+        In groups or as a class or individually, simulate a list using students in chairs.
         Organize a line of empty chairs as the list in memory. 
         Each student who sits in a chair represents a value in the list.
         The first chair in the line of chairs has the index 0. The second chair has the index 1, and so on.
@@ -862,7 +862,7 @@ myTests().main()
       <statement>
     <p>
       Let's revisit the unplugged activity with students in chairs and simulate append, insert, and remove operations.
-        In groups or as a class, organize a line of empty chairs as the list. Have some extra chairs ready to append or insert.
+        In groups or as a class or individually, organize a line of empty chairs as the list. Have some extra chairs ready to append or insert.
         Each student who sits in a chair represents an element in the list.
         The first chair in the line has the index 0. The second chair has the index 1, and so on.
         Have students follow the code below to insert and remove students and chairs.

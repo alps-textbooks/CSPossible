@@ -33,7 +33,7 @@
     <project label="unplugged-loops">
       <title>Unplugged Loops for Dance Steps</title>
       <statement><p>
-        In groups or as a class, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, 
+        In groups or as a class or individually, come up with a sequence of steps like <c>clap</c>, <c>clap</c>, 
         <c>wave</c>, <c>stomp</c> like in the video above. Then, put them in a loop to repeat 3 
         times. Some of the steps like <c>clap</c> 3 times can also have small loops nested inside the 
         big loop. Write your dance algorithm down below. Once you construct the dance, have your 
@@ -704,13 +704,13 @@ print(total)
 <p>Try tracing through the code and see if your results match the trace table below:</p>
 
  <table xml:id="tracing-table">
-      <title>Python keywords</title>
+      <title>Tracing Table</title>
       <tabular>
         <row header="yes">
-           <cell bottom="minor">  x </cell>
-          <cell bottom="minor">  j </cell>
-           <cell bottom="minor">  total </cell>
-           <cell bottom="minor">  output </cell>
+           <cell bottom="minor"> x </cell>
+          <cell bottom="minor"> j </cell>
+           <cell bottom="minor">total </cell>
+           <cell bottom="minor">output </cell>
          </row>
         <row>  
          <cell> 2 </cell>
@@ -733,12 +733,7 @@ print(total)
           <row>
             <cell> </cell>
             <cell>2</cell>
-          <cell> 6 </cell>
-          </row>
-          <row>
-            <cell>  </cell>
-            <cell>  </cell>
-            <cell>  </cell>
+            <cell> 6 </cell>
             <cell>6</cell>
           </row>
           </tabular>

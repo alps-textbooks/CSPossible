@@ -100,7 +100,7 @@
      <project label="unplugged-ifs-simon-says">
        <title>Simon Says Ifs</title>
       <statement><p>
-        In groups or as a class, play a game of Simon Says Ifs. One person will give commands using if statements and 
+        In groups or as a class or individually, play a game of Simon Says Ifs. One person will give commands using if statements and 
         if-else statments. The players will follow the commands only if the condition is true or false for them.
         You do not have to say or listen for "Simon Says". Here are some examples: 
         <ul>
