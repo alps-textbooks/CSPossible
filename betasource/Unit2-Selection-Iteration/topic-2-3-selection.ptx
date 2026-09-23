@@ -530,8 +530,23 @@ print("Error!")
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        results = []
+        for line in lines:
+            if "#" in line:
+                index = line.find("#")
+                line = line[0:index]
+            if target in line:
+                #print(line)
+                results.append(line)
+        return str(list(set(results)))
+    
     def test1(self):
-        self.assertIn("if number &lt; 1 or number &gt; 10:", self.getEditorText, "Use the or operator to check if number &lt; 1 or number &gt; 10:")
+        code = self.getEditorText()
+        line = self.findLine(code.splitlines(), "if number")
+
+        passed = "number&lt;1" in line.replace(" ", "") and "or" in line and ("number&gt;10" in line.replace(" ", "") or "10&lt;number" in line.replace(" ", ""))
+        self.assertTrue(passed, "Use the or operator to check if number &lt; 1 or number &gt; 10:")
 
 myTests().main()
 </tests>
