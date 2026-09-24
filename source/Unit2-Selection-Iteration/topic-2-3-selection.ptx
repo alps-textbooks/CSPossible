@@ -968,14 +968,33 @@ else:
     <idx><h>coding challenge</h><h>adventure game</h></idx>
     <idx><h>projects</h><h>adventure game</h></idx>
     
-    <project label="coding-challenge-adventure" xml:id="adventure">
+    <image source="_static/Unit2images/adventure.jpg" width="30%" alt="adventure game"/>
 
+        <p>
+      One of the first computer games was a text adventure game called
+      <url href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Colossal
+      Cave Adventure</url>.  You can try the <url
+      href="http://www.web-adventures.org/cgi-bin/webfrotz?s=Adventure">
+      adventure game</url> recreated online following some of the commands in this
+      <url href="https://adventuregamers.com/walkthrough/full/colossal-cave">walkthrough</url>.
+    </p>
+
+    <p>
+      In this challenge, you can create your own text adventure game using if and elif statements.
+      Your instructor may let you work in pairs. Where will your adventure take place? Will it be in a cave, a forest, a city, an island, a
+      haunted house? You get to choose! 
+    </p>
+
+
+    <project label="coding-challenge-adventure" xml:id="adventure">
+      <title>Adventure Coding Challenge</title>
       <statement>
           <p>
              Create an adventure game with nested if-else statements. 
-             You could work in pairs! First, spend some time planning and designing
+             First, spend some time planning and designing
              your adventure locations. You may want to create a flowchart or other
              design documentation!
+             Run the program below to see a template for your adventure game.
              Fill in the ...'s in the print statements and add more if statements 
              for different choices in the adventure. Be careful with the
              nested indentation! Be creative!
