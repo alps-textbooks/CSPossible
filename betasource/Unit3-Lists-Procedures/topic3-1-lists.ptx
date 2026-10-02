@@ -7,9 +7,11 @@
   <idx>lists</idx>
   <introduction>
     <p>Quick Links:
-      <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
-      insert-remove-lists,list-loops, coding-challenge-lists1, linear-search, 
-      data-abstraction-with-lists, appinventor-quiz-app-link, coding-challenge-lists2, vocab-3-1"/>
+      <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,append,
+      insert-remove-lists, tracing-lists-errors, random-slicing,
+      list-loops, list-accumulator, coding-challenge-lists1,linear-search, data-abstraction-with-lists, 
+      appinventor-quiz-app-link,
+      coding-challenge-lists2, vocab-3-1"/>
     </p>
     <p>
       We use lists every day to keep track of things, for example, shopping lists, to-do lists, 
@@ -35,7 +37,7 @@
     </p>
 
     <image source="_static/Unit3images/lockers.jpg" width="70%" alt="a row of numbered lockers"/>
-    
+
      <p>
     Here are some examples of lists in Python. Notice how square brackers [] are used to collect multiple values to store in one list variable.
  Instead of using many variables like score1, score2, etc., which would get unmanageable pretty quickly, 
@@ -149,7 +151,7 @@ chairs[2] = "Alex"
         </program>
        <p>    
        How many chairs did you use in your list? What was the index of the first and last chairs in your class?
-       What would happen if you tried to access a chair that was more than the last index in your list?
+       What would happen if you tried to access a chair that was larger than the last index in your list?
        Write your own code to swap students in chairs and print them out in a different order. Try it out with your classmates!
       </p></statement>
 
@@ -288,6 +290,49 @@ chairs[2] = "Alex"
     <title>Changing List Elements with Assignment</title>
   <idx><h>list</h><h>assignment</h></idx>
 
+    <p>
+      Assignment (<c>=</c>) can be used to change the value of an element in a list. You can use an indexed
+      list variable like <c>myList[index] = value</c> on the left side of the assignment operator just like a regular variable. 
+      For example, the code below changes the value in <c>scores[0]</c> to 100 using assignment:
+    </p>
+
+    <program language="python">
+        <code>
+# A list of scores
+scores = [95, 87, 92, 100]
+# Change the first score to 100
+scores[0] = 100
+          </code> 
+      </program>
+
+    <activity label="fruit-list-change">
+    <statement><p>Change the <c>fruits</c> list below by changing apple to mango using assignment.</p></statement>
+     <program interactive="activecode" language="python">
+        <code>
+fruits = ["apple", "banana", "cherry"]
+# TODO: fill in the index number inside the [ ] to print out "banana"
+print( fruits[   ] )
+# TODO: Fill in the index number inside the [ ] to change "apple" to "mango"
+fruits[   ] = "mango"
+# TODO: Use assignment to change cherry in the fruits list to your favorite fruit
+
+print(fruits)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("fruits[1]", self.getEditorText(), "Use fruits[1]")
+        self.assertIn('fruits[0]="mango"', self.getEditorText().replace(' ', ''), "Set fruits[0] to \"mango\"")
+        self.assertIn("[\'mango\', \'banana\',", self.getOutput(), "Output for fruits list")
+
+myTests().main()
+        </tests>
+        </program>
+</activity>
+
+
     <p>Click on next in the following Code Lens to see how the list is created
         in memory and then changed with assignment statements.
     </p>
@@ -408,9 +453,9 @@ print(values)
     </choices>
   </activity>
 
-    <p>Before making changes to a list, it's often a good idea to make a copy of it first. 
-        Then the original list can be preserved and used later if needed. The <c>[index]</c>
-        notation can be used to access and change elements in a list.  
+
+    <p>Before making changes to a list, programmers sometimes make a copy of it first using assignment. 
+        Then the original list can be preserved and used later if needed. 
     </p>
     <program language="python">
         <code>
@@ -425,15 +470,51 @@ scores_bonus[1] += 5
 </program>
 </subsection>
 
-<subsection xml:id="length">
-    <title>Length of a List, Random Elements, and Slicing</title>
-    <idx>
+
+<subsection xml:id="append">
+    <title>Append and Length of List</title>
+ <idx>append</idx>
+ <idx>empty list</idx>
+ <idx>
+      <h>list</h><h>empty</h>
+    </idx>
+ <idx>
+      <h>list</h><h>append</h>
+    </idx>
+
+    <p>If you do not know what values you want to store in a list when you create it, 
+        you can start with <term>empty list ([])</term> which is a list that contains no elements and
+        add in elements while the program is running. For example, we can start with an empty shopping list.</p>
+    <program language="python">
+        <code>
+# An empty shopping list
+shopping_list = []
+        </code>
+</program>
+    
+
+    <p>Elements can be added to a list using the <c>append</c> function which adds the element 
+        to the end of the list.</p>
+    <program language="python">
+        <code>
+# An empty shopping list
+shopping_list = []
+shopping_list.append("milk")
+shopping_list.append("eggs")
+shopping_list.append("bread")
+print(shopping_list)
+        </code>
+        </program>
+
+         <idx>
       <h>list</h><h>length</h>
     </idx>
     <idx>
       <h>list</h><h>len</h>
     </idx>
 
+     
+        
     <p>
     In Python, you can get the length of a list by using the <c>len(aList)</c> function, note the
     shortened form of len for length. In AP Pseudocode, the function used is <c>length(aList)</c>.
@@ -448,18 +529,257 @@ print("The length of the names list is:", len(names))
         </code>
     </program>
 
+      <p>The length of the list will increase as elements are added. 
+    Let's try <c>append</c> and <c>len</c> below.</p>
+
+    <activity label="append-to-list">
+    <statement><p>Add two more items to the <c>shopping_list</c> below. Then, print the list and the length of the list.
+    </p></statement>
+        <program interactive="activecode" language="python">
+            <code>
+shopping_list = []
+shopping_list.append("milk")
+shopping_list.append("eggs")
+shopping_list.append("bread")
+print("Shopping list: ", shopping_list)
+print("Length of shopping list: ", len(shopping_list))
+
+# Add 2 more elements to the shopping_list  
+# Then print the list and its length!
+
+</code>
+            <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertLessEqual(5,len(shopping_list), "shopping_list should have at least 5 elements")
+        count = self.getEditorText().count("append")
+        self.assertLessEqual(5,count, "at least 5 appends used")
+        count = self.getEditorText().count("len(")
+        self.assertLessEqual(2,count, "at least 2 len() calls used")
+
+myTests().main()
+            </tests>
+        </program>
+    </activity>
+
+   
+
+  </subsection>
+
+<subsection xml:id="insert-remove-lists">
+    <title>Insert and Remove List Elements</title>
+
+        <idx>insert</idx>
+         <idx>
+      <h>list</h><h>insert</h>
+    </idx>
+     <idx>
+      <h>list</h><h>remove</h>
+    </idx>
+
+
+    <p>Python also provides built-in functions to change list elements. We already saw the <c>append()</c> 
+      function, which adds an element to the end of a list. We can also use 
+      <c>list.insert(index, element)</c> that adds an element at a 
+       specific index and moves the elements after it one position to the right. It's important to remember that
+    append, insert, and remove always change the length of the list moving elements to the right or left as needed!</p>
+
+    <p>In the AP CSP Pseudocode, the functions to change a list are similar to those in Python, but the AP CSP pseudocode
+        <c>list.remove(index)</c> function removes the element from the list at a certain index. 
+        Python  has  <c>list.remove(value)</c> which deletes the very first occurrence 
+       of a specific value from the list or <c>list.pop(index)</c> which removes and returns 
+       the element at a specific index, but not a <c>list.remove(index)</c> function.
+    </p>
+
+
+    <activity label="insert-remove-puppies">
+    <statement>
+        <p>The code below uses a list to keep track of dogs at the animal shelter.
+            Try the insert and remove functions in the code below. Then follow the directions in the comments
+            to insert and remove elements from the list.</p>
+    </statement>
+        
+        <program interactive="activecode" language="python">
+            <code>
+# List of puppies in alphabetical order at the shelter
+puppies = ["Biscuit", "Coco", "Daisy"]
+print("Puppies at the shelter:", puppies)
+
+# .append() adds a new puppy to the end of the list
+puppies.append("Mochi")
+print("A new puppy arrived! Updated list:", puppies)
+
+# .remove() removes a puppy by its name when it gets adopted
+puppies.remove("Coco")
+print("Coco got adopted! Remaining puppies:", puppies)
+
+# Use insert to add "Buddy" at the correct index to keep the list in alphabetical order
+
+# Use remove to remove "Daisy" from the list since she got adopted
+
+# Use insert or append to add another puppy
+
+# Print the remaining puppies
+            </code>
+            <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn('puppies.insert("Buddy",1)', code, "Use insert to add Buddy at correct index")
+        self.assertIn('puppies.remove("Daisy")', code, "Use remove to remove Daisy")
+
+myTests().main()
+            </tests>
+            </program>
+        </activity>
+        
+</subsection>
+
+<subsection xml:id="tracing-lists-errors">
+    <title>Tracing List Operations and Index Errors</title>
+
+            <idx><h>unplugged</h><h>lists</h></idx>
+    <idx><h>projects</h><h>unplugged list of chairs 2</h></idx>
+
+        <project label="unplugged-list-of-chairs-revisited">
+       <title>Unplugged List of Chairs Revisited</title>
+      <statement>
+    <p>
+      Let's revisit the unplugged activity with students in chairs and simulate append, insert, and remove operations.
+        In groups or as a class or individually, organize a line of empty chairs as the list. Have some extra chairs ready to append or insert.
+        Each student who sits in a chair represents an element in the list.
+        The first chair in the line has the index 0. The second chair has the index 1, and so on.
+        Have students follow the code below to insert and remove students and chairs.
+        Substitute in the names of students in your class.
+    </p>
+        <program language="python">
+            <code>
+# Fill the chairs with students
+chairs = ["Alex", "Sam", "Ryan"]
+# Example code to insert and remove students in chairs
+chairs.append("Dani") # Add a new chair and student to the end of the list
+# Remove the student in chair 1, move students left 1 chair, 
+#   and remove the last chair
+chairs.remove(1) 
+# Insert a new student in chair 1 and move students to the right to make room.
+chairs.insert(1, "Taylor") 
+            </code>
+        </program>
+       <p>    
+       How do append, insert, and remove affect the list differently than changing the values of existing elements? 
+       Write your own code below using append, insert, and remove, and then act it out.         
+      </p></statement>
+
+       <response/>
+     </project>
+
+
+     <activity label="list-trace-insert-remove">
+    <statement>
+      <p> 
+What are the values in the list after executing the following AP Pseudocode? Remember that list indexing starts at 0
+and the pseudocode uses <c>list.insert(index, value)</c> and <c>list.remove(index)</c> to change the list. Insert and
+remove always change the length of the list moving elements to the right or left as needed.
+To trace this code, write down the list after each line of code.
+      </p>
+      <program language="python">
+        <code>
+list = [ 0, 3, 5 ]
+list.append(7)
+list.insert(0, 1)
+list.remove(1)
+        </code>
+      </program>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>[1, 3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>Yes, the list is updated as follows: [0, 3, 5], after appends [0, 3, 5, 7], then insert [1, 0, 3, 5, 7], then remove [1, 3, 5, 7].</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[0, 1, 3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>Don't forget the remove!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[0, 3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>No, this is correct after the append, but not after the insert.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>[3, 5, 7]</p>
+        </statement>
+        <feedback>
+          <p>No, the insert does not replace the element but inserts and moves everything down.</p>
+        </feedback>
+      </choice>
+    </choices>
+    </activity>
+  
+   
+
+    <p>What happens if you try to access an element that is not there? 
+        Try to access puppies at index 7 below to see what happens. 
+        The index must be between 0 and the length of the list - 1 or it will give an error message 
+        "IndexError: list index out of range".</p>
+   
+  <activity label="index-out-of-range">
+    <statement>
+        <p>Run the code below to see an index out of range error. Fix the error by changing the index. </p>
+            </statement>
+        
+        <program interactive="activecode" language="python">
+            <code>
+# List of puppies in alphabetical order at the shelter
+puppies = ["Biscuit", "Coco", "Daisy"]
+print("Puppies at the shelter:", puppies)
+
+# Try to access the last puppy - fix the error
+print("The last puppy on the list is:", puppies[3])  
+            </code>
+            <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("puppies[2]", self.getEditorText(), "Use puppies[2] to access the last puppy")
+
+myTests().main()
+            </tests>
+            </program>
+        </activity>
+
+</subsection>
+
+<subsection xml:id="random-slicing">
+    <title>Random Elements and List Slicing</title>
+   
     <idx>random index</idx>
      <idx>
       <h>list</h><h>random index</h>
     </idx>
     
 
+  
+
 <p>Sometimes you may want to pick a random element from the list.  One way to do this is to generate a random index. It would
     start at 0 and go up to the length of the list minus 1. If there are 3 elements in the list, the valid indices would be 0, 1, and 2. 
     In Python, you can use the <c>random.randint()</c> function to generate a random index. 
     The valid indices are 0 through <c>len(list) - 1</c>. 
-    For example, if you have a list of songs, you can select a random song from the playlist using 
-    the code <c>random.randint(0, len(songs) - 1)</c>.
+    For example, if you have a list of songs, you can select a random song from the playlist using the code <c>random.randint(0, len(songs) - 1)</c>.
     Python actually has a built-in function called <c>random.choice(list)</c> that will select a random element from a list, 
     but we will use the random index method here to match AP pseudocode.
     </p>
@@ -538,278 +858,15 @@ myTests().main()
         </program>
     </activity>
 
-
-
-
-</subsection>
-
-
-<subsection xml:id="append">
-    <title>Appending to Lists</title>
- <idx>append</idx>
- <idx>empty list</idx>
- <idx>
-      <h>list</h><h>empty</h>
-    </idx>
- <idx>
-      <h>list</h><h>append</h>
-    </idx>
-
-
-    <p>If you do not know what values you want to store in a list when you create it, 
-        you can start with <term>empty list ([])</term> which is a list that contains no elements and
-        add in elements while the program is running. For example, we can start with an empty shopping list.</p>
-    <program language="python">
-        <code>
-# An empty shopping list
-shopping_list = []
-        </code>
-</program>
-
-    <p>Elements can be added to a list using the <c>append</c> function which adds the element 
-        to the end of the list.</p>
-    <program language="python">
-        <code>
-# An empty shopping list
-shopping_list = []
-shopping_list.append("milk")
-shopping_list.append("eggs")
-shopping_list.append("bread")
-print(shopping_list)
-        </code>
-        </program>
-
-      <p>The length of the list will increase as elements are added. 
-    Let's try <c>append</c> and <c>len</c> below.</p>
-
-    <activity label="append-to-list">
-    <statement><p>Add two more items to the <c>shopping_list</c> below. Then, print the list and the length of the list.
-    </p></statement>
-        <program interactive="activecode" language="python">
-            <code>
-shopping_list = []
-shopping_list.append("milk")
-shopping_list.append("eggs")
-shopping_list.append("bread")
-print("Shopping list: ", shopping_list)
-print("Length of shopping list: ", len(shopping_list))
-
-# Add 2 more elements to the shopping_list  
-# Then print the list and its length!
-
-</code>
-            <tests>
-from unittest.gui import TestCaseGui
-
-class myTests(TestCaseGui):
-    def test1(self):
-        self.assertLessEqual(5,len(shopping_list), "shopping_list should have at least 5 elements")
-        count = self.getEditorText().count("append")
-        self.assertLessEqual(5,count, "at least 5 appends used")
-        count = self.getEditorText().count("len(")
-        self.assertLessEqual(2,count, "at least 2 len() calls used")
-
-myTests().main()
-            </tests>
-        </program>
-    </activity>
-
-   
-  </subsection>
-
-<subsection xml:id="insert-remove-lists">
-    <title>Insert and Remove List Elements</title>
-
-        <idx>insert</idx>
-         <idx>
-      <h>list</h><h>insert</h>
-    </idx>
-     <idx>
-      <h>list</h><h>remove</h>
-    </idx>
-
-    <p>Python also provides built-in functions to change list elements. We already saw the <c>append()</c> 
-      function, which adds an element to the end of a list. We can also use 
-      <c>list.insert(index, element)</c> that adds an element at a 
-       specific index and moves the elements after it one position to the right. It's important to remember that
-    append, insert, and remove always change the length of the list moving elements to the right or left as needed!</p>
-
-    <p>In the AP CSP Pseudocode, the functions to change a list are similar to those in Python, but the AP CSP pseudocode
-        <c>list.remove(index)</c> function removes the element from the list at a certain index. 
-        Python  has  <c>list.remove(value)</c> which deletes the very first occurrence 
-       of a specific value from the list or <c>list.pop(index)</c> which removes and returns 
-       the element at a specific index, but not a <c>list.remove(index)</c> function.
-    </p>
-
-
-    <activity label="insert-remove-puppies">
-    <statement>
-        <p>The code below uses a list to keep track of dogs at the animal shelter.
-            Try the insert and remove functions in the code below. Then follow the directions in the comments
-            to insert and remove elements from the list.</p>
-    </statement>
-        
-        <program interactive="activecode" language="python">
-            <code>
-# List of puppies in alphabetical order at the shelter
-puppies = ["Biscuit", "Coco", "Daisy"]
-print("Puppies at the shelter:", puppies)
-
-# .append() adds a new puppy to the end of the list
-puppies.append("Mochi")
-print("A new puppy arrived! Updated list:", puppies)
-
-# .remove() removes a puppy by its name when it gets adopted
-puppies.remove("Coco")
-print("Coco got adopted! Remaining puppies:", puppies)
-
-# Use insert to add "Buddy" at the correct index to keep the list in alphabetical order
-
-# Use remove to remove "Daisy" from the list since she got adopted
-
-# Use insert or append to add another puppy
-
-# Print the remaining puppies
-            </code>
-            <tests>
-from unittest.gui import TestCaseGui
-class myTests(TestCaseGui):
-    def test1(self):
-        code = self.getEditorText().replace(" ", "")
-        self.assertIn('puppies.insert("Buddy",1)', code, "Use insert to add Buddy at correct index")
-        self.assertIn('puppies.remove("Daisy")', code, "Use remove to remove Daisy")
-
-myTests().main()
-            </tests>
-            </program>
-        </activity>
-        
-
-            <idx><h>unplugged</h><h>lists</h></idx>
-    <idx><h>projects</h><h>unplugged list of chairs 2</h></idx>
-
-        <project label="unplugged-list-of-chairs-revisited">
-       <title>Unplugged List of Chairs Revisited</title>
-      <statement>
-    <p>
-      Let's revisit the unplugged activity with students in chairs and simulate append, insert, and remove operations.
-        In groups or as a class or individually, organize a line of empty chairs as the list. Have some extra chairs ready to append or insert.
-        Each student who sits in a chair represents an element in the list.
-        The first chair in the line has the index 0. The second chair has the index 1, and so on.
-        Have students follow the code below to insert and remove students and chairs.
-        Substitute in the names of students in your class.
-    </p>
-        <program language="python">
-            <code>
-# Fill the chairs with students
-chairs = ["Alex", "Sam", "Ryan"]
-# Example code to insert and remove students in chairs
-chairs.append("Dani") # Add a new chair and student to the end of the list
-# Remove the student in chair 1, move students left 1 chair, 
-#   and remove the last chair
-chairs.remove(1) 
-# Insert a new student in chair 1 and move students to the right to make room.
-chairs.insert(1, "Taylor") 
-            </code>
-        </program>
-       <p>    
-       How do append, insert, and remove affect the list differently than changing the values of existing elements? 
-       Write your own code below using append, insert, and remove, and then act it out.         
-      </p></statement>
-
-       <response/>
-     </project>
-
-     <activity label="list-trace-insert-remove">
-    <statement>
-      <p> 
-What are the values in the list after executing the following AP Pseudocode? Remember that list indexing starts at 0
-and the pseudocode uses <c>list.insert(index, value)</c> and <c>list.remove(index)</c> to change the list. Insert and
-remove always change the length of the list moving elements to the right or left as needed.
-To trace this code, write down the list after each line of code.
-      </p>
-      <program language="python">
-        <code>
-list = [ 0, 3, 5 ]
-list.append(7)
-list.insert(0, 1)
-list.remove(1)
-        </code>
-      </program>
-    </statement>
-    <choices randomize="yes">
-      <choice correct="yes">
-        <statement>
-          <p>[1, 3, 5, 7]</p>
-        </statement>
-        <feedback>
-          <p>Yes, the list is updated as follows: [0, 3, 5], after appends [0, 3, 5, 7], then insert [1, 0, 3, 5, 7], then remove [1, 3, 5, 7].</p>
-        </feedback>
-      </choice>
-      <choice>
-        <statement>
-          <p>[0, 1, 3, 5, 7]</p>
-        </statement>
-        <feedback>
-          <p>Don't forget the remove!</p>
-        </feedback>
-      </choice>
-      <choice>
-        <statement>
-          <p>[0, 3, 5, 7]</p>
-        </statement>
-        <feedback>
-          <p>No, this is correct after the append, but not after the insert.</p>
-        </feedback>
-      </choice>
-      <choice>
-        <statement>
-          <p>[3, 5, 7]</p>
-        </statement>
-        <feedback>
-          <p>No, the insert does not replace the element but inserts and moves everything down.</p>
-        </feedback>
-      </choice>
-    </choices>
-    </activity>
-
-    <p>What happens if you try to access an element that is not there? 
-        Try to access puppies at index 7 below to see what happens. 
-        The index must be between 0 and the length of the list - 1 or it will give an error message 
-        "IndexError: list index out of range".</p>
-   
-  <activity label="index-out-of-range">
-    <statement>
-        <p>Run the code below to see an index out of range error. Fix the error by changing the index. </p>
-            </statement>
-        
-        <program interactive="activecode" language="python">
-            <code>
-# List of puppies in alphabetical order at the shelter
-puppies = ["Biscuit", "Coco", "Daisy"]
-print("Puppies at the shelter:", puppies)
-
-# Try to access the last puppy - fix the error
-print("The last puppy on the list is:", puppies[3])  
-            </code>
-            <tests>
-from unittest.gui import TestCaseGui
-class myTests(TestCaseGui):
-    def test1(self):
-        self.assertIn("puppies[2]", self.getEditorText(), "Use puppies[2] to access the last puppy")
-
-myTests().main()
-            </tests>
-            </program>
-        </activity>
-
 </subsection>
 
   <subsection xml:id="list-loops">
     <title>Traversing Lists with Loops</title>
 <idx><h>list</h><h>traversal</h></idx>
+   
 
-    <p>Python has a simple way to <term>traverse</term> (step through) a list, visiting each element in the list, using a for loop with the pattern: <c>for item in list:</c> 
+    <p>Python has a simple way to <term>traverse</term> (step through) a list, visiting each element in the list, using a for loop with 
+      the pattern: <c>for item in list:</c> 
    </p>
 
    <program language="python">
@@ -820,28 +877,31 @@ for item in aList:
       </code>
     </program>
 
-    <activity label="list-count">
-      <statement>
-        <p>Count the number of elements in the list using a for loop and an accumulator variable.</p>
+     <activity label="loop-emojis">
+    <statement>
+      <p> Write code that uses a for loop to print out each emoji in the list on a separate line.
+      </p>
       </statement>
       <program interactive="activecode" language="python">
         <code>
-aList = [0, 10.5, 3, 7, 2.5, 8, 4, 1]
-count = 0
-# Use a for-loop to traverse the list, print each element, and increment the count
-   
+puppies = ["Biscuit", "Coco", "Daisy"]
+# A for-loop can print each puppy in the list on a separate line
+for puppy in puppies:
+    print(puppy)
 
-print("The number of elements in the list is:", count)
-        </code>
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# Use a for-loop to print each emoji on a separate line
+
+</code>
         <tests>
 from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
     def test1(self):
-            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
-            self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
-            self.assertIn("8", self.getOutput(), "The count should be 8")
+        self.assertRegex(self.getEditorText(), r"for \w+ in emojis:", "Use a for loop to traverse the list of emojis")
+
+myTests().main()
         </tests>
-      </program>
+        </program>
     </activity>
 
     <p>An index-controlled for-loop using <c>range(len(aList))</c> or a while loop can also be used 
@@ -869,6 +929,45 @@ while i &lt; len(aList):
         </code>
         </program>
 
+          <activity label="list-indexed-loop">
+    <statement>
+      <p>Write code that uses an indexed for loop using <c>range(0,len(list))</c> to print out each emoji in the list 
+        on a separate line with the index.
+      </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+puppies = ["Biscuit", "Coco", "Daisy"]
+# A for-loop can print each puppy in the list on a separate line
+for puppy in puppies:
+    print(puppy)
+# An indexed for-loop can print each puppy in the list on a separate line with the index
+for i in range(len(puppies)):
+    print(i, puppies[i])
+
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# Change the for-loop to an indexed for-loop to print each emoji on a separate line with its index
+for item in emojis:
+    print(item)
+
+</code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertRegex(self.getEditorText(), r"for \w+ in range\(len\(emojis\)\):", "Use an indexed for loop to traverse the list of emojis")
+        self.assertIn("range(len(emojis))", self.getEditorText(), "Use range(len(emojis)) to traverse the list of emojis")
+
+myTests().main()
+        </tests>
+        </program>
+    </activity>
+
+</subsection>
+
+<subsection xml:id="list-accumulator">
+    <title>Accumulator Pattern with Lists</title>
+
 
     <idx><h>list</h><h>accumulator pattern</h></idx>
 
@@ -876,8 +975,32 @@ while i &lt; len(aList):
       which uses a loop and an <term>accumulator variable</term> to keep track of the running total 
       as each number is added in.  
       This accumulator pattern is often used to process lists and perform calculations on the elements.
-      In the example above, the <c>count</c> variable is the accumulator variable. In the activity below, we will
-      use <c>sum</c> as an accumulator variable to calculate the sum of all the elements in a list. We can compute the average of
+ </p>
+ 
+   <p>The Accumulator Pattern or Algorithm has the following steps:</p>
+   <p>
+      <ol>
+        <li>
+          <p>Initialize the accumulator variable before the loop.</p>
+        </li>
+
+        <li>
+          <p>Loop through the values.</p>
+        </li>
+
+        <li>
+          <p>Update the accumulator variable inside the loop.</p>
+        </li>
+
+        <li>
+          <p>Print or use the accumulated value when the loop is done.</p>
+        </li>
+      </ol>
+    </p>
+
+      <p>
+      For example, the <c>count</c> variable can be an accumulator variable to count the number of elements in a list 
+      or <c>sum</c> can be an accumulator variable to calculate the sum of all the elements in a list. We can compute the average of
       a list by dividing the sum by the length of the list using <c>len(list)</c>.
     </p>
    
@@ -922,6 +1045,30 @@ for number in scores:
       </blocks>
     </activity>
 
+    <activity label="list-count">
+      <statement>
+        <p>Count the number of elements in the list using a for loop and an accumulator variable.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+aList = [0, 10.5, 3, 7, 2.5, 8, 4, 1]
+count = 0
+# Use a for-loop to traverse the list, print each element, and increment the count
+   
+
+print("The number of elements in the list is:", count)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
+            self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
+            self.assertIn("8", self.getOutput(), "The count should be 8")
+        </tests>
+      </program>
+    </activity>
+
      <activity label="list-accumulator-practice">
       <statement>
         <p>
@@ -960,7 +1107,7 @@ myTests().main()
 </subsection>
 
 <subsection xml:id="coding-challenge-lists1">
-    <title>Coding Challenge: Lists in a Bakery</title>
+    <title>Coding Challenge: Parallel Lists in a Bakery</title>
        <idx><h>projects</h><h>lists bakery</h></idx>
       <idx><h>coding challenge</h><h>lists bakery</h></idx>
 
@@ -1044,6 +1191,8 @@ myTests().main()
 
     <image source="_static/Unit3images/linearsearch.gif" alt="Linear Search" width="70%"/>
 
+    
+
     <p>The searching pattern has an if-statement inside the loop to check if you have found the correct value.</p>
 
     <program language="python">
@@ -1055,6 +1204,8 @@ for number in numbers:
         print("Found!")
       </code>
 </program>
+
+
 
 <p>If you are only looking for the first occurrence of a value, you can use a <c>break</c> 
   statement on a line on its own to exit the loop once the value is found. This is called a 
@@ -1140,6 +1291,7 @@ myTests().main()
         </program>
       </activity>
 
+
   <idx>minimum</idx>
   <idx>maximum</idx>
   <idx><h>list</h><h>minimum</h></idx>
@@ -1179,7 +1331,7 @@ myTests().main()
    </activity>    
 
   <idx><h>list</h><h>tracing</h></idx>
-    
+
 
     <p>When tracing through code with lists, it helps to draw the list and its elements on paper 
       or a whiteboard to visualize the process. The Code Lens button on the activecode activities 
@@ -1278,7 +1430,6 @@ as intended?
   </choices>
 </activity>
 
-
 <activity label="list-csp-pseudocode2">
   <statement>
     <p>Which code below could be placed in the following loop to print out the item in a list that 
@@ -1349,8 +1500,8 @@ if (item &lt; x)
   <subsection xml:id="data-abstraction-with-lists">
     <title>Data Abstraction with Lists</title>
 
-    <p>In previous lessons, we talked about <term>abstraction</term> in computer science which 
-     is about focusing on the general features while hiding the specific details.  
+    <p>In previous lessons, we talked about <term>abstraction</term> in computer science which is 
+      about focusing on the general features while hiding the specific details.  
     <term>Data Abstraction</term> is the process of hiding the complex implementation details of a 
     data structure and showing only the needed features to the user. Variables are a type of data 
     abstraction because they allow programmers to use a name to represent a value without needing 
@@ -1359,7 +1510,7 @@ if (item &lt; x)
     without needing to know how the values are stored or organized in memory. Data abstraction 
     using lists <term>reduces complexity</term> in code and makes it easier to read, write, and maintain.
     </p>
-   
+    
 
   <activity label="list-data-abstraction">
     <statement>
@@ -1485,7 +1636,7 @@ myTests().main()
     </program>
   </activity>
     
-
+    
 
     <p>Data abstraction also makes it easier to add data without having to rewrite the algorithms. 
       Try adding data to the list below. You will see that you do not need to rewrite the loop 
@@ -1513,6 +1664,8 @@ myTests().main()
       </tests>
     </program>
   </activity>
+
+    
 
     <p>Data abstraction using lists also removes a lot of repetitive duplication in code. Instead of having 
       multiple variables and repeated code to process each variable, we can use a single list and a loop to process all the elements.
@@ -1605,12 +1758,13 @@ print(total)</code>
   </choices>
 </activity>
 
+
   </subsection>
 
-      <subsection xml:id="appinventor-quiz-app-link">
+    <subsection xml:id="appinventor-quiz-app-link">
       <title>App Inventor Quiz App Project (Optional)</title>
 
-    <p>If your class is using MIT's App Inventor, you may want to do the optional 
+      <p>If your class is using MIT's App Inventor, you may want to do the optional 
    <url href="appinventor-quiz-app.html">App Inventor Quiz App Lesson (sections 3.8.1-3.8.3)</url>
      before you try it in the Python coding challenge below. You can finish sections 3.8.4-3.8.5
      which use a search procedure in the next lesson on procedures.
@@ -1618,12 +1772,11 @@ print(total)</code>
       
       </subsection>
 
-    <subsection xml:id="coding-challenge-lists2">
+  <subsection xml:id="coding-challenge-lists2">
     <title>Coding Challenge: Quiz App</title>
        <idx><h>projects</h><h>lists quiz app</h></idx>
       <idx><h>coding challenge</h><h>lists quiz app</h></idx>
 
-     
       <p>In this challenge, you will use parallel lists that contain data about the Computer Science 
         Pioneers shown below. You will create a search app and a
         quiz app. There are 3 parts to this challenge: the search app, the quiz app, and 
@@ -1643,29 +1796,34 @@ print(total)</code>
         <image source="_static/Unit3images/MaryJackson.png" width="50%"/>
     </datafile>
       
+      
       <p>The first part of this challenge is to use a search algorithm to find and display information from the lists.</p>
 
  <project label="coding-challenge-search">
       <title>Search App</title>
       <statement>
         <p>The search app allows users to search for information in the 3 parallel lists that store the names of pioneers, 
-          facts about their contributions, and their images. A special function called draw is provided to display the image of the pioneer. First, present the list of pioneers using a simple <c>for item in list</c> loop. Ask the user who they want to learn about.
-          Then, use a for-loop with <c>range(len(pioneers))</c> to search through the pioneers list and check if the user's input is in the list. If it is, print the corresponding fact and display the image of the pioneer by using <c>draw(images[i])</c> where i is the index of the pioneer in the pioneers list. 
+          facts about their contributions, and their images. A special function called draw is provided to display the image of the 
+          pioneer. First, present the list of pioneers using a simple <c>for item in list</c> loop. Ask the user who they want to learn 
+          about.
+          Then, use a for-loop with <c>range(len(pioneers))</c> to search through the pioneers list and check if the user's input 
+          is in the list. If it is, print the corresponding fact and display the image of the pioneer by using <c>draw(images[i])</c> 
+          where i is the index of the pioneer in the pioneers list. 
         </p>
       </statement>
 
       <program interactive="activecode" language="python" add-files="AdaLovelace,AlanTuring,GraceHopper,MaryJackson">
-        <code>
-# Search App
-# Three parallel lists
+          <preamble visible="no">
 # Do not change the following draw function. It will display the image of the pioneer.
 from image import *
 def draw(image):
     img = Image(image)
     win = ImageWin(img.getWidth(), img.getHeight())
     img.draw(win)
-    
-# Lists of Data
+          </preamble>
+        <code>
+# Search App
+# Three parallel lists
 pioneers = ["Ada Lovelace", "Alan Turing", "Grace Hopper", "Mary Jackson"]
 facts = [
     "the first programmer of a theoretical computer",
@@ -1674,7 +1832,6 @@ facts = [
     "the first Black female engineer at NASA",
      ]
 images = ["AdaLovelace.png", "AlanTuring.png", "GraceHopper.png", "MaryJackson.png"]
-
 
 print("Welcome to the Computer Science Pioneers Search App!")
 print("Here are the pioneers in computer science:")
@@ -1734,17 +1891,17 @@ myTests().main()
       </statement>
 
       <program interactive="activecode" language="python" add-files="AdaLovelace,AlanTuring,GraceHopper,MaryJackson">
-        <code>
-# Quiz App
-# Three parallel lists
+        <preamble visible="no">
 # Do not change the following draw function. It will display the image of the pioneer.
 from image import *
 def draw(image):
     img = Image(image)
     win = ImageWin(img.getWidth(), img.getHeight())
     img.draw(win)
-    
-# Lists of Data
+          </preamble>      
+        <code>
+# Quiz App
+# Three parallel lists
 pioneers = ["Ada Lovelace", "Alan Turing", "Grace Hopper", "Mary Jackson"]
 facts = [
     "the first programmer of a theoretical computer",
@@ -1814,6 +1971,14 @@ myTests().main()
       </statement>
 
       <program interactive="activecode" language="python">
+          <preamble visible="no">
+# Do not change the following draw function. It will display the image of the pioneer.
+from image import *
+def draw(image):
+    img = Image(image)
+    win = ImageWin(img.getWidth(), img.getHeight())
+    img.draw(win)
+          </preamble>
         <code>
 # Quiz App
 # TODO: Create 2 parallel lists of data

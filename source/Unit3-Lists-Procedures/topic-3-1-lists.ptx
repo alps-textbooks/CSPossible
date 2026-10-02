@@ -7,8 +7,9 @@
   <idx>lists</idx>
   <introduction>
     <p>Quick Links:
-      <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,length,append,
-      insert-remove-lists,list-loops,coding-challenge-lists1,linear-search, data-abstraction-with-lists, 
+      <xref text="global" ref="lists-intro,list-index,unplugged-lists,changing-lists,append,
+      insert-remove-lists, tracing-lists-errors, random-slicing,
+      list-loops, list-accumulator, coding-challenge-lists1,linear-search, data-abstraction-with-lists, 
       appinventor-quiz-app-link,
       coding-challenge-lists2, LOs-3-1, vocab-3-1"/>
     </p>
@@ -129,16 +130,6 @@ scores = [95, 87, 92, 100]
 aList[j]</pre>
     </note>
 
-     <note>
-      <title>3.1.A.9</title>
-      <p>
-        Lists support apps that respond to users by remembering and reusing information.
-        For example, a music app can store a user's queued songs in a list. Each time the
-        user taps "Add to Queue," the song title is appended to the list, and the app uses
-        the list to display the upcoming songs in order and play the next track.
-      </p>
-    </note>
-
     <p>Imagine a Python list called <c>lockers</c>. Let's put your books in locker 0 and 
         a backpack in locker 1 with the code below. To get to a specific locker or a specific 
         <term>element</term> in a list, use the list name followed by square brackets and the 
@@ -219,7 +210,7 @@ chairs[2] = "Alex"
         </program>
        <p>    
        How many chairs did you use in your list? What was the index of the first and last chairs in your class?
-       What would happen if you tried to access a chair that was more than the last index in your list?
+       What would happen if you tried to access a chair that was larger than the last index in your list?
        Write your own code to swap students in chairs and print them out in a different order. Try it out with your classmates!
       </p></statement>
 
@@ -371,6 +362,49 @@ chairs[2] = "Alex"
 aList[j] = x</pre>
     </note>
 
+    <p>
+      Assignment (<c>=</c>) can be used to change the value of an element in a list. You can use an indexed
+      list variable like <c>myList[index] = value</c> on the left side of the assignment operator just like a regular variable. 
+      For example, the code below changes the value in <c>scores[0]</c> to 100 using assignment:
+    </p>
+
+    <program language="python">
+        <code>
+# A list of scores
+scores = [95, 87, 92, 100]
+# Change the first score to 100
+scores[0] = 100
+          </code> 
+      </program>
+
+    <activity label="fruit-list-change">
+    <statement><p>Change the <c>fruits</c> list below by changing apple to mango using assignment.</p></statement>
+     <program interactive="activecode" language="python">
+        <code>
+fruits = ["apple", "banana", "cherry"]
+# TODO: fill in the index number inside the [ ] to print out "banana"
+print( fruits[   ] )
+# TODO: Fill in the index number inside the [ ] to change "apple" to "mango"
+fruits[   ] = "mango"
+# TODO: Use assignment to change cherry in the fruits list to your favorite fruit
+
+print(fruits)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("fruits[1]", self.getEditorText(), "Use fruits[1]")
+        self.assertIn('fruits[0]="mango"', self.getEditorText().replace(' ', ''), "Set fruits[0] to \"mango\"")
+        self.assertIn("[\'mango\', \'banana\',", self.getOutput(), "Output for fruits list")
+
+myTests().main()
+        </tests>
+        </program>
+</activity>
+
+
     <p>Click on next in the following Code Lens to see how the list is created
         in memory and then changed with assignment statements.
     </p>
@@ -505,9 +539,8 @@ print(values)
 aList = bList</pre>
     </note>
 
-    <p>Before making changes to a list, it's often a good idea to make a copy of it first. 
-        Then the original list can be preserved and used later if needed. The <c>[index]</c>
-        notation can be used to access and change elements in a list.  
+    <p>Before making changes to a list, programmers sometimes make a copy of it first using assignment. 
+        Then the original list can be preserved and used later if needed. 
     </p>
     <program language="python">
         <code>
@@ -522,153 +555,9 @@ scores_bonus[1] += 5
 </program>
 </subsection>
 
-<subsection xml:id="length">
-    <title>Length of a List, Random Elements, and Slicing</title>
-    <idx>
-      <h>list</h><h>length</h>
-    </idx>
-    <idx>
-      <h>list</h><h>len</h>
-    </idx>
-
-      <note>
-      <title>3.1.B.3</title>
-      <p>
-        The length of a list can change while a program runs as elements are added or
-        removed. Knowing the length of a list helps programmers write code that works
-        correctly as the list changes. When the following code runs, it evaluates to
-        the number of items in <c>aList</c>.
-      </p>
-      <pre>
-length(aList)</pre>
-    </note>
-        
-    <p>
-    In Python, you can get the length of a list by using the <c>len(aList)</c> function, note the
-    shortened form of len for length. In AP Pseudocode, the function used is <c>length(aList)</c>.
-    </p>
-
-    <program language="python">
-        <code>  
-# A list of names
-names = ["Jordan", "Alex", "Sam", "Taylor"]
-# Get the length of the names list
-print("The length of the names list is:", len(names))
-        </code>
-    </program>
-
-    <idx>random index</idx>
-     <idx>
-      <h>list</h><h>random index</h>
-    </idx>
-    
-
-  <note>
-      <title>3.1.B.6</title>
-      <p>
-        To select a random element from a list, a program can generate a random index and
-        use it to access an element. This allows for features like selecting a random song
-        from a playlist, choosing a random prompt in a game, or assigning a random partner
-        from a list of names. In programming languages that use zero-based indexing, if
-        <c>aList</c> has <c>length(aList)</c> items, the valid indices are 0 through
-        <c>length(aList) - 1</c>. When the following code runs, the program generates one
-        of the valid indices with equal likelihood and accesses the element at that index.
-      </p>
-      <pre>
-aList[random(0, length(aList) - 1)]</pre>
-    </note>
-
-<p>Sometimes you may want to pick a random element from the list.  One way to do this is to generate a random index. It would
-    start at 0 and go up to the length of the list minus 1. If there are 3 elements in the list, the valid indices would be 0, 1, and 2. 
-    In Python, you can use the <c>random.randint()</c> function to generate a random index. 
-    The valid indices are 0 through <c>len(list) - 1</c>. 
-    For example, if you have a list of songs, you can select a random song from the playlist using the code <c>random.randint(0, len(songs) - 1)</c>.
-    Python actually has a built-in function called <c>random.choice(list)</c> that will select a random element from a list, 
-    but we will use the random index method here to match AP pseudocode.
-    </p>
-    <program language="python">
-        <code>
-import random
-songs = ["Song 1", "Song 2", "Song 3", "Song 4"]
-random_index = random.randint(0, len(songs) - 1)
-random_song = songs[random_index]
-print(random_song)
-        </code>
-      </program>
-    
-    <activity label="random-emoji">
-    <statement>
-      <p>Use the code below to select a random emoji from the list. 
-        Use the <c>random.randint()</c> function to generate a random index and then use that index to access an element in the list.
-        Run the code multiple times to see different emojis printed!
-      </p>
-      </statement>
-      <program interactive="activecode" language="python">
-        <code>
-import random
-emojis = ["😀", "😂", "😍", "🤔", "😎"]
-# create a random index from 0 to the length of the list minus 1
-
-# Use the random index to print a random emoji from the list
-
-</code>
-        <tests>
-from unittest.gui import TestCaseGui
-class myTests(TestCaseGui):
-    def test1(self):
-            code = self.getEditorText().replace(" ", "")
-            self.assertIn("random.randint(0,len(emojis)-1)", code, "Use random.randint from 0 to len(emojis)-1")
-            self.assertIn("emojis[random_index]", code, "Use the random index to access an element in the list")
-
-myTests().main()
-        </tests>
-        </program>
-    </activity>
-
-     <idx>
-      <h>list</h><h>slicing</h>
-    </idx>
-    <idx>slicing</idx>
-
-<p>Python also has a cool slicing operator (<c>[start:end]</c>) that allows you to extract a portion of a list from 
-    a start index up to (but not including) an end index, 
-    just like we saw with strings.
-</p>
-
-  <activity label="list-slice">
-    <statement>
-      <p> Write code that prints out slices of the emoji list, using [start-index : up-to-end-index]. 
-      </p>
-      </statement>
-      <program interactive="activecode" language="python">
-        <code>
-import random
-emojis = ["😀", "😂", "😍", "🤔", "😎"]
-# Print the last 3 emojis using slicing.
-print("Last 3 emojis:", emojis[2:5])
-
-# print the first 3 emojis using slicing
-
-</code>
-        <tests>
-from unittest.gui import TestCaseGui
-class myTests(TestCaseGui):
-    def test1(self):
-            self.assertIn("emojis[0:3]", self.getEditorText(), "Use slicing [0:3] to print the first 3 emojis")
-
-myTests().main()
-        </tests>
-        </program>
-    </activity>
-
-
-
-
-</subsection>
-
 
 <subsection xml:id="append">
-    <title>Appending to Lists</title>
+    <title>Append and Length of List</title>
  <idx>append</idx>
  <idx>empty list</idx>
  <idx>
@@ -722,6 +611,39 @@ print(shopping_list)
         </code>
         </program>
 
+         <idx>
+      <h>list</h><h>length</h>
+    </idx>
+    <idx>
+      <h>list</h><h>len</h>
+    </idx>
+
+      <note>
+      <title>3.1.B.3</title>
+      <p>
+        The length of a list can change while a program runs as elements are added or
+        removed. Knowing the length of a list helps programmers write code that works
+        correctly as the list changes. When the following code runs, it evaluates to
+        the number of items in <c>aList</c>.
+      </p>
+      <pre>
+length(aList)</pre>
+    </note>
+        
+    <p>
+    In Python, you can get the length of a list by using the <c>len(aList)</c> function, note the
+    shortened form of len for length. In AP Pseudocode, the function used is <c>length(aList)</c>.
+    </p>
+
+    <program language="python">
+        <code>  
+# A list of names
+names = ["Jordan", "Alex", "Sam", "Taylor"]
+# Get the length of the names list
+print("The length of the names list is:", len(names))
+        </code>
+    </program>
+
       <p>The length of the list will increase as elements are added. 
     Let's try <c>append</c> and <c>len</c> below.</p>
 
@@ -757,7 +679,16 @@ myTests().main()
         </program>
     </activity>
 
-   
+    <note>
+      <title>3.1.A.9</title>
+      <p>
+        Lists support apps that respond to users by remembering and reusing information.
+        For example, a music app can store a user's queued songs in a list. Each time the
+        user taps "Add to Queue," the song title is appended to the list, and the app uses
+        the list to display the upcoming songs in order and play the next track.
+      </p>
+    </note>
+
   </subsection>
 
 <subsection xml:id="insert-remove-lists">
@@ -853,6 +784,10 @@ myTests().main()
             </program>
         </activity>
         
+</subsection>
+
+<subsection xml:id="tracing-lists-errors">
+    <title>Tracing List Operations and Index Errors</title>
 
             <idx><h>unplugged</h><h>lists</h></idx>
     <idx><h>projects</h><h>unplugged list of chairs 2</h></idx>
@@ -1005,6 +940,115 @@ myTests().main()
 
 </subsection>
 
+<subsection xml:id="random-slicing">
+    <title>Random Elements and List Slicing</title>
+   
+    <idx>random index</idx>
+     <idx>
+      <h>list</h><h>random index</h>
+    </idx>
+    
+
+  <note>
+      <title>3.1.B.6</title>
+      <p>
+        To select a random element from a list, a program can generate a random index and
+        use it to access an element. This allows for features like selecting a random song
+        from a playlist, choosing a random prompt in a game, or assigning a random partner
+        from a list of names. In programming languages that use zero-based indexing, if
+        <c>aList</c> has <c>length(aList)</c> items, the valid indices are 0 through
+        <c>length(aList) - 1</c>. When the following code runs, the program generates one
+        of the valid indices with equal likelihood and accesses the element at that index.
+      </p>
+      <pre>
+aList[random(0, length(aList) - 1)]</pre>
+    </note>
+
+<p>Sometimes you may want to pick a random element from the list.  One way to do this is to generate a random index. It would
+    start at 0 and go up to the length of the list minus 1. If there are 3 elements in the list, the valid indices would be 0, 1, and 2. 
+    In Python, you can use the <c>random.randint()</c> function to generate a random index. 
+    The valid indices are 0 through <c>len(list) - 1</c>. 
+    For example, if you have a list of songs, you can select a random song from the playlist using the code <c>random.randint(0, len(songs) - 1)</c>.
+    Python actually has a built-in function called <c>random.choice(list)</c> that will select a random element from a list, 
+    but we will use the random index method here to match AP pseudocode.
+    </p>
+    <program language="python">
+        <code>
+import random
+songs = ["Song 1", "Song 2", "Song 3", "Song 4"]
+random_index = random.randint(0, len(songs) - 1)
+random_song = songs[random_index]
+print(random_song)
+        </code>
+      </program>
+    
+    <activity label="random-emoji">
+    <statement>
+      <p>Use the code below to select a random emoji from the list. 
+        Use the <c>random.randint()</c> function to generate a random index and then use that index to access an element in the list.
+        Run the code multiple times to see different emojis printed!
+      </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+import random
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# create a random index from 0 to the length of the list minus 1
+
+# Use the random index to print a random emoji from the list
+
+</code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            code = self.getEditorText().replace(" ", "")
+            self.assertIn("random.randint(0,len(emojis)-1)", code, "Use random.randint from 0 to len(emojis)-1")
+            self.assertIn("emojis[random_index]", code, "Use the random index to access an element in the list")
+
+myTests().main()
+        </tests>
+        </program>
+    </activity>
+
+     <idx>
+      <h>list</h><h>slicing</h>
+    </idx>
+    <idx>slicing</idx>
+
+<p>Python also has a cool slicing operator (<c>[start:end]</c>) that allows you to extract a portion of a list from 
+    a start index up to (but not including) an end index, 
+    just like we saw with strings.
+</p>
+
+  <activity label="list-slice">
+    <statement>
+      <p> Write code that prints out slices of the emoji list, using [start-index : up-to-end-index]. 
+      </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+import random
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# Print the last 3 emojis using slicing.
+print("Last 3 emojis:", emojis[2:5])
+
+# print the first 3 emojis using slicing
+
+</code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            self.assertIn("emojis[0:3]", self.getEditorText(), "Use slicing [0:3] to print the first 3 emojis")
+
+myTests().main()
+        </tests>
+        </program>
+    </activity>
+
+</subsection>
+
   <subsection xml:id="list-loops">
     <title>Traversing Lists with Loops</title>
 <idx><h>list</h><h>traversal</h></idx>
@@ -1025,7 +1069,8 @@ for item in aList
 }</pre>
     </note>
 
-    <p>Python has a simple way to <term>traverse</term> (step through) a list, visiting each element in the list, using a for loop with the pattern: <c>for item in list:</c> 
+    <p>Python has a simple way to <term>traverse</term> (step through) a list, visiting each element in the list, using a for loop with 
+      the pattern: <c>for item in list:</c> 
    </p>
 
    <program language="python">
@@ -1036,28 +1081,31 @@ for item in aList:
       </code>
     </program>
 
-    <activity label="list-count">
-      <statement>
-        <p>Count the number of elements in the list using a for loop and an accumulator variable.</p>
+     <activity label="loop-emojis">
+    <statement>
+      <p> Write code that uses a for loop to print out each emoji in the list on a separate line.
+      </p>
       </statement>
       <program interactive="activecode" language="python">
         <code>
-aList = [0, 10.5, 3, 7, 2.5, 8, 4, 1]
-count = 0
-# Use a for-loop to traverse the list, print each element, and increment the count
-   
+puppies = ["Biscuit", "Coco", "Daisy"]
+# A for-loop can print each puppy in the list on a separate line
+for puppy in puppies:
+    print(puppy)
 
-print("The number of elements in the list is:", count)
-        </code>
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# Use a for-loop to print each emoji on a separate line
+
+</code>
         <tests>
 from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
     def test1(self):
-            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
-            self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
-            self.assertIn("8", self.getOutput(), "The count should be 8")
+        self.assertRegex(self.getEditorText(), r"for \w+ in emojis:", "Use a for loop to traverse the list of emojis")
+
+myTests().main()
         </tests>
-      </program>
+        </program>
     </activity>
 
     <p>An index-controlled for-loop using <c>range(len(aList))</c> or a while loop can also be used 
@@ -1085,6 +1133,44 @@ while i &lt; len(aList):
         </code>
         </program>
 
+          <activity label="list-indexed-loop">
+    <statement>
+      <p>Write code that uses an indexed for loop using <c>range(0,len(list))</c> to print out each emoji in the list 
+        on a separate line with the index.
+      </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+puppies = ["Biscuit", "Coco", "Daisy"]
+# A for-loop can print each puppy in the list on a separate line
+for puppy in puppies:
+    print(puppy)
+# An indexed for-loop can print each puppy in the list on a separate line with the index
+for i in range(len(puppies)):
+    print(i, puppies[i])
+
+emojis = ["😀", "😂", "😍", "🤔", "😎"]
+# Change the for-loop to an indexed for-loop to print each emoji on a separate line with its index
+for item in emojis:
+    print(item)
+
+</code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertRegex(self.getEditorText(), r"for \w+ in range\(len\(emojis\)\):", "Use an indexed for loop to traverse the list of emojis")
+        self.assertIn("range(len(emojis))", self.getEditorText(), "Use range(len(emojis)) to traverse the list of emojis")
+
+myTests().main()
+        </tests>
+        </program>
+    </activity>
+
+</subsection>
+
+<subsection xml:id="list-accumulator">
+    <title>Accumulator Pattern with Lists</title>
     <note>
       <title>3.1.C.1</title>
       <p>
@@ -1110,8 +1196,32 @@ while i &lt; len(aList):
       which uses a loop and an <term>accumulator variable</term> to keep track of the running total 
       as each number is added in.  
       This accumulator pattern is often used to process lists and perform calculations on the elements.
-      In the example above, the <c>count</c> variable is the accumulator variable. In the activity below, we will
-      use <c>sum</c> as an accumulator variable to calculate the sum of all the elements in a list. We can compute the average of
+ </p>
+ 
+   <p>The Accumulator Pattern or Algorithm has the following steps:</p>
+   <p>
+      <ol>
+        <li>
+          <p>Initialize the accumulator variable before the loop.</p>
+        </li>
+
+        <li>
+          <p>Loop through the values.</p>
+        </li>
+
+        <li>
+          <p>Update the accumulator variable inside the loop.</p>
+        </li>
+
+        <li>
+          <p>Print or use the accumulated value when the loop is done.</p>
+        </li>
+      </ol>
+    </p>
+
+      <p>
+      For example, the <c>count</c> variable can be an accumulator variable to count the number of elements in a list 
+      or <c>sum</c> can be an accumulator variable to calculate the sum of all the elements in a list. We can compute the average of
       a list by dividing the sum by the length of the list using <c>len(list)</c>.
     </p>
    
@@ -1156,6 +1266,30 @@ for number in scores:
       </blocks>
     </activity>
 
+    <activity label="list-count">
+      <statement>
+        <p>Count the number of elements in the list using a for loop and an accumulator variable.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <code>
+aList = [0, 10.5, 3, 7, 2.5, 8, 4, 1]
+count = 0
+# Use a for-loop to traverse the list, print each element, and increment the count
+   
+
+print("The number of elements in the list is:", count)
+        </code>
+        <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+            self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
+            self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
+            self.assertIn("8", self.getOutput(), "The count should be 8")
+        </tests>
+      </program>
+    </activity>
+
      <activity label="list-accumulator-practice">
       <statement>
         <p>
@@ -1194,7 +1328,7 @@ myTests().main()
 </subsection>
 
 <subsection xml:id="coding-challenge-lists1">
-    <title>Coding Challenge: Lists in a Bakery</title>
+    <title>Coding Challenge: Parallel Lists in a Bakery</title>
        <idx><h>projects</h><h>lists bakery</h></idx>
       <idx><h>coding challenge</h><h>lists bakery</h></idx>
 
@@ -1964,23 +2098,27 @@ print(total)</code>
       <title>Search App</title>
       <statement>
         <p>The search app allows users to search for information in the 3 parallel lists that store the names of pioneers, 
-          facts about their contributions, and their images. A special function called draw is provided to display the image of the pioneer. First, present the list of pioneers using a simple <c>for item in list</c> loop. Ask the user who they want to learn about.
-          Then, use a for-loop with <c>range(len(pioneers))</c> to search through the pioneers list and check if the user's input is in the list. If it is, print the corresponding fact and display the image of the pioneer by using <c>draw(images[i])</c> where i is the index of the pioneer in the pioneers list. 
+          facts about their contributions, and their images. A special function called draw is provided to display the image of the 
+          pioneer. First, present the list of pioneers using a simple <c>for item in list</c> loop. Ask the user who they want to learn 
+          about.
+          Then, use a for-loop with <c>range(len(pioneers))</c> to search through the pioneers list and check if the user's input 
+          is in the list. If it is, print the corresponding fact and display the image of the pioneer by using <c>draw(images[i])</c> 
+          where i is the index of the pioneer in the pioneers list. 
         </p>
       </statement>
 
       <program interactive="activecode" language="python" add-files="AdaLovelace,AlanTuring,GraceHopper,MaryJackson">
-        <code>
-# Search App
-# Three parallel lists
+          <preamble visible="no">
 # Do not change the following draw function. It will display the image of the pioneer.
 from image import *
 def draw(image):
     img = Image(image)
     win = ImageWin(img.getWidth(), img.getHeight())
     img.draw(win)
-    
-# Lists of Data
+          </preamble>
+        <code>
+# Search App
+# Three parallel lists
 pioneers = ["Ada Lovelace", "Alan Turing", "Grace Hopper", "Mary Jackson"]
 facts = [
     "the first programmer of a theoretical computer",
@@ -1989,7 +2127,6 @@ facts = [
     "the first Black female engineer at NASA",
      ]
 images = ["AdaLovelace.png", "AlanTuring.png", "GraceHopper.png", "MaryJackson.png"]
-
 
 print("Welcome to the Computer Science Pioneers Search App!")
 print("Here are the pioneers in computer science:")
@@ -2049,17 +2186,17 @@ myTests().main()
       </statement>
 
       <program interactive="activecode" language="python" add-files="AdaLovelace,AlanTuring,GraceHopper,MaryJackson">
-        <code>
-# Quiz App
-# Three parallel lists
+        <preamble visible="no">
 # Do not change the following draw function. It will display the image of the pioneer.
 from image import *
 def draw(image):
     img = Image(image)
     win = ImageWin(img.getWidth(), img.getHeight())
     img.draw(win)
-    
-# Lists of Data
+          </preamble>      
+        <code>
+# Quiz App
+# Three parallel lists
 pioneers = ["Ada Lovelace", "Alan Turing", "Grace Hopper", "Mary Jackson"]
 facts = [
     "the first programmer of a theoretical computer",
@@ -2129,6 +2266,14 @@ myTests().main()
       </statement>
 
       <program interactive="activecode" language="python">
+          <preamble visible="no">
+# Do not change the following draw function. It will display the image of the pioneer.
+from image import *
+def draw(image):
+    img = Image(image)
+    win = ImageWin(img.getWidth(), img.getHeight())
+    img.draw(win)
+          </preamble>
         <code>
 # Quiz App
 # TODO: Create 2 parallel lists of data
