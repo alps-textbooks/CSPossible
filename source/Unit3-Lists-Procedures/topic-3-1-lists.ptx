@@ -78,7 +78,7 @@ aList = [v1, v2, v3, ...]</pre>
     </note>
 
      <p>
-    Here are some examples of lists in Python. Notice how square brackers [] are used to collect multiple values to store in one list variable.
+    Here are some examples of lists in Python. Notice how square brackets [] are used to collect multiple values to store in one list variable.
  Instead of using many variables like score1, score2, etc., which would get unmanageable pretty quickly, 
  you can use a single list variable like <c>scores</c> or <c>shopping_list</c> to store a collection of values. 
 </p>
@@ -776,7 +776,7 @@ from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
     def test1(self):
         code = self.getEditorText().replace(" ", "")
-        self.assertIn('puppies.insert("Buddy",1)', code, "Use insert to add Buddy at correct index")
+        self.assertIn('puppies.insert(1,"Buddy")', code, "Use insert to add Buddy at correct index")
         self.assertIn('puppies.remove("Daisy")', code, "Use remove to remove Daisy")
 
 myTests().main()
@@ -1028,7 +1028,6 @@ myTests().main()
       </statement>
       <program interactive="activecode" language="python">
         <code>
-import random
 emojis = ["😀", "😂", "😍", "🤔", "😎"]
 # Print the last 3 emojis using slicing.
 print("Last 3 emojis:", emojis[2:5])
@@ -1282,10 +1281,12 @@ print("The number of elements in the list is:", count)
         <tests>
 from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
-    def test1(self):
+  def test1(self):
             self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
             self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
             self.assertIn("8", self.getOutput(), "The count should be 8")
+
+myTests().main()
         </tests>
       </program>
     </activity>
@@ -1304,7 +1305,8 @@ total = 0
 tax_rate = 0.07
 
 # Use a for-loop to go through prices
-#     add the price and its tax (the price times the tax rate) to the total
+#     compute the tax for each price (the price times the tax rate)
+#     add the price and its tax to the total
 
 
 print("Total", total)
@@ -1318,7 +1320,7 @@ class myTests(TestCaseGui):
       self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
       self.assertIn("total+=", code, "Use += to add the price and tax to the total")
       self.assertIn("*", code, "Multiply the price by the tax rate")
-      self.assertEqual("18.6822", total, "The total should be 18.6822")
+      self.assertAlmostEqual(18.6822, total, "The total should be 18.6822")
 
 myTests().main()
         </tests>
@@ -1367,13 +1369,13 @@ order = []
 choice = 0
 while choice != -1:
     choice = int(input("Enter the index of the baked good you want to order (or -1 to end): "))
-    # TODO: Check if the choices is a valid index between 0 and the length of the list - 1
-    #      and append to the order list
+    # TODO: Check if the choice is a valid index between 0 and the length of baked_goods - 1
+    #      If so, append choice to the order list
     # else print an error message and ask the user to try again 
 
 
 # TODO: Print the receipt and calculate the total cost of the order
-# using a for-loop through the order list and the indices to access the baked goods and prices
+# using a for-loop through the order list and the indices to access the baked goods and prices lists
 
 </code>
 <tests>
@@ -1870,41 +1872,6 @@ print("Jordan")
   </choice>
 </choices>
 </activity>
-
-<p><term>Refactoring code</term> means to rewrite the code to improve it while maintaining the 
-same functionality. Adding data abstraction is a great way to refactor code to reduce its 
-complexity and make it more maintainable and easier to understand. Try it below! </p>
-
-  <activity label="rewrite-as-list">
-    <statement><p>Refactor the following code to use a list instead of individual variables.
-      Make sure you use a for-loop to traverse the list and print each favorite food.
-     
-    </p></statement>
-    <program interactive="activecode" language="python">
-      <code>  
-# Refactor to use a list instead of individual variables
-favoriteFood1 = "Pizza"
-favoriteFood2 = "Hamburger"
-favoriteFood3 = "Sushi"
-
-# Refactor to use a for-loop
-print("My favorite foods are:")
-print(favoriteFood1)
-print(favoriteFood2)
-print(favoriteFood3)
-      </code>
-      <tests>
-from unittest.gui import TestCaseGui
-class myTests(TestCaseGui):
-    def test1(self):
-          code = self.getEditorText().replace(" ", "")
-          self.assertIn("[", self.getEditorText(), "Use a list to store the favorite foods")
-          self.assertIn("for ", self.getEditorText(), "Use a for-loop to print the list")
-           
-myTests().main()
-      </tests>
-    </program>
-  </activity>
     
     <note>
       <title>3.1.D.3</title>
@@ -1965,6 +1932,40 @@ myTests().main()
     <p>Data abstraction using lists also removes a lot of repetitive duplication in code. Instead of having 
       multiple variables and repeated code to process each variable, we can use a single list and a loop to process all the elements.
     </p>
+  
+<p><term>Refactoring code</term> means to rewrite the code to improve it while maintaining the 
+same functionality. Adding data abstraction is a great way to refactor code to reduce its 
+complexity and make it more maintainable and easier to understand. Try it below! </p>
+
+  <activity label="rewrite-as-list">
+    <statement><p>Refactor the following code to use a list instead of individual variables.
+      Make sure you use a for-loop to traverse the list and print each favorite food.
+     
+    </p></statement>
+    <program interactive="activecode" language="python">
+      <code>  
+# Refactor to use a list instead of individual variables
+favoriteFood1 = "Pizza"
+favoriteFood2 = "Hamburger"
+favoriteFood3 = "Sushi"
+
+# Refactor to use a for-loop
+print("My favorite foods are:")
+print(favoriteFood1)
+print(favoriteFood2)
+print(favoriteFood3)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+          self.assertIn("[", self.getEditorText(), "Use a list to store the favorite foods")
+          self.assertIn("for ", self.getEditorText(), "Use a for-loop to print the list")
+           
+myTests().main()
+      </tests>
+    </program>
+  </activity>
 
 <activity label="reduce-complexity">
   <statement>
@@ -2171,7 +2172,7 @@ myTests().main()
 </project>
         
       <p>The second part of the challenge is to create a quiz app about pioneers in computer science. The pioneers, 
-        facts, and images are in parallel lists where the first pioneer in the pionners list corresponds to the first fact in the facts 
+        facts, and images are in parallel lists where the first pioneer in the pioneers list corresponds to the first fact in the facts
         list and the first image in the image list, and so on for each element in the lists.
       </p>
 
@@ -2179,7 +2180,7 @@ myTests().main()
       <title>Quiz App</title>
       <statement>
         <p>A quiz app uses 3 parallel lists to store the names of pioneers, facts about their contributions, and their images. 
-          Use for loops to to print out questions from the facts list and check the user's answers against the pioneers list. 
+          Use for loops to print out questions from the facts list and check the user's answers against the pioneers list.
         </p>
         <p>Extra challenges: Add and print a score variable. Do research to find more CS pioneers and add them to the lists. 
         </p>
