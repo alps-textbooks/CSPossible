@@ -50,7 +50,7 @@
      the user's input or a random number that we usually store in a variable.  </p>
      
      <p>A function is like a <term>black box</term> where you know what data goes in and what 
-      data omes out, but not necessarily how it works inside. We don't really need to know exactly
+      data comes out, but not necessarily how it works inside. We don't really need to know exactly
       how <c>print()</c> or <c>input()</c> works internally; we just need to know what it does. 
       This is called <term>procedural abstraction</term> where the code is grouped into manageable 
      chunks called procedures or functions that can be called by name, hiding the detailed 
@@ -174,7 +174,7 @@
       </code>
     </program>
 
-       <p>In AP CSP pseudocode, functions are called <term>procedures</term>, and the keyword <c>procedure</c> is used instead of <c>def</c> to define a function. Curly braces are used to enclose the block of statements, insead of just indentation. Procedure calls
+      <p>In AP CSP pseudocode, functions are called <term>procedures</term>, and the keyword <c>procedure</c> is used instead of <c>def</c> to define a function. Curly braces are used to enclose the block of statements, instead of just indentation. Procedure calls
       just use the name of the procedure with parentheses like in Python.</p>
 
     <program language="python">
@@ -462,7 +462,7 @@ class myTests(TestCaseGui):
         for_count = actual.count("for ")
         self.assertEqual(1, for_count, "Use just 1 for loop")
         drawSquare_count = actual.count("drawSquare()")
-        self.assertLessEqual(3, drawSquare_count, "Call drawSquare() at least 3 times")
+        self.assertLessEqual(3, drawSquare_count, "Call drawSquare() at least 2 times")
 
 myTests().main()
           </tests>
@@ -568,7 +568,7 @@ verse("two", "shoe")
 <p>Notice that the same function is called two times with different arguments. When <c>verse("one", "thumb")</c> is called, the 
   parameter <c>number</c> gets the value <c>"one"</c> and the parameter <c>rhyme</c> gets the value <c>"thumb"</c>. When 
   <c>verse("two", "shoe")</c> is called, the same parameters receive different values. The function does not need to change. The 
-  arguments provide the values that makes each verse different. </p>
+  arguments provide the values that make each verse different. </p>
 
   <image source="_static/Unit3images/procedure-verse-call.png" alt="Calling verse(number, rhyme)" width="70%"/>
 
@@ -699,7 +699,7 @@ class myTests(TestCaseGui):
        
         self.assertIn('["one","two","three","four"', code, "Create a list of at least 4 numbers")
         self.assertIn('["thumb","shoe","knee","door"', code, "Create a list of at least 4 rhymes")
-        self.assertIn("for i in range", self.getEditorText(), "Use for i in range loop"")
+        self.assertIn("for i in range", self.getEditorText(), "Use for i in range loop")
         self.assertIn("verse(numbers[i],rhymes[i])", code, "Call verse(numbers[i], rhymes[i]) in the loop")
 
 myTests().main()
@@ -1116,7 +1116,7 @@ myTests().main()
   <term>Global variables</term> are variables that are defined outside of any function and can be used anywhere in the program.
   In Python, if you change a variable using assignment (<c>=</c>) inside a function, it becomes a local variable. If you want to refer to 
   a global variable, you need to declare that variable as <c>global</c> before using it, usually in the first line of the function definition. 
-  Another option is to pass and return the varialble as a parameter to the function. 
+  Another option is to pass and return the variable as a parameter to the function. 
   </p>
 
   <program language="python">
@@ -1653,8 +1653,9 @@ if ( IsFound(morningList, child)  or
       checks that they are between 1 and 10. Refactor the code by creating a
       function named <c>get_valid_number</c>. The function should repeatedly
       ask the user to enter a number from 1 to 10 and print an error message
-      when the input is not valid. For this exercise, the function does not
-      need to return a value. Replace the repeated validation code with calls to your function.
+      when the input is not valid. Once the input is valid, it will return it.
+      Replace the repeated validation code with get_valid_number() calls that assign each returned number
+      to <c>number</c> and <c>number2</c>.
 </p>
   </statement>
 
@@ -1880,13 +1881,13 @@ myTests().main()
    <p>In the activities above, you created a <c>drawSquare()</c> and a <c>drawSquare(size, color)</c> 
     function. In this project, we will abstract even further and create a function  <c>drawPolygon(sides, size, color, fill)</c> to draw any polygon with the specified number of <c>sides</c>. 
     The angle of each turn in the polygon can be calculated by dividing 360 by the number of sides, since 360 degrees is a complete circle. For example,
-    for a square which has 4 sides, the angle of each turn is 360/4 = 90 degrees. For a octagon which has 8 sides, the external angle of each turn 
+    for a square which has 4 sides, the angle of each turn is 360/4 = 90 degrees. For an octagon which has 8 sides, the external angle of each turn 
     is 360/8 = 45 degrees. We can also use a boolean parameter <c>fill</c> to determine whether the polygon should be filled with color or not, adding calls to <c>begin_fill()</c> and <c>end_fill()</c> if the boolean parameter is true.  
   </p>
   <p>We will also add two more functions: <c>drawCircle(radius, color, fill)</c> and <c>drawStar(size, color, fill)</c>. To draw a circle, 
     use the <c>tina.circle(radius)</c> method of the turtle. To draw a star, use a for loop that repeats 5 times, moving forward  and turning right by <c>144</c> degrees each time. The star can also be filled with color if the fill parameter is true. 
   </p>
-    <p>Once you create these function, create a function called <c>drawSnowflake(sides, size, color, rotation)</c> that uses a loop and calls your drawPolygon 
+    <p>Once you create these functions, create a function called <c>drawSnowflake(sides, size, color, rotation)</c> that uses a loop and calls your drawPolygon 
       function and then turns a little to draw a spiralling pattern. Experiment with different types of polygons and rotation amounts to create a cool snowflake design.
       Then, create another function called <c>drawMyDesign()</c>to draw a 
       more complex design, for example, a house, a creature, a car, a face, a flag, etc. 
