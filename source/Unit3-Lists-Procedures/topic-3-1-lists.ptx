@@ -1320,7 +1320,7 @@ class myTests(TestCaseGui):
       self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
       self.assertIn("total+=", code, "Use += to add the price and tax to the total")
       self.assertIn("*", code, "Multiply the price by the tax rate")
-      self.assertAlmostEqual(18.6822, total, "The total should be 18.6822")
+      self.assertEqual(18.6822, total, "The total should be 18.6822")
 
 myTests().main()
         </tests>
