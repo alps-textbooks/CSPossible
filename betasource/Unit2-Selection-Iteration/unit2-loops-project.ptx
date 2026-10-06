@@ -274,7 +274,7 @@ class myTests(TestCaseGui):
             if target.replace(" ", "").lower() in line.replace(" ", "").lower():
                 #print(line)
                 return line
-        return target + " not found"
+        return "None"
             
     def remove_comments(self, code):
         lines = code.split("\n")
