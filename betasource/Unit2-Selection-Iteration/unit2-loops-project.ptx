@@ -345,7 +345,7 @@ class myTests(TestCaseGui):
         self.assertLessEqual(2,if_count, "at least 2 if statements")
 
         #3 elif statements
-        self.assertLessEqual(3,elif_count, "at least 3 if statements")
+        self.assertLessEqual(3,elif_count, "at least 3 elif statements")
         
         #4 else statements
         else_count = code_nospaces.count("else:")
