@@ -363,7 +363,7 @@ class myTests(TestCaseGui):
         self.assertTrue(passed, "Uses while loops for input validation: " + loop)
 
 
-        #7 average calculation for the 7 days using input "10,10,10,10,10,10,10" - Average = 40.0
+        #7 average calculation for the 7 days using input "10,10,10,10,10,10,10" - Average = 10.0
         output = self.run_file(code, "10,10,10,10,10,10,10")
         results = self.findLine(output.split("\n"), "Needs Improvement") + "\n"
         results += self.findLine(output.split("\n"), "total") + "\n"
