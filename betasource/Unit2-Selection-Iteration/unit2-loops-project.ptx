@@ -336,7 +336,7 @@ class myTests(TestCaseGui):
         #1 for loop
         loop = self.findLine(code.split("\n"), "range")
         loop_nospaces = loop.replace(" ", "")
-        passed = "for" in loop and ("(1,8)" in loop_nospaces or "(0,7)" in loop_nospaces or "(7)" in loop_nospaces)
+        passed = "for" in loop and ("(1,8)" in loop_nospaces or "(1,8,1)" in loop_nospaces or "(0,7)" in loop_nospaces or "(0,7,1)" in loop_nospaces or "(7)" in loop_nospaces)
         self.assertTrue(passed, "Use range to repeat for 7 days: &lt;c&gt;" + loop + "&lt;/c&gt; &lt;em&gt;Note: if this is wrong, your calculations for total and average will be wrong below.&lt;/em&gt;")
         
         #2 if statements
