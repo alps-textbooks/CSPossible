@@ -331,15 +331,11 @@ class myTests(TestCaseGui):
         else_count = code_nospaces.count("else:")
         self.assertLessEqual(8,else_count, "at least 8 else statements")
         
-        #4 count == statements
-        equals_count = code.count("==")
-        #self.assertLessEqual(6, equals_count, "at least 8 conditions with == statements")
-
-        #5 uses round() to round numbers to 2 decimal places
-        round_count = code.count("format(")
+        #5 uses format() to print numbers with 2 decimal places
+        format_count = code.count("format(")
         two_count = code_nospaces.count(",\".2f\")")
-        if round_count == two_count:
-            self.assertLessEqual(3, round_count, "at least 3 uses of format(*,\".2f\") function")
+        if format_count == two_count:
+            self.assertLessEqual(3, format_count, "at least 3 uses of format(*,\".2f\") function")
         else:
             self.fail("The number of format() calls does not match the number of times \".2f\" is used as the second argument.")
 
