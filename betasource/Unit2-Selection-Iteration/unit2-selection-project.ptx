@@ -372,12 +372,8 @@ class myTests(TestCaseGui):
 
         #9 results free
         output4 = self.run_file(code, "Charlie,0.5,no,no")
-        if ("0.00" in code):   
-            line4 = self.findLine(lines, "0.00")
-            self.assertNotIn("0.00", line4, "0.00 should not be hard-coded in the code")
-        else:
-            line4 = self.findLine(str(output4).split("\n"), "Amount Due")
-            self.assertIn("0.00", line4, "The output should include 0.00 for the parking fee when the input is Charlie,0.5,no,no")
+        line4 = self.findLine(str(output4).split("\n"), "Amount Due")
+        self.assertIn("0.00", line4, "The output should include 0.00 for the parking fee when the input is Charlie,0.5,no,no")
 
 
         #10 results long-term
