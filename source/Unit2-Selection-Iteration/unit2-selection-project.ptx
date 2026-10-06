@@ -207,7 +207,7 @@ recommended 12-hour parking time.
 Create a Python program that determines a customer's parking fee based on information they provide. 
 Your program should make decisions using Boolean expressions and display a personalized receipt. 
 Be sure to format all dollar amounts in the receipt to two decimal places in <c>print</c> using 
-<c>round(num, 2)</c> or <c>format(num, ".2f")</c>.
+<c>format(num, ".2f")</c>. (You will need to use format to get all the points for this project.)
     </p>
 </statement>
 <program interactive="activecode" language="python">
@@ -251,12 +251,136 @@ amount_due =
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        for line in lines:
+            if target.replace(" ", "").lower() in line.replace(" ", "").lower():
+                #print(line)
+                return line
+        return "None"
+            
+    def remove_comments(self, code):
+        lines = code.split("\n")
+        new_lines = []
+        for line in lines:
+            if "#" in line:
+                line = line.split("#")[0]
+            new_lines.append(line)
+        return "\n".join(new_lines)
+    
+    def run_file(self, code, inputs):
+        stars = "****************************************************************************" 
+        print(stars)
+        print("Testing code with inputs: " + inputs)
+        print(stars)
 
+        lines = code.split("\n")
+        ins = inputs.split(",")
+        inN = 0
+
+        for i in range(len(lines)):
+            if "input" in lines[i] and not "#" in lines[i]:
+                equals = lines[i].find("=") + 1
+                if inN &lt; len(ins):
+                    try:
+                        float(ins[inN])  # Check if the input can be converted to a float
+                        lines[i] = lines[i][0:equals] + str(ins[inN])
+                    except ValueError:
+                        lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
+                    inN += 1
+
+        code = str("\n".join(lines))
+
+        # Create an isolated scope for the code execution
+        scope = {}
+
+        ''' for ebook '''
+        exec(code, scope)
+        output = self.getOutput()
+
+        ind = output.find(inputs) + len(inputs) + 1
+        output = output[ind:].strip()
+        ind = output.find(stars) + len(stars) + 1
+        output = output[ind:]
+
+        if (stars in output):
+            ind = output.find(stars)
+            output = output[0:ind].strip()
+        
+        return str(output)
+    
     def testOne(self):
-        code = self.getEditorText().replace(" ", "")
-        self.assertIn("if", code, "Use if statements")
-        self.assertIn("else", code, "Use else statements")
-        self.assertIn("==",code,"Use == to compare strings to yes or no")
+        code = self.getEditorText()
+        code = self.remove_comments(code)
+        lines = code.replace(" ", "").split("\n")
+
+        code_nospaces = code.replace(" ", "")
+
+        #1 input statements
+        input_count = code.count("input(")
+        self.assertLessEqual(4,input_count, "at least 4 input statements")
+
+        #2 count if statements
+        elif_count = code.count("elif ")
+        if_count = code.count("if ") - elif_count
+        self.assertLessEqual(9,if_count, "at least 9 if statements")
+
+        #3 count elif statements
+        self.assertLessEqual(3,elif_count, "at least 3 elif statements")
+
+        #4 count else statements
+        else_count = code_nospaces.count("else:")
+        self.assertLessEqual(8,else_count, "at least 8 else statements")
+        
+        #4 count == statements
+        equals_count = code.count("==")
+        #self.assertLessEqual(6, equals_count, "at least 8 conditions with == statements")
+
+        #5 uses round() to round numbers to 2 decimal places
+        round_count = code.count("format(")
+        two_count = code_nospaces.count(",\".2f\")")
+        if round_count == two_count:
+            self.assertLessEqual(3, round_count, "at least 3 uses of format(*,\".2f\") function")
+        else:
+            self.fail("The number of format() calls does not match the number of times \".2f\" is used as the second argument.")
+
+        #6 results regular
+        output1 = self.run_file(code, "Morgan,3,no,no")
+        if ("10.00" in code):
+            line1 = self.findLine(lines, "10.00")
+            self.assertNotIn("10.00", line1, "10.00 should not be hard-coded in the code")
+        else:
+            line1 = self.findLine(str(output1).split("\n"), "Amount Due")
+            self.assertIn("10.00", line1, "The output should include 10.00 for the parking fee when the input is Morgan,3,no,no")
+        
+        #7 results member
+        output2 = self.run_file(code, "Alice,6,yes,no")
+        if ("12.00" in code):
+            line2 = self.findLine(lines, "12.00")
+            self.assertNotIn("12.00", line2, "12.00 should not be hard-coded in the code")
+        else:
+            line2 = self.findLine(str(output2).split("\n"), "Amount Due")
+            self.assertIn("12.00", line2, "The output should include 12.00 for the parking fee when the input is Alice,2,yes,no")
+
+        #8 results weekend
+        output3 = self.run_file(code, "Bob,5,no,yes")
+        if ("14.4" in code): 
+            line3 = self.findLine(lines, "14.4")   
+            self.assertNotIn("14.40", line3, "14.4 should not be hard-coded in the code")
+        else:
+            line3 = self.findLine(str(output3).split("\n"), "Amount Due")
+            self.assertIn("14.40", line3, "The output should include 14.40 for the parking fee when the input is Bob,5,no,yes")
+
+        #9 results free
+        output4 = self.run_file(code, "Charlie,0.5,no,no")
+        line4 = self.findLine(str(output4).split("\n"), "Amount Due")
+        self.assertIn("0.00", line4, "The output should include 0.00 for the parking fee when the input is Charlie,0.5,no,no")
+
+
+        #10 results long-term
+        output5 = self.run_file(code, "Diana,10,yes,no")
+        line5 = self.findLine(str(output5).split("\n"), "Amount Due")
+        self.assertIn("18.00", line5, "The output should include 18.00 for the parking fee when the input is Diana,10,yes,no")
+
         
 myTests().main()
 </tests>
