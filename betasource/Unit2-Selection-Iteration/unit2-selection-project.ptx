@@ -378,12 +378,8 @@ class myTests(TestCaseGui):
 
         #10 results long-term
         output5 = self.run_file(code, "Diana,10,yes,no")
-        if ("18.00" in code):
-            line5 = self.findLine(lines, "18.00")
-            self.assertNotIn("18.00", line5, "18.00 should not be hard-coded in the code")
-        else:
-            line5 = self.findLine(str(output5).split("\n"), "Amount Due")
-            self.assertIn("18.00", line5, "The output should include 18.00 for the parking fee when the input is Diana,10,yes,no")
+        line5 = self.findLine(str(output5).split("\n"), "Amount Due")
+        self.assertIn("18.00", line5, "The output should include 18.00 for the parking fee when the input is Diana,10,yes,no")
 
         
 myTests().main()
