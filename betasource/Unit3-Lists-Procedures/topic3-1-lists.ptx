@@ -26,6 +26,8 @@
   <subsection xml:id="lists-intro">
     <title>Lists as Data Collections</title>
 
+    
+
     <p>All programming languages have ways to store collections of data. Python has a built-in data 
     type called a <term>list</term> which can store an ordered sequence of items. 
     Lists are sometimes called arrays in other programming languages.    
@@ -37,9 +39,11 @@
     </p>
 
     <image source="_static/Unit3images/lockers.jpg" width="70%" alt="a row of numbered lockers"/>
+    
+  
 
      <p>
-    Here are some examples of lists in Python. Notice how square brackers [] are used to collect multiple values to store in one list variable.
+    Here are some examples of lists in Python. Notice how square brackets [] are used to collect multiple values to store in one list variable.
  Instead of using many variables like score1, score2, etc., which would get unmanageable pretty quickly, 
  you can use a single list variable like <c>scores</c> or <c>shopping_list</c> to store a collection of values. 
 </p>
@@ -60,6 +64,8 @@ scores = [95, 87, 92, 100]
     <idx>index</idx>
     <idx>indexing</idx>
 
+
+
     <p>
         To access elements in a list, we use the list name and the <term>index</term> (the position or number) of the element in 
         square brackets. For example, <c>shopping_list[0]</c> accesses the first element in the <c>shopping_list</c>, 
@@ -70,6 +76,8 @@ scores = [95, 87, 92, 100]
     <p>Note that the AP CSP exam currently starts indexing at 1 in its pseudocode including in the 2027 exam, but will 
         switch to zero-based indexing as of 2028.
     </p>
+
+
 
     <p>Imagine a Python list called <c>lockers</c>. Let's put your books in locker 0 and 
         a backpack in locker 1 with the code below. To get to a specific locker or a specific 
@@ -290,6 +298,8 @@ chairs[2] = "Alex"
     <title>Changing List Elements with Assignment</title>
   <idx><h>list</h><h>assignment</h></idx>
 
+
+
     <p>
       Assignment (<c>=</c>) can be used to change the value of an element in a list. You can use an indexed
       list variable like <c>myList[index] = value</c> on the left side of the assignment operator just like a regular variable. 
@@ -454,6 +464,7 @@ print(values)
   </activity>
 
 
+
     <p>Before making changes to a list, programmers sometimes make a copy of it first using assignment. 
         Then the original list can be preserved and used later if needed. 
     </p>
@@ -482,6 +493,8 @@ scores_bonus[1] += 5
       <h>list</h><h>append</h>
     </idx>
 
+
+
     <p>If you do not know what values you want to store in a list when you create it, 
         you can start with <term>empty list ([])</term> which is a list that contains no elements and
         add in elements while the program is running. For example, we can start with an empty shopping list.</p>
@@ -491,7 +504,7 @@ scores_bonus[1] += 5
 shopping_list = []
         </code>
 </program>
-    
+
 
     <p>Elements can be added to a list using the <c>append</c> function which adds the element 
         to the end of the list.</p>
@@ -513,7 +526,7 @@ print(shopping_list)
       <h>list</h><h>len</h>
     </idx>
 
-     
+      
         
     <p>
     In Python, you can get the length of a list by using the <c>len(aList)</c> function, note the
@@ -564,7 +577,7 @@ myTests().main()
         </program>
     </activity>
 
-   
+
 
   </subsection>
 
@@ -578,6 +591,7 @@ myTests().main()
      <idx>
       <h>list</h><h>remove</h>
     </idx>
+
 
 
     <p>Python also provides built-in functions to change list elements. We already saw the <c>append()</c> 
@@ -628,7 +642,7 @@ from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
     def test1(self):
         code = self.getEditorText().replace(" ", "")
-        self.assertIn('puppies.insert("Buddy",1)', code, "Use insert to add Buddy at correct index")
+        self.assertIn('puppies.insert(1,"Buddy")', code, "Use insert to add Buddy at correct index")
         self.assertIn('puppies.remove("Daisy")', code, "Use remove to remove Daisy")
 
 myTests().main()
@@ -676,6 +690,7 @@ chairs.insert(1, "Taylor")
        <response/>
      </project>
 
+    
 
      <activity label="list-trace-insert-remove">
     <statement>
@@ -730,7 +745,7 @@ list.remove(1)
     </choices>
     </activity>
   
-   
+
 
     <p>What happens if you try to access an element that is not there? 
         Try to access puppies at index 7 below to see what happens. 
@@ -773,7 +788,7 @@ myTests().main()
     </idx>
     
 
-  
+
 
 <p>Sometimes you may want to pick a random element from the list.  One way to do this is to generate a random index. It would
     start at 0 and go up to the length of the list minus 1. If there are 3 elements in the list, the valid indices would be 0, 1, and 2. 
@@ -839,7 +854,6 @@ myTests().main()
       </statement>
       <program interactive="activecode" language="python">
         <code>
-import random
 emojis = ["😀", "😂", "😍", "🤔", "😎"]
 # Print the last 3 emojis using slicing.
 print("Last 3 emojis:", emojis[2:5])
@@ -863,7 +877,7 @@ myTests().main()
   <subsection xml:id="list-loops">
     <title>Traversing Lists with Loops</title>
 <idx><h>list</h><h>traversal</h></idx>
-   
+
 
     <p>Python has a simple way to <term>traverse</term> (step through) a list, visiting each element in the list, using a for loop with 
       the pattern: <c>for item in list:</c> 
@@ -967,7 +981,7 @@ myTests().main()
 
 <subsection xml:id="list-accumulator">
     <title>Accumulator Pattern with Lists</title>
-
+    
 
     <idx><h>list</h><h>accumulator pattern</h></idx>
 
@@ -1061,10 +1075,12 @@ print("The number of elements in the list is:", count)
         <tests>
 from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
-    def test1(self):
+  def test1(self):
             self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
             self.assertIn("count+=1", self.getEditorText().replace(" ", ""), "Increment the count for each element in the list")
             self.assertIn("8", self.getOutput(), "The count should be 8")
+
+myTests().main()
         </tests>
       </program>
     </activity>
@@ -1083,7 +1099,8 @@ total = 0
 tax_rate = 0.07
 
 # Use a for-loop to go through prices
-#     add the price and its tax (the price times the tax rate) to the total
+#     compute the tax for each price (the price times the tax rate)
+#     add the price and its tax to the total
 
 
 print("Total", total)
@@ -1097,7 +1114,7 @@ class myTests(TestCaseGui):
       self.assertIn("for ", self.getEditorText(), "Use a for loop to traverse the list")
       self.assertIn("total+=", code, "Use += to add the price and tax to the total")
       self.assertIn("*", code, "Multiply the price by the tax rate")
-      self.assertEqual("18.6822", total, "The total should be 18.6822")
+      self.assertAlmostEqual(18.6822, total, "The total should be 18.6822")
 
 myTests().main()
         </tests>
@@ -1146,13 +1163,13 @@ order = []
 choice = 0
 while choice != -1:
     choice = int(input("Enter the index of the baked good you want to order (or -1 to end): "))
-    # TODO: Check if the choices is a valid index between 0 and the length of the list - 1
-    #      and append to the order list
+    # TODO: Check if the choice is a valid index between 0 and the length of baked_goods - 1
+    #      If so, append choice to the order list
     # else print an error message and ask the user to try again 
 
 
 # TODO: Print the receipt and calculate the total cost of the order
-# using a for-loop through the order list and the indices to access the baked goods and prices
+# using a for-loop through the order list and the indices to access the baked goods and prices lists
 
 </code>
 <tests>
@@ -1191,7 +1208,7 @@ myTests().main()
 
     <image source="_static/Unit3images/linearsearch.gif" alt="Linear Search" width="70%"/>
 
-    
+
 
     <p>The searching pattern has an if-statement inside the loop to check if you have found the correct value.</p>
 
@@ -1290,6 +1307,7 @@ myTests().main()
           </tests>
         </program>
       </activity>
+
 
 
   <idx>minimum</idx>
@@ -1510,7 +1528,7 @@ if (item &lt; x)
     without needing to know how the values are stored or organized in memory. Data abstraction 
     using lists <term>reduces complexity</term> in code and makes it easier to read, write, and maintain.
     </p>
-    
+
 
   <activity label="list-data-abstraction">
     <statement>
@@ -1600,42 +1618,6 @@ print("Jordan")
   </choice>
 </choices>
 </activity>
-
-<p><term>Refactoring code</term> means to rewrite the code to improve it while maintaining the 
-same functionality. Adding data abstraction is a great way to refactor code to reduce its 
-complexity and make it more maintainable and easier to understand. Try it below! </p>
-
-  <activity label="rewrite-as-list">
-    <statement><p>Refactor the following code to use a list instead of individual variables.
-      Make sure you use a for-loop to traverse the list and print each favorite food.
-     
-    </p></statement>
-    <program interactive="activecode" language="python">
-      <code>  
-# Refactor to use a list instead of individual variables
-favoriteFood1 = "Pizza"
-favoriteFood2 = "Hamburger"
-favoriteFood3 = "Sushi"
-
-# Refactor to use a for-loop
-print("My favorite foods are:")
-print(favoriteFood1)
-print(favoriteFood2)
-print(favoriteFood3)
-      </code>
-      <tests>
-from unittest.gui import TestCaseGui
-class myTests(TestCaseGui):
-    def test1(self):
-          code = self.getEditorText().replace(" ", "")
-          self.assertIn("[", self.getEditorText(), "Use a list to store the favorite foods")
-          self.assertIn("for ", self.getEditorText(), "Use a for-loop to print the list")
-           
-myTests().main()
-      </tests>
-    </program>
-  </activity>
-    
     
 
     <p>Data abstraction also makes it easier to add data without having to rewrite the algorithms. 
@@ -1665,11 +1647,45 @@ myTests().main()
     </program>
   </activity>
 
-    
+
 
     <p>Data abstraction using lists also removes a lot of repetitive duplication in code. Instead of having 
       multiple variables and repeated code to process each variable, we can use a single list and a loop to process all the elements.
     </p>
+  
+<p><term>Refactoring code</term> means to rewrite the code to improve it while maintaining the 
+same functionality. Adding data abstraction is a great way to refactor code to reduce its 
+complexity and make it more maintainable and easier to understand. Try it below! </p>
+
+  <activity label="rewrite-as-list">
+    <statement><p>Refactor the following code to use a list instead of individual variables.
+      Make sure you use a for-loop to traverse the list and print each favorite food.
+     
+    </p></statement>
+    <program interactive="activecode" language="python">
+      <code>  
+# Refactor to use a list instead of individual variables
+favoriteFood1 = "Pizza"
+favoriteFood2 = "Hamburger"
+favoriteFood3 = "Sushi"
+
+# Refactor to use a for-loop
+print("My favorite foods are:")
+print(favoriteFood1)
+print(favoriteFood2)
+print(favoriteFood3)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+    def test1(self):
+          self.assertIn("[", self.getEditorText(), "Use a list to store the favorite foods")
+          self.assertIn("for ", self.getEditorText(), "Use a for-loop to print the list")
+           
+myTests().main()
+      </tests>
+    </program>
+  </activity>
 
 <activity label="reduce-complexity">
   <statement>
@@ -1876,7 +1892,7 @@ myTests().main()
 </project>
         
       <p>The second part of the challenge is to create a quiz app about pioneers in computer science. The pioneers, 
-        facts, and images are in parallel lists where the first pioneer in the pionners list corresponds to the first fact in the facts 
+        facts, and images are in parallel lists where the first pioneer in the pioneers list corresponds to the first fact in the facts
         list and the first image in the image list, and so on for each element in the lists.
       </p>
 
@@ -1884,7 +1900,7 @@ myTests().main()
       <title>Quiz App</title>
       <statement>
         <p>A quiz app uses 3 parallel lists to store the names of pioneers, facts about their contributions, and their images. 
-          Use for loops to to print out questions from the facts list and check the user's answers against the pioneers list. 
+          Use for loops to print out questions from the facts list and check the user's answers against the pioneers list.
         </p>
         <p>Extra challenges: Add and print a score variable. Do research to find more CS pioneers and add them to the lists. 
         </p>
@@ -2044,6 +2060,8 @@ myTests().main()
         <response/>
       </activity>
   </subsection>
+
+ 
 
   <subsection xml:id="vocab-3-1">
    <title>Vocabulary Review</title>
