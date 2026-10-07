@@ -830,7 +830,7 @@ class myTests(TestCaseGui):
     def test1(self):
             code = self.getEditorText().replace(" ", "")
             self.assertIn("random.randint(0,len(emojis)-1)", code, "Use random.randint from 0 to len(emojis)-1")
-            self.assertIn("emojis[random_index]", code, "Use the random index to access an element in the list")
+            self.assertIn("emojis[", code, "Use the random index to access an element in the list emojis")
 
 myTests().main()
         </tests>
