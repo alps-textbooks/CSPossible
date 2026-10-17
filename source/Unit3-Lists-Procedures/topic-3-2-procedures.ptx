@@ -6,8 +6,8 @@
  
   <introduction>
    <p>Quick Links:
-      <xref text="global" ref="procedures,function-call-defn, arguments, appinventor-quiz-app2, event-handlers, return-values, procedural-abstraction,
-      coding-challenge-draw-functions, LOs-3-2, vocab-3-2"/>
+      <xref text="global" ref="procedures,function-call-defn, arguments, return-values, procedural-abstraction,
+      appinventor-quiz-app2, event-handlers, coding-challenge-draw-functions, LOs-3-2, vocab-3-2"/>
     </p>
     <p>
       Our programs are getting longer and longer! Advanced programmers break up 
@@ -997,240 +997,6 @@ I like to eat, eat, eat pizzas and pineapples!
 
 
     </subsection>
-
-    <subsection xml:id="appinventor-quiz-app2">
-      <title>App Inventor Quiz App Project Continued (Optional)</title>
-
-      <p>If you did the optional 
-   <url href="appinventor-quiz-app.html">App Inventor Quiz App Tutorial</url> in the last lesson,
-   you can now finish sections 3.8.4-3.8.5 to add a search procedure.
-    </p>
-      
-      </subsection>
-
-      <subsection xml:id="event-handlers">
-    <title>Event-Handling Functions and Global Variables</title>
-
-    <idx>event handling</idx>
-    <idx>global variables</idx>
- 
-
-    <p>
-      Event-handling functions are called when an event occurs in a graphical user interface (GUI), 
-      for example when a button is clicked or a key is pressed. Python turtles can respond to mouse clicks 
-      and keyboard presses with some fun event-handlers called <c>onscreenclick</c> and <c>onkey</c> that
-      call a specified function like <c>myFunction</c> when a mouse or key press event occurs. This is the only place
-      where () are not used after a function name in Python.
-    </p>
-
-    <program language="python">
-      <code>
-# Call myFunction when the mouse is clicked on the screen
-# myFunction must take 2 parameters for the x and y coordinates of the click
-turtle.onscreenclick(myFunction)  
-
-# Call myFunction when the "Up" arrow key is pressed
-turtle.onkey(myFunction, "Up")
-turtle.listen()  # Start listening for key presses
-
-# Call myFunction after 500 milliseconds (reduce to make faster)
-turtle.ontimer(myFunction, 800)
-      </code>
-    </program>
-
-    <p>If we want the turtle to turn with the arrows on the keyboard, we need to use the <c>setheading</c> function 
-      which turns the turtle to a specific north, south, east, or west direction. Since the Python turtles always start
-      facing east or to the right of the screen, that is set to <c>setheading(0)</c> for 0 degrees. From their starting position, the turtle can be turned to face 
-      north/up with <c>setheading(90)</c>, west/left with <c>setheading(180)</c>, and south/down with <c>setheading(270)</c>. 
-      In the code below, event handling functions have been written for the mouse click and the up and right arrow keys. 
-      Try adding the event handling functions for the down and left arrow keys to move the turtle in those directions.
-    </p>
- 
-    <activity label="turtleEventHandlers">
-      <statement>
-        <p>
-          Try the event-handling functions below to move the turtle around the screen with mouse clicks and arrow keys.
-          Note that when you click on Run in Runestone, the turtle window will only respond for 20 seconds. You will
-          need to click inside the turtle window to give it focus before pressing the arrow keys. </p>
-       <p>
-          Change the onclick_handler to change the turtle's color. Change it back when the up arrow is pressed.
-          Add the functions for the "Down" and "Left" arrow keys using the <c>setheading</c> function with 270 and 180 degrees.
-          Draw something fun with the turtle and the keyboard arrow keys!
-        </p>
-      </statement>
-<program interactive="activecode" language="python">
-  <code>
-import turtle
-
-t = turtle.Turtle()
-t.shape("turtle")
-
-# Try clicking on the screen away from the turtle to move it to a new location
-# This will work for 20 seconds.
-def click_handler(x, y):
-    t.goto(x, y)
-    # 1. TODO: change the turtle color
-
-# This will call the click_handler function when the mouse is clicked on the screen
-turtle.onscreenclick(click_handler)
-
-# Define movement functions
-def move_right():
-    t.setheading(0)    # Face straight right
-    t.forward(20)
-
-def move_up():
-    t.setheading(90)   # Face straight up
-    t.forward(20)
-    # 2. TODO: Add code to change the turtle color back 
-
-
-# 3. TODO: Define move_left (180 degrees) and move_down (270 degrees) functions 
-
-
-
-turtle.onkey(move_right, "Right")    
-turtle.onkey(move_up, "Up")
-# 4. TODO: Add onkey calls for move_left and move_down functions
-
-
-turtle.listen()    
-  </code>  
-  <tests>
-from unittest.gui import TestCaseGui
-
-class myTests(TestCaseGui):
-    def test1(self):
-        self.assertIn("def move_down():",self.getEditorText(), "Define a function called move_down()")
-        self.assertIn("def move_left():",self.getEditorText(), "Define a function called move_left()")
-        self.assertIn("t.color",self.getEditorText(), "Change the color of the turtle")
-        self.assertIn('turtle.onkey(move_left,"Left")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_left()")
-        self.assertIn('turtle.onkey(move_down,"Down")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_down()")
-
-myTests().main()
-  </tests>    
-</program>
-</activity>
-
-  <p><term>Local variables</term> are variables that are defined inside a function and can only be used within that function. 
-  <term>Global variables</term> are variables that are defined outside of any function and can be used anywhere in the program.
-  In Python, if you change a variable using assignment (<c>=</c>) inside a function, it becomes a local variable. If you want to refer to 
-  a global variable, you need to declare that variable as <c>global</c> before using it, usually in the first line of the function definition. 
-  Another option is to pass and return the variable as a parameter to the function. 
-  </p>
-
-  <program language="python">
-      <code>
-# Global variable
-score = 0
-
-def increase_score():
-    global score       # Declare that we are using the global variable
-    amount = 5         # amount is a local variable
-    score += amount    # Increase the global score by amount
-</code>
-</program>
-
-<activity label="globalVariable">
-  <statement>
-    <p>
-      Try running the code below to see the error where score is assumed to be a local variable,
-      and the global variable score is not changed. 
-      Add the line <c>global score</c> in the first line of the <c>increase_score()</c> function to fix the error. 
-    </p>
-  </statement>
-  <program interactive="activecode" language="python">
-    <code>
-# Global variable
-score = 0
-
-# TODO: Run to see that score is not changing. 
-# Declare score as global in the function to fix the error.
-def increase_score():
-    amount = 10         # amount is a local variable
-    score = amount      # Change score to amount 
-      
-print("Score before increase:", score)
-increase_score()
-print("Score after increase:", score)
-increase_score()
-print("Score after increase:", score)
-    </code>
-    <tests>
-from unittest.gui import TestCaseGui
-
-class myTests(TestCaseGui):
-    def test1(self):
-        self.assertIn("global score",self.getEditorText(), "Add global score in the first line of the increase_score() function")
-        self.assertIn("10",self.getOutput(), "Score should be 10 after the first call to increase_score()")
-       
-myTests().main()
-    </tests>
-    </program>
-    </activity>
-
-    <p>Let's create a whack-a-mole game where the turtle randomly moves on the screen, and the user tries to catch it
-      with mouse clicks. This game will use a global score variable.  </p>
-  
-  <activity label="turtleWhackAMole">
-    <statement>
-      <p>
-        Create a whack-a-mole game where the turtle randomly moves on the screen, and the user tries to catch it
-        with mouse clicks. Use a global score variable to keep track of how many times the turtle is caught.
-        The turtle will stop after 40 moves, so try to catch the turtle as many times as you can before it stops!
-      </p>
-      <p>Optional enhancements: change the colors with each move, increase the speed if the turtle is caught! </p>
-    </statement>
-
-    <program interactive="activecode" language="python">
-      <code>
-import turtle
-import random
-
-t = turtle.Turtle()
-t.shape("turtle")
-t.color("green")
-timer = 0
-
-score = 0
-
-# click_handler is called when the user tries to click on the turtle
-def click_handler(x,y):
-    print("You got me at", x, y)
-    # TODO: Increment the score variable and print it (remember to make it global!)
-  
-
-# move is called every 500 milliseconds to move the turtle to a new random location
-def move():
-    global timer
-    # TODO:Use the random.randint() function to choose random x and y coordinates between -200 and 200
-  
-    # TODO: Call t's goto function with the random coordinates to move the turtle 
-
-    # Call move again in 500 milliseconds (reduce 500 to make faster)
-    if timer &lt; 40: # stop after 40 moves
-       turtle.ontimer(move, 500)
-       timer += 1
-    
-move()
-t.onclick(click_handler)
-      </code>
-      <tests>
-from unittest.gui import TestCaseGui
-
-class myTests(TestCaseGui):
-    def test1(self):
-        self.assertIn("global score",self.getEditorText(), "Add global score in the click_handler() function")
-        self.assertIn("score +=",self.getEditorText(), "Increment the global score variable in click_handler()")
-        self.assertIn("random.randint(-200,200)",self.getEditorText().replace(" ", ""), "Use random.randint(-200, 200) to choose random x and y coordinates")
-        self.assertIn("t.goto",self.getEditorText(), "Use t.goto(x, y) to move the turtle to the random coordinates")
-
-myTests().main()
-      </tests>
-    </program>
-    </activity>
-  
-  </subsection>
     
     <subsection xml:id="return-values">
     <title>Return Values</title>
@@ -1869,6 +1635,240 @@ myTests().main()
   </program>
 </activity>
     
+  </subsection>
+
+   <subsection xml:id="appinventor-quiz-app2">
+      <title>App Inventor Quiz App Project Continued (Optional)</title>
+
+      <p>If you did the optional 
+   <url href="appinventor-quiz-app.html">App Inventor Quiz App Tutorial</url> in the last lesson,
+   you can now finish sections 3.8.4-3.8.5 to add a search procedure.
+    </p>
+      
+      </subsection>
+
+      <subsection xml:id="event-handlers">
+    <title>Event-Handling Functions and Global Variables (Optional)</title>
+
+    <idx>event handling</idx>
+    <idx>global variables</idx>
+ 
+
+    <p>
+      Event-handling functions are called when an event occurs in a graphical user interface (GUI), 
+      for example when a button is clicked or a key is pressed. Python turtles can respond to mouse clicks 
+      and keyboard presses with some fun event-handlers called <c>onscreenclick</c> and <c>onkey</c> that
+      call a specified function like <c>myFunction</c> when a mouse or key press event occurs. This is the only place
+      where () are not used after a function name in Python.
+    </p>
+
+    <program language="python">
+      <code>
+# Call myFunction when the mouse is clicked on the screen
+# myFunction must take 2 parameters for the x and y coordinates of the click
+turtle.onscreenclick(myFunction)  
+
+# Call myFunction when the "Up" arrow key is pressed
+turtle.onkey(myFunction, "Up")
+turtle.listen()  # Start listening for key presses
+
+# Call myFunction after 500 milliseconds (reduce to make faster)
+turtle.ontimer(myFunction, 800)
+      </code>
+    </program>
+
+    <p>If we want the turtle to turn with the arrows on the keyboard, we need to use the <c>setheading</c> function 
+      which turns the turtle to a specific north, south, east, or west direction. Since the Python turtles always start
+      facing east or to the right of the screen, that is set to <c>setheading(0)</c> for 0 degrees. From their starting position, the turtle can be turned to face 
+      north/up with <c>setheading(90)</c>, west/left with <c>setheading(180)</c>, and south/down with <c>setheading(270)</c>. 
+      In the code below, event handling functions have been written for the mouse click and the up and right arrow keys. 
+      Try adding the event handling functions for the down and left arrow keys to move the turtle in those directions.
+    </p>
+ 
+    <activity label="turtleEventHandlers">
+      <statement>
+        <p>
+          Try the event-handling functions below to move the turtle around the screen with mouse clicks and arrow keys.
+          Note that when you click on Run in Runestone, the turtle window will only respond for 20 seconds. You will
+          need to click inside the turtle window to give it focus before pressing the arrow keys. </p>
+       <p>
+          Change the onclick_handler to change the turtle's color. Change it back when the up arrow is pressed.
+          Add the functions for the "Down" and "Left" arrow keys using the <c>setheading</c> function with 270 and 180 degrees.
+          Draw something fun with the turtle and the keyboard arrow keys!
+        </p>
+      </statement>
+<program interactive="activecode" language="python">
+  <code>
+import turtle
+
+t = turtle.Turtle()
+t.shape("turtle")
+
+# Try clicking on the screen away from the turtle to move it to a new location
+# This will work for 20 seconds.
+def click_handler(x, y):
+    t.goto(x, y)
+    # 1. TODO: change the turtle color
+
+# This will call the click_handler function when the mouse is clicked on the screen
+turtle.onscreenclick(click_handler)
+
+# Define movement functions
+def move_right():
+    t.setheading(0)    # Face straight right
+    t.forward(20)
+
+def move_up():
+    t.setheading(90)   # Face straight up
+    t.forward(20)
+    # 2. TODO: Add code to change the turtle color back 
+
+
+# 3. TODO: Define move_left (180 degrees) and move_down (270 degrees) functions 
+
+
+
+turtle.onkey(move_right, "Right")    
+turtle.onkey(move_up, "Up")
+# 4. TODO: Add onkey calls for move_left and move_down functions
+
+
+turtle.listen()    
+  </code>  
+  <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("def move_down():",self.getEditorText(), "Define a function called move_down()")
+        self.assertIn("def move_left():",self.getEditorText(), "Define a function called move_left()")
+        self.assertIn("t.color",self.getEditorText(), "Change the color of the turtle")
+        self.assertIn('turtle.onkey(move_left,"Left")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_left()")
+        self.assertIn('turtle.onkey(move_down,"Down")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_down()")
+
+myTests().main()
+  </tests>    
+</program>
+</activity>
+
+  <p><term>Local variables</term> are variables that are defined inside a function and can only be used within that function. 
+  <term>Global variables</term> are variables that are defined outside of any function and can be used anywhere in the program.
+  In Python, if you change a variable using assignment (<c>=</c>) inside a function, it becomes a local variable. If you want to refer to 
+  a global variable, you need to declare that variable as <c>global</c> before using it, usually in the first line of the function definition. 
+  Another option is to pass and return the variable as a parameter to the function. 
+  </p>
+
+  <program language="python">
+      <code>
+# Global variable
+score = 0
+
+def increase_score():
+    global score       # Declare that we are using the global variable
+    amount = 5         # amount is a local variable
+    score += amount    # Increase the global score by amount
+</code>
+</program>
+
+<activity label="globalVariable">
+  <statement>
+    <p>
+      Try running the code below to see the error where score is assumed to be a local variable,
+      and the global variable score is not changed. 
+      Add the line <c>global score</c> in the first line of the <c>increase_score()</c> function to fix the error. 
+    </p>
+  </statement>
+  <program interactive="activecode" language="python">
+    <code>
+# Global variable
+score = 0
+
+# TODO: Run to see that score is not changing. 
+# Declare score as global in the function to fix the error.
+def increase_score():
+    amount = 10         # amount is a local variable
+    score = amount      # Change score to amount 
+      
+print("Score before increase:", score)
+increase_score()
+print("Score after increase:", score)
+increase_score()
+print("Score after increase:", score)
+    </code>
+    <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("global score",self.getEditorText(), "Add global score in the first line of the increase_score() function")
+        self.assertIn("10",self.getOutput(), "Score should be 10 after the first call to increase_score()")
+       
+myTests().main()
+    </tests>
+    </program>
+    </activity>
+
+    <p>Let's create a whack-a-mole game where the turtle randomly moves on the screen, and the user tries to catch it
+      with mouse clicks. This game will use a global score variable.  </p>
+  
+  <activity label="turtleWhackAMole">
+    <statement>
+      <p>
+        Create a whack-a-mole game where the turtle randomly moves on the screen, and the user tries to catch it
+        with mouse clicks. Use a global score variable to keep track of how many times the turtle is caught.
+        The turtle will stop after 40 moves, so try to catch the turtle as many times as you can before it stops!
+      </p>
+      <p>Optional enhancements: change the colors with each move, increase the speed if the turtle is caught! </p>
+    </statement>
+
+    <program interactive="activecode" language="python">
+      <code>
+import turtle
+import random
+
+t = turtle.Turtle()
+t.shape("turtle")
+t.color("green")
+timer = 0
+
+score = 0
+
+# click_handler is called when the user tries to click on the turtle
+def click_handler(x,y):
+    print("You got me at", x, y)
+    # TODO: Increment the score variable and print it (remember to make it global!)
+  
+
+# move is called every 500 milliseconds to move the turtle to a new random location
+def move():
+    global timer
+    # TODO:Use the random.randint() function to choose random x and y coordinates between -200 and 200
+  
+    # TODO: Call t's goto function with the random coordinates to move the turtle 
+
+    # Call move again in 500 milliseconds (reduce 500 to make faster)
+    if timer &lt; 40: # stop after 40 moves
+       turtle.ontimer(move, 500)
+       timer += 1
+    
+move()
+t.onclick(click_handler)
+      </code>
+      <tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        self.assertIn("global score",self.getEditorText(), "Add global score in the click_handler() function")
+        self.assertIn("score +=",self.getEditorText(), "Increment the global score variable in click_handler()")
+        self.assertIn("random.randint(-200,200)",self.getEditorText().replace(" ", ""), "Use random.randint(-200, 200) to choose random x and y coordinates")
+        self.assertIn("t.goto",self.getEditorText(), "Use t.goto(x, y) to move the turtle to the random coordinates")
+
+myTests().main()
+      </tests>
+    </program>
+    </activity>
+  
   </subsection>
 
   <subsection xml:id="coding-challenge-draw-functions">
