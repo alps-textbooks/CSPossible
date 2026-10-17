@@ -330,7 +330,7 @@ song()
        <choices randomize="yes">
         <choice>
           <statement>
-            <p>I like to eat eat eat</p>
+            <p>I like to eat, eat, eat</p>
           </statement>
 
           <feedback>
@@ -343,7 +343,7 @@ song()
 
         <choice>
           <statement>
-            <p>I like to eat eat eat fruit fruit</p>
+            <p>I like to eat, eat, eat, fruit fruit</p>
           </statement>
 
           <feedback>
@@ -371,7 +371,7 @@ apples and bananas!</pre></p>
         <choice correct="yes">
           <statement>
             <p><pre>
-I like to eat eat eat
+I like to eat, eat, eat
 apples and bananas!
 apples and bananas!</pre></p>
           </statement>
@@ -533,7 +533,7 @@ myTests().main()
 </p>
 <p>
   For example, here is a procedure called <c>forward</c> with a parameter variable called <c>pixels</c> that we used with turtles 
-  with procedure calls like <c>forward(50)</c> telling it to move forward 40 or 100 pixels. The value 40 is the argument that is passed to the parameter variable <c>pixels</c> in the procedure definition.
+  with procedure calls like <c>forward(40)</c> telling it to move forward 40 pixels. The value 40 is the argument that is passed to the parameter variable <c>pixels</c> in the procedure definition.
 </p>
 
   <image source="_static/Unit3images/procedure-defn-call.png" alt="Parameter and Argument" width="90%"/>
@@ -1377,7 +1377,7 @@ if ( IsFound(morningList, child)  or
       </p>
     </note>
 
-    <p><term>Modularity</term> means dividing a program into smaller independent parts. Each part or 
+    <p><term>Modularity</term> means dividing a program into smaller independent parts. Each part 
        does one specific job. This is a great way to manage complexity because it divides the problem into more manageable
        parts that make it easier to design, test, and maintain. It also makes the code easier to understand.
       </p>
@@ -1624,10 +1624,15 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
-        self.assertIn("def print_report(name, score):", self.getEditorText(), "Define the print_report function with parameters name and score")
-        count = self.getEditorText().count("print_report(")
+        # remove comments
+        actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )
+        self.assertIn("def print_report(name, score):", actual, "Define the print_report function with parameters name and score")
+        count = actual.count("print_report(")
         self.assertLessEqual(4, count, "Call print_report at least 3 times")
-        count = self.getEditorText().count("60")
+        count = actual.count("60")
         self.assertEqual(1, count, "Use print_report instead of repeated lines of code with score &gt;= 60")
 
 myTests().main()
@@ -1947,11 +1952,17 @@ from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
     def test1(self):
+        # remove comments
+        actual = "\n".join(
+                       line for line in self.getEditorText().splitlines()
+                      if line.strip() and not line.lstrip().startswith("#")
+                      )    
         code = self.getEditorText().replace(" ", "")
+
         self.assertIn("drawPolygon(sides,size,color,fill):", code, "Define the drawPolygon(sides,size,color,fill) function")
         self.assertIn("range(sides):", code, "Use range(sides) in the loop in the drawPolygon function")
         self.assertIn("if fill", self.getEditorText(), "Use if statements to check if fill is True in the functions")
-        count = code.count("drawPolygon(")
+        count = actual.count("drawPolygon(")
         self.assertLessEqual(2, count, "Call drawPolygon at least 2 times")
         self.assertIn("drawCircle(radius,color,fill):", code, "Define the drawCircle(radius, color, fill) function")
         self.assertIn("tina.circle(radius)", code, "Use the radius parameter in the drawCircle function")
@@ -2043,7 +2054,7 @@ myTests().main()
         </match>
         <match>
           <premise>procedural abstraction</premise>
-          <response>grouping related code into procedures that can be called by name, hiding detailed implementationsteps from the rest of the program</response>
+          <response>grouping related code into procedures that can be called by name, hiding detailed implementation steps from the rest of the program</response>
         </match>
         <match>
           <premise>modularity</premise>
