@@ -38,13 +38,24 @@
   <xi:include href="./functions-mcq-exercises.ptx" />
   <xi:include href="./functions-mixedup-code-practice.ptx" />
   <xi:include href="./functions-coding-practice.ptx" />
-  <xi:include href="./appinventor-quiz-app.ptx" /> 
+  <xi:include href="./unit3-lists-project.ptx" />
+  <xi:include href="./unit3-procedures-project.ptx" />
+  <xi:include href="./appinventor-quiz-app.ptx" />
+  <xi:include href="./topic3a-1-data-compression.ptx" />
+  <xi:include href="./topic3a-2-simulations.ptx" />
+  <xi:include href="./topic3a-3-search-algorithms.ptx" />
+  <!--
+  <xi:include href="./topic3a-4-algorithm-efficiency.ptx" />
+  <xi:include href="./topic3a-5-undecidable-problems.ptx" />
+  <xi:include href="./topic3a-6-distr-computing.ptx" />
+  <xi:include href="./topic3a-7-crowdsourcing.ptx" />
+-->
  <!--
   <xi:include href="./unit3b-functions-mcq-exercises.ptx" />
   <xi:include href="./unit3b-functions-mixedup-code-practice.ptx" />
   <xi:include href="./unit3b-functions-coding-practice.ptx" />
   <xi:include href="./unit3-lists-project.ptx" />
-  <xi:include href="./unit3-functions-project.ptx" />
+  <xi:include href="./unit3-procedures-project.ptx" />
 
   -->
   
