@@ -117,7 +117,15 @@ print("Number of tails:", tails)
 print("Percentage of heads:", (heads / 20) * 100, "%")
 </code>
 <tests>
+from unittest.gui import TestCaseGui
 
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("range(100)", code, "Change the range to 100")
+        self.assertIn("heads/100", code, "Calculate the percentage of heads with 100 flips correctly")
+
+myTests().main()
 </tests>
 </program>
 </activity>
