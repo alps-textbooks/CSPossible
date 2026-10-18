@@ -6,7 +6,7 @@
 
  <introduction>
     <p>
-    Search is an important area of study in computer science. Just think of how often you search for information on the Internet using Google or some other search engine. It's remarkable how much information Google's algorithms search through and how fast they deliver the results.
+    Search algorithms are an important area of study in computer science. Just think of how often you search for information on the Internet using Google or some other search engine. It's remarkable how much information Google's algorithms search through and how fast they deliver the results.
     </p>
 
     <video youtube="0eKVizvYSUQ" label="video-how-google-search-works"/>
@@ -76,10 +76,10 @@
 </p>
 
 <p>
-    For a list of 16 items, you need a maximum of 5 guesses to find the secret number, because 2^5 &gt; 16. For a list of 64 numbers you need a maximum of 7 guesses, since 2^7 &gt; 64. For a list of 50 numbers, you need a maximum of 6 guesses, since 2^6 &gt; 50.
+    For a list of 16 items, you need a maximum of 5 guesses to find the secret number, because <m>2^5</m> &gt; 16. For a list of 64 numbers you need a maximum of 7 guesses, since <m>2^7</m> &gt; 64. For a list of 50 numbers, you need a maximum of 6 guesses, since <m>2^6</m> &gt; 50.
 </p>
 <p>
-    To find the maximum number of guesses needed to find a number in a nonempty list of N items, you need to find the smallest integer k such that 2^k &gt; N. The maximum number of guesses is k.
+    To find the maximum number of guesses needed to find a number in a nonempty list of N items, you need to find the smallest integer k such that <m>2^k</m> &gt; N. The maximum number of guesses is k.
 </p>
 
 <p>
@@ -91,7 +91,7 @@
 <tabular top="minor" bottom="minor" left="minor" right="minor" valign="top" width="50%">					
 <col width="50%" halign="center" />
 <col width="50%" halign="center" />
-<row header="yes"><cell>x</cell><cell>2^x</cell>	</row>
+<row header="yes"><cell>x</cell><cell><m>2^x</m></cell>	</row>
 <row>	<cell>0</cell><cell>1</cell>	</row>
 <row>	<cell>1</cell><cell>2</cell>	</row>
 <row>	<cell>2</cell><cell>4</cell>	</row>
@@ -116,16 +116,16 @@
     <choices>
         <choice ><statement><p>100</p></statement><feedback><p>100 is the worst-case number of guesses when you guess each number in order.</p></feedback></choice>
         <choice ><statement><p>50</p></statement><feedback><p>50 is the average number of steps when you guess each number in order.</p></feedback></choice>
-        <choice correct="yes"><statement><p>7</p></statement><feedback><p>2^7 = 128, so 7 guesses can search at most 127 numbers. This is enough to search a range of 100 numbers.</p></feedback></choice>
-        <choice ><statement><p>6</p></statement><feedback><p>2^6 = 64, so 6 guesses can search at most 63 numbers. Because 100 is greater than 63, 6 guesses are not always enough for the worst-case scenario.</p></feedback></choice>
+        <choice correct="yes"><statement><p>7</p></statement><feedback><p><m>2^7 = 128</m>, so 7 guesses can search at most 127 numbers. This is enough to search a range of 100 numbers.</p></feedback></choice>
+        <choice ><statement><p>6</p></statement><feedback><p><m>2^6 = 64</m>, so 6 guesses can search at most 63 numbers. Because 100 is greater than 63, 6 guesses are not always enough for the worst-case scenario.</p></feedback></choice>
     </choices>
 </activity>
 
 <activity label="3a-1-guessing-game-500-choose">
 <statement><p>To guess a number between 1 and 500 using a binary search algorithm, what is the maximum number of guesses the algorithm would take?</p></statement>
 <choices>
-<choice ><statement><p>8</p></statement><feedback><p>2^8 = 256, so 8 guesses can search at most 255 items. With 500 items, 8 guesses are not enough to guarantee finding the target.</p></feedback></choice>
-<choice correct="yes"><statement><p>9</p></statement><feedback><p>2^9 = 512, which is greater than 500. Binary search works by dividing the search interval in half with every single guess. The worst-case scenario requires finding the minimum number of steps (k) such that 2^k &gt; N, where N is the size of the range (500).</p></feedback></choice>
+<choice ><statement><p>8</p></statement><feedback><p><m>2^8 = 256</m>, so 8 guesses can search at most 255 items. With 500 items, 8 guesses are not enough to guarantee finding the target.</p></feedback></choice>
+<choice correct="yes"><statement><p>9</p></statement><feedback><p><m>2^9 = 512</m>, which is greater than 500. Binary search works by dividing the search interval in half with every single guess. The worst-case scenario requires finding the minimum number of steps (k) such that <m>2^k</m> &gt; N, where N is the size of the range (500).</p></feedback></choice>
 <choice ><statement><p>250</p></statement><feedback><p>This represents the average number of guesses for a linear search (sequential search), where items are checked one by one from beginning to end (N / 2).</p></feedback></choice>
 <choice ><statement><p>500</p></statement><feedback><p>This represents the maximum (worst-case) number of guesses for a linear search, where the target number happens to be the last number checked (N).</p></feedback></choice>
 </choices>
@@ -297,7 +297,7 @@ A sorted list of numbers contains 500 elements. Which of the following is closes
 </p></statement>
 <choices>
 <choice ><statement><p>500</p></statement><feedback><p>This is the number of elements that might be examined in a linear search.</p></feedback></choice>
-<choice correct="yes"><statement><p>10</p></statement><feedback><p>2^9 = 512, which is greater than or equal to to 500.</p></feedback></choice>
+<choice correct="yes"><statement><p>10</p></statement><feedback><p><m>2^9 = 512</m>, which is greater than or equal to to 500.</p></feedback></choice>
 <choice ><statement><p>50</p></statement><feedback><p></p></feedback></choice>
 <choice ><statement><p>250</p></statement><feedback><p></p></feedback></choice>
 </choices>
