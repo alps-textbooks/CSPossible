@@ -239,7 +239,7 @@ print("Percentage of heads:", (heads / 20) * 100, "%")
 </p>
   <p>Which of the following could be used to replace steps 3 and 4 so that the algorithm works as intended?</p></statement>
 <choices>
-<choice ><statement><p>Step 3: Increase the value of position by 1.</p>
+<choice correct="yes"><statement><p>Step 3: Increase the value of position by 1.</p>
 <p>Step 4: Repeat steps 2 and 3 until the value of position is greater than n.</p></statement><feedback><p></p></feedback></choice>
 <choice ><statement><p>Step 3: Increase the value of position by 1.</p><p>Step 4: Repeat steps 2 and 3 until the value of count is greater than 100.</p></statement><feedback><p></p></feedback></choice>
 <choice ><statement><p>Step 3: Repeat step 2 until the value of position is greater than n.</p><p>Step 4: Increase the value of count by 1.</p></statement><feedback><p></p></feedback></choice>
