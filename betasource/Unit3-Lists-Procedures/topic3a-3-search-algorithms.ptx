@@ -76,10 +76,10 @@
 </p>
 
 <p>
-    For list of 16 items, you need a maximum of 4 guesses to find the secret number, because 2^4 = 16. For a list of 64 numbers you need a maximum of 6 guesses, since 2^6 = 64. For a list of 50 numbers, you need a maximum of 6 guesses, since 2^6 = 64, which is enough to cover 50 numbers.
+    For a list of 16 items, you need a maximum of 5 guesses to find the secret number, because 2^5 &gt; 16. For a list of 64 numbers you need a maximum of 7 guesses, since 2^7 &gt; 64. For a list of 50 numbers, you need a maximum of 6 guesses, since 2^6 &gt; 50.
 </p>
 <p>
-    To find the maximum number of guesses needed to find a number in a list of N items, you need to find the smallest integer k such that 2^k &gt;= N. The maximum number of guesses is k.
+    To find the maximum number of guesses needed to find a number in a nonempty list of N items, you need to find the smallest integer k such that 2^k &gt; N. The maximum number of guesses is k.
 </p>
 
 <p>
@@ -108,7 +108,7 @@
 </table>
 
 <p>
-    So, when N = 100, find the first number in the right column that's greater than or equal to 100 and the number in the left column will tell you how many guesses you need.
+    So, when N = 100, find the first number in the right column that's greater than 100 and the number in the left column will tell you how many guesses you need.
 </p>
 
 <activity label="3a-1-guessing-game-100-choose">
@@ -116,16 +116,16 @@
     <choices>
         <choice ><statement><p>100</p></statement><feedback><p>100 is the worst-case number of guesses when you guess each number in order.</p></feedback></choice>
         <choice ><statement><p>50</p></statement><feedback><p>50 is the average number of steps when you guess each number in order.</p></feedback></choice>
-        <choice correct="yes"><statement><p>7</p></statement><feedback><p>2^7 = 128, which is enough to search a range up to 128 numbers.</p></feedback></choice>
-        <choice ><statement><p>6</p></statement><feedback><p>2^6 = 64, which is enough to search a range of up to 64 numbers. Because 100 is greater than 64, 6 guesses are not always enough for the worst-case scenario.</p></feedback></choice>
+        <choice correct="yes"><statement><p>7</p></statement><feedback><p>2^7 = 128, so 7 guesses can search at most 127 numbers. This is enough to search a range of 100 numbers.</p></feedback></choice>
+        <choice ><statement><p>6</p></statement><feedback><p>2^6 = 64, so 6 guesses can search at most 63 numbers. Because 100 is greater than 63, 6 guesses are not always enough for the worst-case scenario.</p></feedback></choice>
     </choices>
 </activity>
 
 <activity label="3a-1-guessing-game-500-choose">
 <statement><p>To guess a number between 1 and 500 using a binary search algorithm, what is the maximum number of guesses the algorithm would take?</p></statement>
 <choices>
-<choice ><statement><p>8</p></statement><feedback><p>2^8 = 256, which can only cover up to 256 items. If the search range is 500, 8 guesses will leave up to 2 remaining choices in the worst case, requiring a 9th guess to guarantee finding the target.</p></feedback></choice>
-<choice correct="yes"><statement><p>9</p></statement><feedback><p>2^9 = 512, which is enough to cover 500 items.Binary search works by dividing the search interval in half with every single guess. The worst-case scenario requires finding the minimum number of steps (k) such that 2^k &gt;= N, where N is the size of the range (500).</p></feedback></choice>
+<choice ><statement><p>8</p></statement><feedback><p>2^8 = 256, so 8 guesses can search at most 255 items. With 500 items, 8 guesses are not enough to guarantee finding the target.</p></feedback></choice>
+<choice correct="yes"><statement><p>9</p></statement><feedback><p>2^9 = 512, which is greater than 500. Binary search works by dividing the search interval in half with every single guess. The worst-case scenario requires finding the minimum number of steps (k) such that 2^k &gt; N, where N is the size of the range (500).</p></feedback></choice>
 <choice ><statement><p>250</p></statement><feedback><p>This represents the average number of guesses for a linear search (sequential search), where items are checked one by one from beginning to end (N / 2).</p></feedback></choice>
 <choice ><statement><p>500</p></statement><feedback><p>This represents the maximum (worst-case) number of guesses for a linear search, where the target number happens to be the last number checked (N).</p></feedback></choice>
 </choices>
