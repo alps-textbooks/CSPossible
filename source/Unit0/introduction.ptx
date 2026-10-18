@@ -51,12 +51,12 @@
 <subsection xml:id="authors">
 <title>Authors</title>
       <p>This course was created by Dr. Beryl Hoffman, Professor of Computer Science at Elms College, 
-      MA, to follow the newest College Board AP CSP guidelines with the help of many teachers.
+      MA, to follow the newest College Board AP CSP guidelines with the help of AP CSP teachers. Dr. Kate McDonnell 
+      from Cherry Creek Schools in Colorado contributed greatly to the development of this course with 
+      projects, unit tests for autograding, optional CSP lessons, and teacher resources.  
+      Leigh Anne Fitz of Virginia Beach Public Schools created projects and solutions for teachers.
       Some materials were borrowed and revised from Mobile CSP, CSAwesome, and Dr. Barb Ericson's 
-      AP CSP and Python 4 Everybody courses on Runestone. Special thanks to Leigh Anne Fitz of Virginia Beach Public Schools for 
-      creating the solutions for teachers and for testing and debugging the beta version, Kate McDonnell 
-      from Cherry Creek Schools in Colorado and Jennifer Rosato of Univerity of Minnesota, and all of the beta
-      version testers!   
+      AP CSP and Python 4 Everybody courses on Runestone.  Thank you to all of the beta version testers!
       </p>
 </subsection>
 
