@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3a-data-representation-and-compression">
+  <time minutes="90" />
+  <title>Digital Information and Data Compression</title>
+  <introduction>
+    <p>
+      Solving problems with computers often involves working with large amounts of data. In this lesson we explore how to reduce the size of data to save storage space or transmission time.
+    </p>    
+    <p>
+      Data compression is the process of reducing the size of data to save storage space or transmission time. It is an important concept in computer science and is used in many applications, such as image and video compression.
+    </p>
+    <p>
+      In this lesson we continue the exploration of bits and binary numbers that we began in Unit 1. In this case we learn how to use bits, 1s and 0s, to represent images.
+    </p>
+  </introduction>
+
+
+
+<subsection xml:id="unit3a-data-representation">
+<title>Data Representation</title>
+<p>
+  All data in a computer is represented in binary, using 1s and 0s. How it is represented depends on the type of data. For example, text is represented using ASCII, and images are represented using pixels.
+</p>
+
+<p>
+  All data is stored in bits, which are the smallest unit of data in a computer. A <term>bit</term> can have a value of either 0 or 1. A group of 8 bits is called a <term>byte</term>, which is 8 bits. A byte can represent 256 different values, from 0 to 255. For example, the letter "A" is represented as 01000001 in binary, which is 65 in decimal.
+</p>
+
+<p>
+  <term>American Standard Code for Information Interchange (ASCII)</term> is character code that includes 128 characters. It allows us to represent text in binary format. Check out <url href="http://sticksandstones.kstrom.com/appen.html">this ASCII to binary table</url> to see how each character is represented in binary. For example, the letter "A" is represented as 01000001 in binary.
+</p>
+
+    <activity label="fillin-">
+      <statement>
+        <p>Decode this message by converting it from binary to ASCII:</p>
+<pre>
+01000001 01010000 00100000 01000011 01101111 01101101 01110000 
+01110101 01110100 01100101 01110010 00100000 01010011 01100011 
+01101001 01100101 01101110 01100011 01100101 00100000 01010010 
+01101111 01100011 01101011 01110011 00100001
+</pre>
+        <p>
+          Hint: You will need to convert from binary to decimal and then from decimal to ASCII. You can use the following charts to help you:</p>
+        <p>
+          <fillin answer="AP Computer Science Rocks!" mode="string"/>
+        </p>
+      </statement>
+
+
+      <evaluation>
+        <evaluate>
+          <test>
+            <strcmp use-answer="yes"/>
+            <feedback></feedback>
+          </test>
+
+          <test>
+            <feedback>Use the ASCII to binary table to help you.</feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </activity>
+
+
+<p>
+  ASCII is one type of character code, but 128 characters is not enough for today’s computers, which can represent Chinese, Hindi, and scripts from many other languages. Today’s computers use a system called Unicode, which has more than 100,000 different characters and covers more than 100 different scripts (languages). 
+</p>
+
+<activity label="unicode-characters">
+<title>Unicode Characters</title>
+<statement>
+<p>
+Use this <url href="https://pages.ucsd.edu/~dkjordan/resources/unicodemaker.html">Unicode converter</url> to convert these characters to their hexadecimal Unicode values.
+
+</p>
+<table>
+<tabular>
+<col width="40%" halign="left" />
+<col width="10%" halign="center" />
+<col width="50%" halign="left" />
+
+<row header="yes">
+<cell bottom="minor">Language</cell>
+<cell bottom="minor">Character</cell>
+<cell bottom="minor">Hexadecimal Value</cell>
+</row>
+<row>
+<cell>Chinese </cell>
+<cell>国</cell>
+<cell><fillin answer="56FD" mode="string" /></cell>
+</row>
+<row>
+<cell>Chinese </cell>
+<cell>话</cell>
+<cell><fillin answer="8BDD" mode="string" /></cell>
+</row>
+<row>
+<cell>Greek </cell>
+<cell>ο</cell>
+<cell><fillin answer="03BF" mode="string" /></cell>
+</row>
+<row>
+<cell>Greek </cell>
+<cell>ι</cell>
+<cell><fillin answer="03B9" mode="string" /></cell>
+</row>
+<row>
+<cell>Russian</cell>
+<cell>Я</cell>
+<cell><fillin answer="042F" mode="string" /></cell>
+</row>
+<row>
+<cell>Russian</cell>
+<cell>ю</cell>
+<cell><fillin answer="044E" mode="string" /></cell>
+</row>
+</tabular>
+</table>
+</statement>
+<evaluation>
+<evaluate>
+<test>
+<strcmp use-answer="yes" />
+<feedback>Correct! </feedback>
+</test>
+<test>
+<feedback>Use the Unicode converter to figure it out!</feedback>
+</test>
+</evaluate>
+<evaluate>
+<test>
+<strcmp use-answer="yes" />
+<feedback>Correct! </feedback>
+</test>
+<test>
+<feedback>Use the Unicode converter to figure it out!</feedback>
+</test>
+</evaluate>
+<evaluate>
+<test>
+<strcmp use-answer="yes" />
+<feedback>Correct! </feedback>
+</test>
+<test>
+<feedback>Use the Unicode converter to figure it out!</feedback>
+</test>
+</evaluate>
+<evaluate>
+<test>
+<strcmp use-answer="yes" />
+<feedback>Correct! </feedback>
+</test>
+<test>
+<feedback>Use the Unicode converter to figure it out!</feedback>
+</test>
+</evaluate>
+<evaluate>
+<test>
+<strcmp use-answer="yes" />
+<feedback>Correct! </feedback>
+</test>
+<test>
+<feedback>Use the Unicode converter to figure it out!</feedback>
+</test>
+</evaluate>
+<evaluate>
+<test>
+<strcmp use-answer="yes" />
+<feedback>Correct! </feedback>
+</test>
+<test>
+<feedback>Use the Unicode converter to figure it out!</feedback>
+</test>
+</evaluate>
+</evaluation>
+</activity>
+
+<p>
+  A <term>pixel</term> (from picture element) is the smallest unit of a digital image or graphic that can be displayed and represented digitally. A pixel is a single point in a image; so it is the smallest controllable element of a picture represented on the screen. Each pixel is represented by a color value, which can be represented in binary.
+</p>
+
+<p>
+  In images and web pages, colors are represented using hexcode for Red, Green, and Blue values. Hexcode represents numbers in base 16. Here’s a color mixer app that lets you explore the different colors that are used in Web pages. See how the hexcode for each color is represented in binary. Check out <url href="https://www.w3schools.com/colors/colors_mixer.asp">this color mixer app</url> to explore colors and their binary representations.
+</p>
+
+<activity label="unit3a-color-codes">
+<title>Common Color Codes</title>
+<statement><p>Check out the color mixer app to explore different color codes.</p></statement>
+<feedback><p>Use the color mixer app to help you.</p></feedback>
+<cardsort>
+<match><premise>Black  </premise><response>Hex: #000000 Binary: 00000000 00000000 00000000</response></match>
+<match><premise>White  </premise><response>Hex: #FFFFFF Binary: 11111111 11111111 11111111</response></match>
+<match><premise>Red    </premise><response>Hex: #FF0000 Binary: 11111111 00000000 00000000</response></match>
+<match><premise>Green  </premise><response>Hex: #00FF00 Binary: 00000000 11111111 00000000</response></match>
+<match><premise>Blue   </premise><response>Hex: #0000FF Binary: 00000000 00000000 11111111</response></match>
+<match><premise>Yellow </premise><response>Hex: #FFFF00 Binary: 11111111 11111111 00000000</response></match>
+<match><premise>Cyan   </premise><response>Hex: #00FFFF Binary: 00000000 11111111 11111111</response></match>
+<match><premise>Magenta</premise><response>Hex: #FF00FF Binary: 11111111 00000000 11111111</response></match>
+</cardsort>
+</activity>
+
+</subsection>
+
+<subsection xml:id="unit3a-data-compression">
+<title>Data Compression</title>
+<p>
+  <term>Data compression</term> is the process of reducing the size of data to save storage space or transmission time. It is an important concept in computer science and is used in many applications, such as image and video compression.
+</p>
+
+<p>A <term>lossless compression algorithm</term> is one in which no data are lost; the original data can be completely recovered. An example of lossless compression is RLE.</p>
+<p>A <term>lossy compression algorithm</term> is one in which some data are lost; the original data cannot be completely restored. An example of lossy compression is JPEG. Lossy data compression algorithms can usually reduce the number of bits stored or transmitted more than lossless compression algorithms.</p>
+
+<p>
+  Important things to know about data compression:
+<ul>
+<li><p>Fewer bits does not necessarily mean less information.</p></li>
+<li><p>The amount of size reduction from compression depends on both the amount of redundancy in the original data representation and the compression algorithm applied.</p></li>
+<li><p>The amount of compression can vary depending on how many bits are used to represent each pixel in the image.</p></li>
+<li><p>The amount of compression also depends on the number of different colors used in the actual image. For our black and white spaceship there were only 2 colors, so there were relatively few color changes and therefore lots of long runs. If it were a colored spaceship, there would be many color changes and therefore fewer long runs. So we would get much less compression.</p></li>
+</ul>
+</p>
+</subsection>
+
+<subsection xml:id="unit3a-image-compression">
+<title>Image Compression</title>
+<p>
+  Images are represented in a computer as a grid of pixels. Each pixel is represented by a color value, which can be represented in binary. The more bits used to represent each pixel, the more colors can be represented, but the larger the image file will be. More bits per pixel means more information, but also more storage space and transmission time. Data compression can be used to reduce the size of image files by reducing the number of bits used to represent each pixel.
+</p>
+
+<p>
+  <term>Image compression</term> is a type of data compression which can reduce the size (number of bits) of transmitted or stored data. There are many different image compression techniques. Some of the most common are: GIF, JPEG, and PNG. 
+  <ul>
+    <li><p>GIF is a lossless compression technique that is best for images with few colors. </p></li>
+    <li><p>JPEG is a lossy compression technique that is best for photographs. </p></li>
+    <li><p>PNG is a lossless compression technique that is best for images with many colors.</p></li>
+  </ul>
+</p>
+
+<p>
+  The image representation technique demonstrated in the video below is known as <term>run-length encoding (RLE)</term> and it is an image compression technique. Image compression is a type of data compression which can reduce the size (number of bits) of transmitted or stored data. RLE compression is an example of lossless compression and illustrates some of the ways that images and other data can be represented with binary numbers.
+</p>
+<video youtube="xn3-BAiaJ1k" label="video-its-all-bits"/>
+
+<p>
+  <term>JPEG</term> is an example of a lossy compression algorithm. JPEG, which uses the file extension .jpg or .jpeg, is the most common format used today to represent images.The JPEG algorithm was created by the Joint Photographic Experts Group (JPEG), hence its name.  The fact that JPEG is a lossy technique means that some of the information present in the image is lost during compression and cannot be recovered. Here is a video lecture on the JPEG compression algorithm. The compression algorithm involves some math, but the video describes just enough of the math so that you can see how JPEG works. The video is a summary of an excellent, more detailed presentation by Randell Heyman -- you should really check out the Heyman video if you are interested in more of the mathematical details.
+</p>
+<video youtube="mKxlrWcvyJs" label="video-jpeg-compression"/>
+
+
+</subsection>
+
+<subsection xml:id="unit3a-more-info">
+<title>Other Types of Digital Data</title>
+
+<p>
+  <term>How do Snapchat filters work?</term> If you or someone you know uses the social media app Snapchat, they have probably used one of those cool filters. But, how exactly do those filters work? Watch the video below to learn more about the algorithm and pixel data behind Snapchat filters.
+</p>
+
+<video youtube="Pc2aJxnmzh0" label="video-snapchat"/>
+
+<p>
+  <term>How are audio files digitized?</term>
+What about audio files? How are they digitized and converted to bits? Watch the following video for a summary of how audio files are converted from analog to digital format. Analog refers to data with values that change continuously, or smoothly, over time, like sound or music files. Analog data is converted to a digital forms, 0s and 1s in binary, using a sampling technique, which means measuring values of the analog signal at regular intervals (usually in time or space) called samples. The samples are measured to figure out the exact bits required to store each sample. The use of digital data to approximate real-world analog data is a great example of abstraction!
+</p>
+
+<video youtube="ALFXrlrnAcI" label="video-analog-to-digital-conversion"/>
+
+<p>
+  Here's a fun activity if you have a computer or tablet with a microphone. Go to <url href="https://academo.org/demos/virtual-oscilloscope/">https://academo.org/demos/virtual-oscilloscope/</url> or a different audio recorder and see the sound waves that your voice can produce. Think about how they would be represented in 0s and 1s.
+</p>
+
+<p>
+  Different audio file extensions compress the audio data in different ways. WAV files are huge because they just store snapshots of digitized values at different points of time with no compression. MP3 formatting compresses audio files by removing parts of the audio signal which the human ear cannot easily hear. They save on space while preserving good audio quality.
+</p>
+
+</subsection>
+
+   <subsection xml:id="unit3a-data-compression-review">
+    <title>Digital Information and Data Compression Review</title>
+
+<activity label="unit3a-data-compression-vocabulary">
+<title>Data Compression Vocabulary</title>
+<statement><p>Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it on its correct definition on the right. Click the "Check Me" button to see if you are correct.</p></statement>
+<feedback><p>Review the vocabulary in this lesson and and try again.</p></feedback>
+<cardsort>
+<match><premise>ASCII</premise><response>A character encoding scheme in which each character is represented by a 7-bit (originally) or 8-bit binary sequence.</response></match>
+<match><premise>bit</premise><response>One single piece of data represented by a 0 or a 1. Short for 'binary digit'.</response></match>
+<match><premise>byte</premise><response>A larger chunk of digital information that consists of 8 bits.</response></match>
+<match><premise>lossless compression</premise><response>Compression in which no data are lost; the original data can be completely recovered.</response></match>
+<match><premise>lossy compression</premise><response>Compression in which some data are lost; the original data cannot be completely restored.</response></match>
+<match><premise>pixel</premise><response>A single physical point in a raster image, short for 'picture element'.</response></match>
+<match><premise>run length encoding</premise><response>A compression algorithm that represents an image in terms of the length of runs of identical pixels.</response></match>
+</cardsort>
+</activity>
+
+<activity label="unit3a-data-compression-choose">
+<statement><p>Which of the following is a true statement about data compression?</p></statement>
+<choices>
+<choice ><statement><p>Sending a compressed version of a file ensures that the contents of the file cannot be intercepted by an unauthorized user.</p></statement><feedback><p></p></feedback></choice>
+<choice correct="yes"><statement><p>There are trade-offs involved in choosing a compression technique for storing and transmitting data.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>Data compression is only useful for files being transmitted over the Internet.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>No matter what compression technique is used, once a data file is compressed, it cannot be restored to its original state.</p></statement><feedback><p></p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-1-data-compression-choose-2">
+<statement><p>Consider the 8-bit binary sequence 01000001. Depending on the context or program reading this byte, it can be interpreted as different types of data. Which of the following statements correctly describes how this single byte can represent different types of information?</p></statement>
+<choices>
+<choice ><statement><p>It inherently contains metadata that forces the computer's CPU to display it only as the capital letter 'A'.</p></statement><feedback><p>A byte is just a sequence of 8 bits (0s and 1s) and does not inherently carry its own type information or metadata unless additional bits or file formats specify it. The exact same sequence of bits can represent text, numbers, or visual data depending entirely on how the interpreting software processes it.</p></feedback></choice>
+<choice correct="yes"><statement><p>It can represent the integer 65 in decimal, the character 'A' in ASCII, or a component value in an RGB color, depending on the software's interpretation and context.</p></statement><feedback><p>Correct! This demonstrates the principle of digital abstraction. The byte 01000001 converts to the decimal number 65. In ASCII, 65 corresponds to the uppercase character 'A'. In a graphics program using 8 bits per color channel, 65 represents a specific intensity level of Red, Green, or Blue.</p></feedback></choice>
+<choice ><statement><p>It must always be converted into a Run-Length Encoding (RLE) sequence before a program can determine whether it represents text, image, or sound data.</p></statement><feedback><p>Run-Length Encoding (RLE) is a lossless compression technique used primarily to reduce data size (such as compressing long runs of identical pixels in an image). Compression is not required for a computer to interpret raw binary data.</p></feedback></choice>
+<choice ><statement><p>It represents an analog signal value that can only be understood by a digital-to-analog audio converter.</p></statement><feedback><p>Binary data is digital, whereas analog data consists of continuous, smooth values (such as natural sound waves). While sampling can convert analog signals into digital bits, this specific byte is not restricted strictly to audio data.</p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-data-compression-jpeg">
+  <statement>
+    <p>Describe what it means to say that JPEG is a lossy compression technique and whether or not it affects the quality of camera pictures.
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+<activity label="unit3a-data-compression-binary-representation">
+  <statement>
+      <p>
+        Give a specific example of a binary sequence that can represent more than one type of data -- e.g., a number, a color, a character -- and describe how to interpret its different values.
+      </p>
+  </statement>
+  <response/>
+</activity>
+
+   </subsection>
+</section>
