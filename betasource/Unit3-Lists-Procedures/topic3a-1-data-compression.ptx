@@ -41,7 +41,8 @@
 01101111 01100011 01101011 01110011 00100001
 </pre>
         <p>
-          Hint: You will need to convert from binary to decimal and then from decimal to ASCII. You can use the following charts to help you:</p>
+          Hint: You will need to convert from binary to decimal and then from decimal to ASCII. You can use this 
+          <url href="http://sticksandstones.kstrom.com/appen.html">this ASCII to binary table</url> to help you:</p>
         <p>
           <fillin answer="AP Computer Science Rocks!" mode="string"/>
         </p>
@@ -186,8 +187,8 @@ Use this <url href="https://pages.ucsd.edu/~dkjordan/resources/unicodemaker.html
 
 <activity label="unit3a-color-codes">
 <title>Common Color Codes</title>
-<statement><p>Check out the color mixer app to explore different color codes.</p></statement>
-<feedback><p>Use the color mixer app to help you.</p></feedback>
+<statement><p>Match the colors to their hex codes using <url href="https://www.w3schools.com/colors/colors_mixer.asp">this color mixer app</url>.</p></statement>
+<feedback><p>Use <url href="https://www.w3schools.com/colors/colors_mixer.asp">this color mixer app</url> to help you.</p></feedback>
 <cardsort>
 <match><premise>Black  </premise><response>Hex: #000000 Binary: 00000000 00000000 00000000</response></match>
 <match><premise>White  </premise><response>Hex: #FFFFFF Binary: 11111111 11111111 11111111</response></match>
