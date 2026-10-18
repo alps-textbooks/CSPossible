@@ -60,6 +60,7 @@
             <ul>
               <li><q>Your password does not contain any numbers.</q></li>
               <li><q>Your password does not contain any uppercase letters.</q></li>
+              <li><q>Your password does not contain any lowercase letters.</q></li>
               <li><q>Your password does not contain any special characters.</q></li>
             </ul>
           </li>
