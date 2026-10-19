@@ -76,6 +76,52 @@
       </li>
     </ul>
 
+    <table xml:id="table-password-check">
+  <title>Password Validation Requirements and Outputs</title>
+  <tabular halign="left">
+    <row header="yes" bottom="medium">
+      <cell>Input</cell>
+      <cell>Output</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Password12!</cell>
+      <cell>Your password is not long enough.</cell>
+    </row>
+    <row bottom="minor">
+      <cell>abcdefghijkl</cell>
+      <cell>
+        <p>Your password does not contain any numbers.</p>
+        <p>Your password does not contain any uppercase letters.</p>
+        <p>Your password does not contain any special characters.</p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>ABCDEFJGHIJLKL123!</cell>
+      <cell>
+        Your password does not contain any lowercase letters.
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>SecurePassword!</cell>
+      <cell>Your password does not contain any numbers.</cell>
+    </row>
+    <row>
+      <cell>SecurePass123!</cell>
+      <cell>Your password is strong.</cell>
+    </row>
+  </tabular>
+</table>
+
+<p>
+  Use the following string methods to check each character in your password:
+</p>
+
+<ul>
+  <li><c>letter.isupper()</c> - returns True if the letter is uppercase</li>
+  <li><c>letter.islower()</c> - returns True if the letter is lowercase</li>
+  <li><c>letter.isdigit()</c> - returns True if the letter is a number</li>
+  <li><c>letter.isalnum()</c> - returns True if the letter is a letter or number, False if it is a special character</li>
+</ul>
 
 <project label="unit3-procedure-project-password-checker">
     <title>Password Checker</title>
@@ -93,9 +139,6 @@
 <program interactive="activecode" language="python">
 <code>
 # Password Checker
-
-# Use this string to check for special characters in the password
-special_characters = " ~`!@#$%^&amp;*()_-+={[}]|\\:;\"\'&gt;,&lt;.?/"
 
 # Define a function check_password with a single parameter that is the user's password
 def ():
@@ -135,15 +178,17 @@ def ():
 
 </code>
 <tests>
+import ast
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
+       
     def findLine(self, lines, target):
         for line in lines:
             if target.replace(" ", "").lower() in line.replace(" ", "").lower():
                 #print(line)
                 return line
-        return "None"
+        return target + " not found"
             
     def remove_comments(self, code):
         lines = code.split("\n")
@@ -165,61 +210,87 @@ class myTests(TestCaseGui):
         inN = 0
 
         for i in range(len(lines)):
-            if "input" in lines[i] and not "#" in lines[i]:
+            if "input" in lines[i]:
                 equals = lines[i].find("=") + 1
                 if inN &lt; len(ins):
-                    try:
-                        float(ins[inN])  # Check if the input can be converted to a float
-                        lines[i] = lines[i][0:equals] + str(ins[inN])
-                    except ValueError:
-                        lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
-                    inN += 1
+                    lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
+                inN += 1
 
-        code = str("\n".join(lines))
+        new_code = str("\n".join(lines))
+
+        #print(new_code)
 
         # Create an isolated scope for the code execution
         scope = {}
 
-        ''' for ebook '''
-        exec(code, scope)
+        exec(new_code, scope)
         output = self.getOutput()
 
-        ind = output.find(inputs) + len(inputs) + 1
-        output = output[ind:].strip()
-        ind = output.find(stars) + len(stars) + 1
-        output = output[ind:]
+        
+        if (stars in output):
+            ind = output.find(inputs) + len(inputs) + 1
+            output = output[ind:].strip()
+            ind = output.find(stars) + len(stars) + 1
+            output = output[ind:]
+        
 
         if (stars in output):
             ind = output.find(stars)
             output = output[0:ind].strip()
         
+        #print(output)
+
         return str(output)
     
     def testOne(self):
         code = self.getEditorText()
         code = self.remove_comments(code)
-        lines = code.replace(" ", "").split("\n")
-
         code_nospaces = code.replace(" ", "")
 
-        #1 input statements
-        input_count = code.count("input(")
-        self.assertLessEqual(4,input_count, "at least 4 input statements")
+        # 4 boolean variables
+        num_false = code_nospaces.count("=False")
+        self.assertLessEqual(4,num_false, "set boolean variables to False at least 4 times")
 
-        #2 count if statements
-        elif_count = code.count("elif ")
-        if_count = code.count("if ") - elif_count
-        self.assertLessEqual(9,if_count, "at least 9 if statements")
+        num_true = code_nospaces.count("=True")
+        self.assertLessEqual(4,num_true, "set boolean variables to True at least 4 times")
 
-        #3 count elif statements
-        self.assertLessEqual(3,elif_count, "at least 3 elif statements")
-
-        #4 count else statements
-        else_count = code_nospaces.count("else:")
-        self.assertLessEqual(8,else_count, "at least 8 else statements")
+        # defines a function with single parameter
+        tree = ast.parse(code)
+        function = next((node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "check_password"), None)
+        self.assertIsNotNone(function, "define a function named check_password")
+        if function is not None:
+            parameters = function.args
+            num_parameters = len(parameters.posonlyargs) + len(parameters.args) + len(parameters.kwonlyargs)
+            num_parameters += int(parameters.vararg is not None) + int(parameters.kwarg is not None)
+            self.assertEqual(num_parameters, 1, "define check_password with a single parameter")
         
-       
+        # For loop
+        line = self.findLine(code.split("\n"), "for")
+        self.assertIn("in", line, "use a for loop to iterate through each letter in the password")
         
+        # too short
+        output = self.run_file(code, "short")
+        self.assertIn("not long enough", output, "check for password length less than 12 characters and print 'Your password is not long enough.'")
+
+        # numbers
+        output = self.run_file(code, "NoNumbersHere!")
+        self.assertIn("does not contain any numbers", output, "check for numbers in the password and print 'Your password does not contain any numbers.' if none are found")
+        # uppercase letters
+        output = self.run_file(code, "nouppercase12!")
+        self.assertIn("does not contain any uppercase letters", output, "check for uppercase letters in the password and print 'Your password does not contain any uppercase letters.' if none are found")
+
+        # lowercase letters
+        output = self.run_file(code, "NOLOWERCASE12!")
+        self.assertIn("does not contain any lowercase letters", output, "check for lowercase letters in the password and print 'Your password does not contain any lowercase letters.' if none are found")
+
+        # special characters
+        output = self.run_file(code, "NoSpecialCharacters12")
+        self.assertIn("does not contain any special characters", output, "check for special characters in the password and print 'Your password does not contain any special characters.' if none are found")
+
+        # strong
+        output = self.run_file(code, "StrongPassword12!")
+        self.assertIn("Your password is strong", output, "check for a strong password and print 'Your password is strong.' if all requirements are met")
+
 myTests().main()
 </tests>
 </program>

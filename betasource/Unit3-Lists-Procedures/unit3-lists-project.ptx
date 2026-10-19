@@ -51,6 +51,7 @@ There are four types of tickets with different prices:
         <ul>
             <li><p>Function: <c>calculate_average(prices)</c></p></li>
             <li><p>Input: A list of prices.</p></li>
+            <li><p>Input check: If the list is empty, return -1.</p></li>
             <li><p>Processing: Iterate through the list using a loop to find the average price.</p></li>
             <li><p>Return: The average price of all ticket sales.</p></li>
         </ul>
@@ -152,25 +153,23 @@ Number of tickets sold at $ 40.00 :  2
 
 # Calculate Total Revenue
 def calculate_total(prices):
-    
-
-
+    return -1 # Placeholder return value, replace with your code
 
 # Calculate Average Ticket Price
 def calculate_average(prices):
-    
+    return -1 # Placeholder return value, replace with your code    
 
 # Find Maximum Ticket Prices
 def find_max_price(prices):
+    return -1 # Placeholder return value, replace with your code
     
-
 # Find Minimum Ticket Prices
 def find_min_price(prices):
-
+    return -1 # Placeholder return value, replace with your code
 
 # Count Tickets
 def count_tickets(prices, target_price):
-
+    return -1 # Placeholder return value, replace with your code
 
 # Main Program Flow (Outside Functions)
 # create ticket_prices list and input variable
@@ -207,10 +206,10 @@ class myTests(TestCaseGui):
             new_lines.append(line)
         return "\n".join(new_lines)
     
-    def run_file(self, code, inputs):
+    def run_file(self, code, list, inputs):
         stars = "****************************************************************************" 
         print(stars)
-        print("Testing code with inputs: " + inputs)
+        print("Testing code with inputs: " + str(list))
         print(stars)
 
         lines = code.split("\n")
@@ -218,29 +217,34 @@ class myTests(TestCaseGui):
         inN = 0
 
         for i in range(len(lines)):
-            if "input" in lines[i] and not "#" in lines[i]:
+            if "= []" in lines[i]:
+                lines[i] = lines[i].replace("= []", "= " + str(list))
+            if "=input(" in lines[i].replace(" ", ""):
                 equals = lines[i].find("=") + 1
-                if inN &lt; len(ins):
-                    try:
-                        float(ins[inN])  # Check if the input can be converted to a float
-                        lines[i] = lines[i][0:equals] + str(ins[inN])
-                    except ValueError:
-                        lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
-                    inN += 1
+                try:
+                    int(ins[inN])  # Check if the input can be converted to a float
+                    lines[i] = lines[i][0:equals] + str(ins[inN])
+                except ValueError:
+                    lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
+                inN += 1
 
-        code = str("\n".join(lines))
+        new_code = str("\n".join(lines))
+
+        #print(new_code)
 
         # Create an isolated scope for the code execution
         scope = {}
 
         ''' for ebook '''
-        exec(code, scope)
+        exec(new_code, scope)
         output = self.getOutput()
 
-        ind = output.find(inputs) + len(inputs) + 1
-        output = output[ind:].strip()
-        ind = output.find(stars) + len(stars) + 1
-        output = output[ind:]
+        if (stars in output):
+            ind = output.find(stars) + len(str(stars)) + 1
+            output = output[ind:].strip()
+            ind = output.find(stars) + len(stars) + 1
+            output = output[ind:]
+        
 
         if (stars in output):
             ind = output.find(stars)
@@ -251,28 +255,47 @@ class myTests(TestCaseGui):
     def testOne(self):
         code = self.getEditorText()
         code = self.remove_comments(code)
-        lines = code.replace(" ", "").split("\n")
+        #code_nospaces = code.replace(" ", "")
 
-        code_nospaces = code.replace(" ", "")
+        list1 = [5, 10, 15, 20]
+        #output = self.run_file(code, list1, "-1")
 
-        #1 input statements
-        input_count = code.count("input(")
-        self.assertLessEqual(4,input_count, "at least 4 input statements")
+        result = calculate_total(list1)
+        self.assertEqual(50, result, "calculate_total() for " + str(list1))
 
-        #2 count if statements
-        elif_count = code.count("elif ")
-        if_count = code.count("if ") - elif_count
-        self.assertLessEqual(9,if_count, "at least 9 if statements")
-
-        #3 count elif statements
-        self.assertLessEqual(3,elif_count, "at least 3 elif statements")
-
-        #4 count else statements
-        else_count = code_nospaces.count("else:")
-        self.assertLessEqual(8,else_count, "at least 8 else statements")
+        result1 = calculate_average(list1)
+        result2 = calculate_average([])
+        self.assertEqual("12.5,-1", str(result1) + "," + str(result2), "calculate_average() for " + str(list1) + " and []")
         
-       
+
+        result = find_max_price(list1)
+        self.assertEqual(20, result, "find_max_price() for " + str(list1))
+
+        result = find_min_price(list1)
+        self.assertEqual(5, result, "find_min_price() for " + str(list1))
+
+        list1 = [5, 10, 15, 20, 25, 20, 15, 10, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+        output = self.run_file(code, list1, "-1")
+
+        line = self.findLine(output.split("\n"), "395")
+        self.assertIn("395", line, "Prints Total revenue generated for " + str(list1))
+
+        line = self.findLine(output.split("\n"), "Average")
+        self.assertIn("21.94", line, "Prints Average ticket price for " + str(list1))
+
+        line = self.findLine(output.split("\n"), "High")
+        self.assertIn("50.00", line, "Prints Highest ticket price sold for " + str(list1))
         
+        line = self.findLine(output.split("\n"), "Low")
+        self.assertIn("5.00", line, "Prints Lowest ticket price sold for " + str(list1))
+
+        line = self.findLine(output.split("\n"), "Number of tickets sold at $10")
+        self.assertIn("3", line, "Number of tickets sold at $10 for " + str(list1))
+
+        num_formats = code.count("format(")
+        num_2fs = code.count(".2f") + code.count(".02F")
+        self.assertTrue(num_formats &gt;= 4 and num_2fs &gt;= 4, "You should use format(*, \".2f\") to format the average price to two decimal places.")
+             
 myTests().main()
 </tests>
 </program>
