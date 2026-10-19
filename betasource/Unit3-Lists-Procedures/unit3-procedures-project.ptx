@@ -113,14 +113,14 @@
 </table>
 
 <p>
-  Use the following functions to check each letters in your password:
+  Use the following string methods to check each character in your password:
 </p>
 
 <ul>
-  <li><c>isupper(letter)</c> - returns True if the letter is uppercase</li>
-  <li><c>islower(letter)</c> - returns True if the letter is lowercase</li>
-  <li><c>isdigit(letter)</c> - returns True if the letter is a number</li>
-  <li><c>isalnum(letter)</c> - returns True if the letter is a letter or number, False if it is a special character</li>
+  <li><c>letter.isupper()</c> - returns True if the letter is uppercase</li>
+  <li><c>letter.islower()</c> - returns True if the letter is lowercase</li>
+  <li><c>letter.isdigit()</c> - returns True if the letter is a number</li>
+  <li><c>letter.isalnum()</c> - returns True if the letter is a letter or number, False if it is a special character</li>
 </ul>
 
 <project label="unit3-procedure-project-password-checker">
