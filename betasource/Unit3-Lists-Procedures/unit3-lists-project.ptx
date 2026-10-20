@@ -245,7 +245,6 @@ class myTests(TestCaseGui):
             ind = output.find(stars) + len(stars) + 1
             output = output[ind:]
         
-
         if (stars in output):
             ind = output.find(stars)
             output = output[0:ind].strip()
@@ -257,40 +256,39 @@ class myTests(TestCaseGui):
         code = self.remove_comments(code)
         #code_nospaces = code.replace(" ", "")
 
-        list1 = [5, 10, 15, 20]
+        list1 = [10, 15, 25, 40]
         #output = self.run_file(code, list1, "-1")
 
         result = calculate_total(list1)
-        self.assertEqual(50, result, "calculate_total() for " + str(list1))
+        self.assertEqual(90, result, "calculate_total() for " + str(list1))
 
         result1 = calculate_average(list1)
         result2 = calculate_average([])
-        self.assertEqual("12.5,-1", str(result1) + "," + str(result2), "calculate_average() for " + str(list1) + " and []")
+        self.assertEqual("22.5,-1", str(result1) + "," + str(result2), "calculate_average() for " + str(list1) + " and []")
         
-
         result = find_max_price(list1)
-        self.assertEqual(20, result, "find_max_price() for " + str(list1))
+        self.assertEqual(40, result, "find_max_price() for " + str(list1))
 
         result = find_min_price(list1)
-        self.assertEqual(5, result, "find_min_price() for " + str(list1))
+        self.assertEqual(10, result, "find_min_price() for " + str(list1))
 
-        list1 = [5, 10, 15, 20, 25, 20, 15, 10, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+        list1 = [10, 15, 25, 40, 10, 10, 10, 15, 25, 40, 15, 40, 10, 15]
         output = self.run_file(code, list1, "-1")
 
-        line = self.findLine(output.split("\n"), "395")
-        self.assertIn("395", line, "Prints Total revenue generated for " + str(list1))
+        line = self.findLine(output.split("\n"), "Total")
+        self.assertIn("280.00", line, "Prints Total revenue generated for " + str(list1))
 
         line = self.findLine(output.split("\n"), "Average")
-        self.assertIn("21.94", line, "Prints Average ticket price for " + str(list1))
+        self.assertIn("20.00", line, "Prints Average ticket price for " + str(list1))
 
         line = self.findLine(output.split("\n"), "High")
-        self.assertIn("50.00", line, "Prints Highest ticket price sold for " + str(list1))
+        self.assertIn("40.00", line, "Prints Highest ticket price sold for " + str(list1))
         
         line = self.findLine(output.split("\n"), "Low")
-        self.assertIn("5.00", line, "Prints Lowest ticket price sold for " + str(list1))
+        self.assertIn("10.00", line, "Prints Lowest ticket price sold for " + str(list1))
 
         line = self.findLine(output.split("\n"), "Number of tickets sold at $10")
-        self.assertIn("3", line, "Number of tickets sold at $10 for " + str(list1))
+        self.assertIn("5", line, "Number of tickets sold at $10 for " + str(list1))
 
         num_formats = code.count("format(")
         num_2fs = code.count(".2f") + code.count(".02F")

@@ -178,7 +178,6 @@ def ():
 
 </code>
 <tests>
-import ast
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
