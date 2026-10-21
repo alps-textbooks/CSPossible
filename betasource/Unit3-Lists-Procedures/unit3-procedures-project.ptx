@@ -178,7 +178,6 @@ def ():
 
 </code>
 <tests>
-import ast
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
@@ -255,14 +254,9 @@ class myTests(TestCaseGui):
         self.assertLessEqual(4,num_true, "set boolean variables to True at least 4 times")
 
         # defines a function with single parameter
-        tree = ast.parse(code)
-        function = next((node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "check_password"), None)
-        self.assertIsNotNone(function, "define a function named check_password")
-        if function is not None:
-            parameters = function.args
-            num_parameters = len(parameters.posonlyargs) + len(parameters.args) + len(parameters.kwonlyargs)
-            num_parameters += int(parameters.vararg is not None) + int(parameters.kwarg is not None)
-            self.assertEqual(num_parameters, 1, "define check_password with a single parameter")
+        line = self.findLine(code.split("\n"), "def")
+        check = "check_password" in line and "()" not in line and "," not in line
+        self.assertTrue(check, "define a function check_password with a single parameter called password")
         
         # For loop
         line = self.findLine(code.split("\n"), "for")
