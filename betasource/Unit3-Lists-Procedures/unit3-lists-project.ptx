@@ -306,15 +306,33 @@ myTests().main()
      <activity label="u3project-lists-reflection1">
       <title>Project Reflection: Selection</title>
       <statement>
-        <p>Describe a selection statement that you used in your app. What was the condition and 
-          what happened when the condition was true or false? How did you test both branches of the selection statement to make sure it was working correctly?
+        <p>
+            Consider the list included in the main part of your program. Suppose
+            another programmer adds several new elements to the end of the list. Explain how the
+            code in any of the functions would need to be modified to account for the
+            additional elements. If no changes to the code segment are necessary, explain why this is the
+            case for your program.
         </p>
       </statement>
       <response />
     </activity>
 
-      <activity label="u3project-lists-reflection2">
-      <title>Project Reflection: Errors</title>
+    <activity label="u3project-lists-reflection2">
+    <title>Project Reflection: Errors</title>
+      <statement>
+        <p>
+            Consider the list included in the main part of your program. 
+            Explain how the list uses abstraction to manage complexity in your program. Suppose the list
+            was not included in your program. Describe how you would need to adjust the code segment
+            so that it has the same behavior. If it is not possible to have the same behavior without the use of the list, explain
+            why.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+    <activity label="u3project-lists-reflection3">
+    <title>Project Reflection: Errors</title>
       <statement>
         <p>Describe an error that you encountered while you were creating the code, 
             and how you fixed your code to remove the bug. How did you test the code to make 

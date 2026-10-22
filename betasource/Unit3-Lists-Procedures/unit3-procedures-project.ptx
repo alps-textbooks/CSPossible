@@ -295,16 +295,30 @@ myTests().main()
     <title>Project Reflection</title>
 
      <activity label="u3project-procedures-reflection1">
-      <title>Project Reflection: Selection</title>
+      <title>Project Reflection: Procedure</title>
       <statement>
-        <p>Describe a selection statement that you used in your app. What was the condition and 
-          what happened when the condition was true or false? How did you test both branches of the selection statement to make sure it was working correctly?
+        <p>Consider the procedure (<c>check_password())</c> you wrote for this project. 
+          Write two calls to your procedure that each cause a different code segment in the procedure to
+          execute. Describe the expected behavior of each call. If it is not possible for two calls to your procedure
+          to cause different code segments to execute, explain why this is the case for your procedure. 
         </p>
       </statement>
       <response />
     </activity>
 
-      <activity label="u3project-procedures-reflection2">
+     <activity label="u3project-procedures-reflection2">
+      <title>Project Reflection: Procedure</title>
+      <statement>
+        <p>Consider the procedure (<c>check_password())</c> you wrote for this project. Suppose another programmer modifies the code within this procedure.
+          Describe a modification the other programmer could make that would cause this procedure
+          to have a logic error. Describe how the behavior of this procedure would change because of
+          the error.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="u3project-procedures-reflection3">
       <title>Project Reflection: Errors</title>
       <statement>
         <p>Describe an error that you encountered while you were creating the code, 
