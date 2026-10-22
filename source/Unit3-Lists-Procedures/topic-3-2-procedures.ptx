@@ -812,9 +812,11 @@ functionName(arg1, arg2, ...)
           #       Inside the function, print a Hello and the name
 
 
-          # Function Calls
+          # Function Calls: Do not change the call below
           welcome("World")
+
           # TODO: Call welcome with your name as the argument
+          
           # TODO: Call welcome again with a different name as the argument
 
         </code>
@@ -1899,19 +1901,29 @@ myTests().main()
       Optionally, you could also incorporate mouse and keyboard controls into your design.</p>
 
 
-   <project label="challenge-draw-functions">
+  <project label="challenge-draw-functions">
     <title>Coding Challenge: Draw Functions  </title>
       <statement>
         <p>
           Create the following functions:</p>
           <ul>
-            <li><c>drawPolygon(sides, size, color, fill)</c> which draws a polygon with the specified number of sides, size, and color. Use if statements to check if <c>fill</c> is True to call <c>begin_fill()</c> and <c>end_fill()</c>. For the angle, use <c>360/sides</c>.</li>
-            <li><c>drawCircle(radius, color, fill)</c> which draws a circle using <c>tina.circle(radius)</c> and if statements for the fill.</li>
-            <li><c>drawStar(size, color, fill)</c> which draws a 5-pointed star using a for loop that repeats 5 times, moving forward by the size and turning right by 144 degrees each time.</li>
-            <li><c>drawSnowflake(sides,size,color,rotation)</c> which uses a loop that runs <c>360/rotation</c> times and in the loop,
-            calls the <c>drawPolygon</c> function with no fill and turns the turtle by the rotation amount afterwards to get ready for the next shape. For an additional challenge, you can use an if-else statement to check if the loop counter is even or odd, and
-            change the color to create a multi-colored snowflake. </li>
-            <li><c>drawMyDesign()</c> that draws a more complex design, for example, a house, a creature, a car, a face, a flag, etc., using your other functions. You can also ask the user for input on different colors or sizes. You can call your function after all the other function definition. You can also call functions from the goto function below that draws things starting at a clicked location.</li>
+            <li><c>drawPolygon(sides, size, color, fill)</c> which draws a polygon with the specified number of 
+              sides, size, and color  using a loop that repeates sides times. Use the activity drawSquare above as an example. 
+              Use if statements to check if <c>fill</c> is True to call <c>begin_fill()</c>.
+              For the angle, use <c>360/sides</c>.</li>
+            <li><c>drawCircle(radius, color, fill)</c> which draws a circle using <c>tina.circle(radius)</c> and 
+              if statements for the fill.</li>
+            <li><c>drawStar(size, color, fill)</c> which draws a 5-pointed star using a for loop that repeats 5 
+              times, moving forward by the size and turning right by 144 degrees each time.</li>
+            <li><c>drawSnowflake(sides,size,color,rotation)</c> which uses a loop that runs <c>360//rotation</c> 
+              times using int division (//) and in the loop, calls the <c>drawPolygon</c> function with no fill and turns the turtle by 
+              the rotation amount afterwards to get ready for the next shape. For an additional challenge, you 
+              can use an if-else statement to check if the loop counter is even or odd, and
+              change the color to create a multi-colored snowflake. </li>
+            <li><c>drawMyDesign()</c> that draws a more complex design, for example, a house, a creature, a car, 
+              a face, a flag, etc., using your other functions. You can also ask the user for input on different 
+              colors or sizes. You can call your function after all the other function definition. You can also 
+              call functions from the goto function below that draws things starting at a clicked location.</li>
           </ul>
         <p>If you need to clear the screen, use <c>tina.clear()</c>. </p>
       </statement>
@@ -1938,7 +1950,9 @@ tina.color("green")
 
 # tina.clear()  # clear the screen if needed (uncomment)
 
-# 4. Create a function drawSnowflake(sides,size,color,rotation) and then call it 
+# 4. Create a function drawSnowflake(sides,size,color,rotation) 
+#  Call it with small sides and size and rotation 30 so it does not timeout,
+#        for example, drawSnowflake(4, 50, "blue", 30) or drawSnowflake(5, 40, "red", 40)
 
 
 
@@ -1968,10 +1982,10 @@ class myTests(TestCaseGui):
         self.assertIn("tina.circle(radius)", code, "Use the radius parameter in the drawCircle function")
         self.assertIn("drawStar(size,color,fill):", code, "Define the drawStar(size, color, fill) function")
         self.assertIn("drawSnowflake(sides,size,color,rotation):", code, "Define the drawSnowflake(sides,size,color,rotation) function")
-        self.assertIn("drawMyDesign():", code, "Define the drawMyDesign() function")
+        self.assertIn("def drawMyDesign(", actual, "Define the drawMyDesign() function")
         self.assertIn("360/sides", code, "Use 360/sides for the turns in the loop in the drawPolygon function")
         self.assertIn("(144)", code, "Use 144 degree turns in the drawStar function")
-        self.assertIn("360/rotation", code, "Use 360/rotation for the turns in the loop in the drawSnowflake function")
+        self.assertIn("360//rotation", code, "Use 360//rotation for the turns in the loop in the drawSnowflake function")
 
 myTests().main()
           </tests>
