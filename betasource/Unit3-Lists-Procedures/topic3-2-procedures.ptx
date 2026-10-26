@@ -1404,7 +1404,7 @@ class myTests(TestCaseGui):
                        line for line in self.getEditorText().splitlines()
                       if line.strip() and not line.lstrip().startswith("#")
                       )
-        self.assertIn("def print_report(name, score):", actual, "Define the print_report function with parameters name and score")
+        self.assertIn("defprint_report(name,score):", actual.replace(" ", ""), "Define the print_report function with parameters name and score")
         count = actual.count("print_report(")
         self.assertLessEqual(4, count, "Call print_report at least 3 times")
         count = actual.count("60")
@@ -1523,8 +1523,8 @@ class myTests(TestCaseGui):
         self.assertIn("def move_down():",self.getEditorText(), "Define a function called move_down()")
         self.assertIn("def move_left():",self.getEditorText(), "Define a function called move_left()")
         self.assertIn("t.color",self.getEditorText(), "Change the color of the turtle")
-        self.assertIn('turtle.onkey(move_left,"Left")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_left()")
-        self.assertIn('turtle.onkey(move_down,"Down")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_down()")
+        self.assertIn('turtle.onkey(move_left,"Left")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_left() for Left")
+        self.assertIn('turtle.onkey(move_down,"Down")',self.getEditorText().replace(" ", ""), "Add an onkey call for move_down() for Down")
 
 myTests().main()
   </tests>    
