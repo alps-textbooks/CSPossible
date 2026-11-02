@@ -88,16 +88,16 @@
       and return value.
     </p>
     <p>
-      If you are on your own, try using this 
-      <url href="external/webapps/MysteryFunctionMachine.html">Mystery Function Activity</url> 
-      to guess the mystery function.
-    </p>
-    <p>
       For example, if the function's formula is <c>2*x + 1</c> and a group
       member provides <c>3</c> as the argument, the function returns <c>7</c>.
       After each member gets a return value, the group should try to figure
       out the function's secret formula. Then, discuss and answer the following 
       questions as a group.
+    </p>
+    <p>
+      If you are doing this on your own, try using this 
+      <url href="external/webapps/MysteryFunctionMachine.html">Mystery Function Activity</url> 
+      to guess the mystery function.
     </p>
       <ol>
         <li>What arguments did your group provide to the function? 
