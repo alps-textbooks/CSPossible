@@ -52,8 +52,8 @@ input.wrong{border-color:var(--bad);background:var(--badbg)}
     <div class="field"><label for="xin">Enter an x value</label><input id="xin" type="text" inputmode="decimal" placeholder="e.g. 2 or -1.5"></div>
     <button id="evalBtn">Get y</button>
   </div>
-  <div class="tablewrap"><table><thead><tr><th>#</th><th>x</th><th>y</th></tr></thead><tbody id="rows"></tbody></table></div>
-  <div class="msg info" id="evalMsg"></div>
+  <div class="tablewrap" aria-live="polite" aria-relevant="additions"><table><thead><tr><th>#</th><th>x</th><th>y</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div role="status" aria-live="polite" aria-atomic="true"><div class="msg info" id="evalMsg"></div></div>
 </section>
 
 <section class="card">
@@ -66,7 +66,7 @@ input.wrong{border-color:var(--bad);background:var(--badbg)}
     <button id="revealBtn" class="ghost">Give up &amp; reveal</button>
     <button id="newBtn" class="ghost">New mystery function</button>
   </div>
-  <div class="msg" id="guessMsg"></div>
+  <div role="status" aria-live="polite" aria-atomic="true"><div class="msg" id="guessMsg"></div></div>
   <div class="stats"><span>Values tested: <b id="nq">0</b></span><span>Guesses: <b id="ng">0</b></span></div>
 </section>
 </main>
