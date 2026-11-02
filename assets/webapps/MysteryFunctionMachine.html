@@ -140,7 +140,7 @@ $("checkBtn").addEventListener("click",()=>{
   let allOk=true;
   vals.forEach((v,i)=>{const ok=closeEnough(v,secretCoefs[i]);allOk=allOk&&ok;$("c"+i).classList.add(ok?"good":"wrong")});
   if(allOk){solved=true;show(m,`Correct! It was ${t.name.toLowerCase()}: ${describe()}. You tested ${nq} value${nq===1?"":"s"} and made ${ng} guess${ng===1?"":"es"}.`,"ok")}
-  else show(m,"Not quite. Green coefficients are correct, red ones need another look.","bad");
+  else show(m,"Not quite. "+t.coefs.map((name,i)=>`${name} is ${closeEnough(vals[i],secretCoefs[i])?"correct":"incorrect"}.`).join(" "),"bad");
 });
 
 function describe(){
