@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mystery Function Machine</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#1d2433;--muted:#667085;--line:#d9dde8;--accent:#4f46e5;--ok:#15803d;--okbg:#dcfce7;--bad:#b91c1c;--badbg:#fee2e2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141c;--card:#1c202c;--text:#e8eaf2;--muted:#9aa3b8;--line:#33394b;--accent:#818cf8;--ok:#4ade80;--okbg:#14351f;--bad:#f87171;--badbg:#3b1717}}
+:root[data-theme="dark"]{--bg:#12141c;--card:#1c202c;--text:#e8eaf2;--muted:#9aa3b8;--line:#33394b;--accent:#818cf8;--ok:#4ade80;--okbg:#14351f;--bad:#f87171;--badbg:#3b1717}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.6rem;margin:0 0 4px}
+p.sub{color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+h2{font-size:1.1rem;margin:0 0 12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+input,select{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.field{flex:1 1 110px}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;padding:9px 16px;font-weight:600}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button:not(.ghost){color:#10121a}}
+:root[data-theme="dark"] button:not(.ghost){color:#10121a}
+button.ghost{background:transparent;color:var(--accent)}
+.tablewrap{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th{color:var(--muted);font-weight:600;font-size:.85rem}
+.msg{margin-top:12px;padding:10px 12px;border-radius:8px;display:none}
+.msg.show{display:block}
+.msg.ok{background:var(--okbg);color:var(--ok)}
+.msg.bad{background:var(--badbg);color:var(--bad)}
+.msg.info{background:var(--bg);border:1px solid var(--line)}
+input.good{border-color:var(--ok);background:var(--okbg)}
+input.wrong{border-color:var(--bad);background:var(--badbg)}
+.stats{display:flex;gap:18px;color:var(--muted);font-size:.9rem;margin-top:10px;flex-wrap:wrap}
+.hint{color:var(--muted);font-size:.85rem;margin:8px 0 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Mystery Function Machine</h1>
+<p class="sub">A hidden function is waiting. Feed it x values, study the y values it returns, then work out the slope and y-intercept of the linear function.</p>
+
+<section class="card">
+  <h2>1. Test the function</h2>
+  <div class="row">
+    <div class="field"><label for="xin">Enter an x value</label><input id="xin" type="text" inputmode="decimal" placeholder="e.g. 2 or -1.5"></div>
+    <button id="evalBtn">Get y</button>
+  </div>
+  <div class="tablewrap" aria-live="polite" aria-relevant="additions"><table><thead><tr><th>#</th><th>x</th><th>y</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div role="status" aria-live="polite" aria-atomic="true"><div class="msg info" id="evalMsg"></div></div>
+</section>
+
+<section class="card">
+  <h2>2. Make your guess</h2>
+  <p class="hint" style="margin:0 0 8px">The mystery function is linear. Find m and b.</p>
+  <p class="hint" id="formula"></p>
+  <div class="row" id="coefs" style="margin-top:12px"></div>
+  <div class="row" style="margin-top:14px">
+    <button id="checkBtn">Check my guess</button>
+    <button id="revealBtn" class="ghost">Give up &amp; reveal</button>
+    <button id="newBtn" class="ghost">New mystery function</button>
+  </div>
+  <div role="status" aria-live="polite" aria-atomic="true"><div class="msg" id="guessMsg"></div></div>
+  <div class="stats"><span>Values tested: <b id="nq">0</b></span><span>Guesses: <b id="ng">0</b></span></div>
+</section>
+</main>
+
+<script>
+const TYPES = {
+  linear:{name:"Linear",formula:"y = m·x + b",coefs:["m","b"],
+    gen:()=>[nz(-9,9),ri(-10,10)],f:(c,x)=>c[0]*x+c[1]}
+};
+function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a}
+function nz(a,b){let v=0;while(v===0)v=ri(a,b);return v}
+function pick(arr){return arr[ri(0,arr.length-1)]}
+function parseNum(s){
+  s=String(s).trim().replace("−","-");
+  if(/^-?\d*\.?\d+\s*\/\s*-?\d*\.?\d+$/.test(s)){const [n,d]=s.split("/").map(Number);return d===0?NaN:n/d}
+  return /^-?(\d+\.?\d*|\.\d+)$/.test(s)?Number(s):NaN;
+}
+const $=id=>document.getElementById(id);
+let secret=null,secretCoefs=null,nq=0,ng=0,solved=false;
+
+const typeSel={value:"linear"};
+
+function show(el,text,cls){el.className="msg show "+cls;el.textContent=text}
+function hide(el){el.className="msg";el.textContent=""}
+
+function newGame(){
+  secret=pick(Object.keys(TYPES));secretCoefs=TYPES[secret].gen();
+  nq=0;ng=0;solved=false;
+  $("rows").innerHTML="";$("xin").value="";
+  $("nq").textContent=0;$("ng").textContent=0;
+  hide($("evalMsg"));hide($("guessMsg"));renderCoefs();
+}
+function renderCoefs(){
+  const box=$("coefs");box.innerHTML="";
+  const t=TYPES[typeSel.value];
+  $("formula").textContent=t?"Form: "+t.formula:"Pick a type to see the general form and enter your coefficients.";
+  if(!t)return;
+  t.coefs.forEach((n,i)=>{
+    const d=document.createElement("div");d.className="field";
+    d.innerHTML=`<label for="c${i}">${n}</label><input id="c${i}" type="text" inputmode="decimal" placeholder="value">`;
+    box.appendChild(d);
+  });
+}
+
+function evaluate(){
+  const x=parseNum($("xin").value);
+  if(Number.isNaN(x)){show($("evalMsg"),"Please enter a number for x (fractions like 1/2 are fine).","bad");return}
+  const y=TYPES[secret].f(secretCoefs,x);
+  const yr=y;
+  nq++;$("nq").textContent=nq;
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${nq}</td><td>${x}</td><td>${yr}</td>`;
+  $("rows").prepend(tr);
+  hide($("evalMsg"));$("xin").value="";$("xin").focus();
+}
+$("evalBtn").addEventListener("click",evaluate);
+$("xin").addEventListener("keydown",e=>{if(e.key==="Enter")evaluate()});
+
+function closeEnough(a,b){return Math.abs(a-b)<1e-6}
+
+$("checkBtn").addEventListener("click",()=>{
+  const m=$("guessMsg");
+  if(solved){show(m,"You already solved this one! Start a new mystery function to play again.","info");return}
+  if(!typeSel.value){show(m,"Choose a type of function first.","bad");return}
+  const t=TYPES[typeSel.value];
+  const vals=t.coefs.map((_,i)=>parseNum($("c"+i).value));
+  if(vals.some(Number.isNaN)){show(m,"Fill in every coefficient with a number.","bad");return}
+  ng++;$("ng").textContent=ng;
+  t.coefs.forEach((_,i)=>$("c"+i).classList.remove("good","wrong"));
+  if(typeSel.value!==secret){show(m,"Not quite. The type of function isn’t right. Look at how y changes as x changes.","bad");return}
+  let allOk=true;
+  vals.forEach((v,i)=>{const ok=closeEnough(v,secretCoefs[i]);allOk=allOk&&ok;$("c"+i).classList.add(ok?"good":"wrong")});
+  if(allOk){solved=true;show(m,`Correct! It was ${t.name.toLowerCase()}: ${describe()}. You tested ${nq} value${nq===1?"":"s"} and made ${ng} guess${ng===1?"":"es"}.`,"ok")}
+  else show(m,"Not quite. "+t.coefs.map((name,i)=>`${name} is ${closeEnough(vals[i],secretCoefs[i])?"correct":"incorrect"}.`).join(" "),"bad");
+});
+
+function describe(){
+  const c=secretCoefs;
+  switch(secret){
+    case"linear":return `y = ${c[0]}x ${sg(c[1])}`;
+    case"quadratic":return `y = ${c[0]}x² ${sg(c[1],"x")} ${sg(c[2])}`;
+    case"exponential":return `y = ${c[0]} · ${c[1]}ˣ`;
+    case"absolute":return `y = ${c[0]}|x ${sg(-c[1])}| ${sg(c[2])}`;
+  }
+}
+function sg(v,suffix=""){return (v<0?"− ":"+ ")+Math.abs(v)+suffix}
+
+$("revealBtn").addEventListener("click",()=>show($("guessMsg"),`It was ${TYPES[secret].name.toLowerCase()}: ${describe()}.`,"info"));
+$("newBtn").addEventListener("click",newGame);
+newGame();
+</script>
+</body>
+</html>
