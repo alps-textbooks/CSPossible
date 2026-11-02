@@ -64,7 +64,7 @@
   Computers cannot generate truly random numbers, but they can generate <term>pseudorandom</term> numbers that are close enough to random for most purposes. Pseudorandom numbers are generated using algorithms that produce sequences of numbers that appear random, but are actually determined by an initial value called a seed. By using different seeds, we can generate different sequences of pseudorandom numbers.
 </p>
 
-<activity label="">
+<activity label="unit3a-coin-flip-experiment">
   <statement>
 <p>
     Try this simple experiment:
