@@ -115,7 +115,7 @@ function evaluate(){
   const x=parseNum($("xin").value);
   if(Number.isNaN(x)){show($("evalMsg"),"Please enter a number for x (fractions like 1/2 are fine).","bad");return}
   const y=TYPES[secret].f(secretCoefs,x);
-  const yr=Math.round(y*10000)/10000;
+  const yr=y;
   nq++;$("nq").textContent=nq;
   const tr=document.createElement("tr");
   tr.innerHTML=`<td>${nq}</td><td>${x}</td><td>${yr}</td>`;
