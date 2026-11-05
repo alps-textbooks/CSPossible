@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="topic-4-1-internet">
+  <time minutes="90" />
+  <title>The Internet</title>
+
+  <idx>internet</idx>
+  <introduction>
+    <p>Quick Links:
+      <xref text="global" ref="internet, protocols, network, packets,
+       vocab-4-1"/>
+    </p>
+    <p>
+      The Internet has had a huge impact on society, enabling people to communicate, share information, and access services, 
+      while transforming businesses through e-commerce in ways that were not possible before the 1990s. 
+      But what is the Internet? Many people don't know what the Internet is or how it works! 
+      In this topic, you will learn how the Internet works, how network devices communicate, and how the internet 
+      is designed to be fault-tolerant so that it can continue to function even when some devices or connections fail. 
+    </p>
+
+    <image source="_static/Unit4images/internet.webp" alt="internet" width="50%" />
+
+  </introduction>
+
+  <subsection xml:id="internet">
+    <title>What is the Internet?</title>
+
+    <p>The <term>Internet</term> is a global network of networks that connects millions of devices worldwide, 
+      enabling them to communicate and share information through standardized communication protocols.</p>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=Dxcc6ycZ73M">video</url> 
+      to see how people answer the question "What is the Internet?" and learn about the history of the Internet.
+    </p>
+
+    <video youtube="Dxcc6ycZ73M" label="video-internet" /> 
+
+
+  <p>What do we mean by a network of networks? There are a lot of smaller networks that are connected together to
+    make up the Internet. For example, your home Wi-Fi network is a small network that connects your devices like 
+    phones, tablets, computers, and printers to each other and to the Internet using an <term>Internet Service Provider (ISP)</term>
+    like Comcast or Verizon. Your school or workplace has a larger network that connects many devices together and to the Internet. 
+     A <term>computer network</term> is a group of interconnected computing devices that communicate by
+        sending and receiving data and form a <term>computing system</term> that works together to accomplish a shared purpose.
+  </p>
+
+
+     <p>Take a look at the network diagram below of a simple home network. Does your house have a black box with an antenna that provides
+    Wi-Fi access in your home? This is a <term>router</term> which is a device that connects your home network to the Internet 
+    through your ISP. It can use radio waves for wifi (wireless) access or cables to connect devices together.
+    Through the Internet, you can connect to <term>web servers</term> that host websites and other devices around the world.
+  </p>
+
+  <image source="_static/Unit4images/network.jpg" alt="home network" width="50%" />
+
+
+<activity label="internet-mcq">
+  <statement>
+    <p>Which statement best describes the Internet?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>A single network owned and maintained by one organization.</p>
+      </statement>
+      <feedback>
+        <p>No, the Internet is not owned or maintained by a single organization. It consists of many independently operated networks.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>A global network consisting of many interconnected networks.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The Internet is a global network of interconnected networks that allows devices around the world to communicate.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A collection of websites stored on a central server.</p>
+      </statement>
+      <feedback>
+        <p>No, websites are hosted on many different servers around the world. The Internet connects the networks that allow users to access them.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A wireless network that connects computers around the world.</p>
+      </statement>
+      <feedback>
+        <p>Not quite. The Internet includes both wired and wireless connections. It is much broader than a single wireless network.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="router-function">
+  <statement>
+    <p>A student connects a laptop to a home Wi-Fi network. Which statement best describes the role of the router?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>It stores all the websites that the student visits.</p>
+      </statement>
+      <feedback>
+        <p>No, websites are stored on web servers, not typically on a home router.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>It connects devices on the local network to another network, such as the Internet.</p>
+      </statement>
+      <feedback>
+        <p>Correct! A router forwards data between networks, allowing devices on a home network to communicate with devices and services on the Internet.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It translates every IP address into HTML.</p>
+      </statement>
+      <feedback>
+        <p>No, IP addresses identify devices or network interfaces. HTML is a language used to structure web pages.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>It provides the physical cables used by the ISP.</p>
+      </statement>
+      <feedback>
+        <p>No, the ISP provides the Internet connection and associated infrastructure. A router directs traffic between networks.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="isp-function">
+  <statement>
+    <p>A school connects its local network to the Internet through an ISP. Which statement is correct?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>The ISP provides a connection between the school's network and other networks on the Internet.</p>
+      </statement>
+      <feedback>
+        <p>Correct! An Internet Service Provider (ISP) provides the connection that allows the school's network to communicate with other networks on the Internet.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The ISP becomes the owner of the school's computers.</p>
+      </statement>
+      <feedback>
+        <p>No, the school owns and manages its computers. The ISP provides Internet connectivity.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The ISP stores all the information that students access.</p>
+      </statement>
+      <feedback>
+        <p>No, information is stored on servers distributed across the Internet. The ISP provides the connection that allows students to access that information.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The ISP replaces the need for routers.</p>
+      </statement>
+      <feedback>
+        <p>No, routers are still needed to direct data between the school's local network and other networks.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+    <p>The Internet is designed to be <term>scalable</term>, which means it can grow to accommodate
+      more users, devices, and data.</p>
+
+<activity label="network-scalability">
+  <statement>
+    <p>A company adds 500 computers to its existing network. Which characteristic of the Internet's design makes it possible for networks to grow and connect additional devices?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Centralization</p>
+      </statement>
+      <feedback>
+        <p>No, the Internet is decentralized. Its design does not depend on a single central system controlling all connected devices and networks.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Scalability</p>
+      </statement>
+      <feedback>
+        <p>Correct! Scalability allows networks to grow by adding more devices and connecting additional networks without requiring the entire Internet to be redesigned.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Encryption</p>
+      </statement>
+      <feedback>
+        <p>No, encryption protects information by making it unreadable to unauthorized users. It does not describe the ability of a network to grow.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Compression</p>
+      </statement>
+      <feedback>
+        <p>No, compression reduces the size of data to make it more efficient to store or transmit. It does not describe network growth.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+  <activity label="network-diagram">
+    <title>Network Diagram</title>
+  <statement>
+    <p>Create a network diagram like the one above showing at least 4 devices and connections in your home or school network. Make sure to include
+      all the devices that connect to the Internet, such as computers, tablets, phones, smart TVs, and gaming consoles, as 
+      well as the router and the connection to your ISP. You can draw this on paper and take a picture or 
+      use a diagramming tool like <url href="https://app.diagrams.net/">app.diagrams.net</url> (Click on More Shapes at the bottom left, 
+      scroll down to Networking, and choose Network 2025) or 
+      <url href="https://www.smartdraw.com/network-diagram/network-diagram-software.htm">SmartDraw</url>
+      or <url href="https://packet.school/en/sandbox/builder">Packet School Sandbox</url> to create your diagram online 
+      and save a screenshot. Put your image or screenshot in google doc and share the link here.
+    </p>
+    <p>In addition, answer the following questions:</p>
+    <ol>
+      <li>Approximately how many devices are connected to your home or school network?</li>
+      <li>Is your network wired or wireless (wifi) or both?</li>
+      <li>Is your network scalable? Can you easily add more devices? How do you add more devices to the network?</li>
+    </ol>
+  </statement>
+  <response/>
+ </activity>
+  
+  </subsection>
+
+    <subsection xml:id="protocols">
+    <title>Internet Protocols for Communication</title>
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=5o8CwafCxnU">video</url> 
+      to learn about the protocols and IP addresses that enable communication on the Internet.
+    </p>
+    <video youtube="5o8CwafCxnU" label="video-protocol-IP" /> 
+
+    <p>The Internet uses a set of standardized <term>protocols</term>, or rules that devices follow to exchange data. For example, 
+      <term>HTTP (Hypertext Transfer Protocol)</term> is used to retrieve web pages formatted using HTML (HyperText Markup Language).
+      <term>IP (Internet Protocol)</term> provides an addressing system of unique IP addresses for devices on the Internet. These protocols are <term>nonproprietary</term>, which means they
+      are not owned or controlled by a single company, so that anyone can connect to the internet. </p>
+     
+  <activity label="protocol-definition">
+  <statement>
+    <p>Which of the following best describes a protocol in computer networking?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>A physical connection between computers.</p>
+      </statement>
+      <feedback>
+        <p>No, a physical connection allows devices to connect, but a protocol defines the rules they follow when communicating.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>An agreed-upon set of rules for communication.</p>
+      </statement>
+      <feedback>
+        <p>Correct! A protocol defines rules for how devices format, send, receive, and interpret information so they can communicate.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A unique identifier for a website.</p>
+      </statement>
+      <feedback>
+        <p>No, a website can be identified using a domain name or IP address. A protocol defines the rules for communication.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>A type of computer hardware.</p>
+      </statement>
+      <feedback>
+        <p>No, protocols are sets of rules or standards, not physical components of a computer.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="standardized-protocols">
+  <statement>
+    <p>Why are standardized Internet protocols important for communication between devices?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>They require all devices to have the same processing speed.</p>
+      </statement>
+      <feedback>
+        <p>No, devices can communicate using the same protocols even if they have different processing speeds.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>They ensure that devices follow compatible rules for exchanging information.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Standardized protocols allow devices and networks made by different companies to communicate by following the same rules.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>They ensure that all Internet data is transmitted at the same speed.</p>
+      </statement>
+      <feedback>
+        <p>No, protocols establish communication rules, but they do not guarantee that all data is transmitted at the same speed.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>They prevent companies from developing new Internet-connected devices.</p>
+      </statement>
+      <feedback>
+        <p>No, standardized protocols actually encourage innovation by allowing new devices from different companies to connect to the Internet.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+     <idx><h>unplugged</h><h>protocol</h></idx>
+     <activity label="unplugged-protocol">
+       <title>Designing a Protocol</title>
+      <statement><p>
+        <term>Design a Protocol:</term> In groups or individually, design a protocol for passing notes in class.
+        The note can have 4 fields and separators: the date, the receiver's name, the message, the sender's name. 
+        Each group or person should choose a different order for these fields in their protocol and 
+        a way to separate the fields, such as a comma, a semicolon, or a space. 
+        Do not label the fields, just put the information in the order you choose, for example:
+        "Apr 1, Jo, I like your shirt, Ava" or "Ava I like your shirt Jo Apr 1". </p>
+        <p><term>Using your protocol:</term> Try sending a note to another person in your group using your protocol
+           passing the note through at least two other people.
+          Then, try sending a note to another group using your protocol passing the note through at least two other groups,
+          but do not tell them your protocol. If you are working individually, imagine what would happen in these two scenarios.
+      </p>
+      <p>Answer the following questions:</p>
+        <ul>
+          <li>What is the protocol (the ordering of fields and separators) that your group or you chose?</li>
+          <li>Is it easy to pass notes within a group that knows your protocol? Why or why not?</li>
+          <li>Is it easy to pass notes to groups that use different protocols? Why or why not? </li> 
+          <li>If your school purchases computers from several different companies where each 
+            company uses its own proprietary communication protocols, what problems might occur when the computers 
+            try to communicate with one another on a network? </li>
+            <li>
+            Why is it important for devices made by different companies to follow the same Internet protocols?
+            How do nonproprietary protocols help make the Internet accessible and scalable?</li>
+
+        </ul>
+        
+      </statement>
+
+       <response/>
+    </activity>
+
+    </subsection>
+
+  <subsection xml:id="network">
+    <title>Network Bandwidth and Latency</title>
+
+    
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=ZhEf7e4kopM">video</url> 
+      to learn how data travels across the internet using electricity, light, and radio waves (wifi) and about
+      <term>bandwidth</term> and <term>latency</term> which are measurements of internet performance. 
+    </p>
+    <video youtube="ZhEf7e4kopM" label="video-internet-waves" /> 
+
+
+    <p><term>Bandwidth</term> is the maximum amount of data that can be transmitted over a network connection in a given time period. 
+    It's measured in <term>bits per second (bps)</term>. You can imagine bandwidth as the width of a water pipe or the number of lanes on a highway. 
+    The more bandwidth you have, the more data can flow at the same time. This might be really important when you're trying to stream a 
+    video or download a large file or play an online game.</p>
+
+
+    <image source="_static/Unit4images/bandwidth.jpg" alt="bandwidth and latency" width="75%" />
+
+
+    <p><term>Latency</term> is the time it takes for data to travel from one device to another across a network and is measured
+      in <term>milliseconds (ms)</term>. You can imagine latency as how long a single drop of water takes to travel from one end of a pipe to the other, 
+      or how long it takes a single car to drive down the highway. While we typically want high bandwidth, we want low latency, 
+      since less time means that it is faster. Low latency is important for real-time applications like video calls or online games. </p>
+  
+
+  <activity label="measure-bandwidth">
+    <title>Measuring Bandwidth and Latency</title>
+  <statement>
+    <p>Use the <url href="http://www.bandwidthplace.com/">BandwidthPlace</url> tool (or the <url href="https://speed.cloudflare.com/">Cloudflare Speed Test</url>) 
+      to measure the bandwidth and latency of your Internet connection.</p>
+      <ol>
+        <li>What are the download and upload speeds for your Internet connection? Note that these bandwidth measurements are in megabits per 
+          second (Mbps). If possible, measure the bandwidth at school and at home or on your phone. Are they different?</li>
+            <li>This speed test also provides a latency test using a utility called ping, which measures the round-trip time for a small packet
+          to travel from your computer to a test server and for the response to return. The time is usually measured in milliseconds.
+          What is the latency for your connection? </li>
+         <li>Why is measuring your Internet connection's bandwidth and latency useful?</li>
+          <li>Why do you think Internet Service Providers (ISPs) provide different bandwidths for downloading and uploading from the 
+          Internet?</li>
+        <li>How does your download speed of your Internet connection compare to 
+          <url href="https://www.speedtest.net/global-index">Global Speed Statistics</url>? Is it faster or slower than the average
+          download speed in your country? How does it compare to the top 3 countries with the highest speeds?
+        </li>
+      </ol>
+  </statement>
+  <response/>
+
+ </activity>
+    <p>Have you ever tried loading a webpage or playing an online game and it was too slow? That can be frustrating.
+      When designing an app that runs online, it's important to consider the impact of network conditions on the user experience. 
+     If users have limited bandwidth or high latency because of congested networks or weak connections, the app might not run well.
+     Some ways to design for these situations include reducing file sizes of images and videos and loading content in chunks.
+    </p>
+
+
+    <activity label="bandwidth-definition">
+  <statement>
+    <p>What does bandwidth measure in a network?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>How fast your computer can connect to the Internet.</p>
+      </statement>
+      <feedback>
+        <p>No, bandwidth measures the capacity of a network connection, not simply how quickly a computer connects.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The average length of emails that you can send on a daily basis.</p>
+      </statement>
+      <feedback>
+        <p>No, bandwidth is related to the amount of data that can be transmitted, not the length or number of emails.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The amount of time it takes to send data over the Internet.</p>
+      </statement>
+      <feedback>
+        <p>No, this describes latency, which measures the time it takes for data to travel from one point to another.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The amount of data that can be sent in a fixed amount of time.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Bandwidth measures the maximum amount of data that can be transmitted over a network connection in a given amount of time, typically measured in bits per second (bps).</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="latency-definition">
+  <statement>
+    <p>What does latency measure in a network?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>The average number of messages you send over the Internet in a day.</p>
+      </statement>
+      <feedback>
+        <p>No, latency does not measure the number of messages sent. It measures the time it takes for data to travel across a network.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The size of the messages that you send over the Internet.</p>
+      </statement>
+      <feedback>
+        <p>No, latency is not a measure of message size. It measures the time required for data to travel from one point to another.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>The amount of time it takes to send a message over the Internet.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Latency measures the delay in data transmission, typically measured in milliseconds (ms). Lower latency means less delay in communication.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>How much data can be sent in a specific amount of time.</p>
+      </statement>
+      <feedback>
+        <p>No, this describes bandwidth, which measures the data transmission capacity of a network connection.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+  </subsection>
+
+  <subsection xml:id="packets">
+    <title>The Journey of a Packet</title>
+
+    <p>When you click on a link for a song or a video on the Internet, how does that song or video travel 
+      to your computer or phone? It's too big to be sent all at once, so it is broken into smaller pieces called 
+      <term>packets</term> or <term>data packets</term> that travel across the Internet and are reassembled at the 
+      destination.
+    </p>
+
+
+    <p>Watch the following <url href="https://www.youtube.com/watch?v=AYdF7b3nMto">video</url> 
+      to learn how the Internet uses <term>packet routing</term> to be <term>fault-tolerant</term>, meaning it can continue to function even 
+      when some devices or connections fail.  Another fun but longer video is <url href="https://www.youtube.com/watch?v=PBWhzz_Gn10">Warriors of the Net</url> that
+      animates a packet's journey through the Internet or see this short <url href="https://www.youtube.com/watch?v=m0QxVGiLToA">2-minute video</url>
+    about packets. 
+    </p>
+
+    <video youtube="AYdF7b3nMto" label="video-internet-packet-routing" /> 
+
+
+
+    <p>Packets contain data as well as <term>metadata</term> that provides information such as the packet's
+      origin and destination. The source and destination IP addresses are like mailing addresses on an envelope.
+      Some protocols also include sequence information that lets the receiving device put data back in order and
+      detect missing data. When needed, the protocol can request that missing data be sent again.</p>
+ 
+   <image source="_static/Unit4images/envelope.png" alt="packet metadata as envelope" width="75%" />
+
+   
+
+    <activity label="packet-structure">
+  <statement>
+    <p>Which of the following best explains how data is typically assembled into packets for transmission over the Internet?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>Each packet contains data to be transmitted, along with metadata containing information used for routing the data.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Packets contain a portion of the original data along with metadata, such as addressing information, that helps routers forward the packet toward its destination.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Each packet contains an encrypted version of the data to be transmitted, along with metadata containing the key needed to decrypt the data.</p>
+      </statement>
+      <feedback>
+        <p>No, packets do not necessarily contain encrypted data, and encryption keys are not generally included in packet metadata. Packets contain data and control information used for communication and routing.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Each packet contains only the metadata used to establish a direct connection so that the data can be transmitted.</p>
+      </statement>
+      <feedback>
+        <p>No, packets contain actual data as well as metadata. The metadata helps direct the packet through the network.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Each packet contains multiple data files bundled together, along with metadata describing how to categorize each data file.</p>
+      </statement>
+      <feedback>
+        <p>No, packets typically contain portions of a larger message or data transmission, not multiple complete files bundled together for categorization.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+    <p>As seen in the animation below, packets can be routed through different paths to reach their destination. 
+      Selecting the paths is called <term>packet routing</term>. Using
+      <term>dynamic routing</term>, the paths are chosen based on current network conditions at each moment. 
+    </p>
+        <image source="_static/Unit4images/Packet_Switching.gif" alt="packet routing" width="100%" />
+  
+
+
+
+  <activity label="internet-routing">
+  <statement>
+    <p>True or False: All routes on the Internet are specified in advance and cannot change dynamically. Every packet of data sent over the Internet has only one possible route to reach its destination.</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>True</p>
+      </statement>
+      <feedback>
+        <p>No, packets do not have to follow a single predetermined route. Routers can dynamically select different routes based on network conditions and available connections.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>False</p>
+      </statement>
+      <feedback>
+        <p>Correct! The Internet has multiple possible routes between devices. Routers can dynamically determine where to send packets, and different packets from the same message may travel along different routes.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<activity label="email-packets">
+  <statement>
+    <p>When you send an email message using Gmail in your browser or the Gmail app, what typically happens to the message as it travels over the Internet?</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice correct="yes">
+      <statement>
+        <p>The message is divided into packets that are routed individually over the Internet to the recipient's email server.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Data sent over the Internet is divided into smaller packets. These packets are routed independently and may take different paths to reach their destination, where they are reassembled.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The message is placed into a single packet that is routed through the Internet to the recipient's email server.</p>
+      </statement>
+      <feedback>
+        <p>No, messages are typically divided into multiple packets rather than transmitted as one large packet.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The message is placed into a single packet that is routed through a dedicated communication channel to the recipient's email server.</p>
+      </statement>
+      <feedback>
+        <p>No, Internet communication generally uses packet routing rather than a dedicated communication channel reserved for the entire message.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>The message is divided into packets that are routed through a dedicated communication channel to the recipient's email server.</p>
+      </statement>
+      <feedback>
+        <p>No, although messages are divided into packets, the Internet does not generally reserve a dedicated communication channel for each message. Packets are routed independently across shared network connections.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+<p> If a connection fails along one path, packets can be rerouted along a different path to reach the destination.
+      These <term>redundant</term> or alternative paths make the Internet <term>fault-tolerant</term>, 
+      so that it can continue to function even when some devices or connections fail. For example, if device B and E below are
+    both down, there is still another path that can be taken in the redundant network below.</p>
+    <image source="_static/Unit4images/redundant-network.png" alt="redundant network" width="75%" />
+
+
+
+    <activity label="find-network-path">
+  <statement>
+    <p>In the network diagram below where the devices at node B and E are down, which of the following paths can still be used to send 
+      packets from Host 1 to Host 2?</p>
+    <image source="_static/Unit4images/redundant-network.png" alt="redundant network" width="75%" />
+  </statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement>
+        <p>Host 1 → A → D → G → H → Host 2</p>
+      </statement>
+      <feedback>
+        <p>Correct! This is the only possible paths from Host 1 to Host 2.</p>
+      </feedback>
+      </choice>
+    <choice>
+      <statement>
+        <p>Host 1 → A → B → C → F → Host 2</p>
+      </statement>
+      <feedback>
+        <p>No, this path is not possible because Node B is down.</p>
+      </feedback>
+    </choice>
+      <choice>
+      <statement>
+        <p>Host 1 → A → E → Host 2</p>
+      </statement>
+      <feedback>
+        <p>No, this path is not possible because Node E is down.</p>
+      </feedback>
+    </choice>
+      <choice>
+      <statement>
+        <p>Host 1 → Host 2</p>
+      </statement>
+      <feedback>
+        <p>No, this path is not possible because they are not directly connected.</p>
+      </feedback>
+    </choice>
+  </choices>
+</activity>
+
+<activity label="routing-redundancy">
+  <statement>
+    <p>Which of the following are benefits of redundancy in Internet routing, where multiple routes are available for packets to travel between devices? Select all that apply.</p>
+  </statement>
+  <choices randomize="yes">
+
+    <choice>
+      <statement>
+        <p>Avoiding the loss of packets</p>
+      </statement>
+      <feedback>
+        <p>No, redundancy does not guarantee that packets will never be lost.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Increasing the ease with which the Internet can scale or grow because additional routes can be added.</p>
+      </statement>
+      <feedback>
+        <p>Correct! The Internet's distributed routing structure allows new networks and connections to be added without requiring a single central route for all communication.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Allowing many different communication protocols.</p>
+      </statement>
+      <feedback>
+        <p>No, supporting different communication protocols is not a direct benefit of having redundant routes. Redundancy provides alternative paths for data to travel.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Increasing the fault tolerance of the Internet so that packets can still reach their destination even if some connections have failed.</p>
+      </statement>
+      <feedback>
+        <p>Correct! Redundant routes increase fault tolerance by providing alternative paths when network connections or routers become unavailable.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+</activity>
+
+
+
+    <p>Our final activity will be simulating packet routing. We will act out the <term>TCP/IP Model</term>
+    which describes how data is packaged through four layers: Application, Transport, Network, and Link, as shown below.
+    In each level, we add more metadata to the packet on the left to prepare it for the journey. You do not need to
+  learn the details of the TCP/IP model, but the activity below will help you understand how packets are created to
+travel across the Internet and how they are assembled at the destination. </p>
+    
+    <image source="_static/Unit4images/tcpip.png" alt="TCP/IP model" width="100%" />
+
+    <idx><h>unplugged</h><h>packet routing</h></idx>
+    <idx><h>projects</h><h>packet routing</h></idx>
+     <idx><h>POGIL group activity</h><h>packet routing</h></idx>
+
+    <project label="packet-routing">
+      <title>Packet Routing Activity</title>
+      <statement>
+        <p>In POGIL groups, do the <url href="https://docs.google.com/document/d/1vCMjrLWMzU-bs1zv8Btu-rjrcvzQ21J0HarznLgL30g/view?tab=t.0">Packet Routing Activity</url>.
+          Each group is a computer acting out 4 layers of the TCP/IP model to send packets across a network
+          to another group. Each person will represent one layer of the TCP/IP model and have a role to play in 
+          sending packets across the network. If you are working individually, do all 4 layers yourself.
+          
+        </p>
+        <p>Once your group has sent and received a message, discuss the following questions:</p>
+        <ol>
+          <li>Does it matter whether the packets of a message arrive in order? Explain how this set of protocols 
+            handles that.</li>
+          <li>What should happen if a packet goes missing? Who (which layer) would handle this? What action would 
+            they have to take? And what additional information would be needed in the packet in order to handle it?</li>
+            <li>Suppose there is some kind of hardware glitch that corrupts one or more bits in a packet. Can this be 
+            detected? What action should be taken in this case? What additional information would be needed to 
+            handle this issue?</li>
+          <li>Complex systems, like networks, fail at unexpected times. Often multiple devices fail at the same 
+            time.  Explain how the TCP/IP model continues to function even when parts of the system fail.</li>
+          <li>As the packets are being transmitted through the network, can people other than the sender and 
+            receiver read the messages? What methods can we use to protect the message?</li>
+        </ol>
+      </statement>
+      <response/>  
+    </project>
+
+
+  </subsection>
+
+  <subsection xml:id="vocab-4-1">
+   <title>Vocabulary Review</title>
+
+    <activity label="vocab-match-4-1-part1">
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+
+      <cardsort>
+        <match>
+          <premise>Internet</premise>
+          <response>a global network of networks</response>
+        </match>
+          <match>
+          <premise>computer network</premise>
+          <response>a group of interconnected computing devices</response>
+        </match>
+          <match>
+          <premise>Internet Service Provider (ISP)</premise>
+          <response>an organization that provides internet access</response>
+        </match>
+        <match>
+          <premise>computing system</premise>
+          <response>a group of computing devices and programs that work together to accomplish a shared purpose</response>
+        </match>
+        <match>
+          <premise>protocol</premise>
+          <response>an agreed-upon set of rules for communication</response>
+        </match>
+        <match>
+          <premise>HTTP (Hypertext Transfer Protocol)</premise>
+          <response>a protocol used to retrieve web pages formatted using HTML from the internet</response>
+        </match>
+        <match>
+          <premise>IP (Internet Protocol)</premise>
+          <response>a protocol for unique IP addresses for devices on the Internet</response>
+        </match>
+          <match>
+          <premise>nonproprietary</premise>
+          <response>not owned or controlled by a single company</response>
+        </match>
+      
+       
+         </cardsort>
+        </activity>
+
+        <activity label="vocab-match-4-1-part2">
+          <statement>
+          <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+      <feedback>
+        <p>Find the words in the lesson above and try again.</p>
+      </feedback>
+       <cardsort>
+       <match>
+          <premise>bandwidth</premise>
+          <response>the maximum amount of data that can be transmitted over a network connection in a given time period</response>  
+        </match>
+        <match>
+          <premise>latency</premise>
+          <response>the time it takes for data to travel from one device to another across a network</response>
+        </match>
+        <match>
+          <premise>packet</premise>
+          <response>a chunk of data and metadata that is sent over a network</response>
+        </match>
+        <match>
+          <premise>metadata</premise>
+          <response>part of a data packet that describes the data, including the IP address that it came from and where it is going</response>
+        </match>
+        <match>
+          <premise>routing</premise>
+          <response>selecting a path for data to travel through a network</response> 
+        </match>
+          <match>
+          <premise>dynamic routing</premise>
+          <response>selecting different paths for data based on current network conditions</response>
+        </match>
+        <match>
+          <premise>fault-tolerant</premise>
+          <response>able to continue to function even when some devices or connections fail</response>  
+        </match>
+        <match>
+          <premise>redundancy</premise>
+          <response>the inclusion of extra alternate paths through a network</response>
+        </match>
+        </cardsort>
+        </activity>
+     
+  </subsection>
+</section>
