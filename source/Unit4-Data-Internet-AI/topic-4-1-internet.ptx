@@ -760,7 +760,7 @@
       Selecting the paths is called <term>packet routing</term>. Using
       <term>dynamic routing</term>, the paths are chosen based on current network conditions at each moment. 
     </p>
-        <image source="_static/Unit4images/Packet_switching.gif" alt="packet routing" width="100%" />
+        <image source="_static/Unit4images/Packet_Switching.gif" alt="packet routing" width="100%" />
   
         <note>
       <title>4.1.C.4</title>
