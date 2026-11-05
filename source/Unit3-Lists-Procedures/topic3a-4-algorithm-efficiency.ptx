@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3a-algorithm-efficiency">
+  <time minutes="90" />
+  <title>Algorithm Efficiency (2026)</title>
+<introduction>
+  <p>
+    In this lesson we are going to use an App Inventor app to analyze the algorithms we have been studying. You will be running two different apps, one to test the search algorithms and one to test the sorting algorithms.
+  </p><p>
+    This activity will resemble that of a scientific investigation. You'll run the apps repeatedly on different lists of data, record the running times of the algorithms, tabulate and graph your data, and then analyze the results. Can you figure out from the results, which algorithm is which?
+  </p><p>    
+    Another way to look at this activity is as quality assurance (QA). Many careers in the computing field start with assignments in QA. This is where you help software developers test and debug their apps.
+  </p>
+  <video youtube="t9PVjJDXWTk" label="video-preview-algorithm-analysis"/>
+  
+</introduction>
+
+<subsection xml:id="unit3a-4-analyzing-search-algorithms">
+  <title>Analyzing Search Algorithms</title>
+  <p>
+    Watch the following presentation on analyzing search algorithms to learn how to determine how fast <term>linear search</term> and <term>binary search</term> are.
+  </p>
+  <video youtube="Omh4VtutCdQ" label="video-search-analysis"/>
+</subsection>
+
+<subsection xml:id="unit3a-4-analyzing-sort-algorithms">
+  <title>Analyzing Sort Algorithms</title>
+  <p>
+    Watch the following presentation on analyzing sort algorithms to learn how to determine how fast <term>bubble sort</term>, <term>merge sort</term>  and <term>bucket sort</term> are.
+  </p>
+  <video youtube="YmCzraw7IcA" label="video-sort-analysis"/>
+</subsection>
+
+   <subsection xml:id="unit3a-4-review">
+    <title>Algorithm Efficiency Review</title>
+
+<activity label="unit3a-algorithm-efficiency-vocabulary">
+<title>Algorithm Efficiency Vocabulary</title>
+<statement><p>Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it on its correct definition on the right. Click the "Check Me" button to see if you are correct.</p></statement>
+<feedback><p>Review the vocabulary in this lesson and and try again.</p></feedback>
+<cardsort>
+<match><premise>efficiency</premise><response>how well an algorithm uses time and memory/space resources, CPU and RAM.</response></match>
+<match><premise>more efficient</premise><response>this usually means it runs faster or uses less space.</response></match>
+<match><premise>instance of a problem</premise><response>A specific example or input to a problem. For example, sorting is a problem, and sorting the list (2,3,1,7) is an instance of the problem.</response></match>
+<match><premise>linear or sequential search</premise><response>a search algorithm that checks ever element in a list from the start to the end of the list to find an item.</response></match>
+<match><premise>binary search</premise><response>a search algorithm that repeatedly divides a sorted list to narrow in on the searched-for item</response></match>
+<match><premise>sorting algorithm</premise><response>an algorithm that puts a list into alphabetic or numeric order.</response></match>
+</cardsort>
+</activity>
+
+   </subsection>
+</section>
