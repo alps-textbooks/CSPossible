@@ -907,7 +907,7 @@
         <p>Host 1 → A → B → C → F → Host 2</p>
       </statement>
       <feedback>
-        <p>No, this path is not possible because Node C is down.</p>
+        <p>No, this path is not possible because Node B is down.</p>
       </feedback>
     </choice>
       <choice>
