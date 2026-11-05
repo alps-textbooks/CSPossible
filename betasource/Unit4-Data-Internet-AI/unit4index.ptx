@@ -26,8 +26,9 @@
       </ul>
     </p>
    </introduction>
- <!--
+ 
   <xi:include href="./topic4-1-internet.ptx" />
+ <!--
   <xi:include href="./topic4-2-effects.ptx" />
   <xi:include href="./topic4-3-privacy-security.ptx" />
   <xi:include href="./topic4-4-data-analysis.ptx" />
