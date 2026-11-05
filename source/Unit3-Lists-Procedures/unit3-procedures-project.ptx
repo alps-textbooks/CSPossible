@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3-procedures-project">
+  <time minutes="45" />
+
+  <title>Unit 3 Procedures Project</title>
+
+  <introduction>
+  <p>
+    The Password Checker project was designed by Leigh Anne Fitz of Virginia Beach City Public Schools
+    and the autograding tests were designed by Kate McDonnell of Cherry Creek Schools in Colorado.
+  </p>
+  </introduction>
+
+ <subsection xml:id="password-checker">
+  <title>Password Checker</title>
+<p>
+    A strong password typically meets the following criteria:
+  </p>
+
+  <ul>
+    <li>Is at least 12 characters</li>
+    <li>Contains uppercase and lowercase letters</li>
+    <li>Contains numbers</li>
+    <li>
+      Contains special characters: <c>~`!@#$%^&amp;*() _-+={[}]|\\:;\"\'&gt;,&lt;.?/</c>
+    </li>
+  </ul>
+
+  <p>
+    Create a Python program that determines whether a user's password is strong or weak. 
+    The program should prompt the user to enter their password, then determine whether 
+    it meets all requirements. It will then print whether the password is <q>Strong</q> or <q>Weak.</q>
+  </p>
+
+    <p>Program Requirements</p>
+
+    <ul>
+      <li>
+        <p>Define a function <c>check_password</c> with a single parameter that is the user's password:</p>
+        <ul>
+          <li>
+            <p>Check the length of the password. If it is shorter than 12 characters:</p>
+            <ul>
+              <li>Print <q>Your password is not long enough.</q></li>              
+              <li>Do not complete the other checks if the password is too short</li>
+            </ul>
+          </li>
+          <li>Create boolean variables for upper, lower, number, and special</li>
+          <li>
+            <p>Loop through each letter in the password:</p>
+            <ul>
+              <li>If it is uppercase, set upper to true</li>
+              <li>If it is lowercase, set lower to true</li>
+              <li>If it is a number, set number to true</li>
+              <li>If it is a special character, set special to true</li>
+            </ul>
+          </li>
+          <li><p>Print the results of the requirements that are not met:</p>
+            <ul>
+              <li><q>Your password does not contain any numbers.</q></li>
+              <li><q>Your password does not contain any uppercase letters.</q></li>
+              <li><q>Your password does not contain any lowercase letters.</q></li>
+              <li><q>Your password does not contain any special characters.</q></li>
+            </ul>
+          </li>
+          <li>If all four boolean values are true, print <q>Your password is strong</q></li>
+        </ul>
+      </li>
+      <li>
+        <p>After (and outside) the function:</p>
+        <ul>
+          <li>Prompt the user to enter a password</li>
+          <li>Call the <c>check_password</c> function with the user's password as an argument</li>
+        </ul>
+      </li>
+    </ul>
+
+    <table xml:id="table-password-check">
+  <title>Password Validation Requirements and Outputs</title>
+  <tabular halign="left">
+    <row header="yes" bottom="medium">
+      <cell>Input</cell>
+      <cell>Output</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Password12!</cell>
+      <cell>Your password is not long enough.</cell>
+    </row>
+    <row bottom="minor">
+      <cell>abcdefghijkl</cell>
+      <cell>
+        <p>Your password does not contain any numbers.</p>
+        <p>Your password does not contain any uppercase letters.</p>
+        <p>Your password does not contain any special characters.</p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>ABCDEFJGHIJLKL123!</cell>
+      <cell>
+        Your password does not contain any lowercase letters.
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>SecurePassword!</cell>
+      <cell>Your password does not contain any numbers.</cell>
+    </row>
+    <row>
+      <cell>SecurePass123!</cell>
+      <cell>Your password is strong.</cell>
+    </row>
+  </tabular>
+</table>
+
+<p>
+  Use the following string methods to check each character in your password:
+</p>
+
+<ul>
+  <li><c>letter.isupper()</c> - returns True if the letter is uppercase</li>
+  <li><c>letter.islower()</c> - returns True if the letter is lowercase</li>
+  <li><c>letter.isdigit()</c> - returns True if the letter is a number</li>
+  <li><c>letter.isalnum()</c> - returns True if the letter is a letter or number, False if it is a special character</li>
+</ul>
+
+<project label="unit3-procedure-project-password-checker">
+    <title>Password Checker</title>
+  <statement>
+  <p>
+    Create a Python program that determines whether a user's password is strong or weak. 
+    The program should prompt the user to enter their password, then determine whether 
+    it meets all requirements. It will then print whether the password is <q>Strong</q> or <q>Weak.</q>
+  </p>
+
+  <p>
+    Use the directions in the <q>Program Requirements</q> section to create your program.
+  </p>
+</statement>
+<program interactive="activecode" language="python">
+<code>
+# Password Checker
+
+# Define a function check_password with a single parameter that is the user's password
+def ():
+
+    # Check the length of the password. If it is shorter than 12 characters, print
+    # "Your password is not long enough." Do not do any further checks if the password is too short.
+    if :
+       
+    else:
+        # Create boolean variables for upper, lower, number, and special
+        
+    
+        # Loop through each letter in the password
+        
+            # If it is uppercase, set upper to true
+            
+
+            # If it is lowercase, set lower to true
+            
+            
+            # If it is a number, set number to true
+            
+            
+            # If it is a special character, set special to true
+            
+
+        # Print the results of the requirements that are not met:
+        
+
+        # If all four boolean values are true, print "Your password is strong."
+        
+
+# After (and outside) the function:
+# Prompt the user to enter a password
+
+# Call the function check_password and store the result
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+       
+    def findLine(self, lines, target):
+        for line in lines:
+            if target.replace(" ", "").lower() in line.replace(" ", "").lower():
+                #print(line)
+                return line
+        return target + " not found"
+            
+    def remove_comments(self, code):
+        lines = code.split("\n")
+        new_lines = []
+        for line in lines:
+            if "#" in line:
+                line = line.split("#")[0]
+            new_lines.append(line)
+        return "\n".join(new_lines)
+    
+    def run_file(self, code, inputs):
+        stars = "****************************************************************************" 
+        print(stars)
+        print("Testing code with inputs: " + inputs)
+        print(stars)
+
+        lines = code.split("\n")
+        ins = inputs.split(",")
+        inN = 0
+
+        for i in range(len(lines)):
+            if "input" in lines[i]:
+                equals = lines[i].find("=") + 1
+                if inN &lt; len(ins):
+                    lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
+                inN += 1
+
+        new_code = str("\n".join(lines))
+
+        #print(new_code)
+
+        # Create an isolated scope for the code execution
+        scope = {}
+
+        exec(new_code, scope)
+        output = self.getOutput()
+
+        
+        if (stars in output):
+            ind = output.find(inputs) + len(inputs) + 1
+            output = output[ind:].strip()
+            ind = output.find(stars) + len(stars) + 1
+            output = output[ind:]
+        
+
+        if (stars in output):
+            ind = output.find(stars)
+            output = output[0:ind].strip()
+        
+        #print(output)
+
+        return str(output)
+    
+    def testOne(self):
+        code = self.getEditorText()
+        code = self.remove_comments(code)
+        code_nospaces = code.replace(" ", "")
+
+        # 4 boolean variables
+        num_false = code_nospaces.count("=False")
+        self.assertLessEqual(4,num_false, "set boolean variables to False at least 4 times")
+
+        num_true = code_nospaces.count("=True")
+        self.assertLessEqual(4,num_true, "set boolean variables to True at least 4 times")
+
+        # defines a function with single parameter
+        line = self.findLine(code.split("\n"), "def")
+        check = "check_password" in line and "()" not in line and "," not in line
+        self.assertTrue(check, "define a function check_password with a single parameter called password")
+        
+        # For loop
+        line = self.findLine(code.split("\n"), "for")
+        self.assertIn("in", line, "use a for loop to iterate through each letter in the password")
+        
+        # too short
+        output = self.run_file(code, "short")
+        self.assertIn("not long enough", output, "check for password length less than 12 characters and print 'Your password is not long enough.'")
+
+        # numbers
+        output = self.run_file(code, "NoNumbersHere!")
+        self.assertIn("does not contain any numbers", output, "check for numbers in the password and print 'Your password does not contain any numbers.' if none are found")
+        # uppercase letters
+        output = self.run_file(code, "nouppercase12!")
+        self.assertIn("does not contain any uppercase letters", output, "check for uppercase letters in the password and print 'Your password does not contain any uppercase letters.' if none are found")
+
+        # lowercase letters
+        output = self.run_file(code, "NOLOWERCASE12!")
+        self.assertIn("does not contain any lowercase letters", output, "check for lowercase letters in the password and print 'Your password does not contain any lowercase letters.' if none are found")
+
+        # special characters
+        output = self.run_file(code, "NoSpecialCharacters12")
+        self.assertIn("does not contain any special characters", output, "check for special characters in the password and print 'Your password does not contain any special characters.' if none are found")
+
+        # strong
+        output = self.run_file(code, "StrongPassword12!")
+        self.assertIn("Your password is strong", output, "check for a strong password and print 'Your password is strong.' if all requirements are met")
+
+myTests().main()
+</tests>
+</program>
+</project>
+</subsection>
+
+<subsection>
+    <title>Project Reflection</title>
+
+     <activity label="u3project-procedures-reflection1">
+      <title>Project Reflection: Procedure</title>
+      <statement>
+        <p>Consider the procedure (<c>check_password())</c> you wrote for this project. 
+          Write two calls to your procedure that each cause a different code segment in the procedure to
+          execute. Describe the expected behavior of each call. If it is not possible for two calls to your procedure
+          to cause different code segments to execute, explain why this is the case for your procedure. 
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+     <activity label="u3project-procedures-reflection2">
+      <title>Project Reflection: Procedure</title>
+      <statement>
+        <p>Consider the procedure (<c>check_password())</c> you wrote for this project. Suppose another programmer modifies the code within this procedure.
+          Describe a modification the other programmer could make that would cause this procedure
+          to have a logic error. Describe how the behavior of this procedure would change because of
+          the error.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+      <activity label="u3project-procedures-reflection3">
+      <title>Project Reflection: Errors</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the code, 
+            and how you fixed your code to remove the bug. How did you test the code to make 
+            sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+</subsection>
+  
+ 
+</section>

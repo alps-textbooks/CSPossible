@@ -6,15 +6,39 @@
 
   <p>
   AP Computer Science Principles (CSP) is an introductory college-level computing course 
-  designed to introduce students to the field of computer science and its applications.
+  designed to introduce students to the field of computer science, Artificial Intelligence (AI), and its applications.
   Rather than focusing only on coding, AP CSP explores the broader ideas of computing,
-  including algorithms, Artificial Intelligence (AI), data, the Internet, cybersecurity, 
+  including Artificial Intelligence (AI), data, the Internet, cybersecurity, 
   and the impacts of computing on society. No prior programming experience is required.
   Find out more about the AP exam at <url href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles">
   College Board AP CSP site</url>. </p>
   
-  <p>CSPossible was created to follow the currently being redesigned College Board AP CSP framework 
-    and exam which will go into effect in 2028.
+  <p>CSPossible was created for the new 2027-2028 
+    <url href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/redesign">College Board AP CSP redesign.</url>
+    It follows the learning objectives and essential knowledge outlined in the <url href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-framework-effective-fall-2027.pdf">
+    new AP CSP Framework</url> for the 2027-2028 academic year. The AP Computer Science Principles course aligns with the core concepts in the 
+    Computer Science Teachers Association (CSTA) K–12 Computer Science Framework. 
   </p>
- 
+
+  <p>The new 2027-2028 AP CSP framework is organized into 4 units that incorporate using AI responsibly and 
+    text-based programming in languages such as Python (required as of 2028-2029). 
+  </p>
+   <ol>
+    <li>Unit 1: Creating Purposeful Apps and Programs </li>
+    <li>Unit 2: Building Solutions using Selection and Iteration</li>
+    <li>Unit 3: Abstraction using Lists and Procedures</li>
+    <li>Unit 4: Data-Driven Decisions using the Internet and AI</li>
+  </ol>
+  
+  <p>The new AP CSP framework will also include a new AI Create Project, in which students build an AI application. 
+    More information about this project will be released in Spring 2027. The AP Exam will include free-response 
+    questions about the project, similar to previous years. The College Board AP Classroom will include new 
+    resources for teachers and students:</p>
+    <ul>
+      <li>Progress Checks for each unit</li>
+      <li>AI Labs aligned to the course framework that require students to use a Generative AI tool</li>
+      <li>Connect Tasks, which are short, real-world application programming tasks that help students 
+        apply concepts from a single unit.</li>
+    </ul>  
+
  </section>

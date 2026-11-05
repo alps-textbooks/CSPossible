@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3-lists-project">
+  <time minutes="45" />
+
+  <title>Unit 3 Lists Project</title>
+
+  <introduction>
+  <p>
+    The Ticket Sales project was designed by Leigh Anne Fitz of Virginia Beach City Public Schools
+    and the autograding tests were designed by Kate McDonnell of Cherry Creek Schools in Colorado.
+  </p>
+  </introduction>
+
+ <subsection xml:id="ticket-sales">
+  <title>Event Ticket Sales</title>
+<p>
+Imagine you are organizing a charity E-sports Tournament. Before the big day, student tickets are sold, and their prices vary depending on factors like early-bird discounts or VIP tier additions.
+</p><p>
+To help the event planning committee budget properly, you will write a Python program that collects all ticket sale prices into a list and runs analysis functions to calculate key metrics, such as total revenue, average ticket sales, and other ticket statistics.
+</p><p>
+There are four types of tickets with different prices:
+</p>
+<p>
+<ul>
+<li>$10 (Early-Bird Student Ticket)</li>
+<li>$15 (Standard General Admission)</li>
+<li>$25 (VIP Pass with Merch)</li>
+<li>$40 (Front-Row Tournament Pass)</li>
+</ul>
+</p>
+
+<p>
+    <strong>Program Requirements</strong>
+</p>
+
+<p>
+<ul>
+<li><p>Calculate Total Revenue</p>
+    <p>
+        <ul>
+            <li><p>Function: <c>calculate_total(prices)</c></p></li>
+            <li><p>Input: A list of prices.</p></li>
+            <li><p>Processing: Iterate through the list using a loop to sum all values.</p></li>
+            <li><p>Return: The total result of all ticket sales.</p></li>
+        </ul>
+    </p>
+</li>
+<li><p>Calculate Average Ticket Price</p>
+    <p>
+        <ul>
+            <li><p>Function: <c>calculate_average(prices)</c></p></li>
+            <li><p>Input: A list of prices.</p></li>
+            <li><p>Input check: If the list is empty, return -1.</p></li>
+            <li><p>Processing: Iterate through the list using a loop to find the average price.</p></li>
+            <li><p>Return: The average price of all ticket sales.</p></li>
+        </ul>
+    </p>
+</li>
+<li><p>Find Maximum Ticket Prices</p>
+    <p>
+        <ul>
+            <li><p>Function: <c>find_max_price(prices)</c></p></li>
+            <li><p>Input: A list of prices.</p></li>
+            <li><p>Processing: Iterate through the list using a loop to find the maximum price.</p></li>
+            <li><p>Return: The maximum price of all ticket sales.</p></li>
+        </ul>
+    </p>
+
+</li>
+<li><p>Find Minimum Ticket Prices</p>
+    <p>
+        <ul>
+            <li><p>Function: <c>find_min_price(prices)</c></p></li>
+            <li><p>Input: A list of prices.</p></li>
+            <li><p>Processing: Iterate through the list using a loop to find the minimum price.</p></li>
+            <li><p>Return: The minimum price of all ticket sales.</p></li>
+        </ul>
+    </p>
+
+</li>
+<li><p>Count Tickets</p>
+    <p>
+        <ul>
+            <li><p>Function: <c>count_tickets(prices, target_price)</c></p></li>
+            <li><p>Input: A list of prices and a target price.</p></li>
+            <li><p>Processing: Iterate through the list using a loop to count how many tickets are priced at the target price.</p></li>
+            <li><p>Print: The number of tickets priced at the target price.</p></li>
+        </ul>
+    </p>
+
+</li>
+<li><p>Main Program Flow (Outside Functions)</p>
+    <p>
+        <ul>
+            <li><p>Create ticket_prices as an empty list</p></li>
+            <li><p>Collect User Input (Populate the List)</p>
+                <ul>
+                    <li><p>Loop until the user enters -1 to stop.</p></li>
+                    <li><p>Ask the user to enter ticket prices one by one.</p></li>
+                    <li><p>If the input is not -1, add input to the ticket_prices list.</p></li>
+                </ul>
+            </li>
+            <li><p>Call each function with the ticket_prices list</p></li>
+            <li><p>Display a clean, formatted summary showing:</p>
+                <ul>
+                    <li><p>Total Revenue</p></li>
+                    <li><p>Average Ticket Price</p></li>
+                    <li><p>Maximum Ticket Price</p></li>
+                    <li><p>Minimum Ticket Price</p></li>
+                    <li><p>Count of Each Ticket Type</p></li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+</li>
+</ul>
+</p>
+
+<p>
+    Sample Output:
+</p>
+<pre>
+Enter a ticket price (or enter -1 to finish): 10
+Enter a ticket price (or enter -1 to finish): 15
+Enter a ticket price (or enter -1 to finish): 25
+Enter a ticket price (or enter -1 to finish): 40
+Enter a ticket price (or enter -1 to finish): 10
+Enter a ticket price (or enter -1 to finish): 15
+Enter a ticket price (or enter -1 to finish): 10
+Enter a ticket price (or enter -1 to finish): 40
+Enter a ticket price (or enter -1 to finish): -1
+Total revenue generated: $ 165.00
+Average ticket price: $ 20.62
+Highest ticket price sold: $ 40.00
+Lowest ticket price sold: $ 10.00
+Number of tickets sold at $ 10.00 :  3
+Number of tickets sold at $ 15.00 :  2
+Number of tickets sold at $ 25.00 :  1
+Number of tickets sold at $ 40.00 :  2
+</pre>
+
+<project label="unit3-lists-project-ticket-sales">
+    <title>Event Ticket Sales</title>
+  <statement>
+    <p>
+        This project involves creating a program to manage event ticket sales using lists and procedures.
+    </p>
+</statement>
+<program interactive="activecode" language="python">
+<code>
+# Ticket Sales Program
+
+# Calculate Total Revenue
+def calculate_total(prices):
+    return -1 # Placeholder return value, replace with your code
+
+# Calculate Average Ticket Price
+def calculate_average(prices):
+    return -1 # Placeholder return value, replace with your code    
+
+# Find Maximum Ticket Prices
+def find_max_price(prices):
+    return -1 # Placeholder return value, replace with your code
+    
+# Find Minimum Ticket Prices
+def find_min_price(prices):
+    return -1 # Placeholder return value, replace with your code
+
+# Count Tickets
+def count_tickets(prices, target_price):
+    return -1 # Placeholder return value, replace with your code
+
+# Main Program Flow (Outside Functions)
+# create ticket_prices list and input variable
+
+
+# In a loop, prompt the user to enter a ticket price. If the user enters -1, exit the loop. 
+# Otherwise, add the ticket price to the ticket_prices list.
+
+
+# Pass ticket_prices into each function.
+
+
+# Use the functions to print the number of tickets sold at $10, $15, $25, and $40.
+
+
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def findLine(self, lines, target):
+        for line in lines:
+            if target.replace(" ", "").lower() in line.replace(" ", "").lower():
+                #print(line)
+                return line
+        return "None"
+            
+    def remove_comments(self, code):
+        lines = code.split("\n")
+        new_lines = []
+        for line in lines:
+            if "#" in line:
+                line = line.split("#")[0]
+            new_lines.append(line)
+        return "\n".join(new_lines)
+    
+    def run_file(self, code, list, inputs):
+        stars = "****************************************************************************" 
+        print(stars)
+        print("Testing code with inputs: " + str(list))
+        print(stars)
+
+        lines = code.split("\n")
+        ins = inputs.split(",")
+        inN = 0
+
+        for i in range(len(lines)):
+            if "= []" in lines[i]:
+                lines[i] = lines[i].replace("= []", "= " + str(list))
+            if "=input(" in lines[i].replace(" ", ""):
+                equals = lines[i].find("=") + 1
+                try:
+                    int(ins[inN])  # Check if the input can be converted to a float
+                    lines[i] = lines[i][0:equals] + str(ins[inN])
+                except ValueError:
+                    lines[i] = lines[i][0:equals] + "\"" +ins[inN] + "\""
+                inN += 1
+
+        new_code = str("\n".join(lines))
+
+        #print(new_code)
+
+        # Create an isolated scope for the code execution
+        scope = {}
+
+        ''' for ebook '''
+        exec(new_code, scope)
+        output = self.getOutput()
+
+        if (stars in output):
+            ind = output.find(stars) + len(str(stars)) + 1
+            output = output[ind:].strip()
+            ind = output.find(stars) + len(stars) + 1
+            output = output[ind:]
+        
+        if (stars in output):
+            ind = output.find(stars)
+            output = output[0:ind].strip()
+        
+        return str(output)
+    
+    def testOne(self):
+        code = self.getEditorText()
+        code = self.remove_comments(code)
+        #code_nospaces = code.replace(" ", "")
+
+        list1 = [10, 15, 25, 40]
+        #output = self.run_file(code, list1, "-1")
+
+        result = calculate_total(list1)
+        self.assertEqual(90, result, "calculate_total() for " + str(list1))
+
+        result1 = calculate_average(list1)
+        result2 = calculate_average([])
+        self.assertEqual("22.5,-1", str(result1) + "," + str(result2), "calculate_average() for " + str(list1) + " and []")
+        
+        result = find_max_price(list1)
+        self.assertEqual(40, result, "find_max_price() for " + str(list1))
+
+        result = find_min_price(list1)
+        self.assertEqual(10, result, "find_min_price() for " + str(list1))
+
+        list1 = [10, 15, 25, 40, 10, 10, 10, 15, 25, 40, 15, 40, 10, 15]
+        output = self.run_file(code, list1, "-1")
+
+        line = self.findLine(output.split("\n"), "Total")
+        self.assertIn("280.00", line, "Prints Total revenue generated for " + str(list1))
+
+        line = self.findLine(output.split("\n"), "Average")
+        self.assertIn("20.00", line, "Prints Average ticket price for " + str(list1))
+
+        line = self.findLine(output.split("\n"), "High")
+        self.assertIn("40.00", line, "Prints Highest ticket price sold for " + str(list1))
+        
+        line = self.findLine(output.split("\n"), "Low")
+        self.assertIn("10.00", line, "Prints Lowest ticket price sold for " + str(list1))
+
+        line = self.findLine(output.split("\n"), "Number of tickets sold at $10")
+        self.assertIn("5", line, "Number of tickets sold at $10 for " + str(list1))
+
+        num_formats = code.count("format(")
+        num_2fs = code.count(".2f") + code.count(".02F")
+        self.assertTrue(num_formats &gt;= 4 and num_2fs &gt;= 4, "You should use format(*, \".2f\") to format the average price to two decimal places.")
+             
+myTests().main()
+</tests>
+</program>
+</project>
+</subsection>
+
+<subsection>
+    <title>Project Reflection</title>
+
+     <activity label="u3project-lists-reflection1">
+      <title>Project Reflection: Selection</title>
+      <statement>
+        <p>
+            Consider the list included in the main part of your program. Suppose
+            another programmer adds several new elements to the end of the list. Explain how the
+            code in any of the functions would need to be modified to account for the
+            additional elements. If no changes to the code segment are necessary, explain why this is the
+            case for your program.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+    <activity label="u3project-lists-reflection2">
+    <title>Project Reflection: Errors</title>
+      <statement>
+        <p>
+            Consider the list included in the main part of your program. 
+            Explain how the list uses abstraction to manage complexity in your program. Suppose the list
+            was not included in your program. Describe how you would need to adjust the code segment
+            so that it has the same behavior. If it is not possible to have the same behavior without the use of the list, explain
+            why.
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+    <activity label="u3project-lists-reflection3">
+    <title>Project Reflection: Errors</title>
+      <statement>
+        <p>Describe an error that you encountered while you were creating the code, 
+            and how you fixed your code to remove the bug. How did you test the code to make 
+            sure it was working correctly?
+        </p>
+      </statement>
+      <response />
+    </activity>
+
+</subsection>
+  
+ 
+</section>

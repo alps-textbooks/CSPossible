@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3a-simulations">
+  <time minutes="45" />
+  <title>Models and Simulations (2026)</title>
+
+  <introduction>
+    <p>
+      In this lesson, we will review the concept of simulations and how they are used in computer science.
+    </p>
+    <p>
+      A <term>model</term> is a simplified representation of a real-world object or system. Models can be physical, like a scale model of a building, or they can be digital, like a computer simulation of a weather system. Models are used to study and understand complex systems by focusing on the most important aspects while ignoring less relevant details.
+    </p>
+    <p>
+      <term>Simulations</term> are a way to model real-world processes or systems using computer programs. They allow us to study complex systems and predict their behavior under different conditions. They often involve randomness and can be used to test hypotheses, optimize processes, or understand the impact of different variables.
+    </p>
+    <p>
+      Simulations are a form of <term>abstraction</term>, where we focus on the most important aspects of a system while ignoring less relevant details. This allows us to create models that are easier to analyze and understand.
+    </p>
+  </introduction>
+
+  <subsection xml:id="unit3a-solar-system-models">
+    <title>Solar System Models</title>
+<p>
+  Models and simulations are most useful when real-world events are impractical for experiments (e.g., too big, too small, too fast, too slow, too expensive, or too dangerous). Watch the following videos, paying particular attention to the different ways in which the models abstract away certain details from the real world situations that are being modeled. Discuss with your classmates which features of the solar system each model chose to include and to exclude. How do those choices align with the educational goals of each model?
+</p>
+<p><term>Bill Nye's Model</term></p>
+<p>
+  Bill Nye illustrates the problem of trying to build a scale model of the solar system by using his bicycle to demonstrate the relative sizes and the relative distances between the planets.
+</p>
+<video youtube="97Ob0xR0Ut8" label="video-bill-nye-solar-system-model"/>
+<p><term>7-Mile Long Scale Model</term></p>
+<p>
+  Starting with an Earth the size of a marble, <url href="http://www.cnet.com/news/guys-build-amazing-7-mile-long-model-of-the-solar-system-to-scale/">these folks</url> built a full-scale model of our solar system across 7 miles of Nevada desert.
+</p>
+<video vimeo="139407849" label="video-7mile-solar-system-model"/>
+<p><term>Second Life 3D Model</term></p>
+<p>
+  This solar system model is built in Second Life, on online virtual world. Think about the differences between this model and the others.
+</p>
+<video youtube="8z5mwAlxBYc" label="video-3d-solar-system-model"/>
+
+<activity label="unit3a-3-simulations-differences">
+  <statement>
+    <p>
+      What are the main differences between the three models of the solar system described above?
+    </p>
+  </statement>
+  <response/>
+</activity>
+  </subsection>
+
+  <subsection xml:id="unit3a-simulations-randomness">
+<title>Simulations and Randomness</title>
+
+<p>
+  Simulations are used in many fields, including physics, biology, economics, and social sciences. They allow researchers to test hypotheses, explore scenarios, and make predictions about complex systems that would be difficult or impossible to study in the real world.
+</p>
+
+<p>
+  Computer simulations often use randomness to model real-world events. For example, a simulation of a coin toss might use a random number generator to determine whether the result is heads or tails. This allows the simulation to mimic the unpredictability of real-world events.
+</p>
+<p>
+  Computers cannot generate truly random numbers, but they can generate <term>pseudorandom</term> numbers that are close enough to random for most purposes. Pseudorandom numbers are generated using algorithms that produce sequences of numbers that appear random, but are actually determined by an initial value called a seed. By using different seeds, we can generate different sequences of pseudorandom numbers.
+</p>
+
+<activity label="unit3a-coin-flip-experiment">
+  <statement>
+<p>
+    Try this simple experiment:
+    <ul>
+      <li><p>If you flip a fair coin 20 times -- any type of coin will do -- how many heads would you expect to get?</p></li>
+      <li><p>Now flip the coin 20 times and count the number of heads.</p></li>
+    </ul>
+</p>
+<p>Did the count match your explanation? Based on this experiment, could you conclude that your coin is fair or biased (not fair).</p>
+  </statement>
+  <response/>
+</activity>
+<p>
+  If you perform this experiment, heads will often come up 10 times, but not always, even though, supposedly, the probability of getting a head on a fair coin toss is 50%.
+</p>
+
+<p>
+  The problem with this experiment is you didn't perform enough trials to draw any conclusion about the hypothesis that this is a fair coin. You would need to flip the coin many more times to get a better idea of whether the coin is fair or biased. This is where simulations can help.
+</p>
+
+<p>
+  We have already used the <term>random</term> module in Python to generate random numbers. The <c>random.randint()</c> function can be used to simulate a coin toss by generating a random integer between 0 and 1, where 0 represents heads and 1 represents tails.
+</p>
+
+<activity label="unit3a-coin-flip-simulation">
+<statement>
+<p>
+  This short Python program simulates flipping a fair coin 20 times. It uses the random module to generate a random number between 0 and 1 for each flip, where 0 represents heads and 1 represents tails. The program counts the number of heads and tails and prints the results.
+</p>
+<p>
+  Change the code so that it completes 100 flips instead of 20. What is the percentage of heads and tails? Does it come closer to 50% than the 20 flips did?
+</p>
+</statement>
+<program interactive="activecode" language="python">
+<code>
+import random
+
+heads = 0
+tails = 0
+
+for i in range(20):
+    flip = random.randint(0, 1)
+    if flip == 0:
+        heads += 1
+    else:
+        tails += 1
+
+print("Number of heads:", heads)
+print("Number of tails:", tails)
+print("Percentage of heads:", (heads / 20) * 100, "%")
+</code>
+<tests>
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+    def test1(self):
+        code = self.getEditorText().replace(" ", "")
+        self.assertIn("range(100)", code, "Change the range to 100")
+        self.assertIn("heads/100", code, "Calculate the percentage of heads with 100 flips correctly")
+
+myTests().main()
+</tests>
+</program>
+</activity>
+
+
+</subsection>
+
+  <subsection xml:id="unit3a-population-growth-simulation">
+    <title>Population Growth Simulation</title>
+<p>
+  Simulations are often used to model population growth. In this simulation, you will explore how populations of rabbits and wolves change over time based on different initial conditions and parameters. You will be able to adjust the birth rates, death rates, and other factors to see how they affect the populations of both species.
+</p>
+<p>
+  This <url href="https://appstate-math.github.io/interactivate/activities/RabbitsAndWolves/">simulation of rabbits and wolves</url> shows how nature attempts to stay balanced. Read the Learner's Tab about how the simulation works and then complete the following activities. (Note that this simulator works best in the Firefox browser).
+</p>
+
+<activity label="rabbits-and-wolves-simulation-short-answer-1">
+  <statement>
+    <p>
+      On the Activity tab, click Start Simulation. You can open the population graphs at any point to see how they change over time. Record your observations about how the population of rabbits and wolves changed over time.
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+<activity label="rabbits-and-wolves-simulation-short-answer-2">
+  <statement>
+    <p>
+      Hypothesis: What would happen if there were lots more bunnies than there were wolves? Would the bunnies take over and live forever?
+    </p>
+    <p>
+      Experiment: 
+      <ul>
+        <li><p>Test the hypothesis by first resetting the simulation. </p></li>
+        <li><p>Then click the View/Modify Parameters button followed by the View/Modify Start Parameters (Note that the View/Modify parameters button does not currently work in Chrome, but does work in Firefox). </p></li>
+        <li><p>Adjust the settings to increase the initial number of rabbits. </p></li>
+      </ul>      
+    </p>
+    <p> 
+      Record your observations. Did your prediction match with the results? How was it different than the first run of the simulation?
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+<activity label="rabbits-and-wolves-simulation-short-answer-3">
+  <statement>
+    <p>
+      Reverse the hypothesis: What would happen if there were lots more wolves than there are bunnies? Would the wolves live forever? Record your hypothesis, prediction and experiment results. (Don't forget to reset the simulation before changing the parameters.)
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+<activity label="rabbits-and-wolves-simulation-short-answer-4">
+  <statement>
+    <p>
+      Explain how the rabbits and wolves live in balance in this simulation.
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+<activity label="rabbits-and-wolves-simulation-short-answer-5">
+  <statement>
+    <p>
+      This model chose to include certain features and exclude other features. For example, this simulation only includes rabbits, wolves, and grass but there are other predators of rabbits and other food sources for rabbits. Why do you think the creators focused on these data elements and not others? How might this introduce bias (concentration on or interest in a particular area) into the simulation?
+    </p>
+  </statement>
+  <response/>
+</activity>
+  </subsection>
+
+   <subsection xml:id="unit3a-simulations-review">
+    <title>Simulations Review</title>
+
+<activity label="unit3a-simulations-vocabulary">
+<title>Simulations Vocabulary</title>
+<statement><p>Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it on its correct definition on the right. Click the "Check Me" button to see if you are correct.</p></statement>
+<feedback><p>Review the vocabulary in this lesson and and try again.</p></feedback>
+<cardsort>
+<match><premise>Abstraction</premise><response>Leaving out unnecessary details so you can focus only on what actually matters for a problem.</response></match>
+<match><premise>Bias</premise><response>Favoring one outcome or perspective—often happening in models when creators choose to include certain details while leaving others out.</response></match>
+<match><premise>Hypothesis</premise><response>An educated guess or prediction about what will happen before you run an experiment or test.</response></match>
+<match><premise>Model</premise><response>A simplified, mini version or computer version of a real-world object or idea used to study how it works.</response></match>
+<match><premise>Pseudorandomness</premise><response>A computer math trick used to create numbers that look completely random (like simulating a coin flip or rolling dice), even though a program calculated them.</response></match>
+<match><premise>Random</premise><response>The lack of pattern or regularity. A random sequence of events has no order or patten.</response></match>
+<match><premise>Random event</premise><response>An event that cannot be predicted with certainty. Examples would include flipping a fair coin, rolling a die, picking a card from a well shuffled deck.</response></match>
+<match><premise>Random number generator</premise><response>An algorithm that generates a sequence of numbers that seem to occur in random order.</response></match>
+<match><premise>Scale Model</premise><response>A physical or digital model where all the sizes and distances are kept in exact proportion to the real object (like a mini planet where everything is scaled down evenly).</response></match>
+<match><premise>Simulation</premise><response>Running a computer model over time to test "what-if" scenarios, see how things change, or mimic real life.</response></match>
+</cardsort>
+</activity>
+
+<activity label="unit3a-3-random-choose">
+<statement><p>Which of the following would be examples of random events?</p></statement>
+<choices>
+<choice correct="yes"><statement><p>Choosing a ball from a black jar filled with red and green balls.</p></statement><feedback><p>Choosing a ball from a jar is a random event.</p></feedback></choice>
+<choice ><statement><p>Counting by 2s up to 20.</p></statement><feedback><p>This doesn't change much.</p></feedback></choice>
+<choice correct="yes"><statement><p>Dealing a hand of poker.</p></statement><feedback><p>Assuming the deck is properly shuffled, dealing a poker hand is random.</p></feedback></choice>
+<choice correct="yes"><statement><p>Flipping a coin that has 3 sides.</p></statement><feedback><p>It may be difficult to imagine a 3-sided coin, but really it's just a 3-sided die.</p></feedback></choice>
+<choice correct="yes"><statement><p>Rolling a 12-sided die.</p></statement><feedback><p>Rolling a single die is a random event.</p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-3-ap-sample-question-choose">
+<statement>
+  <p>
+    A list of numbers has n elements, indexed from 1 to n. The following algorithm is intended to display the number of elements in the list that have a value greater than 100. The algorithm uses the variables count and position. Steps 3 and 4 are missing.
+  </p>
+  <p>
+  <ul>
+    <li><p>Step 1: Set count to 0 and position to 1.</p></li>
+    <li><p>Step 2: If the value of the element at index position is greaterthan 100, increase the value of count by 1.</p></li>
+    <li><p>Step 3: (missing step)</p></li>
+    <li><p>Step 4: (missing step)</p></li>
+    <li><p>Step 5: Display the value of count.</p></li>
+  </ul>
+</p>
+  <p>Which of the following could be used to replace steps 3 and 4 so that the algorithm works as intended?</p></statement>
+<choices>
+<choice correct="yes"><statement><p>Step 3: Increase the value of position by 1.</p>
+<p>Step 4: Repeat steps 2 and 3 until the value of position is greater than n.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>Step 3: Increase the value of position by 1.</p><p>Step 4: Repeat steps 2 and 3 until the value of count is greater than 100.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>Step 3: Repeat step 2 until the value of position is greater than n.</p><p>Step 4: Increase the value of count by 1.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>Step 3: Repeat step 2 until the value of count is greater than 100.</p><p>Step 4: Increase the value of position by 1.</p></statement><feedback><p></p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-3-simulations-choose">
+<statement><p>Which of the following statements describes a limitation of using a computer simulation to model a real-world object or system?</p></statement>
+<choices>
+<choice correct="yes"><statement><p>Computer simulations usually make some simplifying assumptions about the real-world object or system being     modeled.</p></statement><feedback><p>This is correct</p></feedback></choice>
+<choice ><statement><p>It is difficult to change input parameters or conditions when using computer simulations.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>Computer simulations can only be built after the real-world object or system has been created.</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>Computer simulations only run on very powerful computers that are not available to the general public.</p></statement><feedback><p></p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-3-fire-department-simulation">
+  <statement>
+    <p>
+      A city's fire department is using simulation software to analyze how a fire in an apartment complex might spread under a number of conditions. Consider the benefits and limitations of using a simulation instead of studying the real thing.
+      <ul>
+        <li><p>Name at least one benefit of using a simulation for this purpose.</p></li>
+        <li><p>Name at last one limitation of using a simulation for this purpose.</p></li>
+      </ul>
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+<activity label="unit3a-3-models-in-daily-life">
+  <statement>
+    <p>
+      Pick a model you use in your everyday life. What details does it capture and what details does it omit?
+    </p>
+  </statement>
+  <response/>
+</activity>
+
+   </subsection>
+</section>
