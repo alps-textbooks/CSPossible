@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="unit3a-search-algorithms">
+  <time minutes="45" />
+  <title>Search Algorithms (2026)</title>
+
+ <introduction>
+    <p>
+    Search algorithms are an important area of study in computer science. Just think of how often you search for information on the Internet using Google or some other search engine. It's remarkable how much information Google's algorithms search through and how fast they deliver the results.
+    </p>
+
+    <video youtube="0eKVizvYSUQ" label="video-how-google-search-works"/>
+
+    <p>
+        As the video above describes, when you do a Google search, you aren't actually searching the Web, you're searching Google's index of the Web. Google's spider programs are constantly traversing the web, collecting millions of web pages and organizing them into an index. When you do a Web search Google's algorithms are searching that index.
+    </p>
+    <p>
+        What's the best algorithm for searching an index? An index is an ordered collection. Think of the index that comes at the back of a textbook. It is organized in alphabetical order. Each entry in the index refers to some page in the book.
+    </p>
+ </introduction>
+
+   <subsection xml:id="unit3a-guessing-game">
+    <title>Guessing Game</title>
+<p>
+    To help you think about the problem of searching an index we're going to play a guessing game. The objective of the game is to come up with the most efficient algorithm for guessing a number between 1 and 100, where most efficient means that it takes the fewest number of guesses.
+</p>
+<p>
+    To play the game you can use the widget below (or <url href="https://mobile-csp.org/webapps/search/binarygame.html">open in a new window</url>):
+</p>
+<interactive iframe="https://mobile-csp.org/webapps/search/binarygame.html" width="100%" aspect="2:1"/>
+
+<p>
+    One way to look at this game is that we are searching for a number in a list of numbers. Our search made use of the fact that numbers are ordered. The feedback we received - "too high" or "too low" - was based on that order. If you're still working on figuring out an efficient algorithm, maybe the following widget will give you some ideas. Try to observe the algorithm that the widget is using. (<url href="https://mobile-csp.org/webapps/search/binary.html">open in a new window</url>)
+</p>
+
+<interactive iframe="https://mobile-csp.org/webapps/search/binary.html" width="100%" aspect="2:1"/>
+
+<activity label="guessing-game-pseudocode">
+    <statement>
+        <p>
+            Define a pseudocode algorithm that will efficiently play the guessing game. (Remember that pseudocode is a way of describing an algorithm wihtout using a specific programming language. Your pseudocode should be clear enough that someone else could implement it in a programming language of their choice.)
+        </p>
+    </statement>
+    <response/>
+</activity>
+
+
+</subsection>
+
+   <subsection xml:id="unit3a-binary-search-algorithm">
+    <title>Binary Search Algorithm</title>
+<p>
+    There is an efficient algorithm for the guessing game problem, known as the <term>binary search algorithm</term>. It is called binary search because you repeatedly divide the search space into two and eliminate one half of the search space.
+</p>
+
+<p>
+    Binary Search Algorithm Pseudocode:
+</p>
+
+<p>
+<ul>
+<li><p>Repeat until your guess is correct or until you run out of numbers in the list.</p>
+    <ul>
+    <li><p>Guess that the target number is the middle number in the list.</p></li>
+    <li><p>If the guess is too high, cut off the top half of the list.</p></li>
+    <li><p>If the guess is too low, cut off the bottom half of the list.</p></li>
+    <li><p>If the guess is correct, stop.</p></li>
+    </ul>
+</li>
+<li><p>If you ran out of numbers, the target number is not in the list.</p></li>
+</ul>
+</p>
+
+<p>
+    The algorithm must have the clause "until you run out of numbers in the list" because the target number may not be in the list. If you run out of numbers, then the target number is not in the list.
+</p>
+
+<p>
+    For a list of 16 items, you need a maximum of 5 guesses to find the secret number, because <m>2^5</m> &gt; 16. For a list of 64 numbers you need a maximum of 7 guesses, since <m>2^7</m> &gt; 64. For a list of 50 numbers, you need a maximum of 6 guesses, since <m>2^6</m> &gt; 50.
+</p>
+<p>
+    To find the maximum number of guesses needed to find a number in a nonempty list of N items, you need to find the smallest integer k such that <m>2^k</m> &gt; N. The maximum number of guesses is k.
+</p>
+
+<p>
+    Do you need a calculator to figure that out? Not really. Here's an easy way to figure out that maximum number of guesses for any value of N. Just write down the powers of 2 in a table like this:
+</p>
+
+<table xml:id="unit3a-1-powers-of-2">
+<title>Powers of 2</title>
+<tabular top="minor" bottom="minor" left="minor" right="minor" valign="top" width="50%">					
+<col width="50%" halign="center" />
+<col width="50%" halign="center" />
+<row header="yes"><cell>x</cell><cell><m>2^x</m></cell>	</row>
+<row>	<cell>0</cell><cell>1</cell>	</row>
+<row>	<cell>1</cell><cell>2</cell>	</row>
+<row>	<cell>2</cell><cell>4</cell>	</row>
+<row>	<cell>3</cell><cell>8</cell>	</row>
+<row>	<cell>4</cell><cell>16</cell>	</row>
+<row>	<cell>5</cell><cell>32</cell>	</row>
+<row>	<cell>6</cell><cell>64</cell>	</row>
+<row>	<cell>7</cell><cell>128</cell>	</row>
+<row>	<cell>8</cell><cell>256</cell>	</row>
+<row>	<cell>9</cell><cell>512</cell>	</row>
+<row>	<cell>10</cell><cell>1024</cell>	</row>
+<row>	<cell>...</cell><cell>...</cell>	</row>
+</tabular>
+</table>
+
+<p>
+    So, when N = 100, find the first number in the right column that's greater than 100 and the number in the left column will tell you how many guesses you need.
+</p>
+
+<activity label="3a-1-guessing-game-100-choose">
+    <statement><p>To guess a number between 1 and 100 using a binary search algorithm, what is the maximum number of guesses the algorithm would take?</p></statement>
+    <choices>
+        <choice ><statement><p>100</p></statement><feedback><p>100 is the worst-case number of guesses when you guess each number in order.</p></feedback></choice>
+        <choice ><statement><p>50</p></statement><feedback><p>50 is the average number of steps when you guess each number in order.</p></feedback></choice>
+        <choice correct="yes"><statement><p>7</p></statement><feedback><p><m>2^7 = 128</m>, so 7 guesses can search at most 127 numbers. This is enough to search a range of 100 numbers.</p></feedback></choice>
+        <choice ><statement><p>6</p></statement><feedback><p><m>2^6 = 64</m>, so 6 guesses can search at most 63 numbers. Because 100 is greater than 63, 6 guesses are not always enough for the worst-case scenario.</p></feedback></choice>
+    </choices>
+</activity>
+
+<activity label="3a-1-guessing-game-500-choose">
+<statement><p>To guess a number between 1 and 500 using a binary search algorithm, what is the maximum number of guesses the algorithm would take?</p></statement>
+<choices>
+<choice ><statement><p>8</p></statement><feedback><p><m>2^8 = 256</m>, so 8 guesses can search at most 255 items. With 500 items, 8 guesses are not enough to guarantee finding the target.</p></feedback></choice>
+<choice correct="yes"><statement><p>9</p></statement><feedback><p><m>2^9 = 512</m>, which is greater than 500. Binary search works by dividing the search interval in half with every single guess. The worst-case scenario requires finding the minimum number of steps (k) such that <m>2^k</m> &gt; N, where N is the size of the range (500).</p></feedback></choice>
+<choice ><statement><p>250</p></statement><feedback><p>This represents the average number of guesses for a linear search (sequential search), where items are checked one by one from beginning to end (N / 2).</p></feedback></choice>
+<choice ><statement><p>500</p></statement><feedback><p>This represents the maximum (worst-case) number of guesses for a linear search, where the target number happens to be the last number checked (N).</p></feedback></choice>
+</choices>
+</activity>
+
+</subsection>
+
+   <subsection xml:id="unit3a-linear-search">
+    <title>Linear (or Sequential) Search Algorithm</title>
+
+    <p>
+        The binary search algorithm is very fast, but the data has to be sorted (already in order). What if you had to search a set of data that was not sorted? Binary search won't work in that case. To illustrate this problem, let's try a variation of our guessing game. This time the app will only tell you if your guess is right or wrong, not whether it is too high or too low. Try it. (<url href="https://mobile-csp.org/webapps/search/sequential.html">Open widget in new window</url>.)
+    </p>
+
+    <interactive iframe="https://mobile-csp.org/webapps/search/sequential.html" width="100%" aspect="2:1"/>
+
+    <p>
+        As you can see from this game, if you don't know the order of the items you are going to search, you have no choice but to search them <term>sequentially</term> if you definitely want to find the secret number.
+    </p>
+
+    </subsection>
+    
+<subsection xml:id="unit3a-linear-vs-binary-search">
+    <title>Comparing Linear vs. Binary Search Algorithms</title>
+
+    <p>
+        Here is a comparison of linear (sequential) search and binary search looking for a target in a list of N items in AP style pseudocode. Don't worry about understanding the details about the binary search algorithm, but do understand the general way it works. Binary search is more complex but it is much faster. However, the list must be in a sorted order for a binary search to work. Linear search is slower but works with any list in any order.
+    </p>
+
+<table xml:id="unit3a-comparison-binary-linear-search">
+<title>Comparison of Linear and Binary Search in CSP Pseudocode</title>
+<tabular top="minor" bottom="minor" left="minor" right="minor" valign="top" width="100%">
+<col width="50%" halign="left" />
+<col width="50%" halign="left" />
+
+
+<row header="yes" halign="center" valign="middle">
+<cell>Linear Search</cell>
+<cell>Binary Search</cell>
+</row>
+<row>
+<cell>
+<pre>
+FOR EACH item in List
+{
+   IF (item = target)
+       DISPLAY "Found target!"
+
+}
+</pre>
+</cell>
+<cell>
+<pre>
+low ← 0
+high ← N
+
+# compute the middle of the list, rounded down
+middle ← (low + high) / 2
+
+REPEAT UNTIL (item[middle] = target OR low &gt; high)
+{
+    IF (target &lt; item[middle])
+        # This cuts off the top half of the list
+        high ← middle - 1
+    IF (target &gt; item[middle])
+        # This cuts off the bottom half of the list
+        low ← middle + 1
+
+    # This computes new middle of the list, rounded down
+    middle ← (low + high) / 2
+}
+IF (item[middle] = target)
+    DISPLAY "Found target!"
+ELSE
+    DISPLAY "Target not in list"
+</pre>
+</cell>
+
+</row>
+</tabular>
+</table>
+
+
+
+   </subsection>
+
+<subsection xml:id="unit3a-review">
+<title>Search Algorithms Review</title>
+
+    <p>
+        In this section, we have learned about two different search algorithms: linear (sequential) search and binary search. Linear search is simpler to implement but slower, while binary search is more complex but much faster, provided the data is sorted.
+    </p>
+
+<activity label="unit3a-search-algorithms-vocabulary">
+      <title>Search Algorithms Vocabulary</title>
+      <statement>
+        <p>
+          Review the vocabulary in this lesson. Drag the vocabulary term from the left and drop it
+          on its correct definition on the right.
+          Click the "Check Me" button to see if you are correct.
+        </p>
+      </statement>
+
+        <feedback>
+        <p>Review the vocabulary in this lesson and and try again.</p>
+      </feedback>
+
+    <cardsort>
+        <match>
+          <premise>linear search</premise>
+          <response>a search algorithm that checks every element in a list from the start to the end of the list to find an item</response>
+        </match>
+        <match>
+          <premise>binary search</premise>
+          <response>a search algorithm that repeatedly divides a sorted list to narrow in on the searched-for item</response>
+        </match>
+    </cardsort>
+</activity>
+
+<activity label="unit3a-search-algorithms-choose-1">
+<statement><p>
+For searching an unordered list, which search algorithm is the better choice?
+</p></statement>
+<choices>
+<choice><statement><p>binary search</p></statement><feedback><p>Sorry, a binary search is only appropriate when the collection you are searching is ordered.</p></feedback></choice>
+<choice correct="yes"><statement><p>linear search</p></statement><feedback><p>That's right! For searching an unordered list the linear search algorithm is the better choice.</p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-search-algorithms-choose-2">
+<statement><p>
+For searching a sorted list, which search algorithm is the better choice?
+</p></statement>
+<choices>
+<choice correct="yes"><statement><p>binary search</p></statement><feedback><p>That's right! For searching a sorted list the binary search algorithm is a much more efficient algorithm.</p></feedback></choice>
+<choice><statement><p>linear search</p></statement><feedback><p>Linear search would work, but it would be very slow. There's a better answer.</p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-search-algorithms-choose-3">
+<statement><p>
+For which of the problems would the binary search algorithm be useful? Choose all that apply.
+</p></statement>
+<choices>
+<choice><statement><p>Looking up a person's name in the phone book given the person's phone number.</p></statement><feedback><p>Let me add new information to help you solve this question. A phone book is arranged in order, but it is in order by last name . In order to solve this problem using a binary search, the phone book would need to be in order by phone number.</p></feedback></choice>
+<choice correct="yes"><statement><p>Looking up a word in a Webster's dictionary.</p></statement><feedback><p>True. A dictionary is arranged in order alphabetically. Thus, a binary search can be used to find any word in a dictionary.</p></feedback></choice>
+<choice correct="yes"><statement><p>Looking up a phone number in the phone book given the person's full (unique) name.</p></statement><feedback><p>True. A phone book is arranged in order by last name. If you know the person's full name this includes their last name and you can then perform a binary search to find their phone number.</p></feedback></choice>
+<choice><statement><p>Finding the smallest number in a list of numbers arranged randomly.</p></statement><feedback><p>Let me add new information to help you solve this. A binary search is only appropriate when the collection you are searching is arranged in order .</p></feedback></choice>
+<choice><statement><p>Arranging a deck of cards from the lowest to the highest value cards.</p></statement><feedback><p>Let me add new information to help you solve this question. When you arrange items or objects you are sorting through them. Therefore, a search algorithm is not appropriate for this problem.</p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-search-algorithms-choose-4">
+<statement><p>
+For which of the problems would the linear search algorithm be useful? Choose all that apply.
+</p></statement>
+<choices>
+<choice correct="yes"><statement><p>Looking up a person's name in the phone book given the person's phone number.</p></statement><feedback><p>True. A phone book is arranged in order by last name, not by phone number. Therefore, you would need to start at one end of the phone book and check each phone number individually, in order, until you find the phone number you were given and then you can find the last name associated with the phone number.</p></feedback></choice>
+<choice correct="yes"><statement><p>Looking up a word in a Webster's dictionary.</p></statement><feedback><p>True. A linear search can be used to look up a word in the dictionary. However, a linear search would not be the most efficient search algorithm to use. Since a dictionary is in alphabetical order, you could solve this problem more efficiently using a binary search.</p></feedback></choice>
+<choice correct="yes"><statement><p>Looking up a phone number in the phone book given the person's full (unique) name.</p></statement><feedback><p>True. A linear search can be used to look up someone's phone number in the phone book. However, a sequential search would not be the most efficient search algorithm to use. Since the phone book is arranged in order by last name, you could solve this problem more efficiently using a binary search.</p></feedback></choice>
+<choice correct="yes"><statement><p>Guessing a secret number between 1 and 100.</p></statement><feedback><p>True. A linear search can be used to guess a secret number between 1 and 100. However, a linear search would not be the most efficient search algorithm to use. Since the numbers 1 to 100 are ordered numerically, you could solve this problem more efficiently using a binary search.</p></feedback></choice>
+<choice><statement><p>Arranging a deck of cards from the lowest to the highest value cards.</p></statement><feedback><p>When you arrange a collection you are sorting. Therefore, a search algorithm cannot be used to solve this problem.</p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-search-algorithms-choose-5">
+<statement><p>
+A sorted list of numbers contains 500 elements. Which of the following is closest to the maximum number of list elements that will be examined when performing a binary search for a value in the list?
+</p></statement>
+<choices>
+<choice ><statement><p>500</p></statement><feedback><p>This is the number of elements that might be examined in a linear search.</p></feedback></choice>
+<choice correct="yes"><statement><p>10</p></statement><feedback><p><m>2^9 = 512</m>, which is greater than or equal to to 500.</p></feedback></choice>
+<choice ><statement><p>50</p></statement><feedback><p></p></feedback></choice>
+<choice ><statement><p>250</p></statement><feedback><p></p></feedback></choice>
+</choices>
+</activity>
+
+<activity label="unit3a-search-algorithms-short-answer-shuffled-deck">
+    <statement>
+        <p>Suppose you have a deck of cards and you want to find the Ace of Spades. If the deck is shuffled, which is the best search algorithm to use and why?
+        </p>
+    </statement>
+    <response/>
+</activity>
+
+<activity label="unit3a-search-algorithms-short-answer-real-life">
+    <statement>
+        <p>Give an example of a search problem you encounter in everyday life. Does it use sequential, binary, or some other search algorithm?
+        </p>
+    </statement>
+    <response/>
+</activity>
+
+</subsection>
+   
+</section>
