@@ -270,8 +270,7 @@
 
     <p>The Internet uses a set of standardized <term>protocols</term>, or rules that devices follow to exchange data. For example, 
       <term>HTTP (Hypertext Transfer Protocol)</term> is used to retrieve web pages formatted using HTML (HyperText Markup Language).
-      <term>IP (Internet Protocol)</term> is used to address network interfaces so data can be routed to them. IP addresses may be
-      assigned dynamically, and private IP addresses can be reused on different networks. These protocols are <term>nonproprietary</term>, which means they
+      <term>IP (Internet Protocol)</term> provides an addressing system of unique IP addresses for devices on the Internet. These protocols are <term>nonproprietary</term>, which means they
       are not owned or controlled by a single company, so that anyone can connect to the internet. </p>
      
   <activity label="protocol-definition">
@@ -627,7 +626,7 @@
       Selecting the paths is called <term>packet routing</term>. Using
       <term>dynamic routing</term>, the paths are chosen based on current network conditions at each moment. 
     </p>
-        <image source="_static/Unit4images/Packet_switching.gif" alt="packet routing" width="100%" />
+        <image source="_static/Unit4images/Packet_Switching.gif" alt="packet routing" width="100%" />
   
 
 
@@ -732,7 +731,7 @@
         <p>Host 1 → A → B → C → F → Host 2</p>
       </statement>
       <feedback>
-        <p>No, this path is not possible because Node C is down.</p>
+        <p>No, this path is not possible because Node B is down.</p>
       </feedback>
     </choice>
       <choice>
@@ -886,7 +885,7 @@ travel across the Internet and how they are assembled at the destination. </p>
         </match>
         <match>
           <premise>IP (Internet Protocol)</premise>
-          <response>a protocol used to identify devices on the Internet, each with a unique address</response>
+          <response>a protocol for unique IP addresses for devices on the Internet</response>
         </match>
           <match>
           <premise>nonproprietary</premise>
