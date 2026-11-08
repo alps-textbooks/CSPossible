@@ -685,9 +685,8 @@ myTests().main()
 import document
 
 def showImage(image):
-    #id = "cspossible__projectAPI_graphics"
-    # for local testing
-    id = "rs-projectAPI_graphics"
+    # The drawing area under this ActiveCode, wherever the book is served
+    id = document.currentDiv() + "_graphics"
     output = document.getElementById(id)
     output.innerHTML = ""
     img = document.createElement("img")
